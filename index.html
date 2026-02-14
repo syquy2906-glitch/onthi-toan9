@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đề Kiểm Tra Toán 9 - Ôn Thi Tuyển Sinh 10</title>
+<style>
+:root {
+  --primary: #4f46e5; --primary-light: #818cf8; --primary-dark: #3730a3;
+  --accent: #f59e0b; --success: #10b981; --danger: #ef4444; --warning: #f97316;
+  --bg: #f8fafc; --card: #fff; --text: #1e293b; --text-light: #64748b; --border: #e2e8f0;
+  --radius: 14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* Header */
+.header{background:linear-gradient(135deg,#1e40af,#7c3aed);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(30,64,175,.3)}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:700;cursor:pointer}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-btn{background:rgba(255,255,255,.12);border:none;color:#fff;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:500;transition:.2s}
+.nav-btn:hover,.nav-btn.active{background:rgba(255,255,255,.28)}
+.progress-bar-container{background:rgba(255,255,255,.12);height:4px}
+.progress-bar-fill{height:100%;background:var(--accent);transition:width .5s;border-radius:0 2px 2px 0}
+
+/* Main */
+.main{max-width:1100px;margin:0 auto;padding:24px}
+
+/* Hero */
+.hero{text-align:center;padding:40px 24px;background:linear-gradient(135deg,#eef2ff,#ede9fe);border-radius:var(--radius);margin-bottom:28px}
+.hero h1{font-size:2rem;color:#1e40af;margin-bottom:10px}
+.hero p{color:var(--text-light);max-width:600px;margin:0 auto 20px;font-size:1.05rem}
+.hero-stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.hero-stat .num{font-size:1.8rem;font-weight:800;color:var(--primary)}
+.hero-stat .label{font-size:.82rem;color:var(--text-light)}
+
+/* Exam cards */
+.exam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:28px}
+.exam-card{background:var(--card);border-radius:var(--radius);padding:22px;cursor:pointer;border:2px solid var(--border);transition:.25s;position:relative;overflow:hidden}
+.exam-card:hover{border-color:var(--primary-light);transform:translateY(-3px);box-shadow:0 8px 24px rgba(79,70,229,.12)}
+.exam-card .card-emoji{font-size:2.2rem;margin-bottom:10px}
+.exam-card h3{font-size:1.15rem;margin-bottom:5px}
+.exam-card p{font-size:.88rem;color:var(--text-light);margin-bottom:14px}
+.exam-card .card-meta{font-size:.8rem;color:var(--primary);font-weight:600}
+.card-progress{margin-top:10px;background:#f1f5f9;height:5px;border-radius:3px;overflow:hidden}
+.card-progress-fill{height:100%;background:var(--success);border-radius:3px;transition:width .4s}
+
+/* Breadcrumb */
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:.9rem;color:var(--text-light)}
+.breadcrumb a{color:var(--primary);text-decoration:none;cursor:pointer}
+.breadcrumb a:hover{text-decoration:underline}
+.section-title{font-size:1.4rem;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+
+/* Quiz container */
+.quiz-header{background:var(--card);border-radius:var(--radius);padding:22px 26px;border:1px solid var(--border);margin-bottom:18px}
+.quiz-header h2{font-size:1.3rem;color:#1e40af;margin-bottom:4px}
+.quiz-header .quiz-info{font-size:.88rem;color:var(--text-light);display:flex;gap:16px;flex-wrap:wrap}
+.quiz-header .quiz-info span{display:flex;align-items:center;gap:4px}
+.timer-bar{background:#f1f5f9;height:6px;border-radius:3px;margin-top:12px;overflow:hidden}
+.timer-bar-fill{height:100%;background:linear-gradient(90deg,var(--success),var(--accent));transition:width 1s linear;border-radius:3px}
+
+/* Question block */
+.q-block{background:var(--card);border-radius:var(--radius);padding:22px 26px;border:1px solid var(--border);margin-bottom:14px;transition:.2s}
+.q-block.answered{border-color:#c7d2fe}
+.q-block.correct-block{border-color:#a7f3d0}
+.q-block.wrong-block{border-color:#fca5a5}
+.q-label{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.q-number{width:32px;height:32px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.q-type{font-size:.72rem;padding:3px 8px;border-radius:12px;font-weight:600}
+.type-mc{background:#dbeafe;color:#2563eb}
+.type-tf{background:#fef3c7;color:#b45309}
+.type-short{background:#d1fae5;color:#059669}
+.q-text{font-size:1.02rem;font-weight:600;margin-bottom:14px;line-height:1.6}
+
+/* Multiple choice options */
+.options{display:flex;flex-direction:column;gap:8px}
+.opt-btn{background:#f8fafc;border:2px solid var(--border);border-radius:10px;padding:11px 14px;cursor:pointer;text-align:left;font-size:.93rem;transition:.2s;display:flex;align-items:center;gap:10px}
+.opt-btn:hover:not(.disabled){border-color:var(--primary-light);background:#eef2ff}
+.opt-letter{width:28px;height:28px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0}
+.opt-btn.selected{border-color:var(--primary);background:#eef2ff}
+.opt-btn.selected .opt-letter{background:var(--primary);color:#fff}
+.opt-btn.correct{border-color:var(--success);background:#ecfdf5}
+.opt-btn.correct .opt-letter{background:var(--success);color:#fff}
+.opt-btn.wrong{border-color:var(--danger);background:#fef2f2}
+.opt-btn.wrong .opt-letter{background:var(--danger);color:#fff}
+.opt-btn.disabled{cursor:default;opacity:.7}
+
+/* True/False grid */
+.tf-grid{display:grid;grid-template-columns:1fr auto auto;gap:0;border:2px solid var(--border);border-radius:10px;overflow:hidden}
+.tf-header{background:#f1f5f9;padding:10px 14px;font-weight:700;font-size:.85rem;text-align:center;border-bottom:1px solid var(--border)}
+.tf-header:first-child{text-align:left}
+.tf-statement{padding:12px 14px;border-bottom:1px solid #f1f5f9;font-size:.93rem;display:flex;align-items:center;gap:8px;line-height:1.5}
+.tf-statement .stmt-letter{font-weight:700;color:var(--primary);flex-shrink:0}
+.tf-choice{display:flex;align-items:center;justify-content:center;padding:8px;border-bottom:1px solid #f1f5f9;border-left:1px solid var(--border)}
+.tf-radio{width:22px;height:22px;border:2px solid var(--border);border-radius:50%;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+.tf-radio:hover{border-color:var(--primary)}
+.tf-radio.selected{border-color:var(--primary);background:var(--primary)}
+.tf-radio.selected::after{content:'';width:8px;height:8px;border-radius:50%;background:#fff}
+.tf-radio.correct-r{border-color:var(--success);background:var(--success)}
+.tf-radio.correct-r::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
+.tf-radio.wrong-r{border-color:var(--danger);background:var(--danger)}
+.tf-radio.wrong-r::after{content:'✗';color:#fff;font-size:12px;font-weight:700}
+.tf-radio.disabled{cursor:default;opacity:.6}
+
+/* Short answer */
+.short-input{width:100%;max-width:400px;padding:11px 14px;border:2px solid var(--border);border-radius:10px;font-size:1rem;transition:.2s;font-family:inherit}
+.short-input:focus{outline:none;border-color:var(--primary)}
+.short-input.correct-i{border-color:var(--success);background:#ecfdf5}
+.short-input.wrong-i{border-color:var(--danger);background:#fef2f2}
+.short-hint{font-size:.82rem;color:var(--text-light);margin-top:6px}
+
+/* Explanation */
+.explanation{margin-top:12px;padding:12px 16px;border-radius:8px;font-size:.9rem;display:none;line-height:1.6}
+.explanation.show{display:block}
+.explanation.correct-exp{background:#ecfdf5;color:#065f46;border-left:3px solid var(--success)}
+.explanation.wrong-exp{background:#fef2f2;color:#991b1b;border-left:3px solid var(--danger)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:none;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-success{background:var(--success);color:#fff}
+.btn-outline{background:#fff;color:var(--primary);border:2px solid var(--primary)}
+.btn-outline:hover{background:#eef2ff}
+.btn-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;justify-content:center}
+
+/* Results */
+.results-card{background:var(--card);border-radius:var(--radius);padding:36px;text-align:center;border:2px solid var(--border);display:none}
+.results-card.show{display:block}
+.results-score{font-size:3.5rem;font-weight:800}
+.results-score.excellent{color:var(--success)}
+.results-score.good{color:var(--accent)}
+.results-score.poor{color:var(--danger)}
+.results-detail{margin-top:16px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.results-detail .rd{text-align:center}
+.results-detail .rd .rdv{font-size:1.4rem;font-weight:700}
+.results-detail .rd .rdl{font-size:.8rem;color:var(--text-light)}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:22px}
+.stat-card{background:var(--card);border-radius:var(--radius);padding:18px;text-align:center;border:1px solid var(--border)}
+.stat-card .stat-icon{font-size:1.8rem;margin-bottom:6px}
+.stat-card .stat-value{font-size:1.6rem;font-weight:800;color:var(--primary)}
+.stat-card .stat-label{font-size:.82rem;color:var(--text-light);margin-top:3px}
+
+/* Confetti */
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
+@keyframes confettiBurst{
+  0%{transform:translate(0,0) rotate(0deg) scale(0);opacity:1}
+  20%{transform:translate(var(--dx),var(--dy)) rotate(180deg) scale(1.2);opacity:1}
+  100%{transform:translate(var(--dx2),calc(var(--dy2) + 300px)) rotate(720deg) scale(.3);opacity:0}
+}
+.celebration-overlay{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;z-index:9998;pointer-events:none;opacity:0;transition:.3s}
+.celebration-overlay.show{opacity:1}
+@keyframes celebBounce{0%{transform:scale(0);opacity:0}50%{transform:scale(1.3);opacity:1}70%{transform:scale(.9)}100%{transform:scale(1);opacity:1}}
+.celebration-text{font-size:2.8rem;font-weight:800;color:var(--success);text-shadow:0 4px 20px rgba(16,185,129,.3);animation:celebBounce .8s ease}
+
+/* Analysis Card */
+.analysis-card{background:var(--card);border-radius:var(--radius);padding:28px;border:2px solid var(--border);margin-top:18px;animation:fadeIn .5s ease}
+.analysis-title{font-size:1.3rem;font-weight:700;color:#1e40af;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.analysis-section{margin-bottom:22px}
+.analysis-section h4{font-size:1rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.analysis-section h4.strength-h{color:#059669}
+.analysis-section h4.weakness-h{color:#dc2626}
+.analysis-section h4.type-h{color:#7c3aed}
+.analysis-section h4.tips-h{color:#2563eb}
+
+.analysis-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;margin-bottom:8px;font-size:.92rem}
+.analysis-item.strength{background:#ecfdf5;border:1px solid #a7f3d0}
+.analysis-item.weakness{background:#fef2f2;border:1px solid #fca5a5}
+.analysis-item.neutral{background:#f8fafc;border:1px solid var(--border)}
+.analysis-item .cat-icon{font-size:1.3rem;flex-shrink:0}
+.analysis-item .cat-name{font-weight:600;min-width:140px}
+.analysis-item .cat-score{font-weight:700;min-width:50px;text-align:right}
+.analysis-item .cat-bar{flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;min-width:80px}
+.analysis-item .cat-bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.analysis-item .cat-bar-fill.high{background:linear-gradient(90deg,#10b981,#34d399)}
+.analysis-item .cat-bar-fill.mid{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.analysis-item .cat-bar-fill.low{background:linear-gradient(90deg,#ef4444,#f87171)}
+.analysis-item .cat-badge{font-size:.72rem;padding:2px 8px;border-radius:8px;font-weight:600;white-space:nowrap}
+.badge-excellent{background:#d1fae5;color:#065f46}
+.badge-good{background:#fef3c7;color:#92400e}
+.badge-weak{background:#fee2e2;color:#991b1b}
+
+.type-perf{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:6px}
+.type-perf-card{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.type-perf-card .tp-icon{font-size:1.5rem;margin-bottom:4px}
+.type-perf-card .tp-label{font-size:.82rem;color:var(--text-light);margin-bottom:2px}
+.type-perf-card .tp-score{font-size:1.3rem;font-weight:800}
+.type-perf-card .tp-bar{height:6px;background:#e2e8f0;border-radius:3px;margin-top:6px;overflow:hidden}
+.type-perf-card .tp-bar-fill{height:100%;border-radius:3px}
+
+.tip-item{display:flex;gap:10px;padding:10px 14px;border-radius:10px;background:#eff6ff;border:1px solid #bfdbfe;margin-bottom:8px;font-size:.9rem;line-height:1.6}
+.tip-item .tip-num{width:26px;height:26px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0;margin-top:2px}
+
+/* Responsive */
+@media(max-width:768px){
+  .header-inner{padding:10px 14px}
+  .logo{font-size:1.1rem}
+  .nav-btn{padding:6px 10px;font-size:.78rem}
+  .main{padding:14px}
+  .hero{padding:28px 16px}
+  .hero h1{font-size:1.5rem}
+  .exam-grid{grid-template-columns:1fr}
+  .tf-grid{font-size:.85rem}
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .3s ease}
+.page{display:none}.page.active{display:block}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo" onclick="showPage('home')">
+      <span>🎯</span><span>Ôn Thi Toán 9</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" id="nav-home" onclick="showPage('home')">Chủ đề</button>
+      <button class="nav-btn" id="nav-stats" onclick="showPage('stats')">Thống kê</button>
+    </div>
+  </div>
+  <div class="progress-bar-container"><div class="progress-bar-fill" id="globalProgress" style="width:0%"></div></div>
+</div>
+
+<div class="main">
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <div class="hero fade-in">
+      <h1>Ôn Thi Tuyển Sinh Lớp 10 - Môn Toán</h1>
+      <p>Hệ thống bài tập trắc nghiệm theo cấu trúc đề thi: chọn đáp án đúng, đúng/sai, trả lời ngắn</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num" id="statTopics">0</div><div class="label">Chủ đề</div></div>
+        <div class="hero-stat"><div class="num" id="statQuestions">0</div><div class="label">Câu hỏi</div></div>
+        <div class="hero-stat"><div class="num" id="statDone">0</div><div class="label">Đã làm</div></div>
+      </div>
+    </div>
+    <div class="exam-grid" id="examGrid"></div>
+  </div>
+
+  <!-- QUIZ PAGE -->
+  <div class="page" id="page-quiz">
+    <div class="breadcrumb">
+      <a onclick="showPage('home')">Trang chủ</a><span>›</span><span id="quizBreadcrumb"></span>
+    </div>
+    <div class="quiz-header" id="quizHeader"></div>
+    <div id="quizBody"></div>
+    <div class="results-card" id="quizResults"></div>
+    <div class="btn-group" id="quizActions"></div>
+    <div id="analysisCard"></div>
+  </div>
+
+  <!-- STATS -->
+  <div class="page" id="page-stats">
+    <h2 class="section-title">📊 Thống kê ôn thi</h2>
+    <div class="stats-grid" id="statsGrid"></div>
+    <h3 style="margin:18px 0 10px;font-size:1.1rem">Lịch sử làm bài</h3>
+    <div id="historyList"></div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA: Bộ đề kiểm tra Toán 9 theo cấu trúc thi tuyển sinh 10
+// ============================================================
+const examData = [
+  // ==================== CHỦ ĐỀ 1: CĂN BẬC HAI ====================
+  {
+    id: "t1",
+    emoji: "√",
+    name: "Căn bậc hai – Rút gọn biểu thức",
+    desc: "Căn thức, biến đổi, rút gọn biểu thức chứa căn",
+    questions: [
+      // --- TRẮC NGHIỆM CHỌN ĐÁP ÁN ---
+      { type:"mc", text:"Giá trị của √81 bằng:", opts:["9","−9","±9","81"], correct:0, explain:"√81 = 9 (căn bậc hai số học luôn không âm)." },
+      { type:"mc", text:"Rút gọn √50 được kết quả:", opts:["5√2","2√5","25√2","10√5"], correct:0, explain:"√50 = √(25×2) = 5√2." },
+      { type:"mc", text:"Biểu thức √(x²) với mọi x bằng:", opts:["x","−x","|x|","x²"], correct:2, explain:"√(x²) = |x| vì căn bậc hai luôn không âm." },
+      { type:"mc", text:"Trục căn thức ở mẫu: 6/√3 = ?", opts:["2√3","3√2","√3","6√3/9"], correct:0, explain:"6/√3 = 6√3/3 = 2√3." },
+      { type:"mc", text:"Cho A = (√3 + 1)² − 2√3. Giá trị A bằng:", opts:["2","4","6","3+1"], correct:1, explain:"A = 3 + 2√3 + 1 − 2√3 = 4." },
+      { type:"mc", text:"Rút gọn: √12 + √27 − √3 = ?", opts:["4√3","2√3","5√3","6√3"], correct:0, explain:"√12=2√3, √27=3√3. Tổng = 2√3+3√3−√3 = 4√3." },
+      { type:"mc", text:"Giá trị của biểu thức √(4−2√3) bằng:", opts:["√3−1","1−√3","2−√3","√3+1"], correct:0, explain:"4−2√3 = 3−2√3+1 = (√3−1)². Nên √(4−2√3) = |√3−1| = √3−1." },
+
+      // --- ĐÚNG / SAI ---
+      { type:"tf", text:"Xét các mệnh đề sau về căn bậc hai:", statements:[
+        { stmt:"√(a²) = a với mọi số thực a", correct:false },
+        { stmt:"√(ab) = √a · √b khi a ≥ 0 và b ≥ 0", correct:true },
+        { stmt:"√16 + √9 = √25", correct:false },
+        { stmt:"(√5)² = 5", correct:true }
+      ], explains:[
+        "Sai. √(a²) = |a|, không phải a (vd: √((-3)²) = 3 ≠ −3).",
+        "Đúng. Đây là tính chất khai phương tích (a,b ≥ 0).",
+        "Sai. √16 + √9 = 4 + 3 = 7 ≠ √25 = 5.",
+        "Đúng. (√5)² = 5 theo định nghĩa căn bậc hai."
+      ]},
+      { type:"tf", text:"Xét các mệnh đề sau về biến đổi căn thức:", statements:[
+        { stmt:"√(9/4) = 3/2", correct:true },
+        { stmt:"2√3 = √12", correct:true },
+        { stmt:"√8 − √2 = √6", correct:false },
+        { stmt:"1/(√5−√3) = (√5+√3)/2", correct:true }
+      ], explains:[
+        "Đúng. √(9/4) = √9/√4 = 3/2.",
+        "Đúng. 2√3 = √(4·3) = √12.",
+        "Sai. √8−√2 = 2√2−√2 = √2 ≠ √6.",
+        "Đúng. Nhân liên hợp: (√5+√3)/((√5)²−(√3)²) = (√5+√3)/2."
+      ]},
+
+      // --- TRẢ LỜI NGẮN ---
+      { type:"short", text:"Tính: √75 − √48 + √27 = k√3. Tìm k.", answer:"4", hint:"Rút gọn từng căn về dạng a√3", explain:"√75=5√3, √48=4√3, √27=3√3. Kết quả: 5√3−4√3+3√3 = 4√3 → k=4." },
+      { type:"short", text:"Cho P = (1+√5)(1−√5). Tính P.", answer:"-4", hint:"Dùng hằng đẳng thức hiệu hai bình phương", explain:"P = 1² − (√5)² = 1 − 5 = −4." },
+      { type:"short", text:"Giá trị của √(7−4√3) bằng a−√b. Tính a+b.", answer:"5", hint:"Biến đổi 7−4√3 thành bình phương", explain:"7−4√3 = 4−4√3+3 = (2−√3)². Nên √(7−4√3) = 2−√3 → a=2, b=3, a+b=5." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 2: HÀM SỐ BẬC NHẤT & BẬC HAI ====================
+  {
+    id: "t2",
+    emoji: "📈",
+    name: "Hàm số bậc nhất và bậc hai",
+    desc: "Hàm số y=ax+b, y=ax², đồ thị, giao điểm",
+    questions: [
+      { type:"mc", text:"Hàm số y = −2x + 3 nghịch biến vì:", opts:["a = −2 < 0","b = 3 > 0","−2 + 3 > 0","a = 3 > 0"], correct:0, explain:"Hàm số y=ax+b nghịch biến khi a < 0. Ở đây a = −2 < 0." },
+      { type:"mc", text:"Đồ thị hàm số y = x² đi qua điểm nào?", opts:["(1, 2)","(−2, 4)","(3, 6)","(−1, −1)"], correct:1, explain:"y = (−2)² = 4. Điểm (−2, 4) thuộc đồ thị." },
+      { type:"mc", text:"Parabol y = 2x² và đường thẳng y = 4x cắt nhau tại:", opts:["O(0;0) và (2;8)","(0;0) và (4;8)","(1;2) và (2;8)","(0;0) và (−2;8)"], correct:0, explain:"2x² = 4x → 2x(x−2) = 0 → x=0 hoặc x=2. Hai giao điểm: (0;0) và (2;8)." },
+      { type:"mc", text:"Đường thẳng y = 2x − 1 song song với đường thẳng nào?", opts:["y = 2x + 5","y = −2x − 1","y = x − 1","y = 2"], correct:0, explain:"Song song khi cùng hệ số góc (a=2) và khác tung độ gốc." },
+      { type:"mc", text:"Hàm số y = (m−1)x + 3 đồng biến khi:", opts:["m > 0","m > 1","m < 1","m ≠ 1"], correct:1, explain:"Đồng biến khi hệ số a = m−1 > 0, tức m > 1." },
+      { type:"mc", text:"Đồ thị y = −x² có đỉnh tại:", opts:["(0; 0)","(1; −1)","(0; −1)","(−1; 0)"], correct:0, explain:"y = −x² là parabol có đỉnh O(0;0), bề lõm quay xuống." },
+
+      { type:"tf", text:"Xét các mệnh đề về hàm số:", statements:[
+        { stmt:"Đồ thị y = ax + b (a≠0) luôn là đường thẳng", correct:true },
+        { stmt:"Parabol y = ax² (a≠0) luôn đi qua gốc tọa độ", correct:true },
+        { stmt:"y = 3x + 1 và y = 3x − 2 cắt nhau", correct:false },
+        { stmt:"Nếu a > 0 thì parabol y = ax² có bề lõm quay lên", correct:true }
+      ], explains:[
+        "Đúng. Đây là định nghĩa hàm số bậc nhất.",
+        "Đúng. Khi x=0 thì y=0, nên luôn qua O(0;0).",
+        "Sai. Cùng a=3 nhưng b khác nhau nên chúng song song, không cắt.",
+        "Đúng. a > 0 thì parabol có bề lõm quay lên (hình chữ U)."
+      ]},
+      { type:"tf", text:"Cho đường thẳng (d): y = −x + 4. Xét các mệnh đề:", statements:[
+        { stmt:"(d) cắt trục Ox tại điểm (4; 0)", correct:true },
+        { stmt:"(d) cắt trục Oy tại điểm (0; −1)", correct:false },
+        { stmt:"(d) đi qua điểm (1; 3)", correct:true },
+        { stmt:"Hàm số y = −x + 4 đồng biến trên ℝ", correct:false }
+      ], explains:[
+        "Đúng. y=0 → x=4. Điểm (4;0).",
+        "Sai. x=0 → y=4. Cắt Oy tại (0;4).",
+        "Đúng. y = −1+4 = 3. Điểm (1;3) thuộc (d).",
+        "Sai. a = −1 < 0 nên hàm số nghịch biến."
+      ]},
+
+      { type:"short", text:"Tìm tung độ giao điểm của y = x² và y = 2x + 3 khi x > 0.", answer:"9", hint:"Giải phương trình x² = 2x + 3", explain:"x²−2x−3=0 → (x−3)(x+1)=0 → x=3 (x>0). y = 3² = 9." },
+      { type:"short", text:"Đường thẳng y = ax + 1 đi qua (2; 5). Tìm a.", answer:"2", hint:"Thay x=2, y=5 vào phương trình", explain:"5 = 2a + 1 → a = 2." },
+      { type:"short", text:"Parabol y = ax² đi qua điểm (−3; 18). Tìm a.", answer:"2", hint:"Thay tọa độ điểm vào y = ax²", explain:"18 = a·(−3)² = 9a → a = 2." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 3: PHƯƠNG TRÌNH BẬC HAI ====================
+  {
+    id: "t3",
+    emoji: "📐",
+    name: "Phương trình bậc hai",
+    desc: "Công thức nghiệm, biệt thức Δ, Vi-ét, phân tích",
+    questions: [
+      { type:"mc", text:"Phương trình x² − 5x + 6 = 0 có hai nghiệm là:", opts:["x=2, x=3","x=−2, x=−3","x=1, x=6","x=−1, x=−6"], correct:0, explain:"Δ=25−24=1. x=(5±1)/2 → x₁=3, x₂=2." },
+      { type:"mc", text:"Phương trình 2x² + 3x − 5 = 0 có tổng hai nghiệm bằng:", opts:["3/2","−3/2","5/2","−5/2"], correct:1, explain:"Theo Vi-ét: x₁+x₂ = −b/a = −3/2." },
+      { type:"mc", text:"Phương trình x² + 2x + 5 = 0 có:", opts:["Hai nghiệm phân biệt","Nghiệm kép","Vô nghiệm","Vô số nghiệm"], correct:2, explain:"Δ = 4−20 = −16 < 0 → vô nghiệm." },
+      { type:"mc", text:"Cho PT x² − mx + m − 1 = 0. PT có nghiệm x = 1 khi m bằng:", opts:["0","1","2","Mọi m"], correct:3, explain:"Thay x=1: 1−m+m−1=0 → 0=0, đúng với mọi m." },
+      { type:"mc", text:"PT x² + bx + c = 0 có hai nghiệm x₁, x₂. Khi đó x₁·x₂ bằng:", opts:["−b","b","c","−c"], correct:2, explain:"Theo Vi-ét (a=1): x₁·x₂ = c/a = c." },
+      { type:"mc", text:"Phương trình nào có nghiệm kép?", opts:["x²−4x+4=0","x²−4x+3=0","x²+4x+5=0","x²−4x−4=0"], correct:0, explain:"Δ=16−16=0 → nghiệm kép x=2." },
+      { type:"mc", text:"Cho PT x²−2(m+1)x+m²+2=0. PT có 2 nghiệm phân biệt khi:", opts:["m > 1/2","m < 1/2","m = 1/2","m ≠ 1/2"], correct:0, explain:"Δ'=(m+1)²−(m²+2)=2m−1>0 → m>1/2." },
+
+      { type:"tf", text:"Cho PT: x² − 7x + 10 = 0. Xét các mệnh đề:", statements:[
+        { stmt:"Δ = 9", correct:true },
+        { stmt:"Phương trình có hai nghiệm x₁=2, x₂=5", correct:true },
+        { stmt:"Tổng hai nghiệm bằng −7", correct:false },
+        { stmt:"Tích hai nghiệm bằng 10", correct:true }
+      ], explains:[
+        "Đúng. Δ = 49−40 = 9.",
+        "Đúng. x = (7±3)/2 → x₁=5, x₂=2.",
+        "Sai. x₁+x₂ = −(−7)/1 = 7 (không phải −7).",
+        "Đúng. x₁·x₂ = c/a = 10."
+      ]},
+      { type:"tf", text:"Xét các mệnh đề về phương trình bậc hai ax²+bx+c=0 (a≠0):", statements:[
+        { stmt:"Nếu a+b+c=0 thì x=1 là một nghiệm", correct:true },
+        { stmt:"Nếu a−b+c=0 thì x=−1 là một nghiệm", correct:true },
+        { stmt:"Nếu Δ=0 thì PT có đúng 1 nghiệm", correct:false },
+        { stmt:"Vi-ét: x₁+x₂ = b/a", correct:false }
+      ], explains:[
+        "Đúng. Thay x=1: a+b+c=0 → x=1 là nghiệm.",
+        "Đúng. Thay x=−1: a−b+c=0 → x=−1 là nghiệm.",
+        "Sai (tùy cách hiểu). Δ=0 → nghiệm kép (2 nghiệm trùng nhau), không phải 'đúng 1 nghiệm'.",
+        "Sai. Đúng là x₁+x₂ = −b/a (có dấu trừ)."
+      ]},
+
+      { type:"short", text:"Cho PT x²−6x+k=0 có nghiệm kép. Tìm k.", answer:"9", hint:"Nghiệm kép khi Δ = 0", explain:"Δ = 36−4k = 0 → k = 9." },
+      { type:"short", text:"Hai số có tổng bằng 8, tích bằng 15. Tìm số lớn hơn.", answer:"5", hint:"Hai số là nghiệm của x²−8x+15=0", explain:"x²−8x+15=0 → (x−3)(x−5)=0 → x=3 hoặc x=5. Số lớn = 5." },
+      { type:"short", text:"PT x²+2x−3=0 có hai nghiệm x₁, x₂. Tính x₁²+x₂².", answer:"10", hint:"x₁²+x₂² = (x₁+x₂)²−2x₁x₂", explain:"x₁+x₂=−2, x₁x₂=−3. x₁²+x₂² = (−2)²−2(−3) = 4+6 = 10." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 4: HỆ PHƯƠNG TRÌNH ====================
+  {
+    id: "t4",
+    emoji: "⚡",
+    name: "Hệ phương trình bậc nhất hai ẩn",
+    desc: "Giải hệ PT, bài toán lập hệ PT",
+    questions: [
+      { type:"mc", text:"Hệ phương trình { x+y=5 ; x−y=1 } có nghiệm:", opts:["(3; 2)","(2; 3)","(4; 1)","(1; 4)"], correct:0, explain:"Cộng 2 PT: 2x=6 → x=3, y=2." },
+      { type:"mc", text:"Hệ { 2x+3y=7 ; x−y=1 } có nghiệm (x;y). Tính x+y:", opts:["3","4","5","2"], correct:0, explain:"Từ PT2: x=y+1. Thay vào PT1: 2(y+1)+3y=7 → y=1, x=2. x+y=3." },
+      { type:"mc", text:"Hệ { ax+y=1 ; x+ay=1 } có vô số nghiệm khi:", opts:["a=0","a=1","a=−1","a=2"], correct:1, explain:"a=1: cả hai PT trở thành x+y=1, vô số nghiệm." },
+      { type:"mc", text:"Hệ { 2x−y=5 ; 4x−2y=10 } có:", opts:["1 nghiệm","Vô nghiệm","Vô số nghiệm","2 nghiệm"], correct:2, explain:"PT2 = 2×PT1, hai PT tương đương → vô số nghiệm." },
+      { type:"mc", text:"Hệ { 3x+2y=12 ; 3x+2y=8 } có:", opts:["1 nghiệm","Vô nghiệm","Vô số nghiệm","2 nghiệm"], correct:1, explain:"VT giống nhau mà VP khác → vô nghiệm." },
+      { type:"mc", text:"Hai xe đi ngược chiều từ A, B cách 180km. Xe A: 40km/h, xe B: 50km/h. Gặp nhau sau:", opts:["2 giờ","3 giờ","4 giờ","2.5 giờ"], correct:0, explain:"Thời gian = 180/(40+50) = 180/90 = 2 giờ." },
+
+      { type:"tf", text:"Cho hệ PT { x+2y=5 ; 3x−y=1 }. Xét các mệnh đề:", statements:[
+        { stmt:"Nghiệm của hệ là (1; 2)", correct:true },
+        { stmt:"Nếu nhân PT1 với 3 rồi trừ PT2 thì được 7y=14", correct:true },
+        { stmt:"Hệ này vô nghiệm", correct:false },
+        { stmt:"x−y = −1", correct:true }
+      ], explains:[
+        "Đúng. Kiểm tra: 1+4=5 ✓, 3−2=1 ✓.",
+        "Đúng. 3(x+2y)−(3x−y) = 3x+6y−3x+y = 7y = 15−1 = 14.",
+        "Sai. Hệ có nghiệm duy nhất (1;2).",
+        "Đúng. x−y = 1−2 = −1."
+      ]},
+      { type:"tf", text:"Bài toán: Mua 3 bút và 2 vở hết 29.000đ. Mua 1 bút và 4 vở hết 33.000đ. Gọi x là giá bút, y là giá vở (nghìn đồng):", statements:[
+        { stmt:"Hệ PT: { 3x+2y=29 ; x+4y=33 }", correct:true },
+        { stmt:"Giá 1 cây bút là 5.000đ", correct:true },
+        { stmt:"Giá 1 quyển vở là 7.000đ", correct:true },
+        { stmt:"Mua 2 bút 3 vở hết 31.000đ", correct:true }
+      ], explains:[
+        "Đúng. Đúng theo đề bài.",
+        "Đúng. Giải: x=33−4y, thay: 3(33−4y)+2y=29 → 99−10y=29 → y=7, x=5. Bút = 5.000đ.",
+        "Đúng. y = 7 (7.000đ).",
+        "Đúng. 2(5)+3(7) = 10+21 = 31 (nghìn đồng)."
+      ]},
+
+      { type:"short", text:"Giải hệ { x+y=7 ; x−y=3 }. Tìm x.", answer:"5", hint:"Cộng hai phương trình", explain:"Cộng: 2x=10 → x=5." },
+      { type:"short", text:"Giải hệ { 2x+y=8 ; x+3y=9 }. Tìm y.", answer:"2", hint:"Dùng phương pháp thế hoặc cộng đại số", explain:"Từ PT2: x=9−3y. Thay: 2(9−3y)+y=8 → 18−5y=8 → y=2." },
+      { type:"short", text:"An hơn Bình 4 tuổi, tổng tuổi hai người là 32. Tuổi An là bao nhiêu?", answer:"18", hint:"Gọi tuổi An là x, Bình là y, lập hệ", explain:"x−y=4, x+y=32 → 2x=36 → x=18." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 5: HÌNH HỌC - ĐƯỜNG TRÒN ====================
+  {
+    id: "t5",
+    emoji: "⭕",
+    name: "Đường tròn – Góc nội tiếp – Tiếp tuyến",
+    desc: "Tính chất đường tròn, góc nội tiếp, tiếp tuyến, tứ giác nội tiếp",
+    questions: [
+      { type:"mc", text:"Góc nội tiếp bằng nửa:", opts:["Số đo cung bị chắn","Góc ở tâm cùng chắn cung","Cả A và B đều đúng","Đường kính"], correct:2, explain:"Góc nội tiếp = ½ cung bị chắn = ½ góc ở tâm cùng chắn cung." },
+      { type:"mc", text:"Góc nội tiếp chắn nửa đường tròn bằng:", opts:["45°","60°","90°","180°"], correct:2, explain:"Cung nửa đường tròn = 180° → Góc nội tiếp = 90°." },
+      { type:"mc", text:"Tiếp tuyến của đường tròn tại điểm A thì:", opts:["Song song bán kính OA","Vuông góc bán kính OA","Đi qua tâm O","Cắt đường tròn tại 2 điểm"], correct:1, explain:"Tiếp tuyến vuông góc với bán kính tại tiếp điểm." },
+      { type:"mc", text:"Chu vi đường tròn bán kính R = 7cm (π ≈ 22/7):", opts:["22 cm","44 cm","154 cm","14 cm"], correct:1, explain:"C = 2πR = 2×(22/7)×7 = 44 cm." },
+      { type:"mc", text:"Tứ giác nội tiếp có tính chất:", opts:["Tổng 2 góc đối = 180°","4 cạnh bằng nhau","4 góc bằng nhau","Hai đường chéo bằng nhau"], correct:0, explain:"Tứ giác nội tiếp đường tròn thì tổng hai góc đối diện bằng 180°." },
+      { type:"mc", text:"Từ điểm M ở ngoài đường tròn (O;R), kẻ tiếp tuyến MA (A là tiếp điểm). Biết OM = 10, R = 6. Tính MA:", opts:["6","8","10","12"], correct:1, explain:"MA² = OM² − OA² = 100 − 36 = 64 → MA = 8." },
+
+      { type:"tf", text:"Xét các mệnh đề về đường tròn (O; R):", statements:[
+        { stmt:"Đường kính là dây cung lớn nhất", correct:true },
+        { stmt:"Hai tiếp tuyến từ 1 điểm ngoài đường tròn bằng nhau", correct:true },
+        { stmt:"Góc tạo bởi tiếp tuyến và dây cung = ½ cung bị chắn", correct:true },
+        { stmt:"Đường thẳng cách tâm O một khoảng d > R thì cắt đường tròn", correct:false }
+      ], explains:[
+        "Đúng. Đường kính = 2R là dây cung có độ dài lớn nhất.",
+        "Đúng. Hai tiếp tuyến kẻ từ 1 điểm ngoài có độ dài bằng nhau.",
+        "Đúng. Đây là tính chất góc tạo bởi tiếp tuyến và dây cung.",
+        "Sai. d > R → đường thẳng không cắt đường tròn (nằm ngoài)."
+      ]},
+      { type:"tf", text:"Cho tam giác ABC nội tiếp (O), BC là đường kính:", statements:[
+        { stmt:"Góc BAC = 90°", correct:true },
+        { stmt:"O là trung điểm của BC", correct:true },
+        { stmt:"AB² + AC² = BC²", correct:true },
+        { stmt:"Tam giác ABC là tam giác đều", correct:false }
+      ], explains:[
+        "Đúng. Góc nội tiếp chắn nửa đường tròn = 90°.",
+        "Đúng. O là tâm → O là trung điểm đường kính BC.",
+        "Đúng. Vì góc A = 90° nên theo Pythagore: AB²+AC²=BC².",
+        "Sai. Tam giác có góc 90° không thể đều (tam giác đều có 3 góc 60°)."
+      ]},
+
+      { type:"short", text:"Diện tích hình tròn bán kính 5cm (lấy π ≈ 3,14). Kết quả (cm²)?", answer:"78.5", hint:"S = πR²", explain:"S = 3,14 × 25 = 78,5 cm²." },
+      { type:"short", text:"Cung 60° trên đường tròn bán kính 6cm có độ dài bằng bao nhiêu π (dạng kπ, tìm k)?", answer:"2", hint:"Độ dài cung = πRn/180", explain:"l = π×6×60/180 = 360π/180 = 2π → k = 2." },
+      { type:"short", text:"Tứ giác ABCD nội tiếp, góc A = 70°. Tính góc C (độ)?", answer:"110", hint:"Tổng hai góc đối = 180°", explain:"Góc C = 180° − 70° = 110°." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 6: TAM GIÁC ĐỒNG DẠNG & LƯỢNG GIÁC ====================
+  {
+    id: "t6",
+    emoji: "📏",
+    name: "Tam giác đồng dạng – Tỉ số lượng giác",
+    desc: "Tam giác đồng dạng, sin cos tan, ứng dụng thực tế",
+    questions: [
+      { type:"mc", text:"Trong tam giác vuông tại A, sin B bằng:", opts:["AC/BC","AB/BC","AC/AB","AB/AC"], correct:0, explain:"sin B = đối/huyền = AC/BC." },
+      { type:"mc", text:"cos 60° bằng:", opts:["1/2","√3/2","√2/2","1"], correct:0, explain:"cos 60° = 1/2 (giá trị lượng giác đặc biệt)." },
+      { type:"mc", text:"Cho tam giác vuông có hai cạnh góc vuông 3cm và 4cm. Cạnh huyền bằng:", opts:["5cm","7cm","6cm","√7 cm"], correct:0, explain:"c² = 3²+4² = 25 → c = 5cm (bộ ba Pythagore)." },
+      { type:"mc", text:"Hai tam giác đồng dạng tỉ số k = 2/3. Tỉ số diện tích bằng:", opts:["2/3","4/9","8/27","3/2"], correct:1, explain:"Tỉ số diện tích = k² = (2/3)² = 4/9." },
+      { type:"mc", text:"tan 45° bằng:", opts:["0","1/2","1","√3"], correct:2, explain:"tan 45° = sin45°/cos45° = 1." },
+      { type:"mc", text:"Trong tam giác vuông tại C, AB=10, góc B=30°. Tính AC:", opts:["5","5√3","5√2","10√3"], correct:0, explain:"AC = AB·sin B = 10·sin 30° = 10·(1/2) = 5." },
+
+      { type:"tf", text:"Xét các mệnh đề về lượng giác góc nhọn α:", statements:[
+        { stmt:"sin²α + cos²α = 1", correct:true },
+        { stmt:"tan α = sin α / cos α", correct:true },
+        { stmt:"sin 30° = cos 60°", correct:true },
+        { stmt:"sin α luôn lớn hơn cos α", correct:false }
+      ], explains:[
+        "Đúng. Đây là hệ thức lượng giác cơ bản.",
+        "Đúng. Định nghĩa tan α.",
+        "Đúng. sin 30° = cos(90°−30°) = cos 60° = 1/2.",
+        "Sai. Phản ví dụ: sin 30° = 0,5 < cos 30° = √3/2 ≈ 0,87."
+      ]},
+      { type:"tf", text:"Cho ΔABC ~ ΔA'B'C' với tỉ số đồng dạng k=3. Xét:", statements:[
+        { stmt:"AB/A'B' = BC/B'C' = AC/A'C' = 3", correct:true },
+        { stmt:"Các góc tương ứng bằng nhau", correct:true },
+        { stmt:"Tỉ số chu vi bằng 3", correct:true },
+        { stmt:"Tỉ số diện tích bằng 3", correct:false }
+      ], explains:[
+        "Đúng. Tỉ số đồng dạng = tỉ số các cạnh tương ứng.",
+        "Đúng. Tam giác đồng dạng có các góc tương ứng bằng nhau.",
+        "Đúng. Tỉ số chu vi = k = 3.",
+        "Sai. Tỉ số diện tích = k² = 9."
+      ]},
+
+      { type:"short", text:"sin²30° + cos²30° = ?", answer:"1", hint:"Hệ thức lượng giác cơ bản", explain:"sin²α + cos²α = 1 với mọi α." },
+      { type:"short", text:"Cột đèn cao h mét, bóng dài 6m, góc nâng mặt trời 60°. Tìm h (kết quả dạng a√3, nhập a).", answer:"6", hint:"tan 60° = h/6", explain:"h = 6·tan 60° = 6√3 → a = 6." },
+      { type:"short", text:"ΔABC ~ ΔDEF, AB=6, DE=4. Chu vi ΔABC=24. Tìm chu vi ΔDEF.", answer:"16", hint:"Tỉ số chu vi = tỉ số đồng dạng", explain:"k = 6/4 = 3/2. Chu vi DEF = 24/(3/2) = 16." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 7: GIẢI BÀI TOÁN BẰNG LẬP PT/HPT ====================
+  {
+    id: "t7",
+    emoji: "🧩",
+    name: "Bài toán lập phương trình / hệ PT",
+    desc: "Chuyển động, năng suất, số học, hình học",
+    questions: [
+      { type:"mc", text:"Ô tô đi 120km. Nếu tăng vận tốc 10km/h thì thời gian giảm 30 phút. Gọi v (km/h) là vận tốc ban đầu, phương trình nào đúng?", opts:["120/v − 120/(v+10) = 1/2","120/v − 120/(v+10) = 30","120(v+10) − 120v = 1/2","120/v + 120/(v+10) = 1/2"], correct:0, explain:"Thời gian = quãng đường/vận tốc. Giảm 30 phút = 1/2 giờ." },
+      { type:"mc", text:"Hai vòi nước cùng chảy đầy bể trong 6 giờ. Vòi 1 chảy 1 giờ được 1/10 bể. Vòi 2 chảy 1 giờ được bao nhiêu bể?", opts:["1/15","1/12","1/10","1/20"], correct:0, explain:"1/10 + 1/x = 1/6 → 1/x = 1/6−1/10 = 2/30 = 1/15." },
+      { type:"mc", text:"Một số có hai chữ số, tổng hai chữ số là 9. Đổi chỗ hai chữ số thì số mới lớn hơn số cũ 27. Số cũ là:", opts:["36","45","63","54"], correct:0, explain:"Gọi ab: a+b=9, (10b+a)−(10a+b)=27 → 9(b−a)=27 → b−a=3. Vậy a=3,b=6, số=36." },
+      { type:"mc", text:"Hai người thợ cùng làm xong việc trong 12 ngày. Người A làm một mình hết 20 ngày. Hỏi người B làm một mình hết:", opts:["24 ngày","30 ngày","32 ngày","28 ngày"], correct:1, explain:"1/20 + 1/x = 1/12 → 1/x = 1/12−1/20 = 2/60 = 1/30 → x=30." },
+      { type:"mc", text:"Ca nô xuôi dòng 36km và ngược dòng 24km hết 3 giờ. Biết vận tốc dòng nước 4km/h. PT vận tốc ca nô v khi nước lặng:", opts:["36/(v+4) + 24/(v−4) = 3","36/(v−4) + 24/(v+4) = 3","36v + 24v = 3","(36+24)/v = 3"], correct:0, explain:"Xuôi: v+4, ngược: v−4. Tổng thời gian = 3 giờ." },
+
+      { type:"tf", text:"Bài toán: Quãng đường AB dài 90km. Xe máy đi từ A, ô tô đi từ B cùng lúc ngược chiều. Xe máy 30km/h, ô tô 60km/h:", statements:[
+        { stmt:"Hai xe gặp nhau sau 1 giờ", correct:true },
+        { stmt:"Lúc gặp nhau, xe máy đã đi 30km", correct:true },
+        { stmt:"Điểm gặp nhau cách B 60km", correct:true },
+        { stmt:"Nếu cùng chiều từ A, ô tô đuổi kịp xe máy (xuất phát trước 1h) sau 1 giờ", correct:true }
+      ], explains:[
+        "Đúng. t = 90/(30+60) = 1 giờ.",
+        "Đúng. Xe máy: 30×1 = 30km.",
+        "Đúng. Ô tô đi 60km, cách A = 90−60 = 30km... Thực tế ô tô đi từ B nên cách B = 90−60 = 30km, cách A = 60km. Điểm gặp cách B 30km, cách A 60km. Đúng.",
+        "Đúng. Xe máy xuất phát trước 1h đi được 30km. Ô tô nhanh hơn 30km/h, đuổi kịp sau t = 30/30 = 1 giờ."
+      ]},
+
+      { type:"short", text:"Mảnh đất hình chữ nhật có chu vi 28m, diện tích 48m². Tìm chiều dài (cạnh lớn hơn).", answer:"8", hint:"Lập hệ: 2(d+r)=28, d×r=48", explain:"d+r=14, d×r=48 → t²−14t+48=0 → (t−6)(t−8)=0 → d=8, r=6." },
+      { type:"short", text:"Tìm hai số biết tổng bằng 10 và tổng bình phương bằng 58. Số lớn hơn là?", answer:"7", hint:"Gọi x,y: x+y=10, x²+y²=58", explain:"(x+y)²=x²+2xy+y² → 100=58+2xy → xy=21. PT: t²−10t+21=0 → t=3,7. Số lớn=7." },
+      { type:"short", text:"Thuyền xuôi dòng 28km trong 2 giờ, vận tốc dòng nước 4km/h. Tính vận tốc thuyền khi nước lặng (km/h).", answer:"10", hint:"Vận tốc xuôi = v + 4 = 28/2", explain:"v+4 = 14 → v = 10 km/h." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 8: ĐỀ TỔNG HỢP ====================
+  {
+    id: "t8",
+    emoji: "🏆",
+    name: "Đề tổng hợp – Mô phỏng đề thi",
+    desc: "Tổng hợp kiến thức, mô phỏng cấu trúc đề thi tuyển sinh",
+    questions: [
+      // MC
+      { type:"mc", text:"√(25/9) bằng:", opts:["5/3","25/9","5/9","3/5"], correct:0, explain:"√(25/9) = √25/√9 = 5/3." },
+      { type:"mc", text:"Phương trình 3x² − 12 = 0 có nghiệm:", opts:["x = ±2","x = ±4","x = 2","x = 4"], correct:0, explain:"3x²=12 → x²=4 → x=±2." },
+      { type:"mc", text:"Hệ { x−y=2 ; 2x+y=7 } có nghiệm:", opts:["(3; 1)","(1; 3)","(2; 3)","(4; 2)"], correct:0, explain:"Cộng: 3x=9 → x=3, y=1." },
+      { type:"mc", text:"Parabol y = x² cắt đường thẳng y = x + 2 tại mấy điểm?", opts:["0","1","2","3"], correct:2, explain:"x²=x+2 → x²−x−2=0 → Δ=9>0 → 2 nghiệm → 2 giao điểm." },
+      { type:"mc", text:"Cho ΔABC vuông tại A, AB=6, AC=8. Bán kính đường tròn ngoại tiếp bằng:", opts:["5","10","7","8"], correct:0, explain:"BC=√(36+64)=10. R = BC/2 = 5 (tâm ở trung điểm cạnh huyền)." },
+      { type:"mc", text:"Giá trị của sin30°·cos60° + cos30°·sin60° bằng:", opts:["0","1/2","1","√3/2"], correct:2, explain:"= sin(30°+60°) = sin90° = 1. Hoặc: 1/2·1/2 + √3/2·√3/2 = 1/4+3/4 = 1." },
+      { type:"mc", text:"PT x²−(m+1)x+m=0 luôn có nghiệm x=1 vì:", opts:["Δ ≥ 0","Thay x=1: 1−m−1+m=0","a+b+c=0","Cả B và C"], correct:3, explain:"Thay x=1: 0=0 đúng mọi m. Cũng vì a+b+c = 1−(m+1)+m = 0." },
+
+      // TF
+      { type:"tf", text:"Xét các mệnh đề tổng hợp:", statements:[
+        { stmt:"√(−3)² = −3", correct:false },
+        { stmt:"PT x²+1=0 vô nghiệm trong ℝ", correct:true },
+        { stmt:"Hai tiếp tuyến từ 1 điểm ngoài đường tròn vuông góc nhau khi d = R√2", correct:true },
+        { stmt:"Nếu ΔABC ~ ΔDEF thì ΔDEF ~ ΔABC", correct:true }
+      ], explains:[
+        "Sai. √(−3)² = |−3| = 3.",
+        "Đúng. x²=−1 không có nghiệm thực.",
+        "Đúng. Hai tiếp tuyến vuông góc khi OM = R√2 (dùng tam giác vuông OMA).",
+        "Đúng. Quan hệ đồng dạng có tính chất đối xứng."
+      ]},
+      { type:"tf", text:"Tổng hợp kiến thức:", statements:[
+        { stmt:"Hệ { 2x+y=5 ; 4x+2y=10 } có vô số nghiệm", correct:true },
+        { stmt:"Đường tròn bán kính 3cm có diện tích 9π cm²", correct:true },
+        { stmt:"tan α · cot α = 1 (α nhọn)", correct:true },
+        { stmt:"Hai tam giác có 3 góc tương ứng bằng nhau thì bằng nhau", correct:false }
+      ], explains:[
+        "Đúng. PT2 = 2×PT1 → vô số nghiệm.",
+        "Đúng. S = π×3² = 9π.",
+        "Đúng. tan α × cot α = (sinα/cosα)(cosα/sinα) = 1.",
+        "Sai. 3 góc bằng nhau chỉ cho đồng dạng, chưa chắc bằng nhau."
+      ]},
+
+      // SHORT
+      { type:"short", text:"Rút gọn: √12 − √27 + √48 = k√3. Tìm k.", answer:"3", hint:"Rút gọn từng căn", explain:"2√3−3√3+4√3 = 3√3 → k=3." },
+      { type:"short", text:"PT x²−8x+m=0 có một nghiệm x=2. Tìm nghiệm còn lại.", answer:"6", hint:"Dùng Vi-ét: x₁+x₂=8", explain:"x₁+x₂=8, x₁=2 → x₂=6." },
+      { type:"short", text:"ΔABC vuông tại A, BC=13, AB=5. Tính AC.", answer:"12", hint:"Định lý Pythagore", explain:"AC = √(13²−5²) = √(169−25) = √144 = 12." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 9: ĐỀ THI TUYỂN SINH – ĐỀ 1 ====================
+  {
+    id: "t9",
+    emoji: "📋",
+    name: "Đề thi tuyển sinh – Đề 1 (BR-VT)",
+    desc: "Đề thi Sở GD&ĐT Bà Rịa – Vũng Tàu, 20 câu trắc nghiệm tổng hợp",
+    questions: [
+      { type:"mc", text:"Hệ phương trình { x + y = 3 ; 2x − y = 3 } có nghiệm (x; y) là:", opts:["(1; 2)","(2; 1)","(−3; 2)","(3; 3)"], correct:1, explain:"Cộng 2 PT: 3x = 6 → x = 2, y = 1. Kiểm tra: 2+1=3 ✓, 2(2)−1=3 ✓." },
+      { type:"mc", text:"Nghiệm của phương trình (x + 3)(x − 1) = 0 là:", opts:["x = 3 và x = −1","x = −3 và x = 1","x = −3 và x = −1","x = 3 và x = 1"], correct:1, explain:"(x+3)(x−1) = 0 → x = −3 hoặc x = 1." },
+      { type:"mc", text:"Nghiệm của bất phương trình 5x − 15 ≥ 0 là:", opts:["x ≥ −3","x ≤ −3","x ≥ 3","x ≤ 3"], correct:2, explain:"5x ≥ 15 → x ≥ 3." },
+      { type:"mc", text:"Đáy của một hình trụ là:", opts:["Hình vuông","Hình chữ nhật","Hình tam giác","Hình tròn"], correct:3, explain:"Hình trụ có hai đáy là hai hình tròn bằng nhau và song song." },
+      { type:"mc", text:"Với a > 0 thì biểu thức √(36a²) có giá trị là:", opts:["6a","−6a","±6a","36a"], correct:0, explain:"√(36a²) = √36 · √(a²) = 6|a| = 6a (vì a > 0)." },
+      { type:"mc", text:"Cột cờ AB vuông góc mặt đất, bóng nắng AC. Biết AC = 8m, góc ACB = 60°. Chiều cao AB bằng:", opts:["8 m","8√3 m","4√3 m","16 m"], correct:1, explain:"tan(60°) = AB/AC → AB = 8·tan(60°) = 8√3 ≈ 13,86 m." },
+      { type:"mc", text:"Điểm nào sau đây thuộc đồ thị hàm số y = 2x²?", opts:["(1; 2)","(1; −2)","(2; 4)","(−2; −8)"], correct:0, explain:"Thay x = 1: y = 2·1² = 2. Vậy (1; 2) thuộc đồ thị." },
+      { type:"mc", text:"Diện tích hình tròn có đường kính 8 cm bằng:", opts:["16π cm²","32π cm²","64π cm²","8π cm²"], correct:0, explain:"d = 8 → r = 4. S = πr² = π·16 = 16π cm²." },
+      { type:"mc", text:"Bảng tần số ghép nhóm lương công nhân (triệu đồng): [8;10): 3, [10;12): 5, [12;14): 8, [14;16): 7, [16;18): 5, [18;20): 2. Số công nhân có mức lương thuộc nhóm [14; 16) là:", opts:["5","8","7","3"], correct:2, explain:"Theo bảng tần số, nhóm [14; 16) có tần số là 7." },
+      { type:"mc", text:"Mảnh đất hình chữ nhật chu vi 80m, chiều dài hơn chiều rộng 20m. Gọi x (m) là chiều rộng. Phương trình đúng là:", opts:["2x + 20 = 80","2(2x + 20) = 80","x(x + 20) = 80","x + 20 = 80"], correct:1, explain:"Rộng x, dài x+20. Chu vi = 2(x + x+20) = 2(2x+20) = 80." },
+      { type:"mc", text:"Hộp có 3 bi đỏ và 7 bi vàng. Lấy ngẫu nhiên 1 bi. Xác suất lấy được bi đỏ là:", opts:["3/7","7/10","7/3","3/10"], correct:3, explain:"P(đỏ) = 3/(3+7) = 3/10." },
+      { type:"mc", text:"Hình nón có bán kính đáy r = 3 cm, đường sinh l = 5 cm. Diện tích xung quanh bằng:", opts:["30π cm²","45π cm²","9π cm²","15π cm²"], correct:3, explain:"Sxq = π·r·l = π·3·5 = 15π cm²." },
+      { type:"mc", text:"Giá trị m để PT x² − (3m+1)x + m − 5 = 0 có nghiệm x = −1 là:", opts:["m = 3/4","m = −3/4","m = 3","m = −3"], correct:0, explain:"Thay x = −1: 1 + (3m+1) + m − 5 = 0 → 4m − 3 = 0 → m = 3/4." },
+      { type:"mc", text:"Đường tròn (O) có dây cung AB = 8 cm, khoảng cách từ tâm O đến AB là 3 cm. Chu vi đường tròn bằng:", opts:["6π cm","8π cm","10π cm","12π cm"], correct:2, explain:"Nửa dây = 4. R² = 3² + 4² = 25 → R = 5. Chu vi = 2πR = 10π cm." },
+      { type:"mc", text:"Bảng tần số thời gian tập thể dục (phút): [0;20): 8, [20;40): 9, [40;60): 11, [60;80): 8. Nhóm có tần số tương đối 25% là:", opts:["[60;80)","[0;20)","[40;60)","[20;40)"], correct:3, explain:"Tổng = 36. Nhóm [20;40): 9/36 = 0,25 = 25%." },
+      { type:"mc", text:"Diện tích mặt cầu có đường kính 10 cm bằng:", opts:["25π cm²","50π cm²","100π cm²","400π cm²"], correct:2, explain:"d = 10 → R = 5. S = 4πR² = 4π·25 = 100π cm²." },
+      { type:"mc", text:"Bảng cân nặng 45 HS: 48kg (5 hs), 49kg (12 hs), 50kg (13 hs), 51kg (8 hs), 52kg (7 hs). Số HS cân nặng 50 kg là:", opts:["5","13","12","8"], correct:1, explain:"Theo bảng tần số, giá trị 50 kg có tần số là 13." },
+      { type:"mc", text:"Miếng tôn nửa hình tròn đường kính AB = 20 cm cuộn thành hình nón. Thể tích hình nón (π ≈ 3,14) xấp xỉ:", opts:["227 cm³","327 cm³","427 cm³","527 cm³"], correct:0, explain:"Đường sinh l = 10. Chu vi nửa đường tròn = 10π = 2πr → r = 5. h = √(100−25) = 5√3. V = πr²h/3 ≈ 3,14·25·8,66/3 ≈ 227 cm³." },
+
+      { type:"tf", text:"Xét các mệnh đề (kiến thức hình học không gian và đại số):", statements:[
+        { stmt:"Hình trụ có hai đáy là hai hình tròn bằng nhau và song song", correct:true },
+        { stmt:"Diện tích xung quanh hình nón = πrl (r: bán kính đáy, l: đường sinh)", correct:true },
+        { stmt:"√(a²) = a với mọi a > 0", correct:true },
+        { stmt:"Nếu Δ < 0 thì phương trình bậc hai có 2 nghiệm phân biệt", correct:false }
+      ], explains:[
+        "Đúng. Đây là đặc điểm cơ bản của hình trụ.",
+        "Đúng. Công thức diện tích xung quanh hình nón.",
+        "Đúng. Khi a > 0: √(a²) = |a| = a.",
+        "Sai. Δ < 0 → PT vô nghiệm trong ℝ."
+      ]},
+
+      { type:"short", text:"Hộp 3 bi đỏ, 7 bi vàng. Xác suất lấy bi vàng = a/b (phân số tối giản). Tìm a.", answer:"7", hint:"P = số bi vàng / tổng", explain:"P(vàng) = 7/10 (tối giản). a = 7." },
+      { type:"short", text:"Hình nón r = 3 cm, l = 5 cm. Tính chiều cao h (cm).", answer:"4", hint:"h² = l² − r²", explain:"h = √(25 − 9) = √16 = 4 cm." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 10: ĐỀ THI TUYỂN SINH – ĐỀ 2 ====================
+  {
+    id: "t10",
+    emoji: "📝",
+    name: "Đề thi tuyển sinh – Đề 2",
+    desc: "Đề thi tuyển sinh thực tế, tổng hợp đại số – hình học – xác suất",
+    questions: [
+      { type:"mc", text:"Phương trình nào sau đây là phương trình bậc nhất hai ẩn?", opts:["√x − 2y = 8","3x − 5y = 1","x + 5y² = 4","x³ + xy = −7"], correct:1, explain:"PT bậc nhất hai ẩn có dạng ax + by = c (bậc 1 theo x, y). Chỉ 3x − 5y = 1 thỏa mãn." },
+      { type:"mc", text:"Đồ thị hàm số y = 3x² là parabol đi qua gốc tọa độ. Điểm nào thuộc đồ thị?", opts:["(1; 1)","(−1; −3)","(2; 6)","(1; 3)"], correct:3, explain:"Thay x = 1: y = 3(1)² = 3. Điểm (1; 3) thuộc đồ thị." },
+      { type:"mc", text:"Lớp 9E có 5 bạn A, B, C, D, E. Chọn ngẫu nhiên 2 bạn trực nhật. Số phần tử không gian mẫu là:", opts:["5","20","25","10"], correct:3, explain:"C(5,2) = 5!/(2!·3!) = 10." },
+      { type:"mc", text:"Điều kiện xác định của P = √(x + 1) + 6/(x − 3) là:", opts:["x > −1 và x ≠ 3","x ≥ −1 và x ≠ 3","x ≥ −1","x > 3"], correct:1, explain:"Cần x + 1 ≥ 0 → x ≥ −1, và x − 3 ≠ 0 → x ≠ 3." },
+      { type:"mc", text:"Gieo xúc xắc được mặt b chấm. Xác suất để PT x² + bx + 2 = 0 có nghiệm là:", opts:["2/3","1/3","1/2","5/6"], correct:0, explain:"Cần Δ = b² − 8 ≥ 0 → b ≥ 3 (b nguyên). b ∈ {3,4,5,6}: P = 4/6 = 2/3." },
+      { type:"mc", text:"Căn bậc hai số học của 16 là:", opts:["−4","±4","4","256"], correct:2, explain:"Căn bậc hai số học = √16 = 4 (giá trị không âm)." },
+      { type:"mc", text:"PT x² − 5x + 3 = 0 có hai nghiệm x₁, x₂. Tích x₁·x₂ bằng:", opts:["5","3","−3","−5"], correct:1, explain:"Theo Vi-ét: x₁·x₂ = c/a = 3/1 = 3." },
+      { type:"mc", text:"Hộp 6 thẻ ghi số 1, 2, 3, 4, 5, 6. Rút ngẫu nhiên 2 thẻ. Xác suất tổng hai số chia hết cho 3:", opts:["2/5","4/15","1/3","7/15"], correct:2, explain:"C(6,2)=15. Các cặp: (1,2),(1,5),(2,4),(3,6),(4,5) → 5 cặp. P = 5/15 = 1/3." },
+      { type:"mc", text:"Số nghiệm nguyên dương của bất phương trình 2(x − 3) ≤ 6 − x là:", opts:["3","4","5","Vô số"], correct:1, explain:"2x − 6 ≤ 6 − x → 3x ≤ 12 → x ≤ 4. Nghiệm nguyên dương: {1, 2, 3, 4} → 4 nghiệm." },
+      { type:"mc", text:"Hệ { 2x − 3y = 5 ; x + 2y = 6 } có nghiệm duy nhất (x₀; y₀). Giá trị x₀ − y₀ bằng:", opts:["1","2","3","4"], correct:2, explain:"x = 6−2y. Thay: 2(6−2y)−3y = 5 → 12−7y = 5 → y = 1, x = 4. x₀−y₀ = 3." },
+
+      { type:"tf", text:"Xét các mệnh đề về đại số và xác suất:", statements:[
+        { stmt:"Căn bậc hai số học của a ≥ 0 là số không âm x sao cho x² = a", correct:true },
+        { stmt:"Phương trình bậc nhất hai ẩn luôn có đúng một nghiệm", correct:false },
+        { stmt:"Nếu y = kx (k ≠ 0) thì đồ thị là đường thẳng qua gốc tọa độ", correct:true },
+        { stmt:"C(5,2) = C(5,3) = 10", correct:true }
+      ], explains:[
+        "Đúng. Đây là định nghĩa căn bậc hai số học.",
+        "Sai. PT bậc nhất hai ẩn có vô số nghiệm (là đường thẳng trên mặt phẳng Oxy).",
+        "Đúng. y = kx là hàm bậc nhất qua gốc O.",
+        "Đúng. C(5,2) = 10 và C(5,3) = 10 (tính chất C(n,k) = C(n,n−k))."
+      ]},
+
+      { type:"short", text:"Hệ { 2x−3y = 5 ; x+2y = 6 } có nghiệm (x₀;y₀). Tính x₀ + y₀.", answer:"5", hint:"Giải hệ bằng phương pháp thế", explain:"x = 4, y = 1 → x₀ + y₀ = 5." },
+      { type:"short", text:"Gieo xúc xắc 1 lần. P(mặt chẵn) = a/b (tối giản). Tìm a + b.", answer:"3", hint:"Mặt chẵn: 2, 4, 6", explain:"P = 3/6 = 1/2 → a=1, b=2, a+b=3." },
+      { type:"short", text:"Hộp 6 thẻ (ghi 1–6), rút 2 thẻ. Tổng số cách rút?", answer:"15", hint:"Tổ hợp C(6,2)", explain:"C(6,2) = 6!/(2!·4!) = 15." },
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 11: ĐỀ THI TUYỂN SINH – ĐỀ 3 ====================
+  {
+    id: "t11",
+    emoji: "🎯",
+    name: "Đề thi tuyển sinh – Đề 3",
+    desc: "Đề ôn tập tổng hợp 32 câu: lượng giác, hàm số, xác suất, hình học, căn thức",
+    questions: [
+      { type:"mc", text:"Tam giác ABC vuông tại A, sinC = 3/5, BC = 10 cm. Độ dài cạnh AB bằng:", opts:["8 cm","10 cm","6 cm","4 cm"], correct:2, explain:"sinC = AB/BC → AB = BC·sinC = 10·(3/5) = 6 cm." },
+      { type:"mc", text:"Phương trình nào sau đây là phương trình bậc hai một ẩn?", opts:["3x³ + x − 1 = 0","√2·x² + x + 1 = 0","x⁴ + x² − 2 = 0","2x + 3 = 0"], correct:1, explain:"PT bậc hai một ẩn có dạng ax² + bx + c = 0 (a ≠ 0). Chỉ √2·x² + x + 1 = 0 có bậc 2." },
+      { type:"mc", text:"Đo 60 lá dương xỉ, bảng tần số ghép nhóm: [10;20): 8, [20;30): 18, [30;40): 24, [40;50): 10. Bảng có bao nhiêu nhóm?", opts:["3","4","5","6"], correct:1, explain:"Bảng có 4 nhóm: [10;20), [20;30), [30;40), [40;50)." },
+      { type:"mc", text:"Điều kiện xác định của √(1 − x) là:", opts:["x ≤ 1","x ≥ 1","x < 1","x > 1"], correct:0, explain:"Cần 1 − x ≥ 0 → x ≤ 1." },
+      { type:"mc", text:"Gieo xúc xắc 2 lần. Các kết quả thuận lợi cho biến cố \"Tổng hai mặt bằng 5\" là:", opts:["(1;4), (4;1)","(1;4), (2;3), (3;2), (4;1)","(1;4), (2;3)","(5;0), (0;5)"], correct:1, explain:"Các cặp (a;b) có a+b=5 với 1≤a,b≤6: (1;4), (2;3), (3;2), (4;1) → 4 kết quả." },
+      { type:"mc", text:"Hệ phương trình { x − 2y = 1 ; 3x + y = 4 } có nghiệm (x; y) là:", opts:["(9/7; 1/7)","(1; 0)","(2; 1)","(0; −1)"], correct:0, explain:"Từ PT1: x = 1+2y. Thay: 3(1+2y)+y = 4 → 7y = 1 → y = 1/7, x = 9/7." },
+      { type:"mc", text:"Biểu đồ số HS giỏi: Lớp 6: 5, Lớp 7: 15, Lớp 8: 10, Lớp 9: 25. Chọn ngẫu nhiên 1 HS giỏi, xác suất thuộc lớp 9:", opts:["5/9","5/11","25/55","9/55"], correct:1, explain:"Tổng = 5+15+10+25 = 55. P(lớp 9) = 25/55 = 5/11." },
+      { type:"mc", text:"ĐKXĐ của phương trình (x−7)/(2x+3) − 1/2 = x là:", opts:["x ≠ −3/2","x ≠ 3/2","x ≠ 7","x ≠ 0"], correct:0, explain:"Mẫu 2x + 3 ≠ 0 → x ≠ −3/2." },
+      { type:"mc", text:"Căn bậc ba của −8 là:", opts:["−2","2","±2","4"], correct:0, explain:"∛(−8) = −2 vì (−2)³ = −8." },
+      { type:"mc", text:"Đường tròn (O; 3), điểm A cách O = 5 cm. Tiếp tuyến AB (B là tiếp điểm). Độ dài AB:", opts:["3 cm","4 cm","5 cm","6 cm"], correct:1, explain:"AB² = OA² − OB² = 25 − 9 = 16 → AB = 4 cm." },
+      { type:"mc", text:"ΔABC vuông tại A, AB = 3, BC = 6. Khẳng định nào đúng?", opts:["tanB = 1/√3","tanB = √3/3","tanB = √3","tanB = 3"], correct:2, explain:"AC = √(36−9) = 3√3. tanB = AC/AB = 3√3/3 = √3." },
+      { type:"mc", text:"Hình vuông cạnh 10 cm. Bán kính đường tròn nội tiếp bằng:", opts:["5 cm","10 cm","5√2 cm","10√2 cm"], correct:0, explain:"Bán kính đường tròn nội tiếp = cạnh/2 = 10/2 = 5 cm." },
+      { type:"mc", text:"Hệ số góc của đường thẳng 2x − y = 4 bằng:", opts:["−2","2","4","−4"], correct:1, explain:"2x − y = 4 → y = 2x − 4. Hệ số góc a = 2." },
+      { type:"mc", text:"Biểu đồ tròn điểm kiểm tra 60 HS: 5đ: 15%, 6đ: 20%, 7đ: 25%, 8đ: 30%, 9đ: 10%. Số HS dưới 7 điểm:", opts:["21","24","15","9"], correct:0, explain:"Dưới 7đ = 5đ + 6đ = 15% + 20% = 35%. 60 × 35% = 21 HS." },
+      { type:"mc", text:"Với a > 2, rút gọn a + √((a − 2)²) bằng:", opts:["2","2a","2a − 2","2 − 2a"], correct:2, explain:"√((a−2)²) = |a−2| = a−2 (vì a>2). Kết quả: a + a − 2 = 2a − 2." },
+      { type:"mc", text:"Đường thẳng y = x − 2m cắt parabol y = x² tại 2 điểm phân biệt ở hai phía trục tung khi:", opts:["m > 0","m = 0","m < 0","m ≤ 0"], correct:2, explain:"x² = x−2m → x²−x+2m = 0. Hai nghiệm trái dấu: x₁·x₂ < 0 → 2m < 0 → m < 0." },
+      { type:"mc", text:"Hàm số nào có đồ thị là parabol bề lõm quay lên và hẹp hơn y = x²?", opts:["y = −2x²","y = 2x²","y = −x²","y = x²/2"], correct:1, explain:"y = 2x²: a = 2 > 0 (lõm lên), |a| = 2 > 1 (hẹp hơn y = x²)." },
+      { type:"mc", text:"Hộp 20 thẻ ghi số 1 đến 20. Rút ngẫu nhiên 1 thẻ. Xác suất số chia hết cho 3:", opts:["3/10","3/20","1/3","7/20"], correct:0, explain:"Chia hết cho 3: {3,6,9,12,15,18} → 6 số. P = 6/20 = 3/10." },
+      { type:"mc", text:"Biểu đồ tròn sản lượng trái cây: Xoài 17,5%, Vải thiều 20%, Nhãn 27,5%, Loại khác 35%. Tổng phần trăm Nhãn và Vải thiều:", opts:["37,5%","47,5%","45%","55%"], correct:1, explain:"Nhãn + Vải thiều = 27,5% + 20% = 47,5%." },
+      { type:"mc", text:"Bảng cân nặng 40 HS: [35;40): 5, [40;45): 11, [45;50): 16, [50;55): 8. Số HS cân nặng dưới 45 kg:", opts:["16","5","11","24"], correct:0, explain:"Dưới 45 kg = [35;40) + [40;45) = 5 + 11 = 16 HS." },
+      { type:"mc", text:"Gieo xúc xắc 1 lần rồi tung đồng xu 1 lần. Số phần tử không gian mẫu:", opts:["6","8","12","24"], correct:2, explain:"Xúc xắc: 6 kết quả × Đồng xu: 2 kết quả = 12." },
+      { type:"mc", text:"Số nào là nghiệm của bất phương trình x − 8 < 0?", opts:["12","9","6","15"], correct:2, explain:"x − 8 < 0 → x < 8. Chỉ có x = 6 < 8." },
+      { type:"mc", text:"Bốn quạt tròn bán kính 30 cm, cung tròn 120°. Tổng diện tích 4 hình quạt:", opts:["900π cm²","1200π cm²","3600π cm²","300π cm²"], correct:1, explain:"S₁ = (120/360)·π·30² = (1/3)·900π = 300π. Tổng = 4 × 300π = 1200π cm²." },
+      { type:"mc", text:"Diện tích mặt cầu bán kính R = 3 cm:", opts:["9π cm²","36π cm²","12π cm²","108π cm²"], correct:1, explain:"S = 4πR² = 4π·9 = 36π cm²." },
+      { type:"mc", text:"Giao điểm parabol y = x² và đường thẳng y = 3x + 2 có tổng hoành độ S bằng:", opts:["−3","−2","2","3"], correct:3, explain:"x² = 3x+2 → x²−3x−2 = 0. Theo Vi-ét: S = x₁+x₂ = 3." },
+      { type:"mc", text:"Đường tròn (O; 10), dây AB cách tâm 8 cm. Độ dài AB:", opts:["12 cm","8 cm","6 cm","16 cm"], correct:0, explain:"Nửa dây = √(R²−d²) = √(100−64) = 6. AB = 12 cm." },
+      { type:"mc", text:"Hình nón có bán kính đáy r = 3 cm, chiều cao h = 5 cm. Thể tích:", opts:["45π cm³","30π cm³","15π cm³","9π cm³"], correct:2, explain:"V = (1/3)πr²h = (1/3)π·9·5 = 15π cm³." },
+      { type:"mc", text:"Đường tròn (O), góc nội tiếp BAC = 130°. Số đo cung BC nhỏ bằng:", opts:["130°","100°","260°","65°"], correct:1, explain:"Cung BC lớn = 2×130° = 260°. Cung BC nhỏ = 360° − 260° = 100°." },
+      { type:"mc", text:"Tam giác ABC vuông tại A, AB = 3, AC = 4, AH ⊥ BC. Độ dài AH:", opts:["5","7/5","5/12","12/5"], correct:3, explain:"BC = √(9+16) = 5. AH = AB·AC/BC = 3·4/5 = 12/5." },
+      { type:"mc", text:"Taxi: 15 nghìn đ/km đầu, 12 nghìn đ/km tiếp theo. Có 150 nghìn đồng, đi tối đa bao nhiêu km?", opts:["10 km","12 km","15 km","11 km"], correct:1, explain:"15 + 12(x−1) ≤ 150 → 12(x−1) ≤ 135 → x−1 ≤ 11,25 → x ≤ 12,25. Tối đa 12 km." },
+      { type:"mc", text:"Đường tròn (O; R), A thuộc (O). BC ⊥ OA tại trung điểm M của OA. Tiếp tuyến tại B cắt đường thẳng OA tại E. Tính BE:", opts:["R√2","R/2","R√3","2R"], correct:2, explain:"OM = R/2, OB = R → BM = R√3/2. Góc BOM: tan = √3 → 60°. Tam giác OBE vuông tại B: BE = OB·tan60° = R√3." },
+      { type:"mc", text:"Đo chiều cao tháp BP: hai giác kế tại A, C (cao 1,62m). Góc A = 65°, góc C = 30°. MN = 100m (M, N trên mặt đất). Chiều cao BP ≈:", opts:["47,11 m","35,62 m","52,00 m","41,62 m"], correct:0, explain:"Gọi H = BP−1,62. H/tan65° + H/tan30° = 100 → H(0,4663 + 1,7321) = 100 → H ≈ 45,49. BP = 45,49 + 1,62 ≈ 47,11 m." },
+
+      // --- ĐÚNG / SAI ---
+      { type:"tf", text:"Xét các mệnh đề tổng hợp (Đề 3):", statements:[
+        { stmt:"Căn bậc ba của −27 là −3", correct:true },
+        { stmt:"Hình nón có đáy là hình tròn", correct:true },
+        { stmt:"Góc nội tiếp bằng góc ở tâm cùng chắn một cung", correct:false },
+        { stmt:"tanα = đối/kề trong tam giác vuông (α là góc nhọn)", correct:true }
+      ], explains:[
+        "Đúng. (−3)³ = −27 nên ∛(−27) = −3.",
+        "Đúng. Hình nón có một đáy là hình tròn.",
+        "Sai. Góc nội tiếp = ½ góc ở tâm cùng chắn một cung.",
+        "Đúng. Định nghĩa tỉ số lượng giác tanα = cạnh đối / cạnh kề."
+      ]},
+      { type:"tf", text:"Xét các mệnh đề về xác suất và thống kê:", statements:[
+        { stmt:"Gieo 1 xúc xắc, xác suất ra mặt 6 là 1/6", correct:true },
+        { stmt:"Biểu đồ tròn biểu diễn tỉ lệ phần trăm các thành phần", correct:true },
+        { stmt:"Nếu P(A) = 0 thì biến cố A chắc chắn xảy ra", correct:false },
+        { stmt:"Không gian mẫu khi gieo 2 xúc xắc có 36 phần tử", correct:true }
+      ], explains:[
+        "Đúng. P(6) = 1/6.",
+        "Đúng. Biểu đồ tròn dùng để biểu diễn tỉ lệ phần trăm.",
+        "Sai. P(A) = 0 nghĩa là biến cố A không thể xảy ra (biến cố không thể).",
+        "Đúng. 6 × 6 = 36 phần tử."
+      ]},
+
+      // --- TRẢ LỜI NGẮN ---
+      { type:"short", text:"ΔABC vuông tại A, AB = 3, BC = 6. Tính AC (kết quả dạng a√3, nhập a).", answer:"3", hint:"Dùng Pythagore: AC² = BC² − AB²", explain:"AC = √(36−9) = √27 = 3√3 → a = 3." },
+      { type:"short", text:"Đường tròn (O; R=10), dây AB cách tâm 8cm. Nửa dây AB bằng bao nhiêu cm?", answer:"6", hint:"Nửa dây² = R² − d²", explain:"Nửa dây = √(100−64) = √36 = 6 cm." },
+      { type:"short", text:"Hộp 20 thẻ (1-20). Số thẻ chia hết cho 3 là bao nhiêu?", answer:"6", hint:"Liệt kê: 3, 6, 9, ...", explain:"{3, 6, 9, 12, 15, 18} → 6 thẻ." },
+    ]
+  }
+];
+
+// ============ STATE ============
+let state = {
+  completed: JSON.parse(localStorage.getItem('t9completed') || '{}'),
+  scores: JSON.parse(localStorage.getItem('t9scores') || '{}'),
+  history: JSON.parse(localStorage.getItem('t9history') || '[]')
+};
+function saveState(){
+  localStorage.setItem('t9completed',JSON.stringify(state.completed));
+  localStorage.setItem('t9scores',JSON.stringify(state.scores));
+  localStorage.setItem('t9history',JSON.stringify(state.history));
+}
+
+// ============ CONFETTI ============
+function launchConfetti(x,y){
+  const c=document.createElement('div');c.className='confetti-container';document.body.appendChild(c);
+  const colors=['#10b981','#f59e0b','#ef4444','#3b82f6','#8b5cf6','#ec4899','#14b8a6'];
+  for(let i=0;i<50;i++){
+    const p=document.createElement('div');
+    const sz=6+Math.random()*10;const col=colors[Math.floor(Math.random()*colors.length)];
+    p.style.cssText=`position:absolute;width:${sz}px;height:${sz}px;left:${x}px;top:${y}px;background:${col};border-radius:${Math.random()>.5?'50%':'2px'};opacity:1`;
+    const dx=(Math.random()-.5)*500,dy=(Math.random()-.8)*400;
+    p.style.setProperty('--dx',dx+'px');p.style.setProperty('--dy',dy+'px');
+    p.style.setProperty('--dx2',(dx+(Math.random()-.5)*200)+'px');p.style.setProperty('--dy2',(dy+100)+'px');
+    p.style.animation=`confettiBurst ${1.5+Math.random()*1.5}s ease-out forwards`;
+    p.style.animationDelay=Math.random()*.2+'s';c.appendChild(p);
+  }
+  setTimeout(()=>c.remove(),3500);
+}
+function showCelebration(text){
+  const o=document.createElement('div');o.className='celebration-overlay';
+  o.innerHTML=`<div class="celebration-text">${text}</div>`;
+  document.body.appendChild(o);requestAnimationFrame(()=>o.classList.add('show'));
+  setTimeout(()=>{o.classList.remove('show');setTimeout(()=>o.remove(),300)},1800);
+}
+
+// ============ CATEGORY & ANALYSIS SYSTEM ============
+const catInfo = {
+  "can-thuc": { name:"Căn bậc hai", icon:"√", tips:"Ôn lại các phép biến đổi căn thức: đưa thừa số ra ngoài/vào trong dấu căn, trục căn thức ở mẫu, hằng đẳng thức √(A²)=|A|. Luyện thêm bài rút gọn biểu thức chứa căn." },
+  "ham-so": { name:"Hàm số", icon:"📈", tips:"Nắm vững tính chất đồng biến/nghịch biến (dấu hệ số a), đồ thị y=ax+b (cắt trục), parabol y=ax² (đỉnh, bề lõm). Tập vẽ đồ thị và tìm giao điểm." },
+  "pt-bac2": { name:"Phương trình bậc hai", icon:"📐", tips:"Thuộc công thức nghiệm (Δ, Δ'), hệ thức Vi-ét (tổng & tích nghiệm). Luyện dạng tìm điều kiện tham số m, tính biểu thức đối xứng qua Vi-ét." },
+  "he-pt": { name:"Hệ phương trình", icon:"⚡", tips:"Thành thạo 2 phương pháp: cộng đại số và thế. Luyện nhận dạng hệ vô nghiệm/vô số nghiệm. Tập lập hệ PT từ bài toán thực tế." },
+  "duong-tron": { name:"Đường tròn", icon:"⭕", tips:"Ôn góc nội tiếp = ½ cung bị chắn, tính chất tiếp tuyến vuông góc bán kính, tứ giác nội tiếp (tổng 2 góc đối = 180°). Luyện bài tập tính bán kính, dây cung." },
+  "luong-giac": { name:"Lượng giác & Đồng dạng", icon:"📏", tips:"Nhớ giá trị lượng giác đặc biệt (30°, 45°, 60°). Nắm sin²α+cos²α=1, tanα=sinα/cosα. Tập bài toán đo chiều cao, khoảng cách thực tế." },
+  "lap-pt": { name:"Bài toán lập PT", icon:"🧩", tips:"Luyện kỹ năng đặt ẩn, lập phương trình từ đề bài. Các dạng: chuyển động, năng suất, số học. Chú ý điều kiện của ẩn và đối chiếu nghiệm." },
+  "xac-suat": { name:"Xác suất & Thống kê", icon:"🎲", tips:"Nắm vững cách đếm không gian mẫu, biến cố. Ôn tổ hợp C(n,k), bảng tần số, tần số tương đối. Luyện bài xác suất cổ điển." },
+  "hinh-kgian": { name:"Hình không gian", icon:"🔷", tips:"Nhớ công thức hình trụ, hình nón, hình cầu (Sxq, Stp, V). Phân biệt bán kính đáy, đường sinh, chiều cao. Luyện bài tập thực tế." },
+  "bat-pt": { name:"Bất phương trình", icon:"≥", tips:"Ôn quy tắc chuyển vế đổi dấu, nhân/chia số âm đổi chiều. Biểu diễn nghiệm trên trục số. Chú ý nghiệm nguyên, nghiệm dương." }
+};
+
+// Map topic to default category (for single-topic quizzes)
+const topicCat = { t1:"can-thuc", t2:"ham-so", t3:"pt-bac2", t4:"he-pt", t5:"duong-tron", t6:"luong-giac", t7:"lap-pt" };
+
+// For mixed quizzes (t8, t9, t10, t11), map each question index → category
+const mixedCats = {
+  t8: ["can-thuc","pt-bac2","he-pt","ham-so","duong-tron","luong-giac","pt-bac2","can-thuc","he-pt","can-thuc","pt-bac2","luong-giac"],
+  t9: ["he-pt","pt-bac2","bat-pt","hinh-kgian","can-thuc","luong-giac","ham-so","duong-tron","xac-suat","he-pt","xac-suat","hinh-kgian","pt-bac2","duong-tron","xac-suat","hinh-kgian","xac-suat","hinh-kgian","hinh-kgian","xac-suat","hinh-kgian"],
+  t10: ["he-pt","ham-so","xac-suat","can-thuc","xac-suat","can-thuc","pt-bac2","xac-suat","bat-pt","he-pt","can-thuc","he-pt","xac-suat","xac-suat"],
+  t11: ["luong-giac","pt-bac2","xac-suat","can-thuc","xac-suat","he-pt","xac-suat","pt-bac2","can-thuc","duong-tron","luong-giac","duong-tron","ham-so","xac-suat","can-thuc","ham-so","ham-so","xac-suat","xac-suat","xac-suat","xac-suat","bat-pt","duong-tron","hinh-kgian","ham-so","duong-tron","hinh-kgian","duong-tron","luong-giac","lap-pt","duong-tron","luong-giac","can-thuc","xac-suat","luong-giac","duong-tron","xac-suat"]
+};
+
+function getQuestionCat(examId, qIndex) {
+  if (topicCat[examId]) return topicCat[examId];
+  if (mixedCats[examId] && mixedCats[examId][qIndex]) return mixedCats[examId][qIndex];
+  return "pt-bac2"; // fallback
+}
+
+function renderAnalysis(examId, questionResults) {
+  // questionResults: [{ qi, type, cat, correct, total }]
+  const card = document.getElementById('analysisCard');
+
+  // Aggregate by category
+  const byCat = {};
+  const byType = { mc:{c:0,t:0}, tf:{c:0,t:0}, short:{c:0,t:0} };
+
+  questionResults.forEach(r => {
+    if (!byCat[r.cat]) byCat[r.cat] = { correct:0, total:0 };
+    byCat[r.cat].correct += r.correct;
+    byCat[r.cat].total += r.total;
+    if (byType[r.type]) {
+      byType[r.type].c += r.correct;
+      byType[r.type].t += r.total;
+    }
+  });
+
+  // Sort categories by performance
+  const catEntries = Object.entries(byCat).map(([id, d]) => ({
+    id, ...d, pct: Math.round(d.correct / d.total * 100)
+  })).sort((a, b) => b.pct - a.pct);
+
+  const strengths = catEntries.filter(c => c.pct >= 70);
+  const weaknesses = catEntries.filter(c => c.pct < 50);
+  const midRange = catEntries.filter(c => c.pct >= 50 && c.pct < 70);
+
+  // Build HTML
+  let html = `<div class="analysis-card fade-in">`;
+  html += `<div class="analysis-title">📊 Phân Tích Kết Quả Chi Tiết</div>`;
+
+  // --- Performance by type ---
+  html += `<div class="analysis-section"><h4 class="type-h">🎯 Kết quả theo dạng bài</h4><div class="type-perf">`;
+  const typeLabels = { mc: { icon:"🔵", name:"Chọn đáp án" }, tf: { icon:"🟡", name:"Đúng / Sai" }, short: { icon:"🟢", name:"Trả lời ngắn" } };
+  ['mc','tf','short'].forEach(tp => {
+    const d = byType[tp];
+    if (d.t === 0) return;
+    const pct = Math.round(d.c / d.t * 100);
+    const col = pct >= 70 ? 'var(--success)' : pct >= 50 ? 'var(--accent)' : 'var(--danger)';
+    html += `<div class="type-perf-card">
+      <div class="tp-icon">${typeLabels[tp].icon}</div>
+      <div class="tp-label">${typeLabels[tp].name}</div>
+      <div class="tp-score" style="color:${col}">${d.c}/${d.t} (${pct}%)</div>
+      <div class="tp-bar"><div class="tp-bar-fill" style="width:${pct}%;background:${col}"></div></div>
+    </div>`;
+  });
+  html += `</div></div>`;
+
+  // --- Strengths ---
+  if (strengths.length > 0) {
+    html += `<div class="analysis-section"><h4 class="strength-h">💪 Điểm mạnh</h4>`;
+    strengths.forEach(c => {
+      const info = catInfo[c.id] || { name:c.id, icon:"📌" };
+      const badge = c.pct >= 90 ? '<span class="cat-badge badge-excellent">Xuất sắc</span>' : '<span class="cat-badge badge-good">Tốt</span>';
+      html += `<div class="analysis-item strength">
+        <span class="cat-icon">${info.icon}</span>
+        <span class="cat-name">${info.name}</span>
+        <div class="cat-bar"><div class="cat-bar-fill high" style="width:${c.pct}%"></div></div>
+        <span class="cat-score" style="color:#059669">${c.pct}%</span>
+        ${badge}
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // --- Mid range ---
+  if (midRange.length > 0) {
+    html += `<div class="analysis-section"><h4 style="color:var(--accent)">⚠️ Cần củng cố</h4>`;
+    midRange.forEach(c => {
+      const info = catInfo[c.id] || { name:c.id, icon:"📌" };
+      html += `<div class="analysis-item neutral">
+        <span class="cat-icon">${info.icon}</span>
+        <span class="cat-name">${info.name}</span>
+        <div class="cat-bar"><div class="cat-bar-fill mid" style="width:${c.pct}%"></div></div>
+        <span class="cat-score" style="color:#b45309">${c.pct}%</span>
+        <span class="cat-badge badge-good">Khá</span>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // --- Weaknesses ---
+  if (weaknesses.length > 0) {
+    html += `<div class="analysis-section"><h4 class="weakness-h">❌ Điểm yếu cần cải thiện</h4>`;
+    weaknesses.forEach(c => {
+      const info = catInfo[c.id] || { name:c.id, icon:"📌" };
+      html += `<div class="analysis-item weakness">
+        <span class="cat-icon">${info.icon}</span>
+        <span class="cat-name">${info.name}</span>
+        <div class="cat-bar"><div class="cat-bar-fill low" style="width:${c.pct}%"></div></div>
+        <span class="cat-score" style="color:#dc2626">${c.pct}%</span>
+        <span class="cat-badge badge-weak">Yếu</span>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  // --- No weaknesses congratulation ---
+  if (weaknesses.length === 0 && midRange.length === 0) {
+    html += `<div class="analysis-section"><div class="tip-item" style="background:#ecfdf5;border-color:#a7f3d0">
+      <span style="font-size:1.5rem">🏆</span>
+      <div><strong>Tuyệt vời!</strong> Em không có mảng kiến thức yếu nào. Hãy tiếp tục duy trì phong độ và thử sức với các đề khó hơn!</div>
+    </div></div>`;
+  }
+
+  // --- Tips ---
+  const tipsNeeded = [...weaknesses, ...midRange];
+  if (tipsNeeded.length > 0) {
+    html += `<div class="analysis-section"><h4 class="tips-h">💡 Hướng cải thiện</h4>`;
+    tipsNeeded.forEach((c, i) => {
+      const info = catInfo[c.id];
+      if (!info) return;
+      html += `<div class="tip-item">
+        <span class="tip-num">${i+1}</span>
+        <div><strong>${info.name} (${c.correct}/${c.total}):</strong> ${info.tips}</div>
+      </div>`;
+    });
+
+    // Add type-specific tips
+    ['mc','tf','short'].forEach(tp => {
+      const d = byType[tp];
+      if (d.t > 0 && Math.round(d.c/d.t*100) < 50) {
+        const tipText = tp === 'mc' ? 'Dạng chọn đáp án: Hãy loại trừ các phương án sai trước, thử thay số kiểm tra. Đọc kỹ đề, chú ý từ khóa "không", "luôn", "đúng nhất".'
+          : tp === 'tf' ? 'Dạng đúng/sai: Đọc từng mệnh đề cẩn thận, tìm phản ví dụ cho mệnh đề sai. Chú ý các từ tuyệt đối "luôn luôn", "mọi", "bất kỳ".'
+          : 'Dạng trả lời ngắn: Viết rõ ràng, chú ý đơn vị và dấu. Kiểm tra lại phép tính trước khi ghi đáp án. Dùng cách ước lượng để kiểm tra kết quả.';
+        tipsNeeded.length++;
+        html += `<div class="tip-item">
+          <span class="tip-num">${tipsNeeded.length}</span>
+          <div>${tipText}</div>
+        </div>`;
+      }
+    });
+
+    html += `</div>`;
+  }
+
+  // --- Overall summary ---
+  const totalC = questionResults.reduce((s,r) => s + r.correct, 0);
+  const totalT = questionResults.reduce((s,r) => s + r.total, 0);
+  const overallPct = Math.round(totalC / totalT * 100);
+  let summary = '';
+  if (overallPct >= 90) summary = '🌟 Em làm bài rất xuất sắc! Kiến thức toàn diện, sẵn sàng cho kỳ thi tuyển sinh.';
+  else if (overallPct >= 70) summary = '👍 Kết quả tốt! Em nắm khá vững kiến thức. Hãy tập trung ôn thêm các mảng còn yếu để đạt điểm cao hơn.';
+  else if (overallPct >= 50) summary = '📚 Em cần ôn tập thêm. Hãy dành thời gian luyện lại các dạng bài ở phần điểm yếu và làm lại bài để cải thiện.';
+  else summary = '⚡ Em cần nỗ lực nhiều hơn. Hãy ôn lại lý thuyết cơ bản từ đầu, làm bài tập từ dễ đến khó, và không ngại hỏi thầy cô khi chưa hiểu.';
+
+  html += `<div style="margin-top:16px;padding:16px;background:linear-gradient(135deg,#eef2ff,#ede9fe);border-radius:12px;text-align:center">
+    <div style="font-size:1rem;font-weight:600;color:#1e40af;line-height:1.6">${summary}</div>
+  </div>`;
+
+  html += `</div>`;
+  card.innerHTML = html;
+}
+
+// ============ NAVIGATION ============
+function showPage(page,data){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  if(page==='home'){
+    document.getElementById('page-home').classList.add('active');
+    document.getElementById('nav-home').classList.add('active');
+    renderHome();
+  } else if(page==='quiz'){
+    document.getElementById('page-quiz').classList.add('active');
+    document.getElementById('nav-home').classList.add('active');
+    renderQuiz(data);
+  } else if(page==='stats'){
+    document.getElementById('page-stats').classList.add('active');
+    document.getElementById('nav-stats').classList.add('active');
+    renderStats();
+  }
+  updateGlobalProgress();
+  window.scrollTo(0,0);
+}
+
+// ============ HOME ============
+function renderHome(){
+  const grid=document.getElementById('examGrid');grid.innerHTML='';
+  let totalQ=0,done=0;
+  examData.forEach(exam=>{
+    const qCount=countQuestions(exam);totalQ+=qCount;
+    const isDone=state.completed[exam.id];if(isDone)done++;
+    const pct=state.scores[exam.id]||0;
+    const card=document.createElement('div');card.className='exam-card fade-in';
+    card.onclick=()=>showPage('quiz',exam.id);
+    card.innerHTML=`
+      <div class="card-emoji" style="font-size:2.2rem">${exam.emoji}</div>
+      <h3>${exam.name}</h3>
+      <p>${exam.desc}</p>
+      <div class="card-meta">${qCount} câu hỏi · 3 dạng bài</div>
+      <div class="card-progress"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+      <div style="font-size:.78rem;color:var(--text-light);margin-top:5px">${isDone?'✅ Đã hoàn thành ('+pct+'%)':'Chưa làm'}</div>
+    `;grid.appendChild(card);
+  });
+  document.getElementById('statTopics').textContent=examData.length;
+  document.getElementById('statQuestions').textContent=totalQ;
+  document.getElementById('statDone').textContent=done;
+}
+function countQuestions(exam){
+  let n=0;
+  exam.questions.forEach(q=>{
+    if(q.type==='tf') n+=q.statements.length;
+    else n++;
+  });return n;
+}
+
+// ============ QUIZ ============
+let quizState={};
+function renderQuiz(examId){
+  const exam=examData.find(e=>e.id===examId);
+  if(!exam)return;
+  quizState={examId,answers:{},submitted:false};
+
+  document.getElementById('quizBreadcrumb').textContent=exam.name;
+  const header=document.getElementById('quizHeader');
+  const totalQ=countQuestions(exam);
+  const mcCount=exam.questions.filter(q=>q.type==='mc').length;
+  const tfCount=exam.questions.filter(q=>q.type==='tf').length;
+  const shortCount=exam.questions.filter(q=>q.type==='short').length;
+  header.innerHTML=`
+    <h2>${exam.emoji} ${exam.name}</h2>
+    <div class="quiz-info">
+      <span>📝 ${totalQ} câu</span>
+      <span>🔵 Chọn đáp án: ${mcCount}</span>
+      <span>🟡 Đúng/Sai: ${tfCount} nhóm</span>
+      <span>🟢 Trả lời ngắn: ${shortCount}</span>
+    </div>
+  `;
+
+  const body=document.getElementById('quizBody');body.innerHTML='';
+  let qNum=0;
+  const letters=['A','B','C','D'];
+
+  exam.questions.forEach((q,qi)=>{
+    const block=document.createElement('div');block.className='q-block fade-in';block.id=`qb-${qi}`;
+
+    if(q.type==='mc'){
+      qNum++;
+      block.innerHTML=`
+        <div class="q-label">
+          <span class="q-number">${qNum}</span>
+          <span class="q-type type-mc">Chọn đáp án</span>
+        </div>
+        <div class="q-text">${q.text}</div>
+        <div class="options">
+          ${q.opts.map((o,oi)=>`
+            <div class="opt-btn" data-qi="${qi}" data-oi="${oi}" onclick="selectMC(${qi},${oi})">
+              <span class="opt-letter">${letters[oi]}</span><span>${o}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="explanation" id="exp-${qi}"></div>
+      `;
+    } else if(q.type==='tf'){
+      qNum++;
+      block.innerHTML=`
+        <div class="q-label">
+          <span class="q-number">${qNum}</span>
+          <span class="q-type type-tf">Đúng / Sai</span>
+        </div>
+        <div class="q-text">${q.text}</div>
+        <div class="tf-grid">
+          <div class="tf-header">Mệnh đề</div>
+          <div class="tf-header">Đúng</div>
+          <div class="tf-header">Sai</div>
+          ${q.statements.map((s,si)=>`
+            <div class="tf-statement"><span class="stmt-letter">${letters[si]})</span> ${s.stmt}</div>
+            <div class="tf-choice"><div class="tf-radio" data-qi="${qi}" data-si="${si}" data-v="true" onclick="selectTF(${qi},${si},true)"></div></div>
+            <div class="tf-choice"><div class="tf-radio" data-qi="${qi}" data-si="${si}" data-v="false" onclick="selectTF(${qi},${si},false)"></div></div>
+          `).join('')}
+        </div>
+        ${q.statements.map((s,si)=>`<div class="explanation" id="exp-${qi}-${si}"></div>`).join('')}
+      `;
+    } else if(q.type==='short'){
+      qNum++;
+      block.innerHTML=`
+        <div class="q-label">
+          <span class="q-number">${qNum}</span>
+          <span class="q-type type-short">Trả lời ngắn</span>
+        </div>
+        <div class="q-text">${q.text}</div>
+        <input type="text" class="short-input" id="short-${qi}" placeholder="Nhập đáp án..." autocomplete="off">
+        <div class="short-hint">💡 ${q.hint}</div>
+        <div class="explanation" id="exp-${qi}"></div>
+      `;
+    }
+    body.appendChild(block);
+  });
+
+  const actions=document.getElementById('quizActions');
+  actions.innerHTML=`<button class="btn btn-primary" onclick="submitExam('${examId}')">📩 Nộp bài</button>`;
+  document.getElementById('quizResults').className='results-card';
+  document.getElementById('quizResults').innerHTML='';
+  document.getElementById('analysisCard').innerHTML='';
+}
+
+function selectMC(qi,oi){
+  if(quizState.submitted)return;
+  document.querySelectorAll(`.opt-btn[data-qi="${qi}"]`).forEach(b=>b.classList.remove('selected'));
+  document.querySelector(`.opt-btn[data-qi="${qi}"][data-oi="${oi}"]`).classList.add('selected');
+  quizState.answers[`mc-${qi}`]=oi;
+}
+function selectTF(qi,si,val){
+  if(quizState.submitted)return;
+  document.querySelectorAll(`.tf-radio[data-qi="${qi}"][data-si="${si}"]`).forEach(r=>r.classList.remove('selected'));
+  document.querySelector(`.tf-radio[data-qi="${qi}"][data-si="${si}"][data-v="${val}"]`).classList.add('selected');
+  if(!quizState.answers[`tf-${qi}`])quizState.answers[`tf-${qi}`]={};
+  quizState.answers[`tf-${qi}`][si]=val;
+}
+
+function submitExam(examId){
+  if(quizState.submitted)return;
+  quizState.submitted=true;
+  const exam=examData.find(e=>e.id===examId);
+  let totalPts=0,earnedPts=0,correctConfettis=[];
+  const analysisResults=[];
+
+  exam.questions.forEach((q,qi)=>{
+    const block=document.getElementById(`qb-${qi}`);
+
+    if(q.type==='mc'){
+      totalPts++;
+      const sel=quizState.answers[`mc-${qi}`];
+      const btns=document.querySelectorAll(`.opt-btn[data-qi="${qi}"]`);
+      btns.forEach(b=>b.classList.add('disabled'));
+      const expDiv=document.getElementById(`exp-${qi}`);
+
+      const mcCat=getQuestionCat(examId,qi);
+      if(sel===undefined){
+        btns[q.correct].classList.add('correct');
+        expDiv.className='explanation show wrong-exp';
+        expDiv.innerHTML='⚠️ Chưa chọn. '+q.explain;
+        block.classList.add('wrong-block');
+        analysisResults.push({qi,type:'mc',cat:mcCat,correct:0,total:1});
+      } else if(sel===q.correct){
+        btns[sel].classList.add('correct');earnedPts++;
+        expDiv.className='explanation show correct-exp';
+        expDiv.innerHTML='✅ Chính xác! '+q.explain;
+        block.classList.add('correct-block');
+        correctConfettis.push(btns[sel]);
+        analysisResults.push({qi,type:'mc',cat:mcCat,correct:1,total:1});
+      } else {
+        btns[sel].classList.add('wrong');btns[q.correct].classList.add('correct');
+        expDiv.className='explanation show wrong-exp';
+        expDiv.innerHTML='❌ Sai. '+q.explain;
+        block.classList.add('wrong-block');
+        analysisResults.push({qi,type:'mc',cat:mcCat,correct:0,total:1});
+      }
+    } else if(q.type==='tf'){
+      const ans=quizState.answers[`tf-${qi}`]||{};
+      const tfCat=getQuestionCat(examId,qi);
+      let tfCorrectCount=0,tfTotalCount=q.statements.length;
+      q.statements.forEach((s,si)=>{
+        totalPts++;
+        const radios=document.querySelectorAll(`.tf-radio[data-qi="${qi}"][data-si="${si}"]`);
+        radios.forEach(r=>r.classList.add('disabled'));
+        const userAns=ans[si];
+        const expDiv=document.getElementById(`exp-${qi}-${si}`);
+        const isCorrect=(userAns===s.correct);
+
+        if(userAns===undefined){
+          const correctR=document.querySelector(`.tf-radio[data-qi="${qi}"][data-si="${si}"][data-v="${s.correct}"]`);
+          correctR.classList.add('correct-r');
+          expDiv.className='explanation show wrong-exp';
+          expDiv.innerHTML=`⚠️ ${String.fromCharCode(65+si)}) Chưa chọn. ${q.explains[si]}`;
+        } else if(isCorrect){
+          const selR=document.querySelector(`.tf-radio[data-qi="${qi}"][data-si="${si}"][data-v="${userAns}"]`);
+          selR.classList.add('correct-r');earnedPts++;tfCorrectCount++;
+          expDiv.className='explanation show correct-exp';
+          expDiv.innerHTML=`✅ ${String.fromCharCode(65+si)}) ${q.explains[si]}`;
+        } else {
+          const selR=document.querySelector(`.tf-radio[data-qi="${qi}"][data-si="${si}"][data-v="${userAns}"]`);
+          selR.classList.add('wrong-r');
+          const correctR=document.querySelector(`.tf-radio[data-qi="${qi}"][data-si="${si}"][data-v="${s.correct}"]`);
+          correctR.classList.add('correct-r');
+          expDiv.className='explanation show wrong-exp';
+          expDiv.innerHTML=`❌ ${String.fromCharCode(65+si)}) ${q.explains[si]}`;
+        }
+      });
+      analysisResults.push({qi,type:'tf',cat:tfCat,correct:tfCorrectCount,total:tfTotalCount});
+    } else if(q.type==='short'){
+      totalPts++;
+      const input=document.getElementById(`short-${qi}`);
+      const userAns=input.value.trim().replace(',','.');
+      const correct=q.answer;
+      input.disabled=true;
+      const expDiv=document.getElementById(`exp-${qi}`);
+
+      const shortCat=getQuestionCat(examId,qi);
+      if(userAns===correct || userAns===correct.replace('.',',')){
+        input.classList.add('correct-i');earnedPts++;
+        expDiv.className='explanation show correct-exp';
+        expDiv.innerHTML='✅ Chính xác! '+q.explain;
+        block.classList.add('correct-block');
+        correctConfettis.push(input);
+        analysisResults.push({qi,type:'short',cat:shortCat,correct:1,total:1});
+      } else {
+        input.classList.add('wrong-i');
+        expDiv.className='explanation show wrong-exp';
+        expDiv.innerHTML=`❌ Đáp án đúng: <strong>${correct}</strong>. ${q.explain}`;
+        block.classList.add('wrong-block');
+        analysisResults.push({qi,type:'short',cat:shortCat,correct:0,total:1});
+      }
+    }
+  });
+
+  const pct=Math.round(earnedPts/totalPts*100);
+  const scoreClass=pct>=80?'excellent':pct>=50?'good':'poor';
+
+  // Confetti cho câu đúng
+  correctConfettis.forEach((el,i)=>{
+    setTimeout(()=>{
+      const r=el.getBoundingClientRect();
+      launchConfetti(r.left+r.width/2,r.top+r.height/2);
+    },i*150);
+  });
+
+  // Bắn hoa lớn nếu tốt
+  if(pct>=80){
+    setTimeout(()=>{
+      launchConfetti(window.innerWidth*.3,window.innerHeight*.3);
+      launchConfetti(window.innerWidth*.7,window.innerHeight*.3);
+      showCelebration(pct===100?'🏆 Hoàn hảo!':'🎉 Xuất sắc!');
+    },600);
+  } else if(pct>=60){
+    setTimeout(()=>{
+      launchConfetti(window.innerWidth/2,window.innerHeight/2);
+      showCelebration('👍 Khá tốt!');
+    },600);
+  }
+
+  // Results
+  const results=document.getElementById('quizResults');
+  results.className='results-card show';
+  results.innerHTML=`
+    <div class="results-score ${scoreClass}">${pct}%</div>
+    <div style="font-size:1.1rem;margin-bottom:8px">${pct>=80?'🎉 Xuất sắc!':pct>=50?'👍 Khá tốt!':'📚 Cần ôn lại!'}</div>
+    <div class="results-detail">
+      <div class="rd"><div class="rdv" style="color:var(--success)">${earnedPts}</div><div class="rdl">Câu đúng</div></div>
+      <div class="rd"><div class="rdv" style="color:var(--danger)">${totalPts-earnedPts}</div><div class="rdl">Câu sai</div></div>
+      <div class="rd"><div class="rdv">${totalPts}</div><div class="rdl">Tổng câu</div></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-outline" onclick="showPage('quiz','${examId}')">🔄 Làm lại</button>
+      <button class="btn btn-primary" onclick="showPage('home')">📋 Chọn đề khác</button>
+    </div>
+  `;
+
+  // Save
+  if(pct>=50) state.completed[examId]=true;
+  state.scores[examId]=Math.max(state.scores[examId]||0,pct);
+  state.history.unshift({examId,name:exam.name,score:pct,earned:earnedPts,total:totalPts,date:new Date().toLocaleDateString('vi-VN')});
+  if(state.history.length>50)state.history=state.history.slice(0,50);
+  saveState();
+
+  document.getElementById('quizActions').innerHTML='';
+
+  // Render analysis
+  renderAnalysis(examId, analysisResults);
+}
+
+// ============ STATS ============
+function renderStats(){
+  const totalExams=examData.length;
+  const doneExams=Object.keys(state.completed).length;
+  const totalAttempts=state.history.length;
+  const avgScore=totalAttempts?Math.round(state.history.reduce((s,h)=>s+h.score,0)/totalAttempts):0;
+  const bestScore=totalAttempts?Math.max(...state.history.map(h=>h.score)):0;
+
+  document.getElementById('statsGrid').innerHTML=`
+    <div class="stat-card"><div class="stat-icon">📚</div><div class="stat-value">${doneExams}/${totalExams}</div><div class="stat-label">Chủ đề hoàn thành</div></div>
+    <div class="stat-card"><div class="stat-icon">✍️</div><div class="stat-value">${totalAttempts}</div><div class="stat-label">Lần làm bài</div></div>
+    <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-value">${avgScore}%</div><div class="stat-label">Điểm trung bình</div></div>
+    <div class="stat-card"><div class="stat-icon">🏆</div><div class="stat-value">${bestScore}%</div><div class="stat-label">Điểm cao nhất</div></div>
+  `;
+
+  const hl=document.getElementById('historyList');
+  if(!state.history.length){hl.innerHTML='<p style="text-align:center;color:var(--text-light);padding:28px">Chưa có lịch sử</p>';return}
+  hl.innerHTML=state.history.slice(0,20).map(h=>{
+    const sc=h.score>=80?'excellent':h.score>=50?'good':'poor';
+    return `<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-weight:600;font-size:.95rem">${h.name}</div><div style="font-size:.8rem;color:var(--text-light)">${h.date} · ${h.earned}/${h.total} câu đúng</div></div>
+      <div style="font-weight:700;font-size:1.1rem;padding:4px 12px;border-radius:8px;${h.score>=80?'background:#d1fae5;color:#059669':h.score>=50?'background:#fef3c7;color:#b45309':'background:#fee2e2;color:#dc2626'}">${h.score}%</div>
+    </div>`;
+  }).join('');
+}
+
+function updateGlobalProgress(){
+  const total=examData.length;
+  const done=Object.keys(state.completed).length;
+  document.getElementById('globalProgress').style.width=(total?Math.round(done/total*100):0)+'%';
+}
+
+// INIT
+renderHome();updateGlobalProgress();
+</script>
+</body>
+</html>
