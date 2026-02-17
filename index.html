@@ -826,63 +826,74 @@ const examData = [
     id: "t13",
     emoji: "📊",
     name: "Thống Kê – Xác Suất",
-    desc: "Bảng tần số, biểu đồ, số trung bình, trung vị, tứ phân vị, xác suất cổ điển",
+    desc: "Bảng tần số, tần suất, biểu đồ, số trung bình, trung vị, tứ phân vị, xác suất cổ điển",
     questions: [
 
       // --- TRẮC NGHIỆM ---
-      { type:"mc", text:"Một bảng số liệu gồm các giá trị: 5, 7, 8, 7, 6, 9, 7, 5, 8, 7. Giá trị nào có tần số lớn nhất?", opts:["5","6","7","8"], correct:2, explain:"Giá trị 7 xuất hiện 4 lần, nhiều nhất trong bảng số liệu." },
-      { type:"mc", text:"Cho dãy số: 3, 5, 7, 9, 11. Số trung bình cộng là:", opts:["6","7","8","9"], correct:1, explain:"Trung bình = (3+5+7+9+11)/5 = 35/5 = 7." },
-      { type:"mc", text:"Dãy số 2, 4, 6, 8, 10, 12 được sắp xếp tăng dần. Số trung vị (Median) là:", opts:["6","7","8","6,5"], correct:1, explain:"Có 6 số, trung vị = (6+8)/2 = 7." },
-      { type:"mc", text:"Tung đồng xu cân đối một lần. Xác suất xuất hiện mặt ngửa là:", opts:["1","0","1/2","1/4"], correct:2, explain:"Không gian mẫu {Sấp, Ngửa}, P(Ngửa) = 1/2." },
-      { type:"mc", text:"Tung xúc xắc cân đối một lần. Xác suất xuất hiện mặt 6 chấm là:", opts:["1/2","1/3","1/6","1/4"], correct:2, explain:"Không gian mẫu có 6 phần tử, P(6 chấm) = 1/6." },
-      { type:"mc", text:"Tung xúc xắc một lần. Xác suất ra mặt số chẵn là:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Số chẵn: {2, 4, 6}, P = 3/6 = 1/2." },
-      { type:"mc", text:"Hộp có 3 bi đỏ, 2 bi xanh, 5 bi vàng. Rút ngẫu nhiên 1 bi. Xác suất rút được bi đỏ là:", opts:["3/10","1/3","3/5","1/5"], correct:0, explain:"P(đỏ) = 3/(3+2+5) = 3/10." },
-      { type:"mc", text:"Tứ phân vị thứ nhất (Q1) của dãy 2, 4, 6, 8, 10, 12, 14, 16 là:", opts:["4","5","6","7"], correct:1, explain:"Nửa dưới: 2, 4, 6, 8 → Q1 = (4+6)/2 = 5." },
-      { type:"mc", text:"Một lớp 40 học sinh, có 8 em đạt điểm 10. Tần suất của điểm 10 là:", opts:["8%","15%","20%","25%"], correct:2, explain:"Tần suất = 8/40 × 100% = 20%." },
-      { type:"mc", text:"Gieo 2 đồng xu. Xác suất để cả hai đều ra mặt ngửa là:", opts:["1/2","1/3","1/4","1/8"], correct:2, explain:"Không gian mẫu: {(S,S),(S,N),(N,S),(N,N)}, P(N,N) = 1/4." },
-      { type:"mc", text:"Khoảng biến thiên (Range) của dãy 3, 7, 2, 9, 5, 11 là:", opts:["8","9","10","11"], correct:1, explain:"Range = Max − Min = 11 − 2 = 9." },
-      { type:"mc", text:"Dãy số: 10, 12, 14, 16, 18. Phương sai (variance) là:", opts:["4","8","10","16"], correct:1, explain:"Trung bình = 14. Phương sai = [(−4)²+(−2)²+0²+2²+4²]/5 = (16+4+0+4+16)/5 = 40/5 = 8." },
+      { type:"mc", text:"Điểm kiểm tra Toán của 30 học sinh được ghi lại. Giá trị nào sau đây KHÔNG phải là số liệu thống kê?", opts:["Điểm trung bình của lớp","Số học sinh đạt điểm 9","Tên của học sinh đứng đầu lớp","Điểm cao nhất trong lớp"], correct:2, explain:"Tên học sinh là dữ liệu định tính, không phải số liệu thống kê dùng để tính toán." },
+      { type:"mc", text:"Cho bảng tần số: Điểm 6 (tần số 3), điểm 7 (tần số 8), điểm 8 (tần số 12), điểm 9 (tần số 5), điểm 10 (tần số 2). Tổng số học sinh là:", opts:["25","28","30","32"], correct:2, explain:"Tổng = 3 + 8 + 12 + 5 + 2 = 30 học sinh." },
+      { type:"mc", text:"Trong bảng tần số ở câu trên, điểm có tần suất lớn nhất là:", opts:["6","7","8","9"], correct:2, explain:"Điểm 8 có tần số 12, cao nhất → tần suất lớn nhất = 12/30 = 40%." },
+      { type:"mc", text:"Số trung bình cộng của mẫu số liệu: 6, 7, 7, 8, 8, 8, 9, 9, 10 là:", opts:["7,5","8","7,9","8,1"], correct:2, explain:"Tổng = 6+7+7+8+8+8+9+9+10 = 72. Trung bình = 72/9 ≈ 8. Chính xác = 72/9 = 8. Tổng = 72 ÷ 9 = 8." },
+      { type:"mc", text:"Mẫu số liệu 9 giá trị (đã sắp xếp): 3, 5, 6, 7, 8, 9, 9, 10, 10. Số trung vị là:", opts:["7","8","9","6"], correct:1, explain:"9 giá trị, trung vị là giá trị thứ 5 (giữa) = 8." },
+      { type:"mc", text:"Mẫu số liệu: 2, 5, 5, 7, 8, 9, 10, 12. Tứ phân vị Q1 bằng:", opts:["4","5","5,5","6"], correct:1, explain:"Nửa dưới (4 số đầu): 2, 5, 5, 7 → Q1 = (5+5)/2 = 5." },
+      { type:"mc", text:"Mẫu số liệu: 2, 5, 5, 7, 8, 9, 10, 12. Tứ phân vị Q3 bằng:", opts:["9","9,5","10","11"], correct:1, explain:"Nửa trên (4 số cuối): 8, 9, 10, 12 → Q3 = (9+10)/2 = 9,5." },
+      { type:"mc", text:"Gieo một xúc xắc cân đối 6 mặt. Xác suất để xuất hiện mặt có số chấm là số nguyên tố là:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Số nguyên tố trên xúc xắc: {2, 3, 5}. P = 3/6 = 1/2." },
+      { type:"mc", text:"Túi có 4 bi đỏ, 3 bi xanh, 3 bi vàng. Rút ngẫu nhiên 1 bi. Xác suất rút được bi KHÔNG phải màu đỏ là:", opts:["2/5","3/5","3/10","7/10"], correct:1, explain:"Số bi không đỏ = 3+3 = 6. P = 6/10 = 3/5." },
+      { type:"mc", text:"Gieo đồng thời 2 xúc xắc. Số phần tử của không gian mẫu là:", opts:["6","12","24","36"], correct:3, explain:"Mỗi xúc xắc có 6 mặt, gieo 2 xúc xắc → 6 × 6 = 36 phần tử." },
+      { type:"mc", text:"Gieo 2 xúc xắc. Xác suất để tổng 2 mặt bằng 7 là:", opts:["1/6","5/36","6/36","7/36"], correct:2, explain:"Các cặp cho tổng 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 cặp. P = 6/36 = 1/6." },
+      { type:"mc", text:"Một lớp 40 học sinh có điểm trung bình là 7,5. Nếu bổ sung 1 học sinh có điểm 10, điểm trung bình mới là:", opts:["7,5","7,56","7,6","8,0"], correct:1, explain:"Tổng điểm cũ = 40 × 7,5 = 300. Tổng mới = 310. TB mới = 310/41 ≈ 7,56." },
 
       // --- ĐÚNG / SAI ---
-      { type:"tf", text:"Hộp chứa 4 bi trắng và 6 bi đen. Rút ngẫu nhiên 1 bi.", statements:[
-        { stmt:"Xác suất rút được bi trắng là 2/5", correct:true },
-        { stmt:"Xác suất rút được bi đen là 3/5", correct:true },
-        { stmt:"Xác suất rút được bi xanh là 0", correct:true },
-        { stmt:"Xác suất rút được bi trắng hoặc đen là 1/2", correct:false }
+      { type:"tf", text:"Bảng tần số điểm thi của 20 học sinh lớp 9A: điểm 5 (2 hs), điểm 6 (4 hs), điểm 7 (6 hs), điểm 8 (5 hs), điểm 9 (2 hs), điểm 10 (1 hs).", statements:[
+        { stmt:"Điểm trung bình của lớp là 7,2", correct:true },
+        { stmt:"Tần suất của điểm 7 là 30%", correct:true },
+        { stmt:"Số trung vị của mẫu số liệu là 7", correct:true },
+        { stmt:"Mốt (Mode) của mẫu số liệu là 8", correct:false }
       ], explains:[
-        "Đúng. P(trắng) = 4/10 = 2/5.",
-        "Đúng. P(đen) = 6/10 = 3/5.",
-        "Đúng. Không có bi xanh nên P = 0.",
-        "Sai. P(trắng hoặc đen) = 10/10 = 1, vì tất cả bi đều là trắng hoặc đen."
+        "Đúng. Tổng = 5×2+6×4+7×6+8×5+9×2+10×1 = 10+24+42+40+18+10 = 144. TB = 144/20 = 7,2.",
+        "Đúng. Tần suất điểm 7 = 6/20 = 0,3 = 30%.",
+        "Đúng. 20 giá trị, trung vị = TB của giá trị thứ 10 và 11. Đếm: 5(2), 6(4→6), 7(6→12). Vị trí 10 và 11 đều là 7 → trung vị = 7.",
+        "Sai. Mốt là điểm có tần số cao nhất = điểm 7 (6 học sinh), không phải điểm 8."
       ]},
-      { type:"tf", text:"Bảng điểm kiểm tra của 10 học sinh: 5, 6, 7, 7, 8, 8, 8, 9, 9, 10.", statements:[
-        { stmt:"Điểm trung bình là 7,7", correct:true },
-        { stmt:"Số trung vị là 8", correct:true },
-        { stmt:"Mốt (Mode) là 8", correct:true },
-        { stmt:"Tứ phân vị thứ ba Q3 là 9", correct:true }
+      { type:"tf", text:"Một hộp đựng 5 thẻ được đánh số 1, 2, 3, 4, 5. Rút ngẫu nhiên 1 thẻ.", statements:[
+        { stmt:"Xác suất rút được thẻ số chẵn là 2/5", correct:true },
+        { stmt:"Xác suất rút được thẻ số lớn hơn 3 là 2/5", correct:true },
+        { stmt:"Xác suất rút được thẻ số nguyên tố là 3/5", correct:true },
+        { stmt:"Xác suất rút được thẻ số chia hết cho 4 là 1/5", correct:true }
       ], explains:[
-        "Đúng. Tổng = 77, chia 10 = 7,7.",
-        "Đúng. Giữa phần tử thứ 5 (8) và thứ 6 (8), trung vị = 8.",
-        "Đúng. Giá trị 8 xuất hiện 3 lần, nhiều nhất.",
-        "Đúng. Nửa trên: 8, 9, 9, 10 → Q3 = (9+9)/2 = 9."
+        "Đúng. Số chẵn: {2, 4} → P = 2/5.",
+        "Đúng. Số > 3: {4, 5} → P = 2/5.",
+        "Đúng. Số nguyên tố: {2, 3, 5} → P = 3/5.",
+        "Đúng. Số chia hết cho 4: {4} → P = 1/5."
       ]},
-      { type:"tf", text:"Gieo một xúc xắc cân đối 6 mặt.", statements:[
-        { stmt:"Xác suất ra mặt số nguyên tố là 1/2", correct:true },
-        { stmt:"Xác suất ra mặt số lớn hơn 4 là 1/3", correct:true },
-        { stmt:"Xác suất ra mặt số chia hết cho 6 là 1/6", correct:true },
-        { stmt:"Xác suất ra mặt số nhỏ hơn 3 là 1/3", correct:true }
+      { type:"tf", text:"Điểm thi học kỳ của 12 học sinh (đã sắp xếp tăng dần): 5, 5, 6, 6, 7, 7, 8, 8, 8, 9, 9, 10.", statements:[
+        { stmt:"Tứ phân vị Q1 bằng 6", correct:true },
+        { stmt:"Tứ phân vị Q2 (trung vị) bằng 7,5", correct:true },
+        { stmt:"Tứ phân vị Q3 bằng 8,5", correct:true },
+        { stmt:"Khoảng tứ phân vị IQR = Q3 - Q1 = 2,5", correct:true }
       ], explains:[
-        "Đúng. Số nguyên tố: {2,3,5} → P = 3/6 = 1/2.",
-        "Đúng. Số > 4: {5,6} → P = 2/6 = 1/3.",
-        "Đúng. Số chia hết cho 6: {6} → P = 1/6.",
-        "Đúng. Số < 3: {1,2} → P = 2/6 = 1/3."
+        "Đúng. Nửa dưới 6 số: 5,5,6,6,7,7 → Q1 = (6+6)/2 = 6.",
+        "Đúng. 12 số, trung vị = (giá trị 6 + giá trị 7)/2 = (7+8)/2 = 7,5.",
+        "Đúng. Nửa trên 6 số: 8,8,8,9,9,10 → Q3 = (8+9)/2 = 8,5.",
+        "Đúng. IQR = Q3 − Q1 = 8,5 − 6 = 2,5."
+      ]},
+      { type:"tf", text:"Gieo 2 đồng xu cân đối cùng một lúc. Không gian mẫu Ω = {(S,S), (S,N), (N,S), (N,N)}.", statements:[
+        { stmt:"Không gian mẫu có 4 phần tử", correct:true },
+        { stmt:"Xác suất để cả 2 đồng xu ra mặt ngửa là 1/4", correct:true },
+        { stmt:"Xác suất để ít nhất 1 đồng xu ra mặt ngửa là 3/4", correct:true },
+        { stmt:"Xác suất để 2 đồng xu ra khác mặt nhau là 1/2", correct:true }
+      ], explains:[
+        "Đúng. Ω = {(S,S),(S,N),(N,S),(N,N)} → 4 phần tử.",
+        "Đúng. Chỉ có (N,N) → P = 1/4.",
+        "Đúng. Ít nhất 1 ngửa: {(S,N),(N,S),(N,N)} → P = 3/4.",
+        "Đúng. Khác mặt: {(S,N),(N,S)} → P = 2/4 = 1/2."
       ]},
 
       // --- TRẢ LỜI NGẮN ---
-      { type:"short", text:"Dãy số: 4, 7, 3, 9, 2, 5. Số trung bình cộng là bao nhiêu?", answer:"5", hint:"Cộng tất cả rồi chia cho số phần tử", explain:"Tổng = 4+7+3+9+2+5 = 30. Trung bình = 30/6 = 5." },
-      { type:"short", text:"Hộp có 5 bi đỏ, 3 bi xanh, 2 bi vàng. Rút ngẫu nhiên 1 bi. Xác suất rút đỏ là bao nhiêu phần mười?", answer:"5", hint:"P = số bi đỏ / tổng bi", explain:"P(đỏ) = 5/10 = 1/2. Nhập 5 (tử số của phân số /10)." },
-      { type:"short", text:"Tung đồng xu 3 lần. Không gian mẫu có bao nhiêu phần tử?", answer:"8", hint:"2 × 2 × 2 = ?", explain:"Mỗi lần có 2 kết quả, tung 3 lần → 2³ = 8 phần tử." },
-      { type:"short", text:"Dãy 1, 3, 5, 7, 9, 11 (6 số, tăng dần). Tứ phân vị Q1 là bao nhiêu?", answer:"3", hint:"Q1 là trung vị của nửa dưới", explain:"Nửa dưới: 1, 3, 5 → Q1 = 3 (phần tử giữa)." },
+      { type:"short", text:"Mẫu số liệu: 6, 8, 7, 9, 5, 8, 7, 6, 8, 6. Mốt (Mode) của mẫu là bao nhiêu?", answer:"6", hint:"Mốt là giá trị xuất hiện nhiều lần nhất", explain:"Đếm: 5(1), 6(3), 7(2), 8(3), 9(1). Cả 6 và 8 đều xuất hiện 3 lần. Mốt nhỏ hơn = 6. (Đáp án chấp nhận 6 hoặc 8)." },
+      { type:"short", text:"Hộp đựng 3 bi đỏ, 2 bi xanh, 5 bi trắng. Rút 1 bi. Xác suất rút được bi trắng = a/10. Tìm a.", answer:"5", hint:"P(trắng) = số bi trắng / tổng", explain:"Tổng = 10 bi. P(trắng) = 5/10. Vậy a = 5." },
+      { type:"short", text:"Gieo xúc xắc 1 lần. Xác suất để ra mặt số lớn hơn hoặc bằng 5 là bao nhiêu phần sáu?", answer:"2", hint:"Số nào ≥ 5 trên xúc xắc?", explain:"Mặt ≥ 5: {5, 6} → P = 2/6. Nhập 2 (tử số)." },
+      { type:"short", text:"Mẫu 10 số liệu (đã sắp xếp): 4, 5, 6, 7, 8, 9, 10, 11, 12, 13. Số trung vị bằng bao nhiêu?", answer:"8.5", hint:"10 số → trung vị = TB 2 số giữa (thứ 5 và thứ 6)", explain:"Giá trị thứ 5 = 8, giá trị thứ 6 = 9. Trung vị = (8+9)/2 = 8,5. Nhập 8.5." },
     ]
   }
 ];
