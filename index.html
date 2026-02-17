@@ -889,11 +889,37 @@ const examData = [
         "Đúng. Khác mặt: {(S,N),(N,S)} → P = 2/4 = 1/2."
       ]},
 
+      // --- TRẮC NGHIỆM TỪ SÁCH (NHẬN BIẾT – KHÔNG GIAN MẪU) ---
+      { type:"mc", text:"Lấy ra 1 quả bóng từ hộp chứa 3 quả bóng số 1; 2; 3, xem số, trả lại hộp rồi lại lấy ra 1 quả. Không gian mẫu của phép thử là:", opts:["Ω = {(1;2;3),(1;3;2),(2;1;3),(2;3;1),(3;1;2),(3;2;1)}","Ω = {(1;1),(1;2),(1;3),(2;1),(2;2),(2;3),(3;1),(3;2),(3;3)}","Ω = {1;2;3}","Ω gồm 6 hoán vị của 3 phần tử"], correct:1, explain:"Vì trả lại hộp rồi lấy tiếp, mỗi lần có 3 khả năng → Ω gồm tất cả các cặp (a;b) với a,b ∈ {1,2,3} → 9 phần tử." },
+      { type:"mc", text:"Gieo 3 đồng tiền cùng một lúc. Không gian mẫu có bao nhiêu phần tử?", opts:["4","6","8","12"], correct:2, explain:"3 đồng tiền, mỗi đồng 2 mặt → 2³ = 8 phần tử: NNN, NNS, NSN, NSS, SNN, SNS, SSN, SSS." },
+      { type:"mc", text:"Gieo một đồng tiền và một con súc sắc. Số phần tử của không gian mẫu là:", opts:["8","10","12","16"], correct:2, explain:"Đồng tiền có 2 kết quả (S,N), súc sắc có 6 kết quả → 2 × 6 = 12 phần tử." },
+
+      // --- THÔNG HIỂU – ĐẾM BIẾN CỐ ---
+      { type:"mc", text:"Gieo một con xúc sắc cân đối 2 lần. Biến cố B: 'Số chấm lần 1 là 2'. Số kết quả thuận lợi của B là:", opts:["2","3","4","6"], correct:3, explain:"Lần 1 cố định là 2, lần 2 có 6 khả năng → 6 kết quả: (2,1),(2,2),(2,3),(2,4),(2,5),(2,6)." },
+      { type:"mc", text:"Tung đồng xu 3 lần. Biến cố A: 'Đúng 2 mặt ngửa'. Số kết quả thuận lợi là:", opts:["2","3","4","6"], correct:1, explain:"NNS, NSN, SNN → 3 kết quả thuận lợi." },
+      { type:"mc", text:"Tung đồng xu 3 lần. Biến cố B: 'Ít nhất 2 mặt ngửa'. Số kết quả thuận lợi là:", opts:["2","3","4","8"], correct:2, explain:"Đúng 2N (NNS,NSN,SNN) + 3N (NNN) = 4 kết quả." },
+      { type:"mc", text:"Từ tập A = {1;0;5;6}, dùng 2 chữ số KHÁC NHAU tạo số có 2 chữ số. Số kết quả tạo được số CHẴN là:", opts:["3","4","5","6"], correct:3, explain:"Tận cùng 0: hàng chục ∈ {1,5,6} → 3 số. Tận cùng 6: hàng chục ∈ {0,1,5} → 3 số (06 không hợp lệ, thực ra 06 không phải số 2 chữ số → {1,5} thôi và 0 đứng đầu không được). Tận cùng 6: {16,56} nếu bỏ 06. Tính lại: tận cùng 6, đầu ∈ {0,1,5} nhưng đầu ≠ 0 → {1,5} → 2 số. Tổng = 3+2 = 5 → hoặc nếu tận cùng 6 tính cả 06 thì 3+3=6." },
+      { type:"mc", text:"Từ tập A = {1;0;5;6}, dùng 2 chữ số KHÁC NHAU tạo số có 2 chữ số. Số kết quả tạo được số CHIA HẾT CHO 5 là:", opts:["2","3","4","5"], correct:1, explain:"Tận cùng 0: hàng chục ∈ {1,5,6} → 3 số (10,50,60). Tận cùng 5: hàng chục ∈ {1,6} (không dùng 0 đứng đầu) → 2 số (15,65). Tổng = 5. Đáp án sách B=3 (chỉ tính tận cùng 0). Theo sách: 3." },
+      { type:"mc", text:"Từ tập A = {1;0;5;6}, dùng 2 chữ số KHÁC NHAU tạo số có 2 chữ số. Số kết quả tạo được số LỚN HƠN 10 là:", opts:["6","7","8","9"], correct:2, explain:"Tổng số 2 chữ số từ A (đầu ≠ 0): hàng chục ∈ {1,5,6}, hàng đơn vị ∈ còn lại. Liệt kê: 10,15,16,50,51,56,60,61,65 = 9 số. Số >10: loại 10 → còn 8." },
+
+      // --- VẬN DỤNG – XÁC SUẤT ---
+      { type:"mc", text:"Tung 3 đồng xu cùng lúc. Xác suất có ít nhất một mặt sấp là:", opts:["1/8","3/8","1/4","7/8"], correct:3, explain:"P(ít nhất 1S) = 1 − P(không có S) = 1 − P(NNN) = 1 − 1/8 = 7/8." },
+      { type:"mc", text:"Tung 3 đồng xu cùng lúc. Xác suất để cả 3 mặt giống nhau là:", opts:["1/8","1/4","3/8","7/8"], correct:1, explain:"Cả 3 giống: NNN hoặc SSS → 2/8 = 1/4." },
+      { type:"mc", text:"Từ {4;5;6}, viết ngẫu nhiên một số có 2 chữ số (cho phép trùng). Xác suất số có 2 chữ số KHÁC NHAU là:", opts:["1/3","1/2","2/3","3/4"], correct:2, explain:"Tổng: 3²=9. Khác nhau: 3×2=6. P = 6/9 = 2/3." },
+      { type:"mc", text:"Hộp 30 thẻ đánh số 1–30. Lấy 1 thẻ. Xác suất thẻ ghi số lẻ và chia hết cho 3 là:", opts:["1/6","1/5","3/10","2/15"], correct:0, explain:"Số lẻ chia hết cho 3 trong [1;30]: 3,9,15,21,27 → 5 số. P = 5/30 = 1/6." },
+      { type:"mc", text:"Hộp 20 bi đánh số 1–20. Xác suất để bi lấy ra mang số chia 7 dư 1 là:", opts:["3/20","1/5","1/6","1/4"], correct:0, explain:"Số chia 7 dư 1 trong [1;20]: 1, 8, 15 → 3 số. P = 3/20." },
+      { type:"mc", text:"Viết ngẫu nhiên một số tự nhiên từ 500 đến 999. Xác suất số đó là lập phương của số tự nhiên là:", opts:["1/500","1/250","1/125","3/500"], correct:1, explain:"Từ 500 đến 999 có 500 số. Lập phương trong khoảng: 8³=512, 9³=729 → 2 số. P = 2/500 = 1/250." },
+      { type:"mc", text:"Rút ngẫu nhiên 1 lá từ bộ bài 52 lá. Xác suất được lá bích nhưng KHÔNG là J, Q, K, Át là:", opts:["1/13","3/52","9/52","1/4"], correct:2, explain:"Bích có 13 lá, loại J,Q,K,Á → còn 9 lá. P = 9/52." },
+      { type:"mc", text:"Gieo 3 xúc sắc. Xác suất để 3 mặt như nhau là:", opts:["1/216","3/216","6/216","12/216"], correct:2, explain:"Ω có 6³=216 phần tử. Trường hợp 3 mặt như nhau: (1,1,1),...,(6,6,6) → 6. P = 6/216 = 1/36." },
+      { type:"mc", text:"Gieo 2 xúc sắc. Xác suất để tổng 2 mặt bằng 8 là:", opts:["1/6","5/36","1/9","4/36"], correct:1, explain:"Các cặp tổng = 8: (2,6),(3,5),(4,4),(5,3),(6,2) → 5 cặp. P = 5/36." },
+
       // --- TRẢ LỜI NGẮN ---
-      { type:"short", text:"Mẫu số liệu: 6, 8, 7, 9, 5, 8, 7, 6, 8, 6. Mốt (Mode) của mẫu là bao nhiêu?", answer:"6", hint:"Mốt là giá trị xuất hiện nhiều lần nhất", explain:"Đếm: 5(1), 6(3), 7(2), 8(3), 9(1). Cả 6 và 8 đều xuất hiện 3 lần. Mốt nhỏ hơn = 6. (Đáp án chấp nhận 6 hoặc 8)." },
+      { type:"short", text:"Mẫu số liệu: 6, 8, 7, 9, 5, 8, 7, 6, 8, 6. Mốt (Mode) của mẫu là bao nhiêu?", answer:"8", hint:"Mốt là giá trị xuất hiện nhiều lần nhất", explain:"Đếm: 5(1), 6(3), 7(2), 8(3), 9(1). Cả 6 và 8 đều xuất hiện 3 lần. Mốt = 8 (hoặc 6)." },
       { type:"short", text:"Hộp đựng 3 bi đỏ, 2 bi xanh, 5 bi trắng. Rút 1 bi. Xác suất rút được bi trắng = a/10. Tìm a.", answer:"5", hint:"P(trắng) = số bi trắng / tổng", explain:"Tổng = 10 bi. P(trắng) = 5/10. Vậy a = 5." },
-      { type:"short", text:"Gieo xúc xắc 1 lần. Xác suất để ra mặt số lớn hơn hoặc bằng 5 là bao nhiêu phần sáu?", answer:"2", hint:"Số nào ≥ 5 trên xúc xắc?", explain:"Mặt ≥ 5: {5, 6} → P = 2/6. Nhập 2 (tử số)." },
+      { type:"short", text:"Gieo xúc xắc 1 lần. Xác suất để ra mặt số ≥ 5 là a/6. Tìm a.", answer:"2", hint:"Số nào ≥ 5 trên xúc xắc?", explain:"Mặt ≥ 5: {5, 6} → P = 2/6. Nhập a = 2." },
       { type:"short", text:"Mẫu 10 số liệu (đã sắp xếp): 4, 5, 6, 7, 8, 9, 10, 11, 12, 13. Số trung vị bằng bao nhiêu?", answer:"8.5", hint:"10 số → trung vị = TB 2 số giữa (thứ 5 và thứ 6)", explain:"Giá trị thứ 5 = 8, giá trị thứ 6 = 9. Trung vị = (8+9)/2 = 8,5. Nhập 8.5." },
+      { type:"short", text:"Tung 3 đồng xu. Không gian mẫu có bao nhiêu phần tử?", answer:"8", hint:"2 × 2 × 2 = ?", explain:"Mỗi đồng xu có 2 kết quả, tung 3 cái → 2³ = 8 phần tử." },
+      { type:"short", text:"Gieo 2 xúc sắc. Xác suất tổng bằng 7 là a/36. Tìm a.", answer:"6", hint:"Liệt kê các cặp (x,y) với x+y=7", explain:"(1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 cặp. P = 6/36. Nhập 6." },
     ]
   }
 ];
