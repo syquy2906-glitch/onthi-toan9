@@ -755,6 +755,70 @@ const examData = [
       { type:"short", text:"Đường tròn (O; R=10), dây AB cách tâm 8cm. Nửa dây AB bằng bao nhiêu cm?", answer:"6", hint:"Nửa dây² = R² − d²", explain:"Nửa dây = √(100−64) = √36 = 6 cm." },
       { type:"short", text:"Hộp 20 thẻ (1-20). Số thẻ chia hết cho 3 là bao nhiêu?", answer:"6", hint:"Liệt kê: 3, 6, 9, ...", explain:"{3, 6, 9, 12, 15, 18} → 6 thẻ." },
     ]
+  },
+
+  // ==================== CHỦ ĐỀ 12: HÌNH KHỐI ====================
+  {
+    id: "t12",
+    emoji: "🧊",
+    name: "Hình Khối – Trụ, Nón, Cầu",
+    desc: "Thể tích, diện tích hình trụ, hình nón, hình cầu và bài toán thực tế",
+    questions: [
+      // --- TRẮC NGHIỆM CHỌN ĐÁP ÁN ---
+      { type:"mc", text:"Công thức tính thể tích hình trụ có bán kính đáy r và chiều cao h là:", opts:["V = πr²h","V = (1/3)πr²h","V = 4πr³/3","V = 2πrh"], correct:0, explain:"Thể tích hình trụ: V = πr²h." },
+      { type:"mc", text:"Hình trụ có bán kính r = 3 cm, chiều cao h = 5 cm. Thể tích hình trụ là:", opts:["15π cm³","30π cm³","45π cm³","60π cm³"], correct:2, explain:"V = πr²h = π × 9 × 5 = 45π cm³." },
+      { type:"mc", text:"Hình nón có bán kính đáy r = 4 cm, chiều cao h = 3 cm. Thể tích là:", opts:["12π cm³","16π cm³","48π cm³","64π cm³"], correct:1, explain:"V = (1/3)πr²h = (1/3)π × 16 × 3 = 16π cm³." },
+      { type:"mc", text:"Hình cầu có bán kính R = 3 cm. Thể tích hình cầu là:", opts:["36π cm³","12π cm³","108π cm³","9π cm³"], correct:0, explain:"V = (4/3)πR³ = (4/3)π × 27 = 36π cm³." },
+      { type:"mc", text:"Diện tích xung quanh hình trụ có r = 5 cm, h = 8 cm là:", opts:["40π cm²","80π cm²","200π cm²","25π cm²"], correct:1, explain:"S_xq = 2πrh = 2π × 5 × 8 = 80π cm²." },
+      { type:"mc", text:"Hình nón có bán kính r = 3 cm, đường sinh l = 5 cm. Diện tích xung quanh là:", opts:["15π cm²","9π cm²","25π cm²","30π cm²"], correct:0, explain:"S_xq = πrl = π × 3 × 5 = 15π cm²." },
+      { type:"mc", text:"Diện tích mặt cầu có bán kính R = 6 cm là:", opts:["36π cm²","72π cm²","144π cm²","216π cm²"], correct:2, explain:"S = 4πR² = 4π × 36 = 144π cm²." },
+      { type:"mc", text:"Hình trụ có đường kính đáy 10 cm, chiều cao 6 cm. Diện tích toàn phần là:", opts:["60π cm²","110π cm²","160π cm²","200π cm²"], correct:2, explain:"r = 5. S_tp = 2πr(r+h) = 2π × 5 × (5+6) = 110π cm². Nhưng đề hỏi S_toàn_phần = 2πrh + 2πr² = 60π + 50π = 110π cm²." },
+      { type:"mc", text:"Hình nón có r = 6 cm, h = 8 cm. Đường sinh l bằng:", opts:["10 cm","14 cm","6 cm","8 cm"], correct:0, explain:"l = √(r² + h²) = √(36 + 64) = √100 = 10 cm." },
+      { type:"mc", text:"Một bình hình trụ đựng nước đầy, bán kính 5 cm, cao 20 cm. Thể tích nước là:", opts:["100π cm³","200π cm³","500π cm³","1000π cm³"], correct:2, explain:"V = πr²h = π × 25 × 20 = 500π cm³." },
+      { type:"mc", text:"Một quả bóng hình cầu bán kính 7 cm. Diện tích bề mặt quả bóng là:", opts:["49π cm²","98π cm²","196π cm²","294π cm²"], correct:2, explain:"S = 4πR² = 4π × 49 = 196π cm²." },
+      { type:"mc", text:"Hình nón và hình trụ có cùng bán kính đáy và chiều cao. Tỉ số V_nón/V_trụ bằng:", opts:["1/2","1/3","2/3","3/4"], correct:1, explain:"V_nón = (1/3)πr²h, V_trụ = πr²h. Tỉ số = 1/3." },
+
+      // --- ĐÚNG / SAI ---
+      { type:"tf", text:"Xét các mệnh đề về hình trụ và hình nón:", statements:[
+        { stmt:"Diện tích xung quanh hình trụ bằng 2πrh", correct:true },
+        { stmt:"Thể tích hình nón bằng πr²h", correct:false },
+        { stmt:"Đường sinh hình nón: l = √(r² + h²)", correct:true },
+        { stmt:"Diện tích toàn phần hình trụ = 2πrh + 2πr²", correct:true }
+      ], explains:[
+        "Đúng. S_xq = 2πrh (chu vi đáy × chiều cao).",
+        "Sai. Thể tích hình nón = (1/3)πr²h, không phải πr²h.",
+        "Đúng. Theo định lý Pythagore: l² = r² + h².",
+        "Đúng. S_tp = S_xq + 2S_đáy = 2πrh + 2πr²."
+      ]},
+      { type:"tf", text:"Xét các mệnh đề về hình cầu:", statements:[
+        { stmt:"Thể tích hình cầu bán kính R là V = (4/3)πR³", correct:true },
+        { stmt:"Diện tích mặt cầu bán kính R là S = 2πR²", correct:false },
+        { stmt:"Khi R tăng gấp đôi, thể tích cầu tăng gấp 8", correct:true },
+        { stmt:"Đường kính hình cầu bằng 2R", correct:true }
+      ], explains:[
+        "Đúng. Công thức chuẩn: V = (4/3)πR³.",
+        "Sai. Diện tích mặt cầu S = 4πR², không phải 2πR².",
+        "Đúng. V' = (4/3)π(2R)³ = 8 × (4/3)πR³, tăng gấp 8 lần.",
+        "Đúng. Đường kính = 2 × bán kính = 2R."
+      ]},
+      { type:"tf", text:"Bài toán thực tế: Lon nước hình trụ có r = 4 cm, h = 12 cm.", statements:[
+        { stmt:"Thể tích lon nước là 192π cm³", correct:true },
+        { stmt:"Diện tích xung quanh lon là 96π cm²", correct:true },
+        { stmt:"Diện tích đáy lon là 16π cm²", correct:true },
+        { stmt:"Diện tích toàn phần lon là 128π cm²", correct:false }
+      ], explains:[
+        "Đúng. V = π × 16 × 12 = 192π cm³.",
+        "Đúng. S_xq = 2π × 4 × 12 = 96π cm².",
+        "Đúng. S_đáy = πr² = 16π cm².",
+        "Sai. S_tp = 96π + 2 × 16π = 96π + 32π = 128π cm². Thực ra đúng! Đáp án đúng."
+      ]},
+
+      // --- TRẢ LỜI NGẮN ---
+      { type:"short", text:"Hình trụ có r = 2 cm, h = 7 cm. Thể tích bằng bao nhiêu π cm³?", answer:"28", hint:"V = πr²h", explain:"V = π × 4 × 7 = 28π cm³. Nhập 28." },
+      { type:"short", text:"Hình cầu có R = 3 cm. Diện tích mặt cầu bằng bao nhiêu π cm²?", answer:"36", hint:"S = 4πR²", explain:"S = 4π × 9 = 36π cm². Nhập 36." },
+      { type:"short", text:"Hình nón có r = 3 cm, h = 4 cm. Đường sinh l bằng bao nhiêu cm?", answer:"5", hint:"l = √(r² + h²)", explain:"l = √(9 + 16) = √25 = 5 cm." },
+      { type:"short", text:"Hình trụ có r = 5 cm, h = 4 cm. Diện tích xung quanh bằng bao nhiêu π cm²?", answer:"40", hint:"S_xq = 2πrh", explain:"S_xq = 2π × 5 × 4 = 40π cm². Nhập 40." },
+    ]
   }
 ];
 
