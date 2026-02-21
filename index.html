@@ -1539,7 +1539,7 @@ const exam7Data = [
   // ==================== CHƯƠNG VIII: TAM GIÁC CÂN – TAM GIÁC ĐỀU ====================
   {
     id:"l7_8", emoji:"📏", name:"Tam giác cân – Tam giác đều",
-    desc:"Tam giác cân, tính chất, tam giác đều, tam giác vuông cân, đường trung trực",
+    desc:"Tam giác cân, định lí đảo, tam giác đều, vuông cân, đường cao, trục đối xứng, đường trung trực, tâm đường tròn ngoại tiếp",
     questions:[
       { type:"mc", text:"Câu 1. Tam giác cân ABC (AB = AC). Góc đáy B = 50°. Góc đỉnh A = ?", opts:["50°","80°","100°","130°"], correct:1, explain:"B = C = 50°. A = 180° − 50° − 50° = 80°." },
       { type:"mc", text:"Câu 2. Tam giác đều có:", opts:["2 cạnh bằng nhau","3 cạnh bằng nhau, 3 góc = 60°","1 góc vuông","2 góc bằng nhau"], correct:1, explain:"Tam giác đều: 3 cạnh bằng nhau, 3 góc bằng nhau = 60°." },
@@ -1559,7 +1559,38 @@ const exam7Data = [
         "Đúng. Tính chất đường trung trực."
       ]},
       { type:"short", text:"ΔABC cân tại A, góc B = 65°. Góc A = ? độ", answer:"50", hint:"A = 180° − 2B", explain:"B = C = 65°. A = 180° − 65° − 65° = 50°." },
-      { type:"short", text:"Tam giác đều cạnh 8cm. Chu vi = ? cm", answer:"24", hint:"C = 3 × cạnh", explain:"C = 3 × 8 = 24 cm." }
+      { type:"short", text:"Tam giác đều cạnh 8cm. Chu vi = ? cm", answer:"24", hint:"C = 3 × cạnh", explain:"C = 3 × 8 = 24 cm." },
+
+      // ===== BỔ SUNG: 20 MC về tam giác cân, tam giác đều =====
+      // --- Nhóm 1: Tam giác cân — Định nghĩa & Tính chất ---
+      { type:"mc", text:"Câu 10. Tam giác cân là tam giác có:", opts:["3 cạnh bằng nhau","2 cạnh bằng nhau","1 góc vuông","3 góc bằng nhau"], correct:1, explain:"Tam giác cân có 2 cạnh bên bằng nhau." },
+      { type:"mc", text:"Câu 11. ΔABC cân tại A, góc A = 100°. Góc B bằng:", opts:["40°","50°","60°","80°"], correct:0, explain:"B = C = (180° − 100°)/2 = 80°/2 = 40°." },
+      { type:"mc", text:"Câu 12. ΔABC cân tại A, góc B = 55°. Góc đỉnh A bằng:", opts:["55°","65°","70°","110°"], correct:2, explain:"B = C = 55°. A = 180° − 55° − 55° = 70°." },
+      { type:"mc", text:"Câu 13. ΔABC có góc B = góc C = 50°. Kết luận đúng là:", opts:["ΔABC đều","ΔABC cân tại A","ΔABC vuông","ΔABC cân tại B"], correct:1, explain:"Định lí đảo: 2 góc đáy bằng nhau → tam giác cân tại đỉnh đối diện (A)." },
+      { type:"mc", text:"Câu 14. ΔABC cân tại A, AB = AC = 7 cm, chu vi = 20 cm. Cạnh đáy BC bằng:", opts:["3 cm","6 cm","7 cm","13 cm"], correct:1, explain:"BC = 20 − 7 − 7 = 6 cm." },
+      { type:"mc", text:"Câu 15. Trục đối xứng của tam giác cân đi qua:", opts:["Trung điểm cạnh bên","Đỉnh và trung điểm cạnh đáy","2 đỉnh đáy","Song song cạnh đáy"], correct:1, explain:"Trục đối xứng tam giác cân là đường thẳng qua đỉnh và trung điểm cạnh đáy." },
+
+      // --- Nhóm 2: Tam giác vuông cân ---
+      { type:"mc", text:"Câu 16. ΔABC vuông cân tại A, AB = AC = 5 cm. Cạnh huyền BC bằng:", opts:["5 cm","5√2 cm","10 cm","25 cm"], correct:1, explain:"Pytago: BC² = 5² + 5² = 50 → BC = √50 = 5√2 cm." },
+      { type:"mc", text:"Câu 17. ΔABC vuông cân tại A, BC = 6√2 cm. Cạnh góc vuông AB bằng:", opts:["3 cm","6 cm","6√2 cm","12 cm"], correct:1, explain:"AB = AC = BC/√2 = 6√2/√2 = 6 cm." },
+      { type:"mc", text:"Câu 18. ΔABC có góc A = 90°, AB = AC. Tam giác ABC là:", opts:["Tam giác đều","Tam giác vuông cân tại A","Tam giác cân tại B","Tam giác tù"], correct:1, explain:"Góc A = 90° (vuông) + AB = AC (cân) → vuông cân tại A." },
+
+      // --- Nhóm 3: Tam giác đều — Định nghĩa & Tính chất ---
+      { type:"mc", text:"Câu 19. Tam giác có 3 góc đều bằng 60° là tam giác:", opts:["Cân","Vuông","Đều","Tù"], correct:2, explain:"3 góc = 60° → 3 cạnh bằng nhau → tam giác đều." },
+      { type:"mc", text:"Câu 20. Đường cao của tam giác đều cạnh 4 cm bằng:", opts:["2 cm","2√3 cm","4 cm","4√3 cm"], correct:1, explain:"Đường cao h = a√3/2 = 4√3/2 = 2√3 cm." },
+      { type:"mc", text:"Câu 21. Diện tích tam giác đều cạnh 6 cm bằng:", opts:["9 cm²","9√3 cm²","18 cm²","36 cm²"], correct:1, explain:"S = a²√3/4 = 36√3/4 = 9√3 cm²." },
+      { type:"mc", text:"Câu 22. ΔABC cân tại A, góc A = 60°. Tam giác ABC là:", opts:["Tam giác vuông","Tam giác đều","Tam giác tù","Không xác định"], correct:1, explain:"Cân tại A, A = 60° → B = C = (180°−60°)/2 = 60°. Ba góc = 60° → đều." },
+      { type:"mc", text:"Câu 23. Tam giác đều có đường cao h = 3√3 cm. Cạnh tam giác bằng:", opts:["3 cm","6 cm","9 cm","3√3 cm"], correct:1, explain:"h = a√3/2 → a = 2h/√3 = 2×3√3/√3 = 6 cm." },
+
+      // --- Nhóm 4: Đường trung trực & Tính chất ---
+      { type:"mc", text:"Câu 24. Điểm M nằm trên đường trung trực của đoạn AB thì:", opts:["MA > MB","MA < MB","MA = MB","MA + MB = AB"], correct:2, explain:"Tính chất đường trung trực: mọi điểm trên trung trực cách đều 2 đầu đoạn thẳng." },
+      { type:"mc", text:"Câu 25. Giao điểm 3 đường trung trực của tam giác là:", opts:["Trọng tâm","Trực tâm","Tâm đường tròn ngoại tiếp","Tâm đường tròn nội tiếp"], correct:2, explain:"3 đường trung trực đồng quy tại tâm đường tròn ngoại tiếp tam giác." },
+      { type:"mc", text:"Câu 26. Tam giác cân có bao nhiêu trục đối xứng?", opts:["0","1","2","3"], correct:1, explain:"Tam giác cân có đúng 1 trục đối xứng (đường thẳng qua đỉnh và trung điểm đáy)." },
+
+      // --- Nhóm 5: Bài toán tổng hợp & Vận dụng ---
+      { type:"mc", text:"Câu 27. ΔABC cân tại A, AH ⊥ BC (H ∈ BC). Khẳng định đúng là:", opts:["BH > HC","BH < HC","BH = HC","AH = BH"], correct:2, explain:"Trong tam giác cân, đường cao từ đỉnh cũng là đường trung tuyến → H là trung điểm BC → BH = HC." },
+      { type:"mc", text:"Câu 28. ΔABC cân tại A, góc B = 70°. Đường cao AH chia góc A thành 2 góc bằng:", opts:["20°","35°","40°","70°"], correct:0, explain:"A = 180° − 70° − 70° = 40°. Đường cao AH cũng là phân giác → mỗi góc = 40°/2 = 20°." },
+      { type:"mc", text:"Câu 29. Biển báo giao thông hình tam giác đều cạnh 60 cm. Chu vi biển bằng:", opts:["120 cm","160 cm","180 cm","360 cm"], correct:2, explain:"Chu vi = 3 × 60 = 180 cm." }
     ]
   },
 
