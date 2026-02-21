@@ -1813,139 +1813,311 @@ const exam7Data = [
   // ==================== CHƯƠNG VII: BIỂU THỨC ĐẠI SỐ ====================
   {
     id:"l7_7", emoji:"🔤", name:"Biểu thức đại số",
-    desc:"Biểu thức đại số, đơn thức, đa thức một biến, cộng trừ đa thức, nghiệm đa thức",
+    desc:"Biểu thức đại số, đơn thức, đa thức, cộng trừ đa thức, nghiệm đa thức một biến",
+    theory:`<b>1. Biểu thức đại số:</b> Biểu thức chứa chữ (biến). VD: 2x + 3, x² − y.<br>
+<b>2. Đơn thức:</b> Tích của hệ số và các biến. VD: 3x²y. Bậc = tổng số mũ các biến. Đơn thức đồng dạng: cùng phần biến.<br>
+<b>3. Đa thức:</b> Tổng các đơn thức. Bậc đa thức = bậc cao nhất trong các hạng tử. Thu gọn: gộp các hạng tử đồng dạng.<br>
+<b>4. Cộng, trừ đa thức:</b> Bỏ ngoặc (chú ý dấu trừ đổi dấu), gộp đồng dạng.<br>
+<b>5. Đa thức một biến:</b> Đa thức chỉ chứa 1 biến, sắp xếp theo lũy thừa giảm/tăng.<br>
+<b>6. Nghiệm đa thức:</b> Giá trị x₀ sao cho P(x₀) = 0. VD: P(x) = x − 3, nghiệm x = 3.`,
     questions:[
-      { type:"mc", text:"Câu 1. Giá trị biểu thức 2x + 3 tại x = 4 là:", opts:["8","11","14","5"], correct:1, explain:"2(4) + 3 = 8 + 3 = 11." },
-      { type:"mc", text:"Câu 2. Bậc của đa thức 3x³ − 2x + 5 là:", opts:["1","2","3","5"], correct:2, explain:"Bậc cao nhất = 3 (từ 3x³)." },
-      { type:"mc", text:"Câu 3. Thu gọn (3x + 2) + (x − 5) = ?", opts:["4x − 3","2x − 3","4x + 7","3x − 3"], correct:0, explain:"3x + 2 + x − 5 = 4x − 3." },
-      { type:"mc", text:"Câu 4. Nghiệm của đa thức P(x) = 2x − 6 là:", opts:["x = 2","x = 3","x = −3","x = 6"], correct:1, explain:"2x − 6 = 0 → 2x = 6 → x = 3." },
-      { type:"mc", text:"Câu 5. (5x² − 3x) − (2x² − x) = ?", opts:["3x² − 2x","3x² − 4x","7x² − 2x","7x² − 4x"], correct:0, explain:"5x² − 3x − 2x² + x = 3x² − 2x." },
-      { type:"mc", text:"Câu 6. Đa thức nào có nghiệm x = −1?", opts:["x + 1","x − 1","2x + 3","3x − 1"], correct:0, explain:"P(−1) = −1 + 1 = 0 → x = −1 là nghiệm." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về biểu thức đại số:", statements:[
-        { stmt:"Đa thức 3x + 5 có bậc 1", correct:true },
-        { stmt:"Nghiệm đa thức là giá trị x làm đa thức bằng 0", correct:true },
-        { stmt:"3x²y là đa thức bậc 2", correct:false },
-        { stmt:"Bậc của đa thức x⁴ − x + 1 là 4", correct:true }
+      { type:"mc", text:"Câu 1. Giá trị 2x + 3 tại x = 4:", opts:["8","11","14","5"], correct:1, explain:"2(4)+3 = 11." },
+      { type:"mc", text:"Câu 2. Bậc của 3x³ − 2x + 5:", opts:["1","2","3","5"], correct:2, explain:"Bậc cao nhất = 3." },
+      { type:"mc", text:"Câu 3. (3x+2) + (x−5) = ?", opts:["4x−3","2x−3","4x+7","3x−3"], correct:0, explain:"3x+2+x−5 = 4x−3." },
+      { type:"mc", text:"Câu 4. Nghiệm P(x) = 2x−6:", opts:["x=2","x=3","x=−3","x=6"], correct:1, explain:"2x=6→x=3." },
+      { type:"mc", text:"Câu 5. (5x²−3x) − (2x²−x) = ?", opts:["3x²−2x","3x²−4x","7x²−2x","7x²−4x"], correct:0, explain:"5x²−3x−2x²+x = 3x²−2x." },
+      { type:"mc", text:"Câu 6. Đa thức nào có nghiệm x=−1?", opts:["x+1","x−1","2x+3","3x−1"], correct:0, explain:"P(−1)=−1+1=0." },
+      { type:"mc", text:"Câu 7. Bậc đơn thức 3x²y³:", opts:["2","3","5","6"], correct:2, explain:"2+3 = 5." },
+      { type:"mc", text:"Câu 8. Thu gọn 2x²+3x²:", opts:["5x²","6x²","5x⁴","6x⁴"], correct:0, explain:"Đồng dạng: (2+3)x² = 5x²." },
+      { type:"mc", text:"Câu 9. Giá trị x²−2x tại x=3:", opts:["3","5","6","9"], correct:0, explain:"9−6 = 3." },
+      { type:"mc", text:"Câu 10. Đa thức bậc 0 là:", opts:["0","Hằng số ≠ 0","x","x²"], correct:1, explain:"Hằng số ≠ 0 có bậc 0." },
+      { type:"mc", text:"Câu 11. (x²+3x−1) + (2x²−x+4) = ?", opts:["3x²+2x+3","3x²+4x+3","3x²+2x−5","x²+2x+3"], correct:0, explain:"x²+2x²=3x², 3x−x=2x, −1+4=3." },
+      { type:"mc", text:"Câu 12. (4x²−x) − (x²+2x) = ?", opts:["3x²−3x","3x²+x","5x²−3x","5x²+x"], correct:0, explain:"4x²−x²=3x², −x−2x=−3x." },
+      { type:"mc", text:"Câu 13. Nghiệm P(x) = x+7:", opts:["7","−7","0","1/7"], correct:1, explain:"x+7=0→x=−7." },
+      { type:"mc", text:"Câu 14. Nghiệm P(x) = x²−9:", opts:["3 và −3","3","9","−9"], correct:0, explain:"x²=9→x=±3." },
+      { type:"mc", text:"Câu 15. Đơn thức đồng dạng với 3xy²:", opts:["−5xy²","3x²y","xy","3xy"], correct:0, explain:"Cùng phần biến xy²." },
+      { type:"mc", text:"Câu 16. Sắp xếp 2x−x³+5 theo lũy thừa giảm:", opts:["−x³+2x+5","2x−x³+5","5+2x−x³","5−x³+2x"], correct:0, explain:"Giảm: x³ → x → hằng số." },
+      { type:"mc", text:"Câu 17. Giá trị 3a²b tại a=1, b=−2:", opts:["−6","6","−3","3"], correct:0, explain:"3(1)²(−2) = −6." },
+      { type:"mc", text:"Câu 18. P(x) = x²+1 có nghiệm?", opts:["x=1","x=−1","x=0","Không có nghiệm"], correct:3, explain:"x²+1 ≥ 1 > 0 ∀x → không có nghiệm." },
+      { type:"mc", text:"Câu 19. Hệ số của x² trong 4x³−3x²+x−7:", opts:["4","−3","1","−7"], correct:1, explain:"Hệ số x² = −3." },
+      { type:"mc", text:"Câu 20. Hệ số tự do của 2x²−5x+8:", opts:["2","−5","8","0"], correct:2, explain:"Hệ số tự do = 8." },
+      { type:"mc", text:"Câu 21. Bậc đa thức 5:", opts:["0","1","5","Không có"], correct:0, explain:"Hằng số ≠ 0 có bậc 0." },
+      { type:"mc", text:"Câu 22. (2x+1)(x−3) = ?", opts:["2x²−5x−3","2x²−6x+1","2x²+x−3","2x²−5x+3"], correct:0, explain:"2x²−6x+x−3 = 2x²−5x−3." },
+      { type:"mc", text:"Câu 23. P(x)=3x−9. P(3)=?", opts:["0","9","18","−9"], correct:0, explain:"3(3)−9 = 0." },
+      { type:"mc", text:"Câu 24. Số nghiệm tối đa đa thức bậc 2:", opts:["0","1","2","3"], correct:2, explain:"Đa thức bậc n có tối đa n nghiệm." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về đơn thức:", statements:[
+        { stmt:"3x²y là đơn thức bậc 3", correct:true },
+        { stmt:"Hai đơn thức đồng dạng có cùng phần biến", correct:true },
+        { stmt:"Hệ số của 5x³ là x³", correct:false },
+        { stmt:"Đơn thức bậc 0 là hằng số ≠ 0", correct:true }
       ], explains:[
-        "Đúng. Hạng tử bậc cao nhất 3x có bậc 1.",
-        "Đúng. P(a) = 0 → a là nghiệm.",
-        "Sai. 3x²y có bậc 2 + 1 = 3 (đơn thức 2 biến).",
-        "Đúng. Bậc cao nhất = 4."
+        "Đúng. 2+1=3.",
+        "Đúng. Định nghĩa đồng dạng.",
+        "Sai. Hệ số = 5, phần biến = x³.",
+        "Đúng."
       ]},
-      { type:"short", text:"Giá trị biểu thức 3x − 1 tại x = 2 là?", answer:"5", hint:"Thay x = 2", explain:"3(2) − 1 = 6 − 1 = 5." },
-      { type:"short", text:"Nghiệm của P(x) = x + 7 là x = ?", answer:"-7", hint:"Cho P(x) = 0", explain:"x + 7 = 0 → x = −7." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về đa thức:", statements:[
+        { stmt:"Bậc đa thức = bậc hạng tử cao nhất", correct:true },
+        { stmt:"Đa thức 0 không có bậc", correct:true },
+        { stmt:"x²+x+1 có bậc 3", correct:false },
+        { stmt:"Cộng đa thức: gộp hạng tử đồng dạng", correct:true }
+      ], explains:[
+        "Đúng. Định nghĩa.",
+        "Đúng. Đa thức 0 không xác định bậc.",
+        "Sai. Bậc cao nhất = 2.",
+        "Đúng."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về nghiệm:", statements:[
+        { stmt:"Nghiệm P(x) là x₀ sao cho P(x₀) = 0", correct:true },
+        { stmt:"P(x) = x²+4 không có nghiệm", correct:true },
+        { stmt:"Đa thức bậc 1 luôn có nghiệm", correct:true },
+        { stmt:"P(x) = x² có nghiệm duy nhất x = 0", correct:true }
+      ], explains:[
+        "Đúng. Định nghĩa.",
+        "Đúng. x²+4 ≥ 4 > 0.",
+        "Đúng. ax+b = 0 → x = −b/a.",
+        "Đúng. x²=0 → x=0 duy nhất."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về phép tính:", statements:[
+        { stmt:"(A+B)−C = A+B−C", correct:true },
+        { stmt:"(A−B)+C = A−B+C", correct:true },
+        { stmt:"−(2x−3) = −2x−3", correct:false },
+        { stmt:"Nhân đa thức với đơn thức: nhân từng hạng tử", correct:true }
+      ], explains:[
+        "Đúng.",
+        "Đúng.",
+        "Sai. −(2x−3) = −2x+3.",
+        "Đúng. Quy tắc phân phối."
+      ]},
+      // 4 Short
+      { type:"short", text:"3x−1 tại x=2 = ?", answer:"5", hint:"Thay x=2", explain:"6−1=5." },
+      { type:"short", text:"Nghiệm P(x)=x+7: x=?", answer:"-7", hint:"P(x)=0", explain:"x=−7." },
+      { type:"short", text:"Bậc đơn thức 4x³y²z = ?", answer:"6", hint:"3+2+1", explain:"3+2+1=6." },
+      { type:"short", text:"P(x)=2x−10. P(5)=?", answer:"0", hint:"Thay x=5", explain:"10−10=0." }
     ]
   },
 
   // ==================== CHƯƠNG VIII: TAM GIÁC CÂN – TAM GIÁC ĐỀU ====================
   {
     id:"l7_8", emoji:"📏", name:"Tam giác cân – Tam giác đều",
-    desc:"Tam giác cân, định lí đảo, tam giác đều, vuông cân, đường cao, trục đối xứng, đường trung trực, tâm đường tròn ngoại tiếp",
+    desc:"Tam giác cân, định lí đảo, vuông cân, tam giác đều, đường trung trực, trục đối xứng",
+    theory:`<b>1. Tam giác cân:</b> Có 2 cạnh bên bằng nhau (AB = AC, đỉnh A, đáy BC). Hai góc đáy bằng nhau.<br>
+<b>2. Định lí đảo:</b> Nếu tam giác có 2 góc bằng nhau → tam giác cân.<br>
+<b>3. Tam giác vuông cân:</b> Có 1 góc vuông + 2 cạnh góc vuông bằng nhau. 2 góc nhọn = 45°. Cạnh huyền = a√2.<br>
+<b>4. Tam giác đều:</b> 3 cạnh bằng nhau, 3 góc = 60°. Đường cao h = a√3/2. Diện tích S = a²√3/4.<br>
+<b>5. Tam giác cân + 1 góc = 60° → đều.</b><br>
+<b>6. Đường trung trực:</b> Qua trung điểm, vuông góc đoạn thẳng. Mọi điểm trên trung trực cách đều 2 đầu đoạn thẳng.<br>
+<b>7. Tính chất tam giác cân:</b> Đường cao từ đỉnh = đường trung tuyến = đường phân giác = đường trung trực của cạnh đáy.`,
     questions:[
-      { type:"mc", text:"Câu 1. Tam giác cân ABC (AB = AC). Góc đáy B = 50°. Góc đỉnh A = ?", opts:["50°","80°","100°","130°"], correct:1, explain:"B = C = 50°. A = 180° − 50° − 50° = 80°." },
-      { type:"mc", text:"Câu 2. Tam giác đều có:", opts:["2 cạnh bằng nhau","3 cạnh bằng nhau, 3 góc = 60°","1 góc vuông","2 góc bằng nhau"], correct:1, explain:"Tam giác đều: 3 cạnh bằng nhau, 3 góc bằng nhau = 60°." },
-      { type:"mc", text:"Câu 3. Tam giác vuông cân có 2 góc nhọn bằng:", opts:["30°","45°","60°","90°"], correct:1, explain:"Vuông cân: góc vuông 90°, 2 góc nhọn = (180°−90°)/2 = 45°." },
-      { type:"mc", text:"Câu 4. Tam giác cân ABC (AB = AC = 5cm, BC = 6cm). Chu vi = ?", opts:["11 cm","15 cm","16 cm","30 cm"], correct:2, explain:"C = 5 + 5 + 6 = 16 cm." },
-      { type:"mc", text:"Câu 5. Đường trung trực của đoạn AB là đường thẳng:", opts:["Đi qua trung điểm và vuông góc AB","Đi qua A","Đi qua B","Song song AB"], correct:0, explain:"Trung trực: qua trung điểm AB và vuông góc với AB." },
-      { type:"mc", text:"Câu 6. ΔABC cân tại A, góc A = 40°. Góc B = ?", opts:["40°","70°","80°","100°"], correct:1, explain:"B = C = (180° − 40°)/2 = 140°/2 = 70°." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tam giác cân và đều:", statements:[
-        { stmt:"Tam giác đều là tam giác cân đặc biệt", correct:true },
+      // 24 MC
+      { type:"mc", text:"Câu 1. ΔABC cân tại A, B̂ = 50°. Â = ?", opts:["50°","80°","100°","130°"], correct:1, explain:"B=C=50°. A=180°−100°=80°." },
+      { type:"mc", text:"Câu 2. Tam giác đều có:", opts:["2 cạnh bằng","3 cạnh bằng, 3 góc=60°","1 góc vuông","2 góc bằng"], correct:1, explain:"Đều: 3 cạnh, 3 góc=60°." },
+      { type:"mc", text:"Câu 3. Vuông cân có 2 góc nhọn:", opts:["30°","45°","60°","90°"], correct:1, explain:"(180°−90°)/2 = 45°." },
+      { type:"mc", text:"Câu 4. ΔABC cân AB=AC=5, BC=6. Chu vi:", opts:["11","15","16","30"], correct:2, explain:"5+5+6=16." },
+      { type:"mc", text:"Câu 5. Trung trực đoạn AB:", opts:["Qua trung điểm, ⊥ AB","Qua A","Qua B","// AB"], correct:0, explain:"Định nghĩa trung trực." },
+      { type:"mc", text:"Câu 6. ΔABC cân tại A, Â=40°. B̂=?", opts:["40°","70°","80°","100°"], correct:1, explain:"B=(180°−40°)/2=70°." },
+      { type:"mc", text:"Câu 7. Tam giác cân là tam giác có:", opts:["3 cạnh bằng","2 cạnh bằng","1 góc vuông","3 góc bằng"], correct:1, explain:"Định nghĩa: 2 cạnh bên bằng nhau." },
+      { type:"mc", text:"Câu 8. ΔABC cân tại A, Â=100°. B̂=?", opts:["40°","50°","60°","80°"], correct:0, explain:"B=(180°−100°)/2=40°." },
+      { type:"mc", text:"Câu 9. ΔABC cân tại A, B̂=55°. Â=?", opts:["55°","65°","70°","110°"], correct:2, explain:"A=180°−55°−55°=70°." },
+      { type:"mc", text:"Câu 10. B̂=Ĉ=50° → ΔABC:", opts:["Đều","Cân tại A","Vuông","Cân tại B"], correct:1, explain:"Định lí đảo: 2 góc bằng → cân." },
+      { type:"mc", text:"Câu 11. ΔABC cân AB=AC=7, C=20. BC=?", opts:["3","6","7","13"], correct:1, explain:"BC=20−7−7=6." },
+      { type:"mc", text:"Câu 12. Trục đối xứng tam giác cân:", opts:["Trung điểm cạnh bên","Đỉnh + trung điểm đáy","2 đỉnh đáy","Song song đáy"], correct:1, explain:"Qua đỉnh và trung điểm đáy." },
+      { type:"mc", text:"Câu 13. Vuông cân tại A, AB=AC=5. BC=?", opts:["5","5√2","10","25"], correct:1, explain:"BC²=50→BC=5√2." },
+      { type:"mc", text:"Câu 14. Vuông cân tại A, BC=6√2. AB=?", opts:["3","6","6√2","12"], correct:1, explain:"AB=BC/√2=6." },
+      { type:"mc", text:"Câu 15. Â=90°, AB=AC → loại:", opts:["Đều","Vuông cân tại A","Cân tại B","Tù"], correct:1, explain:"Vuông + cân → vuông cân." },
+      { type:"mc", text:"Câu 16. 3 góc=60° → loại:", opts:["Cân","Vuông","Đều","Tù"], correct:2, explain:"3 góc bằng → đều." },
+      { type:"mc", text:"Câu 17. Đường cao tam giác đều cạnh 4:", opts:["2","2√3","4","4√3"], correct:1, explain:"h=a√3/2=2√3." },
+      { type:"mc", text:"Câu 18. S tam giác đều cạnh 6:", opts:["9","9√3","18","36"], correct:1, explain:"S=a²√3/4=9√3." },
+      { type:"mc", text:"Câu 19. Cân tại A, Â=60° → loại:", opts:["Vuông","Đều","Tù","Không xác định"], correct:1, explain:"A=60°→B=C=60°→đều." },
+      { type:"mc", text:"Câu 20. Đều, h=3√3. Cạnh a=?", opts:["3","6","9","3√3"], correct:1, explain:"a=2h/√3=6." },
+      { type:"mc", text:"Câu 21. M trên trung trực AB →", opts:["MA>MB","MA<MB","MA=MB","MA+MB=AB"], correct:2, explain:"Tính chất trung trực." },
+      { type:"mc", text:"Câu 22. Giao 3 trung trực tam giác:", opts:["Trọng tâm","Trực tâm","Tâm ngoại tiếp","Tâm nội tiếp"], correct:2, explain:"Tâm đường tròn ngoại tiếp." },
+      { type:"mc", text:"Câu 23. ΔABC cân tại A, AH⊥BC → ?", opts:["BH>HC","BH<HC","BH=HC","AH=BH"], correct:2, explain:"Đường cao = trung tuyến → BH=HC." },
+      { type:"mc", text:"Câu 24. Tam giác đều có mấy trục đối xứng?", opts:["0","1","2","3"], correct:3, explain:"Tam giác đều: 3 trục đối xứng." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về tam giác cân:", statements:[
+        { stmt:"Tam giác đều cũng là tam giác cân", correct:true },
         { stmt:"Tam giác cân có 2 góc đáy bằng nhau", correct:true },
-        { stmt:"Tam giác vuông cân có 3 góc bằng 60°", correct:false },
-        { stmt:"Mọi điểm trên trung trực cách đều 2 đầu đoạn thẳng", correct:true }
-      ], explains:[
-        "Đúng. Tam giác đều có 3 cạnh bằng nhau → cũng cân.",
-        "Đúng. Tính chất tam giác cân.",
-        "Sai. Tam giác vuông cân: 90°, 45°, 45°.",
-        "Đúng. Tính chất đường trung trực."
-      ]},
-      { type:"short", text:"ΔABC cân tại A, góc B = 65°. Góc A = ? độ", answer:"50", hint:"A = 180° − 2B", explain:"B = C = 65°. A = 180° − 65° − 65° = 50°." },
-      { type:"short", text:"Tam giác đều cạnh 8cm. Chu vi = ? cm", answer:"24", hint:"C = 3 × cạnh", explain:"C = 3 × 8 = 24 cm." },
-
-      // ===== BỔ SUNG: 20 MC về tam giác cân, tam giác đều =====
-      // --- Nhóm 1: Tam giác cân — Định nghĩa & Tính chất ---
-      { type:"mc", text:"Câu 10. Tam giác cân là tam giác có:", opts:["3 cạnh bằng nhau","2 cạnh bằng nhau","1 góc vuông","3 góc bằng nhau"], correct:1, explain:"Tam giác cân có 2 cạnh bên bằng nhau." },
-      { type:"mc", text:"Câu 11. ΔABC cân tại A, góc A = 100°. Góc B bằng:", opts:["40°","50°","60°","80°"], correct:0, explain:"B = C = (180° − 100°)/2 = 80°/2 = 40°." },
-      { type:"mc", text:"Câu 12. ΔABC cân tại A, góc B = 55°. Góc đỉnh A bằng:", opts:["55°","65°","70°","110°"], correct:2, explain:"B = C = 55°. A = 180° − 55° − 55° = 70°." },
-      { type:"mc", text:"Câu 13. ΔABC có góc B = góc C = 50°. Kết luận đúng là:", opts:["ΔABC đều","ΔABC cân tại A","ΔABC vuông","ΔABC cân tại B"], correct:1, explain:"Định lí đảo: 2 góc đáy bằng nhau → tam giác cân tại đỉnh đối diện (A)." },
-      { type:"mc", text:"Câu 14. ΔABC cân tại A, AB = AC = 7 cm, chu vi = 20 cm. Cạnh đáy BC bằng:", opts:["3 cm","6 cm","7 cm","13 cm"], correct:1, explain:"BC = 20 − 7 − 7 = 6 cm." },
-      { type:"mc", text:"Câu 15. Trục đối xứng của tam giác cân đi qua:", opts:["Trung điểm cạnh bên","Đỉnh và trung điểm cạnh đáy","2 đỉnh đáy","Song song cạnh đáy"], correct:1, explain:"Trục đối xứng tam giác cân là đường thẳng qua đỉnh và trung điểm cạnh đáy." },
-
-      // --- Nhóm 2: Tam giác vuông cân ---
-      { type:"mc", text:"Câu 16. ΔABC vuông cân tại A, AB = AC = 5 cm. Cạnh huyền BC bằng:", opts:["5 cm","5√2 cm","10 cm","25 cm"], correct:1, explain:"Pytago: BC² = 5² + 5² = 50 → BC = √50 = 5√2 cm." },
-      { type:"mc", text:"Câu 17. ΔABC vuông cân tại A, BC = 6√2 cm. Cạnh góc vuông AB bằng:", opts:["3 cm","6 cm","6√2 cm","12 cm"], correct:1, explain:"AB = AC = BC/√2 = 6√2/√2 = 6 cm." },
-      { type:"mc", text:"Câu 18. ΔABC có góc A = 90°, AB = AC. Tam giác ABC là:", opts:["Tam giác đều","Tam giác vuông cân tại A","Tam giác cân tại B","Tam giác tù"], correct:1, explain:"Góc A = 90° (vuông) + AB = AC (cân) → vuông cân tại A." },
-
-      // --- Nhóm 3: Tam giác đều — Định nghĩa & Tính chất ---
-      { type:"mc", text:"Câu 19. Tam giác có 3 góc đều bằng 60° là tam giác:", opts:["Cân","Vuông","Đều","Tù"], correct:2, explain:"3 góc = 60° → 3 cạnh bằng nhau → tam giác đều." },
-      { type:"mc", text:"Câu 20. Đường cao của tam giác đều cạnh 4 cm bằng:", opts:["2 cm","2√3 cm","4 cm","4√3 cm"], correct:1, explain:"Đường cao h = a√3/2 = 4√3/2 = 2√3 cm." },
-      { type:"mc", text:"Câu 21. Diện tích tam giác đều cạnh 6 cm bằng:", opts:["9 cm²","9√3 cm²","18 cm²","36 cm²"], correct:1, explain:"S = a²√3/4 = 36√3/4 = 9√3 cm²." },
-      { type:"mc", text:"Câu 22. ΔABC cân tại A, góc A = 60°. Tam giác ABC là:", opts:["Tam giác vuông","Tam giác đều","Tam giác tù","Không xác định"], correct:1, explain:"Cân tại A, A = 60° → B = C = (180°−60°)/2 = 60°. Ba góc = 60° → đều." },
-      { type:"mc", text:"Câu 23. Tam giác đều có đường cao h = 3√3 cm. Cạnh tam giác bằng:", opts:["3 cm","6 cm","9 cm","3√3 cm"], correct:1, explain:"h = a√3/2 → a = 2h/√3 = 2×3√3/√3 = 6 cm." },
-
-      // --- Nhóm 4: Đường trung trực & Tính chất ---
-      { type:"mc", text:"Câu 24. Điểm M nằm trên đường trung trực của đoạn AB thì:", opts:["MA > MB","MA < MB","MA = MB","MA + MB = AB"], correct:2, explain:"Tính chất đường trung trực: mọi điểm trên trung trực cách đều 2 đầu đoạn thẳng." },
-      { type:"mc", text:"Câu 25. Giao điểm 3 đường trung trực của tam giác là:", opts:["Trọng tâm","Trực tâm","Tâm đường tròn ngoại tiếp","Tâm đường tròn nội tiếp"], correct:2, explain:"3 đường trung trực đồng quy tại tâm đường tròn ngoại tiếp tam giác." },
-      { type:"mc", text:"Câu 26. Tam giác cân có bao nhiêu trục đối xứng?", opts:["0","1","2","3"], correct:1, explain:"Tam giác cân có đúng 1 trục đối xứng (đường thẳng qua đỉnh và trung điểm đáy)." },
-
-      // --- Nhóm 5: Bài toán tổng hợp & Vận dụng ---
-      { type:"mc", text:"Câu 27. ΔABC cân tại A, AH ⊥ BC (H ∈ BC). Khẳng định đúng là:", opts:["BH > HC","BH < HC","BH = HC","AH = BH"], correct:2, explain:"Trong tam giác cân, đường cao từ đỉnh cũng là đường trung tuyến → H là trung điểm BC → BH = HC." },
-      { type:"mc", text:"Câu 28. ΔABC cân tại A, góc B = 70°. Đường cao AH chia góc A thành 2 góc bằng:", opts:["20°","35°","40°","70°"], correct:0, explain:"A = 180° − 70° − 70° = 40°. Đường cao AH cũng là phân giác → mỗi góc = 40°/2 = 20°." },
-      { type:"mc", text:"Câu 29. Biển báo giao thông hình tam giác đều cạnh 60 cm. Chu vi biển bằng:", opts:["120 cm","160 cm","180 cm","360 cm"], correct:2, explain:"Chu vi = 3 × 60 = 180 cm." }
+        { stmt:"Tam giác vuông cân có 3 góc 60°", correct:false },
+        { stmt:"Đường cao từ đỉnh tam giác cân = trung tuyến", correct:true }
+      ], explains:["Đúng. 3 cạnh bằng → cũng cân.","Đúng. Tính chất.","Sai. Vuông cân: 90°,45°,45°.","Đúng. Tính chất."]},
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về tam giác đều:", statements:[
+        { stmt:"Tam giác đều có 3 trục đối xứng", correct:true },
+        { stmt:"Cân + 1 góc 60° → đều", correct:true },
+        { stmt:"Đường cao đều = cạnh", correct:false },
+        { stmt:"Tam giác đều cũng vuông", correct:false }
+      ], explains:["Đúng.","Đúng. Cân+60°→3 góc 60°→đều.","Sai. h=a√3/2 < a.","Sai. Đều: 3 góc 60°, không có 90°."]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về trung trực:", statements:[
+        { stmt:"Mọi điểm trên trung trực cách đều 2 đầu đoạn", correct:true },
+        { stmt:"Tam giác cân có 1 trục đối xứng", correct:true },
+        { stmt:"3 trung trực đồng quy tại trọng tâm", correct:false },
+        { stmt:"Tâm ngoại tiếp cách đều 3 đỉnh", correct:true }
+      ], explains:["Đúng.","Đúng.","Sai. Đồng quy tại tâm ngoại tiếp.","Đúng."]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về vuông cân:", statements:[
+        { stmt:"Vuông cân: 2 góc nhọn = 45°", correct:true },
+        { stmt:"Cạnh huyền vuông cân = a√2", correct:true },
+        { stmt:"Vuông cân cũng là tam giác đều", correct:false },
+        { stmt:"ΔABC: Â=90°, AB=AC → vuông cân", correct:true }
+      ], explains:["Đúng.","Đúng. Pytago.","Sai. Đều: 60°, vuông cân: 90°.","Đúng."]},
+      // 4 Short
+      { type:"short", text:"ΔABC cân tại A, B̂=65°. Â=? độ", answer:"50", hint:"A=180°−2×65°", explain:"A=180°−130°=50°." },
+      { type:"short", text:"Tam giác đều cạnh 8. Chu vi=?", answer:"24", hint:"3×8", explain:"3×8=24." },
+      { type:"short", text:"Vuông cân, cạnh góc vuông=3. Cạnh huyền² = ?", answer:"18", hint:"3²+3²", explain:"9+9=18." },
+      { type:"short", text:"Tam giác cân AB=AC=10, BC=12. Chu vi=?", answer:"32", hint:"10+10+12", explain:"10+10+12=32." }
     ]
   },
 
   // ==================== CHƯƠNG IX: CÁC ĐƯỜNG ĐỒNG QUY TRONG TAM GIÁC ====================
   {
     id:"l7_9", emoji:"🔻", name:"Các đường đồng quy trong tam giác",
-    desc:"Đường trung tuyến, đường cao, đường phân giác, đường trung trực, trọng tâm, trực tâm",
+    desc:"Trung tuyến, đường cao, phân giác, trung trực, trọng tâm, trực tâm, tâm nội/ngoại tiếp",
+    theory:`<b>1. Đường trung tuyến:</b> Nối đỉnh với trung điểm cạnh đối. 3 trung tuyến đồng quy tại trọng tâm G. G chia trung tuyến theo tỉ số 2:1 (tính từ đỉnh).<br>
+<b>2. Đường cao:</b> Hạ từ đỉnh vuông góc cạnh đối. 3 đường cao đồng quy tại trực tâm H. Trực tâm có thể nằm trong (nhọn), trên cạnh (vuông), hoặc ngoài (tù).<br>
+<b>3. Đường phân giác:</b> Chia đôi góc tại đỉnh. 3 phân giác đồng quy tại tâm đường tròn nội tiếp I. I cách đều 3 cạnh.<br>
+<b>4. Đường trung trực:</b> Qua trung điểm, vuông góc cạnh. 3 trung trực đồng quy tại tâm đường tròn ngoại tiếp O. O cách đều 3 đỉnh.<br>
+<b>5. Tóm tắt:</b> Trung tuyến→Trọng tâm (G). Cao→Trực tâm (H). Phân giác→Nội tâm (I). Trung trực→Ngoại tâm (O).`,
     questions:[
-      { type:"mc", text:"Câu 1. Ba đường trung tuyến của tam giác đồng quy tại:", opts:["Trực tâm","Trọng tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:1, explain:"3 đường trung tuyến đồng quy tại trọng tâm G." },
-      { type:"mc", text:"Câu 2. Trọng tâm G chia mỗi trung tuyến thành 2 phần có tỉ số:", opts:["1:1","1:2","2:1","1:3"], correct:2, explain:"G chia trung tuyến thành 2 phần: phần chứa đỉnh = 2, phần kia = 1 (tỉ số 2:1)." },
-      { type:"mc", text:"Câu 3. Ba đường phân giác trong tam giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:2, explain:"3 phân giác đồng quy tại tâm đường tròn nội tiếp." },
-      { type:"mc", text:"Câu 4. Ba đường cao của tam giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:1, explain:"3 đường cao đồng quy tại trực tâm H." },
-      { type:"mc", text:"Câu 5. Ba đường trung trực của tam giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:3, explain:"3 đường trung trực đồng quy tại tâm đường tròn ngoại tiếp." },
-      { type:"mc", text:"Câu 6. Đường trung tuyến nối đỉnh với:", opts:["Chân đường cao","Trung điểm cạnh đối","Đỉnh góc kề","Tâm đường tròn"], correct:1, explain:"Trung tuyến = đoạn thẳng nối đỉnh đến trung điểm cạnh đối diện." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về các đường đồng quy:", statements:[
-        { stmt:"Trọng tâm chia trung tuyến theo tỉ số 2:1 (tính từ đỉnh)", correct:true },
-        { stmt:"Tâm nội tiếp cách đều 3 cạnh tam giác", correct:true },
-        { stmt:"Trực tâm luôn nằm bên trong tam giác", correct:false },
-        { stmt:"Tâm ngoại tiếp cách đều 3 đỉnh tam giác", correct:true }
-      ], explains:[
-        "Đúng. G chia trung tuyến thành 2 phần: 2/3 phía đỉnh, 1/3 phía cạnh.",
-        "Đúng. Tâm nội tiếp = giao 3 phân giác, cách đều 3 cạnh.",
-        "Sai. Tam giác tù → trực tâm nằm NGOÀI tam giác.",
-        "Đúng. Tâm ngoại tiếp = giao 3 trung trực, cách đều 3 đỉnh."
-      ]},
-      { type:"short", text:"Trung tuyến AM = 9cm, G là trọng tâm. AG = ? cm", answer:"6", hint:"AG = 2/3 × AM", explain:"AG = 2/3 × 9 = 6 cm." },
-      { type:"short", text:"Ba đường trung tuyến đồng quy tại điểm gọi là? (nhập: trong tam)", answer:"trong tam", hint:"Bắt đầu bằng chữ t", explain:"Trọng tâm (G)." }
+      // 24 MC
+      { type:"mc", text:"Câu 1. 3 trung tuyến đồng quy tại:", opts:["Trực tâm","Trọng tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:1, explain:"Trọng tâm G." },
+      { type:"mc", text:"Câu 2. G chia trung tuyến theo tỉ số:", opts:["1:1","1:2","2:1","1:3"], correct:2, explain:"2:1 tính từ đỉnh." },
+      { type:"mc", text:"Câu 3. 3 phân giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:2, explain:"Tâm nội tiếp I." },
+      { type:"mc", text:"Câu 4. 3 đường cao đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:1, explain:"Trực tâm H." },
+      { type:"mc", text:"Câu 5. 3 trung trực đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:3, explain:"Tâm ngoại tiếp O." },
+      { type:"mc", text:"Câu 6. Trung tuyến nối đỉnh với:", opts:["Chân đường cao","Trung điểm cạnh đối","Đỉnh kề","Tâm đường tròn"], correct:1, explain:"Trung điểm cạnh đối." },
+      { type:"mc", text:"Câu 7. Trung tuyến AM=12, AG=?", opts:["4","6","8","10"], correct:2, explain:"AG = 2/3×12 = 8." },
+      { type:"mc", text:"Câu 8. Trung tuyến AM=15, GM=?", opts:["5","7.5","10","15"], correct:0, explain:"GM = 1/3×15 = 5." },
+      { type:"mc", text:"Câu 9. Tâm nội tiếp cách đều:", opts:["3 đỉnh","3 cạnh","3 trung tuyến","3 đường cao"], correct:1, explain:"I cách đều 3 cạnh." },
+      { type:"mc", text:"Câu 10. Tâm ngoại tiếp cách đều:", opts:["3 đỉnh","3 cạnh","3 trung tuyến","Trọng tâm"], correct:0, explain:"O cách đều 3 đỉnh." },
+      { type:"mc", text:"Câu 11. Tam giác vuông: trực tâm ở:", opts:["Trong tam giác","Đỉnh góc vuông","Ngoài tam giác","Trung điểm cạnh huyền"], correct:1, explain:"Trực tâm = đỉnh góc vuông." },
+      { type:"mc", text:"Câu 12. Tam giác tù: trực tâm ở:", opts:["Trong","Trên cạnh","Ngoài","Trọng tâm"], correct:2, explain:"Tù → trực tâm ngoài." },
+      { type:"mc", text:"Câu 13. Tam giác nhọn: trực tâm ở:", opts:["Trong","Ngoài","Trên cạnh","Trung điểm"], correct:0, explain:"Nhọn → trực tâm trong." },
+      { type:"mc", text:"Câu 14. Đường cao là đoạn:", opts:["Từ đỉnh ⊥ cạnh đối","Nối đỉnh–trung điểm","Chia đôi góc","Qua trung điểm ⊥ cạnh"], correct:0, explain:"Đường cao: đỉnh vuông góc cạnh đối." },
+      { type:"mc", text:"Câu 15. Phân giác chia đôi:", opts:["Cạnh","Góc tại đỉnh","Đường cao","Trung tuyến"], correct:1, explain:"Phân giác chia đôi góc." },
+      { type:"mc", text:"Câu 16. Tam giác đều: trọng tâm, trực tâm, nội tâm, ngoại tâm:", opts:["4 điểm khác nhau","Trùng 2 điểm","Trùng 3 điểm","Trùng 1 điểm"], correct:3, explain:"Tam giác đều: 4 tâm trùng nhau." },
+      { type:"mc", text:"Câu 17. Trung tuyến ứng cạnh huyền tam giác vuông = ½:", opts:["Cạnh góc vuông","Cạnh huyền","Đường cao","Phân giác"], correct:1, explain:"Trung tuyến ứng cạnh huyền = ½ cạnh huyền." },
+      { type:"mc", text:"Câu 18. ΔABC: AM trung tuyến, G trọng tâm. AG/AM = ?", opts:["1/3","1/2","2/3","3/4"], correct:2, explain:"AG = 2/3·AM." },
+      { type:"mc", text:"Câu 19. Tâm đường tròn ngoại tiếp tam giác vuông ở:", opts:["Đỉnh vuông","Trung điểm cạnh huyền","Trọng tâm","Trực tâm"], correct:1, explain:"Ngoại tiếp vuông → tâm = trung điểm cạnh huyền." },
+      { type:"mc", text:"Câu 20. Mỗi tam giác có bao nhiêu đường trung tuyến?", opts:["1","2","3","4"], correct:2, explain:"3 đỉnh → 3 trung tuyến." },
+      { type:"mc", text:"Câu 21. Mỗi tam giác có bao nhiêu đường cao?", opts:["1","2","3","6"], correct:2, explain:"3 đường cao." },
+      { type:"mc", text:"Câu 22. Trung tuyến AM=18. AG=?", opts:["6","9","12","18"], correct:2, explain:"AG=2/3×18=12." },
+      { type:"mc", text:"Câu 23. Phân giác trong chia cạnh đối theo:", opts:["Tỉ số 2 cạnh kề","Bằng nhau","Tỉ số 1:2","Không xác định"], correct:0, explain:"Phân giác chia cạnh đối theo tỉ số 2 cạnh kề." },
+      { type:"mc", text:"Câu 24. ΔABC vuông tại A, BC=10. Trung tuyến AM=?", opts:["5","10","7.5","2.5"], correct:0, explain:"AM = BC/2 = 5." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về trọng tâm:", statements:[
+        { stmt:"G chia trung tuyến 2:1 từ đỉnh", correct:true },
+        { stmt:"Trọng tâm luôn nằm trong tam giác", correct:true },
+        { stmt:"G là giao 3 đường cao", correct:false },
+        { stmt:"Trọng tâm chia trung tuyến thành AG=2GM", correct:true }
+      ], explains:["Đúng.","Đúng. Trọng tâm luôn trong.","Sai. Giao đường cao = trực tâm.","Đúng. AG/GM=2."]},
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về trực tâm:", statements:[
+        { stmt:"3 đường cao đồng quy tại trực tâm", correct:true },
+        { stmt:"Trực tâm luôn trong tam giác", correct:false },
+        { stmt:"Vuông: trực tâm = đỉnh góc vuông", correct:true },
+        { stmt:"Đều: trực tâm = trọng tâm", correct:true }
+      ], explains:["Đúng.","Sai. Tù→ngoài.","Đúng.","Đúng. Đều: 4 tâm trùng."]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về nội/ngoại tiếp:", statements:[
+        { stmt:"Tâm nội tiếp = giao 3 phân giác", correct:true },
+        { stmt:"Tâm ngoại tiếp = giao 3 trung trực", correct:true },
+        { stmt:"Tâm nội tiếp cách đều 3 đỉnh", correct:false },
+        { stmt:"Ngoại tiếp vuông: tâm = trung điểm cạnh huyền", correct:true }
+      ], explains:["Đúng.","Đúng.","Sai. Nội tiếp cách đều 3 CẠNH.","Đúng."]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Tổng hợp:", statements:[
+        { stmt:"Trung tuyến ứng cạnh huyền = ½ cạnh huyền", correct:true },
+        { stmt:"Tam giác có 4 đường trung tuyến", correct:false },
+        { stmt:"Phân giác chia đôi góc tại đỉnh", correct:true },
+        { stmt:"Đường cao luôn nằm trong tam giác", correct:false }
+      ], explains:["Đúng.","Sai. 3 trung tuyến.","Đúng.","Sai. Tù→đường cao có thể nằm ngoài."]},
+      // 4 Short
+      { type:"short", text:"Trung tuyến AM=9, G trọng tâm. AG=?", answer:"6", hint:"2/3×9", explain:"AG=6." },
+      { type:"short", text:"ΔABC vuông tại A, BC=14. Trung tuyến AM=?", answer:"7", hint:"AM=BC/2", explain:"AM=7." },
+      { type:"short", text:"Trung tuyến AM=21. GM=?", answer:"7", hint:"1/3×21", explain:"GM=7." },
+      { type:"short", text:"Tam giác có mấy đường phân giác? (nhập số)", answer:"3", hint:"Mỗi đỉnh 1 phân giác", explain:"3 phân giác." }
     ]
   },
 
   // ==================== CHƯƠNG X: LÀM QUEN VỚI BIẾN ĐỔI HÌNH ====================
   {
     id:"l7_10", emoji:"🔄", name:"Làm quen với biến đổi hình",
-    desc:"Phép tịnh tiến, phép đối xứng trục, phép đối xứng tâm, phép quay",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phép tịnh tiến:</b> Là phép dời hình, trong đó mọi điểm đều dịch chuyển cùng một hướng và cùng một khoảng cách. Phép tịnh tiến theo vectơ <i>v⃗</i> biến điểm M thành M' sao cho MM'⃗ = v⃗. Tịnh tiến bảo toàn khoảng cách, hình dạng và kích thước.<br>
+<b>2. Phép đối xứng trục:</b> Là phép biến đổi qua một đường thẳng d (trục đối xứng). Điểm M biến thành M' sao cho d là đường trung trực của MM'. Đối xứng trục bảo toàn khoảng cách. Hình có trục đối xứng: hình tròn, hình chữ nhật, tam giác cân, ...<br>
+<b>3. Phép đối xứng tâm:</b> Là phép biến đổi qua một điểm O (tâm đối xứng). Điểm M biến thành M' sao cho O là trung điểm MM'. Phép quay 180° quanh O chính là phép đối xứng tâm O. Hình có tâm đối xứng: hình bình hành, hình tròn, ...<br>
+<b>4. Phép quay:</b> Là phép biến đổi quay mỗi điểm quanh một tâm O một góc α. Điểm M biến thành M' sao cho OM = OM' và góc MOM' = α. Phép quay bảo toàn khoảng cách. Quay 360° = trở về vị trí cũ. Quay 180° = đối xứng tâm.<br>
+<b>5. Tính chất chung:</b> Tất cả các phép biến đổi trên đều là phép đẳng cự (bảo toàn khoảng cách giữa hai điểm bất kì). Biến đoạn thẳng thành đoạn thẳng bằng nó, biến tam giác thành tam giác bằng nó, biến đường tròn thành đường tròn có cùng bán kính.`,
     questions:[
-      { type:"mc", text:"Câu 1. Phép tịnh tiến biến mỗi điểm thành:", opts:["Điểm đối xứng","Điểm dịch chuyển cùng hướng, cùng khoảng cách","Điểm quay","Điểm ngẫu nhiên"], correct:1, explain:"Tịnh tiến: mọi điểm dời cùng hướng và cùng khoảng cách." },
-      { type:"mc", text:"Câu 2. Phép đối xứng trục giữ nguyên:", opts:["Vị trí","Kích thước và hình dạng","Hướng","Tất cả"], correct:1, explain:"Đối xứng trục bảo toàn kích thước và hình dạng (phép đẳng cự)." },
-      { type:"mc", text:"Câu 3. Phép quay 180° quanh tâm O tương đương:", opts:["Phép tịnh tiến","Phép đối xứng trục","Phép đối xứng tâm O","Phép co giãn"], correct:2, explain:"Quay 180° quanh O = đối xứng tâm O." },
-      { type:"mc", text:"Câu 4. Phép đối xứng tâm O biến điểm A thành A' sao cho:", opts:["O là trung điểm AA'","A = A'","OA = 2OA'","O nằm ngoài AA'"], correct:0, explain:"Đối xứng tâm: O là trung điểm của AA'." },
-      { type:"mc", text:"Câu 5. Hình nào bất biến qua phép đối xứng tâm?", opts:["Tam giác đều","Tam giác cân","Hình bình hành","Hình thang"], correct:2, explain:"Hình bình hành bất biến qua phép đối xứng tâm (giao 2 đường chéo)." },
-      { type:"mc", text:"Câu 6. Phép tịnh tiến biến đoạn thẳng AB thành:", opts:["Đoạn thẳng A'B' bằng AB","Đoạn thẳng dài hơn","Đường cong","Điểm"], correct:0, explain:"Tịnh tiến bảo toàn khoảng cách → A'B' = AB." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về phép biến đổi hình:", statements:[
-        { stmt:"Phép tịnh tiến giữ nguyên kích thước hình", correct:true },
-        { stmt:"Phép đối xứng trục thay đổi hình dạng", correct:false },
-        { stmt:"Phép quay 360° đưa hình về vị trí ban đầu", correct:true },
-        { stmt:"Phép đối xứng tâm O biến O thành chính nó", correct:true }
+      { type:"mc", text:"Câu 1. Phép tịnh tiến biến mỗi điểm M thành điểm M' sao cho:", opts:["OM = OM'","MM' có hướng và độ dài không đổi","M' đối xứng M qua một đường thẳng","M' quay quanh O"], correct:1, explain:"Tịnh tiến: mọi điểm dời cùng hướng và cùng khoảng cách, tức MM'⃗ = v⃗ không đổi." },
+      { type:"mc", text:"Câu 2. Phép đối xứng trục d biến điểm M thành M'. Khẳng định nào đúng?", opts:["d đi qua M","d là đường trung trực của MM'","MM' song song d","M trùng M'"], correct:1, explain:"Đối xứng trục: d là đường trung trực của đoạn MM' (d vuông góc MM' tại trung điểm)." },
+      { type:"mc", text:"Câu 3. Phép đối xứng tâm O biến điểm A thành A'. Khi đó:", opts:["OA = 2OA'","O là trung điểm AA'","A nằm trên đường tròn tâm O","OA' = 2OA"], correct:1, explain:"Đối xứng tâm O: O là trung điểm của AA', tức OA = OA' và A, O, A' thẳng hàng." },
+      { type:"mc", text:"Câu 4. Phép quay tâm O góc 180° tương đương với:", opts:["Phép tịnh tiến","Phép đối xứng trục","Phép đối xứng tâm O","Phép co giãn"], correct:2, explain:"Quay 180° quanh O: mỗi điểm M biến thành M' với O là trung điểm MM' → đúng là đối xứng tâm O." },
+      { type:"mc", text:"Câu 5. Phép quay tâm O góc bao nhiêu đưa hình về vị trí ban đầu?", opts:["90°","180°","270°","360°"], correct:3, explain:"Quay 360° = quay trọn vòng → mọi điểm trở về vị trí cũ." },
+      { type:"mc", text:"Câu 6. Tịnh tiến điểm A(2; 5) theo vectơ v⃗ = (3; −1). Tọa độ A' là:", opts:["(5; 4)","(5; 6)","(−1; 6)","(−1; 4)"], correct:0, explain:"A' = (2+3; 5+(−1)) = (5; 4)." },
+      { type:"mc", text:"Câu 7. Đối xứng điểm M(3; 2) qua trục Ox. Tọa độ M' là:", opts:["(−3; 2)","(3; −2)","(−3; −2)","(2; 3)"], correct:1, explain:"Đối xứng qua Ox: giữ x, đổi dấu y → M'(3; −2)." },
+      { type:"mc", text:"Câu 8. Đối xứng điểm P(4; −1) qua trục Oy. Tọa độ P' là:", opts:["(−4; −1)","(4; 1)","(−4; 1)","(1; −4)"], correct:0, explain:"Đối xứng qua Oy: đổi dấu x, giữ y → P'(−4; −1)." },
+      { type:"mc", text:"Câu 9. Đối xứng điểm N(2; 3) qua gốc tọa độ O. Tọa độ N' là:", opts:["(−2; 3)","(2; −3)","(−2; −3)","(3; 2)"], correct:2, explain:"Đối xứng tâm O(0;0): đổi dấu cả x và y → N'(−2; −3)." },
+      { type:"mc", text:"Câu 10. Hình nào sau đây có trục đối xứng?", opts:["Hình bình hành (không phải HCN)","Hình thang cân","Tam giác thường","Tứ giác bất kì"], correct:1, explain:"Hình thang cân có 1 trục đối xứng (đường thẳng đi qua trung điểm hai đáy). Hình bình hành thường không có trục đối xứng." },
+      { type:"mc", text:"Câu 11. Hình chữ nhật có bao nhiêu trục đối xứng?", opts:["1","2","3","4"], correct:1, explain:"HCN có 2 trục đối xứng: đường nối trung điểm 2 cặp cạnh đối." },
+      { type:"mc", text:"Câu 12. Hình vuông có bao nhiêu trục đối xứng?", opts:["2","3","4","8"], correct:2, explain:"Hình vuông có 4 trục: 2 đường nối trung điểm cạnh đối + 2 đường chéo." },
+      { type:"mc", text:"Câu 13. Hình tròn có bao nhiêu trục đối xứng?", opts:["1","2","4","Vô số"], correct:3, explain:"Mọi đường kính đều là trục đối xứng → hình tròn có vô số trục đối xứng." },
+      { type:"mc", text:"Câu 14. Hình nào có tâm đối xứng?", opts:["Tam giác đều","Hình thang","Hình bình hành","Tam giác vuông"], correct:2, explain:"Hình bình hành có tâm đối xứng là giao điểm hai đường chéo." },
+      { type:"mc", text:"Câu 15. Phép tịnh tiến biến đoạn AB thành đoạn A'B'. Khẳng định nào đúng?", opts:["A'B' > AB","A'B' < AB","A'B' = AB","Không xác định"], correct:2, explain:"Tịnh tiến là phép đẳng cự → bảo toàn khoảng cách → A'B' = AB." },
+      { type:"mc", text:"Câu 16. Phép đối xứng trục biến tam giác ABC thành tam giác A'B'C'. Khi đó:", opts:["△A'B'C' đồng dạng △ABC","△A'B'C' = △ABC","△A'B'C' có diện tích lớn hơn","△A'B'C' là tam giác vuông"], correct:1, explain:"Đối xứng trục là phép đẳng cự → biến tam giác thành tam giác bằng nó." },
+      { type:"mc", text:"Câu 17. Tam giác cân ABC (AB = AC) có trục đối xứng là:", opts:["Cạnh BC","Đường cao từ B","Đường trung trực của BC","Cạnh AB"], correct:2, explain:"Đường trung trực của BC (cũng là đường cao, trung tuyến, phân giác từ A) là trục đối xứng." },
+      { type:"mc", text:"Câu 18. Tam giác đều có bao nhiêu trục đối xứng?", opts:["1","2","3","6"], correct:2, explain:"Tam giác đều có 3 trục đối xứng: 3 đường trung trực (= trung tuyến = đường cao = phân giác)." },
+      { type:"mc", text:"Câu 19. Tịnh tiến điểm B(−1; 4) theo vectơ v⃗ = (5; 2). Tọa độ B' là:", opts:["(4; 6)","(6; 6)","(4; 2)","(−6; 2)"], correct:0, explain:"B' = (−1+5; 4+2) = (4; 6)." },
+      { type:"mc", text:"Câu 20. Quay điểm A(1; 0) quanh O(0;0) một góc 90° ngược chiều kim đồng hồ. A' ở vị trí nào?", opts:["(0; 1)","(−1; 0)","(0; −1)","(1; 1)"], correct:0, explain:"Quay 90° ngược chiều KĐH: (x;y) → (−y;x). Vậy (1;0) → (0;1)." },
+      { type:"mc", text:"Câu 21. Quay điểm C(0; 3) quanh O một góc 180°. Tọa độ C' là:", opts:["(0; −3)","(3; 0)","(−3; 0)","(0; 3)"], correct:0, explain:"Quay 180°: (x;y) → (−x;−y). Vậy (0;3) → (0;−3)." },
+      { type:"mc", text:"Câu 22. Chữ cái nào sau đây có trục đối xứng?", opts:["F","G","A","J"], correct:2, explain:"Chữ A có trục đối xứng dọc. F, G, J không có trục đối xứng." },
+      { type:"mc", text:"Câu 23. Phép biến đổi nào sau đây KHÔNG phải phép đẳng cự?", opts:["Tịnh tiến","Đối xứng trục","Phép phóng đại tỉ số 2","Phép quay"], correct:2, explain:"Phóng đại tỉ số 2 thay đổi khoảng cách (nhân đôi) → không phải phép đẳng cự." },
+      { type:"mc", text:"Câu 24. Tịnh tiến hình vuông ABCD theo vectơ v⃗. Ảnh là:", opts:["Hình chữ nhật","Hình thoi","Hình vuông bằng ABCD","Hình thang"], correct:2, explain:"Tịnh tiến bảo toàn hình dạng và kích thước → ảnh vẫn là hình vuông bằng ABCD." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về phép tịnh tiến:", statements:[
+        { stmt:"Phép tịnh tiến bảo toàn khoảng cách giữa hai điểm bất kì", correct:true },
+        { stmt:"Phép tịnh tiến có thể biến một đường thẳng thành đường cong", correct:false },
+        { stmt:"Tịnh tiến theo vectơ 0⃗ biến mỗi điểm thành chính nó", correct:true },
+        { stmt:"Phép tịnh tiến biến đường tròn bán kính R thành đường tròn bán kính 2R", correct:false }
       ], explains:[
-        "Đúng. Tịnh tiến là phép đẳng cự (bảo toàn khoảng cách).",
-        "Sai. Đối xứng trục bảo toàn hình dạng và kích thước.",
-        "Đúng. Quay 360° = quay trọn vòng → về vị trí cũ.",
-        "Đúng. Đối xứng qua O: O → O (điểm bất động)."
+        "Đúng. Tịnh tiến là phép đẳng cự nên bảo toàn khoảng cách.",
+        "Sai. Tịnh tiến biến đường thẳng thành đường thẳng song song (hoặc trùng).",
+        "Đúng. Vectơ 0⃗ nghĩa là không dịch chuyển → mỗi điểm giữ nguyên.",
+        "Sai. Tịnh tiến bảo toàn bán kính → đường tròn ảnh vẫn có bán kính R."
       ]},
-      { type:"short", text:"Phép quay bao nhiêu độ quanh tâm O tương đương phép đối xứng tâm O?", answer:"180", hint:"Quay nửa vòng", explain:"Quay 180° = đối xứng tâm." },
-      { type:"short", text:"Phép tịnh tiến dời A(1;2) theo vectơ (3;0). A' có hoành độ = ?", answer:"4", hint:"Cộng hoành độ", explain:"x' = 1 + 3 = 4." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về phép đối xứng trục:", statements:[
+        { stmt:"Điểm nằm trên trục đối xứng biến thành chính nó", correct:true },
+        { stmt:"Đối xứng qua trục Ox: điểm (a; b) → (a; −b)", correct:true },
+        { stmt:"Hình bình hành (không phải HCN) luôn có trục đối xứng", correct:false },
+        { stmt:"Nếu thực hiện đối xứng trục hai lần liên tiếp qua cùng một trục thì mỗi điểm trở về vị trí cũ", correct:true }
+      ], explains:[
+        "Đúng. Điểm trên trục có khoảng cách 0 đến trục → ảnh trùng gốc.",
+        "Đúng. Đối xứng qua Ox giữ hoành độ, đổi dấu tung độ.",
+        "Sai. Hình bình hành thường (không phải HCN) không có trục đối xứng, chỉ có tâm đối xứng.",
+        "Đúng. Đối xứng trục là phép biến đổi tự nghịch đảo: thực hiện 2 lần = đồng nhất."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về phép đối xứng tâm:", statements:[
+        { stmt:"Đối xứng tâm O biến O thành chính nó", correct:true },
+        { stmt:"Đối xứng qua O(0;0): điểm (a; b) → (−a; −b)", correct:true },
+        { stmt:"Hình thang cân có tâm đối xứng", correct:false },
+        { stmt:"Phép đối xứng tâm biến đường thẳng thành đường thẳng song song hoặc trùng", correct:true }
+      ], explains:[
+        "Đúng. O là trung điểm OO → O biến thành chính nó (điểm bất động duy nhất).",
+        "Đúng. Đối xứng qua gốc O đổi dấu cả x và y.",
+        "Sai. Hình thang cân có trục đối xứng nhưng không có tâm đối xứng.",
+        "Đúng. Đối xứng tâm biến đường thẳng thành đường thẳng song song (hoặc trùng nếu đi qua tâm)."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về phép quay:", statements:[
+        { stmt:"Phép quay bảo toàn khoảng cách", correct:true },
+        { stmt:"Quay 90° rồi quay tiếp 90° tương đương quay 180°", correct:true },
+        { stmt:"Phép quay góc 0° biến mỗi điểm thành chính nó", correct:true },
+        { stmt:"Quay tam giác đều quanh tâm của nó một góc 60° thì tam giác trùng vị trí cũ", correct:false }
+      ], explains:[
+        "Đúng. Phép quay là phép đẳng cự → bảo toàn khoảng cách.",
+        "Đúng. Góc quay cộng lại: 90° + 90° = 180°.",
+        "Đúng. Quay 0° = không quay → mỗi điểm giữ nguyên.",
+        "Sai. Tam giác đều trùng vị trí cũ khi quay 120° (= 360°/3), không phải 60°."
+      ]},
+      { type:"short", text:"Đối xứng điểm A(5; −3) qua gốc tọa độ O. Tung độ của A' bằng bao nhiêu?", answer:"3", hint:"Đổi dấu cả x và y", explain:"Đối xứng qua O(0;0): A(5;−3) → A'(−5; 3). Tung độ A' = 3." },
+      { type:"short", text:"Hình lục giác đều có bao nhiêu trục đối xứng?", answer:"6", hint:"Đếm đường nối đỉnh đối + trung điểm cạnh đối", explain:"Lục giác đều có 6 trục: 3 đường nối đỉnh đối + 3 đường nối trung điểm cạnh đối." },
+      { type:"short", text:"Tịnh tiến điểm M(−2; 7) theo vectơ v⃗ = (4; −3). Hoành độ M' bằng bao nhiêu?", answer:"2", hint:"x' = x + 4", explain:"Hoành độ M' = −2 + 4 = 2." },
+      { type:"short", text:"Quay điểm P(0; 5) quanh gốc O một góc 180°. Tung độ P' bằng bao nhiêu?", answer:"-5", hint:"Quay 180° = đối xứng tâm O", explain:"Quay 180°: (0;5) → (0;−5). Tung độ P' = −5." }
     ]
   }
 ];
