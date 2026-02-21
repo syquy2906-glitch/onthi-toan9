@@ -854,6 +854,480 @@ const examData = [
       {type:"short", text:"Câu 31. Giải PT: 4/x = 2 (x ≠ 0). Nghiệm x =?", answer:"2", hint:"4 = 2x", explain:"4 = 2x → x = 2 (thoả x ≠ 0)."},
       {type:"short", text:"Câu 32. PT x² − 5x + 6 = 0 viết (x − 2)(x − ?) = 0. Số ? là:", answer:"3", hint:"Tìm số nhân với −2 được 6", explain:"x² − 5x + 6 = (x − 2)(x − 3) = 0. Vậy ? = 3."}
     ]
+  },
+  // ==================== CHỦ ĐỀ 7: HÌNH TRỤ — HÌNH NÓN — HÌNH CẦU ====================
+  {
+    id:"l9_7", emoji:"🔵", name:"Hình trụ — Hình nón — Hình cầu",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Hình trụ</b><br>
+– Hình trụ có hai đáy là hình tròn bằng nhau, song song. Bán kính đáy R, chiều cao h.<br>
+– Diện tích xung quanh: S<sub>xq</sub> = 2πRh.<br>
+– Diện tích toàn phần: S<sub>tp</sub> = 2πR(R + h).<br>
+– Thể tích: V = πR²h.<br><br>
+<b>2. Hình nón</b><br>
+– Hình nón có đáy là hình tròn bán kính R, đỉnh, chiều cao h, đường sinh l.<br>
+– l² = R² + h² (Pytago).<br>
+– S<sub>xq</sub> = πRl.<br>
+– S<sub>tp</sub> = πR(R + l).<br>
+– V = ⅓πR²h.<br><br>
+<b>3. Hình cầu</b><br>
+– Hình cầu bán kính R.<br>
+– Diện tích mặt cầu: S = 4πR².<br>
+– Thể tích: V = 4/3 · πR³.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Hình trụ có hai đáy là:", opts:["Hình vuông","Hình tròn bằng nhau","Hình tam giác","Hình elip"], correct:1, explain:"Hai đáy hình trụ là hai hình tròn bằng nhau, song song."},
+      {type:"mc", text:"Câu 2. Công thức diện tích xung quanh hình trụ:", opts:["πR²h","2πRh","πRl","4πR²"], correct:1, explain:"Sxq = 2πRh."},
+      {type:"mc", text:"Câu 3. Công thức thể tích hình trụ:", opts:["πR²h","2πRh","⅓πR²h","4/3·πR³"], correct:0, explain:"V = πR²h."},
+      {type:"mc", text:"Câu 4. Hình nón có đáy là:", opts:["Hình tròn","Hình vuông","Hình tam giác","Hình chữ nhật"], correct:0, explain:"Đáy hình nón là hình tròn."},
+      {type:"mc", text:"Câu 5. Công thức thể tích hình nón:", opts:["πR²h","⅓πR²h","2πRh","πRl"], correct:1, explain:"V = ⅓πR²h."},
+      {type:"mc", text:"Câu 6. Công thức diện tích mặt cầu:", opts:["πR²","2πR²","4πR²","4/3·πR³"], correct:2, explain:"S = 4πR²."},
+      {type:"mc", text:"Câu 7. Công thức thể tích hình cầu:", opts:["4πR²","4/3·πR³","πR²h","⅓πR²h"], correct:1, explain:"V = 4/3·πR³."},
+      {type:"mc", text:"Câu 8. Quan hệ giữa l, R, h của hình nón:", opts:["l = R + h","l² = R² + h²","l = R·h","l² = R² − h²"], correct:1, explain:"Pytago: l² = R² + h²."},
+      {type:"mc", text:"Câu 9. Diện tích xung quanh hình nón:", opts:["2πRh","πRl","πR²l","2πRl"], correct:1, explain:"Sxq = πRl."},
+      {type:"mc", text:"Câu 10. Diện tích toàn phần hình trụ:", opts:["2πRh","πR(R + h)","2πR(R + h)","πR²h"], correct:2, explain:"Stp = 2πR(R + h) = Sxq + 2·Sđáy."},
+      {type:"mc", text:"Câu 11. Diện tích toàn phần hình nón:", opts:["πRl","πR(R + l)","2πR(R + l)","πR²l"], correct:1, explain:"Stp = πR(R + l)."},
+      {type:"mc", text:"Câu 12. Hình cầu bán kính R = 1. Diện tích mặt cầu bằng:", opts:["π","2π","4π","4/3·π"], correct:2, explain:"S = 4π·1² = 4π."},
+      {type:"mc", text:"Câu 13. Hình trụ R = 3, h = 5. Sxq bằng:", opts:["15π","30π","45π","9π"], correct:1, explain:"Sxq = 2π·3·5 = 30π."},
+      {type:"mc", text:"Câu 14. Hình trụ R = 2, h = 7. Thể tích bằng:", opts:["14π","28π","56π","8π"], correct:1, explain:"V = π·4·7 = 28π."},
+      {type:"mc", text:"Câu 15. Hình nón R = 3, l = 5. Sxq bằng:", opts:["15π","8π","9π","25π"], correct:0, explain:"Sxq = π·3·5 = 15π."},
+      {type:"mc", text:"Câu 16. Hình nón R = 3, h = 4. Đường sinh l bằng:", opts:["5","7","√7","12"], correct:0, explain:"l² = 9 + 16 = 25 → l = 5."},
+      {type:"mc", text:"Câu 17. Hình nón R = 6, h = 8. Thể tích bằng:", opts:["96π","288π","48π","192π"], correct:0, explain:"V = ⅓·π·36·8 = 96π."},
+      {type:"mc", text:"Câu 18. Hình cầu R = 3. Thể tích bằng:", opts:["36π","27π","108π","12π"], correct:0, explain:"V = 4/3·π·27 = 36π."},
+      {type:"mc", text:"Câu 19. Hình trụ R = 5, h = 10. Stp bằng:", opts:["100π","150π","50π","200π"], correct:1, explain:"Stp = 2π·5·(5+10) = 150π."},
+      {type:"mc", text:"Câu 20. Hình cầu R = 2. Diện tích mặt cầu bằng:", opts:["4π","8π","16π","32/3·π"], correct:2, explain:"S = 4π·4 = 16π."},
+      {type:"mc", text:"Câu 21. Hình nón R = 4, l = 6. Stp bằng:", opts:["24π","40π","10π","16π"], correct:1, explain:"Stp = π·4·(4+6) = 40π."},
+      {type:"mc", text:"Câu 22. Lon nước hình trụ R = 3cm, h = 10cm. Thể tích lon bằng:", opts:["90π cm³","30π cm³","60π cm³","120π cm³"], correct:0, explain:"V = π·9·10 = 90π cm³."},
+      {type:"mc", text:"Câu 23. Quả bóng hình cầu đường kính 10cm. Thể tích bằng:", opts:["500/3·π cm³","250/3·π cm³","1000/3·π cm³","100π cm³"], correct:0, explain:"R = 5. V = 4/3·π·125 = 500/3·π cm³."},
+      {type:"mc", text:"Câu 24. Phễu hình nón R = 5cm, h = 12cm. Thể tích bằng:", opts:["100π cm³","300π cm³","60π cm³","25π cm³"], correct:0, explain:"V = ⅓·π·25·12 = 100π cm³."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về hình trụ:", statements:[
+        {stmt:"Hai đáy hình trụ là hai hình tròn bằng nhau", correct:true},
+        {stmt:"Sxq hình trụ = πR²h", correct:false},
+        {stmt:"V hình trụ = πR²h", correct:true},
+        {stmt:"Stp hình trụ = 2πRh", correct:false}
+      ], explains:[
+        "Đúng. Hai đáy song song, bằng nhau.",
+        "Sai. Sxq = 2πRh, không phải πR²h.",
+        "Đúng. V = πR²h.",
+        "Sai. Stp = 2πR(R+h), gồm Sxq + 2 đáy."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về hình nón:", statements:[
+        {stmt:"Đáy hình nón là hình tròn", correct:true},
+        {stmt:"V hình nón = πR²h", correct:false},
+        {stmt:"Sxq hình nón = πRl", correct:true},
+        {stmt:"l² = R² + h²", correct:true}
+      ], explains:[
+        "Đúng. Đáy là hình tròn bán kính R.",
+        "Sai. V = ⅓πR²h (có hệ số ⅓).",
+        "Đúng. Sxq = πRl.",
+        "Đúng. Pytago trong tam giác vuông."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cho hình trụ R = 4, h = 6:", statements:[
+        {stmt:"Sxq = 48π", correct:true},
+        {stmt:"Diện tích một đáy = 16π", correct:true},
+        {stmt:"Stp = 80π", correct:true},
+        {stmt:"V = 48π", correct:false}
+      ], explains:[
+        "Đúng. Sxq = 2π·4·6 = 48π.",
+        "Đúng. Sđáy = π·16 = 16π.",
+        "Đúng. Stp = 2π·4·(4+6) = 80π.",
+        "Sai. V = π·16·6 = 96π."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Cho hình cầu R = 6:", statements:[
+        {stmt:"Diện tích mặt cầu = 144π", correct:true},
+        {stmt:"V = 288π", correct:true},
+        {stmt:"Đường kính = 12", correct:true},
+        {stmt:"V = 4πR²", correct:false}
+      ], explains:[
+        "Đúng. S = 4π·36 = 144π.",
+        "Đúng. V = 4/3·π·216 = 288π.",
+        "Đúng. d = 2R = 12.",
+        "Sai. V = 4/3·πR³, không phải 4πR²."
+      ]},
+      {type:"short", text:"Câu 29. Hình trụ R = 5, h = 3. Tính Sxq (kết quả dạng kπ, nhập k).", answer:"30", hint:"Sxq = 2πRh", explain:"Sxq = 2π·5·3 = 30π."},
+      {type:"short", text:"Câu 30. Hình cầu R = 3. Tính thể tích (dạng kπ, nhập k).", answer:"36", hint:"V = 4/3·πR³", explain:"V = 4/3·π·27 = 36π."},
+      {type:"short", text:"Câu 31. Hình nón R = 3, h = 4. Tính đường sinh l.", answer:"5", hint:"l² = R² + h²", explain:"l² = 9 + 16 = 25 → l = 5."},
+      {type:"short", text:"Câu 32. Hình nón R = 6, h = 9. Tính V (dạng kπ, nhập k).", answer:"108", hint:"V = ⅓πR²h", explain:"V = ⅓·π·36·9 = 108π."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 8: HỆ THỨC LƯỢNG TRONG TAM GIÁC VUÔNG ====================
+  {
+    id:"l9_8", emoji:"📏", name:"Hệ thức lượng trong tam giác vuông",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Tỉ số lượng giác góc nhọn</b><br>
+– sinα = cạnh đối / cạnh huyền.<br>
+– cosα = cạnh kề / cạnh huyền.<br>
+– tanα = cạnh đối / cạnh kề.<br>
+– cotα = cạnh kề / cạnh đối.<br><br>
+<b>2. Giá trị lượng giác góc đặc biệt</b><br>
+– sin30° = 1/2, cos30° = √3/2, tan30° = √3/3.<br>
+– sin45° = cos45° = √2/2, tan45° = 1.<br>
+– sin60° = √3/2, cos60° = 1/2, tan60° = √3.<br><br>
+<b>3. Hệ thức giữa cạnh và góc trong tam giác vuông</b><br>
+– Cho △ABC vuông tại A: a = b/sinB = c/sinC (a: cạnh huyền).<br>
+– b = a·sinB = a·cosC; c = a·sinC = a·cosB.<br>
+– b = c·tanB; c = b·tanC.<br><br>
+<b>4. Giải tam giác vuông</b><br>
+– Biết 2 cạnh → tìm cạnh còn lại (Pytago) và các góc (TSLG).<br>
+– Biết 1 cạnh + 1 góc nhọn → tìm cạnh và góc còn lại.`,
+    questions:[
+      {type:"mc", text:"Câu 1. sinα bằng:", opts:["Đối / Huyền","Kề / Huyền","Đối / Kề","Kề / Đối"], correct:0, explain:"sinα = cạnh đối / cạnh huyền."},
+      {type:"mc", text:"Câu 2. cosα bằng:", opts:["Đối / Huyền","Kề / Huyền","Đối / Kề","Huyền / Đối"], correct:1, explain:"cosα = cạnh kề / cạnh huyền."},
+      {type:"mc", text:"Câu 3. tanα bằng:", opts:["Đối / Huyền","Kề / Huyền","Đối / Kề","Kề / Đối"], correct:2, explain:"tanα = cạnh đối / cạnh kề."},
+      {type:"mc", text:"Câu 4. cotα bằng:", opts:["Đối / Huyền","Kề / Huyền","Đối / Kề","Kề / Đối"], correct:3, explain:"cotα = cạnh kề / cạnh đối."},
+      {type:"mc", text:"Câu 5. sin30° bằng:", opts:["1/2","√2/2","√3/2","1"], correct:0, explain:"sin30° = 1/2."},
+      {type:"mc", text:"Câu 6. cos60° bằng:", opts:["√3/2","1/2","√2/2","0"], correct:1, explain:"cos60° = 1/2."},
+      {type:"mc", text:"Câu 7. tan45° bằng:", opts:["0","1/2","√2/2","1"], correct:3, explain:"tan45° = 1."},
+      {type:"mc", text:"Câu 8. sin45° bằng:", opts:["1/2","√2/2","√3/2","1"], correct:1, explain:"sin45° = √2/2."},
+      {type:"mc", text:"Câu 9. tan60° bằng:", opts:["1","√2","√3","2"], correct:2, explain:"tan60° = √3."},
+      {type:"mc", text:"Câu 10. sin²α + cos²α bằng:", opts:["0","1","2","sinα"], correct:1, explain:"Hệ thức cơ bản: sin²α + cos²α = 1."},
+      {type:"mc", text:"Câu 11. Nếu sinα = cosα thì α bằng:", opts:["30°","45°","60°","90°"], correct:1, explain:"sinα = cosα → tanα = 1 → α = 45°."},
+      {type:"mc", text:"Câu 12. cos30° bằng:", opts:["1/2","√2/2","√3/2","√3/3"], correct:2, explain:"cos30° = √3/2."},
+      {type:"mc", text:"Câu 13. △ABC vuông tại A, AB = 3, AC = 4. Cạnh BC bằng:", opts:["5","7","√7","25"], correct:0, explain:"BC² = 9 + 16 = 25 → BC = 5."},
+      {type:"mc", text:"Câu 14. △ABC vuông tại A, AB = 3, BC = 5. sinB bằng:", opts:["3/5","4/5","3/4","5/3"], correct:1, explain:"sinB = AC/BC. AC = √(25−9) = 4. sinB = 4/5."},
+      {type:"mc", text:"Câu 15. △ABC vuông tại A, AB = 3, BC = 5. cosB bằng:", opts:["3/5","4/5","3/4","5/4"], correct:0, explain:"cosB = AB/BC = 3/5."},
+      {type:"mc", text:"Câu 16. △ABC vuông tại A, AB = 6, AC = 8. tanB bằng:", opts:["6/8","8/6","6/10","10/8"], correct:1, explain:"tanB = AC/AB = 8/6 = 4/3."},
+      {type:"mc", text:"Câu 17. △ABC vuông tại A, BC = 10, B̂ = 30°. Cạnh AC bằng:", opts:["5","5√3","10√3","10"], correct:0, explain:"AC = BC·sinB = 10·sin30° = 10·1/2 = 5."},
+      {type:"mc", text:"Câu 18. △ABC vuông tại A, BC = 10, B̂ = 30°. Cạnh AB bằng:", opts:["5","5√3","10√3","5√2"], correct:1, explain:"AB = BC·cosB = 10·cos30° = 10·√3/2 = 5√3."},
+      {type:"mc", text:"Câu 19. △ABC vuông tại A, AB = 4, B̂ = 60°. Cạnh AC bằng:", opts:["4","4√3","4√2","8"], correct:1, explain:"AC = AB·tanB = 4·tan60° = 4√3."},
+      {type:"mc", text:"Câu 20. △ABC vuông tại A, AB = 4, B̂ = 60°. Cạnh BC bằng:", opts:["4","8","4√2","4√3"], correct:1, explain:"BC = AB/cosB = 4/cos60° = 4/(1/2) = 8."},
+      {type:"mc", text:"Câu 21. Từ đỉnh tháp cao 20m, nhìn chân tháp dưới góc 45°. Khoảng cách từ chân tháp tới điểm quan sát:", opts:["20m","10m","20√2 m","40m"], correct:0, explain:"tan45° = 20/d → d = 20/1 = 20m."},
+      {type:"mc", text:"Câu 22. sin²30° + cos²30° bằng:", opts:["0","1/2","1","√3/2"], correct:2, explain:"sin²30° + cos²30° = 1/4 + 3/4 = 1."},
+      {type:"mc", text:"Câu 23. tanα · cotα bằng:", opts:["0","1","2","sin²α"], correct:1, explain:"tanα · cotα = (đối/kề)·(kề/đối) = 1."},
+      {type:"mc", text:"Câu 24. sin60° bằng:", opts:["1/2","√2/2","√3/2","√3"], correct:2, explain:"sin60° = √3/2."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về tỉ số lượng giác:", statements:[
+        {stmt:"sinα luôn ≤ 1 với mọi góc nhọn α", correct:true},
+        {stmt:"cosα = sinα với mọi α", correct:false},
+        {stmt:"tan30° = √3/3", correct:true},
+        {stmt:"sin0° = 1", correct:false}
+      ], explains:[
+        "Đúng. 0 < sinα ≤ 1 với góc nhọn.",
+        "Sai. Chỉ đúng khi α = 45°.",
+        "Đúng. tan30° = 1/√3 = √3/3.",
+        "Sai. sin0° = 0."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về giá trị TSLG đặc biệt:", statements:[
+        {stmt:"sin30° = cos60°", correct:true},
+        {stmt:"sin45° = √2/2", correct:true},
+        {stmt:"cos45° = 1/2", correct:false},
+        {stmt:"tan90° = 0", correct:false}
+      ], explains:[
+        "Đúng. sin30° = 1/2 = cos60°.",
+        "Đúng. sin45° = √2/2.",
+        "Sai. cos45° = √2/2.",
+        "Sai. tan90° không xác định."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). △ABC vuông tại A, AB = 5, AC = 12:", statements:[
+        {stmt:"BC = 13", correct:true},
+        {stmt:"sinB = 12/13", correct:true},
+        {stmt:"cosB = 12/13", correct:false},
+        {stmt:"tanC = 12/5", correct:false}
+      ], explains:[
+        "Đúng. BC² = 25 + 144 = 169 → BC = 13.",
+        "Đúng. sinB = AC/BC = 12/13.",
+        "Sai. cosB = AB/BC = 5/13.",
+        "Sai. tanC = cạnh đối C / cạnh kề C = AB/AC = 5/12, không phải 12/5."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). △ABC vuông tại A, BC = 20, B̂ = 30°:", statements:[
+        {stmt:"AC = 10", correct:true},
+        {stmt:"AB = 10√3", correct:true},
+        {stmt:"Ĉ = 60°", correct:true},
+        {stmt:"sinC = 1/2", correct:false}
+      ], explains:[
+        "Đúng. AC = BC·sinB = 20·1/2 = 10.",
+        "Đúng. AB = BC·cosB = 20·√3/2 = 10√3.",
+        "Đúng. Ĉ = 90° − 30° = 60°.",
+        "Sai. sinC = sin60° = √3/2, không phải 1/2."
+      ]},
+      {type:"short", text:"Câu 29. sin30° = a/2. Tìm a.", answer:"1", hint:"sin30° = 1/2", explain:"sin30° = 1/2 → a = 1."},
+      {type:"short", text:"Câu 30. △ABC vuông tại A, AB = 6, AC = 8. BC = ?", answer:"10", hint:"Pytago", explain:"BC² = 36 + 64 = 100 → BC = 10."},
+      {type:"short", text:"Câu 31. △ABC vuông tại A, BC = 10, B̂ = 30°. AC = ?", answer:"5", hint:"AC = BC·sinB", explain:"AC = 10·sin30° = 10·1/2 = 5."},
+      {type:"short", text:"Câu 32. tan45° + cos60° = ?", answer:"1.5", hint:"tan45° = 1, cos60° = 1/2", explain:"1 + 1/2 = 3/2 = 1,5."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 9: ĐƯỜNG TRÒN ====================
+  {
+    id:"l9_9", emoji:"⭕", name:"Đường tròn",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Đường tròn</b><br>
+– Đường tròn (O; R): tập hợp điểm cách O một khoảng bằng R.<br>
+– Dây cung: đoạn thẳng nối 2 điểm trên đường tròn. Đường kính là dây cung lớn nhất (d = 2R).<br><br>
+<b>2. Vị trí tương đối đường thẳng — đường tròn</b><br>
+– Gọi d là khoảng cách từ tâm O đến đường thẳng:<br>
++ d < R: đường thẳng cắt đường tròn (2 giao điểm).<br>
++ d = R: đường thẳng tiếp xúc đường tròn (1 giao điểm — tiếp điểm).<br>
++ d > R: đường thẳng không giao đường tròn.<br><br>
+<b>3. Tiếp tuyến</b><br>
+– Tiếp tuyến vuông góc với bán kính tại tiếp điểm.<br>
+– Từ 1 điểm ngoài đường tròn kẻ được 2 tiếp tuyến, hai đoạn tiếp tuyến bằng nhau.<br><br>
+<b>4. Vị trí tương đối hai đường tròn</b><br>
+– Gọi d = OO' (khoảng cách hai tâm), R, r (R ≥ r):<br>
++ d > R + r: ngoài nhau.<br>
++ d = R + r: tiếp xúc ngoài.<br>
++ |R − r| < d < R + r: cắt nhau.<br>
++ d = |R − r| (r ≠ 0): tiếp xúc trong.<br>
++ d < |R − r|: đựng nhau.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Đường tròn (O; R) là tập hợp các điểm:", opts:["Cách O khoảng < R","Cách O khoảng = R","Cách O khoảng > R","Ở trong O"], correct:1, explain:"Đường tròn gồm các điểm cách tâm O đúng bằng R."},
+      {type:"mc", text:"Câu 2. Dây cung lớn nhất của đường tròn là:", opts:["Bán kính","Đường kính","Cung","Tiếp tuyến"], correct:1, explain:"Đường kính là dây cung lớn nhất, d = 2R."},
+      {type:"mc", text:"Câu 3. Đường thẳng cắt đường tròn khi:", opts:["d > R","d = R","d < R","d = 0"], correct:2, explain:"d < R → đường thẳng cắt đường tròn tại 2 điểm."},
+      {type:"mc", text:"Câu 4. Đường thẳng tiếp xúc đường tròn khi:", opts:["d < R","d = R","d > R","d = 2R"], correct:1, explain:"d = R → tiếp xúc (1 điểm chung)."},
+      {type:"mc", text:"Câu 5. Đường thẳng không giao đường tròn khi:", opts:["d < R","d = R","d > R","d = 0"], correct:2, explain:"d > R → không có điểm chung."},
+      {type:"mc", text:"Câu 6. Tiếp tuyến vuông góc với:", opts:["Dây cung","Đường kính","Bán kính tại tiếp điểm","Cung"], correct:2, explain:"Tiếp tuyến ⊥ bán kính tại tiếp điểm."},
+      {type:"mc", text:"Câu 7. Từ điểm ngoài đường tròn kẻ được bao nhiêu tiếp tuyến?", opts:["0","1","2","Vô số"], correct:2, explain:"Từ 1 điểm ngoài kẻ được 2 tiếp tuyến."},
+      {type:"mc", text:"Câu 8. Hai đoạn tiếp tuyến từ 1 điểm ngoài có tính chất:", opts:["Song song","Bằng nhau","Vuông góc","Cắt nhau tại tâm"], correct:1, explain:"Hai đoạn tiếp tuyến từ một điểm ngoài bằng nhau."},
+      {type:"mc", text:"Câu 9. Hai đường tròn tiếp xúc ngoài khi:", opts:["d = R + r","d = |R − r|","d < |R − r|","d > R + r"], correct:0, explain:"d = R + r → tiếp xúc ngoài."},
+      {type:"mc", text:"Câu 10. Hai đường tròn cắt nhau khi:", opts:["d > R + r","d = R + r","|R − r| < d < R + r","d < |R − r|"], correct:2, explain:"|R − r| < d < R + r → cắt nhau (2 giao điểm)."},
+      {type:"mc", text:"Câu 11. Hai đường tròn ngoài nhau khi:", opts:["d > R + r","d = R + r","d < R + r","d = |R − r|"], correct:0, explain:"d > R + r → ngoài nhau (không giao)."},
+      {type:"mc", text:"Câu 12. Đường tròn R = 5, khoảng cách từ tâm đến dây = 3. Nửa dây bằng:", opts:["2","4","3","5"], correct:1, explain:"Nửa dây = √(R² − d²) = √(25 − 9) = 4."},
+      {type:"mc", text:"Câu 13. Đường tròn R = 10, đường thẳng cách tâm 10. Đường thẳng:", opts:["Cắt","Tiếp xúc","Không giao","Đi qua tâm"], correct:1, explain:"d = R = 10 → tiếp xúc."},
+      {type:"mc", text:"Câu 14. Đường tròn R = 5, đường thẳng cách tâm 3. Số giao điểm:", opts:["0","1","2","3"], correct:2, explain:"d = 3 < R = 5 → cắt tại 2 điểm."},
+      {type:"mc", text:"Câu 15. Đường tròn R = 4, đường thẳng cách tâm 6. Đường thẳng:", opts:["Cắt","Tiếp xúc","Không giao","Trùng"], correct:2, explain:"d = 6 > R = 4 → không giao."},
+      {type:"mc", text:"Câu 16. (O; 5) và (O'; 3), OO' = 8. Vị trí tương đối:", opts:["Ngoài nhau","Tiếp xúc ngoài","Cắt nhau","Tiếp xúc trong"], correct:1, explain:"d = 8 = 5 + 3 = R + r → tiếp xúc ngoài."},
+      {type:"mc", text:"Câu 17. (O; 5) và (O'; 3), OO' = 4. Vị trí tương đối:", opts:["Ngoài nhau","Tiếp xúc ngoài","Cắt nhau","Tiếp xúc trong"], correct:2, explain:"|5 − 3| = 2 < 4 < 8 = 5 + 3 → cắt nhau."},
+      {type:"mc", text:"Câu 18. (O; 5) và (O'; 3), OO' = 2. Vị trí tương đối:", opts:["Cắt nhau","Tiếp xúc trong","Đựng nhau","Ngoài nhau"], correct:1, explain:"d = 2 = |5 − 3| = |R − r| → tiếp xúc trong."},
+      {type:"mc", text:"Câu 19. (O; 5) và (O'; 3), OO' = 1. Vị trí tương đối:", opts:["Cắt nhau","Tiếp xúc trong","Đựng nhau","Ngoài nhau"], correct:2, explain:"d = 1 < |5 − 3| = 2 → đựng nhau."},
+      {type:"mc", text:"Câu 20. (O; 5) và (O'; 3), OO' = 10. Vị trí tương đối:", opts:["Ngoài nhau","Tiếp xúc ngoài","Cắt nhau","Đựng nhau"], correct:0, explain:"d = 10 > 8 = R + r → ngoài nhau."},
+      {type:"mc", text:"Câu 21. Tiếp tuyến tại A của (O; R). Góc giữa OA và tiếp tuyến:", opts:["0°","45°","60°","90°"], correct:3, explain:"Tiếp tuyến ⊥ bán kính tại tiếp điểm → 90°."},
+      {type:"mc", text:"Câu 22. Đường tròn R = 13, dây AB cách tâm 5. Độ dài AB:", opts:["24","12","18","26"], correct:0, explain:"Nửa dây = √(169 − 25) = √144 = 12. AB = 24."},
+      {type:"mc", text:"Câu 23. Điểm M nằm trong đường tròn (O; R) khi:", opts:["OM > R","OM = R","OM < R","OM = 2R"], correct:2, explain:"M nằm trong ⇔ OM < R."},
+      {type:"mc", text:"Câu 24. Đường kính vuông góc với dây cung thì:", opts:["Song song dây","Chia đôi dây cung","Bằng dây","Ngắn hơn dây"], correct:1, explain:"Đường kính ⊥ dây → đi qua trung điểm dây (chia đôi dây)."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về đường tròn:", statements:[
+        {stmt:"Đường kính là dây cung lớn nhất", correct:true},
+        {stmt:"Bán kính bằng nửa đường kính", correct:true},
+        {stmt:"Mọi điểm trên đường tròn cách tâm bằng R", correct:true},
+        {stmt:"Dây cung đi qua tâm gọi là bán kính", correct:false}
+      ], explains:[
+        "Đúng. Đường kính = 2R là dây cung dài nhất.",
+        "Đúng. R = d/2.",
+        "Đúng. Định nghĩa đường tròn.",
+        "Sai. Dây cung qua tâm gọi là đường kính."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét vị trí tương đối đường thẳng — đường tròn:", statements:[
+        {stmt:"d < R → cắt tại 2 điểm", correct:true},
+        {stmt:"d = R → tiếp xúc", correct:true},
+        {stmt:"d > R → cắt tại 1 điểm", correct:false},
+        {stmt:"Tiếp tuyến ⊥ bán kính tại tiếp điểm", correct:true}
+      ], explains:[
+        "Đúng. d < R → 2 giao điểm.",
+        "Đúng. d = R → 1 điểm chung (tiếp xúc).",
+        "Sai. d > R → không có giao điểm.",
+        "Đúng. Tính chất tiếp tuyến."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Hai đường tròn (O; 6) và (O'; 2), OO' = 5:", statements:[
+        {stmt:"R + r = 8", correct:true},
+        {stmt:"|R − r| = 4", correct:true},
+        {stmt:"Hai đường tròn cắt nhau", correct:true},
+        {stmt:"Hai đường tròn tiếp xúc ngoài", correct:false}
+      ], explains:[
+        "Đúng. 6 + 2 = 8.",
+        "Đúng. |6 − 2| = 4.",
+        "Đúng. |R − r| = 4 < 5 < 8 = R + r → cắt nhau.",
+        "Sai. Tiếp xúc ngoài khi d = R + r = 8, nhưng d = 5."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Đường tròn (O; 10), dây AB cách tâm 6:", statements:[
+        {stmt:"Nửa dây = √(100 − 36) = 8", correct:true},
+        {stmt:"AB = 16", correct:true},
+        {stmt:"Đường kính ⊥ AB → chia đôi AB", correct:true},
+        {stmt:"AB là đường kính", correct:false}
+      ], explains:[
+        "Đúng. √(100 − 36) = √64 = 8.",
+        "Đúng. AB = 2·8 = 16.",
+        "Đúng. ĐK ⊥ dây → đi qua trung điểm dây.",
+        "Sai. Đường kính = 20, AB = 16 ≠ 20."
+      ]},
+      {type:"short", text:"Câu 29. Đường tròn bán kính R = 7. Đường kính bằng bao nhiêu?", answer:"14", hint:"d = 2R", explain:"d = 2·7 = 14."},
+      {type:"short", text:"Câu 30. Đường tròn R = 5, dây cách tâm 3. Nửa dây bằng?", answer:"4", hint:"√(R² − d²)", explain:"√(25 − 9) = √16 = 4."},
+      {type:"short", text:"Câu 31. (O; 4) và (O'; 3), OO' = 7. Hai đường tròn tiếp xúc ngoài hay ngoài nhau?", answer:"tiếp xúc ngoài", hint:"So sánh d với R + r", explain:"d = 7 = 4 + 3 = R + r → tiếp xúc ngoài."},
+      {type:"short", text:"Câu 32. Đường tròn R = 10, đường thẳng cách tâm 10. Số giao điểm?", answer:"1", hint:"d = R → ?", explain:"d = R → tiếp xúc → 1 giao điểm."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 10: GÓC VỚI ĐƯỜNG TRÒN — TỨ GIÁC NỘI TIẾP ====================
+  {
+    id:"l9_10", emoji:"🔶", name:"Góc với đường tròn — Tứ giác nội tiếp",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Góc ở tâm</b><br>
+– Góc ở tâm là góc có đỉnh trùng tâm đường tròn.<br>
+– Số đo góc ở tâm = số đo cung bị chắn.<br><br>
+<b>2. Góc nội tiếp</b><br>
+– Góc nội tiếp có đỉnh nằm trên đường tròn, hai cạnh chứa hai dây cung.<br>
+– Số đo góc nội tiếp = ½ số đo cung bị chắn.<br>
+– Góc nội tiếp chắn nửa đường tròn = 90°.<br>
+– Các góc nội tiếp cùng chắn một cung thì bằng nhau.<br><br>
+<b>3. Đường tròn ngoại tiếp tam giác</b><br>
+– Tâm: giao điểm ba đường trung trực của tam giác.<br>
+– Mọi tam giác đều có đường tròn ngoại tiếp.<br><br>
+<b>4. Đường tròn nội tiếp tam giác</b><br>
+– Tâm: giao điểm ba đường phân giác trong của tam giác.<br>
+– Mọi tam giác đều có đường tròn nội tiếp.<br><br>
+<b>5. Tứ giác nội tiếp</b><br>
+– Tứ giác nội tiếp đường tròn: 4 đỉnh nằm trên 1 đường tròn.<br>
+– Tính chất: tổng hai góc đối = 180°.<br>
+– Dấu hiệu nhận biết: tứ giác có tổng hai góc đối = 180° thì nội tiếp được đường tròn.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Góc ở tâm là góc có đỉnh tại:", opts:["Trên đường tròn","Tâm đường tròn","Ngoài đường tròn","Trung điểm dây cung"], correct:1, explain:"Góc ở tâm có đỉnh trùng tâm O."},
+      {type:"mc", text:"Câu 2. Số đo góc ở tâm bằng:", opts:["½ cung bị chắn","Cung bị chắn","2 lần cung bị chắn","¼ cung bị chắn"], correct:1, explain:"Góc ở tâm = số đo cung bị chắn."},
+      {type:"mc", text:"Câu 3. Góc nội tiếp có đỉnh nằm ở:", opts:["Tâm","Trên đường tròn","Ngoài đường tròn","Trong đường tròn"], correct:1, explain:"Đỉnh góc nội tiếp nằm trên đường tròn."},
+      {type:"mc", text:"Câu 4. Số đo góc nội tiếp bằng:", opts:["Cung bị chắn","½ cung bị chắn","2 lần cung bị chắn","¼ cung bị chắn"], correct:1, explain:"Góc nội tiếp = ½ số đo cung bị chắn."},
+      {type:"mc", text:"Câu 5. Góc nội tiếp chắn nửa đường tròn bằng:", opts:["45°","60°","90°","180°"], correct:2, explain:"Cung nửa đường tròn = 180° → góc nội tiếp = 90°."},
+      {type:"mc", text:"Câu 6. Tâm đường tròn ngoại tiếp tam giác là giao của:", opts:["3 đường cao","3 đường trung trực","3 đường phân giác","3 đường trung tuyến"], correct:1, explain:"Tâm ngoại tiếp = giao 3 đường trung trực."},
+      {type:"mc", text:"Câu 7. Tâm đường tròn nội tiếp tam giác là giao của:", opts:["3 đường cao","3 đường trung trực","3 đường phân giác trong","3 đường trung tuyến"], correct:2, explain:"Tâm nội tiếp = giao 3 đường phân giác trong."},
+      {type:"mc", text:"Câu 8. Tứ giác nội tiếp có tính chất:", opts:["Tổng 2 góc kề = 180°","Tổng 2 góc đối = 180°","4 góc bằng nhau","2 cạnh đối song song"], correct:1, explain:"Tổng 2 góc đối = 180°."},
+      {type:"mc", text:"Câu 9. Các góc nội tiếp cùng chắn một cung thì:", opts:["Bổ nhau","Bằng nhau","Phụ nhau","Khác nhau"], correct:1, explain:"Các góc nội tiếp cùng chắn 1 cung thì bằng nhau."},
+      {type:"mc", text:"Câu 10. Dấu hiệu tứ giác nội tiếp:", opts:["4 cạnh bằng nhau","Tổng 2 góc đối = 180°","2 đường chéo bằng nhau","4 góc bằng nhau"], correct:1, explain:"Tổng 2 góc đối = 180° → tứ giác nội tiếp."},
+      {type:"mc", text:"Câu 11. Cung AB = 80°. Góc ở tâm chắn cung AB bằng:", opts:["40°","80°","160°","20°"], correct:1, explain:"Góc ở tâm = cung bị chắn = 80°."},
+      {type:"mc", text:"Câu 12. Cung AB = 80°. Góc nội tiếp chắn cung AB bằng:", opts:["40°","80°","160°","20°"], correct:0, explain:"Góc nội tiếp = ½·80° = 40°."},
+      {type:"mc", text:"Câu 13. Góc nội tiếp = 50°. Cung bị chắn bằng:", opts:["25°","50°","100°","150°"], correct:2, explain:"Cung = 2 × góc nội tiếp = 2·50° = 100°."},
+      {type:"mc", text:"Câu 14. Góc ở tâm = 120°. Góc nội tiếp cùng chắn cung đó bằng:", opts:["60°","120°","240°","30°"], correct:0, explain:"Góc nội tiếp = ½ cung = ½·120° = 60°."},
+      {type:"mc", text:"Câu 15. Tứ giác ABCD nội tiếp, Â = 70°. Ĉ bằng:", opts:["70°","110°","90°","180°"], correct:1, explain:"Â + Ĉ = 180° → Ĉ = 180° − 70° = 110°."},
+      {type:"mc", text:"Câu 16. Tứ giác ABCD nội tiếp, B̂ = 100°. D̂ bằng:", opts:["100°","80°","90°","60°"], correct:1, explain:"B̂ + D̂ = 180° → D̂ = 80°."},
+      {type:"mc", text:"Câu 17. Hình chữ nhật có nội tiếp đường tròn không?", opts:["Có","Không","Chỉ hình vuông","Tuỳ trường hợp"], correct:0, explain:"HCN có 4 góc = 90°, tổng 2 góc đối = 180° → nội tiếp được."},
+      {type:"mc", text:"Câu 18. Tam giác nào luôn có đường tròn ngoại tiếp?", opts:["Chỉ tam giác đều","Chỉ tam giác vuông","Chỉ tam giác cân","Mọi tam giác"], correct:3, explain:"Mọi tam giác đều có đường tròn ngoại tiếp."},
+      {type:"mc", text:"Câu 19. Trong đường tròn, AB là đường kính, C trên đường tròn. Góc ACB bằng:", opts:["45°","60°","90°","180°"], correct:2, explain:"Góc nội tiếp chắn nửa đường tròn = 90°."},
+      {type:"mc", text:"Câu 20. Góc nội tiếp = 35°. Góc ở tâm cùng chắn cung đó bằng:", opts:["17,5°","35°","70°","105°"], correct:2, explain:"Góc ở tâm = cung = 2 × góc nội tiếp = 70°."},
+      {type:"mc", text:"Câu 21. Tứ giác ABCD, Â = 85°, Ĉ = 95°. ABCD có nội tiếp không?", opts:["Có","Không","Chưa đủ dữ kiện","Chỉ khi là HCN"], correct:0, explain:"Â + Ĉ = 85° + 95° = 180° → nội tiếp."},
+      {type:"mc", text:"Câu 22. Tứ giác ABCD, Â = 80°, Ĉ = 90°. ABCD có nội tiếp không?", opts:["Có","Không","Chưa rõ","Cần thêm ĐK"], correct:1, explain:"Â + Ĉ = 170° ≠ 180° → không nội tiếp."},
+      {type:"mc", text:"Câu 23. Cung lớn AB = 260°. Góc nội tiếp chắn cung lớn AB bằng:", opts:["130°","260°","100°","50°"], correct:0, explain:"Góc nội tiếp = ½·260° = 130°."},
+      {type:"mc", text:"Câu 24. Đường tròn ngoại tiếp tam giác vuông có tâm tại:", opts:["Đỉnh góc vuông","Trung điểm cạnh huyền","Trọng tâm","Chân đường cao"], correct:1, explain:"Tâm ngoại tiếp tam giác vuông = trung điểm cạnh huyền."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về góc:", statements:[
+        {stmt:"Góc ở tâm có đỉnh ở tâm đường tròn", correct:true},
+        {stmt:"Góc nội tiếp = cung bị chắn", correct:false},
+        {stmt:"Góc nội tiếp chắn nửa đường tròn = 90°", correct:true},
+        {stmt:"Góc ở tâm luôn gấp đôi góc nội tiếp cùng chắn cung", correct:true}
+      ], explains:[
+        "Đúng. Đỉnh tại tâm O.",
+        "Sai. Góc nội tiếp = ½ cung bị chắn.",
+        "Đúng. ½·180° = 90°.",
+        "Đúng. Góc ở tâm = cung = 2 × góc nội tiếp."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về tứ giác nội tiếp:", statements:[
+        {stmt:"Tứ giác nội tiếp có tổng 2 góc đối = 180°", correct:true},
+        {stmt:"Hình bình hành luôn nội tiếp đường tròn", correct:false},
+        {stmt:"Hình chữ nhật luôn nội tiếp đường tròn", correct:true},
+        {stmt:"Tứ giác có 4 góc bằng nhau thì nội tiếp", correct:true}
+      ], explains:[
+        "Đúng. Tính chất tứ giác nội tiếp.",
+        "Sai. HBH chỉ nội tiếp khi là HCN.",
+        "Đúng. HCN có tổng 2 góc đối = 180°.",
+        "Đúng. 4 góc bằng nhau = 90° mỗi góc → tổng đối = 180°."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cung AB = 140°:", statements:[
+        {stmt:"Góc ở tâm chắn cung AB = 140°", correct:true},
+        {stmt:"Góc nội tiếp chắn cung AB = 70°", correct:true},
+        {stmt:"Cung lớn AB = 220°", correct:true},
+        {stmt:"Góc nội tiếp chắn cung lớn AB = 220°", correct:false}
+      ], explains:[
+        "Đúng. Góc ở tâm = cung = 140°.",
+        "Đúng. ½·140° = 70°.",
+        "Đúng. 360° − 140° = 220°.",
+        "Sai. Góc nội tiếp = ½·220° = 110°, không phải 220°."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Cho tứ giác ABCD nội tiếp, Â = 75°:", statements:[
+        {stmt:"Ĉ = 105°", correct:true},
+        {stmt:"B̂ + D̂ = 180°", correct:true},
+        {stmt:"Â + B̂ = 180°", correct:false},
+        {stmt:"ABCD có 4 đỉnh trên 1 đường tròn", correct:true}
+      ], explains:[
+        "Đúng. Â + Ĉ = 180° → Ĉ = 105°.",
+        "Đúng. Hai góc đối cũng có tổng = 180°.",
+        "Sai. A và B kề nhau, không nhất thiết tổng = 180°.",
+        "Đúng. Tứ giác nội tiếp → 4 đỉnh trên 1 đường tròn."
+      ]},
+      {type:"short", text:"Câu 29. Cung AB = 100°. Góc nội tiếp chắn cung AB bằng bao nhiêu độ?", answer:"50", hint:"Góc nội tiếp = ½ cung", explain:"½·100° = 50°."},
+      {type:"short", text:"Câu 30. Tứ giác ABCD nội tiếp, Â = 65°. Ĉ = ? (độ)", answer:"115", hint:"Â + Ĉ = 180°", explain:"Ĉ = 180° − 65° = 115°."},
+      {type:"short", text:"Câu 31. Góc nội tiếp = 40°. Góc ở tâm cùng chắn cung đó bằng? (độ)", answer:"80", hint:"Góc ở tâm = 2 × góc nội tiếp", explain:"Góc ở tâm = cung = 2·40° = 80°."},
+      {type:"short", text:"Câu 32. AB là đường kính, C trên đường tròn. Góc ACB = ? (độ)", answer:"90", hint:"Chắn nửa đường tròn", explain:"Góc nội tiếp chắn nửa đường tròn = 90°."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 11: ĐA GIÁC ĐỀU ====================
+  {
+    id:"l9_11", emoji:"⬡", name:"Đa giác đều",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Đa giác đều</b><br>
+– Đa giác đều là đa giác có tất cả các cạnh bằng nhau và tất cả các góc bằng nhau.<br>
+– VD: tam giác đều (3 cạnh), hình vuông (4 cạnh), ngũ giác đều (5 cạnh), lục giác đều (6 cạnh).<br><br>
+<b>2. Số đo mỗi góc của đa giác đều n cạnh</b><br>
+– Tổng các góc trong = (n − 2)·180°.<br>
+– Mỗi góc = (n − 2)·180° / n.<br><br>
+<b>3. Phép quay</b><br>
+– Đa giác đều n cạnh được giữ nguyên bởi phép quay tâm O (tâm đa giác) góc 360°/n.<br>
+– VD: Tam giác đều → quay 120°; Hình vuông → quay 90°; Lục giác đều → quay 60°.<br><br>
+<b>4. Đa giác đều trong tự nhiên, nghệ thuật, kiến trúc</b><br>
+– Tổ ong (lục giác đều), hoa (ngũ giác đều), biển báo STOP (bát giác đều)...<br>
+– Trong kiến trúc: gạch lát nền, hoa văn trang trí.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Đa giác đều là đa giác có:", opts:["Các cạnh bằng nhau","Các góc bằng nhau","Cạnh và góc đều bằng nhau","Chỉ cần 2 cạnh bằng"], correct:2, explain:"Đa giác đều: tất cả cạnh bằng nhau VÀ tất cả góc bằng nhau."},
+      {type:"mc", text:"Câu 2. Tam giác đều là đa giác đều có:", opts:["3 cạnh","4 cạnh","5 cạnh","6 cạnh"], correct:0, explain:"Tam giác đều: 3 cạnh bằng nhau, 3 góc = 60°."},
+      {type:"mc", text:"Câu 3. Hình vuông là đa giác đều có:", opts:["3 cạnh","4 cạnh","5 cạnh","6 cạnh"], correct:1, explain:"Hình vuông: 4 cạnh bằng nhau, 4 góc = 90°."},
+      {type:"mc", text:"Câu 4. Mỗi góc của tam giác đều bằng:", opts:["45°","60°","90°","120°"], correct:1, explain:"(3 − 2)·180°/3 = 60°."},
+      {type:"mc", text:"Câu 5. Mỗi góc của hình vuông bằng:", opts:["60°","90°","120°","135°"], correct:1, explain:"(4 − 2)·180°/4 = 90°."},
+      {type:"mc", text:"Câu 6. Ngũ giác đều có bao nhiêu cạnh?", opts:["4","5","6","8"], correct:1, explain:"Ngũ giác → 5 cạnh."},
+      {type:"mc", text:"Câu 7. Lục giác đều có bao nhiêu cạnh?", opts:["5","6","7","8"], correct:1, explain:"Lục giác → 6 cạnh."},
+      {type:"mc", text:"Câu 8. Tổng các góc trong của ngũ giác bằng:", opts:["360°","540°","720°","180°"], correct:1, explain:"(5 − 2)·180° = 540°."},
+      {type:"mc", text:"Câu 9. Mỗi góc của lục giác đều bằng:", opts:["90°","108°","120°","135°"], correct:2, explain:"(6 − 2)·180°/6 = 720°/6 = 120°."},
+      {type:"mc", text:"Câu 10. Phép quay giữ nguyên tam giác đều có góc quay:", opts:["90°","120°","60°","180°"], correct:1, explain:"360°/3 = 120°."},
+      {type:"mc", text:"Câu 11. Phép quay giữ nguyên hình vuông có góc quay:", opts:["45°","60°","90°","120°"], correct:2, explain:"360°/4 = 90°."},
+      {type:"mc", text:"Câu 12. Tổ ong có dạng đa giác đều nào?", opts:["Tam giác đều","Hình vuông","Ngũ giác đều","Lục giác đều"], correct:3, explain:"Tổ ong có dạng lục giác đều."},
+      {type:"mc", text:"Câu 13. Mỗi góc của ngũ giác đều bằng:", opts:["90°","108°","120°","135°"], correct:1, explain:"(5 − 2)·180°/5 = 540°/5 = 108°."},
+      {type:"mc", text:"Câu 14. Tổng góc trong bát giác đều (8 cạnh):", opts:["720°","900°","1080°","1260°"], correct:2, explain:"(8 − 2)·180° = 1080°."},
+      {type:"mc", text:"Câu 15. Mỗi góc bát giác đều bằng:", opts:["120°","135°","144°","150°"], correct:1, explain:"1080°/8 = 135°."},
+      {type:"mc", text:"Câu 16. Phép quay giữ nguyên lục giác đều có góc quay:", opts:["30°","45°","60°","90°"], correct:2, explain:"360°/6 = 60°."},
+      {type:"mc", text:"Câu 17. Đa giác đều nào có mỗi góc = 144°?", opts:["Bát giác đều","Cửu giác đều","Thập giác đều","Thập nhị giác đều"], correct:2, explain:"(n − 2)·180/n = 144 → 180n − 360 = 144n → 36n = 360 → n = 10 (thập giác đều)."},
+      {type:"mc", text:"Câu 18. Biển báo STOP có dạng:", opts:["Lục giác đều","Bát giác đều","Ngũ giác đều","Tứ giác đều"], correct:1, explain:"Biển STOP có dạng bát giác đều (8 cạnh)."},
+      {type:"mc", text:"Câu 19. Phép quay giữ nguyên ngũ giác đều có góc:", opts:["36°","60°","72°","108°"], correct:2, explain:"360°/5 = 72°."},
+      {type:"mc", text:"Câu 20. Tổng góc trong thập giác đều:", opts:["1080°","1260°","1440°","1620°"], correct:2, explain:"(10 − 2)·180° = 1440°."},
+      {type:"mc", text:"Câu 21. Đa giác đều n cạnh, mỗi góc = (n − 2)·180°/n. Đúng với:", opts:["Chỉ n = 3","Chỉ n ≥ 4","Mọi n ≥ 3","Chỉ n chẵn"], correct:2, explain:"Công thức đúng với mọi đa giác đều n cạnh (n ≥ 3)."},
+      {type:"mc", text:"Câu 22. Hình nào KHÔNG phải đa giác đều?", opts:["Tam giác đều","Hình vuông","Hình thoi (góc 60° và 120°)","Lục giác đều"], correct:2, explain:"Hình thoi có cạnh bằng nhưng góc không bằng nhau → không phải đa giác đều."},
+      {type:"mc", text:"Câu 23. Đa giác đều 12 cạnh, mỗi góc bằng:", opts:["144°","150°","156°","160°"], correct:1, explain:"(12 − 2)·180°/12 = 1800°/12 = 150°."},
+      {type:"mc", text:"Câu 24. Phép quay giữ nguyên bát giác đều có góc:", opts:["30°","40°","45°","60°"], correct:2, explain:"360°/8 = 45°."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về đa giác đều:", statements:[
+        {stmt:"Tam giác đều có 3 cạnh bằng nhau và 3 góc bằng 60°", correct:true},
+        {stmt:"Hình chữ nhật là đa giác đều", correct:false},
+        {stmt:"Mọi đa giác đều đều có tâm đối xứng", correct:false},
+        {stmt:"Lục giác đều có mỗi góc = 120°", correct:true}
+      ], explains:[
+        "Đúng. Tam giác đều: 3 cạnh =, 3 góc = 60°.",
+        "Sai. HCN có góc bằng nhưng cạnh không nhất thiết bằng nhau.",
+        "Sai. Đa giác đều có số cạnh lẻ (VD: tam giác đều) không có tâm đối xứng.",
+        "Đúng. (6−2)·180°/6 = 120°."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét phép quay giữ nguyên đa giác đều:", statements:[
+        {stmt:"Tam giác đều giữ nguyên khi quay 120°", correct:true},
+        {stmt:"Hình vuông giữ nguyên khi quay 60°", correct:false},
+        {stmt:"Lục giác đều giữ nguyên khi quay 60°", correct:true},
+        {stmt:"Ngũ giác đều giữ nguyên khi quay 72°", correct:true}
+      ], explains:[
+        "Đúng. 360°/3 = 120°.",
+        "Sai. Hình vuông: 360°/4 = 90°, không phải 60°.",
+        "Đúng. 360°/6 = 60°.",
+        "Đúng. 360°/5 = 72°."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Tổng các góc trong:", statements:[
+        {stmt:"Tứ giác: 360°", correct:true},
+        {stmt:"Ngũ giác: 540°", correct:true},
+        {stmt:"Lục giác: 720°", correct:true},
+        {stmt:"Tam giác: 360°", correct:false}
+      ], explains:[
+        "Đúng. (4−2)·180° = 360°.",
+        "Đúng. (5−2)·180° = 540°.",
+        "Đúng. (6−2)·180° = 720°.",
+        "Sai. (3−2)·180° = 180°."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Đa giác đều trong thực tế:", statements:[
+        {stmt:"Tổ ong có dạng lục giác đều", correct:true},
+        {stmt:"Biển STOP có dạng bát giác đều", correct:true},
+        {stmt:"Hoa tuyết (bông tuyết) thường có đối xứng bậc 6", correct:true},
+        {stmt:"Bóng đá chỉ gồm toàn ngũ giác đều", correct:false}
+      ], explains:[
+        "Đúng. Tổ ong → lục giác đều.",
+        "Đúng. STOP → bát giác đều (8 cạnh).",
+        "Đúng. Bông tuyết có đối xứng bậc 6.",
+        "Sai. Bóng đá gồm ngũ giác đều và lục giác đều."
+      ]},
+      {type:"short", text:"Câu 29. Mỗi góc tam giác đều bằng bao nhiêu độ?", answer:"60", hint:"(3−2)·180°/3", explain:"(3−2)·180°/3 = 60°."},
+      {type:"short", text:"Câu 30. Phép quay giữ nguyên hình vuông có góc bao nhiêu độ?", answer:"90", hint:"360°/4", explain:"360°/4 = 90°."},
+      {type:"short", text:"Câu 31. Tổng các góc trong lục giác bằng bao nhiêu độ?", answer:"720", hint:"(n−2)·180° với n = 6", explain:"(6−2)·180° = 720°."},
+      {type:"short", text:"Câu 32. Mỗi góc bát giác đều bằng bao nhiêu độ?", answer:"135", hint:"(8−2)·180°/8", explain:"1080°/8 = 135°."}
+    ]
   }
 ];
 
