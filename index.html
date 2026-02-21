@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toán Thầy Quý - Ôn Thi Tuyển Sinh 10</title>
+<title>Toán Thầy Quý - Ôn Thi Toán</title>
 <style>
 :root {
   --primary: #4f46e5; --primary-light: #818cf8; --primary-dark: #3730a3;
@@ -194,11 +194,25 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .tip-item{display:flex;gap:10px;padding:10px 14px;border-radius:10px;background:#eff6ff;border:1px solid #bfdbfe;margin-bottom:8px;font-size:.9rem;line-height:1.6}
 .tip-item .tip-num{width:26px;height:26px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0;margin-top:2px}
 
+/* Grade Tabs */
+.grade-tabs{background:var(--card);border-bottom:2px solid var(--border);position:sticky;top:56px;z-index:99;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.grade-tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:0;overflow-x:auto}
+.grade-tab{flex:1;padding:12px 18px;border:none;background:none;cursor:pointer;font-size:.95rem;font-weight:600;color:var(--text-light);transition:.2s;border-bottom:3px solid transparent;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+.grade-tab:hover{color:var(--primary);background:rgba(79,70,229,.04)}
+.grade-tab.active{color:var(--primary);border-bottom-color:var(--primary);background:rgba(79,70,229,.06)}
+.grade-tab .tab-emoji{font-size:1.1rem}
+.empty-grade{text-align:center;padding:60px 24px;color:var(--text-light)}
+.empty-grade .empty-icon{font-size:3.5rem;margin-bottom:16px;opacity:.6}
+.empty-grade h2{font-size:1.4rem;color:var(--text);margin-bottom:8px}
+.empty-grade p{font-size:1rem;max-width:400px;margin:0 auto}
+
 /* Responsive */
 @media(max-width:768px){
   .header-inner{padding:10px 14px}
   .logo{font-size:1.1rem}
   .nav-btn{padding:6px 10px;font-size:.78rem}
+  .grade-tabs{top:44px}
+  .grade-tab{padding:10px 12px;font-size:.85rem}
   .main{padding:14px}
   .hero{padding:28px 16px}
   .hero h1{font-size:1.5rem}
@@ -225,12 +239,21 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
   <div class="progress-bar-container"><div class="progress-bar-fill" id="globalProgress" style="width:0%"></div></div>
 </div>
 
+<div class="grade-tabs">
+  <div class="grade-tabs-inner">
+    <button class="grade-tab" data-grade="6" onclick="switchGrade(6)"><span class="tab-emoji">📗</span> Lớp 6</button>
+    <button class="grade-tab" data-grade="7" onclick="switchGrade(7)"><span class="tab-emoji">📘</span> Lớp 7</button>
+    <button class="grade-tab" data-grade="8" onclick="switchGrade(8)"><span class="tab-emoji">📙</span> Lớp 8</button>
+    <button class="grade-tab active" data-grade="9" onclick="switchGrade(9)"><span class="tab-emoji">📕</span> Lớp 9</button>
+  </div>
+</div>
+
 <div class="main">
   <!-- HOME -->
   <div class="page active" id="page-home">
     <div class="hero fade-in">
-      <h1>Toán Thầy Quý - Ôn Thi Tuyển Sinh Lớp 10</h1>
-      <p>Hệ thống bài tập trắc nghiệm toán cấp 2 chất lượng cao: chọn đáp án đúng, đúng/sai, trả lời ngắn</p>
+      <h1 id="heroTitle">Toán Thầy Quý - Ôn Thi Toán Lớp 9</h1>
+      <p>Hệ thống bài tập trắc nghiệm toán chất lượng cao: chọn đáp án đúng, đúng/sai, trả lời ngắn</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="num" id="statTopics">0</div><div class="label">Chủ đề</div></div>
         <div class="hero-stat"><div class="num" id="statQuestions">0</div><div class="label">Câu hỏi</div></div>
@@ -994,16 +1017,40 @@ const examData = [
   }
 ];
 
-// ============ STATE ============
-let state = {
-  completed: JSON.parse(localStorage.getItem('t9completed') || '{}'),
-  scores: JSON.parse(localStorage.getItem('t9scores') || '{}'),
-  history: JSON.parse(localStorage.getItem('t9history') || '[]')
+// ============ GRADE SYSTEM ============
+let currentGrade = 9;
+const gradeData = {
+  6: { name:"Toán Lớp 6", exams:[] },
+  7: { name:"Toán Lớp 7", exams:[] },
+  8: { name:"Toán Lớp 8", exams:[] },
+  9: { name:"Toán Lớp 9", exams:examData }
 };
+function getExamData(){ return gradeData[currentGrade].exams; }
+
+// ============ STATE ============
+function loadState(){
+  const prefix = 't'+currentGrade;
+  return {
+    completed: JSON.parse(localStorage.getItem(prefix+'completed') || '{}'),
+    scores: JSON.parse(localStorage.getItem(prefix+'scores') || '{}'),
+    history: JSON.parse(localStorage.getItem(prefix+'history') || '[]')
+  };
+}
+let state = loadState();
 function saveState(){
-  localStorage.setItem('t9completed',JSON.stringify(state.completed));
-  localStorage.setItem('t9scores',JSON.stringify(state.scores));
-  localStorage.setItem('t9history',JSON.stringify(state.history));
+  const prefix = 't'+currentGrade;
+  localStorage.setItem(prefix+'completed',JSON.stringify(state.completed));
+  localStorage.setItem(prefix+'scores',JSON.stringify(state.scores));
+  localStorage.setItem(prefix+'history',JSON.stringify(state.history));
+}
+function switchGrade(grade){
+  currentGrade = grade;
+  state = loadState();
+  document.querySelectorAll('.grade-tab').forEach(t=>{
+    t.classList.toggle('active', Number(t.dataset.grade)===grade);
+  });
+  document.getElementById('heroTitle').textContent='Toán Thầy Quý - Ôn Thi Toán Lớp '+grade;
+  showPage('home');
 }
 
 // ============ CONFETTI ============
@@ -1237,9 +1284,21 @@ function showPage(page,data){
 
 // ============ HOME ============
 function renderHome(){
+  const exams=getExamData();
   const grid=document.getElementById('examGrid');grid.innerHTML='';
+  if(exams.length===0){
+    grid.innerHTML=`<div class="empty-grade" style="grid-column:1/-1">
+      <div class="empty-icon">📖</div>
+      <h2>${gradeData[currentGrade].name}</h2>
+      <p>Chưa có chủ đề nào. Nội dung đang được cập nhật, vui lòng quay lại sau!</p>
+    </div>`;
+    document.getElementById('statTopics').textContent=0;
+    document.getElementById('statQuestions').textContent=0;
+    document.getElementById('statDone').textContent=0;
+    return;
+  }
   let totalQ=0,done=0;
-  examData.forEach(exam=>{
+  exams.forEach(exam=>{
     const qCount=countQuestions(exam);totalQ+=qCount;
     const isDone=state.completed[exam.id];if(isDone)done++;
     const pct=state.scores[exam.id]||0;
@@ -1254,7 +1313,7 @@ function renderHome(){
       <div style="font-size:.78rem;color:var(--text-light);margin-top:5px">${isDone?'✅ Đã hoàn thành ('+pct+'%)':'Chưa làm'}</div>
     `;grid.appendChild(card);
   });
-  document.getElementById('statTopics').textContent=examData.length;
+  document.getElementById('statTopics').textContent=exams.length;
   document.getElementById('statQuestions').textContent=totalQ;
   document.getElementById('statDone').textContent=done;
 }
@@ -1269,7 +1328,7 @@ function countQuestions(exam){
 // ============ QUIZ ============
 let quizState={};
 function renderQuiz(examId){
-  const exam=examData.find(e=>e.id===examId);
+  const exam=getExamData().find(e=>e.id===examId);
   if(!exam)return;
   quizState={examId,answers:{},submitted:false};
 
@@ -1373,7 +1432,7 @@ function selectTF(qi,si,val){
 function submitExam(examId){
   if(quizState.submitted)return;
   quizState.submitted=true;
-  const exam=examData.find(e=>e.id===examId);
+  const exam=getExamData().find(e=>e.id===examId);
   let totalPts=0,earnedPts=0,correctConfettis=[];
   const analysisResults=[];
 
@@ -1523,7 +1582,7 @@ function submitExam(examId){
 
 // ============ STATS ============
 function renderStats(){
-  const totalExams=examData.length;
+  const totalExams=getExamData().length;
   const doneExams=Object.keys(state.completed).length;
   const totalAttempts=state.history.length;
   const avgScore=totalAttempts?Math.round(state.history.reduce((s,h)=>s+h.score,0)/totalAttempts):0;
@@ -1548,7 +1607,7 @@ function renderStats(){
 }
 
 function updateGlobalProgress(){
-  const total=examData.length;
+  const total=getExamData().length;
   const done=Object.keys(state.completed).length;
   document.getElementById('globalProgress').style.width=(total?Math.round(done/total*100):0)+'%';
 }
