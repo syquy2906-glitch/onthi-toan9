@@ -1328,6 +1328,196 @@ const examData = [
       {type:"short", text:"Câu 31. Tổng các góc trong lục giác bằng bao nhiêu độ?", answer:"720", hint:"(n−2)·180° với n = 6", explain:"(6−2)·180° = 720°."},
       {type:"short", text:"Câu 32. Mỗi góc bát giác đều bằng bao nhiêu độ?", answer:"135", hint:"(8−2)·180°/8", explain:"1080°/8 = 135°."}
     ]
+  },
+  // ==================== CHỦ ĐỀ 12: THỐNG KÊ ====================
+  {
+    id:"l9_12", emoji:"📊", name:"Thống kê",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Bảng tần số</b><br>
+– Tần số: số lần xuất hiện của mỗi giá trị trong mẫu dữ liệu.<br>
+– Bảng tần số gồm: giá trị và tần số tương ứng.<br><br>
+<b>2. Tần số tương đối</b><br>
+– Tần số tương đối (relative frequency) = tần số / tổng số quan sát.<br>
+– Thường biểu diễn dưới dạng phân số hoặc %.<br><br>
+<b>3. Các loại biểu đồ</b><br>
+– Biểu đồ cột (bar chart): so sánh tần số các giá trị.<br>
+– Biểu đồ cột kép: so sánh hai nhóm dữ liệu.<br>
+– Biểu đồ tròn (pie chart): thể hiện tỉ lệ phần trăm.<br>
+– Biểu đồ đoạn thẳng (line chart): thể hiện xu hướng theo thời gian.<br><br>
+<b>4. Bảng tần số ghép nhóm — Histogram</b><br>
+– Khi dữ liệu nhiều → ghép nhóm (khoảng): [a; b), [b; c)...<br>
+– Histogram: biểu đồ cột liền (không khoảng cách) cho dữ liệu ghép nhóm.<br><br>
+<b>5. Các số đặc trưng</b><br>
+– Số trung bình (Mean): x̄ = (x₁·n₁ + x₂·n₂ + ...)/(n₁ + n₂ + ...).<br>
+– Trung vị (Median): giá trị ở vị trí giữa khi sắp xếp dữ liệu tăng dần.<br>
+– Mốt (Mode): giá trị có tần số lớn nhất.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Tần số là:", opts:["Giá trị lớn nhất","Số lần xuất hiện của giá trị","Tổng các giá trị","Giá trị trung bình"], correct:1, explain:"Tần số = số lần xuất hiện của mỗi giá trị."},
+      {type:"mc", text:"Câu 2. Tần số tương đối được tính bằng:", opts:["Tần số × tổng","Tần số / tổng số quan sát","Tổng / tần số","Tần số − tổng"], correct:1, explain:"Tần số tương đối = tần số / tổng số quan sát."},
+      {type:"mc", text:"Câu 3. Biểu đồ cột dùng để:", opts:["Thể hiện tỉ lệ %","So sánh tần số các giá trị","Thể hiện xu hướng","Hiển thị dữ liệu ghép nhóm"], correct:1, explain:"Biểu đồ cột so sánh tần số (độ lớn) các giá trị."},
+      {type:"mc", text:"Câu 4. Biểu đồ tròn dùng để:", opts:["So sánh tần số","Thể hiện tỉ lệ phần trăm","Thể hiện xu hướng","Hiển thị histogram"], correct:1, explain:"Biểu đồ tròn thể hiện tỉ lệ % của các phần."},
+      {type:"mc", text:"Câu 5. Số trung bình (Mean) là:", opts:["Giá trị giữa","Giá trị xuất hiện nhiều nhất","Tổng giá trị / số quan sát","Giá trị lớn nhất"], correct:2, explain:"x̄ = tổng các giá trị / số quan sát."},
+      {type:"mc", text:"Câu 6. Trung vị (Median) là:", opts:["Giá trị xuất hiện nhiều nhất","Giá trị ở vị trí giữa","Tổng / số phần tử","Hiệu max − min"], correct:1, explain:"Trung vị = giá trị ở vị trí giữa (sau khi sắp xếp)."},
+      {type:"mc", text:"Câu 7. Mốt (Mode) là:", opts:["Giá trị trung bình","Giá trị giữa","Giá trị có tần số lớn nhất","Giá trị nhỏ nhất"], correct:2, explain:"Mốt = giá trị có tần số cao nhất."},
+      {type:"mc", text:"Câu 8. Histogram là biểu đồ dùng cho:", opts:["Dữ liệu rời rạc","Dữ liệu ghép nhóm","Dữ liệu phân loại","Dữ liệu thời gian"], correct:1, explain:"Histogram: biểu đồ cột liền cho dữ liệu ghép nhóm."},
+      {type:"mc", text:"Câu 9. Biểu đồ đoạn thẳng phù hợp thể hiện:", opts:["Tỉ lệ %","Xu hướng theo thời gian","Tần số ghép nhóm","So sánh hai nhóm"], correct:1, explain:"Biểu đồ đoạn thẳng thể hiện xu hướng biến đổi theo thời gian."},
+      {type:"mc", text:"Câu 10. Tổng tần số tương đối của tất cả giá trị bằng:", opts:["0","0,5","1","Tuỳ dữ liệu"], correct:2, explain:"Tổng tần số tương đối = 1 (100%)."},
+      {type:"mc", text:"Câu 11. Dữ liệu: 2, 3, 3, 5, 7. Mốt là:", opts:["2","3","5","7"], correct:1, explain:"3 xuất hiện 2 lần (nhiều nhất) → Mốt = 3."},
+      {type:"mc", text:"Câu 12. Dữ liệu: 1, 2, 3, 4, 5. Trung vị là:", opts:["2","3","4","2,5"], correct:1, explain:"5 giá trị, vị trí giữa = thứ 3 → Trung vị = 3."},
+      {type:"mc", text:"Câu 13. Dữ liệu: 4, 6, 8, 10. Trung bình bằng:", opts:["6","7","8","28"], correct:1, explain:"(4+6+8+10)/4 = 28/4 = 7."},
+      {type:"mc", text:"Câu 14. Dữ liệu: 2, 4, 6, 8. Trung vị bằng:", opts:["4","5","6","3"], correct:1, explain:"4 giá trị, trung vị = (4+6)/2 = 5."},
+      {type:"mc", text:"Câu 15. Giá trị 5 xuất hiện 3 lần trong 15 quan sát. Tần số tương đối:", opts:["1/5","1/3","3/5","5/3"], correct:0, explain:"3/15 = 1/5."},
+      {type:"mc", text:"Câu 16. Dữ liệu: 3, 5, 5, 7, 7, 7, 9. Mốt là:", opts:["3","5","7","9"], correct:2, explain:"7 xuất hiện 3 lần (nhiều nhất) → Mốt = 7."},
+      {type:"mc", text:"Câu 17. Dữ liệu: 1, 3, 5, 7, 9. Trung bình bằng:", opts:["3","5","7","25"], correct:1, explain:"(1+3+5+7+9)/5 = 25/5 = 5."},
+      {type:"mc", text:"Câu 18. Điểm 20 HS: 4(3 HS), 5(5 HS), 6(7 HS), 7(3 HS), 8(2 HS). Mốt:", opts:["4","5","6","7"], correct:2, explain:"6 có tần số cao nhất (7 HS) → Mốt = 6."},
+      {type:"mc", text:"Câu 19. Điểm 20 HS trên. Trung bình bằng:", opts:["5,5","5,7","5,8","6,0"], correct:2, explain:"(4·3+5·5+6·7+7·3+8·2)/20 = (12+25+42+21+16)/20 = 116/20 = 5,8."},
+      {type:"mc", text:"Câu 20. Bảng tần số ghép nhóm dùng khi:", opts:["Dữ liệu ít","Dữ liệu nhiều, phân tán","Dữ liệu chỉ có 2 giá trị","Dữ liệu phân loại"], correct:1, explain:"Khi dữ liệu nhiều và phân tán → ghép nhóm để dễ phân tích."},
+      {type:"mc", text:"Câu 21. Biểu đồ cột kép dùng để:", opts:["Thể hiện % của 1 nhóm","So sánh tần số 2 nhóm dữ liệu","Thể hiện xu hướng","Ghép nhóm dữ liệu"], correct:1, explain:"Biểu đồ cột kép so sánh 2 nhóm dữ liệu cạnh nhau."},
+      {type:"mc", text:"Câu 22. Dữ liệu: 10, 20, 30, 40, 50. Trung vị:", opts:["20","25","30","35"], correct:2, explain:"5 giá trị, vị trí giữa = thứ 3 → Trung vị = 30."},
+      {type:"mc", text:"Câu 23. Histogram khác biểu đồ cột ở:", opts:["Có màu sắc","Cột liền nhau (không khoảng cách)","Cột nằm ngang","Có đường nối"], correct:1, explain:"Histogram: các cột liền nhau (biểu diễn dữ liệu liên tục ghép nhóm)."},
+      {type:"mc", text:"Câu 24. Dữ liệu: 2, 2, 4, 6, 6, 6, 8. Trung bình bằng:", opts:["4","4,5","34/7","5"], correct:2, explain:"(2+2+4+6+6+6+8)/7 = 34/7 ≈ 4,86."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về thống kê:", statements:[
+        {stmt:"Tần số là số lần xuất hiện của giá trị", correct:true},
+        {stmt:"Tần số tương đối luôn > 1", correct:false},
+        {stmt:"Mốt là giá trị có tần số cao nhất", correct:true},
+        {stmt:"Trung vị luôn bằng trung bình", correct:false}
+      ], explains:[
+        "Đúng. Định nghĩa tần số.",
+        "Sai. Tần số tương đối ∈ (0; 1].",
+        "Đúng. Định nghĩa mốt.",
+        "Sai. Trung vị và trung bình có thể khác nhau."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về biểu đồ:", statements:[
+        {stmt:"Biểu đồ tròn thể hiện tỉ lệ phần trăm", correct:true},
+        {stmt:"Biểu đồ cột phù hợp so sánh tần số", correct:true},
+        {stmt:"Histogram dùng cho dữ liệu rời rạc", correct:false},
+        {stmt:"Biểu đồ đoạn thẳng thể hiện xu hướng", correct:true}
+      ], explains:[
+        "Đúng. Biểu đồ tròn → tỉ lệ %.",
+        "Đúng. Biểu đồ cột → so sánh tần số.",
+        "Sai. Histogram dùng cho dữ liệu ghép nhóm (liên tục).",
+        "Đúng. Biểu đồ đoạn thẳng → xu hướng theo thời gian."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Dữ liệu: 3, 5, 5, 7, 7, 7, 9:", statements:[
+        {stmt:"Mốt = 7", correct:true},
+        {stmt:"Trung vị = 7", correct:true},
+        {stmt:"Trung bình = 43/7", correct:true},
+        {stmt:"Tần số của 5 là 3", correct:false}
+      ], explains:[
+        "Đúng. 7 xuất hiện 3 lần (nhiều nhất).",
+        "Đúng. 7 giá trị, vị trí giữa = thứ 4 → Trung vị = 7.",
+        "Đúng. (3+5+5+7+7+7+9)/7 = 43/7.",
+        "Sai. 5 xuất hiện 2 lần, tần số = 2."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Điểm 10 HS: 5(2 HS), 6(3 HS), 7(4 HS), 8(1 HS):", statements:[
+        {stmt:"Mốt = 7", correct:true},
+        {stmt:"Tổng số HS = 10", correct:true},
+        {stmt:"Trung bình = 6,4", correct:true},
+        {stmt:"Tần số tương đối của điểm 6 là 30%", correct:true}
+      ], explains:[
+        "Đúng. 7 có tần số 4 (cao nhất).",
+        "Đúng. 2+3+4+1 = 10.",
+        "Đúng. (5·2+6·3+7·4+8·1)/10 = (10+18+28+8)/10 = 64/10 = 6,4.",
+        "Đúng. 3/10 = 0,3 = 30%."
+      ]},
+      {type:"short", text:"Câu 29. Dữ liệu: 2, 4, 6, 8, 10. Trung bình bằng?", answer:"6", hint:"Tổng / số phần tử", explain:"(2+4+6+8+10)/5 = 30/5 = 6."},
+      {type:"short", text:"Câu 30. Dữ liệu: 1, 3, 3, 5, 7. Mốt bằng?", answer:"3", hint:"Giá trị xuất hiện nhiều nhất", explain:"3 xuất hiện 2 lần → Mốt = 3."},
+      {type:"short", text:"Câu 31. Dữ liệu: 2, 5, 7, 9, 11. Trung vị bằng?", answer:"7", hint:"Giá trị ở vị trí giữa", explain:"5 giá trị, vị trí thứ 3 → Trung vị = 7."},
+      {type:"short", text:"Câu 32. Giá trị 8 xuất hiện 4 lần trong 20 quan sát. Tần số tương đối (dạng %) bằng?", answer:"20", hint:"4/20 × 100%", explain:"4/20 = 0,2 = 20%."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 13: XÁC SUẤT ====================
+  {
+    id:"l9_13", emoji:"🎲", name:"Xác suất",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phép thử ngẫu nhiên</b><br>
+– Phép thử ngẫu nhiên: thí nghiệm có kết quả không biết trước. VD: gieo xúc sắc, tung đồng xu.<br>
+– Không gian mẫu (Ω): tập hợp tất cả các kết quả có thể xảy ra.<br><br>
+<b>2. Biến cố</b><br>
+– Biến cố: tập con của không gian mẫu.<br>
+– Biến cố chắc chắn: luôn xảy ra (Ω).<br>
+– Biến cố không thể: không bao giờ xảy ra (∅).<br><br>
+<b>3. Xác suất của biến cố</b><br>
+– P(A) = (số kết quả thuận lợi cho A) / (tổng số kết quả của Ω).<br>
+– 0 ≤ P(A) ≤ 1.<br>
+– P(Ω) = 1, P(∅) = 0.<br><br>
+<b>4. Quy tắc đếm cơ bản</b><br>
+– Quy tắc cộng: nếu có m cách chọn A hoặc n cách chọn B (A, B xung khắc) → m + n cách.<br>
+– Quy tắc nhân: nếu chọn A rồi chọn B → m × n cách.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Phép thử ngẫu nhiên là:", opts:["Thí nghiệm biết trước kết quả","Thí nghiệm không biết trước kết quả","Phép tính","Phép đo"], correct:1, explain:"Phép thử ngẫu nhiên: kết quả không biết trước."},
+      {type:"mc", text:"Câu 2. Không gian mẫu là:", opts:["Một kết quả","Tập hợp tất cả kết quả có thể","Kết quả xảy ra","Biến cố"], correct:1, explain:"Ω = tập tất cả kết quả có thể xảy ra."},
+      {type:"mc", text:"Câu 3. Gieo xúc sắc, không gian mẫu có bao nhiêu phần tử?", opts:["2","4","6","12"], correct:2, explain:"Ω = {1, 2, 3, 4, 5, 6} → 6 phần tử."},
+      {type:"mc", text:"Câu 4. Tung đồng xu, không gian mẫu có:", opts:["1 phần tử","2 phần tử","3 phần tử","6 phần tử"], correct:1, explain:"Ω = {Sấp, Ngửa} → 2 phần tử."},
+      {type:"mc", text:"Câu 5. Xác suất được tính bằng:", opts:["Kết quả thuận lợi / Tổng kết quả","Tổng / Thuận lợi","Thuận lợi × Tổng","Thuận lợi − Tổng"], correct:0, explain:"P(A) = số kết quả thuận lợi / tổng số kết quả."},
+      {type:"mc", text:"Câu 6. Xác suất luôn nằm trong khoảng:", opts:["[−1; 1]","[0; 1]","[0; ∞)","(0; 1)"], correct:1, explain:"0 ≤ P(A) ≤ 1."},
+      {type:"mc", text:"Câu 7. Xác suất biến cố chắc chắn bằng:", opts:["0","0,5","1","2"], correct:2, explain:"P(Ω) = 1."},
+      {type:"mc", text:"Câu 8. Xác suất biến cố không thể bằng:", opts:["0","0,5","1","−1"], correct:0, explain:"P(∅) = 0."},
+      {type:"mc", text:"Câu 9. Biến cố là:", opts:["Tập con của không gian mẫu","Phép thử","Kết quả duy nhất","Xác suất"], correct:0, explain:"Biến cố = tập con của Ω."},
+      {type:"mc", text:"Câu 10. Quy tắc cộng: m cách chọn A hoặc n cách chọn B (xung khắc):", opts:["m + n cách","m × n cách","m − n cách","m / n cách"], correct:0, explain:"Xung khắc: m + n cách chọn."},
+      {type:"mc", text:"Câu 11. Quy tắc nhân: m cách chọn A rồi n cách chọn B:", opts:["m + n cách","m × n cách","m − n cách","m / n cách"], correct:1, explain:"Chọn A rồi B: m × n cách."},
+      {type:"mc", text:"Câu 12. Gieo xúc sắc, XS ra mặt 6:", opts:["1/2","1/3","1/6","1/12"], correct:2, explain:"1 kết quả thuận lợi / 6 tổng → P = 1/6."},
+      {type:"mc", text:"Câu 13. Gieo xúc sắc, XS ra mặt chẵn:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Mặt chẵn: {2, 4, 6} → 3/6 = 1/2."},
+      {type:"mc", text:"Câu 14. Gieo xúc sắc, XS ra mặt > 4:", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"Mặt > 4: {5, 6} → 2/6 = 1/3."},
+      {type:"mc", text:"Câu 15. Tung đồng xu 1 lần, XS ra mặt Sấp:", opts:["1/4","1/3","1/2","1"], correct:2, explain:"1 kết quả thuận lợi / 2 tổng = 1/2."},
+      {type:"mc", text:"Câu 16. Tung 2 đồng xu, không gian mẫu có:", opts:["2 phần tử","3 phần tử","4 phần tử","6 phần tử"], correct:2, explain:"Ω = {SS, SN, NS, NN} → 4 phần tử."},
+      {type:"mc", text:"Câu 17. Tung 2 đồng xu, XS cả 2 Ngửa:", opts:["1/2","1/3","1/4","1/6"], correct:2, explain:"1 kết quả (NN) / 4 tổng = 1/4."},
+      {type:"mc", text:"Câu 18. Hộp có 3 bi đỏ, 2 bi xanh. Lấy ngẫu nhiên 1 bi, XS bi đỏ:", opts:["2/5","3/5","1/2","1/3"], correct:1, explain:"3 bi đỏ / 5 tổng = 3/5."},
+      {type:"mc", text:"Câu 19. Hộp có 4 bi trắng, 6 bi đen. Lấy 1 bi, XS bi trắng:", opts:["2/5","3/5","4/10","6/10"], correct:0, explain:"4/10 = 2/5."},
+      {type:"mc", text:"Câu 20. Gieo 2 xúc sắc, tổng số kết quả:", opts:["6","12","36","72"], correct:2, explain:"6 × 6 = 36 kết quả."},
+      {type:"mc", text:"Câu 21. Gieo 2 xúc sắc, XS tổng 2 mặt = 7:", opts:["1/6","5/36","6/36","7/36"], correct:0, explain:"Cặp cho tổng 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6/36 = 1/6."},
+      {type:"mc", text:"Câu 22. Chọn ngẫu nhiên 1 số từ 1 đến 10, XS số chẵn:", opts:["1/5","2/5","1/2","3/5"], correct:2, explain:"Số chẵn: {2,4,6,8,10} → 5/10 = 1/2."},
+      {type:"mc", text:"Câu 23. Chọn ngẫu nhiên 1 số từ 1 đến 10, XS số nguyên tố:", opts:["2/5","3/10","1/2","1/5"], correct:0, explain:"Số nguyên tố: {2,3,5,7} → 4/10 = 2/5."},
+      {type:"mc", text:"Câu 24. Có 3 áo và 4 quần, số cách chọn 1 bộ:", opts:["7","12","3","4"], correct:1, explain:"Quy tắc nhân: 3 × 4 = 12 cách."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về xác suất:", statements:[
+        {stmt:"Xác suất luôn nằm trong [0; 1]", correct:true},
+        {stmt:"Gieo xúc sắc là phép thử ngẫu nhiên", correct:true},
+        {stmt:"Không gian mẫu gieo 1 xúc sắc có 12 phần tử", correct:false},
+        {stmt:"Biến cố không thể có xác suất = 0", correct:true}
+      ], explains:[
+        "Đúng. 0 ≤ P ≤ 1.",
+        "Đúng. Kết quả không biết trước.",
+        "Sai. Ω = {1,2,3,4,5,6} → 6 phần tử.",
+        "Đúng. P(∅) = 0."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về đếm:", statements:[
+        {stmt:"Quy tắc cộng: A hoặc B → m + n", correct:true},
+        {stmt:"Quy tắc nhân: A rồi B → m × n", correct:true},
+        {stmt:"Tung 2 đồng xu có 3 kết quả", correct:false},
+        {stmt:"Gieo 2 xúc sắc có 36 kết quả", correct:true}
+      ], explains:[
+        "Đúng. Xung khắc: m + n.",
+        "Đúng. Chọn A rồi B: m × n.",
+        "Sai. 2 × 2 = 4 kết quả (SS, SN, NS, NN).",
+        "Đúng. 6 × 6 = 36."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Gieo 1 xúc sắc:", statements:[
+        {stmt:"XS ra mặt 3 = 1/6", correct:true},
+        {stmt:"XS ra mặt lẻ = 1/2", correct:true},
+        {stmt:"XS ra mặt > 6 = 0", correct:true},
+        {stmt:"XS ra mặt ≤ 6 = 1/2", correct:false}
+      ], explains:[
+        "Đúng. 1/6.",
+        "Đúng. {1,3,5} → 3/6 = 1/2.",
+        "Đúng. Không có mặt nào > 6 → biến cố không thể → P = 0.",
+        "Sai. Mọi mặt ≤ 6 → biến cố chắc chắn → P = 1."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Hộp có 5 bi đỏ, 3 bi xanh, lấy 1 bi:", statements:[
+        {stmt:"Tổng số bi = 8", correct:true},
+        {stmt:"XS bi đỏ = 5/8", correct:true},
+        {stmt:"XS bi xanh = 5/8", correct:false},
+        {stmt:"XS bi đỏ + XS bi xanh = 1", correct:true}
+      ], explains:[
+        "Đúng. 5 + 3 = 8.",
+        "Đúng. 5/8.",
+        "Sai. XS bi xanh = 3/8.",
+        "Đúng. 5/8 + 3/8 = 1."
+      ]},
+      {type:"short", text:"Câu 29. Gieo xúc sắc, XS ra mặt 4. Nhập dạng phân số a/b.", answer:"1/6", hint:"1 kết quả / 6 tổng", explain:"P = 1/6."},
+      {type:"short", text:"Câu 30. Tung 2 đồng xu, số kết quả trong không gian mẫu?", answer:"4", hint:"2 × 2", explain:"Ω = {SS, SN, NS, NN} → 4."},
+      {type:"short", text:"Câu 31. Hộp 4 bi đỏ, 6 bi xanh. XS lấy bi đỏ (dạng a/b)?", answer:"2/5", hint:"4/10 = ?", explain:"4/10 = 2/5."},
+      {type:"short", text:"Câu 32. Có 5 áo và 3 quần. Số cách chọn 1 bộ (áo + quần)?", answer:"15", hint:"Quy tắc nhân", explain:"5 × 3 = 15 cách."}
+    ]
   }
 ];
 
