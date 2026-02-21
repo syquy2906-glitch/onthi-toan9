@@ -2645,84 +2645,646 @@ const exam8Data = [
     ]
   },
 
-  // ==================== CHỦ ĐỀ 6: KẾT QUẢ CÓ THỂ – KẾT QUẢ THUẬN LỢI ====================
+// ==================== CHỦ ĐỀ 7: HÌNH CHÓP TRONG THỰC TIỄN ====================
   {
-    id:"l8_6", emoji:"🎯", name:"Kết quả có thể – Kết quả thuận lợi",
-    desc:"Không gian mẫu, biến cố, kết quả thuận lợi, đếm số kết quả",
+    id:"l8_7", emoji:"🏔️", name:"Hình chóp trong thực tiễn",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Hình chóp</b><br>
+– Hình chóp có một mặt đáy là đa giác, các mặt bên là tam giác chung đỉnh (gọi là <i>đỉnh</i> hình chóp).<br>
+– <i>Hình chóp tam giác đều</i>: đáy là tam giác đều, đỉnh nằm trên đường vuông góc với đáy tại tâm tam giác đều. Các mặt bên là tam giác cân bằng nhau.<br>
+– <i>Hình chóp tứ giác đều</i>: đáy là hình vuông, đỉnh nằm trên đường vuông góc với đáy tại tâm hình vuông. Các mặt bên là tam giác cân bằng nhau.<br><br>
+<b>2. Diện tích xung quanh (S<sub>xq</sub>)</b><br>
+– S<sub>xq</sub> = tổng diện tích các mặt bên.<br>
+– Hình chóp đều: S<sub>xq</sub> = ½ × chu vi đáy × trung đoạn (d: đường cao mặt bên kẻ từ đỉnh).<br>
+– Chóp tam giác đều cạnh a, trung đoạn d: S<sub>xq</sub> = 3ad/2.<br>
+– Chóp tứ giác đều cạnh a, trung đoạn d: S<sub>xq</sub> = 2ad.<br><br>
+<b>3. Thể tích (V)</b><br>
+– V = ⅓ × S<sub>đáy</sub> × h (h: chiều cao hình chóp).<br>
+– Đáy tam giác đều cạnh a: S<sub>đáy</sub> = a²√3/4.<br>
+– Đáy hình vuông cạnh a: S<sub>đáy</sub> = a².`,
     questions:[
-      { type:"mc", text:"Câu 1. Gieo một xúc sắc. Số kết quả có thể (không gian mẫu) là:", opts:["3","4","5","6"], correct:3, explain:"Xúc sắc 6 mặt: {1, 2, 3, 4, 5, 6} → 6 kết quả." },
-      { type:"mc", text:"Câu 2. Gieo một xúc sắc. Số kết quả thuận lợi cho biến cố \"mặt chẵn\" là:", opts:["2","3","4","6"], correct:1, explain:"Mặt chẵn: {2, 4, 6} → 3 kết quả thuận lợi." },
-      { type:"mc", text:"Câu 3. Tung một đồng xu 2 lần. Số kết quả có thể là:", opts:["2","3","4","8"], correct:2, explain:"Mỗi lần 2 KQ: {SS, SN, NS, NN} → 2 × 2 = 4 kết quả." },
-      { type:"mc", text:"Câu 4. Hộp có 3 bi đỏ, 2 bi xanh. Lấy ngẫu nhiên 1 bi, số kết quả thuận lợi cho \"lấy được bi đỏ\" là:", opts:["2","3","5","1"], correct:1, explain:"Có 3 bi đỏ → 3 kết quả thuận lợi." },
-      { type:"mc", text:"Câu 5. Gieo 2 xúc sắc. Không gian mẫu có bao nhiêu phần tử?", opts:["6","12","36","24"], correct:2, explain:"Mỗi xúc sắc 6 mặt → 6 × 6 = 36 cặp kết quả." },
-      { type:"mc", text:"Câu 6. Hộp có 5 bút xanh, 3 bút đỏ, 2 bút đen. Lấy 1 bút, số kết quả có thể là:", opts:["3","8","10","5"], correct:2, explain:"Tổng số bút: 5 + 3 + 2 = 10 kết quả có thể." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về kết quả có thể và thuận lợi:", statements:[
-        { stmt:"Gieo 1 xúc sắc, không gian mẫu có 6 phần tử", correct:true },
-        { stmt:"Tung 1 đồng xu, biến cố \"mặt sấp\" có 2 kết quả thuận lợi", correct:false },
-        { stmt:"Kết quả thuận lợi là kết quả thỏa mãn biến cố đang xét", correct:true },
-        { stmt:"Gieo 2 xúc sắc, không gian mẫu có 12 phần tử", correct:false }
+      {type:"mc", text:"Câu 1. Hình chóp tam giác đều có đáy là hình gì?", opts:["Tam giác vuông","Tam giác cân","Tam giác đều","Hình vuông"], correct:2, explain:"Đáy hình chóp tam giác đều là tam giác đều."},
+      {type:"mc", text:"Câu 2. Hình chóp tứ giác đều có đáy là hình gì?", opts:["Hình chữ nhật","Hình bình hành","Hình thang","Hình vuông"], correct:3, explain:"Đáy hình chóp tứ giác đều là hình vuông."},
+      {type:"mc", text:"Câu 3. Đỉnh của hình chóp là:", opts:["Điểm chung của các mặt bên","Tâm đáy","Trung điểm cạnh bên","Giao hai đường chéo đáy"], correct:0, explain:"Đỉnh hình chóp là điểm chung của tất cả các mặt bên."},
+      {type:"mc", text:"Câu 4. Hình chóp tam giác đều có bao nhiêu mặt bên?", opts:["2","3","4","5"], correct:1, explain:"Đáy tam giác có 3 cạnh → 3 mặt bên."},
+      {type:"mc", text:"Câu 5. Hình chóp tứ giác đều có bao nhiêu cạnh bên?", opts:["3","4","5","6"], correct:1, explain:"Đáy hình vuông có 4 đỉnh, mỗi đỉnh nối với đỉnh chóp → 4 cạnh bên."},
+      {type:"mc", text:"Câu 6. Công thức tính thể tích hình chóp là:", opts:["V = S × h","V = ½ × S × h","V = ⅓ × S × h","V = 2S × h"], correct:2, explain:"Thể tích hình chóp V = ⅓ × S_đáy × h."},
+      {type:"mc", text:"Câu 7. Diện tích xung quanh hình chóp đều bằng:", opts:["Tổng diện tích tất cả các mặt","½ × chu vi đáy × trung đoạn","Chu vi đáy × chiều cao","½ × S_đáy × h"], correct:1, explain:"S_xq hình chóp đều = ½ × chu vi đáy × trung đoạn."},
+      {type:"mc", text:"Câu 8. Hình chóp tam giác đều có tổng cộng bao nhiêu mặt (kể cả đáy)?", opts:["3","4","5","6"], correct:1, explain:"1 mặt đáy + 3 mặt bên = 4 mặt."},
+      {type:"mc", text:"Câu 9. Hình chóp tứ giác đều có tổng cộng bao nhiêu cạnh?", opts:["6","8","10","12"], correct:1, explain:"4 cạnh đáy + 4 cạnh bên = 8 cạnh."},
+      {type:"mc", text:"Câu 10. Chiều cao của hình chóp là:", opts:["Cạnh bên","Đoạn vuông góc từ đỉnh đến đáy","Trung đoạn mặt bên","Đường chéo đáy"], correct:1, explain:"Chiều cao hình chóp là khoảng cách từ đỉnh đến mặt đáy (vuông góc)."},
+      {type:"mc", text:"Câu 11. Trung đoạn của hình chóp đều là:", opts:["Chiều cao hình chóp","Đường cao mặt bên kẻ từ đỉnh","Cạnh bên","Đường chéo đáy"], correct:1, explain:"Trung đoạn là đường cao của mặt bên kẻ từ đỉnh hình chóp."},
+      {type:"mc", text:"Câu 12. Kim tự tháp Ai Cập có dạng hình chóp nào?", opts:["Hình chóp tam giác","Hình chóp tứ giác","Hình chóp lục giác","Hình chóp ngũ giác"], correct:1, explain:"Kim tự tháp có đáy hình vuông → hình chóp tứ giác."},
+      {type:"mc", text:"Câu 13. Hình chóp tứ giác đều cạnh đáy 6 cm, trung đoạn 5 cm. S_xq bằng:", opts:["60 cm²","120 cm²","30 cm²","90 cm²"], correct:0, explain:"S_xq = 2ad = 2 × 6 × 5 = 60 cm²."},
+      {type:"mc", text:"Câu 14. Hình chóp tam giác đều cạnh đáy 4 cm, trung đoạn 6 cm. S_xq bằng:", opts:["24 cm²","36 cm²","48 cm²","72 cm²"], correct:1, explain:"S_xq = 3ad/2 = 3 × 4 × 6/2 = 36 cm²."},
+      {type:"mc", text:"Câu 15. Hình chóp có đáy hình vuông cạnh 3 cm, chiều cao 4 cm. Thể tích bằng:", opts:["12 cm³","36 cm³","9 cm³","27 cm³"], correct:0, explain:"V = ⅓ × 3² × 4 = ⅓ × 36 = 12 cm³."},
+      {type:"mc", text:"Câu 16. Hình chóp tam giác đều cạnh đáy 6 cm. Diện tích đáy bằng:", opts:["9 cm²","18 cm²","9√3 cm²","36 cm²"], correct:2, explain:"S_đáy = a²√3/4 = 36√3/4 = 9√3 cm²."},
+      {type:"mc", text:"Câu 17. Hình chóp tứ giác đều cạnh đáy 10 cm, trung đoạn 8 cm. S_xq bằng:", opts:["80 cm²","160 cm²","200 cm²","400 cm²"], correct:1, explain:"S_xq = 2 × 10 × 8 = 160 cm²."},
+      {type:"mc", text:"Câu 18. Hình chóp tứ giác đều có V = 48 cm³, chiều cao 4 cm. Cạnh đáy bằng:", opts:["6 cm","4 cm","3 cm","8 cm"], correct:0, explain:"V = ⅓ × a² × h → 48 = ⅓ × a² × 4 → a² = 36 → a = 6 cm."},
+      {type:"mc", text:"Câu 19. Hình chóp tứ giác đều có S_xq = 80 cm², cạnh đáy 8 cm. Trung đoạn bằng:", opts:["5 cm","10 cm","8 cm","4 cm"], correct:0, explain:"S_xq = 2ad → 80 = 2 × 8 × d → d = 5 cm."},
+      {type:"mc", text:"Câu 20. Diện tích toàn phần hình chóp tứ giác đều cạnh đáy 4 cm, trung đoạn 5 cm là:", opts:["40 cm²","56 cm²","36 cm²","48 cm²"], correct:1, explain:"S_xq = 2 × 4 × 5 = 40. S_đáy = 16. S_tp = 40 + 16 = 56 cm²."},
+      {type:"mc", text:"Câu 21. Lều trại hình chóp tứ giác đều, đáy cạnh 3 m, cao 2 m. Thể tích bên trong là:", opts:["6 m³","9 m³","18 m³","4 m³"], correct:0, explain:"V = ⅓ × 3² × 2 = ⅓ × 18 = 6 m³."},
+      {type:"mc", text:"Câu 22. Khối trang trí hình chóp tam giác đều cạnh đáy 10 cm, trung đoạn 12 cm. S_xq bằng:", opts:["120 cm²","180 cm²","360 cm²","60 cm²"], correct:1, explain:"S_xq = 3 × 10 × 12/2 = 180 cm²."},
+      {type:"mc", text:"Câu 23. Hình chóp tứ giác đều có V = 100 cm³, cạnh đáy 5 cm. Chiều cao bằng:", opts:["12 cm","8 cm","4 cm","6 cm"], correct:0, explain:"V = ⅓ × 25 × h → 100 = 25h/3 → h = 12 cm."},
+      {type:"mc", text:"Câu 24. Hình chóp tam giác đều cạnh đáy 8 cm, trung đoạn 9 cm. S_xq bằng:", opts:["72 cm²","108 cm²","144 cm²","36 cm²"], correct:1, explain:"S_xq = 3 × 8 × 9/2 = 108 cm²."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về hình chóp:", statements:[
+        {stmt:"Hình chóp tam giác đều có 3 mặt bên là tam giác cân bằng nhau", correct:true},
+        {stmt:"Hình chóp tứ giác đều có 5 mặt (kể cả đáy)", correct:true},
+        {stmt:"Chiều cao hình chóp chính là cạnh bên của hình chóp", correct:false},
+        {stmt:"Đáy hình chóp tứ giác đều là hình chữ nhật", correct:false}
       ], explains:[
-        "Đúng. Xúc sắc có 6 mặt: Ω = {1, 2, 3, 4, 5, 6}.",
-        "Sai. \"Mặt sấp\" chỉ có 1 kết quả thuận lợi.",
-        "Đúng. Định nghĩa kết quả thuận lợi cho một biến cố.",
-        "Sai. Gieo 2 xúc sắc: 6 × 6 = 36 phần tử, không phải 12."
+        "Đúng. Các mặt bên hình chóp tam giác đều là tam giác cân bằng nhau.",
+        "Đúng. 4 mặt bên + 1 đáy = 5 mặt.",
+        "Sai. Chiều cao là đoạn vuông góc từ đỉnh đến đáy, khác cạnh bên.",
+        "Sai. Đáy hình chóp tứ giác đều là hình vuông."
       ]},
-      { type:"short", text:"Gieo 1 xúc sắc. Số kết quả thuận lợi cho biến cố \"mặt lẻ\" là?", answer:"3", hint:"Liệt kê các mặt lẻ", explain:"Mặt lẻ: {1, 3, 5} → 3 kết quả thuận lợi." },
-      { type:"short", text:"Hộp có 4 bi đỏ, 3 bi xanh, 2 bi vàng. Tổng số kết quả có thể khi lấy 1 bi?", answer:"9", hint:"Đếm tổng số bi", explain:"Tổng: 4 + 3 + 2 = 9 kết quả có thể." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Kim tự tháp Ai Cập có dạng hình chóp tứ giác", correct:true},
+        {stmt:"Hình chóp tam giác đều có 6 cạnh", correct:true},
+        {stmt:"Mọi mặt bên của hình chóp đều là tam giác", correct:true},
+        {stmt:"Hình chóp tứ giác đều có các cạnh bên bằng nhau", correct:true}
+      ], explains:[
+        "Đúng. Kim tự tháp có đáy hình vuông → hình chóp tứ giác.",
+        "Đúng. 3 cạnh đáy + 3 cạnh bên = 6 cạnh.",
+        "Đúng. Mỗi mặt bên hình chóp là một tam giác.",
+        "Đúng. Hình chóp tứ giác đều có các cạnh bên bằng nhau."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các phát biểu về tính toán:", statements:[
+        {stmt:"S_xq hình chóp đều = ½ × chu vi đáy × trung đoạn", correct:true},
+        {stmt:"V hình chóp = ½ × S_đáy × h", correct:false},
+        {stmt:"Hình chóp tứ giác đều cạnh 4 cm, trung đoạn 3 cm có S_xq = 24 cm²", correct:true},
+        {stmt:"Hình chóp đáy hình vuông cạnh 6 cm, cao 5 cm có V = 90 cm³", correct:false}
+      ], explains:[
+        "Đúng. Công thức S_xq hình chóp đều.",
+        "Sai. V = ⅓ × S_đáy × h, không phải ½.",
+        "Đúng. S_xq = 2 × 4 × 3 = 24 cm².",
+        "Sai. V = ⅓ × 36 × 5 = 60 cm³, không phải 90."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"Lều hình chóp tứ giác đều đáy 2 m, cao 3 m có V = 4 m³", correct:true},
+        {stmt:"Hình chóp tam giác đều cạnh 8 cm, trung đoạn 10 cm có S_xq = 120 cm²", correct:true},
+        {stmt:"Diện tích toàn phần = S_xq + S_đáy", correct:true},
+        {stmt:"Hình chóp tứ giác đều cạnh 3 cm, cao 4 cm có V = 36 cm³", correct:false}
+      ], explains:[
+        "Đúng. V = ⅓ × 4 × 3 = 4 m³.",
+        "Đúng. S_xq = 3 × 8 × 10/2 = 120 cm².",
+        "Đúng. Diện tích toàn phần gồm xung quanh và đáy.",
+        "Sai. V = ⅓ × 9 × 4 = 12 cm³, không phải 36."
+      ]},
+      {type:"short", text:"Câu 29. Hình chóp tam giác đều có bao nhiêu mặt bên?", answer:"3", hint:"Đáy tam giác có 3 cạnh", explain:"Đáy tam giác đều → 3 mặt bên."},
+      {type:"short", text:"Câu 30. Hình chóp tứ giác đều có tổng cộng bao nhiêu đỉnh?", answer:"5", hint:"Đếm đỉnh đáy + đỉnh chóp", explain:"4 đỉnh đáy + 1 đỉnh chóp = 5 đỉnh."},
+      {type:"short", text:"Câu 31. Hình chóp tứ giác đều cạnh đáy 5 cm, chiều cao 6 cm. Thể tích bằng bao nhiêu cm³?", answer:"50", hint:"V = ⅓ × a² × h", explain:"V = ⅓ × 25 × 6 = 50 cm³."},
+      {type:"short", text:"Câu 32. Hình chóp tứ giác đều cạnh đáy 4 cm, trung đoạn 3 cm. S_xq bằng bao nhiêu cm²?", answer:"24", hint:"S_xq = 2ad", explain:"S_xq = 2 × 4 × 3 = 24 cm²."}
     ]
   },
 
-  // ==================== CHỦ ĐỀ 7: CÁCH TÍNH XÁC SUẤT ====================
+  // ==================== CHỦ ĐỀ 8: ĐỊNH LÍ PYTHAGORE ====================
   {
-    id:"l8_7", emoji:"🎲", name:"Cách tính xác suất",
-    desc:"Công thức xác suất cổ điển P(A) = m/n, tính chất xác suất, biến cố chắc chắn và không thể",
+    id:"l8_8", emoji:"📐", name:"Định lí Pythagore",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Định lí Pythagore (thuận)</b><br>
+– Trong tam giác vuông, bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông.<br>
+– Nếu ΔABC vuông tại A thì: BC² = AB² + AC².<br><br>
+<b>2. Định lí Pythagore đảo</b><br>
+– Nếu tam giác có bình phương một cạnh bằng tổng bình phương hai cạnh còn lại thì tam giác đó vuông.<br>
+– Nếu c² = a² + b² thì tam giác vuông tại đỉnh đối diện cạnh c.<br><br>
+<b>3. Bộ ba Pythagore</b><br>
+– Một số bộ ba thường gặp: (3, 4, 5), (5, 12, 13), (6, 8, 10), (8, 15, 17).<br><br>
+<b>4. Ứng dụng</b><br>
+– Tính cạnh tam giác vuông khi biết 2 cạnh.<br>
+– Bài toán thực tiễn: thang tựa tường, khoảng cách, chiều cao.`,
     questions:[
-      { type:"mc", text:"Câu 1. Gieo một xúc sắc. Xác suất xuất hiện mặt 6 là:", opts:["1/2","1/3","1/6","1/4"], correct:2, explain:"P = 1/6 (1 kết quả thuận lợi trên 6 kết quả có thể)." },
-      { type:"mc", text:"Câu 2. Hộp có 3 bi đỏ, 7 bi xanh. P(lấy được bi đỏ) = ?", opts:["3/10","7/10","3/7","7/3"], correct:0, explain:"P = 3/(3+7) = 3/10." },
-      { type:"mc", text:"Câu 3. Tung đồng xu 1 lần. P(mặt ngửa) = ?", opts:["1","1/2","0","1/4"], correct:1, explain:"Đồng xu cân đối: P(ngửa) = 1/2." },
-      { type:"mc", text:"Câu 4. Xác suất của biến cố chắc chắn bằng:", opts:["0","1/2","1","2"], correct:2, explain:"Biến cố chắc chắn luôn xảy ra → P = 1." },
-      { type:"mc", text:"Câu 5. Gieo xúc sắc. P(mặt > 4) = ?", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"Mặt > 4: {5, 6} → P = 2/6 = 1/3." },
-      { type:"mc", text:"Câu 6. Hộp có 2 bi trắng, 3 bi đen. P(lấy bi trắng) = ?", opts:["2/3","3/5","2/5","1/5"], correct:2, explain:"P = 2/(2+3) = 2/5." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tính chất xác suất:", statements:[
-        { stmt:"0 ≤ P(A) ≤ 1 với mọi biến cố A", correct:true },
-        { stmt:"Xác suất của biến cố không thể bằng 0", correct:true },
-        { stmt:"P(A) = số kết quả thuận lợi ÷ tổng số kết quả", correct:true },
-        { stmt:"Nếu P(A) = 0,8 thì biến cố A chắc chắn xảy ra", correct:false }
+      {type:"mc", text:"Câu 1. Trong tam giác vuông, cạnh lớn nhất là:", opts:["Cạnh góc vuông","Cạnh huyền","Đường cao","Trung tuyến"], correct:1, explain:"Trong tam giác vuông, cạnh huyền (đối diện góc vuông) là cạnh lớn nhất."},
+      {type:"mc", text:"Câu 2. ΔABC vuông tại A. Hệ thức Pythagore là:", opts:["AB² = BC² + AC²","AC² = AB² + BC²","BC² = AB² + AC²","AB² = BC² − AC²"], correct:2, explain:"Vuông tại A → BC là cạnh huyền → BC² = AB² + AC²."},
+      {type:"mc", text:"Câu 3. Bộ ba nào sau đây là bộ ba Pythagore?", opts:["(2, 3, 4)","(3, 4, 5)","(4, 5, 6)","(1, 2, 3)"], correct:1, explain:"3² + 4² = 9 + 16 = 25 = 5². Vậy (3, 4, 5) là bộ ba Pythagore."},
+      {type:"mc", text:"Câu 4. Định lí Pythagore áp dụng cho tam giác nào?", opts:["Tam giác đều","Tam giác cân","Tam giác vuông","Mọi tam giác"], correct:2, explain:"Định lí Pythagore chỉ áp dụng cho tam giác vuông."},
+      {type:"mc", text:"Câu 5. Theo ĐL Pythagore đảo, tam giác có 3 cạnh 5, 12, 13 là tam giác:", opts:["Tam giác đều","Tam giác nhọn","Tam giác vuông","Tam giác tù"], correct:2, explain:"5² + 12² = 25 + 144 = 169 = 13² → tam giác vuông."},
+      {type:"mc", text:"Câu 6. ΔABC vuông tại B. Cạnh huyền là:", opts:["AB","BC","AC","Không xác định"], correct:2, explain:"Vuông tại B → cạnh huyền là AC (đối diện góc vuông B)."},
+      {type:"mc", text:"Câu 7. Trong ΔABC vuông tại C, AB = 10, BC = 6. Cạnh nào là cạnh huyền?", opts:["AB","BC","AC","Không có"], correct:0, explain:"Vuông tại C → AB đối diện góc C → AB là cạnh huyền."},
+      {type:"mc", text:"Câu 8. Cạnh huyền của tam giác vuông có hai cạnh góc vuông bằng nhau và bằng a thì bằng:", opts:["a","2a","a√2","a√3"], correct:2, explain:"c² = a² + a² = 2a² → c = a√2."},
+      {type:"mc", text:"Câu 9. Tam giác có 3 cạnh 7, 24, 25 là:", opts:["Tam giác nhọn","Tam giác vuông","Tam giác tù","Tam giác đều"], correct:1, explain:"7² + 24² = 49 + 576 = 625 = 25² → tam giác vuông."},
+      {type:"mc", text:"Câu 10. Trong tam giác vuông, nếu hai cạnh góc vuông là a và b, cạnh huyền là c thì:", opts:["a² = b² + c²","c = a + b","c² = a² + b²","c² = a² − b²"], correct:2, explain:"Theo ĐL Pythagore: c² = a² + b²."},
+      {type:"mc", text:"Câu 11. Tam giác nào sau đây KHÔNG phải tam giác vuông?", opts:["(3, 4, 5)","(6, 8, 10)","(5, 7, 9)","(8, 15, 17)"], correct:2, explain:"5² + 7² = 25 + 49 = 74 ≠ 81 = 9² → không phải tam giác vuông."},
+      {type:"mc", text:"Câu 12. Bộ ba (6, 8, 10) là bộ ba Pythagore vì:", opts:["6 + 8 = 14","6² + 8² = 10²","6 × 8 = 10","6 + 8 > 10"], correct:1, explain:"6² + 8² = 36 + 64 = 100 = 10²."},
+      {type:"mc", text:"Câu 13. ΔABC vuông tại A, AB = 3 cm, AC = 4 cm. BC bằng:", opts:["5 cm","7 cm","6 cm","√7 cm"], correct:0, explain:"BC² = 3² + 4² = 9 + 16 = 25 → BC = 5 cm."},
+      {type:"mc", text:"Câu 14. ΔABC vuông tại B, AC = 13 cm, AB = 5 cm. BC bằng:", opts:["8 cm","12 cm","18 cm","√18 cm"], correct:1, explain:"BC² = AC² − AB² = 169 − 25 = 144 → BC = 12 cm."},
+      {type:"mc", text:"Câu 15. ΔABC vuông tại C, AB = 10 cm, BC = 8 cm. AC bằng:", opts:["6 cm","2 cm","√164 cm","4 cm"], correct:0, explain:"AC² = AB² − BC² = 100 − 64 = 36 → AC = 6 cm."},
+      {type:"mc", text:"Câu 16. Một thang dài 5 m tựa vào tường, chân thang cách tường 3 m. Đầu thang cách mặt đất:", opts:["2 m","4 m","√34 m","8 m"], correct:1, explain:"h² = 5² − 3² = 25 − 9 = 16 → h = 4 m."},
+      {type:"mc", text:"Câu 17. Hình chữ nhật có hai cạnh 5 cm và 12 cm. Đường chéo bằng:", opts:["13 cm","17 cm","√17 cm","7 cm"], correct:0, explain:"d² = 5² + 12² = 25 + 144 = 169 → d = 13 cm."},
+      {type:"mc", text:"Câu 18. ΔABC vuông tại A, AB = 8 cm, AC = 15 cm. BC bằng:", opts:["17 cm","23 cm","√23 cm","7 cm"], correct:0, explain:"BC² = 8² + 15² = 64 + 225 = 289 → BC = 17 cm."},
+      {type:"mc", text:"Câu 19. Hai cạnh góc vuông bằng 9 cm và 12 cm. Cạnh huyền bằng:", opts:["15 cm","21 cm","√21 cm","10 cm"], correct:0, explain:"c² = 9² + 12² = 81 + 144 = 225 → c = 15 cm."},
+      {type:"mc", text:"Câu 20. ΔABC vuông tại C, BC = 5 cm, AB = 13 cm. AC bằng:", opts:["8 cm","12 cm","18 cm","√18 cm"], correct:1, explain:"AC² = 13² − 5² = 169 − 25 = 144 → AC = 12 cm."},
+      {type:"mc", text:"Câu 21. Một sân hình chữ nhật dài 40 m, rộng 30 m. Đường chéo sân bằng:", opts:["50 m","70 m","35 m","10 m"], correct:0, explain:"d² = 40² + 30² = 1600 + 900 = 2500 → d = 50 m."},
+      {type:"mc", text:"Câu 22. Thang dài 10 m tựa tường, đầu thang cách mặt đất 8 m. Chân thang cách tường:", opts:["2 m","6 m","√36 m","18 m"], correct:1, explain:"x² = 10² − 8² = 100 − 64 = 36 → x = 6 m."},
+      {type:"mc", text:"Câu 23. ΔABC có AB = 6, BC = 8, AC = 10. Tam giác vuông tại đỉnh nào?", opts:["A","B","C","Không vuông"], correct:1, explain:"AB² + BC² = 36 + 64 = 100 = AC² → vuông tại B (đối diện AC)."},
+      {type:"mc", text:"Câu 24. ΔABC vuông tại A, AB = AC = 5 cm. BC bằng:", opts:["10 cm","5√2 cm","5 cm","√50 cm"], correct:1, explain:"BC² = 5² + 5² = 50 → BC = √50 = 5√2 cm."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về ĐL Pythagore:", statements:[
+        {stmt:"Trong tam giác vuông, cạnh huyền là cạnh lớn nhất", correct:true},
+        {stmt:"Bộ ba (3, 4, 5) là bộ ba Pythagore", correct:true},
+        {stmt:"ĐL Pythagore áp dụng cho mọi tam giác", correct:false},
+        {stmt:"Cạnh huyền là cạnh đối diện góc vuông", correct:true}
       ], explains:[
-        "Đúng. Xác suất luôn nằm trong [0; 1].",
-        "Đúng. Biến cố không thể (không bao giờ xảy ra) có P = 0.",
-        "Đúng. Đây là công thức xác suất cổ điển: P(A) = m/n.",
-        "Sai. P = 0,8 nghĩa là khả năng cao nhưng không chắc chắn. Chắc chắn khi P = 1."
+        "Đúng. Trong tam giác vuông, cạnh huyền luôn lớn nhất.",
+        "Đúng. 3² + 4² = 25 = 5².",
+        "Sai. ĐL Pythagore chỉ áp dụng cho tam giác vuông.",
+        "Đúng. Cạnh huyền đối diện góc vuông 90°."
       ]},
-      { type:"short", text:"Hộp có 5 bi đỏ, 3 bi xanh, 2 bi vàng. P(bi xanh) = a/10. Tìm a = ?", answer:"3", hint:"Tổng 10 bi, 3 bi xanh", explain:"P(xanh) = 3/10. Vậy a = 3." },
-      { type:"short", text:"Gieo 1 xúc sắc. P(mặt ≤ 2) = a/6. Tìm a = ?", answer:"2", hint:"Đếm mặt 1 và 2", explain:"Mặt ≤ 2: {1, 2} → P = 2/6. Vậy a = 2." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các tam giác có 3 cạnh:", statements:[
+        {stmt:"Tam giác (5, 12, 13) là tam giác vuông", correct:true},
+        {stmt:"Tam giác (4, 5, 6) là tam giác vuông", correct:false},
+        {stmt:"Tam giác (8, 15, 17) là tam giác vuông", correct:true},
+        {stmt:"Tam giác (6, 8, 10) là tam giác vuông", correct:true}
+      ], explains:[
+        "Đúng. 5² + 12² = 25 + 144 = 169 = 13².",
+        "Sai. 4² + 5² = 16 + 25 = 41 ≠ 36 = 6².",
+        "Đúng. 8² + 15² = 64 + 225 = 289 = 17².",
+        "Đúng. 6² + 8² = 36 + 64 = 100 = 10²."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"ΔABC vuông tại A, AB = 6, AC = 8 thì BC = 10", correct:true},
+        {stmt:"ΔABC vuông tại B, AC = 15, AB = 9 thì BC = 12", correct:true},
+        {stmt:"Thang dài 13 m, chân cách tường 5 m thì đầu thang cách đất 8 m", correct:false},
+        {stmt:"HCN cạnh 3 cm và 4 cm có đường chéo 5 cm", correct:true}
+      ], explains:[
+        "Đúng. BC² = 36 + 64 = 100 → BC = 10.",
+        "Đúng. BC² = 15² − 9² = 225 − 81 = 144 → BC = 12.",
+        "Sai. h² = 13² − 5² = 169 − 25 = 144 → h = 12 m, không phải 8.",
+        "Đúng. d² = 9 + 16 = 25 → d = 5 cm."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Nếu c² = a² + b² thì tam giác vuông tại đỉnh đối diện cạnh c", correct:true},
+        {stmt:"ΔABC vuông tại C, AB = 17, AC = 15 thì BC = 8", correct:true},
+        {stmt:"Hai cạnh góc vuông 7 và 24, cạnh huyền bằng 31", correct:false},
+        {stmt:"Tam giác có cạnh 9, 40, 41 là tam giác vuông", correct:true}
+      ], explains:[
+        "Đúng. Đây là nội dung ĐL Pythagore đảo.",
+        "Đúng. BC² = 17² − 15² = 289 − 225 = 64 → BC = 8.",
+        "Sai. c² = 49 + 576 = 625 → c = 25, không phải 31.",
+        "Đúng. 9² + 40² = 81 + 1600 = 1681 = 41²."
+      ]},
+      {type:"short", text:"Câu 29. Trong tam giác vuông, cạnh đối diện góc vuông gọi là gì?", answer:"cạnh huyền", hint:"Cạnh lớn nhất", explain:"Cạnh đối diện góc vuông gọi là cạnh huyền."},
+      {type:"short", text:"Câu 30. Bộ ba (3, 4, ?) là bộ ba Pythagore. Tìm số còn thiếu.", answer:"5", hint:"3² + 4² = ?²", explain:"3² + 4² = 9 + 16 = 25 → ? = 5."},
+      {type:"short", text:"Câu 31. ΔABC vuông tại A, AB = 5 cm, AC = 12 cm. BC = ? cm.", answer:"13", hint:"BC² = AB² + AC²", explain:"BC² = 25 + 144 = 169 → BC = 13 cm."},
+      {type:"short", text:"Câu 32. Thang dài 15 m tựa tường, chân thang cách tường 9 m. Đầu thang cách mặt đất bao nhiêu m?", answer:"12", hint:"h² = 15² − 9²", explain:"h² = 225 − 81 = 144 → h = 12 m."}
     ]
   },
 
-  // ==================== CHỦ ĐỀ 8: TAM GIÁC ĐỒNG DẠNG ====================
+// ==================== CHỦ ĐỀ 9: TỨ GIÁC ====================
   {
-    id:"l8_8", emoji:"🔺", name:"Tam giác đồng dạng",
-    desc:"Các trường hợp đồng dạng (c.c.c, c.g.c, g.g), tỉ số đồng dạng, tỉ số diện tích",
+    id:"l8_9", emoji:"🔷", name:"Tứ giác",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Tứ giác</b><br>
+– Tứ giác là hình gồm 4 đoạn thẳng, trong đó không có 2 đoạn nào cùng nằm trên 1 đường thẳng. Tứ giác lồi: mọi cạnh nằm về một phía so với đường thẳng chứa cạnh đối diện.<br>
+– Tổng các góc trong tứ giác = 360°.<br><br>
+<b>2. Hình thang (HT)</b><br>
+– Tứ giác có đúng 1 cặp cạnh đối song song (2 cạnh đó là đáy, 2 cạnh còn lại là cạnh bên).<br>
+– <i>Hình thang cân (HTC)</i>: 2 cạnh bên bằng nhau; 2 góc kề mỗi đáy bằng nhau; 2 đường chéo bằng nhau. Dấu hiệu: HT có 2 đường chéo bằng nhau → HTC.<br><br>
+<b>3. Hình bình hành (HBH)</b><br>
+– Tứ giác có 2 cặp cạnh đối song song. Tính chất: cạnh đối bằng nhau, góc đối bằng nhau, 2 đường chéo cắt nhau tại trung điểm mỗi đường.<br><br>
+<b>4. Các hình đặc biệt</b><br>
+– <i>Hình chữ nhật (HCN)</i>: HBH có 1 góc vuông → 4 góc vuông, 2 đường chéo bằng nhau.<br>
+– <i>Hình thoi</i>: HBH có 2 cạnh kề bằng nhau → 4 cạnh bằng nhau, 2 đường chéo vuông góc nhau tại trung điểm mỗi đường.<br>
+– <i>Hình vuông (HV)</i>: vừa là HCN vừa là hình thoi → 4 cạnh bằng nhau, 4 góc vuông, 2 đường chéo bằng nhau và vuông góc nhau.`,
     questions:[
-      { type:"mc", text:"Câu 1. Hai tam giác có 2 cặp góc bằng nhau thì đồng dạng theo trường hợp:", opts:["c.c.c","c.g.c","g.g","cạnh-huyền-góc nhọn"], correct:2, explain:"Có 2 cặp góc bằng nhau → đồng dạng theo trường hợp góc – góc (g.g)." },
-      { type:"mc", text:"Câu 2. ΔABC ∼ ΔDEF với tỉ số đồng dạng k = 2. Biết AB = 4cm, khi đó DE bằng:", opts:["2 cm","8 cm","4 cm","6 cm"], correct:0, explain:"AB/DE = k = 2 → DE = AB/k = 4/2 = 2 cm." },
-      { type:"mc", text:"Câu 3. ΔABC ∼ ΔDEF theo tỉ số k. Tỉ số diện tích S_ABC/S_DEF bằng:", opts:["k","k²","k³","2k"], correct:1, explain:"Tỉ số diện tích hai tam giác đồng dạng bằng bình phương tỉ số đồng dạng: k²." },
-      { type:"mc", text:"Câu 4. ΔABC có AB = 3, AC = 6, ΔDEF có DE = 2, DF = 4. Nếu góc A = góc D thì:", opts:["ΔABC ∼ ΔDEF (c.g.c)","ΔABC ∼ ΔDEF (g.g)","Không đồng dạng","ΔABC = ΔDEF"], correct:0, explain:"AB/DE = 3/2, AC/DF = 6/4 = 3/2, góc A = góc D → đồng dạng (c.g.c)." },
-      { type:"mc", text:"Câu 5. Hai tam giác đều luôn:", opts:["Bằng nhau","Đồng dạng","Vuông","Không đồng dạng"], correct:1, explain:"Hai tam giác đều có 3 góc = 60° → luôn đồng dạng (g.g)." },
-      { type:"mc", text:"Câu 6. ΔABC ∼ ΔMNP với k = 3. Chu vi ΔABC = 24cm. Chu vi ΔMNP bằng:", opts:["8 cm","72 cm","12 cm","36 cm"], correct:0, explain:"Tỉ số chu vi = tỉ số đồng dạng k = 3. C_MNP = 24/3 = 8 cm." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tam giác đồng dạng:", statements:[
-        { stmt:"Hai tam giác bằng nhau thì đồng dạng với tỉ số k = 1", correct:true },
-        { stmt:"Hai tam giác đồng dạng thì bằng nhau", correct:false },
-        { stmt:"Hai tam giác đều luôn đồng dạng", correct:true },
-        { stmt:"Hai tam giác có 2 cặp góc bằng nhau thì đồng dạng", correct:true }
+      {type:"mc", text:"Câu 1. Tổng các góc trong tứ giác bằng:", opts:["180°","270°","360°","540°"], correct:2, explain:"Tổng các góc trong tứ giác luôn bằng 360°."},
+      {type:"mc", text:"Câu 2. Hình thang là tứ giác có:", opts:["4 cạnh bằng nhau","2 cặp cạnh đối song song","Đúng 1 cặp cạnh đối song song","4 góc vuông"], correct:2, explain:"Hình thang có đúng 1 cặp cạnh đối song song."},
+      {type:"mc", text:"Câu 3. Hình bình hành là tứ giác có:", opts:["1 cặp cạnh đối song song","2 cặp cạnh đối song song","4 cạnh bằng nhau","4 góc vuông"], correct:1, explain:"Hình bình hành có 2 cặp cạnh đối song song."},
+      {type:"mc", text:"Câu 4. Hình chữ nhật là hình bình hành có thêm tính chất:", opts:["4 cạnh bằng nhau","1 góc vuông","2 đường chéo vuông góc","2 cạnh kề bằng nhau"], correct:1, explain:"HCN là HBH có 1 góc vuông (suy ra 4 góc vuông)."},
+      {type:"mc", text:"Câu 5. Hình thoi là hình bình hành có thêm tính chất:", opts:["1 góc vuông","2 đường chéo bằng nhau","2 cạnh kề bằng nhau","4 góc vuông"], correct:2, explain:"Hình thoi là HBH có 2 cạnh kề bằng nhau (suy ra 4 cạnh bằng nhau)."},
+      {type:"mc", text:"Câu 6. Hình vuông vừa là:", opts:["HCN vừa là hình thoi","HT vừa là HBH","HCN vừa là HT","Hình thoi vừa là HT"], correct:0, explain:"Hình vuông vừa là HCN (4 góc vuông) vừa là hình thoi (4 cạnh bằng)."},
+      {type:"mc", text:"Câu 7. Trong hình bình hành, hai đường chéo có tính chất:", opts:["Bằng nhau","Vuông góc nhau","Cắt nhau tại trung điểm mỗi đường","Song song nhau"], correct:2, explain:"Hai đường chéo HBH cắt nhau tại trung điểm mỗi đường."},
+      {type:"mc", text:"Câu 8. Hình thang cân có tính chất:", opts:["4 cạnh bằng nhau","2 đường chéo vuông góc","2 đường chéo bằng nhau","2 cặp cạnh đối song song"], correct:2, explain:"Hình thang cân có 2 đường chéo bằng nhau."},
+      {type:"mc", text:"Câu 9. Trong hình chữ nhật, hai đường chéo:", opts:["Vuông góc nhau","Bằng nhau","Không cắt nhau","Vuông góc và bằng nhau"], correct:1, explain:"Hai đường chéo HCN bằng nhau."},
+      {type:"mc", text:"Câu 10. Trong hình thoi, hai đường chéo:", opts:["Bằng nhau","Song song nhau","Vuông góc nhau tại trung điểm","Không cắt nhau"], correct:2, explain:"Hai đường chéo hình thoi vuông góc nhau tại trung điểm mỗi đường."},
+      {type:"mc", text:"Câu 11. Tứ giác có 2 cặp cạnh đối bằng nhau là:", opts:["Hình thang","Hình bình hành","Hình thoi","Hình vuông"], correct:1, explain:"Đây là dấu hiệu nhận biết hình bình hành."},
+      {type:"mc", text:"Câu 12. Số đường chéo của một tứ giác là:", opts:["1","2","3","4"], correct:1, explain:"Tứ giác có 2 đường chéo nối 2 cặp đỉnh đối diện."},
+      {type:"mc", text:"Câu 13. Tứ giác ABCD có góc A = 80°, góc B = 100°, góc C = 70°. Góc D bằng:", opts:["110°","90°","100°","120°"], correct:0, explain:"Góc D = 360° − 80° − 100° − 70° = 110°."},
+      {type:"mc", text:"Câu 14. HBH ABCD có góc A = 60°. Góc B bằng:", opts:["60°","120°","90°","180°"], correct:1, explain:"Trong HBH, 2 góc kề bù nhau: B = 180° − 60° = 120°."},
+      {type:"mc", text:"Câu 15. HBH ABCD có AB = 5 cm, BC = 8 cm. Chu vi HBH bằng:", opts:["13 cm","26 cm","40 cm","20 cm"], correct:1, explain:"Chu vi = 2(AB + BC) = 2(5 + 8) = 26 cm."},
+      {type:"mc", text:"Câu 16. HCN có hai cạnh 6 cm và 8 cm. Đường chéo bằng:", opts:["10 cm","14 cm","7 cm","√100 cm"], correct:0, explain:"Đường chéo² = 6² + 8² = 100 → đường chéo = 10 cm."},
+      {type:"mc", text:"Câu 17. Tứ giác nào sau đây luôn có 2 đường chéo vuông góc?", opts:["HCN","HBH","Hình thoi","Hình thang cân"], correct:2, explain:"Hình thoi luôn có 2 đường chéo vuông góc nhau."},
+      {type:"mc", text:"Câu 18. HBH ABCD có AC = 12 cm. Giao điểm 2 đường chéo là O. OA bằng:", opts:["3 cm","6 cm","12 cm","4 cm"], correct:1, explain:"Đường chéo HBH cắt nhau tại trung điểm → OA = AC/2 = 6 cm."},
+      {type:"mc", text:"Câu 19. Hình thoi có 2 đường chéo 6 cm và 8 cm. Diện tích hình thoi bằng:", opts:["24 cm²","48 cm²","14 cm²","28 cm²"], correct:0, explain:"S = ½ × d₁ × d₂ = ½ × 6 × 8 = 24 cm²."},
+      {type:"mc", text:"Câu 20. Tứ giác ABCD có AB // CD. ABCD là:", opts:["Hình bình hành","Hình thang","Hình chữ nhật","Hình thoi"], correct:1, explain:"Có 1 cặp cạnh đối song song → hình thang (chưa đủ để kết luận HBH)."},
+      {type:"mc", text:"Câu 21. HBH có 1 góc vuông thì là:", opts:["Hình thoi","Hình thang cân","Hình chữ nhật","Hình vuông"], correct:2, explain:"HBH có 1 góc vuông → 4 góc vuông → HCN."},
+      {type:"mc", text:"Câu 22. HCN có 2 cạnh kề bằng nhau thì là:", opts:["Hình thoi","Hình thang","Hình vuông","Hình bình hành"], correct:2, explain:"HCN + 2 cạnh kề bằng nhau → 4 cạnh bằng + 4 góc vuông → hình vuông."},
+      {type:"mc", text:"Câu 23. Hình thang ABCD (AB // CD) có góc A = 90°, AB = 4 cm, CD = 7 cm, AD = 3 cm. Diện tích hình thang bằng:", opts:["16,5 cm²","33 cm²","11 cm²","21 cm²"], correct:0, explain:"S = ½(AB + CD) × h = ½(4 + 7) × 3 = 16,5 cm²."},
+      {type:"mc", text:"Câu 24. Hình vuông cạnh 5 cm có đường chéo bằng:", opts:["5 cm","10 cm","5√2 cm","5√3 cm"], correct:2, explain:"Đường chéo = a√2 = 5√2 cm."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về tứ giác:", statements:[
+        {stmt:"Tổng các góc trong tứ giác bằng 360°", correct:true},
+        {stmt:"Hình bình hành có 2 cặp cạnh đối song song", correct:true},
+        {stmt:"Hình thang có 2 cặp cạnh đối song song", correct:false},
+        {stmt:"Hình chữ nhật có 4 góc vuông", correct:true}
       ], explains:[
-        "Đúng. Bằng nhau → các cạnh tương ứng bằng nhau → tỉ số k = 1.",
-        "Sai. Đồng dạng chỉ cần tỉ số cạnh bằng nhau, không nhất thiết bằng nhau.",
-        "Đúng. Tam giác đều có 3 góc 60° → luôn đồng dạng theo g.g.",
-        "Đúng. Đây là trường hợp đồng dạng g.g."
+        "Đúng. Tổng góc trong tứ giác luôn = 360°.",
+        "Đúng. Đây là định nghĩa hình bình hành.",
+        "Sai. Hình thang chỉ có 1 cặp cạnh đối song song.",
+        "Đúng. HCN có 4 góc vuông."
       ]},
-      { type:"short", text:"ΔABC ∼ ΔDEF, AB = 6, DE = 3. Tỉ số đồng dạng k = AB/DE = ?", answer:"2", hint:"k = cạnh tam giác lớn / cạnh tam giác nhỏ", explain:"k = AB/DE = 6/3 = 2." },
-      { type:"short", text:"ΔMNP ∼ ΔXYZ với k = 3, S(MNP) = 27cm². Diện tích ΔXYZ = ? cm²", answer:"3", hint:"Tỉ số diện tích = k²", explain:"S_MNP/S_XYZ = k² = 9 → S_XYZ = 27/9 = 3 cm²." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Hình vuông là hình chữ nhật đặc biệt", correct:true},
+        {stmt:"Hình thoi có 4 góc vuông", correct:false},
+        {stmt:"Hai đường chéo HBH cắt nhau tại trung điểm mỗi đường", correct:true},
+        {stmt:"Hình thang cân có 2 cạnh bên bằng nhau", correct:true}
+      ], explains:[
+        "Đúng. HV là HCN có 2 cạnh kề bằng nhau.",
+        "Sai. Hình thoi không nhất thiết có góc vuông (chỉ HV mới có).",
+        "Đúng. Tính chất đường chéo HBH.",
+        "Đúng. Đây là tính chất hình thang cân."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các tính toán:", statements:[
+        {stmt:"Tứ giác có 3 góc: 90°, 80°, 100° thì góc còn lại bằng 90°", correct:true},
+        {stmt:"HBH có góc A = 70° thì góc B = 70°", correct:false},
+        {stmt:"HBH có AB = 7, BC = 4 thì chu vi = 22", correct:true},
+        {stmt:"HCN cạnh 5 và 12 có đường chéo bằng 13", correct:true}
+      ], explains:[
+        "Đúng. 360° − 90° − 80° − 100° = 90°.",
+        "Sai. Góc B kề A → B = 180° − 70° = 110°.",
+        "Đúng. Chu vi = 2(7 + 4) = 22.",
+        "Đúng. d² = 25 + 144 = 169 → d = 13."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các nhận định:", statements:[
+        {stmt:"Hình thoi có 2 đường chéo 10 và 24 thì S = 120", correct:true},
+        {stmt:"HBH có 1 góc vuông thì là hình vuông", correct:false},
+        {stmt:"Hình vuông cạnh 6 có đường chéo bằng 6√2", correct:true},
+        {stmt:"HBH có 2 đường chéo bằng nhau thì là HCN", correct:true}
+      ], explains:[
+        "Đúng. S = ½ × 10 × 24 = 120.",
+        "Sai. HBH + 1 góc vuông → HCN (cần thêm 2 cạnh kề bằng nhau mới là HV).",
+        "Đúng. Đường chéo = a√2 = 6√2.",
+        "Đúng. Đây là dấu hiệu nhận biết HCN từ HBH."
+      ]},
+      {type:"short", text:"Câu 29. Tổng các góc trong tứ giác bằng bao nhiêu độ?", answer:"360", hint:"Nhớ công thức", explain:"Tổng các góc trong tứ giác = 360°."},
+      {type:"short", text:"Câu 30. Hình bình hành có mấy cặp cạnh đối song song?", answer:"2", hint:"Định nghĩa HBH", explain:"HBH có 2 cặp cạnh đối song song."},
+      {type:"short", text:"Câu 31. Tứ giác có góc A = 90°, B = 85°, C = 95°. Góc D bằng bao nhiêu độ?", answer:"90", hint:"Tổng = 360°", explain:"D = 360° − 90° − 85° − 95° = 90°."},
+      {type:"short", text:"Câu 32. HBH ABCD có AB = 9 cm, BC = 5 cm. Chu vi bằng bao nhiêu cm?", answer:"28", hint:"Chu vi = 2(AB + BC)", explain:"Chu vi = 2(9 + 5) = 28 cm."}
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 10: ĐỊNH LÍ THALÈS ====================
+  {
+    id:"l8_10", emoji:"📏", name:"Định lí Thalès",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Định lí Thalès</b><br>
+– Nếu một đường thẳng song song với một cạnh của tam giác và cắt hai cạnh còn lại thì nó chia hai cạnh đó thành các đoạn tương ứng tỉ lệ.<br>
+– Trong ΔABC, DE // BC (D ∈ AB, E ∈ AC) thì: AD/DB = AE/EC và AD/AB = AE/AC = DE/BC.<br><br>
+<b>2. Định lí Thalès đảo</b><br>
+– Nếu đường thẳng cắt 2 cạnh của tam giác và chia thành các đoạn tỉ lệ thì đường thẳng đó song song với cạnh thứ ba.<br><br>
+<b>3. Đường trung bình tam giác</b><br>
+– Đoạn thẳng nối trung điểm 2 cạnh tam giác. Tính chất: song song với cạnh thứ ba và bằng nửa cạnh đó.<br><br>
+<b>4. Tính chất đường phân giác</b><br>
+– Trong tam giác, đường phân giác của một góc chia cạnh đối thành 2 đoạn tỉ lệ với 2 cạnh kề góc đó.<br>
+– Trong ΔABC, phân giác AD: DB/DC = AB/AC.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Trong ΔABC, DE // BC (D ∈ AB, E ∈ AC). Theo ĐL Thalès:", opts:["AD = DB","AD/DB = AE/EC","AD + AE = BC","DE = BC"], correct:1, explain:"ĐL Thalès: DE // BC → AD/DB = AE/EC."},
+      {type:"mc", text:"Câu 2. Đường trung bình của tam giác là đoạn thẳng nối:", opts:["Đỉnh với trung điểm cạnh đối","Trung điểm hai cạnh","Đỉnh với chân đường cao","Hai đỉnh kề nhau"], correct:1, explain:"Đường trung bình nối trung điểm 2 cạnh tam giác."},
+      {type:"mc", text:"Câu 3. Đường trung bình tam giác có tính chất:", opts:["Bằng cạnh thứ ba","Song song và bằng nửa cạnh thứ ba","Vuông góc cạnh thứ ba","Bằng 2 lần cạnh thứ ba"], correct:1, explain:"Đường trung bình song song cạnh thứ ba và bằng nửa cạnh đó."},
+      {type:"mc", text:"Câu 4. Trong ΔABC, phân giác AD (D ∈ BC). Khi đó:", opts:["BD = DC","BD/DC = AB/AC","BD × DC = AB × AC","BD + DC = AB + AC"], correct:1, explain:"Tính chất phân giác: BD/DC = AB/AC."},
+      {type:"mc", text:"Câu 5. Theo ĐL Thalès đảo, nếu AD/DB = AE/EC thì:", opts:["DE ⊥ BC","DE = BC","DE // BC","DE > BC"], correct:2, explain:"ĐL Thalès đảo: tỉ lệ → song song cạnh thứ ba."},
+      {type:"mc", text:"Câu 6. Trong ΔABC, M, N lần lượt là trung điểm AB, AC. MN là:", opts:["Đường cao","Đường trung bình","Đường trung tuyến","Đường phân giác"], correct:1, explain:"MN nối trung điểm 2 cạnh → đường trung bình tam giác."},
+      {type:"mc", text:"Câu 7. Đường trung bình tam giác song song với cạnh nào?", opts:["Cạnh chứa trung điểm","Cạnh thứ ba (không chứa trung điểm)","Cạnh dài nhất","Cạnh ngắn nhất"], correct:1, explain:"Đường trung bình song song cạnh thứ ba (cạnh không chứa trung điểm)."},
+      {type:"mc", text:"Câu 8. Trong ΔABC, DE // BC, D ∈ AB, E ∈ AC. Đẳng thức nào đúng?", opts:["AD/AB = AE/AC","AD/AE = DB/EC","AB/AD = AC/BC","AD × AC = AE × AB"], correct:0, explain:"Theo ĐL Thalès: AD/AB = AE/AC."},
+      {type:"mc", text:"Câu 9. Số đường trung bình trong một tam giác là:", opts:["1","2","3","4"], correct:2, explain:"Tam giác có 3 cặp cạnh → 3 đường trung bình."},
+      {type:"mc", text:"Câu 10. ĐL Thalès liên quan đến yếu tố nào?", opts:["Đường thẳng vuông góc","Đường thẳng song song","Đường tròn","Đường phân giác"], correct:1, explain:"ĐL Thalès nói về đường thẳng song song với cạnh tam giác."},
+      {type:"mc", text:"Câu 11. Trong ΔABC, phân giác trong của góc A chia cạnh BC thành:", opts:["2 đoạn bằng nhau","2 đoạn tỉ lệ với AB và AC","2 đoạn tỉ lệ với BC","2 đoạn vuông góc"], correct:1, explain:"Phân giác chia cạnh đối thành 2 đoạn tỉ lệ với 2 cạnh kề."},
+      {type:"mc", text:"Câu 12. Nếu DE // BC trong ΔABC thì tam giác ADE và ΔABC có:", opts:["Diện tích bằng nhau","Các góc tương ứng bằng nhau","Cạnh bằng nhau","Chu vi bằng nhau"], correct:1, explain:"DE // BC → các góc tương ứng bằng nhau (đồng vị)."},
+      {type:"mc", text:"Câu 13. ΔABC, DE // BC, AD = 3, DB = 6, AE = 4. EC bằng:", opts:["8","2","6","12"], correct:0, explain:"AD/DB = AE/EC → 3/6 = 4/EC → EC = 8."},
+      {type:"mc", text:"Câu 14. ΔABC, DE // BC, AD = 4, AB = 12, AE = 5. AC bằng:", opts:["10","15","20","12"], correct:1, explain:"AD/AB = AE/AC → 4/12 = 5/AC → AC = 15."},
+      {type:"mc", text:"Câu 15. ΔABC có BC = 10 cm. M, N là trung điểm AB, AC. MN bằng:", opts:["10 cm","20 cm","5 cm","2,5 cm"], correct:2, explain:"Đường trung bình = ½ cạnh thứ ba = ½ × 10 = 5 cm."},
+      {type:"mc", text:"Câu 16. ΔABC, DE // BC, AD = 2, DB = 3, DE = 6. BC bằng:", opts:["9","15","10","12"], correct:1, explain:"AD/AB = DE/BC → 2/5 = 6/BC → BC = 15."},
+      {type:"mc", text:"Câu 17. ΔABC, AB = 6, AC = 9. Phân giác AD (D ∈ BC), BD = 4. DC bằng:", opts:["4","6","9","8"], correct:1, explain:"BD/DC = AB/AC → 4/DC = 6/9 → DC = 6."},
+      {type:"mc", text:"Câu 18. ΔABC, DE // BC, AD = 5, AB = 15, BC = 12. DE bằng:", opts:["4","6","8","3"], correct:0, explain:"AD/AB = DE/BC → 5/15 = DE/12 → DE = 4."},
+      {type:"mc", text:"Câu 19. ΔABC có MN là đường trung bình ứng với BC. Nếu MN = 7 thì BC bằng:", opts:["3,5","7","14","21"], correct:2, explain:"MN = BC/2 → BC = 2 × 7 = 14."},
+      {type:"mc", text:"Câu 20. ΔABC, DE // BC, AD = 6, DB = 4, AE = 9. EC bằng:", opts:["6","4","8","3"], correct:0, explain:"AD/DB = AE/EC → 6/4 = 9/EC → EC = 6."},
+      {type:"mc", text:"Câu 21. ΔABC, AB = 8, AC = 12. Phân giác AD, BC = 10. BD bằng:", opts:["4","5","6","8"], correct:0, explain:"BD/DC = AB/AC = 8/12 = 2/3. BD = 10 × 2/5 = 4."},
+      {type:"mc", text:"Câu 22. ΔABC, DE // BC, AD/DB = 2/3, AE = 8. AC bằng:", opts:["12","20","16","24"], correct:1, explain:"AD/DB = 2/3 → AD/AB = 2/5. AE/AC = 2/5 → 8/AC = 2/5 → AC = 20."},
+      {type:"mc", text:"Câu 23. ΔABC có M, N là trung điểm AB, AC. MN // BC và MN = 6. Chu vi ΔABC biết AB = 16, AC = 14:", opts:["42","54","30","48"], correct:0, explain:"BC = 2 × MN = 12. Chu vi = 16 + 14 + 12 = 42."},
+      {type:"mc", text:"Câu 24. ΔABC, DE // BC, AE = 3, EC = 5, AD = 6. DB bằng:", opts:["10","8","15","12"], correct:0, explain:"AD/DB = AE/EC → 6/DB = 3/5 → DB = 10."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"ĐL Thalès liên quan đến đường thẳng song song với cạnh tam giác", correct:true},
+        {stmt:"Đường trung bình tam giác bằng cạnh thứ ba", correct:false},
+        {stmt:"Phân giác trong chia cạnh đối thành 2 đoạn tỉ lệ với 2 cạnh kề", correct:true},
+        {stmt:"Tam giác có 3 đường trung bình", correct:true}
+      ], explains:[
+        "Đúng. ĐL Thalès nói về đường song song cạnh tam giác.",
+        "Sai. Đường trung bình bằng NỬA cạnh thứ ba.",
+        "Đúng. Tính chất đường phân giác trong tam giác.",
+        "Đúng. 3 cặp trung điểm → 3 đường trung bình."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Đường trung bình song song với cạnh thứ ba", correct:true},
+        {stmt:"ĐL Thalès đảo: nếu tỉ lệ thì song song", correct:true},
+        {stmt:"Đường phân giác chia cạnh đối thành 2 đoạn bằng nhau", correct:false},
+        {stmt:"DE // BC trong ΔABC thì AD/DB = AE/EC", correct:true}
+      ], explains:[
+        "Đúng. Tính chất đường trung bình.",
+        "Đúng. Nội dung ĐL Thalès đảo.",
+        "Sai. Phân giác chia tỉ lệ, không bằng nhau (trung tuyến mới chia đôi).",
+        "Đúng. Nội dung ĐL Thalès."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"ΔABC, DE // BC, AD = 4, DB = 8, AE = 3 thì EC = 6", correct:true},
+        {stmt:"ΔABC có MN trung bình ứng BC, BC = 16 thì MN = 4", correct:false},
+        {stmt:"ΔABC, AB = 10, AC = 15, phân giác AD, BD = 4 thì DC = 6", correct:true},
+        {stmt:"ΔABC, DE // BC, AD = 3, AB = 9, DE = 5 thì BC = 15", correct:true}
+      ], explains:[
+        "Đúng. AD/DB = AE/EC → 4/8 = 3/EC → EC = 6.",
+        "Sai. MN = BC/2 = 16/2 = 8, không phải 4.",
+        "Đúng. BD/DC = AB/AC = 10/15 = 2/3 → DC = 4 × 3/2 = 6.",
+        "Đúng. AD/AB = DE/BC → 3/9 = 5/BC → BC = 15."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"ΔABC, DE // BC, AD = 5, DB = 10, AE = 7 thì EC = 14", correct:true},
+        {stmt:"Đường trung bình ΔABC ứng BC = 20 thì bằng 10", correct:true},
+        {stmt:"ΔABC, AB = 6, AC = 8, phân giác AD, BC = 7 thì BD = 4", correct:false},
+        {stmt:"ΔABC, DE // BC, AD/AB = 1/4, BC = 20 thì DE = 5", correct:true}
+      ], explains:[
+        "Đúng. AD/DB = AE/EC → 5/10 = 7/EC → EC = 14.",
+        "Đúng. ĐTB = BC/2 = 10.",
+        "Sai. BD/DC = 6/8 = 3/4 → BD = 7 × 3/7 = 3, không phải 4.",
+        "Đúng. DE/BC = AD/AB = 1/4 → DE = 20/4 = 5."
+      ]},
+      {type:"short", text:"Câu 29. Đường trung bình tam giác song song với cạnh thứ ba và bằng bao nhiêu phần cạnh đó?", answer:"1/2", hint:"Tính chất đường trung bình", explain:"Đường trung bình bằng ½ cạnh thứ ba."},
+      {type:"short", text:"Câu 30. Tam giác có bao nhiêu đường trung bình?", answer:"3", hint:"Đếm số cặp trung điểm", explain:"3 cặp cạnh → 3 đường trung bình."},
+      {type:"short", text:"Câu 31. ΔABC, DE // BC, AD = 4, DB = 6, AE = 6. EC bằng bao nhiêu?", answer:"9", hint:"AD/DB = AE/EC", explain:"4/6 = 6/EC → EC = 9."},
+      {type:"short", text:"Câu 32. ΔABC có MN là đường trung bình ứng BC. Nếu BC = 18 thì MN bằng bao nhiêu?", answer:"9", hint:"MN = BC/2", explain:"MN = 18/2 = 9."}
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 11: TAM GIÁC ĐỒNG DẠNG ====================
+  {
+    id:"l8_11", emoji:"🔺", name:"Tam giác đồng dạng",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Định nghĩa</b><br>
+– Hai tam giác đồng dạng khi các góc tương ứng bằng nhau và các cạnh tương ứng tỉ lệ.<br>
+– ΔABC ∼ ΔDEF: Â = D̂, B̂ = Ê, Ĉ = F̂ và AB/DE = BC/EF = AC/DF = k (tỉ số đồng dạng).<br><br>
+<b>2. Các trường hợp đồng dạng</b><br>
+– <i>c.c.c</i>: Ba cặp cạnh tương ứng tỉ lệ.<br>
+– <i>c.g.c</i>: Hai cặp cạnh tương ứng tỉ lệ và góc xen giữa bằng nhau.<br>
+– <i>g.g</i>: Hai cặp góc tương ứng bằng nhau.<br><br>
+<b>3. Tỉ số chu vi và diện tích</b><br>
+– Tỉ số chu vi = k (tỉ số đồng dạng).<br>
+– Tỉ số diện tích = k².<br><br>
+<b>4. Hình đồng dạng</b><br>
+– Hai hình đồng dạng khi một hình có thể thu được từ hình kia bằng phép đồng dạng (phóng to hoặc thu nhỏ). Ứng dụng trong kiến trúc, bản đồ, thiết kế.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Hai tam giác đồng dạng khi:", opts:["Có 1 cặp cạnh bằng nhau","Có cùng chu vi","Các góc tương ứng bằng nhau và cạnh tương ứng tỉ lệ","Có cùng diện tích"], correct:2, explain:"Đồng dạng: góc tương ứng bằng nhau, cạnh tương ứng tỉ lệ."},
+      {type:"mc", text:"Câu 2. Trường hợp đồng dạng g.g là khi hai tam giác có:", opts:["3 cặp cạnh tỉ lệ","2 cặp góc bằng nhau","2 cặp cạnh tỉ lệ, góc xen giữa bằng nhau","3 cặp góc bằng nhau"], correct:1, explain:"g.g: 2 cặp góc tương ứng bằng nhau."},
+      {type:"mc", text:"Câu 3. Trường hợp đồng dạng c.c.c là khi hai tam giác có:", opts:["3 cặp cạnh bằng nhau","3 cặp cạnh tương ứng tỉ lệ","3 cặp góc bằng nhau","1 cặp cạnh tỉ lệ"], correct:1, explain:"c.c.c: 3 cặp cạnh tương ứng tỉ lệ."},
+      {type:"mc", text:"Câu 4. Trường hợp đồng dạng c.g.c là khi hai tam giác có:", opts:["3 cặp cạnh tỉ lệ","2 cặp góc bằng nhau","2 cặp cạnh tỉ lệ và góc xen giữa bằng nhau","1 cạnh bằng nhau"], correct:2, explain:"c.g.c: 2 cặp cạnh tỉ lệ, góc xen giữa bằng nhau."},
+      {type:"mc", text:"Câu 5. Hai tam giác đều luôn:", opts:["Bằng nhau","Đồng dạng","Vuông","Cân"], correct:1, explain:"Tam giác đều có 3 góc = 60° → luôn đồng dạng (g.g)."},
+      {type:"mc", text:"Câu 6. Nếu ΔABC ∼ ΔDEF với tỉ số k thì tỉ số diện tích bằng:", opts:["k","2k","k²","k³"], correct:2, explain:"Tỉ số diện tích = k² (bình phương tỉ số đồng dạng)."},
+      {type:"mc", text:"Câu 7. Nếu ΔABC ∼ ΔDEF với tỉ số k thì tỉ số chu vi bằng:", opts:["k","k²","2k","√k"], correct:0, explain:"Tỉ số chu vi = k (bằng tỉ số đồng dạng)."},
+      {type:"mc", text:"Câu 8. Hai tam giác bằng nhau là trường hợp đặc biệt của đồng dạng với:", opts:["k = 0","k = 1","k = 2","k = ½"], correct:1, explain:"Bằng nhau → cạnh tương ứng bằng nhau → k = 1."},
+      {type:"mc", text:"Câu 9. Kí hiệu ΔABC ∼ ΔDEF có nghĩa:", opts:["ΔABC bằng ΔDEF","ΔABC đồng dạng ΔDEF","ΔABC lớn hơn ΔDEF","ΔABC vuông góc ΔDEF"], correct:1, explain:"Kí hiệu ∼ nghĩa là đồng dạng."},
+      {type:"mc", text:"Câu 10. Tỉ số đồng dạng k = AB/DE trong ΔABC ∼ ΔDEF cho biết:", opts:["Hai tam giác bằng nhau","Mức độ phóng to/thu nhỏ giữa hai tam giác","Diện tích bằng nhau","Góc bằng nhau"], correct:1, explain:"Tỉ số k cho biết mức phóng to (k > 1) hoặc thu nhỏ (k < 1)."},
+      {type:"mc", text:"Câu 11. Hình đồng dạng là hai hình có:", opts:["Cùng diện tích","Cùng hình dạng (phóng to/thu nhỏ)","Cùng chu vi","Cùng số cạnh"], correct:1, explain:"Hình đồng dạng là hình có cùng hình dạng, khác kích thước."},
+      {type:"mc", text:"Câu 12. Có bao nhiêu trường hợp đồng dạng của hai tam giác?", opts:["1","2","3","4"], correct:2, explain:"3 trường hợp: c.c.c, c.g.c, g.g."},
+      {type:"mc", text:"Câu 13. ΔABC ∼ ΔDEF, AB = 6, DE = 3. Tỉ số đồng dạng k bằng:", opts:["1/2","2","3","6"], correct:1, explain:"k = AB/DE = 6/3 = 2."},
+      {type:"mc", text:"Câu 14. ΔABC ∼ ΔDEF với k = 3, DE = 4 cm. AB bằng:", opts:["12 cm","7 cm","4/3 cm","1 cm"], correct:0, explain:"k = AB/DE → AB = k × DE = 3 × 4 = 12 cm."},
+      {type:"mc", text:"Câu 15. ΔABC ∼ ΔDEF với k = 2. Chu vi ΔABC = 24 cm. Chu vi ΔDEF bằng:", opts:["12 cm","48 cm","24 cm","6 cm"], correct:0, explain:"Tỉ số chu vi = k = 2 → C_DEF = 24/2 = 12 cm."},
+      {type:"mc", text:"Câu 16. ΔABC ∼ ΔDEF với k = 3. S(ABC) = 36 cm². S(DEF) bằng:", opts:["4 cm²","12 cm²","108 cm²","9 cm²"], correct:0, explain:"S(ABC)/S(DEF) = k² = 9 → S(DEF) = 36/9 = 4 cm²."},
+      {type:"mc", text:"Câu 17. ΔABC có Â = 50°, B̂ = 70°. ΔDEF có D̂ = 50°, Ê = 70°. Hai tam giác:", opts:["Bằng nhau","Đồng dạng (g.g)","Không đồng dạng","Đồng dạng (c.c.c)"], correct:1, explain:"Â = D̂ = 50°, B̂ = Ê = 70° → 2 cặp góc bằng → đồng dạng g.g."},
+      {type:"mc", text:"Câu 18. ΔABC có AB = 3, AC = 6. ΔDEF có DE = 2, DF = 4. Góc A = góc D. Hai tam giác:", opts:["Đồng dạng c.g.c","Đồng dạng g.g","Không đồng dạng","Bằng nhau"], correct:0, explain:"AB/DE = 3/2, AC/DF = 6/4 = 3/2, góc xen giữa bằng → c.g.c."},
+      {type:"mc", text:"Câu 19. ΔABC ∼ ΔMNP, AB = 4, MN = 8, BC = 6. NP bằng:", opts:["12","3","10","8"], correct:0, explain:"k = MN/AB = 8/4 = 2. NP = BC × 2 = 12."},
+      {type:"mc", text:"Câu 20. ΔABC ∼ ΔDEF, k = 1/2, AB = 10. DE bằng:", opts:["5","20","10","2,5"], correct:1, explain:"k = AB/DE = 1/2 → DE = AB/(1/2) = 20."},
+      {type:"mc", text:"Câu 21. ΔABC ∼ ΔDEF với k = 4. S(DEF) = 5 cm². S(ABC) bằng:", opts:["20 cm²","80 cm²","1,25 cm²","40 cm²"], correct:1, explain:"S(ABC)/S(DEF) = k² = 16 → S(ABC) = 5 × 16 = 80 cm²."},
+      {type:"mc", text:"Câu 22. ΔABC có AB = 6, BC = 9, AC = 12. ΔDEF có DE = 2, EF = 3, DF = 4. Hai tam giác:", opts:["Đồng dạng c.c.c với k = 3","Đồng dạng c.g.c","Không đồng dạng","Bằng nhau"], correct:0, explain:"6/2 = 9/3 = 12/4 = 3 → 3 cặp cạnh tỉ lệ → c.c.c."},
+      {type:"mc", text:"Câu 23. Cột cao 2 m có bóng 3 m. Cây có bóng 12 m. Chiều cao cây là:", opts:["8 m","6 m","18 m","4 m"], correct:0, explain:"Tam giác đồng dạng: h/2 = 12/3 → h = 8 m."},
+      {type:"mc", text:"Câu 24. ΔABC ∼ ΔDEF, k = 5. Chu vi ΔDEF = 8 cm. Chu vi ΔABC bằng:", opts:["40 cm","1,6 cm","13 cm","3 cm"], correct:0, explain:"Chu vi ABC = k × chu vi DEF = 5 × 8 = 40 cm."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về tam giác đồng dạng:", statements:[
+        {stmt:"Hai tam giác bằng nhau thì đồng dạng với k = 1", correct:true},
+        {stmt:"Hai tam giác đồng dạng thì luôn bằng nhau", correct:false},
+        {stmt:"Hai tam giác đều luôn đồng dạng", correct:true},
+        {stmt:"Có 3 trường hợp đồng dạng: c.c.c, c.g.c, g.g", correct:true}
+      ], explains:[
+        "Đúng. Bằng nhau → cạnh tỉ lệ 1:1 → k = 1.",
+        "Sai. Đồng dạng chỉ yêu cầu cạnh tỉ lệ, không cần bằng nhau.",
+        "Đúng. Tam giác đều có 3 góc 60° → g.g.",
+        "Đúng. Ba trường hợp đồng dạng cơ bản."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Tỉ số diện tích hai tam giác đồng dạng bằng k²", correct:true},
+        {stmt:"Tỉ số chu vi hai tam giác đồng dạng bằng k²", correct:false},
+        {stmt:"ΔABC ∼ ΔDEF, AB = 4, DE = 2 thì k = 2", correct:true},
+        {stmt:"Hai tam giác vuông cân luôn đồng dạng", correct:true}
+      ], explains:[
+        "Đúng. Tỉ số diện tích = k².",
+        "Sai. Tỉ số chu vi = k, không phải k².",
+        "Đúng. k = AB/DE = 4/2 = 2.",
+        "Đúng. Tam giác vuông cân có 2 góc 45° → đồng dạng g.g."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"ΔABC ∼ ΔDEF, k = 3, DE = 5 thì AB = 15", correct:true},
+        {stmt:"ΔABC ∼ ΔDEF, k = 2, chu vi DEF = 10 thì chu vi ABC = 20", correct:true},
+        {stmt:"ΔABC ∼ ΔDEF, k = 3, S(DEF) = 4 thì S(ABC) = 12", correct:false},
+        {stmt:"ΔABC có AB = 6, BC = 8 và ΔDEF có DE = 3, EF = 4 → tỉ số cạnh = 2", correct:true}
+      ], explains:[
+        "Đúng. AB = k × DE = 3 × 5 = 15.",
+        "Đúng. Chu vi ABC = k × chu vi DEF = 2 × 10 = 20.",
+        "Sai. S(ABC) = k² × S(DEF) = 9 × 4 = 36, không phải 12.",
+        "Đúng. 6/3 = 8/4 = 2."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các nhận định:", statements:[
+        {stmt:"Cột cao 3 m, bóng 4 m. Cây bóng 8 m → cây cao 6 m", correct:true},
+        {stmt:"ΔABC ∼ ΔDEF, k = 4, S(ABC) = 48 → S(DEF) = 3", correct:true},
+        {stmt:"Hai tam giác có 3 cặp cạnh bằng nhau thì đồng dạng", correct:true},
+        {stmt:"ΔABC ∼ ΔDEF, k = 2, chu vi ABC = 30 → chu vi DEF = 60", correct:false}
+      ], explains:[
+        "Đúng. h/3 = 8/4 = 2 → h = 6 m.",
+        "Đúng. S(ABC)/S(DEF) = k² = 16 → S(DEF) = 48/16 = 3.",
+        "Đúng. 3 cặp cạnh bằng → tỉ lệ 1:1 → đồng dạng c.c.c.",
+        "Sai. Chu vi DEF = 30/2 = 15, không phải 60."
+      ]},
+      {type:"short", text:"Câu 29. Có bao nhiêu trường hợp đồng dạng của hai tam giác?", answer:"3", hint:"c.c.c, c.g.c, g.g", explain:"3 trường hợp: c.c.c, c.g.c, g.g."},
+      {type:"short", text:"Câu 30. ΔABC ∼ ΔDEF, AB = 8, DE = 4. Tỉ số đồng dạng k bằng bao nhiêu?", answer:"2", hint:"k = AB/DE", explain:"k = 8/4 = 2."},
+      {type:"short", text:"Câu 31. ΔABC ∼ ΔDEF, k = 3, chu vi ΔDEF = 10. Chu vi ΔABC bằng bao nhiêu?", answer:"30", hint:"Tỉ số chu vi = k", explain:"Chu vi ABC = 3 × 10 = 30."},
+      {type:"short", text:"Câu 32. ΔABC ∼ ΔDEF, k = 2, S(DEF) = 9 cm². S(ABC) bằng bao nhiêu cm²?", answer:"36", hint:"Tỉ số diện tích = k²", explain:"S(ABC) = 2² × 9 = 36 cm²."}
+    ]
+  },
+
+// ==================== CHỦ ĐỀ 12: THỐNG KÊ ====================
+  {
+    id:"l8_12", emoji:"📊", name:"Thống kê",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Thu thập và phân loại dữ liệu</b><br>
+– Thu thập dữ liệu: điều tra, bảng hỏi, tài liệu có sẵn, internet...<br>
+– Dữ liệu <i>định tính</i>: giới tính, màu sắc, nghề nghiệp...<br>
+– Dữ liệu <i>định lượng</i>: chiều cao, cân nặng, điểm số, nhiệt độ...<br><br>
+<b>2. Bảng tần số</b><br>
+– Liệt kê các giá trị (hoặc nhóm giá trị) và tần số (số lần xuất hiện).<br>
+– Tổng tần số = tổng số phần tử khảo sát.<br><br>
+<b>3. Biểu đồ</b><br>
+– <i>Biểu đồ cột</i> (bar chart): so sánh tần số các giá trị.<br>
+– <i>Biểu đồ cột kép</i>: so sánh 2 nhóm dữ liệu song song.<br>
+– <i>Biểu đồ tròn</i> (pie chart): thể hiện tỉ lệ phần trăm.<br>
+– <i>Biểu đồ đoạn thẳng</i> (line chart): thể hiện sự thay đổi theo thời gian.<br><br>
+<b>4. Phân tích dữ liệu</b><br>
+– Đọc, so sánh số liệu từ bảng và biểu đồ.<br>
+– Nhận xét xu hướng, phát hiện quy luật, giải quyết vấn đề đơn giản.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Dữ liệu nào sau đây là dữ liệu định lượng?", opts:["Màu mắt","Nhóm máu","Chiều cao","Nghề nghiệp"], correct:2, explain:"Chiều cao đo bằng số → dữ liệu định lượng."},
+      {type:"mc", text:"Câu 2. Dữ liệu nào sau đây là dữ liệu định tính?", opts:["Điểm thi","Cân nặng","Số con","Giới tính"], correct:3, explain:"Giới tính (nam/nữ) là dữ liệu phân loại → định tính."},
+      {type:"mc", text:"Câu 3. Tần số của một giá trị là:", opts:["Giá trị lớn nhất","Số lần xuất hiện của giá trị đó","Tổng các giá trị","Giá trị trung bình"], correct:1, explain:"Tần số là số lần xuất hiện của giá trị trong dữ liệu."},
+      {type:"mc", text:"Câu 4. Biểu đồ tròn dùng để thể hiện:", opts:["Sự thay đổi theo thời gian","Tỉ lệ phần trăm","So sánh 2 nhóm","Tần số"], correct:1, explain:"Biểu đồ tròn (pie chart) thể hiện tỉ lệ phần trăm các thành phần."},
+      {type:"mc", text:"Câu 5. Biểu đồ đoạn thẳng thường dùng để:", opts:["So sánh tần số","Thể hiện tỉ lệ","Thể hiện sự thay đổi theo thời gian","Phân loại dữ liệu"], correct:2, explain:"Biểu đồ đoạn thẳng (line chart) thể hiện xu hướng thay đổi theo thời gian."},
+      {type:"mc", text:"Câu 6. Biểu đồ cột dùng để:", opts:["Thể hiện tỉ lệ phần trăm","So sánh tần số các giá trị","Thể hiện xu hướng","Phân loại định tính"], correct:1, explain:"Biểu đồ cột so sánh tần số các giá trị khác nhau."},
+      {type:"mc", text:"Câu 7. Biểu đồ cột kép dùng để:", opts:["Thể hiện 1 nhóm dữ liệu","So sánh 2 nhóm dữ liệu song song","Tính trung bình","Vẽ đường thẳng"], correct:1, explain:"Biểu đồ cột kép so sánh 2 nhóm dữ liệu trên cùng trục."},
+      {type:"mc", text:"Câu 8. Bảng tần số gồm:", opts:["Chỉ có giá trị","Chỉ có tần số","Giá trị và tần số tương ứng","Giá trị và phần trăm"], correct:2, explain:"Bảng tần số liệt kê giá trị kèm tần số (số lần xuất hiện)."},
+      {type:"mc", text:"Câu 9. Tổng các tần số trong bảng tần số bằng:", opts:["Giá trị lớn nhất","Số giá trị khác nhau","Tổng số phần tử khảo sát","Giá trị trung bình"], correct:2, explain:"Tổng tần số = tổng số đối tượng được khảo sát."},
+      {type:"mc", text:"Câu 10. Nguồn thu thập dữ liệu nào sau đây hợp lệ?", opts:["Tự bịa ra","Phỏng vấn, bảng hỏi","Đoán ước","Suy diễn cá nhân"], correct:1, explain:"Phỏng vấn, bảng hỏi là nguồn thu thập dữ liệu hợp lệ."},
+      {type:"mc", text:"Câu 11. Dữ liệu \"Số học sinh các lớp: 9A: 35, 9B: 38, 9C: 40\" là dữ liệu:", opts:["Định tính","Định lượng","Không phải dữ liệu","Hỗn hợp"], correct:1, explain:"Số học sinh đo bằng số → dữ liệu định lượng."},
+      {type:"mc", text:"Câu 12. Khi muốn biết tỉ lệ học sinh giỏi, khá, trung bình, ta dùng:", opts:["Biểu đồ cột","Biểu đồ đoạn thẳng","Biểu đồ tròn","Bảng tần số"], correct:2, explain:"Biểu đồ tròn thể hiện tỉ lệ phần trăm các thành phần."},
+      {type:"mc", text:"Câu 13. Điểm kiểm tra: 5(3 HS), 6(5 HS), 7(8 HS), 8(4 HS). Tổng số HS là:", opts:["4","16","20","26"], correct:2, explain:"Tổng = 3 + 5 + 8 + 4 = 20 HS."},
+      {type:"mc", text:"Câu 14. Điểm kiểm tra: 5(3 HS), 6(5 HS), 7(8 HS), 8(4 HS). Điểm nào có tần số lớn nhất?", opts:["5","6","7","8"], correct:2, explain:"Điểm 7 có tần số 8 (lớn nhất)."},
+      {type:"mc", text:"Câu 15. Lớp có 40 HS: 10 giỏi, 20 khá, 8 TB, 2 yếu. Tỉ lệ HS giỏi là:", opts:["10%","25%","50%","20%"], correct:1, explain:"10/40 = 0,25 = 25%."},
+      {type:"mc", text:"Câu 16. Biểu đồ tròn lớp 40 HS: giỏi 25%, khá 50%, TB 20%. Số HS yếu là:", opts:["2","4","5","8"], correct:0, explain:"Yếu = 100% − 25% − 50% − 20% = 5%. Số HS = 5% × 40 = 2."},
+      {type:"mc", text:"Câu 17. Dãy số liệu: 3, 5, 5, 7, 7, 7, 8, 9. Giá trị có tần số 3 là:", opts:["3","5","7","9"], correct:2, explain:"Giá trị 7 xuất hiện 3 lần → tần số = 3."},
+      {type:"mc", text:"Câu 18. Bảng: điểm 4(2 HS), 5(6 HS), 6(8 HS), 7(4 HS). Số HS đạt 6 điểm trở lên:", opts:["4","8","12","20"], correct:2, explain:"Điểm ≥ 6: 8 + 4 = 12 HS."},
+      {type:"mc", text:"Câu 19. Biểu đồ cột: T1 bán 20, T2 bán 35, T3 bán 25, T4 bán 40 sản phẩm. Tháng nào bán nhiều nhất?", opts:["T1","T2","T3","T4"], correct:3, explain:"T4 bán 40 sản phẩm (nhiều nhất)."},
+      {type:"mc", text:"Câu 20. Lớp 40 HS: giỏi 8, khá 16, TB 12, yếu 4. Phần trăm HS khá là:", opts:["20%","30%","40%","50%"], correct:2, explain:"16/40 = 0,4 = 40%."},
+      {type:"mc", text:"Câu 21. Dãy: 2, 4, 4, 6, 6, 6, 8, 8. Bảng tần số có bao nhiêu giá trị khác nhau?", opts:["2","3","4","8"], correct:2, explain:"Các giá trị: 2, 4, 6, 8 → 4 giá trị khác nhau."},
+      {type:"mc", text:"Câu 22. Biểu đồ tròn 360°: phần A chiếm 90°. Tỉ lệ phần A là:", opts:["10%","25%","50%","75%"], correct:1, explain:"90°/360° = 1/4 = 25%."},
+      {type:"mc", text:"Câu 23. Nhiệt độ 5 ngày: 28, 30, 29, 31, 27°C. Biểu đồ nào phù hợp nhất?", opts:["Biểu đồ tròn","Biểu đồ cột","Biểu đồ đoạn thẳng","Biểu đồ cột kép"], correct:2, explain:"Dữ liệu thay đổi theo thời gian → biểu đồ đoạn thẳng phù hợp nhất."},
+      {type:"mc", text:"Câu 24. Bảng: điểm 4(5 HS), 6(10 HS), 8(5 HS). Tổng điểm tất cả HS là:", opts:["100","120","140","110"], correct:1, explain:"4×5 + 6×10 + 8×5 = 20 + 60 + 40 = 120."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Chiều cao học sinh là dữ liệu định lượng", correct:true},
+        {stmt:"Màu sắc yêu thích là dữ liệu định lượng", correct:false},
+        {stmt:"Tần số là số lần xuất hiện của giá trị", correct:true},
+        {stmt:"Biểu đồ tròn thể hiện tỉ lệ phần trăm", correct:true}
+      ], explains:[
+        "Đúng. Chiều cao đo bằng số → định lượng.",
+        "Sai. Màu sắc là phân loại → dữ liệu định tính.",
+        "Đúng. Tần số = số lần xuất hiện.",
+        "Đúng. Biểu đồ tròn thể hiện tỉ lệ %."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Biểu đồ đoạn thẳng thể hiện sự thay đổi theo thời gian", correct:true},
+        {stmt:"Biểu đồ cột kép so sánh 2 nhóm dữ liệu", correct:true},
+        {stmt:"Tổng tần số bằng số giá trị khác nhau", correct:false},
+        {stmt:"Bảng tần số gồm giá trị và số lần xuất hiện", correct:true}
+      ], explains:[
+        "Đúng. Line chart thể hiện xu hướng theo thời gian.",
+        "Đúng. Biểu đồ cột kép so sánh 2 nhóm song song.",
+        "Sai. Tổng tần số = tổng số phần tử khảo sát, không phải số giá trị khác nhau.",
+        "Đúng. Bảng tần số liệt kê giá trị + tần số."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét bảng: điểm 5(3 HS), 6(7 HS), 7(6 HS), 8(4 HS):", statements:[
+        {stmt:"Tổng số HS là 20", correct:true},
+        {stmt:"Điểm 6 có tần số lớn nhất", correct:true},
+        {stmt:"Tỉ lệ HS đạt điểm 7 là 25%", correct:false},
+        {stmt:"Số HS đạt 7 điểm trở lên là 10", correct:true}
+      ], explains:[
+        "Đúng. 3 + 7 + 6 + 4 = 20.",
+        "Đúng. Tần số 7 là lớn nhất.",
+        "Sai. 6/20 = 30%, không phải 25%.",
+        "Đúng. Điểm ≥ 7: 6 + 4 = 10 HS."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét biểu đồ tròn lớp 50 HS:", statements:[
+        {stmt:"Giỏi 20% → 10 HS giỏi", correct:true},
+        {stmt:"Khá chiếm 144° trong biểu đồ tròn → tỉ lệ khá = 40%", correct:true},
+        {stmt:"TB 30% → 20 HS trung bình", correct:false},
+        {stmt:"Yếu 10% → 5 HS yếu", correct:true}
+      ], explains:[
+        "Đúng. 20% × 50 = 10 HS.",
+        "Đúng. 144°/360° = 0,4 = 40%.",
+        "Sai. 30% × 50 = 15 HS, không phải 20.",
+        "Đúng. 10% × 50 = 5 HS."
+      ]},
+      {type:"short", text:"Câu 29. Tần số của một giá trị là số lần gì của giá trị đó?", answer:"xuất hiện", hint:"Đếm số lần...", explain:"Tần số = số lần xuất hiện của giá trị."},
+      {type:"short", text:"Câu 30. Biểu đồ nào thể hiện tỉ lệ phần trăm?", answer:"biểu đồ tròn", hint:"Dạng hình tròn chia phần", explain:"Biểu đồ tròn (pie chart) thể hiện tỉ lệ %."},
+      {type:"short", text:"Câu 31. Điểm: 4(5 HS), 5(8 HS), 6(7 HS). Tổng số HS là bao nhiêu?", answer:"20", hint:"Cộng tần số", explain:"5 + 8 + 7 = 20 HS."},
+      {type:"short", text:"Câu 32. Lớp 40 HS có 12 HS giỏi. Tỉ lệ HS giỏi là bao nhiêu %?", answer:"30", hint:"12/40 × 100", explain:"12/40 = 0,3 = 30%."}
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 13: XÁC SUẤT ====================
+  {
+    id:"l8_13", emoji:"🎲", name:"Xác suất",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phép thử, không gian mẫu, biến cố</b><br>
+– <i>Phép thử ngẫu nhiên</i>: thí nghiệm có kết quả không đoán trước (gieo xúc sắc, tung đồng xu...).<br>
+– <i>Không gian mẫu</i>: tập hợp tất cả kết quả có thể. VD: gieo xúc sắc → Ω = {1, 2, 3, 4, 5, 6}.<br>
+– <i>Biến cố</i>: tập con của không gian mẫu. Biến cố chắc chắn (luôn xảy ra), biến cố không thể (không bao giờ xảy ra).<br><br>
+<b>2. Xác suất</b><br>
+– Xác suất biến cố A: P(A) = số kết quả thuận lợi / tổng số kết quả (các kết quả đồng khả năng).<br>
+– 0 ≤ P(A) ≤ 1. P(chắc chắn) = 1. P(không thể) = 0.<br><br>
+<b>3. Xác suất thực nghiệm</b><br>
+– XS thực nghiệm = số lần biến cố xảy ra / tổng số lần thử.<br>
+– Khi số lần thử đủ lớn, XS thực nghiệm xấp xỉ XS lí thuyết.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Gieo một xúc sắc. Không gian mẫu có bao nhiêu phần tử?", opts:["4","5","6","8"], correct:2, explain:"Xúc sắc 6 mặt → Ω = {1, 2, 3, 4, 5, 6} có 6 phần tử."},
+      {type:"mc", text:"Câu 2. Tung một đồng xu. Không gian mẫu là:", opts:["{Sấp}","{Ngửa}","{Sấp, Ngửa}","{1, 2}"], correct:2, explain:"Đồng xu có 2 mặt → Ω = {Sấp, Ngửa}."},
+      {type:"mc", text:"Câu 3. Xác suất của biến cố chắc chắn bằng:", opts:["0","1/2","1","2"], correct:2, explain:"Biến cố chắc chắn luôn xảy ra → P = 1."},
+      {type:"mc", text:"Câu 4. Xác suất của biến cố không thể bằng:", opts:["0","1/2","1","−1"], correct:0, explain:"Biến cố không thể không bao giờ xảy ra → P = 0."},
+      {type:"mc", text:"Câu 5. Công thức tính xác suất biến cố A là:", opts:["P(A) = tổng/thuận lợi","P(A) = thuận lợi − tổng","P(A) = thuận lợi / tổng","P(A) = thuận lợi × tổng"], correct:2, explain:"P(A) = số KQ thuận lợi / tổng số KQ."},
+      {type:"mc", text:"Câu 6. Giá trị xác suất P(A) luôn thỏa mãn:", opts:["P(A) > 1","P(A) < 0","0 ≤ P(A) ≤ 1","P(A) = 2"], correct:2, explain:"Xác suất luôn nằm trong đoạn [0, 1]."},
+      {type:"mc", text:"Câu 7. Xác suất thực nghiệm là:", opts:["Số lần thử / số lần xảy ra","Số lần biến cố xảy ra / tổng số lần thử","Tổng kết quả / số lần thử","Luôn bằng XS lí thuyết"], correct:1, explain:"XS thực nghiệm = số lần biến cố xảy ra / tổng số lần thử."},
+      {type:"mc", text:"Câu 8. Gieo xúc sắc. Biến cố \"mặt chẵn\" gồm các kết quả:", opts:["{1, 3, 5}","{2, 4, 6}","{1, 2, 3}","{4, 5, 6}"], correct:1, explain:"Mặt chẵn: {2, 4, 6}."},
+      {type:"mc", text:"Câu 9. Tung đồng xu 2 lần. Không gian mẫu có bao nhiêu phần tử?", opts:["2","3","4","8"], correct:2, explain:"{SS, SN, NS, NN} → 4 phần tử."},
+      {type:"mc", text:"Câu 10. Khi số lần thử đủ lớn, XS thực nghiệm:", opts:["Bằng 0","Bằng 1","Xấp xỉ XS lí thuyết","Luôn lớn hơn XS lí thuyết"], correct:2, explain:"Quy luật số lớn: XS thực nghiệm xấp xỉ XS lí thuyết."},
+      {type:"mc", text:"Câu 11. Hộp có 3 bi đỏ, 7 bi xanh. Lấy 1 bi. Số kết quả thuận lợi cho \"bi đỏ\" là:", opts:["7","3","10","1"], correct:1, explain:"Có 3 bi đỏ → 3 kết quả thuận lợi."},
+      {type:"mc", text:"Câu 12. Phép thử ngẫu nhiên là thí nghiệm:", opts:["Biết trước kết quả","Không biết trước kết quả","Luôn cho cùng kết quả","Không có kết quả"], correct:1, explain:"Phép thử ngẫu nhiên có kết quả không đoán trước được."},
+      {type:"mc", text:"Câu 13. Gieo xúc sắc. P(mặt 6) bằng:", opts:["1/2","1/3","1/6","1/4"], correct:2, explain:"P = 1/6 (1 KQ thuận lợi / 6 KQ)."},
+      {type:"mc", text:"Câu 14. Tung đồng xu. P(mặt ngửa) bằng:", opts:["0","1/4","1/2","1"], correct:2, explain:"P(ngửa) = 1/2 (1 KQ thuận lợi / 2 KQ)."},
+      {type:"mc", text:"Câu 15. Hộp có 3 bi đỏ, 7 bi xanh. P(bi đỏ) bằng:", opts:["3/7","7/10","3/10","7/3"], correct:2, explain:"P = 3/(3+7) = 3/10."},
+      {type:"mc", text:"Câu 16. Gieo xúc sắc. P(mặt > 4) bằng:", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"Mặt > 4: {5, 6} → P = 2/6 = 1/3."},
+      {type:"mc", text:"Câu 17. Gieo xúc sắc. P(mặt lẻ) bằng:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Mặt lẻ: {1, 3, 5} → P = 3/6 = 1/2."},
+      {type:"mc", text:"Câu 18. Hộp có 4 bi trắng, 6 bi đen. P(bi trắng) bằng:", opts:["2/5","3/5","4/6","6/10"], correct:0, explain:"P = 4/10 = 2/5."},
+      {type:"mc", text:"Câu 19. Tung đồng xu 100 lần, mặt ngửa xuất hiện 48 lần. XS thực nghiệm mặt ngửa là:", opts:["0,48","0,52","0,50","1/2"], correct:0, explain:"XS thực nghiệm = 48/100 = 0,48."},
+      {type:"mc", text:"Câu 20. Gieo xúc sắc 200 lần, mặt 6 xuất hiện 35 lần. XS thực nghiệm mặt 6 là:", opts:["35/200","1/6","6/200","200/35"], correct:0, explain:"XS thực nghiệm = 35/200 = 0,175."},
+      {type:"mc", text:"Câu 21. Hộp có 2 bi đỏ, 3 bi xanh, 5 bi vàng. P(bi vàng) bằng:", opts:["1/5","3/10","1/2","2/5"], correct:2, explain:"P = 5/10 = 1/2."},
+      {type:"mc", text:"Câu 22. Gieo xúc sắc. P(mặt ≤ 3) bằng:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Mặt ≤ 3: {1, 2, 3} → P = 3/6 = 1/2."},
+      {type:"mc", text:"Câu 23. Gieo xúc sắc 600 lần, mặt 1 xuất hiện 95 lần. XS thực nghiệm có xấp xỉ XS lí thuyết không?", opts:["Có, vì 95/600 ≈ 1/6","Không, vì 95 ≠ 100","Có, vì 95 > 90","Không thể biết"], correct:0, explain:"95/600 ≈ 0,158 ≈ 1/6 ≈ 0,167. Xấp xỉ nhau."},
+      {type:"mc", text:"Câu 24. Hộp có 5 bi đỏ, 3 bi xanh, 2 bi vàng. P(không phải bi đỏ) bằng:", opts:["1/2","3/10","2/5","7/10"], correct:0, explain:"Không phải đỏ: 3 + 2 = 5 bi. P = 5/10 = 1/2."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Gieo xúc sắc, không gian mẫu có 6 phần tử", correct:true},
+        {stmt:"Xác suất luôn nằm trong đoạn [0, 1]", correct:true},
+        {stmt:"Biến cố chắc chắn có P = 0", correct:false},
+        {stmt:"Tung đồng xu, biến cố \"mặt sấp\" có 1 KQ thuận lợi", correct:true}
+      ], explains:[
+        "Đúng. Ω = {1, 2, 3, 4, 5, 6}.",
+        "Đúng. 0 ≤ P(A) ≤ 1.",
+        "Sai. Biến cố chắc chắn có P = 1, không phải 0.",
+        "Đúng. Mặt sấp chỉ có 1 KQ thuận lợi."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"XS thực nghiệm = số lần xảy ra / tổng số lần thử", correct:true},
+        {stmt:"Khi thử nhiều lần, XS thực nghiệm xấp xỉ XS lí thuyết", correct:true},
+        {stmt:"P(A) có thể bằng 1,5", correct:false},
+        {stmt:"Gieo 2 xúc sắc, không gian mẫu có 36 phần tử", correct:true}
+      ], explains:[
+        "Đúng. Công thức XS thực nghiệm.",
+        "Đúng. Quy luật số lớn.",
+        "Sai. 0 ≤ P(A) ≤ 1, không thể lớn hơn 1.",
+        "Đúng. 6 × 6 = 36 cặp kết quả."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"Gieo xúc sắc, P(mặt chẵn) = 1/2", correct:true},
+        {stmt:"Hộp 4 bi đỏ, 6 bi xanh, P(bi đỏ) = 2/5", correct:true},
+        {stmt:"Tung đồng xu 50 lần, ngửa 30 lần → XS thực nghiệm = 0,5", correct:false},
+        {stmt:"Gieo xúc sắc, P(mặt > 6) = 0", correct:true}
+      ], explains:[
+        "Đúng. Chẵn: {2, 4, 6} → P = 3/6 = 1/2.",
+        "Đúng. P = 4/10 = 2/5.",
+        "Sai. XS thực nghiệm = 30/50 = 0,6 ≠ 0,5.",
+        "Đúng. Không có mặt > 6 → biến cố không thể → P = 0."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các nhận định:", statements:[
+        {stmt:"Hộp 5 bi đỏ, 3 xanh, 2 vàng. P(bi xanh) = 3/10", correct:true},
+        {stmt:"Gieo xúc sắc 300 lần, mặt 3 xuất hiện 52 lần → XS thực nghiệm ≈ 0,17", correct:true},
+        {stmt:"P(mặt ngửa khi tung đồng xu) = P(mặt sấp) = 1/2", correct:true},
+        {stmt:"Gieo xúc sắc, P(mặt chia hết cho 7) = 1/6", correct:false}
+      ], explains:[
+        "Đúng. P = 3/10.",
+        "Đúng. 52/300 ≈ 0,173 ≈ 0,17.",
+        "Đúng. Đồng xu cân đối → P(S) = P(N) = 1/2.",
+        "Sai. Không có mặt nào chia hết cho 7 → P = 0."
+      ]},
+      {type:"short", text:"Câu 29. Xác suất của biến cố chắc chắn bằng bao nhiêu?", answer:"1", hint:"Luôn xảy ra", explain:"Biến cố chắc chắn có P = 1."},
+      {type:"short", text:"Câu 30. Gieo xúc sắc. Không gian mẫu có bao nhiêu phần tử?", answer:"6", hint:"Xúc sắc có 6 mặt", explain:"Ω = {1, 2, 3, 4, 5, 6} → 6 phần tử."},
+      {type:"short", text:"Câu 31. Hộp có 3 bi đỏ, 5 bi xanh, 2 bi vàng. P(bi đỏ) = a/10. Tìm a.", answer:"3", hint:"Tổng 10 bi, 3 bi đỏ", explain:"P = 3/10 → a = 3."},
+      {type:"short", text:"Câu 32. Tung đồng xu 200 lần, mặt ngửa 92 lần. XS thực nghiệm bằng bao nhiêu?", answer:"0,46", hint:"92/200", explain:"XS thực nghiệm = 92/200 = 0,46."}
     ]
   }
 ];
