@@ -1020,7 +1020,142 @@ const examData = [
 // ============ DỮ LIỆU TOÁN LỚP 8 ============
 const exam8Data = [
 
-  // ==================== CHỦ ĐỀ 1: HÀM SỐ VÀ ĐỒ THỊ ====================
+  // ==================== CHƯƠNG I: ĐA THỨC ====================
+  {
+    id:"l8_dt", emoji:"🔤", name:"Đa thức",
+    desc:"Đơn thức, đa thức, cộng trừ đa thức, nhân đa thức, chia đa thức cho đơn thức",
+    questions:[
+      { type:"mc", text:"Câu 1. Biểu thức nào sau đây là đơn thức?", opts:["3x²y","2x + 1","x² − y","3x + 2y"], correct:0, explain:"Đơn thức là biểu thức chỉ gồm tích của một số với các biến. 3x²y là đơn thức." },
+      { type:"mc", text:"Câu 2. Bậc của đơn thức 5x³y² là:", opts:["3","2","5","6"], correct:2, explain:"Bậc = tổng số mũ các biến = 3 + 2 = 5." },
+      { type:"mc", text:"Câu 3. Thu gọn: 3x² + 5x² = ?", opts:["8x²","8x⁴","15x²","15x⁴"], correct:0, explain:"Hai đơn thức đồng dạng: 3x² + 5x² = (3+5)x² = 8x²." },
+      { type:"mc", text:"Câu 4. (2x + 3) + (x − 1) = ?", opts:["3x + 2","2x + 2","3x + 4","x + 2"], correct:0, explain:"2x + 3 + x − 1 = (2x + x) + (3 − 1) = 3x + 2." },
+      { type:"mc", text:"Câu 5. (5x² − 3x) − (2x² + x) = ?", opts:["3x² − 4x","3x² − 2x","7x² − 4x","7x² + 4x"], correct:0, explain:"5x² − 3x − 2x² − x = 3x² − 4x." },
+      { type:"mc", text:"Câu 6. Bậc của đa thức 4x³ − 2x⁵ + x là:", opts:["3","5","1","9"], correct:1, explain:"Bậc đa thức = bậc cao nhất trong các hạng tử. Bậc cao nhất = 5 (từ −2x⁵)." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về đơn thức và đa thức:", statements:[
+        { stmt:"3x²y là đơn thức bậc 3", correct:true },
+        { stmt:"2x + 1 là đơn thức", correct:false },
+        { stmt:"Đa thức 4x³ − x + 2 có bậc 3", correct:true },
+        { stmt:"Hai đơn thức đồng dạng phải có cùng phần biến", correct:true }
+      ], explains:[
+        "Đúng. Bậc = 2 + 1 = 3.",
+        "Sai. 2x + 1 là đa thức (tổng của 2 hạng tử), không phải đơn thức.",
+        "Đúng. Hạng tử bậc cao nhất 4x³ có bậc 3.",
+        "Đúng. Đơn thức đồng dạng: cùng phần biến (cùng biến, cùng số mũ)."
+      ]},
+      { type:"short", text:"Thu gọn: 3x² + 7x² = ax². Tìm a = ?", answer:"10", hint:"Cộng hệ số của đơn thức đồng dạng", explain:"3x² + 7x² = 10x². Vậy a = 10." },
+      { type:"short", text:"Bậc của đa thức 2x⁴ − 3x + 1 là?", answer:"4", hint:"Tìm bậc cao nhất", explain:"Hạng tử bậc cao nhất 2x⁴ có bậc 4." }
+    ]
+  },
+
+  // ==================== CHƯƠNG II: HẰNG ĐẲNG THỨC ĐÁNG NHỚ ====================
+  {
+    id:"l8_hdt", emoji:"💡", name:"Hằng đẳng thức đáng nhớ",
+    desc:"7 hằng đẳng thức: bình phương tổng/hiệu, hiệu bình phương, lập phương tổng/hiệu, tổng/hiệu lập phương",
+    questions:[
+      { type:"mc", text:"Câu 1. Khai triển (x + 3)² = ?", opts:["x² + 9","x² + 6x + 9","x² + 3x + 9","x² − 6x + 9"], correct:1, explain:"(a+b)² = a² + 2ab + b². (x+3)² = x² + 2·x·3 + 9 = x² + 6x + 9." },
+      { type:"mc", text:"Câu 2. Phân tích x² − 25 = ?", opts:["(x−5)²","(x+5)²","(x−5)(x+5)","(x−25)(x+1)"], correct:2, explain:"a² − b² = (a−b)(a+b). x² − 25 = x² − 5² = (x−5)(x+5)." },
+      { type:"mc", text:"Câu 3. Khai triển (2x − 1)² = ?", opts:["4x² − 4x + 1","4x² − 2x + 1","4x² + 4x + 1","2x² − 4x + 1"], correct:0, explain:"(a−b)² = a² − 2ab + b². (2x−1)² = 4x² − 4x + 1." },
+      { type:"mc", text:"Câu 4. (x + 2)(x − 2) = ?", opts:["x² + 4","x² − 4","x² − 2","x² + 2x − 4"], correct:1, explain:"(a+b)(a−b) = a² − b². (x+2)(x−2) = x² − 4." },
+      { type:"mc", text:"Câu 5. Phân tích 8x³ − 1 = ?", opts:["(2x−1)(4x²+2x+1)","(2x−1)(4x²−2x+1)","(2x+1)(4x²−2x+1)","(2x−1)(2x²+2x+1)"], correct:0, explain:"a³ − b³ = (a−b)(a²+ab+b²). 8x³ − 1 = (2x)³ − 1³ = (2x−1)(4x²+2x+1)." },
+      { type:"mc", text:"Câu 6. (a + b)² − (a − b)² = ?", opts:["2ab","4ab","2(a²+b²)","0"], correct:1, explain:"(a+b)² − (a−b)² = (a²+2ab+b²) − (a²−2ab+b²) = 4ab." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về hằng đẳng thức đáng nhớ:", statements:[
+        { stmt:"(a + b)² = a² + 2ab + b²", correct:true },
+        { stmt:"(a − b)² = a² − b²", correct:false },
+        { stmt:"a² − b² = (a − b)(a + b)", correct:true },
+        { stmt:"(x + 1)³ = x³ + 1", correct:false }
+      ], explains:[
+        "Đúng. Đây là HĐT bình phương của tổng.",
+        "Sai. (a−b)² = a² − 2ab + b², không phải a² − b².",
+        "Đúng. Đây là HĐT hiệu hai bình phương.",
+        "Sai. (x+1)³ = x³ + 3x² + 3x + 1, không phải x³ + 1."
+      ]},
+      { type:"short", text:"(x + 5)² = x² + ax + 25. Tìm a = ?", answer:"10", hint:"Dùng (a+b)² = a² + 2ab + b²", explain:"2·x·5 = 10x. Vậy a = 10." },
+      { type:"short", text:"Phân tích: x² − 9 = (x − a)(x + a). Tìm a = ?", answer:"3", hint:"x² − 9 = x² − 3²", explain:"x² − 9 = (x−3)(x+3). Vậy a = 3." }
+    ]
+  },
+
+  // ==================== CHƯƠNG III: TỨ GIÁC ====================
+  {
+    id:"l8_tg", emoji:"🔷", name:"Tứ giác",
+    desc:"Hình thang, hình thang cân, hình bình hành, hình chữ nhật, hình thoi, hình vuông",
+    questions:[
+      { type:"mc", text:"Câu 1. Tứ giác có hai cạnh đối song song là:", opts:["Hình bình hành","Hình thang","Hình chữ nhật","Hình vuông"], correct:1, explain:"Hình thang là tứ giác có đúng một cặp cạnh đối song song." },
+      { type:"mc", text:"Câu 2. Hình bình hành có tính chất:", opts:["Hai cặp cạnh đối song song và bằng nhau","4 góc vuông","4 cạnh bằng nhau","2 đường chéo bằng nhau"], correct:0, explain:"Hình bình hành: 2 cặp cạnh đối song song và bằng nhau." },
+      { type:"mc", text:"Câu 3. Tứ giác nào có 2 đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường?", opts:["Hình thang","Hình bình hành","Hình chữ nhật","Hình thoi"], correct:2, explain:"Hình chữ nhật: 2 đường chéo bằng nhau và cắt nhau tại trung điểm." },
+      { type:"mc", text:"Câu 4. Hình thoi có tính chất đặc biệt:", opts:["4 cạnh bằng nhau","4 góc vuông","2 đường chéo bằng nhau","Các cạnh đối song song nhưng không bằng nhau"], correct:0, explain:"Hình thoi = hình bình hành có 4 cạnh bằng nhau." },
+      { type:"mc", text:"Câu 5. Hình vuông là hình chữ nhật có thêm tính chất:", opts:["2 cạnh kề bằng nhau","2 đường chéo bằng nhau","2 cặp cạnh đối song song","Tổng các góc = 360°"], correct:0, explain:"Hình vuông = hình chữ nhật có 2 cạnh kề bằng nhau (hay 4 cạnh bằng nhau)." },
+      { type:"mc", text:"Câu 6. Hình bình hành ABCD có AB = 5cm, BC = 3cm. Chu vi bằng:", opts:["8 cm","15 cm","16 cm","30 cm"], correct:2, explain:"Chu vi = 2(AB + BC) = 2(5 + 3) = 16 cm." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về các loại tứ giác:", statements:[
+        { stmt:"Mọi hình vuông đều là hình chữ nhật", correct:true },
+        { stmt:"Mọi hình chữ nhật đều là hình vuông", correct:false },
+        { stmt:"Hình thoi có 2 đường chéo vuông góc với nhau", correct:true },
+        { stmt:"Hình bình hành luôn có 4 góc vuông", correct:false }
+      ], explains:[
+        "Đúng. Hình vuông là hình chữ nhật đặc biệt (có 4 cạnh bằng nhau).",
+        "Sai. Hình chữ nhật có 4 góc vuông nhưng chưa chắc 4 cạnh bằng nhau.",
+        "Đúng. Đường chéo hình thoi vuông góc và cắt nhau tại trung điểm.",
+        "Sai. Hình bình hành chỉ có cạnh đối song song, bằng nhau; góc không nhất thiết vuông."
+      ]},
+      { type:"short", text:"Hình chữ nhật có chiều dài 8cm, chiều rộng 5cm. Diện tích = ? cm²", answer:"40", hint:"S = chiều dài × chiều rộng", explain:"S = 8 × 5 = 40 cm²." },
+      { type:"short", text:"Hình bình hành có 2 cạnh kề 6cm và 4cm. Chu vi = ? cm", answer:"20", hint:"Chu vi = 2 × (cạnh 1 + cạnh 2)", explain:"Chu vi = 2 × (6 + 4) = 20 cm." }
+    ]
+  },
+
+  // ==================== CHƯƠNG IV: ĐỊNH LÍ THALÈS ====================
+  {
+    id:"l8_th", emoji:"📏", name:"Định lí Thalès",
+    desc:"Định lí Thalès, đường trung bình tam giác, tính chất đường phân giác tam giác",
+    questions:[
+      { type:"mc", text:"Câu 1. Trong ΔABC, DE // BC (D ∈ AB, E ∈ AC). Theo định lí Thalès:", opts:["AD/DB = AE/EC","AD/AB = DB/EC","AD = AE","DB = EC"], correct:0, explain:"Thalès: DE // BC ⟹ AD/DB = AE/EC." },
+      { type:"mc", text:"Câu 2. ΔABC, D ∈ AB, E ∈ AC, DE // BC. AD = 3, DB = 6, AE = 2. EC = ?", opts:["3","4","6","8"], correct:1, explain:"AD/DB = AE/EC → 3/6 = 2/EC → EC = 2 × 6/3 = 4." },
+      { type:"mc", text:"Câu 3. Đường trung bình của tam giác:", opts:["Song song và bằng nửa cạnh thứ ba","Vuông góc với cạnh thứ ba","Bằng cạnh thứ ba","Đi qua trọng tâm"], correct:0, explain:"Đường trung bình // cạnh thứ ba và bằng nửa cạnh đó." },
+      { type:"mc", text:"Câu 4. ΔABC có M, N lần lượt là trung điểm AB, AC. MN = ?", opts:["BC","BC/2","2BC","BC/3"], correct:1, explain:"MN là đường trung bình → MN = BC/2." },
+      { type:"mc", text:"Câu 5. ΔABC, DE // BC, AD = 4cm, AB = 12cm, BC = 9cm. DE = ?", opts:["3 cm","4 cm","6 cm","12 cm"], correct:0, explain:"AD/AB = DE/BC → 4/12 = DE/9 → DE = 4 × 9/12 = 3 cm." },
+      { type:"mc", text:"Câu 6. Ba đường thẳng song song cắt hai cát tuyến tạo thành các đoạn thẳng:", opts:["Bằng nhau","Tỉ lệ","Vuông góc","Song song"], correct:1, explain:"Hệ quả Thalès: 3 đường // cắt 2 cát tuyến → đoạn thẳng tương ứng tỉ lệ." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về định lí Thalès:", statements:[
+        { stmt:"Đường trung bình của tam giác song song với cạnh thứ ba", correct:true },
+        { stmt:"DE // BC thì AD/AB = AE/AC (D ∈ AB, E ∈ AC)", correct:true },
+        { stmt:"Nếu AD/DB = AE/EC thì DE // BC", correct:true },
+        { stmt:"Đường trung bình bằng cạnh thứ ba", correct:false }
+      ], explains:[
+        "Đúng. Tính chất đường trung bình tam giác.",
+        "Đúng. Hệ quả Thalès: DE // BC ⟹ AD/AB = AE/AC.",
+        "Đúng. Đây là Thalès đảo.",
+        "Sai. Đường trung bình bằng NỬA cạnh thứ ba."
+      ]},
+      { type:"short", text:"ΔABC, M trung điểm AB, N trung điểm AC, BC = 10cm. MN = ? cm", answer:"5", hint:"MN là đường trung bình", explain:"MN = BC/2 = 10/2 = 5 cm." },
+      { type:"short", text:"DE // BC, AD = 2, DB = 4, AE = 3. EC = ?", answer:"6", hint:"AD/DB = AE/EC", explain:"2/4 = 3/EC → EC = 3 × 4/2 = 6." }
+    ]
+  },
+
+  // ==================== CHƯƠNG V: DỮ LIỆU VÀ BIỂU ĐỒ ====================
+  {
+    id:"l8_dl", emoji:"📊", name:"Dữ liệu và Biểu đồ",
+    desc:"Thu thập, phân loại dữ liệu, bảng tần số, biểu đồ cột, biểu đồ tròn, mốt",
+    questions:[
+      { type:"mc", text:"Câu 1. Biểu đồ nào phù hợp nhất để biểu diễn tỉ lệ phần trăm?", opts:["Biểu đồ cột","Biểu đồ tròn (hình quạt)","Biểu đồ đoạn thẳng","Biểu đồ điểm"], correct:1, explain:"Biểu đồ tròn (hình quạt) thích hợp biểu diễn tỉ lệ phần trăm." },
+      { type:"mc", text:"Câu 2. Tần số của một giá trị là:", opts:["Giá trị lớn nhất","Số lần xuất hiện của giá trị đó","Giá trị trung bình","Tổng số phần tử"], correct:1, explain:"Tần số = số lần xuất hiện của một giá trị trong dãy số liệu." },
+      { type:"mc", text:"Câu 3. Lớp có 40 học sinh, 12 HS giỏi. Tỉ lệ HS giỏi là:", opts:["20%","30%","40%","12%"], correct:1, explain:"Tỉ lệ = 12/40 = 0,3 = 30%." },
+      { type:"mc", text:"Câu 4. Dãy số liệu: 3, 5, 5, 7, 5, 8, 5. Mốt (giá trị xuất hiện nhiều nhất) là:", opts:["3","5","7","8"], correct:1, explain:"Số 5 xuất hiện 4 lần (nhiều nhất) → Mốt = 5." },
+      { type:"mc", text:"Câu 5. Bảng tần số dùng để:", opts:["Sắp xếp và đếm số lần xuất hiện","Tính diện tích","Vẽ đồ thị hàm số","Giải phương trình"], correct:0, explain:"Bảng tần số giúp tổ chức dữ liệu: liệt kê giá trị và tần số tương ứng." },
+      { type:"mc", text:"Câu 6. Biểu đồ cột thích hợp để:", opts:["So sánh dữ liệu giữa các nhóm","Biểu diễn hàm số","Giải hệ phương trình","Tính xác suất"], correct:0, explain:"Biểu đồ cột dùng so sánh dữ liệu giữa các nhóm/danh mục." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về dữ liệu và biểu đồ:", statements:[
+        { stmt:"Biểu đồ tròn dùng biểu diễn tỉ lệ phần trăm", correct:true },
+        { stmt:"Tổng tần số bằng tổng số phần tử dữ liệu", correct:true },
+        { stmt:"Mốt là giá trị lớn nhất trong dãy số liệu", correct:false },
+        { stmt:"Biểu đồ cột và biểu đồ tròn dùng cho cùng một mục đích", correct:false }
+      ], explains:[
+        "Đúng. Biểu đồ tròn chia đĩa tròn theo tỉ lệ %.",
+        "Đúng. Mỗi phần tử được đếm đúng 1 lần → tổng tần số = tổng N.",
+        "Sai. Mốt là giá trị xuất hiện NHIỀU LẦN NHẤT, không phải lớn nhất.",
+        "Sai. Biểu đồ cột dùng so sánh giá trị, biểu đồ tròn dùng biểu diễn tỉ lệ."
+      ]},
+      { type:"short", text:"Lớp 40 HS: 15 giỏi, 20 khá, 5 trung bình. Tỉ lệ HS khá = ? %", answer:"50", hint:"20/40 × 100%", explain:"Tỉ lệ = 20/40 × 100% = 50%." },
+      { type:"short", text:"Dãy: 2, 4, 4, 6, 8, 4, 7. Mốt của dãy = ?", answer:"4", hint:"Đếm số lần xuất hiện mỗi giá trị", explain:"Số 4 xuất hiện 3 lần (nhiều nhất). Mốt = 4." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 6: HÀM SỐ VÀ ĐỒ THỊ ====================
   {
     id:"l8_1", emoji:"📈", name:"Hàm số và đồ thị của hàm số",
     desc:"Khái niệm hàm số, giá trị hàm số, đồ thị hàm số y = f(x), hàm đồng biến – nghịch biến",
