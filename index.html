@@ -1264,6 +1264,280 @@ const exam6Data = [
   }
 ];
 
+// ============ DỮ LIỆU TOÁN LỚP 7 ============
+const exam7Data = [
+
+  // ==================== CHƯƠNG I: SỐ HỮU TỈ ====================
+  {
+    id:"l7_1", emoji:"🔢", name:"Số hữu tỉ",
+    desc:"Tập hợp số hữu tỉ, cộng trừ nhân chia, lũy thừa của số hữu tỉ, thứ tự trên trục số",
+    questions:[
+      { type:"mc", text:"Câu 1. Số nào sau đây là số hữu tỉ?", opts:["√2","π","3/4","√3"], correct:2, explain:"3/4 là phân số a/b (b ≠ 0) → số hữu tỉ. √2, √3, π là số vô tỉ." },
+      { type:"mc", text:"Câu 2. (−2/3) + (1/3) = ?", opts:["−1/3","1/3","−1","1"], correct:0, explain:"Cùng mẫu: (−2 + 1)/3 = −1/3." },
+      { type:"mc", text:"Câu 3. (−1/2)² = ?", opts:["−1/4","1/4","−1/2","1/2"], correct:1, explain:"(−1/2)² = (−1/2) × (−1/2) = 1/4." },
+      { type:"mc", text:"Câu 4. So sánh −3/5 và −2/5:", opts:["−3/5 > −2/5","−3/5 = −2/5","−3/5 < −2/5","Không so sánh được"], correct:2, explain:"Cùng mẫu dương: −3 < −2 → −3/5 < −2/5." },
+      { type:"mc", text:"Câu 5. (−3)² = ?", opts:["−9","9","−6","6"], correct:1, explain:"(−3)² = (−3) × (−3) = 9." },
+      { type:"mc", text:"Câu 6. 2/5 ÷ (−4/3) = ?", opts:["−3/10","3/10","−8/15","8/15"], correct:0, explain:"2/5 × (−3/4) = −6/20 = −3/10." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số hữu tỉ:", statements:[
+        { stmt:"Mọi số nguyên đều là số hữu tỉ", correct:true },
+        { stmt:"(−2)³ = 8", correct:false },
+        { stmt:"Số hữu tỉ có thể biểu diễn trên trục số", correct:true },
+        { stmt:"|−3/4| = −3/4", correct:false }
+      ], explains:[
+        "Đúng. Số nguyên a = a/1, dạng phân số → hữu tỉ.",
+        "Sai. (−2)³ = (−2)(−2)(−2) = −8.",
+        "Đúng. Mỗi số hữu tỉ ứng với 1 điểm trên trục số.",
+        "Sai. |−3/4| = 3/4 (giá trị tuyệt đối luôn ≥ 0)."
+      ]},
+      { type:"short", text:"Tính (−1/3) × 6 = ?", answer:"-2", hint:"Nhân tử với 6, giữ mẫu", explain:"(−1/3) × 6 = −6/3 = −2." },
+      { type:"short", text:"(−5)² = ?", answer:"25", hint:"Âm × Âm = Dương", explain:"(−5)² = (−5) × (−5) = 25." }
+    ]
+  },
+
+  // ==================== CHƯƠNG II: SỐ THỰC ====================
+  {
+    id:"l7_2", emoji:"📏", name:"Số thực",
+    desc:"Số vô tỉ, căn bậc hai, số thực, biểu diễn trên trục số, làm tròn và ước lượng",
+    questions:[
+      { type:"mc", text:"Câu 1. √9 = ?", opts:["3","−3","±3","81"], correct:0, explain:"√9 = 3 (căn bậc hai số học, lấy giá trị không âm)." },
+      { type:"mc", text:"Câu 2. Số nào là số vô tỉ?", opts:["0,5","3/7","√2","−4"], correct:2, explain:"√2 = 1,4142... (không thể viết dạng phân số) → số vô tỉ." },
+      { type:"mc", text:"Câu 3. √25 = ?", opts:["5","−5","12,5","625"], correct:0, explain:"√25 = 5 vì 5² = 25." },
+      { type:"mc", text:"Câu 4. Tập số thực ℝ gồm:", opts:["Chỉ số hữu tỉ","Chỉ số vô tỉ","Số hữu tỉ và số vô tỉ","Chỉ số nguyên"], correct:2, explain:"ℝ = ℚ ∪ I (hữu tỉ hợp vô tỉ)." },
+      { type:"mc", text:"Câu 5. √16 + √4 = ?", opts:["√20","6","20","8"], correct:1, explain:"√16 = 4, √4 = 2. Tổng = 4 + 2 = 6." },
+      { type:"mc", text:"Câu 6. Làm tròn √5 ≈ 2,236 đến hàng phần mười:", opts:["2,3","2,2","2,24","2,0"], correct:1, explain:"Chữ số phần trăm = 3 < 5 → giữ nguyên: 2,2." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số thực:", statements:[
+        { stmt:"√4 = 2", correct:true },
+        { stmt:"√2 là số hữu tỉ", correct:false },
+        { stmt:"Mọi số hữu tỉ đều là số thực", correct:true },
+        { stmt:"√(−9) có nghĩa trong tập số thực", correct:false }
+      ], explains:[
+        "Đúng. √4 = 2 vì 2² = 4.",
+        "Sai. √2 là số vô tỉ, không viết được dạng phân số.",
+        "Đúng. Số hữu tỉ là tập con của số thực.",
+        "Sai. Không tồn tại căn bậc hai của số âm trong ℝ."
+      ]},
+      { type:"short", text:"√36 = ?", answer:"6", hint:"Số nào bình phương bằng 36?", explain:"6² = 36 → √36 = 6." },
+      { type:"short", text:"√49 + √1 = ?", answer:"8", hint:"Tính từng căn rồi cộng", explain:"√49 = 7, √1 = 1. Tổng = 7 + 1 = 8." }
+    ]
+  },
+
+  // ==================== CHƯƠNG III: GÓC VÀ ĐƯỜNG THẲNG SONG SONG ====================
+  {
+    id:"l7_3", emoji:"📐", name:"Góc và đường thẳng song song",
+    desc:"Hai góc đối đỉnh, kề bù, hai đường thẳng song song, tiên đề Euclid, tính chất góc",
+    questions:[
+      { type:"mc", text:"Câu 1. Hai góc đối đỉnh thì:", opts:["Bù nhau","Bằng nhau","Phụ nhau","Kề nhau"], correct:1, explain:"Hai góc đối đỉnh luôn bằng nhau." },
+      { type:"mc", text:"Câu 2. Hai góc kề bù có tổng số đo bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Kề bù: 2 góc kề nhau, tổng = 180°." },
+      { type:"mc", text:"Câu 3. Hai đường thẳng song song bị cắt bởi cát tuyến, hai góc so le trong thì:", opts:["Bù nhau","Bằng nhau","Phụ nhau","Không liên quan"], correct:1, explain:"Tính chất: 2 góc so le trong bằng nhau khi 2 đường thẳng song song." },
+      { type:"mc", text:"Câu 4. Góc A và góc B kề bù. Nếu góc A = 70° thì góc B = ?", opts:["70°","110°","90°","20°"], correct:1, explain:"Kề bù: A + B = 180° → B = 180° − 70° = 110°." },
+      { type:"mc", text:"Câu 5. Qua điểm M ngoài đường thẳng d, có bao nhiêu đường thẳng song song với d?", opts:["0","1","2","Vô số"], correct:1, explain:"Tiên đề Euclid: qua 1 điểm ngoài đường thẳng có đúng 1 đường thẳng song song." },
+      { type:"mc", text:"Câu 6. Hai đường thẳng song song cắt bởi cát tuyến tạo hai góc đồng vị thì:", opts:["Phụ nhau","Bù nhau","Bằng nhau","Đối đỉnh"], correct:2, explain:"Hai góc đồng vị bằng nhau khi 2 đường thẳng song song." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về góc và đường thẳng song song:", statements:[
+        { stmt:"Hai góc đối đỉnh bằng nhau", correct:true },
+        { stmt:"Hai góc phụ nhau có tổng bằng 180°", correct:false },
+        { stmt:"Nếu 2 đường thẳng cùng song song với đường thẳng thứ ba thì chúng song song nhau", correct:true },
+        { stmt:"Hai góc so le trong luôn bằng nhau", correct:false }
+      ], explains:[
+        "Đúng. Tính chất hai góc đối đỉnh.",
+        "Sai. Hai góc PHỤ nhau có tổng = 90°. Tổng 180° là BÙ nhau.",
+        "Đúng. a // c và b // c → a // b.",
+        "Sai. Chỉ bằng nhau khi 2 đường thẳng SONG SONG."
+      ]},
+      { type:"short", text:"Góc A = 55°, góc B kề bù với góc A. Góc B = ? độ", answer:"125", hint:"Kề bù: A + B = 180°", explain:"B = 180° − 55° = 125°." },
+      { type:"short", text:"Hai góc đối đỉnh, một góc = 40°. Góc kia = ? độ", answer:"40", hint:"Đối đỉnh → bằng nhau", explain:"Đối đỉnh → bằng nhau = 40°." }
+    ]
+  },
+
+  // ==================== CHƯƠNG IV: TAM GIÁC ====================
+  {
+    id:"l7_4", emoji:"🔺", name:"Tam giác",
+    desc:"Tổng 3 góc trong tam giác, tam giác cân, đều, vuông, các trường hợp bằng nhau c.c.c, c.g.c, g.c.g",
+    questions:[
+      { type:"mc", text:"Câu 1. Tổng ba góc trong một tam giác bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Định lí: Tổng 3 góc trong tam giác = 180°." },
+      { type:"mc", text:"Câu 2. Tam giác ABC có góc A = 50°, góc B = 70°. Góc C = ?", opts:["60°","40°","80°","50°"], correct:0, explain:"C = 180° − 50° − 70° = 60°." },
+      { type:"mc", text:"Câu 3. Tam giác cân có tính chất:", opts:["3 cạnh bằng nhau","2 cạnh bên bằng nhau","3 góc bằng nhau","1 góc vuông"], correct:1, explain:"Tam giác cân có 2 cạnh bên bằng nhau." },
+      { type:"mc", text:"Câu 4. Hai tam giác bằng nhau theo trường hợp c.c.c khi:", opts:["3 cặp cạnh bằng nhau","2 cạnh và 1 góc xen giữa","2 góc và 1 cạnh kề","1 cạnh bằng nhau"], correct:0, explain:"c.c.c: 3 cặp cạnh tương ứng bằng nhau." },
+      { type:"mc", text:"Câu 5. Tam giác đều có mỗi góc bằng:", opts:["45°","60°","90°","120°"], correct:1, explain:"Tam giác đều: 3 góc bằng nhau = 180°/3 = 60°." },
+      { type:"mc", text:"Câu 6. Tam giác vuông có:", opts:["1 góc = 90°","2 góc = 90°","3 góc = 60°","3 cạnh bằng nhau"], correct:0, explain:"Tam giác vuông có đúng 1 góc vuông (= 90°)." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tam giác:", statements:[
+        { stmt:"Tam giác có thể có 2 góc vuông", correct:false },
+        { stmt:"Tam giác đều cũng là tam giác cân", correct:true },
+        { stmt:"Trường hợp c.g.c: 2 cạnh và góc xen giữa bằng nhau", correct:true },
+        { stmt:"Tổng 2 góc nhọn trong tam giác vuông = 90°", correct:true }
+      ], explains:[
+        "Sai. 2 góc vuông = 180°, không còn chỗ cho góc thứ 3.",
+        "Đúng. Tam giác đều có 3 cạnh bằng → bất kỳ 2 cạnh nào cũng bằng nhau → cân.",
+        "Đúng. c.g.c: 2 cạnh và góc xen giữa tương ứng bằng nhau.",
+        "Đúng. 90° + tổng 2 góc nhọn = 180° → tổng 2 góc nhọn = 90°."
+      ]},
+      { type:"short", text:"ΔABC có góc A = 90°, góc B = 35°. Góc C = ? độ", answer:"55", hint:"A + B + C = 180°", explain:"C = 180° − 90° − 35° = 55°." },
+      { type:"short", text:"Tam giác đều có mỗi góc bằng ? độ", answer:"60", hint:"180° ÷ 3", explain:"180° ÷ 3 = 60°." }
+    ]
+  },
+
+  // ==================== CHƯƠNG V: THỐNG KÊ VÀ XÁC SUẤT ====================
+  {
+    id:"l7_5", emoji:"📊", name:"Thống kê và Xác suất",
+    desc:"Thu thập dữ liệu, bảng tần số, biểu đồ, số trung bình cộng, xác suất của biến cố",
+    questions:[
+      { type:"mc", text:"Câu 1. Số trung bình cộng của 4, 6, 8, 10 là:", opts:["6","7","8","28"], correct:1, explain:"TBC = (4+6+8+10)/4 = 28/4 = 7." },
+      { type:"mc", text:"Câu 2. Dãy: 3, 5, 7, 5, 3, 5, 9. Mốt của dãy là:", opts:["3","5","7","9"], correct:1, explain:"5 xuất hiện 3 lần (nhiều nhất) → Mốt = 5." },
+      { type:"mc", text:"Câu 3. Gieo xúc sắc 1 lần. Xác suất mặt chẵn:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Mặt chẵn: {2, 4, 6} → 3 KQ thuận lợi / 6 tổng = 1/2." },
+      { type:"mc", text:"Câu 4. Hộp có 4 bi đỏ, 6 bi xanh. P(lấy bi đỏ) = ?", opts:["2/5","3/5","4/6","6/4"], correct:0, explain:"P = 4/(4+6) = 4/10 = 2/5." },
+      { type:"mc", text:"Câu 5. Biểu đồ nào biểu diễn sự thay đổi theo thời gian?", opts:["Biểu đồ tròn","Biểu đồ đoạn thẳng","Biểu đồ cột","Bảng tần số"], correct:1, explain:"Biểu đồ đoạn thẳng (line chart) thích hợp thể hiện xu hướng thay đổi." },
+      { type:"mc", text:"Câu 6. Tần số của giá trị x = 5 trong dãy 3, 5, 5, 7, 5, 8 là:", opts:["1","2","3","5"], correct:2, explain:"Số 5 xuất hiện 3 lần → tần số = 3." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về thống kê và xác suất:", statements:[
+        { stmt:"Số trung bình cộng = tổng các giá trị ÷ số giá trị", correct:true },
+        { stmt:"Mốt luôn là giá trị lớn nhất", correct:false },
+        { stmt:"0 ≤ P(A) ≤ 1 với mọi biến cố A", correct:true },
+        { stmt:"Xác suất biến cố chắc chắn bằng 0", correct:false }
+      ], explains:[
+        "Đúng. Công thức tính trung bình cộng.",
+        "Sai. Mốt là giá trị xuất hiện NHIỀU NHẤT, không nhất thiết lớn nhất.",
+        "Đúng. Xác suất luôn trong đoạn [0; 1].",
+        "Sai. P(biến cố chắc chắn) = 1, không phải 0."
+      ]},
+      { type:"short", text:"Trung bình cộng của 2, 4, 6, 8 bằng?", answer:"5", hint:"Tổng ÷ 4", explain:"(2+4+6+8)/4 = 20/4 = 5." },
+      { type:"short", text:"Gieo xúc sắc. P(mặt > 4) = a/6. Tìm a = ?", answer:"2", hint:"Mặt > 4: {5, 6}", explain:"{5, 6} → 2 KQ thuận lợi. P = 2/6. a = 2." }
+    ]
+  },
+
+  // ==================== CHƯƠNG VI: TỈ LỆ THỨC VÀ ĐẠI LƯỢNG TỈ LỆ ====================
+  {
+    id:"l7_6", emoji:"⚖️", name:"Tỉ lệ thức và đại lượng tỉ lệ",
+    desc:"Tỉ lệ thức, tính chất dãy tỉ số bằng nhau, đại lượng tỉ lệ thuận, tỉ lệ nghịch",
+    questions:[
+      { type:"mc", text:"Câu 1. Tỉ lệ thức a/b = c/d thì tích chéo:", opts:["a·c = b·d","a·d = b·c","a+d = b+c","a−d = b−c"], correct:1, explain:"Tích chéo: a·d = b·c." },
+      { type:"mc", text:"Câu 2. Nếu 2/3 = x/9 thì x = ?", opts:["3","6","9","18"], correct:1, explain:"2 × 9 = 3 × x → x = 18/3 = 6." },
+      { type:"mc", text:"Câu 3. y tỉ lệ thuận với x theo hệ số k = 3. Khi x = 4 thì y = ?", opts:["7","12","4/3","3/4"], correct:1, explain:"y = kx = 3 × 4 = 12." },
+      { type:"mc", text:"Câu 4. y tỉ lệ nghịch với x. Khi x = 2 thì y = 6. Khi x = 3 thì y = ?", opts:["4","9","3","2"], correct:0, explain:"xy = k → k = 2×6 = 12. x=3: y = 12/3 = 4." },
+      { type:"mc", text:"Câu 5. Chia 120 thành 3 phần tỉ lệ 2 : 3 : 5. Phần nhỏ nhất bằng:", opts:["12","24","36","60"], correct:1, explain:"Tổng tỉ lệ = 10. Phần nhỏ nhất = 120 × 2/10 = 24." },
+      { type:"mc", text:"Câu 6. Đại lượng y tỉ lệ thuận với x khi:", opts:["y = k/x","y = kx (k ≠ 0)","y = k + x","y = x²"], correct:1, explain:"Tỉ lệ thuận: y = kx với k là hằng số ≠ 0." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tỉ lệ:", statements:[
+        { stmt:"Nếu a/b = c/d thì ad = bc", correct:true },
+        { stmt:"y tỉ lệ thuận với x thì y = k/x", correct:false },
+        { stmt:"y tỉ lệ nghịch với x thì xy = hằng số", correct:true },
+        { stmt:"Chia 100 theo tỉ lệ 1:4 được 25 và 75", correct:false }
+      ], explains:[
+        "Đúng. Tính chất cơ bản của tỉ lệ thức.",
+        "Sai. Tỉ lệ thuận: y = kx. y = k/x là tỉ lệ nghịch.",
+        "Đúng. Tỉ lệ nghịch: xy = k (const).",
+        "Sai. Tỉ lệ 1:4, tổng = 5. Phần 1: 100/5 = 20. Phần 2: 80. Kết quả 20 và 80."
+      ]},
+      { type:"short", text:"3/5 = x/15. Tìm x = ?", answer:"9", hint:"Tích chéo: 3 × 15 = 5 × x", explain:"x = (3 × 15)/5 = 45/5 = 9." },
+      { type:"short", text:"y tỉ lệ thuận x, hệ số k = 4. Khi x = 5, y = ?", answer:"20", hint:"y = kx", explain:"y = 4 × 5 = 20." }
+    ]
+  },
+
+  // ==================== CHƯƠNG VII: BIỂU THỨC ĐẠI SỐ ====================
+  {
+    id:"l7_7", emoji:"🔤", name:"Biểu thức đại số",
+    desc:"Biểu thức đại số, đơn thức, đa thức một biến, cộng trừ đa thức, nghiệm đa thức",
+    questions:[
+      { type:"mc", text:"Câu 1. Giá trị biểu thức 2x + 3 tại x = 4 là:", opts:["8","11","14","5"], correct:1, explain:"2(4) + 3 = 8 + 3 = 11." },
+      { type:"mc", text:"Câu 2. Bậc của đa thức 3x³ − 2x + 5 là:", opts:["1","2","3","5"], correct:2, explain:"Bậc cao nhất = 3 (từ 3x³)." },
+      { type:"mc", text:"Câu 3. Thu gọn (3x + 2) + (x − 5) = ?", opts:["4x − 3","2x − 3","4x + 7","3x − 3"], correct:0, explain:"3x + 2 + x − 5 = 4x − 3." },
+      { type:"mc", text:"Câu 4. Nghiệm của đa thức P(x) = 2x − 6 là:", opts:["x = 2","x = 3","x = −3","x = 6"], correct:1, explain:"2x − 6 = 0 → 2x = 6 → x = 3." },
+      { type:"mc", text:"Câu 5. (5x² − 3x) − (2x² − x) = ?", opts:["3x² − 2x","3x² − 4x","7x² − 2x","7x² − 4x"], correct:0, explain:"5x² − 3x − 2x² + x = 3x² − 2x." },
+      { type:"mc", text:"Câu 6. Đa thức nào có nghiệm x = −1?", opts:["x + 1","x − 1","2x + 3","3x − 1"], correct:0, explain:"P(−1) = −1 + 1 = 0 → x = −1 là nghiệm." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về biểu thức đại số:", statements:[
+        { stmt:"Đa thức 3x + 5 có bậc 1", correct:true },
+        { stmt:"Nghiệm đa thức là giá trị x làm đa thức bằng 0", correct:true },
+        { stmt:"3x²y là đa thức bậc 2", correct:false },
+        { stmt:"Bậc của đa thức x⁴ − x + 1 là 4", correct:true }
+      ], explains:[
+        "Đúng. Hạng tử bậc cao nhất 3x có bậc 1.",
+        "Đúng. P(a) = 0 → a là nghiệm.",
+        "Sai. 3x²y có bậc 2 + 1 = 3 (đơn thức 2 biến).",
+        "Đúng. Bậc cao nhất = 4."
+      ]},
+      { type:"short", text:"Giá trị biểu thức 3x − 1 tại x = 2 là?", answer:"5", hint:"Thay x = 2", explain:"3(2) − 1 = 6 − 1 = 5." },
+      { type:"short", text:"Nghiệm của P(x) = x + 7 là x = ?", answer:"-7", hint:"Cho P(x) = 0", explain:"x + 7 = 0 → x = −7." }
+    ]
+  },
+
+  // ==================== CHƯƠNG VIII: TAM GIÁC CÂN – TAM GIÁC ĐỀU ====================
+  {
+    id:"l7_8", emoji:"📏", name:"Tam giác cân – Tam giác đều",
+    desc:"Tam giác cân, tính chất, tam giác đều, tam giác vuông cân, đường trung trực",
+    questions:[
+      { type:"mc", text:"Câu 1. Tam giác cân ABC (AB = AC). Góc đáy B = 50°. Góc đỉnh A = ?", opts:["50°","80°","100°","130°"], correct:1, explain:"B = C = 50°. A = 180° − 50° − 50° = 80°." },
+      { type:"mc", text:"Câu 2. Tam giác đều có:", opts:["2 cạnh bằng nhau","3 cạnh bằng nhau, 3 góc = 60°","1 góc vuông","2 góc bằng nhau"], correct:1, explain:"Tam giác đều: 3 cạnh bằng nhau, 3 góc bằng nhau = 60°." },
+      { type:"mc", text:"Câu 3. Tam giác vuông cân có 2 góc nhọn bằng:", opts:["30°","45°","60°","90°"], correct:1, explain:"Vuông cân: góc vuông 90°, 2 góc nhọn = (180°−90°)/2 = 45°." },
+      { type:"mc", text:"Câu 4. Tam giác cân ABC (AB = AC = 5cm, BC = 6cm). Chu vi = ?", opts:["11 cm","15 cm","16 cm","30 cm"], correct:2, explain:"C = 5 + 5 + 6 = 16 cm." },
+      { type:"mc", text:"Câu 5. Đường trung trực của đoạn AB là đường thẳng:", opts:["Đi qua trung điểm và vuông góc AB","Đi qua A","Đi qua B","Song song AB"], correct:0, explain:"Trung trực: qua trung điểm AB và vuông góc với AB." },
+      { type:"mc", text:"Câu 6. ΔABC cân tại A, góc A = 40°. Góc B = ?", opts:["40°","70°","80°","100°"], correct:1, explain:"B = C = (180° − 40°)/2 = 140°/2 = 70°." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tam giác cân và đều:", statements:[
+        { stmt:"Tam giác đều là tam giác cân đặc biệt", correct:true },
+        { stmt:"Tam giác cân có 2 góc đáy bằng nhau", correct:true },
+        { stmt:"Tam giác vuông cân có 3 góc bằng 60°", correct:false },
+        { stmt:"Mọi điểm trên trung trực cách đều 2 đầu đoạn thẳng", correct:true }
+      ], explains:[
+        "Đúng. Tam giác đều có 3 cạnh bằng nhau → cũng cân.",
+        "Đúng. Tính chất tam giác cân.",
+        "Sai. Tam giác vuông cân: 90°, 45°, 45°.",
+        "Đúng. Tính chất đường trung trực."
+      ]},
+      { type:"short", text:"ΔABC cân tại A, góc B = 65°. Góc A = ? độ", answer:"50", hint:"A = 180° − 2B", explain:"B = C = 65°. A = 180° − 65° − 65° = 50°." },
+      { type:"short", text:"Tam giác đều cạnh 8cm. Chu vi = ? cm", answer:"24", hint:"C = 3 × cạnh", explain:"C = 3 × 8 = 24 cm." }
+    ]
+  },
+
+  // ==================== CHƯƠNG IX: CÁC ĐƯỜNG ĐỒNG QUY TRONG TAM GIÁC ====================
+  {
+    id:"l7_9", emoji:"🔻", name:"Các đường đồng quy trong tam giác",
+    desc:"Đường trung tuyến, đường cao, đường phân giác, đường trung trực, trọng tâm, trực tâm",
+    questions:[
+      { type:"mc", text:"Câu 1. Ba đường trung tuyến của tam giác đồng quy tại:", opts:["Trực tâm","Trọng tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:1, explain:"3 đường trung tuyến đồng quy tại trọng tâm G." },
+      { type:"mc", text:"Câu 2. Trọng tâm G chia mỗi trung tuyến thành 2 phần có tỉ số:", opts:["1:1","1:2","2:1","1:3"], correct:2, explain:"G chia trung tuyến thành 2 phần: phần chứa đỉnh = 2, phần kia = 1 (tỉ số 2:1)." },
+      { type:"mc", text:"Câu 3. Ba đường phân giác trong tam giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:2, explain:"3 phân giác đồng quy tại tâm đường tròn nội tiếp." },
+      { type:"mc", text:"Câu 4. Ba đường cao của tam giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:1, explain:"3 đường cao đồng quy tại trực tâm H." },
+      { type:"mc", text:"Câu 5. Ba đường trung trực của tam giác đồng quy tại:", opts:["Trọng tâm","Trực tâm","Tâm nội tiếp","Tâm ngoại tiếp"], correct:3, explain:"3 đường trung trực đồng quy tại tâm đường tròn ngoại tiếp." },
+      { type:"mc", text:"Câu 6. Đường trung tuyến nối đỉnh với:", opts:["Chân đường cao","Trung điểm cạnh đối","Đỉnh góc kề","Tâm đường tròn"], correct:1, explain:"Trung tuyến = đoạn thẳng nối đỉnh đến trung điểm cạnh đối diện." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về các đường đồng quy:", statements:[
+        { stmt:"Trọng tâm chia trung tuyến theo tỉ số 2:1 (tính từ đỉnh)", correct:true },
+        { stmt:"Tâm nội tiếp cách đều 3 cạnh tam giác", correct:true },
+        { stmt:"Trực tâm luôn nằm bên trong tam giác", correct:false },
+        { stmt:"Tâm ngoại tiếp cách đều 3 đỉnh tam giác", correct:true }
+      ], explains:[
+        "Đúng. G chia trung tuyến thành 2 phần: 2/3 phía đỉnh, 1/3 phía cạnh.",
+        "Đúng. Tâm nội tiếp = giao 3 phân giác, cách đều 3 cạnh.",
+        "Sai. Tam giác tù → trực tâm nằm NGOÀI tam giác.",
+        "Đúng. Tâm ngoại tiếp = giao 3 trung trực, cách đều 3 đỉnh."
+      ]},
+      { type:"short", text:"Trung tuyến AM = 9cm, G là trọng tâm. AG = ? cm", answer:"6", hint:"AG = 2/3 × AM", explain:"AG = 2/3 × 9 = 6 cm." },
+      { type:"short", text:"Ba đường trung tuyến đồng quy tại điểm gọi là? (nhập: trong tam)", answer:"trong tam", hint:"Bắt đầu bằng chữ t", explain:"Trọng tâm (G)." }
+    ]
+  },
+
+  // ==================== CHƯƠNG X: LÀM QUEN VỚI BIẾN ĐỔI HÌNH ====================
+  {
+    id:"l7_10", emoji:"🔄", name:"Làm quen với biến đổi hình",
+    desc:"Phép tịnh tiến, phép đối xứng trục, phép đối xứng tâm, phép quay",
+    questions:[
+      { type:"mc", text:"Câu 1. Phép tịnh tiến biến mỗi điểm thành:", opts:["Điểm đối xứng","Điểm dịch chuyển cùng hướng, cùng khoảng cách","Điểm quay","Điểm ngẫu nhiên"], correct:1, explain:"Tịnh tiến: mọi điểm dời cùng hướng và cùng khoảng cách." },
+      { type:"mc", text:"Câu 2. Phép đối xứng trục giữ nguyên:", opts:["Vị trí","Kích thước và hình dạng","Hướng","Tất cả"], correct:1, explain:"Đối xứng trục bảo toàn kích thước và hình dạng (phép đẳng cự)." },
+      { type:"mc", text:"Câu 3. Phép quay 180° quanh tâm O tương đương:", opts:["Phép tịnh tiến","Phép đối xứng trục","Phép đối xứng tâm O","Phép co giãn"], correct:2, explain:"Quay 180° quanh O = đối xứng tâm O." },
+      { type:"mc", text:"Câu 4. Phép đối xứng tâm O biến điểm A thành A' sao cho:", opts:["O là trung điểm AA'","A = A'","OA = 2OA'","O nằm ngoài AA'"], correct:0, explain:"Đối xứng tâm: O là trung điểm của AA'." },
+      { type:"mc", text:"Câu 5. Hình nào bất biến qua phép đối xứng tâm?", opts:["Tam giác đều","Tam giác cân","Hình bình hành","Hình thang"], correct:2, explain:"Hình bình hành bất biến qua phép đối xứng tâm (giao 2 đường chéo)." },
+      { type:"mc", text:"Câu 6. Phép tịnh tiến biến đoạn thẳng AB thành:", opts:["Đoạn thẳng A'B' bằng AB","Đoạn thẳng dài hơn","Đường cong","Điểm"], correct:0, explain:"Tịnh tiến bảo toàn khoảng cách → A'B' = AB." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về phép biến đổi hình:", statements:[
+        { stmt:"Phép tịnh tiến giữ nguyên kích thước hình", correct:true },
+        { stmt:"Phép đối xứng trục thay đổi hình dạng", correct:false },
+        { stmt:"Phép quay 360° đưa hình về vị trí ban đầu", correct:true },
+        { stmt:"Phép đối xứng tâm O biến O thành chính nó", correct:true }
+      ], explains:[
+        "Đúng. Tịnh tiến là phép đẳng cự (bảo toàn khoảng cách).",
+        "Sai. Đối xứng trục bảo toàn hình dạng và kích thước.",
+        "Đúng. Quay 360° = quay trọn vòng → về vị trí cũ.",
+        "Đúng. Đối xứng qua O: O → O (điểm bất động)."
+      ]},
+      { type:"short", text:"Phép quay bao nhiêu độ quanh tâm O tương đương phép đối xứng tâm O?", answer:"180", hint:"Quay nửa vòng", explain:"Quay 180° = đối xứng tâm." },
+      { type:"short", text:"Phép tịnh tiến dời A(1;2) theo vectơ (3;0). A' có hoành độ = ?", answer:"4", hint:"Cộng hoành độ", explain:"x' = 1 + 3 = 4." }
+    ]
+  }
+];
+
 // ============ DỮ LIỆU TOÁN LỚP 8 ============
 const exam8Data = [
 
@@ -1623,7 +1897,7 @@ const exam8Data = [
 let currentGrade = 9;
 const gradeData = {
   6: { name:"Toán Lớp 6", exams:exam6Data },
-  7: { name:"Toán Lớp 7", exams:[] },
+  7: { name:"Toán Lớp 7", exams:exam7Data },
   8: { name:"Toán Lớp 8", exams:exam8Data },
   9: { name:"Toán Lớp 9", exams:examData }
 };
