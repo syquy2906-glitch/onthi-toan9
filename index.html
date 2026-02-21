@@ -1017,6 +1017,253 @@ const examData = [
   }
 ];
 
+// ============ DỮ LIỆU TOÁN LỚP 6 ============
+const exam6Data = [
+
+  // ==================== CHƯƠNG I: TẬP HỢP CÁC SỐ TỰ NHIÊN ====================
+  {
+    id:"l6_1", emoji:"🔢", name:"Tập hợp các số tự nhiên",
+    desc:"Tập hợp, phần tử, phép cộng – trừ – nhân – chia, lũy thừa, thứ tự phép tính",
+    questions:[
+      { type:"mc", text:"Câu 1. Cách viết nào biểu diễn tập hợp?", opts:["{1; 2; 3}","(1, 2, 3)","[1, 2, 3]","1, 2, 3"], correct:0, explain:"Tập hợp viết trong dấu ngoặc nhọn { }, các phần tử cách nhau bởi dấu chấm phẩy." },
+      { type:"mc", text:"Câu 2. Tập hợp A = {0; 1; 2; 3} có bao nhiêu phần tử?", opts:["3","4","5","0"], correct:1, explain:"Đếm: 0, 1, 2, 3 → 4 phần tử." },
+      { type:"mc", text:"Câu 3. 2³ bằng bao nhiêu?", opts:["6","8","9","5"], correct:1, explain:"2³ = 2 × 2 × 2 = 8." },
+      { type:"mc", text:"Câu 4. 15 − 3 × 4 = ?", opts:["48","12","3","8"], correct:2, explain:"Nhân trước: 3 × 4 = 12. Rồi trừ: 15 − 12 = 3." },
+      { type:"mc", text:"Câu 5. Số nào sau đây là số tự nhiên?", opts:["−3","1/2","0","−1"], correct:2, explain:"Số tự nhiên: 0, 1, 2, 3, ... Số 0 là số tự nhiên." },
+      { type:"mc", text:"Câu 6. 5⁰ bằng bao nhiêu?", opts:["0","1","5","50"], correct:1, explain:"Quy ước: a⁰ = 1 với mọi a ≠ 0. Vậy 5⁰ = 1." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tập hợp và số tự nhiên:", statements:[
+        { stmt:"0 là số tự nhiên", correct:true },
+        { stmt:"Tập hợp rỗng không có phần tử nào", correct:true },
+        { stmt:"2⁴ = 8", correct:false },
+        { stmt:"Phép nhân thực hiện trước phép cộng", correct:true }
+      ], explains:[
+        "Đúng. 0 thuộc tập số tự nhiên ℕ = {0, 1, 2, 3, ...}.",
+        "Đúng. Tập rỗng ký hiệu ∅, không chứa phần tử nào.",
+        "Sai. 2⁴ = 2 × 2 × 2 × 2 = 16, không phải 8.",
+        "Đúng. Thứ tự: lũy thừa → nhân/chia → cộng/trừ."
+      ]},
+      { type:"short", text:"Tính 3⁴ = ?", answer:"81", hint:"3 × 3 × 3 × 3", explain:"3⁴ = 3 × 3 × 3 × 3 = 81." },
+      { type:"short", text:"Tính 5 + 3 × 2 = ?", answer:"11", hint:"Nhân trước, cộng sau", explain:"3 × 2 = 6. Rồi 5 + 6 = 11." }
+    ]
+  },
+
+  // ==================== CHƯƠNG II: TÍNH CHIA HẾT ====================
+  {
+    id:"l6_2", emoji:"➗", name:"Tính chia hết trong tập hợp số tự nhiên",
+    desc:"Quan hệ chia hết, dấu hiệu chia hết cho 2, 3, 5, 9, số nguyên tố, ƯCLN, BCNN",
+    questions:[
+      { type:"mc", text:"Câu 1. Số nào chia hết cho cả 2 và 5?", opts:["25","30","12","35"], correct:1, explain:"Chia hết cho 2 (chẵn) và 5 (tận cùng 0 hoặc 5) → tận cùng 0. 30 thỏa mãn." },
+      { type:"mc", text:"Câu 2. Số nào là số nguyên tố?", opts:["4","9","7","15"], correct:2, explain:"7 chỉ có 2 ước: 1 và 7 → số nguyên tố." },
+      { type:"mc", text:"Câu 3. ƯCLN(12, 18) = ?", opts:["3","6","12","36"], correct:1, explain:"12 = 2² × 3; 18 = 2 × 3². ƯCLN = 2 × 3 = 6." },
+      { type:"mc", text:"Câu 4. BCNN(4, 6) = ?", opts:["2","12","24","6"], correct:1, explain:"4 = 2²; 6 = 2 × 3. BCNN = 2² × 3 = 12." },
+      { type:"mc", text:"Câu 5. Dấu hiệu chia hết cho 3:", opts:["Chữ số tận cùng chia hết cho 3","Tổng các chữ số chia hết cho 3","Chữ số cuối là 3","Số đó chia hết cho 6"], correct:1, explain:"Một số chia hết cho 3 khi tổng các chữ số chia hết cho 3." },
+      { type:"mc", text:"Câu 6. Số nào là hợp số?", opts:["2","3","9","5"], correct:2, explain:"9 = 3 × 3, có nhiều hơn 2 ước → hợp số." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về chia hết và số nguyên tố:", statements:[
+        { stmt:"12 chia hết cho 3", correct:true },
+        { stmt:"1 là số nguyên tố", correct:false },
+        { stmt:"Mọi số chẵn đều chia hết cho 2", correct:true },
+        { stmt:"BCNN(3, 5) = 8", correct:false }
+      ], explains:[
+        "Đúng. 12 ÷ 3 = 4 (chia hết).",
+        "Sai. 1 không phải số nguyên tố (chỉ có 1 ước).",
+        "Đúng. Định nghĩa số chẵn: chia hết cho 2.",
+        "Sai. BCNN(3, 5) = 15, không phải 8."
+      ]},
+      { type:"short", text:"ƯCLN(8, 12) = ?", answer:"4", hint:"Phân tích thừa số nguyên tố", explain:"8 = 2³; 12 = 2² × 3. ƯCLN = 2² = 4." },
+      { type:"short", text:"BCNN(3, 5) = ?", answer:"15", hint:"3 và 5 nguyên tố cùng nhau", explain:"3 và 5 nguyên tố cùng nhau → BCNN = 3 × 5 = 15." }
+    ]
+  },
+
+  // ==================== CHƯƠNG III: SỐ NGUYÊN ====================
+  {
+    id:"l6_3", emoji:"🔴", name:"Số nguyên",
+    desc:"Số nguyên âm, dương, giá trị tuyệt đối, cộng – trừ – nhân – chia số nguyên",
+    questions:[
+      { type:"mc", text:"Câu 1. |−5| = ?", opts:["−5","5","0","−1"], correct:1, explain:"Giá trị tuyệt đối |−5| = 5 (khoảng cách từ −5 đến 0)." },
+      { type:"mc", text:"Câu 2. (−3) + (−7) = ?", opts:["−10","10","4","−4"], correct:0, explain:"Cùng dấu âm: cộng giá trị tuyệt đối, giữ dấu âm. |3| + |7| = 10 → −10." },
+      { type:"mc", text:"Câu 3. 5 − 8 = ?", opts:["3","−3","13","−13"], correct:1, explain:"5 − 8 = 5 + (−8) = −3." },
+      { type:"mc", text:"Câu 4. (−4) × (−3) = ?", opts:["−12","−7","12","7"], correct:2, explain:"Âm × Âm = Dương. 4 × 3 = 12." },
+      { type:"mc", text:"Câu 5. Số đối của −6 là:", opts:["6","−6","0","1/6"], correct:0, explain:"Số đối của −6 là 6 vì (−6) + 6 = 0." },
+      { type:"mc", text:"Câu 6. Sắp xếp tăng dần: −3, 0, −1, 2:", opts:["−3, −1, 0, 2","2, 0, −1, −3","0, −1, −3, 2","−1, −3, 0, 2"], correct:0, explain:"Trên trục số: −3 < −1 < 0 < 2." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số nguyên:", statements:[
+        { stmt:"|−7| = 7", correct:true },
+        { stmt:"(−2) × (−5) = −10", correct:false },
+        { stmt:"0 là số nguyên dương", correct:false },
+        { stmt:"(−3) + 3 = 0", correct:true }
+      ], explains:[
+        "Đúng. |−7| = 7.",
+        "Sai. Âm × Âm = Dương → (−2) × (−5) = 10.",
+        "Sai. 0 không là số nguyên dương cũng không là số nguyên âm.",
+        "Đúng. Hai số đối nhau cộng lại bằng 0."
+      ]},
+      { type:"short", text:"Tính (−8) + 3 = ?", answer:"-5", hint:"Khác dấu: lấy hiệu, giữ dấu số lớn hơn", explain:"Khác dấu: |8| − |3| = 5, giữ dấu âm → −5." },
+      { type:"short", text:"|−12| = ?", answer:"12", hint:"Khoảng cách đến 0 trên trục số", explain:"|−12| = 12." }
+    ]
+  },
+
+  // ==================== CHƯƠNG IV: HÌNH PHẲNG TRONG THỰC TIỄN ====================
+  {
+    id:"l6_4", emoji:"🔷", name:"Một số hình phẳng trong thực tiễn",
+    desc:"Tam giác đều, hình vuông, hình lục giác đều, hình chữ nhật, hình thoi, chu vi và diện tích",
+    questions:[
+      { type:"mc", text:"Câu 1. Hình vuông cạnh 5cm có chu vi:", opts:["10 cm","15 cm","20 cm","25 cm"], correct:2, explain:"Chu vi hình vuông = 4 × cạnh = 4 × 5 = 20 cm." },
+      { type:"mc", text:"Câu 2. Diện tích hình chữ nhật 8cm × 5cm:", opts:["13 cm²","26 cm²","40 cm²","80 cm²"], correct:2, explain:"S = dài × rộng = 8 × 5 = 40 cm²." },
+      { type:"mc", text:"Câu 3. Tam giác đều có:", opts:["3 cạnh bằng nhau","2 cạnh bằng nhau","3 góc khác nhau","1 góc vuông"], correct:0, explain:"Tam giác đều: 3 cạnh bằng nhau và 3 góc bằng nhau (= 60°)." },
+      { type:"mc", text:"Câu 4. Hình lục giác đều có bao nhiêu cạnh?", opts:["4","5","6","8"], correct:2, explain:"Lục giác = 6 cạnh." },
+      { type:"mc", text:"Câu 5. Chu vi hình chữ nhật 6cm × 4cm:", opts:["10 cm","20 cm","24 cm","48 cm"], correct:1, explain:"Chu vi = 2 × (dài + rộng) = 2 × (6 + 4) = 20 cm." },
+      { type:"mc", text:"Câu 6. Hình vuông cạnh 3cm có diện tích:", opts:["6 cm²","9 cm²","12 cm²","3 cm²"], correct:1, explain:"S = cạnh² = 3² = 9 cm²." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về hình phẳng:", statements:[
+        { stmt:"Hình vuông có 4 cạnh bằng nhau", correct:true },
+        { stmt:"Tam giác đều có mỗi góc bằng 90°", correct:false },
+        { stmt:"Chu vi hình chữ nhật = 2 × (dài + rộng)", correct:true },
+        { stmt:"Hình thoi có 4 góc vuông", correct:false }
+      ], explains:[
+        "Đúng. Hình vuông có 4 cạnh bằng nhau và 4 góc vuông.",
+        "Sai. Tam giác đều có mỗi góc bằng 60°, không phải 90°.",
+        "Đúng. Công thức chu vi hình chữ nhật.",
+        "Sai. Hình thoi có 4 cạnh bằng nhau nhưng các góc không nhất thiết vuông."
+      ]},
+      { type:"short", text:"Hình vuông cạnh 7cm, diện tích = ? cm²", answer:"49", hint:"S = cạnh × cạnh", explain:"S = 7 × 7 = 49 cm²." },
+      { type:"short", text:"Hình chữ nhật 10cm × 6cm, chu vi = ? cm", answer:"32", hint:"C = 2 × (dài + rộng)", explain:"C = 2 × (10 + 6) = 32 cm." }
+    ]
+  },
+
+  // ==================== CHƯƠNG V: TÍNH ĐỐI XỨNG ====================
+  {
+    id:"l6_5", emoji:"🦋", name:"Tính đối xứng của hình phẳng",
+    desc:"Hình có trục đối xứng, hình có tâm đối xứng, nhận biết đối xứng trong tự nhiên",
+    questions:[
+      { type:"mc", text:"Câu 1. Hình nào có trục đối xứng?", opts:["Hình bình hành","Tam giác đều","Hình thang thường","Tam giác thường"], correct:1, explain:"Tam giác đều có 3 trục đối xứng (qua đỉnh vuông góc cạnh đối)." },
+      { type:"mc", text:"Câu 2. Hình tròn có bao nhiêu trục đối xứng?", opts:["1","2","4","Vô số"], correct:3, explain:"Hình tròn có vô số trục đối xứng (mỗi đường kính là 1 trục)." },
+      { type:"mc", text:"Câu 3. Hình vuông có bao nhiêu trục đối xứng?", opts:["1","2","4","8"], correct:2, explain:"Hình vuông có 4 trục đối xứng (2 trục qua trung điểm cạnh, 2 đường chéo)." },
+      { type:"mc", text:"Câu 4. Hình nào có tâm đối xứng?", opts:["Tam giác đều","Hình bình hành","Hình thang cân","Tam giác cân"], correct:1, explain:"Hình bình hành có tâm đối xứng là giao điểm 2 đường chéo." },
+      { type:"mc", text:"Câu 5. Chữ cái nào có trục đối xứng?", opts:["F","G","A","R"], correct:2, explain:"Chữ A có trục đối xứng dọc chia đôi chữ cái." },
+      { type:"mc", text:"Câu 6. Hình chữ nhật có bao nhiêu trục đối xứng?", opts:["1","2","3","4"], correct:1, explain:"Hình chữ nhật có 2 trục đối xứng (qua trung điểm 2 cặp cạnh đối)." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về đối xứng:", statements:[
+        { stmt:"Tam giác đều có 3 trục đối xứng", correct:true },
+        { stmt:"Hình bình hành có trục đối xứng", correct:false },
+        { stmt:"Hình tròn có tâm đối xứng là tâm O", correct:true },
+        { stmt:"Hình thang cân có trục đối xứng", correct:true }
+      ], explains:[
+        "Đúng. Tam giác đều có 3 trục đối xứng.",
+        "Sai. Hình bình hành có TÂM đối xứng, KHÔNG có trục đối xứng.",
+        "Đúng. Tâm đối xứng của hình tròn chính là tâm O.",
+        "Đúng. Hình thang cân có 1 trục đối xứng qua trung điểm 2 đáy."
+      ]},
+      { type:"short", text:"Hình vuông có bao nhiêu trục đối xứng?", answer:"4", hint:"Đếm: 2 trục qua cạnh + 2 đường chéo", explain:"4 trục: 2 qua trung điểm cạnh đối + 2 đường chéo." },
+      { type:"short", text:"Tam giác đều có bao nhiêu trục đối xứng?", answer:"3", hint:"Mỗi đường cao là 1 trục", explain:"3 trục, mỗi trục đi qua 1 đỉnh và trung điểm cạnh đối." }
+    ]
+  },
+
+  // ==================== CHƯƠNG VI: PHÂN SỐ ====================
+  {
+    id:"l6_6", emoji:"🍕", name:"Phân số",
+    desc:"Phân số, phân số bằng nhau, rút gọn, quy đồng, so sánh, cộng – trừ – nhân – chia phân số",
+    questions:[
+      { type:"mc", text:"Câu 1. Phân số 2/4 rút gọn thành:", opts:["1/4","1/2","2/2","4/8"], correct:1, explain:"2/4 = (2÷2)/(4÷2) = 1/2." },
+      { type:"mc", text:"Câu 2. 1/3 + 1/6 = ?", opts:["2/9","1/2","1/6","2/3"], correct:1, explain:"Quy đồng: 1/3 = 2/6. Rồi 2/6 + 1/6 = 3/6 = 1/2." },
+      { type:"mc", text:"Câu 3. 3/4 × 2/5 = ?", opts:["5/9","6/20","3/10","5/20"], correct:2, explain:"Nhân tử với tử, mẫu với mẫu: (3×2)/(4×5) = 6/20 = 3/10." },
+      { type:"mc", text:"Câu 4. 2/3 ÷ 4/5 = ?", opts:["8/15","5/6","10/12","6/20"], correct:1, explain:"Chia = nhân nghịch đảo: 2/3 × 5/4 = 10/12 = 5/6." },
+      { type:"mc", text:"Câu 5. Phân số nào lớn hơn 1?", opts:["3/5","2/7","5/3","1/2"], correct:2, explain:"5/3 ≈ 1,67 > 1 (tử > mẫu dương)." },
+      { type:"mc", text:"Câu 6. So sánh 3/7 và 2/7:", opts:["3/7 < 2/7","3/7 = 2/7","3/7 > 2/7","Không so sánh được"], correct:2, explain:"Cùng mẫu 7: tử 3 > 2 → 3/7 > 2/7." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về phân số:", statements:[
+        { stmt:"2/4 = 1/2", correct:true },
+        { stmt:"3/5 > 4/5", correct:false },
+        { stmt:"Muốn cộng 2 phân số khác mẫu, phải quy đồng mẫu", correct:true },
+        { stmt:"0/5 = 0", correct:true }
+      ], explains:[
+        "Đúng. 2/4 = 1/2 (chia cả tử và mẫu cho 2).",
+        "Sai. Cùng mẫu 5: tử 3 < 4 → 3/5 < 4/5.",
+        "Đúng. Cần quy đồng mẫu rồi mới cộng tử.",
+        "Đúng. 0 chia cho bất kỳ số nào ≠ 0 đều bằng 0."
+      ]},
+      { type:"short", text:"Tính 2/5 + 3/5 = a/5. Tìm a = ?", answer:"5", hint:"Cùng mẫu: cộng tử", explain:"2/5 + 3/5 = (2+3)/5 = 5/5 = 1. Nhưng dạng a/5 thì a = 5." },
+      { type:"short", text:"Rút gọn 6/8 = a/4. Tìm a = ?", answer:"3", hint:"Chia cả tử và mẫu cho ƯCLN", explain:"6/8 = (6÷2)/(8÷2) = 3/4. Vậy a = 3." }
+    ]
+  },
+
+  // ==================== CHƯƠNG VII: SỐ THẬP PHÂN ====================
+  {
+    id:"l6_7", emoji:"🔵", name:"Số thập phân",
+    desc:"Số thập phân, phép tính với số thập phân, làm tròn, ước lượng, tỉ số phần trăm",
+    questions:[
+      { type:"mc", text:"Câu 1. 0,75 viết dưới dạng phân số là:", opts:["3/4","7/5","3/5","7/10"], correct:0, explain:"0,75 = 75/100 = 3/4." },
+      { type:"mc", text:"Câu 2. 3,5 + 2,8 = ?", opts:["5,3","6,3","6,13","5,13"], correct:1, explain:"3,5 + 2,8 = 6,3." },
+      { type:"mc", text:"Câu 3. 25% của 200 bằng:", opts:["25","50","100","75"], correct:1, explain:"25% × 200 = (25/100) × 200 = 50." },
+      { type:"mc", text:"Câu 4. Làm tròn 3,47 đến hàng phần mười:", opts:["3,4","3,5","3,0","4,0"], correct:1, explain:"Chữ số hàng phần trăm = 7 ≥ 5 → làm tròn lên: 3,5." },
+      { type:"mc", text:"Câu 5. 1,2 × 0,5 = ?", opts:["0,6","6","0,06","1,7"], correct:0, explain:"1,2 × 0,5 = 0,6." },
+      { type:"mc", text:"Câu 6. 0,5 viết thành phân số:", opts:["5/100","1/2","5/1","1/5"], correct:1, explain:"0,5 = 5/10 = 1/2." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số thập phân:", statements:[
+        { stmt:"0,25 = 1/4", correct:true },
+        { stmt:"50% = 0,5", correct:true },
+        { stmt:"3,456 làm tròn đến hàng phần mười = 3,4", correct:false },
+        { stmt:"10% của 80 = 8", correct:true }
+      ], explains:[
+        "Đúng. 0,25 = 25/100 = 1/4.",
+        "Đúng. 50% = 50/100 = 0,5.",
+        "Sai. Chữ số phần trăm = 5 → làm tròn lên: 3,5.",
+        "Đúng. 10% × 80 = 8."
+      ]},
+      { type:"short", text:"20% của 150 = ?", answer:"30", hint:"20/100 × 150", explain:"20% × 150 = (20/100) × 150 = 30." },
+      { type:"short", text:"0,6 + 0,4 = ?", answer:"1", hint:"Cộng trực tiếp", explain:"0,6 + 0,4 = 1,0 = 1." }
+    ]
+  },
+
+  // ==================== CHƯƠNG VIII: NHỮNG HÌNH HỌC CƠ BẢN ====================
+  {
+    id:"l6_8", emoji:"📐", name:"Những hình học cơ bản",
+    desc:"Điểm, đường thẳng, tia, đoạn thẳng, trung điểm, góc, số đo góc",
+    questions:[
+      { type:"mc", text:"Câu 1. Qua hai điểm phân biệt xác định được bao nhiêu đường thẳng?", opts:["0","1","2","Vô số"], correct:1, explain:"Qua 2 điểm phân biệt có đúng 1 đường thẳng." },
+      { type:"mc", text:"Câu 2. M là trung điểm đoạn AB thì:", opts:["MA = MB = AB","MA = MB = AB/2","MA > MB","MA + MB > AB"], correct:1, explain:"Trung điểm chia đoạn thẳng thành 2 phần bằng nhau: MA = MB = AB/2." },
+      { type:"mc", text:"Câu 3. Góc vuông có số đo:", opts:["45°","60°","90°","180°"], correct:2, explain:"Góc vuông = 90°." },
+      { type:"mc", text:"Câu 4. Đoạn AB = 8cm, M là trung điểm. MA = ?", opts:["8 cm","4 cm","16 cm","2 cm"], correct:1, explain:"MA = AB/2 = 8/2 = 4 cm." },
+      { type:"mc", text:"Câu 5. Góc bẹt có số đo:", opts:["90°","120°","180°","360°"], correct:2, explain:"Góc bẹt = 180°." },
+      { type:"mc", text:"Câu 6. Ba điểm không thẳng hàng xác định bao nhiêu đường thẳng?", opts:["1","2","3","6"], correct:2, explain:"3 điểm → 3 cặp điểm → 3 đường thẳng." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về hình học cơ bản:", statements:[
+        { stmt:"Qua 2 điểm phân biệt chỉ có 1 đường thẳng", correct:true },
+        { stmt:"Góc nhọn có số đo lớn hơn 90°", correct:false },
+        { stmt:"Trung điểm chia đoạn thẳng thành 2 phần bằng nhau", correct:true },
+        { stmt:"Hai đường thẳng phân biệt luôn cắt nhau", correct:false }
+      ], explains:[
+        "Đúng. Tiên đề cơ bản trong hình học.",
+        "Sai. Góc nhọn có số đo NHỎ hơn 90° (0° < góc nhọn < 90°).",
+        "Đúng. Định nghĩa trung điểm.",
+        "Sai. Hai đường thẳng phân biệt có thể cắt nhau hoặc song song."
+      ]},
+      { type:"short", text:"AB = 12cm, M là trung điểm. AM = ? cm", answer:"6", hint:"AM = AB/2", explain:"AM = 12/2 = 6 cm." },
+      { type:"short", text:"Góc vuông có số đo bao nhiêu độ?", answer:"90", hint:"Một trong các góc đặc biệt", explain:"Góc vuông = 90°." }
+    ]
+  },
+
+  // ==================== CHƯƠNG IX: DỮ LIỆU VÀ XÁC SUẤT THỰC NGHIỆM ====================
+  {
+    id:"l6_9", emoji:"📊", name:"Dữ liệu và xác suất thực nghiệm",
+    desc:"Thu thập dữ liệu, bảng thống kê, biểu đồ, xác suất thực nghiệm",
+    questions:[
+      { type:"mc", text:"Câu 1. Tung đồng xu 100 lần, mặt ngửa 45 lần. Xác suất thực nghiệm mặt ngửa:", opts:["0,55","0,45","45","100"], correct:1, explain:"XS thực nghiệm = 45/100 = 0,45." },
+      { type:"mc", text:"Câu 2. Biểu đồ cột dùng để:", opts:["So sánh dữ liệu giữa các nhóm","Giải phương trình","Tính diện tích","Vẽ hình tròn"], correct:0, explain:"Biểu đồ cột dùng so sánh dữ liệu giữa các nhóm/danh mục." },
+      { type:"mc", text:"Câu 3. Gieo xúc sắc 60 lần, mặt 6 xuất hiện 12 lần. Xác suất thực nghiệm:", opts:["1/6","6/60","1/5","12/100"], correct:2, explain:"XS = 12/60 = 1/5 = 0,2." },
+      { type:"mc", text:"Câu 4. Biểu đồ tròn thích hợp biểu diễn:", opts:["Sự thay đổi theo thời gian","Tỉ lệ phần trăm","Số liệu âm","Phương trình"], correct:1, explain:"Biểu đồ tròn (hình quạt) biểu diễn tỉ lệ phần trăm." },
+      { type:"mc", text:"Câu 5. Dữ liệu: 5, 3, 7, 3, 5, 3, 8. Giá trị xuất hiện nhiều nhất:", opts:["5","3","7","8"], correct:1, explain:"3 xuất hiện 3 lần (nhiều nhất)." },
+      { type:"mc", text:"Câu 6. Xác suất thực nghiệm được tính bằng:", opts:["Số lần thí nghiệm","Số lần KQ thuận lợi ÷ tổng số lần","Tổng các giá trị","Giá trị lớn nhất"], correct:1, explain:"XS thực nghiệm = (số lần KQ thuận lợi) / (tổng số lần thí nghiệm)." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về xác suất thực nghiệm:", statements:[
+        { stmt:"Xác suất thực nghiệm luôn nằm trong khoảng từ 0 đến 1", correct:true },
+        { stmt:"Biểu đồ cột kép dùng so sánh 2 bộ dữ liệu", correct:true },
+        { stmt:"Xác suất thực nghiệm luôn bằng xác suất lý thuyết", correct:false },
+        { stmt:"Càng thực hiện nhiều lần, XS thực nghiệm càng gần XS lý thuyết", correct:true }
+      ], explains:[
+        "Đúng. 0 ≤ XS thực nghiệm ≤ 1.",
+        "Đúng. Biểu đồ cột kép cho phép so sánh trực quan 2 bộ dữ liệu.",
+        "Sai. XS thực nghiệm có thể khác XS lý thuyết, chỉ xấp xỉ.",
+        "Đúng. Đây là quy luật số lớn."
+      ]},
+      { type:"short", text:"Tung đồng xu 50 lần, ngửa 30 lần. XS thực nghiệm = 30/50 = a/5. Tìm a = ?", answer:"3", hint:"30/50 = ?/5", explain:"30/50 = 3/5. Vậy a = 3." },
+      { type:"short", text:"Lớp 30 HS, 12 HS thích bóng đá. Tỉ lệ = a/5. Tìm a = ?", answer:"2", hint:"12/30 = ?/5", explain:"12/30 = 2/5. Vậy a = 2." }
+    ]
+  }
+];
+
 // ============ DỮ LIỆU TOÁN LỚP 8 ============
 const exam8Data = [
 
@@ -1375,7 +1622,7 @@ const exam8Data = [
 // ============ GRADE SYSTEM ============
 let currentGrade = 9;
 const gradeData = {
-  6: { name:"Toán Lớp 6", exams:[] },
+  6: { name:"Toán Lớp 6", exams:exam6Data },
   7: { name:"Toán Lớp 7", exams:[] },
   8: { name:"Toán Lớp 8", exams:exam8Data },
   9: { name:"Toán Lớp 9", exams:examData }
