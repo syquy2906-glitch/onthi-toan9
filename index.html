@@ -2541,6 +2541,99 @@ const exam6Data = [
       {type:"short", text:"Câu 31. Hình thang đáy 5 và 9, cao 4. S = ?", answer:"28", hint:"(5+9)×4/2", explain:"14×4/2 = 28."},
       {type:"short", text:"Câu 32. Hình thoi d₁ = 8, d₂ = 6. S = ?", answer:"24", hint:"(d₁ × d₂)/2", explain:"(8×6)/2 = 24."}
     ]
+  },
+  // ==================== CHỦ ĐỀ 12: DỮ LIỆU VÀ XÁC SUẤT THỰC NGHIỆM ====================
+  {
+    id:"l6_12", emoji:"📊", name:"Dữ liệu và xác suất thực nghiệm",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Thu thập và phân loại dữ liệu</b><br>
+– Dữ liệu: thông tin thu thập được (điều tra, đo đạc, thí nghiệm...).<br>
+– Phân loại: dữ liệu định lượng (số) và dữ liệu định tính (phân loại).<br><br>
+<b>2. Bảng thống kê</b><br>
+– Bảng thống kê trình bày dữ liệu theo hàng, cột.<br>
+– Tần số: số lần xuất hiện của mỗi giá trị.<br><br>
+<b>3. Biểu đồ</b><br>
+– Biểu đồ tranh (pictograph): dùng hình ảnh đại diện số lượng.<br>
+– Biểu đồ cột (bar chart): cột cao thể hiện giá trị lớn.<br>
+– Đọc biểu đồ: xác định giá trị từ chiều cao cột hoặc số hình.<br><br>
+<b>4. Xác suất thực nghiệm</b><br>
+– Khi thực hiện phép thử nhiều lần, tỉ lệ số lần xảy ra biến cố / tổng số lần thử gọi là xác suất thực nghiệm.<br>
+– P(thực nghiệm) = số lần xảy ra / tổng số lần thử.<br>
+– 0 ≤ P ≤ 1.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Dữ liệu là:", opts:["Chỉ con số","Thông tin thu thập được","Chỉ ý kiến","Chỉ kết quả thi"], correct:1, explain:"Dữ liệu = thông tin thu thập được."},
+      {type:"mc", text:"Câu 2. Tần số là:", opts:["Giá trị lớn nhất","Số lần xuất hiện của giá trị","Tổng các giá trị","Giá trị nhỏ nhất"], correct:1, explain:"Tần số = số lần xuất hiện."},
+      {type:"mc", text:"Câu 3. Biểu đồ cột dùng để:", opts:["Vẽ tranh","So sánh các giá trị","Tính trung bình","Tìm ƯCLN"], correct:1, explain:"Biểu đồ cột so sánh giá trị qua chiều cao cột."},
+      {type:"mc", text:"Câu 4. Biểu đồ tranh dùng:", opts:["Hình ảnh đại diện số lượng","Cột cao thấp","Đường nối","Hình tròn"], correct:0, explain:"Biểu đồ tranh: hình ảnh đại diện số lượng."},
+      {type:"mc", text:"Câu 5. XS thực nghiệm được tính bằng:", opts:["Tổng / số lần","Số lần xảy ra / tổng số lần thử","Tổng × số lần","Số lần − tổng"], correct:1, explain:"P = số lần xảy ra / tổng số lần thử."},
+      {type:"mc", text:"Câu 6. XS thực nghiệm nằm trong khoảng:", opts:["[−1; 1]","[0; 1]","[0; ∞)","(−∞; ∞)"], correct:1, explain:"0 ≤ P ≤ 1."},
+      {type:"mc", text:"Câu 7. Bảng thống kê dùng để:", opts:["Vẽ hình","Trình bày dữ liệu có hệ thống","Giải PT","Tìm ước"], correct:1, explain:"Bảng thống kê trình bày dữ liệu theo hàng, cột."},
+      {type:"mc", text:"Câu 8. Dữ liệu định lượng là:", opts:["Dữ liệu phân loại","Dữ liệu là số","Dữ liệu tên","Dữ liệu màu sắc"], correct:1, explain:"Định lượng: dữ liệu dạng số (đo được)."},
+      {type:"mc", text:"Câu 9. Dữ liệu 'màu yêu thích' là dữ liệu:", opts:["Định lượng","Định tính","Số","Phân số"], correct:1, explain:"Màu sắc = định tính (phân loại)."},
+      {type:"mc", text:"Câu 10. Tung đồng xu 100 lần, ngửa 45 lần. XS thực nghiệm mặt ngửa:", opts:["45","0,45","100/45","45/100"], correct:1, explain:"P = 45/100 = 0,45."},
+      {type:"mc", text:"Câu 11. Đọc biểu đồ cột: cột cao nhất nghĩa là:", opts:["Giá trị nhỏ nhất","Giá trị lớn nhất","Không có ý nghĩa","Giá trị trung bình"], correct:1, explain:"Cột cao nhất → giá trị/tần số lớn nhất."},
+      {type:"mc", text:"Câu 12. Dữ liệu 'chiều cao học sinh' là dữ liệu:", opts:["Định tính","Định lượng","Phân loại","Chữ"], correct:1, explain:"Chiều cao = số → định lượng."},
+      {type:"mc", text:"Câu 13. Điểm 5 HS: 7, 8, 7, 9, 7. Tần số của điểm 7:", opts:["1","2","3","5"], correct:2, explain:"Điểm 7 xuất hiện 3 lần."},
+      {type:"mc", text:"Câu 14. Gieo xúc sắc 60 lần, mặt 6 xuất hiện 12 lần. XS thực nghiệm:", opts:["12","1/5","12/60","Cả B và C"], correct:3, explain:"12/60 = 1/5 = 0,2. Cả B và C đều đúng."},
+      {type:"mc", text:"Câu 15. Biểu đồ nào phù hợp so sánh điểm 4 lớp?", opts:["Biểu đồ tròn","Biểu đồ cột","Biểu đồ tranh","Bảng tần số"], correct:1, explain:"Biểu đồ cột phù hợp so sánh các nhóm."},
+      {type:"mc", text:"Câu 16. Lớp 30 HS: 10 giỏi, 15 khá, 5 TB. Tần số loại khá:", opts:["5","10","15","30"], correct:2, explain:"Khá: 15 HS → tần số = 15."},
+      {type:"mc", text:"Câu 17. Lớp trên. Tỉ lệ HS giỏi:", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"10/30 = 1/3."},
+      {type:"mc", text:"Câu 18. Tung đồng xu 50 lần, sấp 28 lần. XS thực nghiệm ngửa:", opts:["28/50","22/50","50/22","22"], correct:1, explain:"Ngửa = 50−28 = 22 lần. P = 22/50."},
+      {type:"mc", text:"Câu 19. Dữ liệu: 3, 5, 5, 7, 5. Giá trị nào có tần số cao nhất?", opts:["3","5","7","Tất cả"], correct:1, explain:"5 xuất hiện 3 lần (nhiều nhất)."},
+      {type:"mc", text:"Câu 20. XS thực nghiệm có thể bằng 1,5 không?", opts:["Có","Không","Tuỳ trường hợp","Chỉ khi tổng lớn"], correct:1, explain:"XS ∈ [0; 1], không thể > 1."},
+      {type:"mc", text:"Câu 21. Khảo sát 40 HS thích môn gì: Toán(16), Văn(10), Anh(14). Tỉ lệ thích Toán:", opts:["16%","40%","4/10","2/5"], correct:3, explain:"16/40 = 2/5 = 40%. Đáp án D: 2/5."},
+      {type:"mc", text:"Câu 22. Gieo xúc sắc 120 lần, mặt lẻ (1,3,5) xuất hiện 55 lần. XS thực nghiệm:", opts:["55/120","65/120","55/65","120/55"], correct:0, explain:"P = 55/120."},
+      {type:"mc", text:"Câu 23. Biểu đồ tranh: mỗi hình = 5 HS. Lớp có 8 hình → bao nhiêu HS?", opts:["8","13","40","80"], correct:2, explain:"8 × 5 = 40 HS."},
+      {type:"mc", text:"Câu 24. Bắn 25 phát, trúng 20 phát. XS thực nghiệm trúng:", opts:["4/5","5/4","20/25","Cả A và C"], correct:3, explain:"20/25 = 4/5. A và C đều đúng."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Tần số là số lần xuất hiện của giá trị", correct:true},
+        {stmt:"XS thực nghiệm có thể > 1", correct:false},
+        {stmt:"Biểu đồ cột so sánh giá trị qua chiều cao cột", correct:true},
+        {stmt:"Dữ liệu luôn là số", correct:false}
+      ], explains:[
+        "Đúng. ĐN tần số.",
+        "Sai. 0 ≤ P ≤ 1.",
+        "Đúng. Cột cao → giá trị lớn.",
+        "Sai. Dữ liệu có thể định tính (màu, loại...)."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). XS thực nghiệm:", statements:[
+        {stmt:"P = số lần xảy ra / tổng số lần thử", correct:true},
+        {stmt:"Tung xu 100 lần, ngửa 52 → P(ngửa) = 0,52", correct:true},
+        {stmt:"XS thực nghiệm luôn bằng XS lý thuyết", correct:false},
+        {stmt:"0 ≤ P ≤ 1", correct:true}
+      ], explains:[
+        "Đúng. Công thức XS thực nghiệm.",
+        "Đúng. 52/100 = 0,52.",
+        "Sai. XS thực nghiệm xấp xỉ XS lý thuyết khi số lần thử đủ lớn.",
+        "Đúng. Luôn trong [0; 1]."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Dữ liệu: 4, 6, 6, 8, 6, 10:", statements:[
+        {stmt:"Tần số của 6 là 3", correct:true},
+        {stmt:"Tần số của 4 là 2", correct:false},
+        {stmt:"Có 4 giá trị khác nhau", correct:true},
+        {stmt:"Tổng tần số = 6", correct:true}
+      ], explains:[
+        "Đúng. 6 xuất hiện 3 lần.",
+        "Sai. 4 xuất hiện 1 lần.",
+        "Đúng. 4, 6, 8, 10 → 4 giá trị.",
+        "Đúng. 1+3+1+1 = 6 = tổng số liệu."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Biểu đồ:", statements:[
+        {stmt:"Biểu đồ tranh dùng hình ảnh đại diện", correct:true},
+        {stmt:"Biểu đồ cột chỉ dùng cho số", correct:false},
+        {stmt:"Đọc biểu đồ giúp so sánh dữ liệu", correct:true},
+        {stmt:"Biểu đồ cột kép so sánh 2 nhóm dữ liệu", correct:true}
+      ], explains:[
+        "Đúng. Pictograph dùng hình ảnh.",
+        "Sai. Biểu đồ cột dùng được cho cả dữ liệu định tính.",
+        "Đúng. Trực quan so sánh.",
+        "Đúng. Cột kép so sánh 2 nhóm."
+      ]},
+      {type:"short", text:"Câu 29. Gieo xúc sắc 50 lần, mặt 3 xuất hiện 8 lần. P(mặt 3) = a/50. a = ?", answer:"8", hint:"Số lần xảy ra", explain:"P = 8/50. a = 8."},
+      {type:"short", text:"Câu 30. Dữ liệu: 2, 4, 4, 6, 4. Tần số của 4 = ?", answer:"3", hint:"Đếm số lần xuất hiện", explain:"4 xuất hiện 3 lần."},
+      {type:"short", text:"Câu 31. Tung xu 200 lần, ngửa 90 lần. P(ngửa) = a/200. a = ?", answer:"90", hint:"Số lần ngửa", explain:"P = 90/200. a = 90."},
+      {type:"short", text:"Câu 32. Biểu đồ tranh: mỗi hình = 10 HS. Có 6 hình → bao nhiêu HS?", answer:"60", hint:"6 × 10", explain:"6 × 10 = 60 HS."}
+    ]
   }
 ];
 
