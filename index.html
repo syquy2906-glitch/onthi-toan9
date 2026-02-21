@@ -1524,246 +1524,466 @@ const examData = [
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
 const exam6Data = [
 
-  // ==================== CHƯƠNG I: TẬP HỢP CÁC SỐ TỰ NHIÊN ====================
+  // ==================== CHỦ ĐỀ 1: TẬP HỢP — SỐ TỰ NHIÊN ====================
   {
-    id:"l6_1", emoji:"🔢", name:"Tập hợp các số tự nhiên",
-    desc:"Tập hợp, phần tử, phép cộng – trừ – nhân – chia, lũy thừa, thứ tự phép tính",
+    id:"l6_1", emoji:"🔢", name:"Tập hợp — Số tự nhiên",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Tập hợp</b><br>
+– Tập hợp là một nhóm các đối tượng. Mỗi đối tượng gọi là phần tử.<br>
+– Ký hiệu: A = {1; 2; 3} hoặc liệt kê, hoặc nêu tính chất đặc trưng.<br>
+– ∈ (thuộc), ∉ (không thuộc). Tập rỗng ∅ không có phần tử nào.<br><br>
+<b>2. Tập con, giao, hợp</b><br>
+– A ⊂ B: mọi phần tử của A đều thuộc B.<br>
+– A ∩ B: tập hợp các phần tử thuộc cả A và B.<br>
+– A ∪ B: tập hợp các phần tử thuộc A hoặc B.<br><br>
+<b>3. Tập hợp số tự nhiên ℕ</b><br>
+– ℕ = {0; 1; 2; 3; ...}. ℕ* = {1; 2; 3; ...} (không có 0).<br>
+– Biểu diễn trên tia số: 0, 1, 2, 3, ... theo thứ tự từ trái sang phải.<br>
+– So sánh: a < b nếu a nằm bên trái b trên tia số.`,
     questions:[
-      { type:"mc", text:"Câu 1. Cách viết nào biểu diễn tập hợp?", opts:["{1; 2; 3}","(1, 2, 3)","[1, 2, 3]","1, 2, 3"], correct:0, explain:"Tập hợp viết trong dấu ngoặc nhọn { }, các phần tử cách nhau bởi dấu chấm phẩy." },
-      { type:"mc", text:"Câu 2. Tập hợp A = {0; 1; 2; 3} có bao nhiêu phần tử?", opts:["3","4","5","0"], correct:1, explain:"Đếm: 0, 1, 2, 3 → 4 phần tử." },
-      { type:"mc", text:"Câu 3. 2³ bằng bao nhiêu?", opts:["6","8","9","5"], correct:1, explain:"2³ = 2 × 2 × 2 = 8." },
-      { type:"mc", text:"Câu 4. 15 − 3 × 4 = ?", opts:["48","12","3","8"], correct:2, explain:"Nhân trước: 3 × 4 = 12. Rồi trừ: 15 − 12 = 3." },
-      { type:"mc", text:"Câu 5. Số nào sau đây là số tự nhiên?", opts:["−3","1/2","0","−1"], correct:2, explain:"Số tự nhiên: 0, 1, 2, 3, ... Số 0 là số tự nhiên." },
-      { type:"mc", text:"Câu 6. 5⁰ bằng bao nhiêu?", opts:["0","1","5","50"], correct:1, explain:"Quy ước: a⁰ = 1 với mọi a ≠ 0. Vậy 5⁰ = 1." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tập hợp và số tự nhiên:", statements:[
-        { stmt:"0 là số tự nhiên", correct:true },
-        { stmt:"Tập hợp rỗng không có phần tử nào", correct:true },
-        { stmt:"2⁴ = 8", correct:false },
-        { stmt:"Phép nhân thực hiện trước phép cộng", correct:true }
+      {type:"mc", text:"Câu 1. Cách viết nào biểu diễn tập hợp?", opts:["{1; 2; 3}","(1, 2, 3)","[1; 2; 3]","1, 2, 3"], correct:0, explain:"Tập hợp viết trong dấu ngoặc nhọn { }."},
+      {type:"mc", text:"Câu 2. Tập hợp A = {0; 1; 2; 3} có bao nhiêu phần tử?", opts:["3","4","5","0"], correct:1, explain:"Đếm: 0, 1, 2, 3 → 4 phần tử."},
+      {type:"mc", text:"Câu 3. Ký hiệu ∈ nghĩa là:", opts:["Không thuộc","Thuộc","Tập con","Bằng"], correct:1, explain:"∈ nghĩa là thuộc (là phần tử của)."},
+      {type:"mc", text:"Câu 4. Tập rỗng ký hiệu là:", opts:["{ }","∅","Cả A và B","∞"], correct:1, explain:"Tập rỗng ký hiệu ∅, không có phần tử nào."},
+      {type:"mc", text:"Câu 5. Tập hợp ℕ là:", opts:["{1; 2; 3; ...}","{0; 1; 2; 3; ...}","{−1; 0; 1; 2; ...}","{0; 2; 4; 6; ...}"], correct:1, explain:"ℕ = {0; 1; 2; 3; ...} gồm số 0 và các số tự nhiên."},
+      {type:"mc", text:"Câu 6. Tập ℕ* khác ℕ ở chỗ:", opts:["Không có số 1","Không có số 0","Có số âm","Chỉ có số chẵn"], correct:1, explain:"ℕ* = {1; 2; 3; ...} không chứa 0."},
+      {type:"mc", text:"Câu 7. A ⊂ B nghĩa là:", opts:["A bằng B","Mọi phần tử A đều thuộc B","A và B rời nhau","B thuộc A"], correct:1, explain:"A ⊂ B: A là tập con của B."},
+      {type:"mc", text:"Câu 8. A ∩ B là tập gồm:", opts:["Phần tử thuộc A hoặc B","Phần tử thuộc cả A và B","Phần tử thuộc A mà không thuộc B","Tất cả phần tử"], correct:1, explain:"A ∩ B: giao của A và B (thuộc cả hai)."},
+      {type:"mc", text:"Câu 9. A ∪ B là tập gồm:", opts:["Phần tử thuộc A hoặc B","Phần tử thuộc cả A và B","Phần tử thuộc A trừ B","Tập rỗng"], correct:0, explain:"A ∪ B: hợp của A và B (thuộc A hoặc B hoặc cả hai)."},
+      {type:"mc", text:"Câu 10. Trên tia số, số 3 nằm bên nào của số 5?", opts:["Bên phải","Bên trái","Trùng nhau","Phía trên"], correct:1, explain:"3 < 5 nên 3 nằm bên trái 5."},
+      {type:"mc", text:"Câu 11. Số tự nhiên nhỏ nhất là:", opts:["1","0","−1","Không có"], correct:1, explain:"Số tự nhiên nhỏ nhất là 0."},
+      {type:"mc", text:"Câu 12. 5 ∈ {2; 4; 5; 7} đúng hay sai?", opts:["Đúng","Sai","Chưa xác định","Không ký hiệu được"], correct:0, explain:"5 là phần tử của tập {2; 4; 5; 7} → đúng."},
+      {type:"mc", text:"Câu 13. A = {1; 3; 5}, B = {1; 2; 3; 4; 5}. A ⊂ B không?", opts:["Có","Không","Chưa xác định","A = B"], correct:0, explain:"Mọi phần tử 1, 3, 5 của A đều thuộc B → A ⊂ B."},
+      {type:"mc", text:"Câu 14. A = {1; 2; 3}, B = {2; 3; 4}. A ∩ B bằng:", opts:["{2; 3}","{1; 2; 3; 4}","{1; 4}","∅"], correct:0, explain:"Phần tử chung: 2, 3 → A ∩ B = {2; 3}."},
+      {type:"mc", text:"Câu 15. A = {1; 2; 3}, B = {2; 3; 4}. A ∪ B bằng:", opts:["{2; 3}","{1; 2; 3; 4}","{1; 4}","{1; 2; 3}"], correct:1, explain:"Gộp tất cả: {1; 2; 3; 4}."},
+      {type:"mc", text:"Câu 16. Tập A = {x ∈ ℕ | x < 4} viết liệt kê:", opts:["{1; 2; 3}","{0; 1; 2; 3}","{0; 1; 2; 3; 4}","{4}"], correct:1, explain:"x ∈ ℕ, x < 4: x = 0, 1, 2, 3."},
+      {type:"mc", text:"Câu 17. Số phần tử tập B = {x ∈ ℕ | 2 ≤ x ≤ 6}:", opts:["4","5","6","3"], correct:1, explain:"B = {2; 3; 4; 5; 6} → 5 phần tử."},
+      {type:"mc", text:"Câu 18. Cho M = {a; b; c}. Phát biểu nào đúng?", opts:["a ∉ M","M có 2 phần tử","b ∈ M","d ∈ M"], correct:2, explain:"b là phần tử của M → b ∈ M."},
+      {type:"mc", text:"Câu 19. A = {1; 2}, B = {1; 2; 3}. Mệnh đề nào đúng?", opts:["B ⊂ A","A ⊂ B","A = B","A ∩ B = ∅"], correct:1, explain:"Mọi phần tử A đều thuộc B → A ⊂ B."},
+      {type:"mc", text:"Câu 20. Sắp xếp tăng dần: 5, 2, 8, 1:", opts:["1; 2; 5; 8","8; 5; 2; 1","2; 1; 5; 8","1; 5; 2; 8"], correct:0, explain:"Tăng dần: 1 < 2 < 5 < 8."},
+      {type:"mc", text:"Câu 21. Tập C = {x ∈ ℕ | 1 < x < 1} có bao nhiêu phần tử?", opts:["0","1","2","Vô số"], correct:0, explain:"Không có số tự nhiên nào thoả 1 < x < 1 → tập rỗng, 0 phần tử."},
+      {type:"mc", text:"Câu 22. A = {0; 2; 4}, B = {1; 3; 5}. A ∩ B bằng:", opts:["{0; 1; 2; 3; 4; 5}","∅","{0; 5}","{2; 3}"], correct:1, explain:"Không có phần tử chung → A ∩ B = ∅."},
+      {type:"mc", text:"Câu 23. Hai số tự nhiên liên tiếp hơn kém nhau:", opts:["2","1","0","3"], correct:1, explain:"Hai STN liên tiếp hơn kém nhau 1 đơn vị."},
+      {type:"mc", text:"Câu 24. Tập hợp {a; b} và {b; a} là:", opts:["Hai tập khác nhau","Cùng một tập hợp","Tập rỗng","Không so sánh được"], correct:1, explain:"Tập hợp không phân biệt thứ tự → {a; b} = {b; a}."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về tập hợp:", statements:[
+        {stmt:"0 là số tự nhiên", correct:true},
+        {stmt:"Tập rỗng có 1 phần tử", correct:false},
+        {stmt:"Ký hiệu ∉ nghĩa là không thuộc", correct:true},
+        {stmt:"ℕ* chứa số 0", correct:false}
       ], explains:[
-        "Đúng. 0 thuộc tập số tự nhiên ℕ = {0, 1, 2, 3, ...}.",
-        "Đúng. Tập rỗng ký hiệu ∅, không chứa phần tử nào.",
-        "Sai. 2⁴ = 2 × 2 × 2 × 2 = 16, không phải 8.",
-        "Đúng. Thứ tự: lũy thừa → nhân/chia → cộng/trừ."
+        "Đúng. 0 ∈ ℕ.",
+        "Sai. Tập rỗng ∅ không có phần tử nào.",
+        "Đúng. ∉ là không thuộc.",
+        "Sai. ℕ* = {1; 2; 3; ...} không chứa 0."
       ]},
-      { type:"short", text:"Tính 3⁴ = ?", answer:"81", hint:"3 × 3 × 3 × 3", explain:"3⁴ = 3 × 3 × 3 × 3 = 81." },
-      { type:"short", text:"Tính 5 + 3 × 2 = ?", answer:"11", hint:"Nhân trước, cộng sau", explain:"3 × 2 = 6. Rồi 5 + 6 = 11." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"3 ∈ {1; 2; 3; 4}", correct:true},
+        {stmt:"{1; 2} ⊂ {1; 2; 3}", correct:true},
+        {stmt:"Tập {a; a} có 2 phần tử", correct:false},
+        {stmt:"Tập ℕ có hữu hạn phần tử", correct:false}
+      ], explains:[
+        "Đúng. 3 thuộc tập đã cho.",
+        "Đúng. 1 và 2 đều thuộc {1; 2; 3}.",
+        "Sai. {a; a} = {a} chỉ có 1 phần tử.",
+        "Sai. ℕ có vô số phần tử."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). A = {1; 3; 5}, B = {2; 3; 5; 7}:", statements:[
+        {stmt:"A ∩ B = {3; 5}", correct:true},
+        {stmt:"A ∪ B = {1; 2; 3; 5; 7}", correct:true},
+        {stmt:"A ⊂ B", correct:false},
+        {stmt:"1 ∈ B", correct:false}
+      ], explains:[
+        "Đúng. Phần tử chung: 3, 5.",
+        "Đúng. Gộp tất cả: {1; 2; 3; 5; 7}.",
+        "Sai. 1 ∈ A nhưng 1 ∉ B → A không là tập con của B.",
+        "Sai. 1 ∉ {2; 3; 5; 7}."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét các phát biểu về STN:", statements:[
+        {stmt:"Số tự nhiên nhỏ nhất là 0", correct:true},
+        {stmt:"Không có số tự nhiên lớn nhất", correct:true},
+        {stmt:"Hai STN liên tiếp hơn kém nhau 2", correct:false},
+        {stmt:"Trên tia số, số lớn hơn nằm bên phải", correct:true}
+      ], explains:[
+        "Đúng. 0 là STN nhỏ nhất.",
+        "Đúng. Tập ℕ vô hạn.",
+        "Sai. Hơn kém nhau 1.",
+        "Đúng. Thứ tự tăng dần từ trái sang phải."
+      ]},
+      {type:"short", text:"Câu 29. Tập A = {3; 5; 7; 9} có bao nhiêu phần tử?", answer:"4", hint:"Đếm các phần tử", explain:"4 phần tử: 3, 5, 7, 9."},
+      {type:"short", text:"Câu 30. Số tự nhiên liền sau số 99 là bao nhiêu?", answer:"100", hint:"Cộng thêm 1", explain:"99 + 1 = 100."},
+      {type:"short", text:"Câu 31. A = {1; 2; 3}, B = {3; 4; 5}. A ∩ B = {?}. Phần tử đó là?", answer:"3", hint:"Phần tử chung", explain:"Phần tử chung duy nhất: 3."},
+      {type:"short", text:"Câu 32. Tập {x ∈ ℕ | x < 3} có bao nhiêu phần tử?", answer:"3", hint:"x = 0, 1, 2", explain:"{0; 1; 2} → 3 phần tử."}
     ]
   },
-
-  // ==================== CHƯƠNG II: TÍNH CHIA HẾT ====================
+  // ==================== CHỦ ĐỀ 2: PHÉP TÍNH VỚI SỐ TỰ NHIÊN — LŨY THỪA ====================
   {
-    id:"l6_2", emoji:"➗", name:"Tính chia hết trong tập hợp số tự nhiên",
-    desc:"Quan hệ chia hết, dấu hiệu chia hết cho 2, 3, 5, 9, số nguyên tố, ƯCLN, BCNN",
+    id:"l6_2", emoji:"➕", name:"Phép tính với số tự nhiên — Lũy thừa",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Bốn phép tính cơ bản</b><br>
+– Cộng: a + b. Trừ: a − b (a ≥ b). Nhân: a × b. Chia: a : b (b ≠ 0).<br>
+– Phép chia có dư: a = b × q + r (0 ≤ r < b).<br><br>
+<b>2. Lũy thừa với số mũ tự nhiên</b><br>
+– aⁿ = a × a × ... × a (n lần), n ≥ 1. a⁰ = 1 (a ≠ 0). a¹ = a.<br>
+– VD: 2³ = 8, 5² = 25, 10⁴ = 10000.<br><br>
+<b>3. Thứ tự thực hiện phép tính</b><br>
+– Trong ngoặc trước → Lũy thừa → Nhân, chia (trái → phải) → Cộng, trừ (trái → phải).<br>
+– VD: 2 + 3 × 4 = 2 + 12 = 14 (nhân trước).`,
     questions:[
-      { type:"mc", text:"Câu 1. Số nào chia hết cho cả 2 và 5?", opts:["25","30","12","35"], correct:1, explain:"Chia hết cho 2 (chẵn) và 5 (tận cùng 0 hoặc 5) → tận cùng 0. 30 thỏa mãn." },
-      { type:"mc", text:"Câu 2. Số nào là số nguyên tố?", opts:["4","9","7","15"], correct:2, explain:"7 chỉ có 2 ước: 1 và 7 → số nguyên tố." },
-      { type:"mc", text:"Câu 3. ƯCLN(12, 18) = ?", opts:["3","6","12","36"], correct:1, explain:"12 = 2² × 3; 18 = 2 × 3². ƯCLN = 2 × 3 = 6." },
-      { type:"mc", text:"Câu 4. BCNN(4, 6) = ?", opts:["2","12","24","6"], correct:1, explain:"4 = 2²; 6 = 2 × 3. BCNN = 2² × 3 = 12." },
-      { type:"mc", text:"Câu 5. Dấu hiệu chia hết cho 3:", opts:["Chữ số tận cùng chia hết cho 3","Tổng các chữ số chia hết cho 3","Chữ số cuối là 3","Số đó chia hết cho 6"], correct:1, explain:"Một số chia hết cho 3 khi tổng các chữ số chia hết cho 3." },
-      { type:"mc", text:"Câu 6. Số nào là hợp số?", opts:["2","3","9","5"], correct:2, explain:"9 = 3 × 3, có nhiều hơn 2 ước → hợp số." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về chia hết và số nguyên tố:", statements:[
-        { stmt:"12 chia hết cho 3", correct:true },
-        { stmt:"1 là số nguyên tố", correct:false },
-        { stmt:"Mọi số chẵn đều chia hết cho 2", correct:true },
-        { stmt:"BCNN(3, 5) = 8", correct:false }
+      {type:"mc", text:"Câu 1. 15 + 27 bằng:", opts:["32","42","52","41"], correct:1, explain:"15 + 27 = 42."},
+      {type:"mc", text:"Câu 2. 50 − 18 bằng:", opts:["28","32","38","22"], correct:1, explain:"50 − 18 = 32."},
+      {type:"mc", text:"Câu 3. 12 × 5 bằng:", opts:["55","60","65","50"], correct:1, explain:"12 × 5 = 60."},
+      {type:"mc", text:"Câu 4. 84 : 7 bằng:", opts:["11","12","13","14"], correct:1, explain:"84 : 7 = 12."},
+      {type:"mc", text:"Câu 5. 2⁴ bằng:", opts:["8","16","6","24"], correct:1, explain:"2⁴ = 2×2×2×2 = 16."},
+      {type:"mc", text:"Câu 6. 5² bằng:", opts:["10","25","15","52"], correct:1, explain:"5² = 5×5 = 25."},
+      {type:"mc", text:"Câu 7. 10³ bằng:", opts:["30","100","1000","10000"], correct:2, explain:"10³ = 10×10×10 = 1000."},
+      {type:"mc", text:"Câu 8. a⁰ (a ≠ 0) bằng:", opts:["0","a","1","Không xác định"], correct:2, explain:"a⁰ = 1 (với a ≠ 0)."},
+      {type:"mc", text:"Câu 9. Thứ tự phép tính: trong ngoặc trước, rồi đến:", opts:["Cộng trừ","Nhân chia","Lũy thừa","Phép trừ"], correct:2, explain:"Ngoặc → Lũy thừa → Nhân chia → Cộng trừ."},
+      {type:"mc", text:"Câu 10. 3¹ bằng:", opts:["0","1","3","31"], correct:2, explain:"a¹ = a, vậy 3¹ = 3."},
+      {type:"mc", text:"Câu 11. Phép chia có dư: 17 : 5 được thương và dư:", opts:["q = 3, r = 2","q = 2, r = 7","q = 3, r = 3","q = 4, r = 0"], correct:0, explain:"17 = 5×3 + 2. Thương 3, dư 2."},
+      {type:"mc", text:"Câu 12. 7 × 0 bằng:", opts:["7","0","70","1"], correct:1, explain:"Bất kỳ số nào nhân 0 bằng 0."},
+      {type:"mc", text:"Câu 13. 2 + 3 × 4 bằng:", opts:["20","14","24","11"], correct:1, explain:"Nhân trước: 3×4 = 12, rồi 2 + 12 = 14."},
+      {type:"mc", text:"Câu 14. (2 + 3) × 4 bằng:", opts:["14","20","24","11"], correct:1, explain:"Ngoặc trước: 2+3 = 5, rồi 5×4 = 20."},
+      {type:"mc", text:"Câu 15. 3² + 4² bằng:", opts:["25","14","49","7"], correct:0, explain:"9 + 16 = 25."},
+      {type:"mc", text:"Câu 16. 2³ × 2² bằng:", opts:["2⁵ = 32","2⁶ = 64","4⁵","2¹ = 2"], correct:0, explain:"2³ × 2² = 8 × 4 = 32 = 2⁵."},
+      {type:"mc", text:"Câu 17. 100 : 4 + 5 × 3 bằng:", opts:["40","25 + 15 = 40","90","30"], correct:0, explain:"100:4 = 25; 5×3 = 15; 25 + 15 = 40."},
+      {type:"mc", text:"Câu 18. 5 × (8 − 3) + 2² bằng:", opts:["25","29","27","31"], correct:1, explain:"5×5 = 25; 2² = 4; 25 + 4 = 29."},
+      {type:"mc", text:"Câu 19. 45 : 5 − 3 bằng:", opts:["6","9","12","0"], correct:0, explain:"45:5 = 9; 9 − 3 = 6."},
+      {type:"mc", text:"Câu 20. 2⁵ bằng:", opts:["10","25","32","64"], correct:2, explain:"2⁵ = 32."},
+      {type:"mc", text:"Câu 21. Tính: 12 + 4 × (7 − 2):", opts:["32","80","20","52"], correct:0, explain:"7−2 = 5; 4×5 = 20; 12+20 = 32."},
+      {type:"mc", text:"Câu 22. 56 chia 8 dư mấy?", opts:["0","1","2","7"], correct:0, explain:"56 = 8×7 + 0. Dư 0 (chia hết)."},
+      {type:"mc", text:"Câu 23. 3³ bằng:", opts:["9","18","27","81"], correct:2, explain:"3³ = 3×3×3 = 27."},
+      {type:"mc", text:"Câu 24. 1⁵⁰ bằng:", opts:["50","0","1","150"], correct:2, explain:"1 mũ bất kỳ vẫn bằng 1."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"2³ = 8", correct:true},
+        {stmt:"5⁰ = 0", correct:false},
+        {stmt:"Nhân trước cộng", correct:true},
+        {stmt:"a : 0 luôn xác định", correct:false}
       ], explains:[
-        "Đúng. 12 ÷ 3 = 4 (chia hết).",
-        "Sai. 1 không phải số nguyên tố (chỉ có 1 ước).",
-        "Đúng. Định nghĩa số chẵn: chia hết cho 2.",
-        "Sai. BCNN(3, 5) = 15, không phải 8."
+        "Đúng. 2³ = 8.",
+        "Sai. 5⁰ = 1.",
+        "Đúng. Nhân chia trước, cộng trừ sau.",
+        "Sai. Không chia được cho 0."
       ]},
-      { type:"short", text:"ƯCLN(8, 12) = ?", answer:"4", hint:"Phân tích thừa số nguyên tố", explain:"8 = 2³; 12 = 2² × 3. ƯCLN = 2² = 4." },
-      { type:"short", text:"BCNN(3, 5) = ?", answer:"15", hint:"3 và 5 nguyên tố cùng nhau", explain:"3 và 5 nguyên tố cùng nhau → BCNN = 3 × 5 = 15." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"10² = 100", correct:true},
+        {stmt:"a¹ = 1 với mọi a", correct:false},
+        {stmt:"0⁵ = 0", correct:true},
+        {stmt:"Phép chia có dư: r luôn < b", correct:true}
+      ], explains:[
+        "Đúng. 10² = 100.",
+        "Sai. a¹ = a, không phải 1.",
+        "Đúng. 0⁵ = 0.",
+        "Đúng. 0 ≤ r < b."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Tính:", statements:[
+        {stmt:"3 + 5 × 2 = 13", correct:true},
+        {stmt:"(3 + 5) × 2 = 13", correct:false},
+        {stmt:"4² − 6 = 10", correct:true},
+        {stmt:"2 × 3² = 36", correct:false}
+      ], explains:[
+        "Đúng. 5×2 = 10; 3+10 = 13.",
+        "Sai. 8×2 = 16.",
+        "Đúng. 16 − 6 = 10.",
+        "Sai. 2×9 = 18 (lũy thừa trước nhân)."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Phép chia:", statements:[
+        {stmt:"29 : 6, thương 4, dư 5", correct:true},
+        {stmt:"Nếu r = 0 thì a chia hết cho b", correct:true},
+        {stmt:"48 : 6 = 7", correct:false},
+        {stmt:"0 : 5 = 0", correct:true}
+      ], explains:[
+        "Đúng. 29 = 6×4 + 5.",
+        "Đúng. Dư 0 → chia hết.",
+        "Sai. 48 : 6 = 8.",
+        "Đúng. 0 chia cho bất kỳ số nào (≠ 0) bằng 0."
+      ]},
+      {type:"short", text:"Câu 29. 3⁴ = ?", answer:"81", hint:"3×3×3×3", explain:"3⁴ = 81."},
+      {type:"short", text:"Câu 30. 2 + 5 × 6 = ?", answer:"32", hint:"Nhân trước cộng", explain:"5×6 = 30; 2+30 = 32."},
+      {type:"short", text:"Câu 31. (10 + 2) × 3 − 6 = ?", answer:"30", hint:"Ngoặc trước", explain:"12×3 = 36; 36−6 = 30."},
+      {type:"short", text:"Câu 32. 47 chia 9 dư bao nhiêu?", answer:"2", hint:"47 = 9 × ? + r", explain:"47 = 9×5 + 2. Dư 2."}
     ]
   },
-
-  // ==================== CHƯƠNG III: SỐ NGUYÊN ====================
+  // ==================== CHỦ ĐỀ 3: TÍNH CHIA HẾT — ƯỚC VÀ BỘI ====================
   {
-    id:"l6_3", emoji:"🔴", name:"Số nguyên",
-    desc:"Số nguyên âm, dương, giá trị tuyệt đối, cộng – trừ – nhân – chia số nguyên",
+    id:"l6_3", emoji:"➗", name:"Tính chia hết — Ước và bội",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Quan hệ chia hết</b><br>
+– a chia hết cho b (a ⋮ b) nếu tồn tại q sao cho a = b × q.<br>
+– Khi đó b là ước của a, a là bội của b.<br><br>
+<b>2. Dấu hiệu chia hết</b><br>
+– Chia hết cho 2: chữ số tận cùng chẵn (0, 2, 4, 6, 8).<br>
+– Chia hết cho 5: chữ số tận cùng 0 hoặc 5.<br>
+– Chia hết cho 3: tổng các chữ số chia hết cho 3.<br>
+– Chia hết cho 9: tổng các chữ số chia hết cho 9.<br><br>
+<b>3. Số nguyên tố và hợp số</b><br>
+– Số nguyên tố: số tự nhiên > 1, chỉ có 2 ước là 1 và chính nó. VD: 2, 3, 5, 7, 11...<br>
+– Hợp số: số tự nhiên > 1, có nhiều hơn 2 ước. VD: 4, 6, 8, 9...<br>
+– Số 0 và 1 không là số nguyên tố, cũng không là hợp số.<br><br>
+<b>4. Ước, bội, ƯCLN, BCNN</b><br>
+– Ư(a): tập ước của a. B(a): tập bội của a.<br>
+– ƯCLN(a, b): ước chung lớn nhất. BCNN(a, b): bội chung nhỏ nhất.<br>
+– ƯCLN tìm bằng phân tích thừa số nguyên tố, lấy thừa số chung mũ nhỏ nhất.<br>
+– BCNN lấy thừa số chung và riêng, mũ lớn nhất.`,
     questions:[
-      { type:"mc", text:"Câu 1. |−5| = ?", opts:["−5","5","0","−1"], correct:1, explain:"Giá trị tuyệt đối |−5| = 5 (khoảng cách từ −5 đến 0)." },
-      { type:"mc", text:"Câu 2. (−3) + (−7) = ?", opts:["−10","10","4","−4"], correct:0, explain:"Cùng dấu âm: cộng giá trị tuyệt đối, giữ dấu âm. |3| + |7| = 10 → −10." },
-      { type:"mc", text:"Câu 3. 5 − 8 = ?", opts:["3","−3","13","−13"], correct:1, explain:"5 − 8 = 5 + (−8) = −3." },
-      { type:"mc", text:"Câu 4. (−4) × (−3) = ?", opts:["−12","−7","12","7"], correct:2, explain:"Âm × Âm = Dương. 4 × 3 = 12." },
-      { type:"mc", text:"Câu 5. Số đối của −6 là:", opts:["6","−6","0","1/6"], correct:0, explain:"Số đối của −6 là 6 vì (−6) + 6 = 0." },
-      { type:"mc", text:"Câu 6. Sắp xếp tăng dần: −3, 0, −1, 2:", opts:["−3, −1, 0, 2","2, 0, −1, −3","0, −1, −3, 2","−1, −3, 0, 2"], correct:0, explain:"Trên trục số: −3 < −1 < 0 < 2." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số nguyên:", statements:[
-        { stmt:"|−7| = 7", correct:true },
-        { stmt:"(−2) × (−5) = −10", correct:false },
-        { stmt:"0 là số nguyên dương", correct:false },
-        { stmt:"(−3) + 3 = 0", correct:true }
+      {type:"mc", text:"Câu 1. a chia hết cho b nghĩa là:", opts:["a = b × q + r (r ≠ 0)","a = b × q (không dư)","a > b","a < b"], correct:1, explain:"a ⋮ b khi a = b × q (dư 0)."},
+      {type:"mc", text:"Câu 2. Số 24 chia hết cho 2 vì:", opts:["24 là số lẻ","Chữ số tận cùng là 4 (chẵn)","Tổng chữ số = 6","24 > 2"], correct:1, explain:"Tận cùng 4 (chẵn) → chia hết cho 2."},
+      {type:"mc", text:"Câu 3. Dấu hiệu chia hết cho 5:", opts:["Tận cùng chẵn","Tận cùng 0 hoặc 5","Tổng chữ số ⋮ 5","Số > 5"], correct:1, explain:"Tận cùng 0 hoặc 5 → chia hết cho 5."},
+      {type:"mc", text:"Câu 4. Số 123 có chia hết cho 3 không?", opts:["Có","Không","Chưa xác định","Cần thêm ĐK"], correct:0, explain:"1+2+3 = 6, 6 ⋮ 3 → 123 ⋮ 3."},
+      {type:"mc", text:"Câu 5. Số nguyên tố là:", opts:["Số > 1 có đúng 2 ước","Số chia hết cho mọi số","Số chẵn","Số có 1 ước"], correct:0, explain:"SNT > 1 và chỉ có 2 ước: 1 và chính nó."},
+      {type:"mc", text:"Câu 6. Số nào là số nguyên tố?", opts:["4","6","7","9"], correct:2, explain:"7 chỉ có ước 1 và 7 → nguyên tố."},
+      {type:"mc", text:"Câu 7. Số 1 là:", opts:["Số nguyên tố","Hợp số","Không phải SNT cũng không phải hợp số","Số chẵn"], correct:2, explain:"1 không phải SNT (chỉ có 1 ước), cũng không phải hợp số."},
+      {type:"mc", text:"Câu 8. Ước của 12 gồm:", opts:["{1; 2; 3; 4; 6; 12}","{2; 3; 4; 6}","{1; 12}","{12; 24; 36}"], correct:0, explain:"Ư(12) = {1; 2; 3; 4; 6; 12}."},
+      {type:"mc", text:"Câu 9. B(3) bao gồm:", opts:["{1; 3}","{3; 6; 9; 12; ...}","{0; 3; 6; 9; ...}","{3; 9; 27}"], correct:2, explain:"B(3) = {0; 3; 6; 9; 12; ...}."},
+      {type:"mc", text:"Câu 10. ƯCLN là viết tắt của:", opts:["Ước chung lớn nhất","Bội chung nhỏ nhất","Ước chung nhỏ nhất","Bội chung lớn nhất"], correct:0, explain:"ƯCLN = Ước Chung Lớn Nhất."},
+      {type:"mc", text:"Câu 11. Số 2 là số nguyên tố chẵn duy nhất vì:", opts:["2 nhỏ nhất","2 chỉ có ước 1 và 2","Mọi số chẵn khác > 2 chia hết cho 2","Cả B và C"], correct:3, explain:"2 có đúng 2 ước (SNT), và mọi số chẵn > 2 có ước 2 ngoài 1 → hợp số."},
+      {type:"mc", text:"Câu 12. BCNN là viết tắt của:", opts:["Ước chung lớn nhất","Bội chung nhỏ nhất","Bội chung lớn nhất","Ước chung nhỏ nhất"], correct:1, explain:"BCNN = Bội Chung Nhỏ Nhất."},
+      {type:"mc", text:"Câu 13. ƯCLN(12, 18) bằng:", opts:["2","3","6","36"], correct:2, explain:"12 = 2²×3; 18 = 2×3². ƯCLN = 2×3 = 6."},
+      {type:"mc", text:"Câu 14. BCNN(4, 6) bằng:", opts:["2","12","24","6"], correct:1, explain:"4 = 2²; 6 = 2×3. BCNN = 2²×3 = 12."},
+      {type:"mc", text:"Câu 15. Phân tích 18 ra thừa số nguyên tố:", opts:["2 × 9","2 × 3²","3 × 6","6 × 3"], correct:1, explain:"18 = 2 × 3 × 3 = 2 × 3²."},
+      {type:"mc", text:"Câu 16. Số 36 có chia hết cho 9 không?", opts:["Có","Không","Chưa rõ","Cần tính"], correct:0, explain:"3+6 = 9, 9 ⋮ 9 → 36 ⋮ 9."},
+      {type:"mc", text:"Câu 17. Ước chung của 8 và 12:", opts:["{1; 2; 4}","{1; 2; 3; 4}","{2; 4; 8}","{1; 8; 12}"], correct:0, explain:"Ư(8)={1;2;4;8}, Ư(12)={1;2;3;4;6;12}. ƯC = {1;2;4}."},
+      {type:"mc", text:"Câu 18. Bội chung của 3 và 4 nhỏ hơn 20:", opts:["{0; 12}","{12}","{3; 4; 12}","{6; 8; 12}"], correct:0, explain:"BC(3,4) = B(12) = {0; 12; 24; ...}. Nhỏ hơn 20: 0, 12."},
+      {type:"mc", text:"Câu 19. Số nào là hợp số?", opts:["2","3","9","11"], correct:2, explain:"9 = 3² có ước 1, 3, 9 (3 ước) → hợp số."},
+      {type:"mc", text:"Câu 20. ƯCLN(15, 25) bằng:", opts:["5","15","25","75"], correct:0, explain:"15 = 3×5; 25 = 5². ƯCLN = 5."},
+      {type:"mc", text:"Câu 21. BCNN(6, 8) bằng:", opts:["2","14","24","48"], correct:2, explain:"6 = 2×3; 8 = 2³. BCNN = 2³×3 = 24."},
+      {type:"mc", text:"Câu 22. 135 chia hết cho 5 vì:", opts:["1+3+5=9 ⋮ 5","Tận cùng là 5","135 > 5","135 là số lẻ"], correct:1, explain:"Tận cùng 5 → chia hết cho 5."},
+      {type:"mc", text:"Câu 23. Phân tích 60 = :", opts:["2² × 3 × 5","2 × 3 × 10","4 × 15","2 × 30"], correct:0, explain:"60 = 4×15 = 2²×3×5."},
+      {type:"mc", text:"Câu 24. Hai số 8 và 15 có ƯCLN bằng:", opts:["1","3","5","8"], correct:0, explain:"8 = 2³; 15 = 3×5. Không có thừa số chung → ƯCLN = 1 (nguyên tố cùng nhau)."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Số chia hết cho 2 gọi là số chẵn", correct:true},
+        {stmt:"Số 0 là số nguyên tố", correct:false},
+        {stmt:"Dấu hiệu ⋮ 3: tổng chữ số ⋮ 3", correct:true},
+        {stmt:"Mọi số chẵn đều là hợp số", correct:false}
       ], explains:[
-        "Đúng. |−7| = 7.",
-        "Sai. Âm × Âm = Dương → (−2) × (−5) = 10.",
-        "Sai. 0 không là số nguyên dương cũng không là số nguyên âm.",
-        "Đúng. Hai số đối nhau cộng lại bằng 0."
+        "Đúng. Số chẵn ⋮ 2.",
+        "Sai. 0 không phải SNT.",
+        "Đúng. Đây là dấu hiệu chia hết cho 3.",
+        "Sai. Số 2 chẵn nhưng là số nguyên tố."
       ]},
-      { type:"short", text:"Tính (−8) + 3 = ?", answer:"-5", hint:"Khác dấu: lấy hiệu, giữ dấu số lớn hơn", explain:"Khác dấu: |8| − |3| = 5, giữ dấu âm → −5." },
-      { type:"short", text:"|−12| = ?", answer:"12", hint:"Khoảng cách đến 0 trên trục số", explain:"|−12| = 12." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Ước của 6 là {1; 2; 3; 6}", correct:true},
+        {stmt:"0 là bội của mọi số", correct:true},
+        {stmt:"ƯCLN(a, b) luôn ≤ a và ≤ b", correct:true},
+        {stmt:"BCNN(a, b) có thể nhỏ hơn a", correct:false}
+      ], explains:[
+        "Đúng. 6 = 1×6 = 2×3.",
+        "Đúng. 0 = a×0 nên 0 là bội của mọi số.",
+        "Đúng. ƯCLN không vượt quá số nào.",
+        "Sai. BCNN(a,b) ≥ max(a,b)."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cho 24 = 2³ × 3 và 36 = 2² × 3²:", statements:[
+        {stmt:"ƯCLN(24, 36) = 2² × 3 = 12", correct:true},
+        {stmt:"BCNN(24, 36) = 2³ × 3² = 72", correct:true},
+        {stmt:"24 và 36 nguyên tố cùng nhau", correct:false},
+        {stmt:"12 là ước chung của 24 và 36", correct:true}
+      ], explains:[
+        "Đúng. Thừa số chung mũ nhỏ nhất: 2²×3 = 12.",
+        "Đúng. Thừa số chung+riêng mũ lớn nhất: 2³×3² = 72.",
+        "Sai. ƯCLN = 12 ≠ 1 → không nguyên tố cùng nhau.",
+        "Đúng. 24:12 = 2, 36:12 = 3."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Dấu hiệu chia hết:", statements:[
+        {stmt:"450 ⋮ 5 vì tận cùng là 0", correct:true},
+        {stmt:"333 ⋮ 9 vì 3+3+3 = 9", correct:true},
+        {stmt:"124 ⋮ 3 vì 1+2+4 = 7", correct:false},
+        {stmt:"Số ⋮ 2 và ⋮ 3 thì ⋮ 6", correct:true}
+      ], explains:[
+        "Đúng. Tận cùng 0 → ⋮ 5.",
+        "Đúng. Tổng = 9 ⋮ 9 → ⋮ 9 (và ⋮ 3).",
+        "Sai. 7 không ⋮ 3 → 124 không ⋮ 3.",
+        "Đúng. ⋮ 2 và ⋮ 3 → ⋮ 6."
+      ]},
+      {type:"short", text:"Câu 29. Số ước của 10 là bao nhiêu?", answer:"4", hint:"Ư(10) = {1; 2; 5; 10}", explain:"4 ước: 1, 2, 5, 10."},
+      {type:"short", text:"Câu 30. ƯCLN(8, 12) = ?", answer:"4", hint:"8=2³, 12=2²×3", explain:"ƯCLN = 2² = 4."},
+      {type:"short", text:"Câu 31. BCNN(4, 6) = ?", answer:"12", hint:"4=2², 6=2×3", explain:"BCNN = 2²×3 = 12."},
+      {type:"short", text:"Câu 32. Số nguyên tố nhỏ nhất là?", answer:"2", hint:"SNT nhỏ nhất", explain:"2 là SNT nhỏ nhất."}
     ]
   },
-
-  // ==================== CHƯƠNG IV: HÌNH PHẲNG TRONG THỰC TIỄN ====================
+  // ==================== CHỦ ĐỀ 4: SỐ NGUYÊN ====================
   {
-    id:"l6_4", emoji:"🔷", name:"Một số hình phẳng trong thực tiễn",
-    desc:"Tam giác đều, hình vuông, hình lục giác đều, hình chữ nhật, hình thoi, chu vi và diện tích",
+    id:"l6_4", emoji:"🔴", name:"Số nguyên",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Số nguyên âm</b><br>
+– Số nguyên âm: −1, −2, −3, ... Biểu thị nhiệt độ dưới 0, nợ, dưới mực nước biển...<br><br>
+<b>2. Tập hợp số nguyên ℤ</b><br>
+– ℤ = {...; −3; −2; −1; 0; 1; 2; 3; ...}.<br>
+– Gồm: số nguyên âm, số 0, số nguyên dương.<br><br>
+<b>3. Thứ tự — Biểu diễn trên trục số</b><br>
+– Trục số: số nguyên dương bên phải 0, số nguyên âm bên trái 0.<br>
+– Số bên trái nhỏ hơn số bên phải. VD: −3 < −1 < 0 < 2.<br><br>
+<b>4. Giá trị tuyệt đối</b><br>
+– |a| = a nếu a ≥ 0; |a| = −a nếu a < 0.<br>
+– |a| là khoảng cách từ a đến 0. VD: |−5| = 5, |3| = 3.<br><br>
+<b>5. Số đối</b><br>
+– Số đối của a là −a. a + (−a) = 0. VD: số đối của 3 là −3.`,
     questions:[
-      { type:"mc", text:"Câu 1. Hình vuông cạnh 5cm có chu vi:", opts:["10 cm","15 cm","20 cm","25 cm"], correct:2, explain:"Chu vi hình vuông = 4 × cạnh = 4 × 5 = 20 cm." },
-      { type:"mc", text:"Câu 2. Diện tích hình chữ nhật 8cm × 5cm:", opts:["13 cm²","26 cm²","40 cm²","80 cm²"], correct:2, explain:"S = dài × rộng = 8 × 5 = 40 cm²." },
-      { type:"mc", text:"Câu 3. Tam giác đều có:", opts:["3 cạnh bằng nhau","2 cạnh bằng nhau","3 góc khác nhau","1 góc vuông"], correct:0, explain:"Tam giác đều: 3 cạnh bằng nhau và 3 góc bằng nhau (= 60°)." },
-      { type:"mc", text:"Câu 4. Hình lục giác đều có bao nhiêu cạnh?", opts:["4","5","6","8"], correct:2, explain:"Lục giác = 6 cạnh." },
-      { type:"mc", text:"Câu 5. Chu vi hình chữ nhật 6cm × 4cm:", opts:["10 cm","20 cm","24 cm","48 cm"], correct:1, explain:"Chu vi = 2 × (dài + rộng) = 2 × (6 + 4) = 20 cm." },
-      { type:"mc", text:"Câu 6. Hình vuông cạnh 3cm có diện tích:", opts:["6 cm²","9 cm²","12 cm²","3 cm²"], correct:1, explain:"S = cạnh² = 3² = 9 cm²." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về hình phẳng:", statements:[
-        { stmt:"Hình vuông có 4 cạnh bằng nhau", correct:true },
-        { stmt:"Tam giác đều có mỗi góc bằng 90°", correct:false },
-        { stmt:"Chu vi hình chữ nhật = 2 × (dài + rộng)", correct:true },
-        { stmt:"Hình thoi có 4 góc vuông", correct:false }
+      {type:"mc", text:"Câu 1. Số nào là số nguyên âm?", opts:["5","0","−3","1/2"], correct:2, explain:"−3 là số nguyên âm."},
+      {type:"mc", text:"Câu 2. Tập hợp ℤ gồm:", opts:["Số tự nhiên","Số nguyên âm, 0, số nguyên dương","Chỉ số dương","Chỉ số âm"], correct:1, explain:"ℤ = {...;−2;−1;0;1;2;...}."},
+      {type:"mc", text:"Câu 3. Trên trục số, số nguyên âm nằm ở:", opts:["Bên phải 0","Bên trái 0","Phía trên 0","Trùng 0"], correct:1, explain:"Số nguyên âm bên trái 0."},
+      {type:"mc", text:"Câu 4. So sánh: −5 □ −2:", opts:["−5 > −2","−5 < −2","−5 = −2","Không so sánh"], correct:1, explain:"−5 nằm bên trái −2 trên trục số → −5 < −2."},
+      {type:"mc", text:"Câu 5. |−7| bằng:", opts:["−7","7","0","−14"], correct:1, explain:"|−7| = 7 (khoảng cách từ −7 đến 0)."},
+      {type:"mc", text:"Câu 6. |0| bằng:", opts:["−1","0","1","Không xác định"], correct:1, explain:"|0| = 0."},
+      {type:"mc", text:"Câu 7. Số đối của 4 là:", opts:["4","−4","1/4","0"], correct:1, explain:"Số đối của 4 là −4 vì 4 + (−4) = 0."},
+      {type:"mc", text:"Câu 8. Số đối của −6 là:", opts:["−6","6","0","−12"], correct:1, explain:"Số đối của −6 là 6."},
+      {type:"mc", text:"Câu 9. Nhiệt độ −5°C nghĩa là:", opts:["5 độ trên 0","5 độ dưới 0","Không có nhiệt","50 độ"], correct:1, explain:"−5°C = 5 độ dưới 0°C."},
+      {type:"mc", text:"Câu 10. Số 0 là:", opts:["Số nguyên dương","Số nguyên âm","Không âm không dương","Không phải số nguyên"], correct:2, explain:"0 không dương cũng không âm."},
+      {type:"mc", text:"Câu 11. Sắp xếp tăng dần: −3, 1, −1, 0:", opts:["−3; −1; 0; 1","−1; −3; 0; 1","0; −1; −3; 1","1; 0; −1; −3"], correct:0, explain:"−3 < −1 < 0 < 1."},
+      {type:"mc", text:"Câu 12. |5| bằng:", opts:["−5","5","0","10"], correct:1, explain:"|5| = 5."},
+      {type:"mc", text:"Câu 13. Số nguyên x thoả |x| = 4:", opts:["x = 4","x = −4","x = 4 hoặc x = −4","x = 0"], correct:2, explain:"|x| = 4 → x = 4 hoặc x = −4."},
+      {type:"mc", text:"Câu 14. So sánh: −10 □ −3:", opts:[">","<","=","≥"], correct:1, explain:"−10 < −3 (số âm có giá trị tuyệt đối lớn hơn thì nhỏ hơn)."},
+      {type:"mc", text:"Câu 15. Số nguyên nằm giữa −2 và 3:", opts:["{−1; 0; 1; 2}","{−2; −1; 0; 1; 2; 3}","{0; 1; 2}","{−1; 0; 1}"], correct:0, explain:"−2 < x < 3: x = −1, 0, 1, 2."},
+      {type:"mc", text:"Câu 16. |−9| + |3| bằng:", opts:["6","12","−6","−12"], correct:1, explain:"9 + 3 = 12."},
+      {type:"mc", text:"Câu 17. Tìm x: |x| = 0:", opts:["x = 1","x = −1","x = 0","Không có x"], correct:2, explain:"|0| = 0 → x = 0."},
+      {type:"mc", text:"Câu 18. Số đối của số đối của 5 là:", opts:["5","−5","0","10"], correct:0, explain:"Số đối của 5 là −5, số đối của −5 là 5."},
+      {type:"mc", text:"Câu 19. Trong các số −4, −1, 0, 3, 5, số nhỏ nhất:", opts:["0","−1","−4","5"], correct:2, explain:"−4 nhỏ nhất."},
+      {type:"mc", text:"Câu 20. Trong các số −4, −1, 0, 3, 5, số lớn nhất:", opts:["0","3","5","−4"], correct:2, explain:"5 lớn nhất."},
+      {type:"mc", text:"Câu 21. Có bao nhiêu số nguyên x thoả −3 ≤ x ≤ 2?", opts:["5","6","4","7"], correct:1, explain:"x = −3,−2,−1,0,1,2 → 6 số."},
+      {type:"mc", text:"Câu 22. |−a| = |a| đúng không?", opts:["Luôn đúng","Luôn sai","Đúng khi a > 0","Đúng khi a = 0"], correct:0, explain:"|−a| = |a| luôn đúng vì cùng khoảng cách đến 0."},
+      {type:"mc", text:"Câu 23. Số nguyên a > 0 thì a là:", opts:["Số nguyên âm","Số nguyên dương","Số 0","Phân số"], correct:1, explain:"a > 0 → a là số nguyên dương."},
+      {type:"mc", text:"Câu 24. Tổng a + (−a) luôn bằng:", opts:["a","−a","0","2a"], correct:2, explain:"Số cộng số đối bằng 0."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"−3 là số nguyên âm", correct:true},
+        {stmt:"0 là số nguyên dương", correct:false},
+        {stmt:"|−5| = 5", correct:true},
+        {stmt:"Số đối của 0 là 0", correct:true}
       ], explains:[
-        "Đúng. Hình vuông có 4 cạnh bằng nhau và 4 góc vuông.",
-        "Sai. Tam giác đều có mỗi góc bằng 60°, không phải 90°.",
-        "Đúng. Công thức chu vi hình chữ nhật.",
-        "Sai. Hình thoi có 4 cạnh bằng nhau nhưng các góc không nhất thiết vuông."
+        "Đúng. −3 < 0 → nguyên âm.",
+        "Sai. 0 không dương không âm.",
+        "Đúng. |−5| = 5.",
+        "Đúng. 0 + 0 = 0."
       ]},
-      { type:"short", text:"Hình vuông cạnh 7cm, diện tích = ? cm²", answer:"49", hint:"S = cạnh × cạnh", explain:"S = 7 × 7 = 49 cm²." },
-      { type:"short", text:"Hình chữ nhật 10cm × 6cm, chu vi = ? cm", answer:"32", hint:"C = 2 × (dài + rộng)", explain:"C = 2 × (10 + 6) = 32 cm." }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). So sánh:", statements:[
+        {stmt:"−7 < −2", correct:true},
+        {stmt:"−1 > 0", correct:false},
+        {stmt:"Mọi số nguyên âm đều nhỏ hơn 0", correct:true},
+        {stmt:"|−3| < |2|", correct:false}
+      ], explains:[
+        "Đúng. −7 bên trái −2.",
+        "Sai. −1 < 0.",
+        "Đúng. Định nghĩa số nguyên âm.",
+        "Sai. |−3| = 3 > 2 = |2|."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Giá trị tuyệt đối:", statements:[
+        {stmt:"|a| ≥ 0 với mọi a", correct:true},
+        {stmt:"|−10| = −10", correct:false},
+        {stmt:"|a| = a khi a ≥ 0", correct:true},
+        {stmt:"Nếu |x| = 3 thì x chỉ bằng 3", correct:false}
+      ], explains:[
+        "Đúng. GTTĐ luôn ≥ 0.",
+        "Sai. |−10| = 10.",
+        "Đúng. Khi a ≥ 0, |a| = a.",
+        "Sai. x = 3 hoặc x = −3."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Tập hợp số nguyên:", statements:[
+        {stmt:"ℤ chứa cả số nguyên âm và dương", correct:true},
+        {stmt:"ℕ ⊂ ℤ", correct:true},
+        {stmt:"Số nguyên âm lớn nhất là −1", correct:true},
+        {stmt:"Không có số nguyên dương nhỏ nhất", correct:false}
+      ], explains:[
+        "Đúng. ℤ = {...;−2;−1;0;1;2;...}.",
+        "Đúng. Mọi STN đều là số nguyên.",
+        "Đúng. −1 > −2 > −3 > ...",
+        "Sai. Số nguyên dương nhỏ nhất là 1."
+      ]},
+      {type:"short", text:"Câu 29. |−8| = ?", answer:"8", hint:"Khoảng cách đến 0", explain:"|−8| = 8."},
+      {type:"short", text:"Câu 30. Số đối của −7 là?", answer:"7", hint:"−7 + ? = 0", explain:"Số đối của −7 là 7."},
+      {type:"short", text:"Câu 31. Có bao nhiêu số nguyên x thoả −2 < x < 4?", answer:"5", hint:"x = −1, 0, 1, 2, 3", explain:"5 số: −1, 0, 1, 2, 3."},
+      {type:"short", text:"Câu 32. |x| = 6. Tổng các giá trị x bằng?", answer:"0", hint:"x = 6 hoặc x = −6", explain:"6 + (−6) = 0."}
     ]
   },
-
-  // ==================== CHƯƠNG V: TÍNH ĐỐI XỨNG ====================
+  // ==================== CHỦ ĐỀ 5: PHÉP TÍNH VỚI SỐ NGUYÊN ====================
   {
-    id:"l6_5", emoji:"🦋", name:"Tính đối xứng của hình phẳng",
-    desc:"Hình có trục đối xứng, hình có tâm đối xứng, nhận biết đối xứng trong tự nhiên",
+    id:"l6_5", emoji:"⚡", name:"Phép tính với số nguyên",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Cộng hai số nguyên</b><br>
+– Cùng dấu: cộng GTTĐ, giữ dấu chung. VD: (−3)+(−5) = −8.<br>
+– Khác dấu: trừ GTTĐ (lớn trừ nhỏ), lấy dấu số có GTTĐ lớn hơn. VD: (−7)+4 = −3.<br><br>
+<b>2. Trừ hai số nguyên</b><br>
+– a − b = a + (−b). VD: 3 − 7 = 3 + (−7) = −4.<br><br>
+<b>3. Nhân hai số nguyên</b><br>
+– Cùng dấu → tích dương. VD: (−2)×(−3) = 6.<br>
+– Khác dấu → tích âm. VD: (−4)×5 = −20.<br>
+– Nhân với 0 = 0.<br><br>
+<b>4. Chia hai số nguyên</b><br>
+– Cùng dấu → thương dương. Khác dấu → thương âm.<br>
+– VD: (−12):(−3) = 4; (−12):3 = −4.<br><br>
+<b>5. Tính chất phép cộng, nhân</b><br>
+– Giao hoán: a + b = b + a; a × b = b × a.<br>
+– Kết hợp: (a + b) + c = a + (b + c).<br>
+– Phân phối: a × (b + c) = a × b + a × c.`,
     questions:[
-      { type:"mc", text:"Câu 1. Hình nào có trục đối xứng?", opts:["Hình bình hành","Tam giác đều","Hình thang thường","Tam giác thường"], correct:1, explain:"Tam giác đều có 3 trục đối xứng (qua đỉnh vuông góc cạnh đối)." },
-      { type:"mc", text:"Câu 2. Hình tròn có bao nhiêu trục đối xứng?", opts:["1","2","4","Vô số"], correct:3, explain:"Hình tròn có vô số trục đối xứng (mỗi đường kính là 1 trục)." },
-      { type:"mc", text:"Câu 3. Hình vuông có bao nhiêu trục đối xứng?", opts:["1","2","4","8"], correct:2, explain:"Hình vuông có 4 trục đối xứng (2 trục qua trung điểm cạnh, 2 đường chéo)." },
-      { type:"mc", text:"Câu 4. Hình nào có tâm đối xứng?", opts:["Tam giác đều","Hình bình hành","Hình thang cân","Tam giác cân"], correct:1, explain:"Hình bình hành có tâm đối xứng là giao điểm 2 đường chéo." },
-      { type:"mc", text:"Câu 5. Chữ cái nào có trục đối xứng?", opts:["F","G","A","R"], correct:2, explain:"Chữ A có trục đối xứng dọc chia đôi chữ cái." },
-      { type:"mc", text:"Câu 6. Hình chữ nhật có bao nhiêu trục đối xứng?", opts:["1","2","3","4"], correct:1, explain:"Hình chữ nhật có 2 trục đối xứng (qua trung điểm 2 cặp cạnh đối)." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về đối xứng:", statements:[
-        { stmt:"Tam giác đều có 3 trục đối xứng", correct:true },
-        { stmt:"Hình bình hành có trục đối xứng", correct:false },
-        { stmt:"Hình tròn có tâm đối xứng là tâm O", correct:true },
-        { stmt:"Hình thang cân có trục đối xứng", correct:true }
+      {type:"mc", text:"Câu 1. (−3) + (−5) bằng:", opts:["8","−8","2","−2"], correct:1, explain:"Cùng âm: −(3+5) = −8."},
+      {type:"mc", text:"Câu 2. (−7) + 4 bằng:", opts:["−3","3","−11","11"], correct:0, explain:"Khác dấu: −(7−4) = −3 (lấy dấu số GTTĐ lớn hơn)."},
+      {type:"mc", text:"Câu 3. 5 + (−2) bằng:", opts:["−3","3","7","−7"], correct:1, explain:"Khác dấu: 5−2 = 3 (dương vì 5 > 2)."},
+      {type:"mc", text:"Câu 4. 3 − 7 bằng:", opts:["4","−4","10","−10"], correct:1, explain:"3 − 7 = 3 + (−7) = −4."},
+      {type:"mc", text:"Câu 5. (−4) × (−3) bằng:", opts:["−12","12","−7","7"], correct:1, explain:"Cùng dấu → dương: 4×3 = 12."},
+      {type:"mc", text:"Câu 6. (−5) × 6 bằng:", opts:["30","−30","11","−11"], correct:1, explain:"Khác dấu → âm: −(5×6) = −30."},
+      {type:"mc", text:"Câu 7. (−12) : (−3) bằng:", opts:["−4","4","−9","9"], correct:1, explain:"Cùng dấu → dương: 12:3 = 4."},
+      {type:"mc", text:"Câu 8. (−15) : 5 bằng:", opts:["3","−3","−10","10"], correct:1, explain:"Khác dấu → âm: −(15:5) = −3."},
+      {type:"mc", text:"Câu 9. a − b = a + (−b). Đây gọi là quy tắc:", opts:["Cộng số đối","Trừ thành cộng","Đổi dấu","Cả A, B, C"], correct:3, explain:"Trừ một số = cộng số đối của nó."},
+      {type:"mc", text:"Câu 10. 0 × (−8) bằng:", opts:["8","−8","0","Không xác định"], correct:2, explain:"Bất kỳ số nào nhân 0 bằng 0."},
+      {type:"mc", text:"Câu 11. Tích hai số nguyên cùng dấu thì:", opts:["Âm","Dương","Bằng 0","Không xác định"], correct:1, explain:"Cùng dấu → tích dương."},
+      {type:"mc", text:"Câu 12. Tích hai số nguyên khác dấu thì:", opts:["Dương","Âm","Bằng 0","Không xác định"], correct:1, explain:"Khác dấu → tích âm."},
+      {type:"mc", text:"Câu 13. (−8) + 8 bằng:", opts:["16","−16","0","8"], correct:2, explain:"Hai số đối nhau cộng lại bằng 0."},
+      {type:"mc", text:"Câu 14. (−2) × (−3) × (−1) bằng:", opts:["6","−6","5","−5"], correct:1, explain:"(−2)×(−3) = 6; 6×(−1) = −6. (Tích 3 số âm → âm.)"},
+      {type:"mc", text:"Câu 15. (−10) − (−3) bằng:", opts:["−13","−7","7","13"], correct:1, explain:"−10 − (−3) = −10 + 3 = −7."},
+      {type:"mc", text:"Câu 16. 4 × (−5) + 4 × 3 bằng:", opts:["−8","−32","8","32"], correct:0, explain:"4×(−5+3) = 4×(−2) = −8. (Phân phối)"},
+      {type:"mc", text:"Câu 17. (−6)² bằng:", opts:["−36","36","−12","12"], correct:1, explain:"(−6)² = (−6)×(−6) = 36."},
+      {type:"mc", text:"Câu 18. −6² bằng:", opts:["36","−36","12","−12"], correct:1, explain:"−6² = −(6²) = −36 (lũy thừa trước dấu âm)."},
+      {type:"mc", text:"Câu 19. (−1)¹⁰ bằng:", opts:["−1","1","10","−10"], correct:1, explain:"(−1) mũ chẵn = 1."},
+      {type:"mc", text:"Câu 20. (−1)⁷ bằng:", opts:["1","−1","7","−7"], correct:1, explain:"(−1) mũ lẻ = −1."},
+      {type:"mc", text:"Câu 21. (−3) + (−4) + 7 bằng:", opts:["−14","0","14","−7"], correct:1, explain:"−3 + (−4) = −7; −7 + 7 = 0."},
+      {type:"mc", text:"Câu 22. (−20) : 4 + 3 bằng:", opts:["−2","−5","2","−8"], correct:0, explain:"−20:4 = −5; −5+3 = −2."},
+      {type:"mc", text:"Câu 23. Tìm x: x + 5 = −3:", opts:["2","8","−8","−2"], correct:2, explain:"x = −3 − 5 = −8."},
+      {type:"mc", text:"Câu 24. Tìm x: (−4) × x = 20:", opts:["5","−5","−80","80"], correct:1, explain:"x = 20:(−4) = −5."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Phép cộng số nguyên:", statements:[
+        {stmt:"(−3)+(−2) = −5", correct:true},
+        {stmt:"5+(−8) = 3", correct:false},
+        {stmt:"a + (−a) = 0", correct:true},
+        {stmt:"(−4)+0 = −4", correct:true}
       ], explains:[
-        "Đúng. Tam giác đều có 3 trục đối xứng.",
-        "Sai. Hình bình hành có TÂM đối xứng, KHÔNG có trục đối xứng.",
-        "Đúng. Tâm đối xứng của hình tròn chính là tâm O.",
-        "Đúng. Hình thang cân có 1 trục đối xứng qua trung điểm 2 đáy."
+        "Đúng. Cùng âm: −(3+2) = −5.",
+        "Sai. 5+(−8) = −3.",
+        "Đúng. Cộng số đối bằng 0.",
+        "Đúng. Cộng 0 giữ nguyên."
       ]},
-      { type:"short", text:"Hình vuông có bao nhiêu trục đối xứng?", answer:"4", hint:"Đếm: 2 trục qua cạnh + 2 đường chéo", explain:"4 trục: 2 qua trung điểm cạnh đối + 2 đường chéo." },
-      { type:"short", text:"Tam giác đều có bao nhiêu trục đối xứng?", answer:"3", hint:"Mỗi đường cao là 1 trục", explain:"3 trục, mỗi trục đi qua 1 đỉnh và trung điểm cạnh đối." }
-    ]
-  },
-
-  // ==================== CHƯƠNG VI: PHÂN SỐ ====================
-  {
-    id:"l6_6", emoji:"🍕", name:"Phân số",
-    desc:"Phân số, phân số bằng nhau, rút gọn, quy đồng, so sánh, cộng – trừ – nhân – chia phân số",
-    questions:[
-      { type:"mc", text:"Câu 1. Phân số 2/4 rút gọn thành:", opts:["1/4","1/2","2/2","4/8"], correct:1, explain:"2/4 = (2÷2)/(4÷2) = 1/2." },
-      { type:"mc", text:"Câu 2. 1/3 + 1/6 = ?", opts:["2/9","1/2","1/6","2/3"], correct:1, explain:"Quy đồng: 1/3 = 2/6. Rồi 2/6 + 1/6 = 3/6 = 1/2." },
-      { type:"mc", text:"Câu 3. 3/4 × 2/5 = ?", opts:["5/9","6/20","3/10","5/20"], correct:2, explain:"Nhân tử với tử, mẫu với mẫu: (3×2)/(4×5) = 6/20 = 3/10." },
-      { type:"mc", text:"Câu 4. 2/3 ÷ 4/5 = ?", opts:["8/15","5/6","10/12","6/20"], correct:1, explain:"Chia = nhân nghịch đảo: 2/3 × 5/4 = 10/12 = 5/6." },
-      { type:"mc", text:"Câu 5. Phân số nào lớn hơn 1?", opts:["3/5","2/7","5/3","1/2"], correct:2, explain:"5/3 ≈ 1,67 > 1 (tử > mẫu dương)." },
-      { type:"mc", text:"Câu 6. So sánh 3/7 và 2/7:", opts:["3/7 < 2/7","3/7 = 2/7","3/7 > 2/7","Không so sánh được"], correct:2, explain:"Cùng mẫu 7: tử 3 > 2 → 3/7 > 2/7." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về phân số:", statements:[
-        { stmt:"2/4 = 1/2", correct:true },
-        { stmt:"3/5 > 4/5", correct:false },
-        { stmt:"Muốn cộng 2 phân số khác mẫu, phải quy đồng mẫu", correct:true },
-        { stmt:"0/5 = 0", correct:true }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Phép nhân, chia:", statements:[
+        {stmt:"(−3)×(−4) = 12", correct:true},
+        {stmt:"(−6)×5 = 30", correct:false},
+        {stmt:"(−18):(−6) = 3", correct:true},
+        {stmt:"0:(−5) = 0", correct:true}
       ], explains:[
-        "Đúng. 2/4 = 1/2 (chia cả tử và mẫu cho 2).",
-        "Sai. Cùng mẫu 5: tử 3 < 4 → 3/5 < 4/5.",
-        "Đúng. Cần quy đồng mẫu rồi mới cộng tử.",
-        "Đúng. 0 chia cho bất kỳ số nào ≠ 0 đều bằng 0."
+        "Đúng. Cùng âm → dương: 12.",
+        "Sai. Khác dấu → âm: −30.",
+        "Đúng. Cùng âm → dương: 3.",
+        "Đúng. 0 chia cho số nào cũng = 0."
       ]},
-      { type:"short", text:"Tính 2/5 + 3/5 = a/5. Tìm a = ?", answer:"5", hint:"Cùng mẫu: cộng tử", explain:"2/5 + 3/5 = (2+3)/5 = 5/5 = 1. Nhưng dạng a/5 thì a = 5." },
-      { type:"short", text:"Rút gọn 6/8 = a/4. Tìm a = ?", answer:"3", hint:"Chia cả tử và mẫu cho ƯCLN", explain:"6/8 = (6÷2)/(8÷2) = 3/4. Vậy a = 3." }
-    ]
-  },
-
-  // ==================== CHƯƠNG VII: SỐ THẬP PHÂN ====================
-  {
-    id:"l6_7", emoji:"🔵", name:"Số thập phân",
-    desc:"Số thập phân, phép tính với số thập phân, làm tròn, ước lượng, tỉ số phần trăm",
-    questions:[
-      { type:"mc", text:"Câu 1. 0,75 viết dưới dạng phân số là:", opts:["3/4","7/5","3/5","7/10"], correct:0, explain:"0,75 = 75/100 = 3/4." },
-      { type:"mc", text:"Câu 2. 3,5 + 2,8 = ?", opts:["5,3","6,3","6,13","5,13"], correct:1, explain:"3,5 + 2,8 = 6,3." },
-      { type:"mc", text:"Câu 3. 25% của 200 bằng:", opts:["25","50","100","75"], correct:1, explain:"25% × 200 = (25/100) × 200 = 50." },
-      { type:"mc", text:"Câu 4. Làm tròn 3,47 đến hàng phần mười:", opts:["3,4","3,5","3,0","4,0"], correct:1, explain:"Chữ số hàng phần trăm = 7 ≥ 5 → làm tròn lên: 3,5." },
-      { type:"mc", text:"Câu 5. 1,2 × 0,5 = ?", opts:["0,6","6","0,06","1,7"], correct:0, explain:"1,2 × 0,5 = 0,6." },
-      { type:"mc", text:"Câu 6. 0,5 viết thành phân số:", opts:["5/100","1/2","5/1","1/5"], correct:1, explain:"0,5 = 5/10 = 1/2." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số thập phân:", statements:[
-        { stmt:"0,25 = 1/4", correct:true },
-        { stmt:"50% = 0,5", correct:true },
-        { stmt:"3,456 làm tròn đến hàng phần mười = 3,4", correct:false },
-        { stmt:"10% của 80 = 8", correct:true }
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Tính:", statements:[
+        {stmt:"5 − 8 = −3", correct:true},
+        {stmt:"(−7) − (−3) = −4", correct:true},
+        {stmt:"(−2)³ = 8", correct:false},
+        {stmt:"(−1)¹⁰⁰ = 1", correct:true}
       ], explains:[
-        "Đúng. 0,25 = 25/100 = 1/4.",
-        "Đúng. 50% = 50/100 = 0,5.",
-        "Sai. Chữ số phần trăm = 5 → làm tròn lên: 3,5.",
-        "Đúng. 10% × 80 = 8."
+        "Đúng. 5−8 = −3.",
+        "Đúng. −7+3 = −4.",
+        "Sai. (−2)³ = −8.",
+        "Đúng. (−1) mũ chẵn = 1."
       ]},
-      { type:"short", text:"20% của 150 = ?", answer:"30", hint:"20/100 × 150", explain:"20% × 150 = (20/100) × 150 = 30." },
-      { type:"short", text:"0,6 + 0,4 = ?", answer:"1", hint:"Cộng trực tiếp", explain:"0,6 + 0,4 = 1,0 = 1." }
-    ]
-  },
-
-  // ==================== CHƯƠNG VIII: NHỮNG HÌNH HỌC CƠ BẢN ====================
-  {
-    id:"l6_8", emoji:"📐", name:"Những hình học cơ bản",
-    desc:"Điểm, đường thẳng, tia, đoạn thẳng, trung điểm, góc, số đo góc",
-    questions:[
-      { type:"mc", text:"Câu 1. Qua hai điểm phân biệt xác định được bao nhiêu đường thẳng?", opts:["0","1","2","Vô số"], correct:1, explain:"Qua 2 điểm phân biệt có đúng 1 đường thẳng." },
-      { type:"mc", text:"Câu 2. M là trung điểm đoạn AB thì:", opts:["MA = MB = AB","MA = MB = AB/2","MA > MB","MA + MB > AB"], correct:1, explain:"Trung điểm chia đoạn thẳng thành 2 phần bằng nhau: MA = MB = AB/2." },
-      { type:"mc", text:"Câu 3. Góc vuông có số đo:", opts:["45°","60°","90°","180°"], correct:2, explain:"Góc vuông = 90°." },
-      { type:"mc", text:"Câu 4. Đoạn AB = 8cm, M là trung điểm. MA = ?", opts:["8 cm","4 cm","16 cm","2 cm"], correct:1, explain:"MA = AB/2 = 8/2 = 4 cm." },
-      { type:"mc", text:"Câu 5. Góc bẹt có số đo:", opts:["90°","120°","180°","360°"], correct:2, explain:"Góc bẹt = 180°." },
-      { type:"mc", text:"Câu 6. Ba điểm không thẳng hàng xác định bao nhiêu đường thẳng?", opts:["1","2","3","6"], correct:2, explain:"3 điểm → 3 cặp điểm → 3 đường thẳng." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về hình học cơ bản:", statements:[
-        { stmt:"Qua 2 điểm phân biệt chỉ có 1 đường thẳng", correct:true },
-        { stmt:"Góc nhọn có số đo lớn hơn 90°", correct:false },
-        { stmt:"Trung điểm chia đoạn thẳng thành 2 phần bằng nhau", correct:true },
-        { stmt:"Hai đường thẳng phân biệt luôn cắt nhau", correct:false }
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Tính chất:", statements:[
+        {stmt:"a + b = b + a (giao hoán)", correct:true},
+        {stmt:"a × (b+c) = a×b + a×c (phân phối)", correct:true},
+        {stmt:"a − b = b − a", correct:false},
+        {stmt:"a × 1 = a", correct:true}
       ], explains:[
-        "Đúng. Tiên đề cơ bản trong hình học.",
-        "Sai. Góc nhọn có số đo NHỎ hơn 90° (0° < góc nhọn < 90°).",
-        "Đúng. Định nghĩa trung điểm.",
-        "Sai. Hai đường thẳng phân biệt có thể cắt nhau hoặc song song."
+        "Đúng. Giao hoán phép cộng.",
+        "Đúng. Phân phối nhân với cộng.",
+        "Sai. a−b ≠ b−a (trừ khi a = b).",
+        "Đúng. Nhân với 1 giữ nguyên."
       ]},
-      { type:"short", text:"AB = 12cm, M là trung điểm. AM = ? cm", answer:"6", hint:"AM = AB/2", explain:"AM = 12/2 = 6 cm." },
-      { type:"short", text:"Góc vuông có số đo bao nhiêu độ?", answer:"90", hint:"Một trong các góc đặc biệt", explain:"Góc vuông = 90°." }
-    ]
-  },
-
-  // ==================== CHƯƠNG IX: DỮ LIỆU VÀ XÁC SUẤT THỰC NGHIỆM ====================
-  {
-    id:"l6_9", emoji:"📊", name:"Dữ liệu và xác suất thực nghiệm",
-    desc:"Thu thập dữ liệu, bảng thống kê, biểu đồ, xác suất thực nghiệm",
-    questions:[
-      { type:"mc", text:"Câu 1. Tung đồng xu 100 lần, mặt ngửa 45 lần. Xác suất thực nghiệm mặt ngửa:", opts:["0,55","0,45","45","100"], correct:1, explain:"XS thực nghiệm = 45/100 = 0,45." },
-      { type:"mc", text:"Câu 2. Biểu đồ cột dùng để:", opts:["So sánh dữ liệu giữa các nhóm","Giải phương trình","Tính diện tích","Vẽ hình tròn"], correct:0, explain:"Biểu đồ cột dùng so sánh dữ liệu giữa các nhóm/danh mục." },
-      { type:"mc", text:"Câu 3. Gieo xúc sắc 60 lần, mặt 6 xuất hiện 12 lần. Xác suất thực nghiệm:", opts:["1/6","6/60","1/5","12/100"], correct:2, explain:"XS = 12/60 = 1/5 = 0,2." },
-      { type:"mc", text:"Câu 4. Biểu đồ tròn thích hợp biểu diễn:", opts:["Sự thay đổi theo thời gian","Tỉ lệ phần trăm","Số liệu âm","Phương trình"], correct:1, explain:"Biểu đồ tròn (hình quạt) biểu diễn tỉ lệ phần trăm." },
-      { type:"mc", text:"Câu 5. Dữ liệu: 5, 3, 7, 3, 5, 3, 8. Giá trị xuất hiện nhiều nhất:", opts:["5","3","7","8"], correct:1, explain:"3 xuất hiện 3 lần (nhiều nhất)." },
-      { type:"mc", text:"Câu 6. Xác suất thực nghiệm được tính bằng:", opts:["Số lần thí nghiệm","Số lần KQ thuận lợi ÷ tổng số lần","Tổng các giá trị","Giá trị lớn nhất"], correct:1, explain:"XS thực nghiệm = (số lần KQ thuận lợi) / (tổng số lần thí nghiệm)." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về xác suất thực nghiệm:", statements:[
-        { stmt:"Xác suất thực nghiệm luôn nằm trong khoảng từ 0 đến 1", correct:true },
-        { stmt:"Biểu đồ cột kép dùng so sánh 2 bộ dữ liệu", correct:true },
-        { stmt:"Xác suất thực nghiệm luôn bằng xác suất lý thuyết", correct:false },
-        { stmt:"Càng thực hiện nhiều lần, XS thực nghiệm càng gần XS lý thuyết", correct:true }
-      ], explains:[
-        "Đúng. 0 ≤ XS thực nghiệm ≤ 1.",
-        "Đúng. Biểu đồ cột kép cho phép so sánh trực quan 2 bộ dữ liệu.",
-        "Sai. XS thực nghiệm có thể khác XS lý thuyết, chỉ xấp xỉ.",
-        "Đúng. Đây là quy luật số lớn."
-      ]},
-      { type:"short", text:"Tung đồng xu 50 lần, ngửa 30 lần. XS thực nghiệm = 30/50 = a/5. Tìm a = ?", answer:"3", hint:"30/50 = ?/5", explain:"30/50 = 3/5. Vậy a = 3." },
-      { type:"short", text:"Lớp 30 HS, 12 HS thích bóng đá. Tỉ lệ = a/5. Tìm a = ?", answer:"2", hint:"12/30 = ?/5", explain:"12/30 = 2/5. Vậy a = 2." }
+      {type:"short", text:"Câu 29. (−9) + 4 = ?", answer:"-5", hint:"Khác dấu, GTTĐ lớn hơn là 9", explain:"−(9−4) = −5."},
+      {type:"short", text:"Câu 30. (−3) × (−7) = ?", answer:"21", hint:"Cùng dấu → dương", explain:"3×7 = 21."},
+      {type:"short", text:"Câu 31. (−5) − (−8) = ?", answer:"3", hint:"= −5 + 8", explain:"−5+8 = 3."},
+      {type:"short", text:"Câu 32. Tìm x: x + 7 = 2. x = ?", answer:"-5", hint:"x = 2 − 7", explain:"x = 2−7 = −5."}
     ]
   }
 ];
