@@ -1351,7 +1351,7 @@ const exam7Data = [
   // ==================== CHƯƠNG IV: TAM GIÁC ====================
   {
     id:"l7_4", emoji:"🔺", name:"Tam giác",
-    desc:"Tổng 3 góc trong tam giác, tam giác cân, đều, vuông, các trường hợp bằng nhau c.c.c, c.g.c, g.c.g",
+    desc:"Tổng 3 góc, góc ngoài, bất đẳng thức tam giác, quan hệ cạnh–góc, Pytago, tam giác cân/đều/vuông, bằng nhau c.c.c, c.g.c, g.c.g",
     questions:[
       { type:"mc", text:"Câu 1. Tổng ba góc trong một tam giác bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Định lí: Tổng 3 góc trong tam giác = 180°." },
       { type:"mc", text:"Câu 2. Tam giác ABC có góc A = 50°, góc B = 70°. Góc C = ?", opts:["60°","40°","80°","50°"], correct:0, explain:"C = 180° − 50° − 70° = 60°." },
@@ -1371,7 +1371,65 @@ const exam7Data = [
         "Đúng. 90° + tổng 2 góc nhọn = 180° → tổng 2 góc nhọn = 90°."
       ]},
       { type:"short", text:"ΔABC có góc A = 90°, góc B = 35°. Góc C = ? độ", answer:"55", hint:"A + B + C = 180°", explain:"C = 180° − 90° − 35° = 55°." },
-      { type:"short", text:"Tam giác đều có mỗi góc bằng ? độ", answer:"60", hint:"180° ÷ 3", explain:"180° ÷ 3 = 60°." }
+      { type:"short", text:"Tam giác đều có mỗi góc bằng ? độ", answer:"60", hint:"180° ÷ 3", explain:"180° ÷ 3 = 60°." },
+
+      // ===== BỔ SUNG: 14 MC =====
+      { type:"mc", text:"Câu 10. ΔABC có góc A = 60°, góc B = 80°. Góc ngoài tại đỉnh C bằng:", opts:["40°","100°","140°","180°"], correct:2, explain:"Góc ngoài tại C = góc A + góc B = 60° + 80° = 140° (bằng tổng 2 góc trong không kề)." },
+      { type:"mc", text:"Câu 11. ΔABC có góc ngoài tại C bằng 130°, góc A = 50°. Góc B bằng:", opts:["50°","60°","80°","130°"], correct:2, explain:"Góc ngoài C = A + B → B = 130° − 50° = 80°." },
+      { type:"mc", text:"Câu 12. Bộ 3 đoạn thẳng nào sau đây tạo thành tam giác?", opts:["2, 3, 6","3, 4, 5","1, 2, 4","5, 5, 11"], correct:1, explain:"BĐT tam giác: |a−b| < c < a+b. Bộ (3,4,5): 3+4=7 > 5, 4+5=9 > 3, 3+5=8 > 4 ✓." },
+      { type:"mc", text:"Câu 13. Bộ 3 đoạn thẳng nào KHÔNG tạo thành tam giác?", opts:["3, 4, 5","1, 2, 4","7, 8, 10","6, 7, 12"], correct:1, explain:"Bộ (1, 2, 4): 1 + 2 = 3 < 4 → vi phạm bất đẳng thức tam giác → KHÔNG tạo thành tam giác." },
+      { type:"mc", text:"Câu 14. ΔABC có AB < BC < AC. So sánh các góc:", opts:["Góc C < Góc A < Góc B","Góc A < Góc B < Góc C","Góc B < Góc C < Góc A","Góc C > Góc A > Góc B"], correct:0, explain:"Cạnh đối diện góc nào lớn hơn thì góc đó lớn hơn. AB < BC < AC → Góc C < Góc A < Góc B." },
+      { type:"mc", text:"Câu 15. ΔABC có góc A > góc B > góc C. Cạnh lớn nhất là:", opts:["AB","BC","AC","Không xác định"], correct:1, explain:"Góc A lớn nhất → cạnh đối diện góc A là BC lớn nhất." },
+      { type:"mc", text:"Câu 16. ΔABC và ΔDEF có AB = DE, BC = EF, AC = DF. Hai tam giác bằng nhau theo trường hợp:", opts:["c.g.c","g.c.g","c.c.c","Không đủ điều kiện"], correct:2, explain:"3 cặp cạnh tương ứng bằng nhau → bằng nhau theo c.c.c." },
+      { type:"mc", text:"Câu 17. ΔABC và ΔDEF có AB = DE, góc B = góc E, BC = EF. Hai tam giác bằng nhau theo:", opts:["c.c.c","c.g.c","g.c.g","g.g.g"], correct:1, explain:"2 cạnh và góc xen giữa tương ứng bằng nhau → c.g.c." },
+      { type:"mc", text:"Câu 18. ΔABC và ΔDEF có góc A = góc D, AB = DE, góc B = góc E. Hai tam giác bằng nhau theo:", opts:["c.c.c","c.g.c","g.c.g","Không đủ điều kiện"], correct:2, explain:"2 góc và cạnh kề tương ứng bằng nhau → g.c.g." },
+      { type:"mc", text:"Câu 19. ΔABC vuông tại A, AB = 3 cm, AC = 4 cm. BC = ?", opts:["5 cm","6 cm","7 cm","25 cm"], correct:0, explain:"Pytago: BC² = AB² + AC² = 9 + 16 = 25 → BC = 5 cm." },
+      { type:"mc", text:"Câu 20. ΔABC vuông tại B, AB = 5 cm, BC = 12 cm. AC = ?", opts:["7 cm","13 cm","17 cm","169 cm"], correct:1, explain:"Pytago: AC² = AB² + BC² = 25 + 144 = 169 → AC = 13 cm." },
+      { type:"mc", text:"Câu 21. Tam giác nào sau đây là tam giác vuông?", opts:["Cạnh 3, 4, 5","Cạnh 2, 3, 4","Cạnh 5, 6, 7","Cạnh 4, 5, 6"], correct:0, explain:"3² + 4² = 9 + 16 = 25 = 5². Thoả Pytago → tam giác vuông." },
+      { type:"mc", text:"Câu 22. Góc ngoài của tam giác luôn:", opts:["Lớn hơn mỗi góc trong không kề","Bằng mỗi góc trong không kề","Nhỏ hơn mỗi góc trong không kề","Bằng 180°"], correct:0, explain:"Góc ngoài = tổng 2 góc trong không kề → luôn lớn hơn từng góc trong không kề." },
+      { type:"mc", text:"Câu 23. Trong tam giác, cạnh đối diện với góc tù là:", opts:["Cạnh lớn nhất","Cạnh nhỏ nhất","Cạnh trung bình","Không xác định được"], correct:0, explain:"Góc tù là góc lớn nhất → cạnh đối diện là cạnh lớn nhất." },
+
+      // ===== BỔ SUNG: 3 TF =====
+      { type:"tf", text:"Câu 24 (Đúng/Sai). Về góc ngoài tam giác:", statements:[
+        { stmt:"Góc ngoài của tam giác bằng tổng 2 góc trong không kề với nó", correct:true },
+        { stmt:"Tổng 3 góc ngoài (mỗi đỉnh lấy 1 góc) của tam giác bằng 360°", correct:true },
+        { stmt:"Góc ngoài và góc trong kề bù nhau (tổng bằng 180°)", correct:true },
+        { stmt:"Góc ngoài của tam giác luôn nhỏ hơn 90°", correct:false }
+      ], explains:[
+        "Đúng. Tính chất góc ngoài tam giác: bằng tổng 2 góc trong không kề.",
+        "Đúng. Tổng 3 góc ngoài = 360°.",
+        "Đúng. Góc ngoài + góc trong kề = 180° (2 góc kề bù).",
+        "Sai. Góc ngoài có thể lớn hơn 90°. Ví dụ ΔABC có A = 60°, B = 80° → góc ngoài tại C = 140° > 90°."
+      ]},
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về bất đẳng thức tam giác:", statements:[
+        { stmt:"Ba đoạn thẳng a, b, c tạo thành tam giác khi tổng 2 cạnh bất kỳ lớn hơn cạnh còn lại", correct:true },
+        { stmt:"Ba đoạn thẳng 2 cm, 3 cm, 6 cm tạo thành tam giác", correct:false },
+        { stmt:"Tam giác đều cạnh a luôn thoả mãn bất đẳng thức tam giác", correct:true },
+        { stmt:"Nếu a + b = c thì 3 đoạn a, b, c tạo thành tam giác", correct:false }
+      ], explains:[
+        "Đúng. BĐT tam giác: a + b > c, b + c > a, a + c > b.",
+        "Sai. 2 + 3 = 5 < 6 → vi phạm bất đẳng thức tam giác.",
+        "Đúng. Tam giác đều: a + a = 2a > a ✓ luôn đúng.",
+        "Sai. Cần a + b > c (dấu >, không phải ≥). Khi a + b = c thì 3 điểm thẳng hàng."
+      ]},
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về trường hợp bằng nhau và định lí Pytago:", statements:[
+        { stmt:"Trường hợp c.c.c cần biết 3 cặp cạnh tương ứng bằng nhau", correct:true },
+        { stmt:"Trường hợp g.g.g (3 cặp góc bằng nhau) đủ kết luận 2 tam giác bằng nhau", correct:false },
+        { stmt:"Định lí Pytago chỉ áp dụng cho tam giác vuông", correct:true },
+        { stmt:"5² + 12² = 13² nên tam giác có cạnh 5, 12, 13 là tam giác vuông", correct:true }
+      ], explains:[
+        "Đúng. c.c.c: 3 cặp cạnh tương ứng bằng nhau.",
+        "Sai. g.g.g chỉ cho 2 tam giác đồng dạng, không đủ kết luận bằng nhau.",
+        "Đúng. Pytago: a² + b² = c² chỉ đúng khi tam giác vuông.",
+        "Đúng. 25 + 144 = 169 = 13². Thoả Pytago → tam giác vuông."
+      ]},
+
+      // ===== BỔ SUNG: 5 Short =====
+      { type:"short", text:"ΔABC có góc A = 45°, góc B = 65°. Góc ngoài tại C bằng ? độ", answer:"110", hint:"Góc ngoài = tổng 2 góc trong không kề", explain:"Góc ngoài tại C = A + B = 45° + 65° = 110°." },
+      { type:"short", text:"ΔABC vuông tại A, AB = 6 cm, AC = 8 cm. BC = ? cm", answer:"10", hint:"Pytago: BC² = AB² + AC²", explain:"BC² = 36 + 64 = 100 → BC = 10 cm." },
+      { type:"short", text:"ΔABC có A = 90°, B = 30°. Góc C = ? độ", answer:"60", hint:"A + B + C = 180°", explain:"C = 180° − 90° − 30° = 60°." },
+      { type:"short", text:"Bộ 3 cạnh 5, 12, 13 có tạo thành tam giác vuông không? (nhập: co hoặc khong)", answer:"co", hint:"Kiểm tra 5² + 12² và so với 13²", explain:"5² + 12² = 25 + 144 = 169 = 13². Thoả định lí Pytago → tam giác vuông. Đáp án: có." },
+      { type:"short", text:"ΔABC có AB = 5 cm, BC = 7 cm, AC = 8 cm. Chu vi tam giác = ? cm", answer:"20", hint:"Chu vi = AB + BC + AC", explain:"Chu vi = 5 + 7 + 8 = 20 cm." }
     ]
   },
 
