@@ -1985,6 +1985,562 @@ const exam6Data = [
       {type:"short", text:"Câu 31. (−5) − (−8) = ?", answer:"3", hint:"= −5 + 8", explain:"−5+8 = 3."},
       {type:"short", text:"Câu 32. Tìm x: x + 7 = 2. x = ?", answer:"-5", hint:"x = 2 − 7", explain:"x = 2−7 = −5."}
     ]
+  },
+  // ==================== CHỦ ĐỀ 6: PHÂN SỐ ====================
+  {
+    id:"l6_6", emoji:"🍕", name:"Phân số",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phân số</b><br>
+– Phân số có dạng a/b (b ≠ 0), a là tử số, b là mẫu số.<br>
+– Phân số dương: a/b > 0. Phân số âm: a/b < 0.<br><br>
+<b>2. Tính chất cơ bản</b><br>
+– Nhân/chia cả tử và mẫu với cùng một số ≠ 0: a/b = (a×m)/(b×m).<br>
+– VD: 1/2 = 2/4 = 3/6.<br><br>
+<b>3. Rút gọn phân số</b><br>
+– Chia cả tử và mẫu cho ƯCLN của chúng.<br>
+– PS tối giản: ƯCLN(|a|, |b|) = 1.<br><br>
+<b>4. Quy đồng mẫu số</b><br>
+– Tìm BCNN các mẫu, nhân tử và mẫu mỗi PS cho thừa số phụ.<br><br>
+<b>5. So sánh phân số</b><br>
+– Cùng mẫu dương: tử nào lớn hơn thì PS lớn hơn.<br>
+– Khác mẫu: quy đồng rồi so sánh.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Phân số là biểu thức dạng:", opts:["a + b","a/b (b ≠ 0)","a × b","a − b"], correct:1, explain:"Phân số: a/b với b ≠ 0."},
+      {type:"mc", text:"Câu 2. Trong PS 3/5, tử số là:", opts:["5","3","8","15"], correct:1, explain:"Tử số = 3, mẫu số = 5."},
+      {type:"mc", text:"Câu 3. PS nào bằng 1/2?", opts:["2/3","3/6","1/3","2/5"], correct:1, explain:"3/6 = 1/2 (chia cả tử mẫu cho 3)."},
+      {type:"mc", text:"Câu 4. Rút gọn 6/8:", opts:["3/4","2/4","6/4","1/2"], correct:0, explain:"6/8 = 3/4 (chia cho 2)."},
+      {type:"mc", text:"Câu 5. PS 4/0 có nghĩa không?", opts:["Có","Không","Bằng 0","Bằng 4"], correct:1, explain:"Mẫu số = 0 → không có nghĩa."},
+      {type:"mc", text:"Câu 6. 2/3 = ?/6:", opts:["2","3","4","6"], correct:2, explain:"2/3 = 4/6 (nhân cả tử mẫu cho 2)."},
+      {type:"mc", text:"Câu 7. PS tối giản nghĩa là:", opts:["Tử = mẫu","ƯCLN(|tử|, |mẫu|) = 1","Tử > mẫu","Mẫu = 1"], correct:1, explain:"PS tối giản khi ƯCLN = 1."},
+      {type:"mc", text:"Câu 8. PS nào là PS tối giản?", opts:["2/4","3/9","5/7","6/8"], correct:2, explain:"ƯCLN(5,7) = 1 → 5/7 tối giản."},
+      {type:"mc", text:"Câu 9. Quy đồng mẫu là:", opts:["Đưa về cùng tử","Đưa về cùng mẫu","Rút gọn","Cộng mẫu"], correct:1, explain:"Quy đồng: đưa các PS về cùng mẫu số."},
+      {type:"mc", text:"Câu 10. So sánh 2/5 và 3/5:", opts:["2/5 > 3/5","2/5 < 3/5","2/5 = 3/5","Không so sánh"], correct:1, explain:"Cùng mẫu, 2 < 3 → 2/5 < 3/5."},
+      {type:"mc", text:"Câu 11. −3/4 là PS:", opts:["Dương","Âm","Bằng 0","Không xác định"], correct:1, explain:"−3/4 < 0 → PS âm."},
+      {type:"mc", text:"Câu 12. PS a/b = 0 khi:", opts:["b = 0","a = 0 (b ≠ 0)","a = b","a > b"], correct:1, explain:"a/b = 0 khi tử a = 0 (mẫu ≠ 0)."},
+      {type:"mc", text:"Câu 13. Rút gọn 12/18:", opts:["2/3","4/6","6/9","3/4"], correct:0, explain:"ƯCLN(12,18) = 6. 12/18 = 2/3."},
+      {type:"mc", text:"Câu 14. So sánh 1/3 và 1/4:", opts:["1/3 < 1/4","1/3 > 1/4","1/3 = 1/4","Không so sánh"], correct:1, explain:"Cùng tử, mẫu nhỏ hơn → PS lớn hơn. 3 < 4 → 1/3 > 1/4."},
+      {type:"mc", text:"Câu 15. Quy đồng 1/3 và 1/4, MC bằng:", opts:["7","12","3","4"], correct:1, explain:"BCNN(3,4) = 12."},
+      {type:"mc", text:"Câu 16. 1/3 = ?/12:", opts:["3","4","6","2"], correct:1, explain:"1/3 = 4/12."},
+      {type:"mc", text:"Câu 17. So sánh 3/4 và 5/6:", opts:["3/4 > 5/6","3/4 < 5/6","3/4 = 5/6","Không so sánh"], correct:1, explain:"QĐ: 3/4 = 9/12; 5/6 = 10/12. 9 < 10 → 3/4 < 5/6."},
+      {type:"mc", text:"Câu 18. Rút gọn 15/25:", opts:["3/5","5/5","1/5","15/5"], correct:0, explain:"ƯCLN(15,25) = 5. 15/25 = 3/5."},
+      {type:"mc", text:"Câu 19. PS −2/−5 bằng:", opts:["−2/5","2/5","−2/−5","7/5"], correct:1, explain:"−2/−5 = 2/5 (cùng chia −1)."},
+      {type:"mc", text:"Câu 20. PS 5/3 là PS:", opts:["Nhỏ hơn 1","Bằng 1","Lớn hơn 1","Âm"], correct:2, explain:"5 > 3 → 5/3 > 1."},
+      {type:"mc", text:"Câu 21. PS nào bằng 2/3?", opts:["4/9","6/9","8/9","10/9"], correct:1, explain:"6/9 = 2/3 (chia cho 3)."},
+      {type:"mc", text:"Câu 22. Rút gọn 24/36:", opts:["2/3","4/6","8/12","12/18"], correct:0, explain:"ƯCLN(24,36) = 12. 24/36 = 2/3."},
+      {type:"mc", text:"Câu 23. So sánh 2/7 và 3/7:", opts:["2/7 > 3/7","2/7 < 3/7","Bằng nhau","Không so sánh"], correct:1, explain:"Cùng mẫu, 2 < 3 → 2/7 < 3/7."},
+      {type:"mc", text:"Câu 24. PS 0/5 bằng:", opts:["5","0","Không xác định","1"], correct:1, explain:"0/5 = 0."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về PS:", statements:[
+        {stmt:"PS 3/0 không có nghĩa", correct:true},
+        {stmt:"1/2 = 2/4", correct:true},
+        {stmt:"PS tối giản có ƯCLN(|tử|,|mẫu|) = 1", correct:true},
+        {stmt:"Mọi số nguyên đều viết được dạng PS", correct:true}
+      ], explains:[
+        "Đúng. Mẫu = 0 → không có nghĩa.",
+        "Đúng. Nhân cả tử mẫu cho 2.",
+        "Đúng. Đây là ĐN PS tối giản.",
+        "Đúng. a = a/1."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Rút gọn và so sánh:", statements:[
+        {stmt:"8/12 rút gọn được 2/3", correct:true},
+        {stmt:"3/5 > 4/5", correct:false},
+        {stmt:"−1/2 < 0", correct:true},
+        {stmt:"2/3 = 4/6", correct:true}
+      ], explains:[
+        "Đúng. 8/12 ÷ 4 = 2/3.",
+        "Sai. 3/5 < 4/5.",
+        "Đúng. PS âm < 0.",
+        "Đúng. 2/3 = 4/6."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Quy đồng 2/3 và 3/4:", statements:[
+        {stmt:"MC = 12", correct:true},
+        {stmt:"2/3 = 8/12", correct:true},
+        {stmt:"3/4 = 9/12", correct:true},
+        {stmt:"2/3 > 3/4", correct:false}
+      ], explains:[
+        "Đúng. BCNN(3,4) = 12.",
+        "Đúng. 2×4/3×4 = 8/12.",
+        "Đúng. 3×3/4×3 = 9/12.",
+        "Sai. 8/12 < 9/12 → 2/3 < 3/4."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét PS:", statements:[
+        {stmt:"5/7 là PS tối giản", correct:true},
+        {stmt:"0/3 = 0", correct:true},
+        {stmt:"a/a = 1 (a ≠ 0)", correct:true},
+        {stmt:"−3/5 = 3/−5", correct:true}
+      ], explains:[
+        "Đúng. ƯCLN(5,7) = 1.",
+        "Đúng. 0 chia bất kỳ = 0.",
+        "Đúng. a/a = 1.",
+        "Đúng. −3/5 = 3/(−5) (đều < 0)."
+      ]},
+      {type:"short", text:"Câu 29. Rút gọn 10/15 = a/b tối giản. a = ?", answer:"2", hint:"ƯCLN(10,15) = 5", explain:"10/15 = 2/3. Tử a = 2."},
+      {type:"short", text:"Câu 30. Quy đồng 1/2 và 1/3, MC = ?", answer:"6", hint:"BCNN(2,3)", explain:"MC = 6."},
+      {type:"short", text:"Câu 31. 3/4 = ?/12. Số ? = ?", answer:"9", hint:"Nhân tử mẫu cho 3", explain:"3×3/4×3 = 9/12."},
+      {type:"short", text:"Câu 32. ƯCLN(8,12) = ? (dùng rút gọn 8/12)", answer:"4", hint:"8=2³, 12=2²×3", explain:"ƯCLN = 2² = 4."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 7: PHÉP TÍNH VỚI PHÂN SỐ ====================
+  {
+    id:"l6_7", emoji:"🧮", name:"Phép tính với phân số",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Cộng phân số</b><br>
+– Cùng mẫu: a/m + b/m = (a+b)/m.<br>
+– Khác mẫu: quy đồng rồi cộng.<br><br>
+<b>2. Trừ phân số</b><br>
+– a/m − b/m = (a−b)/m. Khác mẫu: quy đồng rồi trừ.<br><br>
+<b>3. Nhân phân số</b><br>
+– a/b × c/d = (a×c)/(b×d).<br><br>
+<b>4. Chia phân số</b><br>
+– a/b : c/d = a/b × d/c (nhân nghịch đảo).<br><br>
+<b>5. Hỗn số</b><br>
+– Hỗn số: phần nguyên + phân số (VD: 2⅓ = 7/3).<br>
+– Đổi hỗn số → PS: nhân phần nguyên với mẫu, cộng tử.`,
+    questions:[
+      {type:"mc", text:"Câu 1. 1/5 + 2/5 bằng:", opts:["3/10","3/5","1/5","2/5"], correct:1, explain:"Cùng mẫu: (1+2)/5 = 3/5."},
+      {type:"mc", text:"Câu 2. 3/4 − 1/4 bằng:", opts:["2/4","1/2","4/4","Cả A và B"], correct:3, explain:"(3−1)/4 = 2/4 = 1/2. A và B đều đúng."},
+      {type:"mc", text:"Câu 3. 2/3 × 3/4 bằng:", opts:["6/12","1/2","5/7","2/4"], correct:1, explain:"(2×3)/(3×4) = 6/12 = 1/2."},
+      {type:"mc", text:"Câu 4. 1/2 : 3/4 bằng:", opts:["3/8","4/6","2/3","3/2"], correct:2, explain:"1/2 × 4/3 = 4/6 = 2/3."},
+      {type:"mc", text:"Câu 5. Hỗn số 1½ viết dưới dạng PS:", opts:["3/2","2/3","1/2","5/2"], correct:0, explain:"1½ = (1×2+1)/2 = 3/2."},
+      {type:"mc", text:"Câu 6. Nghịch đảo của 2/5 là:", opts:["5/2","−2/5","2/5","−5/2"], correct:0, explain:"Nghịch đảo: đảo tử và mẫu → 5/2."},
+      {type:"mc", text:"Câu 7. 1/3 + 1/6 bằng:", opts:["2/9","2/6","1/2","1/9"], correct:2, explain:"QĐ MC 6: 2/6 + 1/6 = 3/6 = 1/2."},
+      {type:"mc", text:"Câu 8. 3/5 × 0 bằng:", opts:["3/5","0","5/3","Không xác định"], correct:1, explain:"Bất kỳ PS nào nhân 0 = 0."},
+      {type:"mc", text:"Câu 9. Để cộng PS khác mẫu, ta phải:", opts:["Cộng tử cộng mẫu","Quy đồng mẫu rồi cộng","Nhân chéo","Trừ mẫu"], correct:1, explain:"Quy đồng rồi cộng tử, giữ mẫu."},
+      {type:"mc", text:"Câu 10. 2/3 + (−2/3) bằng:", opts:["4/3","0","−4/3","2/3"], correct:1, explain:"PS cộng PS đối = 0."},
+      {type:"mc", text:"Câu 11. 5/6 − 1/3 bằng:", opts:["4/3","1/2","2/3","1/6"], correct:1, explain:"QĐ MC 6: 5/6 − 2/6 = 3/6 = 1/2."},
+      {type:"mc", text:"Câu 12. Hỗn số 2⅓ bằng PS:", opts:["5/3","7/3","8/3","6/3"], correct:1, explain:"(2×3+1)/3 = 7/3."},
+      {type:"mc", text:"Câu 13. 3/4 + 2/3 bằng:", opts:["5/7","17/12","5/12","1"], correct:1, explain:"QĐ MC 12: 9/12 + 8/12 = 17/12."},
+      {type:"mc", text:"Câu 14. 1/2 × 4/5 bằng:", opts:["4/10","2/5","5/10","Cả A và B"], correct:3, explain:"(1×4)/(2×5) = 4/10 = 2/5."},
+      {type:"mc", text:"Câu 15. 2/3 : 4 bằng:", opts:["8/3","2/12","1/6","Cả B và C"], correct:3, explain:"2/3 × 1/4 = 2/12 = 1/6."},
+      {type:"mc", text:"Câu 16. 7/8 − 3/8 bằng:", opts:["4/8","1/2","4/0","Cả A và B"], correct:3, explain:"(7−3)/8 = 4/8 = 1/2."},
+      {type:"mc", text:"Câu 17. (−1/4) × (−2/3) bằng:", opts:["−2/12","2/12","1/6","Cả B và C"], correct:3, explain:"Âm × âm = dương: 2/12 = 1/6."},
+      {type:"mc", text:"Câu 18. 5/6 : 5/3 bằng:", opts:["25/18","1/2","3/6","1"], correct:1, explain:"5/6 × 3/5 = 15/30 = 1/2."},
+      {type:"mc", text:"Câu 19. 1/2 + 1/3 + 1/6 bằng:", opts:["3/11","1","3/6","1/6"], correct:1, explain:"QĐ MC 6: 3/6 + 2/6 + 1/6 = 6/6 = 1."},
+      {type:"mc", text:"Câu 20. 3/4 × 8/9 bằng:", opts:["24/36","2/3","11/13","3/9"], correct:1, explain:"24/36 = 2/3."},
+      {type:"mc", text:"Câu 21. Một bánh chia 8 phần bằng nhau, ăn 3 phần. Còn lại mấy phần?", opts:["3/8","5/8","5","3"], correct:1, explain:"Còn: 8/8 − 3/8 = 5/8."},
+      {type:"mc", text:"Câu 22. 2/5 × 15 bằng:", opts:["6","30/5","17/5","Cả A và B"], correct:3, explain:"(2×15)/5 = 30/5 = 6."},
+      {type:"mc", text:"Câu 23. 7/12 − 1/4 bằng:", opts:["6/8","1/3","6/12","Cả B và C"], correct:3, explain:"QĐ MC 12: 7/12 − 3/12 = 4/12 = 1/3."},
+      {type:"mc", text:"Câu 24. PS 11/4 viết hỗn số:", opts:["2¾","2½","3¼","1¾"], correct:0, explain:"11÷4 = 2 dư 3 → 2¾."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Phép cộng trừ PS:", statements:[
+        {stmt:"1/3 + 1/3 = 2/3", correct:true},
+        {stmt:"1/2 + 1/3 = 2/5", correct:false},
+        {stmt:"1/4 − 1/4 = 0", correct:true},
+        {stmt:"Cộng PS cùng mẫu: cộng tử, giữ mẫu", correct:true}
+      ], explains:[
+        "Đúng. (1+1)/3 = 2/3.",
+        "Sai. 1/2+1/3 = 3/6+2/6 = 5/6, không phải 2/5.",
+        "Đúng. (1−1)/4 = 0.",
+        "Đúng. Quy tắc cộng PS cùng mẫu."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Phép nhân chia PS:", statements:[
+        {stmt:"a/b × c/d = (ac)/(bd)", correct:true},
+        {stmt:"Chia PS = nhân nghịch đảo", correct:true},
+        {stmt:"Nghịch đảo của 3/7 là 7/3", correct:true},
+        {stmt:"2/5 × 5/2 = 0", correct:false}
+      ], explains:[
+        "Đúng. Công thức nhân PS.",
+        "Đúng. a/b : c/d = a/b × d/c.",
+        "Đúng. Đảo tử mẫu.",
+        "Sai. 2/5 × 5/2 = 10/10 = 1."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Tính:", statements:[
+        {stmt:"2/3 + 1/6 = 5/6", correct:true},
+        {stmt:"3/5 × 10/9 = 2/3", correct:true},
+        {stmt:"1/2 : 1/4 = 2", correct:true},
+        {stmt:"Hỗn số 3½ = 6/2", correct:false}
+      ], explains:[
+        "Đúng. 4/6+1/6 = 5/6.",
+        "Đúng. 30/45 = 2/3.",
+        "Đúng. 1/2×4/1 = 4/2 = 2.",
+        "Sai. 3½ = (3×2+1)/2 = 7/2."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Bài toán:", statements:[
+        {stmt:"Ăn 1/4 bánh, còn 3/4 bánh", correct:true},
+        {stmt:"1/3 của 12 là 4", correct:true},
+        {stmt:"2/5 + 3/5 = 5/5 = 1", correct:true},
+        {stmt:"1/2 : 3 = 3/2", correct:false}
+      ], explains:[
+        "Đúng. 1 − 1/4 = 3/4.",
+        "Đúng. 12 × 1/3 = 4.",
+        "Đúng. 5/5 = 1.",
+        "Sai. 1/2 × 1/3 = 1/6."
+      ]},
+      {type:"short", text:"Câu 29. 1/4 + 3/4 = ?", answer:"1", hint:"Cùng mẫu", explain:"(1+3)/4 = 4/4 = 1."},
+      {type:"short", text:"Câu 30. 2/3 × 3/5 = ? (tối giản)", answer:"2/5", hint:"Nhân tử với tử, mẫu với mẫu", explain:"6/15 = 2/5."},
+      {type:"short", text:"Câu 31. 3/4 : 3/8 = ?", answer:"2", hint:"Nhân nghịch đảo", explain:"3/4 × 8/3 = 24/12 = 2."},
+      {type:"short", text:"Câu 32. Hỗn số 1⅔ = a/3. Tìm a.", answer:"5", hint:"(1×3+2)/3", explain:"1⅔ = 5/3. a = 5."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 8: SỐ THẬP PHÂN — TỈ SỐ — TỈ SỐ PHẦN TRĂM ====================
+  {
+    id:"l6_8", emoji:"💯", name:"Số thập phân — Tỉ số — Tỉ số phần trăm",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Số thập phân</b><br>
+– Số thập phân là PS có mẫu 10, 100, 1000, ... VD: 0,5 = 5/10 = 1/2.<br>
+– Phần nguyên và phần thập phân cách nhau bởi dấu phẩy (hoặc dấu chấm).<br><br>
+<b>2. Phép tính với số thập phân</b><br>
+– Cộng, trừ: đặt thẳng dấu phẩy, tính như số tự nhiên.<br>
+– Nhân: nhân bình thường, đếm tổng chữ số thập phân → đặt dấu phẩy.<br>
+– Chia: chia bình thường, thêm số 0 ở phần thập phân khi cần.<br><br>
+<b>3. Tỉ số</b><br>
+– Tỉ số của a và b: a/b hoặc a : b (b ≠ 0).<br><br>
+<b>4. Tỉ số phần trăm</b><br>
+– a% = a/100. VD: 25% = 25/100 = 1/4.<br>
+– Tìm a% của b: b × a/100.<br>
+– Tìm tỉ lệ %: (phần/tổng) × 100%.`,
+    questions:[
+      {type:"mc", text:"Câu 1. 0,5 viết dưới dạng PS:", opts:["5/100","1/2","5/1","1/5"], correct:1, explain:"0,5 = 5/10 = 1/2."},
+      {type:"mc", text:"Câu 2. 0,25 bằng phân số:", opts:["1/4","1/25","25/10","2/5"], correct:0, explain:"0,25 = 25/100 = 1/4."},
+      {type:"mc", text:"Câu 3. 3/4 viết dưới dạng STP:", opts:["0,34","0,75","0,43","7,5"], correct:1, explain:"3÷4 = 0,75."},
+      {type:"mc", text:"Câu 4. 1,5 + 2,3 bằng:", opts:["3,8","3,2","4,8","3,53"], correct:0, explain:"1,5 + 2,3 = 3,8."},
+      {type:"mc", text:"Câu 5. 5,7 − 2,4 bằng:", opts:["3,3","3,1","8,1","2,3"], correct:0, explain:"5,7 − 2,4 = 3,3."},
+      {type:"mc", text:"Câu 6. 25% viết dưới dạng PS:", opts:["1/25","25/10","1/4","4/1"], correct:2, explain:"25% = 25/100 = 1/4."},
+      {type:"mc", text:"Câu 7. 50% bằng:", opts:["0,5","0,05","5","0,005"], correct:0, explain:"50% = 50/100 = 0,5."},
+      {type:"mc", text:"Câu 8. Tỉ số của 3 và 5:", opts:["3 + 5","3/5","3 × 5","3 − 5"], correct:1, explain:"Tỉ số = 3/5 hoặc 3 : 5."},
+      {type:"mc", text:"Câu 9. 10% của 200 bằng:", opts:["10","20","2","100"], correct:1, explain:"200 × 10/100 = 20."},
+      {type:"mc", text:"Câu 10. 0,1 × 0,2 bằng:", opts:["0,2","0,02","0,12","2"], correct:1, explain:"0,1 × 0,2 = 0,02 (1+1 = 2 chữ số thập phân)."},
+      {type:"mc", text:"Câu 11. 1,2 × 3 bằng:", opts:["3,6","4,2","3,23","36"], correct:0, explain:"1,2 × 3 = 3,6."},
+      {type:"mc", text:"Câu 12. 7,5 : 5 bằng:", opts:["1,5","15","0,15","2,5"], correct:0, explain:"7,5 : 5 = 1,5."},
+      {type:"mc", text:"Câu 13. 20% của 150 bằng:", opts:["20","30","15","75"], correct:1, explain:"150 × 20/100 = 30."},
+      {type:"mc", text:"Câu 14. 12 chiếm bao nhiêu % của 48?", opts:["20%","25%","30%","40%"], correct:1, explain:"12/48 × 100% = 25%."},
+      {type:"mc", text:"Câu 15. 0,75 × 4 bằng:", opts:["3","3,0","30","0,3"], correct:0, explain:"0,75 × 4 = 3."},
+      {type:"mc", text:"Câu 16. 3,14 làm tròn đến hàng đơn vị:", opts:["3","4","3,1","3,2"], correct:0, explain:"3,14 → 3 (vì 0,14 < 0,5)."},
+      {type:"mc", text:"Câu 17. 2,56 làm tròn đến 1 chữ số thập phân:", opts:["2,5","2,6","3,0","2,56"], correct:1, explain:"2,56 → 2,6 (6 ≥ 5 → làm tròn lên)."},
+      {type:"mc", text:"Câu 18. 75% bằng STP:", opts:["0,075","7,5","0,75","75,0"], correct:2, explain:"75% = 75/100 = 0,75."},
+      {type:"mc", text:"Câu 19. Tỉ số phần trăm 15/60 bằng:", opts:["15%","20%","25%","30%"], correct:2, explain:"15/60 = 1/4 = 25%."},
+      {type:"mc", text:"Câu 20. 0,3 + 0,7 bằng:", opts:["0,10","1","1,0","Cả B và C"], correct:3, explain:"0,3 + 0,7 = 1,0 = 1."},
+      {type:"mc", text:"Câu 21. 35% của 200 bằng:", opts:["35","70","7","700"], correct:1, explain:"200 × 35/100 = 70."},
+      {type:"mc", text:"Câu 22. 2,4 : 0,6 bằng:", opts:["4","0,4","40","0,04"], correct:0, explain:"2,4 : 0,6 = 24/6 = 4."},
+      {type:"mc", text:"Câu 23. 1/5 viết dạng %:", opts:["5%","15%","20%","50%"], correct:2, explain:"1/5 = 0,2 = 20%."},
+      {type:"mc", text:"Câu 24. Lớp 40 HS, 8 HS giỏi. Tỉ lệ HS giỏi:", opts:["8%","20%","25%","40%"], correct:1, explain:"8/40 × 100% = 20%."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"0,5 = 1/2", correct:true},
+        {stmt:"25% = 0,25", correct:true},
+        {stmt:"1% = 1/10", correct:false},
+        {stmt:"Tỉ số a : b = a/b", correct:true}
+      ], explains:[
+        "Đúng. 0,5 = 5/10 = 1/2.",
+        "Đúng. 25% = 25/100 = 0,25.",
+        "Sai. 1% = 1/100, không phải 1/10.",
+        "Đúng. ĐN tỉ số."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Phép tính STP:", statements:[
+        {stmt:"1,2 + 0,8 = 2", correct:true},
+        {stmt:"0,5 × 0,5 = 2,5", correct:false},
+        {stmt:"3 : 0,5 = 6", correct:true},
+        {stmt:"2,5 − 1,3 = 1,2", correct:true}
+      ], explains:[
+        "Đúng. 1,2 + 0,8 = 2,0 = 2.",
+        "Sai. 0,5 × 0,5 = 0,25.",
+        "Đúng. 3 : 0,5 = 3 × 2 = 6.",
+        "Đúng. 2,5 − 1,3 = 1,2."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Tỉ số phần trăm:", statements:[
+        {stmt:"10% của 50 = 5", correct:true},
+        {stmt:"50% = 1/2", correct:true},
+        {stmt:"6/30 = 20%", correct:true},
+        {stmt:"100% của a = 2a", correct:false}
+      ], explains:[
+        "Đúng. 50 × 10% = 5.",
+        "Đúng. 50/100 = 1/2.",
+        "Đúng. 6/30 = 1/5 = 20%.",
+        "Sai. 100% của a = a."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Làm tròn:", statements:[
+        {stmt:"4,56 làm tròn đến hàng đơn vị = 5", correct:true},
+        {stmt:"3,14 làm tròn đến 1 STP = 3,1", correct:true},
+        {stmt:"2,95 làm tròn đến 1 STP = 2,9", correct:false},
+        {stmt:"7,499 làm tròn đến hàng đơn vị = 7", correct:true}
+      ], explains:[
+        "Đúng. 0,56 ≥ 0,5 → làm tròn lên.",
+        "Đúng. 3,14 → 3,1 (4 < 5).",
+        "Sai. 2,95 → 3,0 (5 ≥ 5, làm tròn lên).",
+        "Đúng. 0,499 < 0,5 → giữ nguyên."
+      ]},
+      {type:"short", text:"Câu 29. 0,3 + 0,7 = ?", answer:"1", hint:"Cộng STP", explain:"0,3 + 0,7 = 1."},
+      {type:"short", text:"Câu 30. 20% của 80 = ?", answer:"16", hint:"80 × 20/100", explain:"80 × 0,2 = 16."},
+      {type:"short", text:"Câu 31. 9/20 = ?% (nhập số)", answer:"45", hint:"9÷20 × 100", explain:"9/20 = 0,45 = 45%."},
+      {type:"short", text:"Câu 32. 2,5 × 0,4 = ?", answer:"1", hint:"Nhân STP", explain:"2,5 × 0,4 = 1,0 = 1."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 9: CÁC HÌNH HÌNH HỌC CƠ BẢN ====================
+  {
+    id:"l6_9", emoji:"📐", name:"Các hình hình học cơ bản",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Điểm, đường thẳng, tia</b><br>
+– Điểm: ký hiệu bằng chữ in hoa (A, B, C...). Đường thẳng: qua 2 điểm kẻ được đúng 1 đường thẳng.<br>
+– Tia: phần đường thẳng bị giới hạn 1 phía bởi 1 điểm (gốc tia).<br>
+– Hai đường thẳng: cắt nhau (1 điểm chung), song song (không giao), trùng nhau.<br><br>
+<b>2. Đoạn thẳng — Trung điểm</b><br>
+– Đoạn thẳng AB: phần đường thẳng giới hạn bởi A và B (gồm A, B).<br>
+– Độ dài đoạn thẳng: khoảng cách giữa 2 đầu mút.<br>
+– Trung điểm M của AB: M nằm giữa A, B và MA = MB = AB/2.<br><br>
+<b>3. Ba điểm thẳng hàng, điểm nằm giữa</b><br>
+– Ba điểm thẳng hàng: cùng nằm trên 1 đường thẳng.<br>
+– M nằm giữa A và B: AM + MB = AB.<br><br>
+<b>4. Góc</b><br>
+– Góc: hình gồm 2 tia chung gốc. Đỉnh: gốc chung. Cạnh: 2 tia.<br>
+– Góc vuông = 90°, góc nhọn < 90°, góc tù > 90° (< 180°), góc bẹt = 180°.<br>
+– Số đo góc: dùng thước đo góc, đơn vị: độ (°).`,
+    questions:[
+      {type:"mc", text:"Câu 1. Qua 2 điểm phân biệt kẻ được bao nhiêu đường thẳng?", opts:["0","1","2","Vô số"], correct:1, explain:"Qua 2 điểm phân biệt kẻ được đúng 1 đường thẳng."},
+      {type:"mc", text:"Câu 2. Tia là:", opts:["Đoạn thẳng","Phần đường thẳng giới hạn 1 phía","Đường thẳng","Điểm"], correct:1, explain:"Tia bị giới hạn 1 phía bởi gốc tia."},
+      {type:"mc", text:"Câu 3. Đoạn thẳng AB có bao nhiêu đầu mút?", opts:["0","1","2","Vô số"], correct:2, explain:"Đoạn thẳng có 2 đầu mút: A và B."},
+      {type:"mc", text:"Câu 4. Trung điểm M của đoạn AB thoả:", opts:["MA > MB","MA = MB = AB/2","MA + MB > AB","M nằm ngoài AB"], correct:1, explain:"M nằm giữa A, B và MA = MB."},
+      {type:"mc", text:"Câu 5. Góc vuông có số đo:", opts:["45°","60°","90°","180°"], correct:2, explain:"Góc vuông = 90°."},
+      {type:"mc", text:"Câu 6. Góc bẹt có số đo:", opts:["90°","120°","180°","360°"], correct:2, explain:"Góc bẹt = 180°."},
+      {type:"mc", text:"Câu 7. Góc nhọn có số đo:", opts:["< 90°","= 90°","> 90°","= 180°"], correct:0, explain:"Góc nhọn < 90°."},
+      {type:"mc", text:"Câu 8. Góc tù có số đo:", opts:["< 90°","= 90°","90° < góc < 180°","= 180°"], correct:2, explain:"Góc tù > 90° và < 180°."},
+      {type:"mc", text:"Câu 9. Hai đường thẳng cắt nhau có bao nhiêu điểm chung?", opts:["0","1","2","Vô số"], correct:1, explain:"Cắt nhau → đúng 1 điểm chung."},
+      {type:"mc", text:"Câu 10. Hai đường thẳng song song:", opts:["Cắt nhau","Không có điểm chung","Trùng nhau","Vuông góc"], correct:1, explain:"Song song: không có điểm chung."},
+      {type:"mc", text:"Câu 11. Ba điểm thẳng hàng nghĩa là:", opts:["3 điểm tạo tam giác","3 điểm cùng nằm trên 1 đường thẳng","3 điểm trùng nhau","3 điểm song song"], correct:1, explain:"Thẳng hàng: cùng nằm trên 1 đường thẳng."},
+      {type:"mc", text:"Câu 12. M nằm giữa A, B khi:", opts:["MA + MB > AB","MA + MB = AB","MA = AB","MB = AB"], correct:1, explain:"M nằm giữa A, B ⇔ MA + MB = AB."},
+      {type:"mc", text:"Câu 13. AB = 10cm, M là trung điểm. MA = ?", opts:["10cm","5cm","20cm","2,5cm"], correct:1, explain:"MA = AB/2 = 10/2 = 5cm."},
+      {type:"mc", text:"Câu 14. Góc 60° là góc:", opts:["Vuông","Nhọn","Tù","Bẹt"], correct:1, explain:"60° < 90° → góc nhọn."},
+      {type:"mc", text:"Câu 15. Góc 120° là góc:", opts:["Vuông","Nhọn","Tù","Bẹt"], correct:2, explain:"90° < 120° < 180° → góc tù."},
+      {type:"mc", text:"Câu 16. Điểm M nằm giữa A, B. AM = 3cm, MB = 7cm. AB = ?", opts:["4cm","10cm","21cm","3cm"], correct:1, explain:"AB = AM + MB = 3 + 7 = 10cm."},
+      {type:"mc", text:"Câu 17. AB = 8cm, M nằm giữa A, B, AM = 3cm. MB = ?", opts:["3cm","5cm","8cm","11cm"], correct:1, explain:"MB = AB − AM = 8 − 3 = 5cm."},
+      {type:"mc", text:"Câu 18. Điểm trong của góc (không kể đến góc lõm) nằm:", opts:["Trên cạnh góc","Bên trong vùng góc","Bên ngoài góc","Tại đỉnh"], correct:1, explain:"Điểm trong nằm bên trong vùng tạo bởi 2 cạnh."},
+      {type:"mc", text:"Câu 19. Hai tia đối nhau tạo thành góc:", opts:["Vuông","Nhọn","Tù","Bẹt"], correct:3, explain:"Hai tia đối nhau → góc bẹt = 180°."},
+      {type:"mc", text:"Câu 20. AB = 12cm, M trung điểm. MB = ?", opts:["12cm","6cm","24cm","3cm"], correct:1, explain:"MB = 12/2 = 6cm."},
+      {type:"mc", text:"Câu 21. Đường thẳng đi qua A(1; 0) và B(3; 0) nằm trên trục:", opts:["Oy","Ox","Cả hai","Không trục nào"], correct:1, explain:"Cả 2 điểm có y = 0 → nằm trên Ox."},
+      {type:"mc", text:"Câu 22. Có 3 điểm không thẳng hàng, kẻ được bao nhiêu đường thẳng?", opts:["1","2","3","6"], correct:2, explain:"C(3,2) = 3 đường thẳng."},
+      {type:"mc", text:"Câu 23. Góc 90° còn gọi là:", opts:["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"], correct:1, explain:"90° = góc vuông."},
+      {type:"mc", text:"Câu 24. Điểm A nằm trên đường thẳng d. A gọi là:", opts:["Điểm ngoài d","Điểm thuộc d","Giao điểm","Trung điểm"], correct:1, explain:"A ∈ d: A thuộc d."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Qua 2 điểm kẻ được đúng 1 đường thẳng", correct:true},
+        {stmt:"Đoạn thẳng có 2 đầu mút", correct:true},
+        {stmt:"Tia có 2 đầu mút", correct:false},
+        {stmt:"Góc vuông = 90°", correct:true}
+      ], explains:[
+        "Đúng. Tiên đề.",
+        "Đúng. 2 đầu mút A, B.",
+        "Sai. Tia chỉ có 1 đầu (gốc tia).",
+        "Đúng. 90°."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Góc 45° là góc nhọn", correct:true},
+        {stmt:"Góc 100° là góc tù", correct:true},
+        {stmt:"Góc bẹt = 360°", correct:false},
+        {stmt:"Hai đường thẳng song song không giao nhau", correct:true}
+      ], explains:[
+        "Đúng. 45° < 90° → nhọn.",
+        "Đúng. 90° < 100° < 180° → tù.",
+        "Sai. Góc bẹt = 180°.",
+        "Đúng. Song song → không điểm chung."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). AB = 14cm, M trung điểm:", statements:[
+        {stmt:"MA = 7cm", correct:true},
+        {stmt:"MB = 7cm", correct:true},
+        {stmt:"MA + MB = 14cm", correct:true},
+        {stmt:"M nằm ngoài AB", correct:false}
+      ], explains:[
+        "Đúng. MA = 14/2 = 7cm.",
+        "Đúng. MB = 14/2 = 7cm.",
+        "Đúng. MA + MB = AB = 14cm.",
+        "Sai. M nằm giữa A và B."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Ba điểm:", statements:[
+        {stmt:"3 điểm phân biệt bất kỳ luôn thẳng hàng", correct:false},
+        {stmt:"M nằm giữa A, B thì AM + MB = AB", correct:true},
+        {stmt:"Ba điểm không thẳng hàng kẻ được 3 đường thẳng", correct:true},
+        {stmt:"Đường thẳng có giới hạn 2 phía", correct:false}
+      ], explains:[
+        "Sai. 3 điểm có thể không thẳng hàng.",
+        "Đúng. Định nghĩa nằm giữa.",
+        "Đúng. C(3,2) = 3.",
+        "Sai. Đường thẳng kéo dài vô hạn 2 phía."
+      ]},
+      {type:"short", text:"Câu 29. Góc vuông = bao nhiêu độ?", answer:"90", hint:"Góc vuông", explain:"90°."},
+      {type:"short", text:"Câu 30. AB = 16cm, M trung điểm. MA = ? cm", answer:"8", hint:"AB/2", explain:"16/2 = 8cm."},
+      {type:"short", text:"Câu 31. M nằm giữa A, B. AM = 4cm, MB = 6cm. AB = ? cm", answer:"10", hint:"AM + MB", explain:"4 + 6 = 10cm."},
+      {type:"short", text:"Câu 32. Góc bẹt = bao nhiêu độ?", answer:"180", hint:"Hai tia đối nhau", explain:"180°."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 10: TAM GIÁC ĐỀU — HÌNH VUÔNG — LỤC GIÁC ĐỀU ====================
+  {
+    id:"l6_10", emoji:"🔷", name:"Tam giác đều — Hình vuông — Lục giác đều",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Tam giác đều</b><br>
+– 3 cạnh bằng nhau, 3 góc = 60°.<br>
+– Chu vi: C = 3a. Diện tích: S = (a²√3)/4.<br><br>
+<b>2. Hình vuông</b><br>
+– 4 cạnh bằng nhau, 4 góc vuông (90°).<br>
+– Chu vi: C = 4a. Diện tích: S = a².<br>
+– Đường chéo: d = a√2.<br><br>
+<b>3. Lục giác đều</b><br>
+– 6 cạnh bằng nhau, 6 góc bằng nhau (mỗi góc 120°).<br>
+– Chu vi: C = 6a. Diện tích: S = (3a²√3)/2.<br>
+– Lục giác đều gồm 6 tam giác đều ghép lại.<br><br>
+<b>4. Tạo lập hình</b><br>
+– Có thể ghép tam giác đều thành lục giác đều, hình thoi...<br>
+– Ghép hình vuông thành hình chữ nhật, hình chữ L...`,
+    questions:[
+      {type:"mc", text:"Câu 1. Tam giác đều có mấy cạnh bằng nhau?", opts:["2","3","4","6"], correct:1, explain:"Tam giác đều: 3 cạnh bằng nhau."},
+      {type:"mc", text:"Câu 2. Mỗi góc của tam giác đều bằng:", opts:["45°","60°","90°","120°"], correct:1, explain:"3 góc bằng nhau, tổng 180° → mỗi góc 60°."},
+      {type:"mc", text:"Câu 3. Hình vuông có mấy cạnh bằng nhau?", opts:["2","3","4","6"], correct:2, explain:"Hình vuông: 4 cạnh bằng nhau."},
+      {type:"mc", text:"Câu 4. Mỗi góc của hình vuông bằng:", opts:["60°","90°","120°","180°"], correct:1, explain:"4 góc vuông = 90°."},
+      {type:"mc", text:"Câu 5. Lục giác đều có bao nhiêu cạnh?", opts:["4","5","6","8"], correct:2, explain:"Lục giác: 6 cạnh."},
+      {type:"mc", text:"Câu 6. Mỗi góc của lục giác đều bằng:", opts:["60°","90°","108°","120°"], correct:3, explain:"(6−2)×180°/6 = 120°."},
+      {type:"mc", text:"Câu 7. Chu vi tam giác đều cạnh a:", opts:["2a","3a","4a","6a"], correct:1, explain:"C = 3a."},
+      {type:"mc", text:"Câu 8. Diện tích hình vuông cạnh a:", opts:["4a","a²","2a²","a"], correct:1, explain:"S = a²."},
+      {type:"mc", text:"Câu 9. Chu vi hình vuông cạnh a:", opts:["a²","2a","4a","a"], correct:2, explain:"C = 4a."},
+      {type:"mc", text:"Câu 10. Chu vi lục giác đều cạnh a:", opts:["3a","4a","5a","6a"], correct:3, explain:"C = 6a."},
+      {type:"mc", text:"Câu 11. Lục giác đều chia được thành mấy tam giác đều?", opts:["3","4","6","8"], correct:2, explain:"6 tam giác đều ghép lại thành lục giác đều."},
+      {type:"mc", text:"Câu 12. Tam giác đều cạnh 5cm. Chu vi bằng:", opts:["10cm","15cm","20cm","25cm"], correct:1, explain:"C = 3×5 = 15cm."},
+      {type:"mc", text:"Câu 13. Hình vuông cạnh 6cm. Diện tích bằng:", opts:["24cm²","12cm²","36cm²","6cm²"], correct:2, explain:"S = 6² = 36cm²."},
+      {type:"mc", text:"Câu 14. Hình vuông cạnh 4cm. Chu vi bằng:", opts:["8cm","12cm","16cm","20cm"], correct:2, explain:"C = 4×4 = 16cm."},
+      {type:"mc", text:"Câu 15. Lục giác đều cạnh 3cm. Chu vi bằng:", opts:["9cm","12cm","15cm","18cm"], correct:3, explain:"C = 6×3 = 18cm."},
+      {type:"mc", text:"Câu 16. Hình vuông diện tích 49cm². Cạnh bằng:", opts:["7cm","49cm","24,5cm","14cm"], correct:0, explain:"a² = 49 → a = 7cm."},
+      {type:"mc", text:"Câu 17. Hình vuông chu vi 20cm. Cạnh bằng:", opts:["4cm","5cm","10cm","20cm"], correct:1, explain:"a = 20/4 = 5cm."},
+      {type:"mc", text:"Câu 18. Ghép 2 tam giác đều cạnh a tạo thành:", opts:["Hình vuông","Hình thoi","Hình tròn","Hình chữ nhật"], correct:1, explain:"2 tam giác đều ghép → hình thoi."},
+      {type:"mc", text:"Câu 19. Tam giác đều là hình có:", opts:["Chỉ cạnh bằng","Chỉ góc bằng","Cạnh và góc đều bằng","2 cạnh bằng"], correct:2, explain:"3 cạnh = và 3 góc = → đa giác đều."},
+      {type:"mc", text:"Câu 20. Hình vuông cạnh 10cm. Diện tích:", opts:["40cm²","100cm²","400cm²","10cm²"], correct:1, explain:"S = 10² = 100cm²."},
+      {type:"mc", text:"Câu 21. Lục giác đều có bao nhiêu trục đối xứng?", opts:["3","4","6","8"], correct:2, explain:"Lục giác đều có 6 trục đối xứng."},
+      {type:"mc", text:"Câu 22. Hình vuông có bao nhiêu trục đối xứng?", opts:["2","4","6","8"], correct:1, explain:"Hình vuông có 4 trục đối xứng."},
+      {type:"mc", text:"Câu 23. Tam giác đều có bao nhiêu trục đối xứng?", opts:["1","2","3","6"], correct:2, explain:"Tam giác đều có 3 trục đối xứng."},
+      {type:"mc", text:"Câu 24. Hình vuông S = 25cm². Chu vi bằng:", opts:["10cm","15cm","20cm","25cm"], correct:2, explain:"a = √25 = 5cm. C = 4×5 = 20cm."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Tam giác đều có 3 cạnh bằng nhau", correct:true},
+        {stmt:"Hình vuông có 4 góc vuông", correct:true},
+        {stmt:"Lục giác đều có 5 cạnh", correct:false},
+        {stmt:"Mỗi góc lục giác đều = 120°", correct:true}
+      ], explains:[
+        "Đúng. 3 cạnh bằng nhau.",
+        "Đúng. 4 góc = 90°.",
+        "Sai. Lục giác đều có 6 cạnh.",
+        "Đúng. 120°."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Chu vi, diện tích:", statements:[
+        {stmt:"C tam giác đều cạnh 4 = 12", correct:true},
+        {stmt:"S hình vuông cạnh 3 = 9", correct:true},
+        {stmt:"C lục giác đều cạnh 2 = 10", correct:false},
+        {stmt:"S hình vuông cạnh 1 = 1", correct:true}
+      ], explains:[
+        "Đúng. 3×4 = 12.",
+        "Đúng. 3² = 9.",
+        "Sai. 6×2 = 12.",
+        "Đúng. 1² = 1."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Ghép hình:", statements:[
+        {stmt:"6 tam giác đều ghép thành lục giác đều", correct:true},
+        {stmt:"2 tam giác đều ghép thành hình thoi", correct:true},
+        {stmt:"Hình vuông là trường hợp đặc biệt của HCN", correct:true},
+        {stmt:"Tam giác đều có góc vuông", correct:false}
+      ], explains:[
+        "Đúng. 6 tam giác đều → lục giác đều.",
+        "Đúng. 2 tam giác đều → hình thoi.",
+        "Đúng. HV là HCN có 4 cạnh bằng nhau.",
+        "Sai. Tam giác đều có 3 góc 60°."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Đối xứng:", statements:[
+        {stmt:"Tam giác đều có 3 trục đối xứng", correct:true},
+        {stmt:"Hình vuông có 4 trục đối xứng", correct:true},
+        {stmt:"Lục giác đều có 3 trục đối xứng", correct:false},
+        {stmt:"Hình vuông có tâm đối xứng", correct:true}
+      ], explains:[
+        "Đúng. 3 trục.",
+        "Đúng. 4 trục.",
+        "Sai. Lục giác đều có 6 trục.",
+        "Đúng. Giao 2 đường chéo là tâm đối xứng."
+      ]},
+      {type:"short", text:"Câu 29. Tam giác đều cạnh 8cm. Chu vi = ? cm", answer:"24", hint:"C = 3a", explain:"3×8 = 24cm."},
+      {type:"short", text:"Câu 30. Hình vuông cạnh 9cm. Diện tích = ? cm²", answer:"81", hint:"S = a²", explain:"9² = 81cm²."},
+      {type:"short", text:"Câu 31. Hình vuông S = 64cm². Cạnh = ? cm", answer:"8", hint:"a = √S", explain:"√64 = 8cm."},
+      {type:"short", text:"Câu 32. Lục giác đều cạnh 5cm. Chu vi = ? cm", answer:"30", hint:"C = 6a", explain:"6×5 = 30cm."}
+    ]
+  },
+  // ==================== CHỦ ĐỀ 11: HCN — HÌNH THOI — HBH — HÌNH THANG CÂN ====================
+  {
+    id:"l6_11", emoji:"🦋", name:"HCN — Hình thoi — HBH — Hình thang cân",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Hình chữ nhật (HCN)</b><br>
+– 4 góc vuông, 2 cạnh đối bằng nhau. Chiều dài a, chiều rộng b.<br>
+– Chu vi: C = 2(a + b). Diện tích: S = a × b.<br><br>
+<b>2. Hình thoi</b><br>
+– 4 cạnh bằng nhau, 2 góc đối bằng nhau.<br>
+– 2 đường chéo vuông góc và chia đôi nhau. Gọi d₁, d₂ là 2 đường chéo.<br>
+– S = (d₁ × d₂)/2.<br><br>
+<b>3. Hình bình hành (HBH)</b><br>
+– 2 cặp cạnh đối song song và bằng nhau. Góc đối bằng nhau.<br>
+– S = đáy × cao.<br><br>
+<b>4. Hình thang cân</b><br>
+– 1 cặp cạnh đối song song (đáy), 2 cạnh bên bằng nhau.<br>
+– 2 đường chéo bằng nhau. 2 góc kề mỗi đáy bằng nhau.<br>
+– S = (đáy lớn + đáy nhỏ) × cao / 2.`,
+    questions:[
+      {type:"mc", text:"Câu 1. HCN có mấy góc vuông?", opts:["2","3","4","1"], correct:2, explain:"HCN có 4 góc vuông."},
+      {type:"mc", text:"Câu 2. Chu vi HCN chiều dài a, rộng b:", opts:["a + b","2(a + b)","a × b","2ab"], correct:1, explain:"C = 2(a + b)."},
+      {type:"mc", text:"Câu 3. Diện tích HCN:", opts:["2(a+b)","a + b","a × b","a²"], correct:2, explain:"S = a × b."},
+      {type:"mc", text:"Câu 4. Hình thoi có tính chất:", opts:["4 cạnh bằng nhau","4 góc vuông","2 cạnh bằng nhau","Không có cạnh bằng"], correct:0, explain:"Hình thoi: 4 cạnh bằng nhau."},
+      {type:"mc", text:"Câu 5. Diện tích hình thoi (d₁, d₂ là 2 đường chéo):", opts:["d₁ × d₂","(d₁ × d₂)/2","d₁ + d₂","(d₁ + d₂)/2"], correct:1, explain:"S = (d₁ × d₂)/2."},
+      {type:"mc", text:"Câu 6. HBH có tính chất:", opts:["4 cạnh bằng nhau","2 cặp cạnh đối // và bằng nhau","4 góc vuông","2 đường chéo bằng nhau"], correct:1, explain:"HBH: 2 cặp cạnh đối song song và bằng nhau."},
+      {type:"mc", text:"Câu 7. Diện tích HBH:", opts:["đáy × cao","(đáy × cao)/2","đáy + cao","đáy²"], correct:0, explain:"S = đáy × cao."},
+      {type:"mc", text:"Câu 8. Hình thang cân có:", opts:["4 cạnh bằng nhau","2 cạnh bên bằng nhau","4 góc vuông","2 đáy bằng nhau"], correct:1, explain:"Hình thang cân: 2 cạnh bên bằng nhau."},
+      {type:"mc", text:"Câu 9. Diện tích hình thang:", opts:["đáy × cao","(a + b) × h / 2","a × b","a² + b²"], correct:1, explain:"S = (a+b)×h/2 (a, b: 2 đáy, h: chiều cao)."},
+      {type:"mc", text:"Câu 10. Hai đường chéo hình thoi:", opts:["Song song","Vuông góc và chia đôi nhau","Bằng nhau","Trùng nhau"], correct:1, explain:"2 đường chéo hình thoi ⊥ và chia đôi nhau."},
+      {type:"mc", text:"Câu 11. Hình nào vừa là HBH vừa có 4 góc vuông?", opts:["Hình thoi","HCN","Hình thang","Tam giác"], correct:1, explain:"HCN là HBH có 4 góc vuông."},
+      {type:"mc", text:"Câu 12. Hình nào vừa là HCN vừa là hình thoi?", opts:["HBH","Hình thang","Hình vuông","Tam giác"], correct:2, explain:"Hình vuông = HCN + hình thoi."},
+      {type:"mc", text:"Câu 13. HCN chiều dài 8cm, rộng 5cm. Diện tích:", opts:["13cm²","26cm²","40cm²","80cm²"], correct:2, explain:"S = 8×5 = 40cm²."},
+      {type:"mc", text:"Câu 14. HCN chiều dài 8cm, rộng 5cm. Chu vi:", opts:["13cm","26cm","40cm","80cm"], correct:1, explain:"C = 2(8+5) = 26cm."},
+      {type:"mc", text:"Câu 15. Hình thoi d₁ = 6, d₂ = 8. Diện tích:", opts:["48","24","14","7"], correct:1, explain:"S = (6×8)/2 = 24."},
+      {type:"mc", text:"Câu 16. HBH đáy 10cm, cao 4cm. Diện tích:", opts:["14cm²","40cm²","20cm²","80cm²"], correct:1, explain:"S = 10×4 = 40cm²."},
+      {type:"mc", text:"Câu 17. Hình thang đáy 6 và 10, cao 5. Diện tích:", opts:["40","80","30","16"], correct:0, explain:"S = (6+10)×5/2 = 40."},
+      {type:"mc", text:"Câu 18. HCN S = 24cm², chiều rộng 4cm. Chiều dài:", opts:["6cm","20cm","28cm","96cm"], correct:0, explain:"a = S/b = 24/4 = 6cm."},
+      {type:"mc", text:"Câu 19. Hình thang cân có 2 đường chéo:", opts:["Vuông góc","Bằng nhau","Song song","Không cắt nhau"], correct:1, explain:"Hình thang cân: 2 đường chéo bằng nhau."},
+      {type:"mc", text:"Câu 20. HBH có các góc đối:", opts:["Bổ nhau","Bằng nhau","Phụ nhau","Kề nhau"], correct:1, explain:"Góc đối HBH bằng nhau."},
+      {type:"mc", text:"Câu 21. Hình thang đáy 8 và 12, cao 6. S = ?", opts:["48","60","120","96"], correct:1, explain:"S = (8+12)×6/2 = 60."},
+      {type:"mc", text:"Câu 22. HCN C = 30cm, chiều dài 10cm. Chiều rộng:", opts:["5cm","10cm","15cm","20cm"], correct:0, explain:"2(10+b) = 30 → 10+b = 15 → b = 5cm."},
+      {type:"mc", text:"Câu 23. Hình thoi có cạnh 5cm là hình gì đặc biệt?", opts:["HCN","HBH","Tam giác","Cả A và B"], correct:1, explain:"Hình thoi là HBH (đặc biệt: 4 cạnh bằng)."},
+      {type:"mc", text:"Câu 24. Hình thoi d₁ = 10, d₂ = 12. S = ?", opts:["60","120","22","11"], correct:0, explain:"S = (10×12)/2 = 60."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"HCN có 4 góc vuông", correct:true},
+        {stmt:"Hình thoi có 4 góc vuông", correct:false},
+        {stmt:"HBH có 2 cặp cạnh đối //", correct:true},
+        {stmt:"Hình thang cân có 2 cạnh bên bằng nhau", correct:true}
+      ], explains:[
+        "Đúng. HCN: 4 góc 90°.",
+        "Sai. Hình thoi chỉ có 4 cạnh bằng, góc không nhất thiết vuông.",
+        "Đúng. ĐN HBH.",
+        "Đúng. ĐN hình thang cân."
+      ]},
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Diện tích:", statements:[
+        {stmt:"S HCN = a × b", correct:true},
+        {stmt:"S HBH = đáy × cao", correct:true},
+        {stmt:"S hình thoi = d₁ × d₂", correct:false},
+        {stmt:"S hình thang = (a+b)×h/2", correct:true}
+      ], explains:[
+        "Đúng. S = a×b.",
+        "Đúng. S = đáy × cao.",
+        "Sai. S = (d₁×d₂)/2 (chia 2).",
+        "Đúng. S = (a+b)h/2."
+      ]},
+      {type:"tf", text:"Câu 27 (Đúng/Sai). HCN 7cm × 3cm:", statements:[
+        {stmt:"Chu vi = 20cm", correct:true},
+        {stmt:"Diện tích = 21cm²", correct:true},
+        {stmt:"Đường chéo = 10cm", correct:false},
+        {stmt:"HCN là HBH đặc biệt", correct:true}
+      ], explains:[
+        "Đúng. C = 2(7+3) = 20cm.",
+        "Đúng. S = 7×3 = 21cm².",
+        "Sai. d = √(49+9) = √58 ≈ 7,6cm.",
+        "Đúng. HCN là HBH có 4 góc vuông."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Quan hệ hình:", statements:[
+        {stmt:"Hình vuông vừa là HCN vừa là hình thoi", correct:true},
+        {stmt:"Mọi HCN đều là hình vuông", correct:false},
+        {stmt:"Mọi hình thoi đều là HBH", correct:true},
+        {stmt:"Hình thang có 2 cặp cạnh đối //", correct:false}
+      ], explains:[
+        "Đúng. HV = HCN ∩ hình thoi.",
+        "Sai. HCN chỉ là hình vuông khi 4 cạnh bằng.",
+        "Đúng. Hình thoi là HBH đặc biệt.",
+        "Sai. Hình thang chỉ có 1 cặp cạnh đối //."
+      ]},
+      {type:"short", text:"Câu 29. HCN 12cm × 5cm. Diện tích = ? cm²", answer:"60", hint:"S = a × b", explain:"12×5 = 60cm²."},
+      {type:"short", text:"Câu 30. HBH đáy 8, cao 3. Diện tích = ?", answer:"24", hint:"S = đáy × cao", explain:"8×3 = 24."},
+      {type:"short", text:"Câu 31. Hình thang đáy 5 và 9, cao 4. S = ?", answer:"28", hint:"(5+9)×4/2", explain:"14×4/2 = 28."},
+      {type:"short", text:"Câu 32. Hình thoi d₁ = 8, d₂ = 6. S = ?", answer:"24", hint:"(d₁ × d₂)/2", explain:"(8×6)/2 = 24."}
+    ]
   }
 ];
 
