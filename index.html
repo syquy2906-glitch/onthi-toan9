@@ -299,730 +299,560 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 // DATA: Bộ đề kiểm tra Toán 9 theo cấu trúc thi tuyển sinh 10
 // ============================================================
 const examData = [
-  // ==================== CHỦ ĐỀ 1: CĂN BẬC HAI ====================
+  // ==================== CHỦ ĐỀ 1: CĂN BẬC HAI — CĂN BẬC BA ====================
   {
-    id: "t1",
-    emoji: "√",
-    name: "Căn bậc hai – Rút gọn biểu thức",
-    desc: "Căn thức, biến đổi, rút gọn biểu thức chứa căn",
-    questions: [
-      // --- TRẮC NGHIỆM CHỌN ĐÁP ÁN ---
-      { type:"mc", text:"Giá trị của √81 bằng:", opts:["9","−9","±9","81"], correct:0, explain:"√81 = 9 (căn bậc hai số học luôn không âm)." },
-      { type:"mc", text:"Rút gọn √50 được kết quả:", opts:["5√2","2√5","25√2","10√5"], correct:0, explain:"√50 = √(25×2) = 5√2." },
-      { type:"mc", text:"Biểu thức √(x²) với mọi x bằng:", opts:["x","−x","|x|","x²"], correct:2, explain:"√(x²) = |x| vì căn bậc hai luôn không âm." },
-      { type:"mc", text:"Trục căn thức ở mẫu: 6/√3 = ?", opts:["2√3","3√2","√3","6√3/9"], correct:0, explain:"6/√3 = 6√3/3 = 2√3." },
-      { type:"mc", text:"Cho A = (√3 + 1)² − 2√3. Giá trị A bằng:", opts:["2","4","6","3+1"], correct:1, explain:"A = 3 + 2√3 + 1 − 2√3 = 4." },
-      { type:"mc", text:"Rút gọn: √12 + √27 − √3 = ?", opts:["4√3","2√3","5√3","6√3"], correct:0, explain:"√12=2√3, √27=3√3. Tổng = 2√3+3√3−√3 = 4√3." },
-      { type:"mc", text:"Giá trị của biểu thức √(4−2√3) bằng:", opts:["√3−1","1−√3","2−√3","√3+1"], correct:0, explain:"4−2√3 = 3−2√3+1 = (√3−1)². Nên √(4−2√3) = |√3−1| = √3−1." },
-
-      // --- ĐÚNG / SAI ---
-      { type:"tf", text:"Xét các mệnh đề sau về căn bậc hai:", statements:[
-        { stmt:"√(a²) = a với mọi số thực a", correct:false },
-        { stmt:"√(ab) = √a · √b khi a ≥ 0 và b ≥ 0", correct:true },
-        { stmt:"√16 + √9 = √25", correct:false },
-        { stmt:"(√5)² = 5", correct:true }
+    id:"l9_1", emoji:"√", name:"Căn bậc hai — Căn bậc ba",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Căn bậc hai số học</b><br>
+– √a (a ≥ 0) là số không âm mà bình phương bằng a. VD: √9 = 3, √0 = 0.<br>
+– (√a)² = a; √(a²) = |a|.<br><br>
+<b>2. Điều kiện xác định (ĐKXĐ)</b><br>
+– √A xác định khi A ≥ 0.<br><br>
+<b>3. Các phép biến đổi căn thức</b><br>
+– Khai phương một tích: √(a·b) = √a · √b (a, b ≥ 0).<br>
+– Khai phương một thương: √(a/b) = √a / √b (a ≥ 0, b > 0).<br>
+– Đưa thừa số ra ngoài: √(a²·b) = a√b (a ≥ 0, b ≥ 0).<br>
+– Đưa thừa số vào trong: a√b = √(a²·b) (a ≥ 0, b ≥ 0).<br>
+– Trục căn thức: a/√b = a√b/b; a/(√b ± √c) nhân liên hợp.<br><br>
+<b>4. Căn bậc ba</b><br>
+– ∛a là số mà lập phương bằng a. VD: ∛8 = 2, ∛(−27) = −3.<br>
+– Căn bậc ba xác định với mọi số thực.`,
+    questions:[
+      {type:"mc", text:"Câu 1. √49 bằng:", opts:["−7","7","±7","49"], correct:1, explain:"√49 = 7 (căn bậc hai số học luôn ≥ 0)."},
+      {type:"mc", text:"Câu 2. √0 bằng:", opts:["Không xác định","0","1","−1"], correct:1, explain:"√0 = 0."},
+      {type:"mc", text:"Câu 3. Biểu thức √x xác định khi:", opts:["x > 0","x ≥ 0","x < 0","Mọi x"], correct:1, explain:"√x xác định khi x ≥ 0."},
+      {type:"mc", text:"Câu 4. (√5)² bằng:", opts:["25","√5","5","10"], correct:2, explain:"(√5)² = 5."},
+      {type:"mc", text:"Câu 5. √(3²) bằng:", opts:["3","−3","±3","9"], correct:0, explain:"√(3²) = √9 = 3 (hoặc |3| = 3)."},
+      {type:"mc", text:"Câu 6. √(−3)² bằng:", opts:["−3","3","9","Không xác định"], correct:1, explain:"√(−3)² = √9 = 3 = |−3|."},
+      {type:"mc", text:"Câu 7. Khai phương một tích: √(4·9) bằng:", opts:["√13","6","36","2·9"], correct:1, explain:"√(4·9) = √4 · √9 = 2 · 3 = 6."},
+      {type:"mc", text:"Câu 8. √(16/25) bằng:", opts:["4/5","16/25","4/25","√16/25"], correct:0, explain:"√(16/25) = √16/√25 = 4/5."},
+      {type:"mc", text:"Câu 9. ∛8 bằng:", opts:["2","4","−2","√8"], correct:0, explain:"∛8 = 2 vì 2³ = 8."},
+      {type:"mc", text:"Câu 10. ∛(−27) bằng:", opts:["3","−3","Không xác định","9"], correct:1, explain:"∛(−27) = −3 vì (−3)³ = −27."},
+      {type:"mc", text:"Câu 11. Căn bậc ba xác định với:", opts:["Số dương","Số không âm","Mọi số thực","Số nguyên"], correct:2, explain:"Căn bậc ba xác định với mọi số thực (kể cả số âm)."},
+      {type:"mc", text:"Câu 12. √100 + √25 bằng:", opts:["√125","15","√15","125"], correct:1, explain:"√100 + √25 = 10 + 5 = 15."},
+      {type:"mc", text:"Câu 13. Rút gọn √50:", opts:["5√2","2√5","25√2","√25·2"], correct:0, explain:"√50 = √(25·2) = 5√2."},
+      {type:"mc", text:"Câu 14. Rút gọn √72:", opts:["6√2","2√18","36√2","8√9"], correct:0, explain:"√72 = √(36·2) = 6√2."},
+      {type:"mc", text:"Câu 15. Trục căn thức: 6/√3 bằng:", opts:["2√3","√3","6√3","3√2"], correct:0, explain:"6/√3 = 6√3/3 = 2√3."},
+      {type:"mc", text:"Câu 16. Đưa vào trong dấu căn: 3√5 bằng:", opts:["√15","√45","√8","√35"], correct:1, explain:"3√5 = √(9·5) = √45."},
+      {type:"mc", text:"Câu 17. Tính √12 + √27:", opts:["√39","5√3","3√5","39"], correct:1, explain:"√12 + √27 = 2√3 + 3√3 = 5√3."},
+      {type:"mc", text:"Câu 18. Tính 2√3 · √12:", opts:["12","6","24","4√6"], correct:0, explain:"2√3 · √12 = 2√36 = 2·6 = 12."},
+      {type:"mc", text:"Câu 19. Trục căn thức: 2/(√5 − 1) bằng:", opts:["(√5 + 1)/2","(√5 − 1)/2","2(√5 + 1)/4","(√5 + 1)/4"], correct:0, explain:"Nhân liên hợp: 2(√5 + 1)/((√5)² − 1²) = 2(√5 + 1)/4 = (√5 + 1)/2."},
+      {type:"mc", text:"Câu 20. √(x − 1) xác định khi:", opts:["x > 1","x ≥ 1","x > 0","Mọi x"], correct:1, explain:"x − 1 ≥ 0 → x ≥ 1."},
+      {type:"mc", text:"Câu 21. Tính √8 − √18 + √32:", opts:["3√2","4√2","2√2","5√2"], correct:0, explain:"2√2 − 3√2 + 4√2 = 3√2."},
+      {type:"mc", text:"Câu 22. Tính √(2+√3) · √(2−√3):", opts:["1","√3","2","√(4−3)"], correct:0, explain:"√((2+√3)(2−√3)) = √(4−3) = √1 = 1."},
+      {type:"mc", text:"Câu 23. ∛(−8) + ∛27 bằng:", opts:["1","5","−1","19"], correct:0, explain:"∛(−8) + ∛27 = −2 + 3 = 1."},
+      {type:"mc", text:"Câu 24. So sánh 3√5 và 5√2:", opts:["3√5 > 5√2","3√5 < 5√2","3√5 = 5√2","Không so sánh được"], correct:1, explain:"(3√5)² = 45, (5√2)² = 50. Vì 45 < 50 nên 3√5 < 5√2."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về căn bậc hai:", statements:[
+        {stmt:"√16 = 4", correct:true},
+        {stmt:"√(−4) = −2", correct:false},
+        {stmt:"(√7)² = 7", correct:true},
+        {stmt:"√(a²) = a với mọi a", correct:false}
       ], explains:[
-        "Sai. √(a²) = |a|, không phải a (vd: √((-3)²) = 3 ≠ −3).",
-        "Đúng. Đây là tính chất khai phương tích (a,b ≥ 0).",
-        "Sai. √16 + √9 = 4 + 3 = 7 ≠ √25 = 5.",
-        "Đúng. (√5)² = 5 theo định nghĩa căn bậc hai."
+        "Đúng. √16 = 4.",
+        "Sai. √(−4) không xác định (số âm không có căn bậc hai).",
+        "Đúng. (√7)² = 7.",
+        "Sai. √(a²) = |a|, không phải a. VD: √((-3)²) = 3 ≠ −3."
       ]},
-      { type:"tf", text:"Xét các mệnh đề sau về biến đổi căn thức:", statements:[
-        { stmt:"√(9/4) = 3/2", correct:true },
-        { stmt:"2√3 = √12", correct:true },
-        { stmt:"√8 − √2 = √6", correct:false },
-        { stmt:"1/(√5−√3) = (√5+√3)/2", correct:true }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về căn bậc ba:", statements:[
+        {stmt:"∛64 = 4", correct:true},
+        {stmt:"∛(−1) = −1", correct:true},
+        {stmt:"Căn bậc ba chỉ xác định với số dương", correct:false},
+        {stmt:"∛0 = 0", correct:true}
       ], explains:[
-        "Đúng. √(9/4) = √9/√4 = 3/2.",
-        "Đúng. 2√3 = √(4·3) = √12.",
-        "Sai. √8−√2 = 2√2−√2 = √2 ≠ √6.",
-        "Đúng. Nhân liên hợp: (√5+√3)/((√5)²−(√3)²) = (√5+√3)/2."
+        "Đúng. 4³ = 64.",
+        "Đúng. (−1)³ = −1.",
+        "Sai. Căn bậc ba xác định với mọi số thực.",
+        "Đúng. 0³ = 0."
       ]},
-
-      // --- TRẢ LỜI NGẮN ---
-      { type:"short", text:"Tính: √75 − √48 + √27 = k√3. Tìm k.", answer:"4", hint:"Rút gọn từng căn về dạng a√3", explain:"√75=5√3, √48=4√3, √27=3√3. Kết quả: 5√3−4√3+3√3 = 4√3 → k=4." },
-      { type:"short", text:"Cho P = (1+√5)(1−√5). Tính P.", answer:"-4", hint:"Dùng hằng đẳng thức hiệu hai bình phương", explain:"P = 1² − (√5)² = 1 − 5 = −4." },
-      { type:"short", text:"Giá trị của √(7−4√3) bằng a−√b. Tính a+b.", answer:"5", hint:"Biến đổi 7−4√3 thành bình phương", explain:"7−4√3 = 4−4√3+3 = (2−√3)². Nên √(7−4√3) = 2−√3 → a=2, b=3, a+b=5." },
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các phép tính:", statements:[
+        {stmt:"√50 = 5√2", correct:true},
+        {stmt:"√12 + √27 = √39", correct:false},
+        {stmt:"6/√2 = 3√2", correct:true},
+        {stmt:"2√3 · 3√3 = 18", correct:true}
+      ], explains:[
+        "Đúng. √50 = √(25·2) = 5√2.",
+        "Sai. √12 + √27 = 2√3 + 3√3 = 5√3 ≠ √39.",
+        "Đúng. 6/√2 = 6√2/2 = 3√2.",
+        "Đúng. 2√3 · 3√3 = 6·3 = 18."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét ĐKXĐ:", statements:[
+        {stmt:"√(x − 2) xác định khi x ≥ 2", correct:true},
+        {stmt:"√(3 − x) xác định khi x ≤ 3", correct:true},
+        {stmt:"√(x²) xác định với mọi x", correct:true},
+        {stmt:"√(x + 1) xác định khi x > 0", correct:false}
+      ], explains:[
+        "Đúng. x − 2 ≥ 0 → x ≥ 2.",
+        "Đúng. 3 − x ≥ 0 → x ≤ 3.",
+        "Đúng. x² ≥ 0 với mọi x.",
+        "Sai. x + 1 ≥ 0 → x ≥ −1 (không cần x > 0)."
+      ]},
+      {type:"short", text:"Câu 29. √144 = ?", answer:"12", hint:"12² = 144", explain:"√144 = 12."},
+      {type:"short", text:"Câu 30. ∛125 = ?", answer:"5", hint:"5³ = 125", explain:"∛125 = 5."},
+      {type:"short", text:"Câu 31. Rút gọn √75 = a√3. Tìm a.", answer:"5", hint:"75 = 25 × 3", explain:"√75 = √(25·3) = 5√3 → a = 5."},
+      {type:"short", text:"Câu 32. Trục căn thức: 10/√5 = a√5. Tìm a.", answer:"2", hint:"Nhân cả tử và mẫu với √5", explain:"10/√5 = 10√5/5 = 2√5 → a = 2."}
     ]
   },
 
-  // ==================== CHỦ ĐỀ 2: HÀM SỐ BẬC NHẤT & BẬC HAI ====================
+  // ==================== CHỦ ĐỀ 2: HÀM SỐ y = ax² ====================
   {
-    id: "t2",
-    emoji: "📈",
-    name: "Hàm số bậc nhất và bậc hai",
-    desc: "Hàm số y=ax+b, y=ax², đồ thị, giao điểm",
-    questions: [
-      { type:"mc", text:"Hàm số y = −2x + 3 nghịch biến vì:", opts:["a = −2 < 0","b = 3 > 0","−2 + 3 > 0","a = 3 > 0"], correct:0, explain:"Hàm số y=ax+b nghịch biến khi a < 0. Ở đây a = −2 < 0." },
-      { type:"mc", text:"Đồ thị hàm số y = x² đi qua điểm nào?", opts:["(1, 2)","(−2, 4)","(3, 6)","(−1, −1)"], correct:1, explain:"y = (−2)² = 4. Điểm (−2, 4) thuộc đồ thị." },
-      { type:"mc", text:"Parabol y = 2x² và đường thẳng y = 4x cắt nhau tại:", opts:["O(0;0) và (2;8)","(0;0) và (4;8)","(1;2) và (2;8)","(0;0) và (−2;8)"], correct:0, explain:"2x² = 4x → 2x(x−2) = 0 → x=0 hoặc x=2. Hai giao điểm: (0;0) và (2;8)." },
-      { type:"mc", text:"Đường thẳng y = 2x − 1 song song với đường thẳng nào?", opts:["y = 2x + 5","y = −2x − 1","y = x − 1","y = 2"], correct:0, explain:"Song song khi cùng hệ số góc (a=2) và khác tung độ gốc." },
-      { type:"mc", text:"Hàm số y = (m−1)x + 3 đồng biến khi:", opts:["m > 0","m > 1","m < 1","m ≠ 1"], correct:1, explain:"Đồng biến khi hệ số a = m−1 > 0, tức m > 1." },
-      { type:"mc", text:"Đồ thị y = −x² có đỉnh tại:", opts:["(0; 0)","(1; −1)","(0; −1)","(−1; 0)"], correct:0, explain:"y = −x² là parabol có đỉnh O(0;0), bề lõm quay xuống." },
-
-      { type:"tf", text:"Xét các mệnh đề về hàm số:", statements:[
-        { stmt:"Đồ thị y = ax + b (a≠0) luôn là đường thẳng", correct:true },
-        { stmt:"Parabol y = ax² (a≠0) luôn đi qua gốc tọa độ", correct:true },
-        { stmt:"y = 3x + 1 và y = 3x − 2 cắt nhau", correct:false },
-        { stmt:"Nếu a > 0 thì parabol y = ax² có bề lõm quay lên", correct:true }
+    id:"l9_2", emoji:"📈", name:"Hàm số y = ax²",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Hàm số y = ax² (a ≠ 0)</b><br>
+– Đồ thị là parabol có đỉnh tại gốc tọa độ O, nhận Oy làm trục đối xứng.<br>
+– a > 0: parabol quay lên (bề lõm hướng lên), hàm số nghịch biến khi x < 0, đồng biến khi x > 0.<br>
+– a < 0: parabol quay xuống (bề lõm hướng xuống), hàm số đồng biến khi x < 0, nghịch biến khi x > 0.<br><br>
+<b>2. Tính chất</b><br>
+– y = ax²: với x₁ và x₂ đối nhau thì y₁ = y₂ (đối xứng qua Oy).<br>
+– |a| càng lớn, parabol càng hẹp; |a| càng nhỏ, parabol càng rộng.<br><br>
+<b>3. Vẽ đồ thị</b><br>
+– Lập bảng giá trị (chọn x = −2, −1, 0, 1, 2), tính y tương ứng.<br>
+– Vẽ các điểm, nối thành đường cong trơn.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Đồ thị hàm số y = ax² (a ≠ 0) là đường:", opts:["Thẳng","Parabol","Tròn","Elip"], correct:1, explain:"Đồ thị y = ax² là một parabol."},
+      {type:"mc", text:"Câu 2. Đỉnh parabol y = ax² nằm tại:", opts:["(1, 0)","(0, 1)","(0, 0)","(a, 0)"], correct:2, explain:"Đỉnh parabol y = ax² luôn tại gốc tọa độ O(0, 0)."},
+      {type:"mc", text:"Câu 3. Trục đối xứng của parabol y = ax² là:", opts:["Trục Ox","Trục Oy","Đường y = x","Đường x = a"], correct:1, explain:"Parabol y = ax² có trục đối xứng là trục Oy."},
+      {type:"mc", text:"Câu 4. Khi a > 0, parabol y = ax² quay:", opts:["Xuống","Lên","Sang phải","Sang trái"], correct:1, explain:"a > 0 → parabol quay lên (bề lõm hướng lên)."},
+      {type:"mc", text:"Câu 5. Khi a < 0, parabol y = ax² quay:", opts:["Lên","Xuống","Sang phải","Sang trái"], correct:1, explain:"a < 0 → parabol quay xuống (bề lõm hướng xuống)."},
+      {type:"mc", text:"Câu 6. Hàm số y = 2x² tại x = 3 có giá trị:", opts:["6","9","18","12"], correct:2, explain:"y = 2·3² = 2·9 = 18."},
+      {type:"mc", text:"Câu 7. Hàm số y = −x² tại x = −2 có giá trị:", opts:["4","−4","2","−2"], correct:1, explain:"y = −(−2)² = −4."},
+      {type:"mc", text:"Câu 8. Parabol y = ax² luôn đi qua điểm:", opts:["(1, 1)","(0, a)","(0, 0)","(a, 0)"], correct:2, explain:"Khi x = 0: y = a·0² = 0. Luôn qua O(0, 0)."},
+      {type:"mc", text:"Câu 9. Với hàm số y = ax², nếu x₁ = −x₂ thì:", opts:["y₁ = −y₂","y₁ = y₂","y₁ > y₂","y₁ < y₂"], correct:1, explain:"y₁ = a·x₁² = a·(−x₂)² = a·x₂² = y₂ (đối xứng qua Oy)."},
+      {type:"mc", text:"Câu 10. Parabol nào sau đây rộng nhất?", opts:["y = 3x²","y = x²","y = ½x²","y = 5x²"], correct:2, explain:"|a| càng nhỏ, parabol càng rộng. |½| = 0,5 nhỏ nhất."},
+      {type:"mc", text:"Câu 11. Hàm số y = x² là hàm số:", opts:["Bậc nhất","Bậc hai","Hằng số","Phân thức"], correct:1, explain:"y = x² = 1·x² là hàm số bậc hai (a = 1)."},
+      {type:"mc", text:"Câu 12. Điểm nào nằm trên parabol y = 2x²?", opts:["(1, 4)","(1, 2)","(2, 4)","(0, 2)"], correct:1, explain:"x = 1: y = 2·1² = 2 → (1, 2) thuộc parabol."},
+      {type:"mc", text:"Câu 13. Parabol y = 3x² đi qua M(2, m). Tìm m.", opts:["6","9","12","3"], correct:2, explain:"m = 3·2² = 12."},
+      {type:"mc", text:"Câu 14. Parabol y = ax² đi qua A(1, 5). Tìm a.", opts:["1","5","25","1/5"], correct:1, explain:"5 = a·1² → a = 5."},
+      {type:"mc", text:"Câu 15. Parabol y = −2x² đi qua B(−3, b). Tìm b.", opts:["18","−18","−6","6"], correct:1, explain:"b = −2·(−3)² = −2·9 = −18."},
+      {type:"mc", text:"Câu 16. Hàm số y = 2x² đồng biến khi:", opts:["x > 0","x < 0","x ∈ ℝ","Không đồng biến"], correct:0, explain:"a = 2 > 0 → đồng biến khi x > 0."},
+      {type:"mc", text:"Câu 17. Hàm số y = −3x² nghịch biến khi:", opts:["x > 0","x < 0","Mọi x","x = 0"], correct:0, explain:"a = −3 < 0 → nghịch biến khi x > 0."},
+      {type:"mc", text:"Câu 18. Parabol y = ax² đi qua M(−2, 8). Tìm a.", opts:["2","−2","4","−4"], correct:0, explain:"8 = a·(−2)² = 4a → a = 2."},
+      {type:"mc", text:"Câu 19. So sánh y₁ = 2·3² và y₂ = 2·(−3)²:", opts:["y₁ > y₂","y₁ < y₂","y₁ = y₂","Không so sánh được"], correct:2, explain:"y₁ = 18, y₂ = 18. Đối xứng → y₁ = y₂."},
+      {type:"mc", text:"Câu 20. Giá trị nhỏ nhất của y = 3x² là:", opts:["3","−3","0","Không có"], correct:2, explain:"a = 3 > 0 → y ≥ 0. y_min = 0 tại x = 0."},
+      {type:"mc", text:"Câu 21. Giá trị lớn nhất của y = −x² là:", opts:["1","−1","0","Không có"], correct:2, explain:"a < 0 → y ≤ 0. y_max = 0 tại x = 0."},
+      {type:"mc", text:"Câu 22. Parabol y = x² và y = −x² có chung:", opts:["Đỉnh O(0,0)","Không có điểm chung","Trục Ox","Hai điểm"], correct:0, explain:"Cả hai đều qua O(0, 0) nhưng quay ngược chiều."},
+      {type:"mc", text:"Câu 23. Parabol y = ax² qua A(2, −12). Tìm a.", opts:["−3","3","−6","6"], correct:0, explain:"−12 = a·4 → a = −3."},
+      {type:"mc", text:"Câu 24. Hàm số y = 4x², khi x tăng từ 0 đến 3, y tăng từ:", opts:["0 đến 12","0 đến 36","4 đến 36","0 đến 9"], correct:1, explain:"x = 0: y = 0; x = 3: y = 36. y tăng từ 0 đến 36."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"Đồ thị y = ax² là parabol có đỉnh O(0,0)", correct:true},
+        {stmt:"Trục đối xứng của y = ax² là trục Ox", correct:false},
+        {stmt:"Khi a > 0, parabol quay lên", correct:true},
+        {stmt:"Parabol y = ax² luôn đi qua gốc tọa độ", correct:true}
       ], explains:[
-        "Đúng. Đây là định nghĩa hàm số bậc nhất.",
-        "Đúng. Khi x=0 thì y=0, nên luôn qua O(0;0).",
-        "Sai. Cùng a=3 nhưng b khác nhau nên chúng song song, không cắt.",
-        "Đúng. a > 0 thì parabol có bề lõm quay lên (hình chữ U)."
+        "Đúng. Đỉnh parabol y = ax² tại O.",
+        "Sai. Trục đối xứng là Oy (không phải Ox).",
+        "Đúng. a > 0 → bề lõm hướng lên.",
+        "Đúng. x = 0 → y = 0."
       ]},
-      { type:"tf", text:"Cho đường thẳng (d): y = −x + 4. Xét các mệnh đề:", statements:[
-        { stmt:"(d) cắt trục Ox tại điểm (4; 0)", correct:true },
-        { stmt:"(d) cắt trục Oy tại điểm (0; −1)", correct:false },
-        { stmt:"(d) đi qua điểm (1; 3)", correct:true },
-        { stmt:"Hàm số y = −x + 4 đồng biến trên ℝ", correct:false }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu:", statements:[
+        {stmt:"|a| càng lớn, parabol càng hẹp", correct:true},
+        {stmt:"y = −2x² đồng biến khi x > 0", correct:false},
+        {stmt:"Hàm số y = x² có giá trị nhỏ nhất bằng 0", correct:true},
+        {stmt:"Điểm (1, 1) nằm trên parabol y = x²", correct:true}
       ], explains:[
-        "Đúng. y=0 → x=4. Điểm (4;0).",
-        "Sai. x=0 → y=4. Cắt Oy tại (0;4).",
-        "Đúng. y = −1+4 = 3. Điểm (1;3) thuộc (d).",
-        "Sai. a = −1 < 0 nên hàm số nghịch biến."
+        "Đúng. |a| lớn → parabol hẹp.",
+        "Sai. a < 0 → nghịch biến khi x > 0.",
+        "Đúng. y = x² ≥ 0, y_min = 0 tại x = 0.",
+        "Đúng. y = 1² = 1."
       ]},
-
-      { type:"short", text:"Tìm tung độ giao điểm của y = x² và y = 2x + 3 khi x > 0.", answer:"9", hint:"Giải phương trình x² = 2x + 3", explain:"x²−2x−3=0 → (x−3)(x+1)=0 → x=3 (x>0). y = 3² = 9." },
-      { type:"short", text:"Đường thẳng y = ax + 1 đi qua (2; 5). Tìm a.", answer:"2", hint:"Thay x=2, y=5 vào phương trình", explain:"5 = 2a + 1 → a = 2." },
-      { type:"short", text:"Parabol y = ax² đi qua điểm (−3; 18). Tìm a.", answer:"2", hint:"Thay tọa độ điểm vào y = ax²", explain:"18 = a·(−3)² = 9a → a = 2." },
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Xét các bài toán:", statements:[
+        {stmt:"Parabol y = 2x² qua (3, 18)", correct:true},
+        {stmt:"Parabol y = ax² qua (1, −4) thì a = −4", correct:true},
+        {stmt:"y = 3x² tại x = −2 có y = −12", correct:false},
+        {stmt:"y = −x² tại x = 5 có y = −25", correct:true}
+      ], explains:[
+        "Đúng. y = 2·9 = 18.",
+        "Đúng. −4 = a·1 → a = −4.",
+        "Sai. y = 3·(−2)² = 3·4 = 12, không phải −12.",
+        "Đúng. y = −25."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Xét tính đồng biến/nghịch biến:", statements:[
+        {stmt:"y = 5x² đồng biến khi x > 0", correct:true},
+        {stmt:"y = −x² đồng biến khi x < 0", correct:true},
+        {stmt:"y = 2x² nghịch biến khi x > 0", correct:false},
+        {stmt:"y = −3x² có giá trị lớn nhất bằng 0", correct:true}
+      ], explains:[
+        "Đúng. a > 0 → đồng biến khi x > 0.",
+        "Đúng. a < 0 → đồng biến khi x < 0.",
+        "Sai. a > 0 → đồng biến (không phải nghịch biến) khi x > 0.",
+        "Đúng. a < 0 → y ≤ 0, y_max = 0."
+      ]},
+      {type:"short", text:"Câu 29. Đồ thị y = ax² là đường gì?", answer:"parabol", hint:"Đường cong đặc trưng", explain:"Đồ thị y = ax² là parabol."},
+      {type:"short", text:"Câu 30. Đỉnh parabol y = ax² có tọa độ là gì?", answer:"(0,0)", hint:"Gốc tọa độ", explain:"Đỉnh tại O(0, 0)."},
+      {type:"short", text:"Câu 31. Hàm số y = 2x² tại x = 4 có giá trị y bằng bao nhiêu?", answer:"32", hint:"y = 2 × 4²", explain:"y = 2·16 = 32."},
+      {type:"short", text:"Câu 32. Parabol y = ax² qua (2, 12). Tìm a.", answer:"3", hint:"12 = a × 4", explain:"12 = a·4 → a = 3."}
     ]
   },
-
-  // ==================== CHỦ ĐỀ 3: PHƯƠNG TRÌNH BẬC HAI ====================
+  // ==================== CHỦ ĐỀ 3: HỆ PHƯƠNG TRÌNH BẬC NHẤT HAI ẨN ====================
   {
-    id: "t3",
-    emoji: "📐",
-    name: "Phương trình bậc hai",
-    desc: "Công thức nghiệm, biệt thức Δ, Vi-ét, phân tích",
-    questions: [
-      { type:"mc", text:"Phương trình x² − 5x + 6 = 0 có hai nghiệm là:", opts:["x=2, x=3","x=−2, x=−3","x=1, x=6","x=−1, x=−6"], correct:0, explain:"Δ=25−24=1. x=(5±1)/2 → x₁=3, x₂=2." },
-      { type:"mc", text:"Phương trình 2x² + 3x − 5 = 0 có tổng hai nghiệm bằng:", opts:["3/2","−3/2","5/2","−5/2"], correct:1, explain:"Theo Vi-ét: x₁+x₂ = −b/a = −3/2." },
-      { type:"mc", text:"Phương trình x² + 2x + 5 = 0 có:", opts:["Hai nghiệm phân biệt","Nghiệm kép","Vô nghiệm","Vô số nghiệm"], correct:2, explain:"Δ = 4−20 = −16 < 0 → vô nghiệm." },
-      { type:"mc", text:"Cho PT x² − mx + m − 1 = 0. PT có nghiệm x = 1 khi m bằng:", opts:["0","1","2","Mọi m"], correct:3, explain:"Thay x=1: 1−m+m−1=0 → 0=0, đúng với mọi m." },
-      { type:"mc", text:"PT x² + bx + c = 0 có hai nghiệm x₁, x₂. Khi đó x₁·x₂ bằng:", opts:["−b","b","c","−c"], correct:2, explain:"Theo Vi-ét (a=1): x₁·x₂ = c/a = c." },
-      { type:"mc", text:"Phương trình nào có nghiệm kép?", opts:["x²−4x+4=0","x²−4x+3=0","x²+4x+5=0","x²−4x−4=0"], correct:0, explain:"Δ=16−16=0 → nghiệm kép x=2." },
-      { type:"mc", text:"Cho PT x²−2(m+1)x+m²+2=0. PT có 2 nghiệm phân biệt khi:", opts:["m > 1/2","m < 1/2","m = 1/2","m ≠ 1/2"], correct:0, explain:"Δ'=(m+1)²−(m²+2)=2m−1>0 → m>1/2." },
-
-      { type:"tf", text:"Cho PT: x² − 7x + 10 = 0. Xét các mệnh đề:", statements:[
-        { stmt:"Δ = 9", correct:true },
-        { stmt:"Phương trình có hai nghiệm x₁=2, x₂=5", correct:true },
-        { stmt:"Tổng hai nghiệm bằng −7", correct:false },
-        { stmt:"Tích hai nghiệm bằng 10", correct:true }
+    id:"l9_3", emoji:"🔗", name:"Hệ phương trình bậc nhất hai ẩn",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phương trình bậc nhất hai ẩn</b><br>
+– Dạng: ax + by = c (a, b không đồng thời bằng 0).<br>
+– Nghiệm là cặp (x₀; y₀) thoả mãn phương trình. Tập nghiệm biểu diễn bởi đường thẳng trên mặt phẳng toạ độ.<br><br>
+<b>2. Hệ phương trình bậc nhất hai ẩn</b><br>
+– Gồm hai PT bậc nhất hai ẩn. Nghiệm là cặp (x; y) thoả mãn đồng thời cả hai PT.<br>
+– Minh hoạ hình học: giao điểm hai đường thẳng.<br><br>
+<b>3. Phương pháp thế</b><br>
+– Từ một PT, rút một ẩn theo ẩn kia → thế vào PT còn lại → giải PT một ẩn → suy ra ẩn kia.<br><br>
+<b>4. Phương pháp cộng đại số</b><br>
+– Nhân các PT với hệ số thích hợp sao cho hệ số của một ẩn đối nhau → cộng vế theo vế → triệt tiêu một ẩn → giải.<br><br>
+<b>5. Giải bài toán bằng lập HPT</b><br>
+– Bước 1: Chọn ẩn, đặt ĐK.<br>
+– Bước 2: Lập HPT từ dữ kiện bài toán.<br>
+– Bước 3: Giải HPT.<br>
+– Bước 4: Đối chiếu ĐK, kết luận.`,
+    questions:[
+      {type:"mc", text:"Câu 1. Phương trình bậc nhất hai ẩn có dạng:", opts:["ax + by = c","ax² + by = c","ax + by + cz = d","ax = b"], correct:0, explain:"Dạng tổng quát: ax + by = c (a, b không đồng thời bằng 0)."},
+      {type:"mc", text:"Câu 2. Cặp (1; 2) có là nghiệm của PT 2x + y = 4 không?", opts:["Có","Không","Chưa đủ dữ kiện","Chỉ thoả x"], correct:0, explain:"2·1 + 2 = 4 ✓."},
+      {type:"mc", text:"Câu 3. Nghiệm của PT x + y = 5 được biểu diễn bởi:", opts:["Một điểm","Một đường thẳng","Một mặt phẳng","Không biểu diễn được"], correct:1, explain:"Tập nghiệm PT bậc nhất hai ẩn là một đường thẳng trên Oxy."},
+      {type:"mc", text:"Câu 4. HPT gồm:", opts:["Một PT bậc hai","Hai PT bậc nhất hai ẩn","Ba PT bậc nhất","Một PT bậc nhất"], correct:1, explain:"HPT bậc nhất hai ẩn gồm hai PT bậc nhất hai ẩn."},
+      {type:"mc", text:"Câu 5. Nghiệm của HPT là:", opts:["Cặp (x; y) thoả mãn cả hai PT","Nghiệm của PT thứ nhất","Nghiệm của PT thứ hai","Tổng nghiệm hai PT"], correct:0, explain:"Nghiệm HPT thoả mãn đồng thời cả hai PT."},
+      {type:"mc", text:"Câu 6. Về mặt hình học, nghiệm HPT là:", opts:["Giao điểm hai đường thẳng","Khoảng cách hai đường thẳng","Trung điểm hai đường thẳng","Hình chiếu"], correct:0, explain:"Nghiệm HPT là toạ độ giao điểm hai đường thẳng biểu diễn hai PT."},
+      {type:"mc", text:"Câu 7. Phương pháp thế là:", opts:["Rút một ẩn, thế vào PT kia","Cộng hai PT","Nhân hai PT","Trừ hai PT"], correct:0, explain:"PP thế: rút một ẩn theo ẩn kia từ một PT rồi thế vào PT còn lại."},
+      {type:"mc", text:"Câu 8. Phương pháp cộng đại số nhằm:", opts:["Triệt tiêu một ẩn","Tăng bậc PT","Tạo thêm ẩn","Đổi dấu PT"], correct:0, explain:"PP cộng: nhân hệ số thích hợp rồi cộng vế để triệt tiêu một ẩn."},
+      {type:"mc", text:"Câu 9. HPT có duy nhất nghiệm khi hai đường thẳng:", opts:["Song song","Cắt nhau","Trùng nhau","Vuông góc"], correct:1, explain:"Hai đường thẳng cắt nhau → HPT có đúng 1 nghiệm."},
+      {type:"mc", text:"Câu 10. HPT vô nghiệm khi hai đường thẳng:", opts:["Song song","Cắt nhau","Trùng nhau","Vuông góc"], correct:0, explain:"Hai đường thẳng song song (không trùng) → không có giao điểm → vô nghiệm."},
+      {type:"mc", text:"Câu 11. HPT vô số nghiệm khi hai đường thẳng:", opts:["Song song","Cắt nhau","Trùng nhau","Khác mặt phẳng"], correct:2, explain:"Hai đường thẳng trùng nhau → mọi điểm trên đường thẳng đều là nghiệm."},
+      {type:"mc", text:"Câu 12. Bước đầu tiên khi giải bài toán bằng lập HPT là:", opts:["Giải HPT","Chọn ẩn, đặt điều kiện","Lập HPT","Kết luận"], correct:1, explain:"Bước 1: Chọn ẩn và đặt điều kiện cho ẩn."},
+      {type:"mc", text:"Câu 13. Giải HPT: x + y = 5, x − y = 1. Giá trị x là:", opts:["2","3","4","1"], correct:1, explain:"Cộng vế: 2x = 6 → x = 3."},
+      {type:"mc", text:"Câu 14. Giải HPT: x + y = 5, x − y = 1. Giá trị y là:", opts:["3","2","4","1"], correct:1, explain:"x = 3, thế vào: 3 + y = 5 → y = 2."},
+      {type:"mc", text:"Câu 15. Giải HPT: 2x + y = 7, x − y = 2. Nghiệm (x; y) là:", opts:["(3; 1)","(2; 3)","(1; 5)","(4; −1)"], correct:0, explain:"Cộng vế: 3x = 9 → x = 3, y = 7 − 6 = 1."},
+      {type:"mc", text:"Câu 16. Giải HPT: x + 2y = 8, 3x + 2y = 12. Giá trị x là:", opts:["1","2","3","4"], correct:1, explain:"Trừ vế: (3x+2y)−(x+2y) = 12−8 → 2x = 4 → x = 2."},
+      {type:"mc", text:"Câu 17. HPT: x + y = 10, x − y = 4. Tổng x + y bằng:", opts:["10","14","4","7"], correct:0, explain:"Đề cho x + y = 10."},
+      {type:"mc", text:"Câu 18. Dùng PP thế giải HPT: y = 2x, x + y = 9. Giá trị x là:", opts:["3","6","9","2"], correct:0, explain:"x + 2x = 9 → 3x = 9 → x = 3."},
+      {type:"mc", text:"Câu 19. HPT: 3x + y = 10, x + y = 6. Giá trị x là:", opts:["1","2","3","4"], correct:1, explain:"Trừ vế: 2x = 4 → x = 2."},
+      {type:"mc", text:"Câu 20. HPT: 3x + y = 10, x + y = 6. Giá trị y là:", opts:["2","4","6","3"], correct:1, explain:"x = 2, thế vào: 2 + y = 6 → y = 4."},
+      {type:"mc", text:"Câu 21. Hai số có tổng bằng 15, hiệu bằng 3. Số lớn là:", opts:["6","9","12","8"], correct:1, explain:"x + y = 15, x − y = 3 → 2x = 18 → x = 9."},
+      {type:"mc", text:"Câu 22. HPT: 2x − y = 1, x + y = 5. Nghiệm (x; y) là:", opts:["(2; 3)","(3; 2)","(1; 4)","(4; 1)"], correct:0, explain:"Cộng vế: 3x = 6 → x = 2, y = 5 − 2 = 3."},
+      {type:"mc", text:"Câu 23. HPT: x + y = 4, 2x + 2y = 8 có:", opts:["Một nghiệm","Vô nghiệm","Vô số nghiệm","Hai nghiệm"], correct:2, explain:"PT 2 gấp đôi PT 1 → hai đường thẳng trùng nhau → vô số nghiệm."},
+      {type:"mc", text:"Câu 24. HPT: x + y = 3, x + y = 5 có:", opts:["Một nghiệm","Vô nghiệm","Vô số nghiệm","Hai nghiệm"], correct:1, explain:"x + y không thể vừa bằng 3 vừa bằng 5 → hai đường thẳng song song → vô nghiệm."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về HPT bậc nhất hai ẩn:", statements:[
+        {stmt:"PT x + 2y = 5 là PT bậc nhất hai ẩn", correct:true},
+        {stmt:"HPT luôn có đúng một nghiệm", correct:false},
+        {stmt:"Cặp (2; 1) là nghiệm của PT 3x − y = 5", correct:true},
+        {stmt:"Nghiệm HPT là nghiệm của từng PT riêng lẻ", correct:false}
       ], explains:[
-        "Đúng. Δ = 49−40 = 9.",
-        "Đúng. x = (7±3)/2 → x₁=5, x₂=2.",
-        "Sai. x₁+x₂ = −(−7)/1 = 7 (không phải −7).",
-        "Đúng. x₁·x₂ = c/a = 10."
+        "Đúng. Có dạng ax + by = c với a = 1, b = 2.",
+        "Sai. HPT có thể có 1 nghiệm, vô nghiệm hoặc vô số nghiệm.",
+        "Đúng. 3·2 − 1 = 5 ✓.",
+        "Sai. Nghiệm HPT phải thoả mãn đồng thời cả hai PT."
       ]},
-      { type:"tf", text:"Xét các mệnh đề về phương trình bậc hai ax²+bx+c=0 (a≠0):", statements:[
-        { stmt:"Nếu a+b+c=0 thì x=1 là một nghiệm", correct:true },
-        { stmt:"Nếu a−b+c=0 thì x=−1 là một nghiệm", correct:true },
-        { stmt:"Nếu Δ=0 thì PT có đúng 1 nghiệm", correct:false },
-        { stmt:"Vi-ét: x₁+x₂ = b/a", correct:false }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về phương pháp giải HPT:", statements:[
+        {stmt:"PP thế rút một ẩn theo ẩn kia rồi thế vào PT còn lại", correct:true},
+        {stmt:"PP cộng đại số chỉ áp dụng khi hệ số bằng nhau", correct:false},
+        {stmt:"Hai đường thẳng cắt nhau thì HPT có đúng 1 nghiệm", correct:true},
+        {stmt:"Hai đường thẳng song song thì HPT vô số nghiệm", correct:false}
       ], explains:[
-        "Đúng. Thay x=1: a+b+c=0 → x=1 là nghiệm.",
-        "Đúng. Thay x=−1: a−b+c=0 → x=−1 là nghiệm.",
-        "Sai (tùy cách hiểu). Δ=0 → nghiệm kép (2 nghiệm trùng nhau), không phải 'đúng 1 nghiệm'.",
-        "Sai. Đúng là x₁+x₂ = −b/a (có dấu trừ)."
+        "Đúng. Đây là ý tưởng PP thế.",
+        "Sai. Có thể nhân hệ số thích hợp trước khi cộng/trừ.",
+        "Đúng. Giao điểm duy nhất ứng với nghiệm duy nhất.",
+        "Sai. Song song → không giao → vô nghiệm."
       ]},
-
-      { type:"short", text:"Cho PT x²−6x+k=0 có nghiệm kép. Tìm k.", answer:"9", hint:"Nghiệm kép khi Δ = 0", explain:"Δ = 36−4k = 0 → k = 9." },
-      { type:"short", text:"Hai số có tổng bằng 8, tích bằng 15. Tìm số lớn hơn.", answer:"5", hint:"Hai số là nghiệm của x²−8x+15=0", explain:"x²−8x+15=0 → (x−3)(x−5)=0 → x=3 hoặc x=5. Số lớn = 5." },
-      { type:"short", text:"PT x²+2x−3=0 có hai nghiệm x₁, x₂. Tính x₁²+x₂².", answer:"10", hint:"x₁²+x₂² = (x₁+x₂)²−2x₁x₂", explain:"x₁+x₂=−2, x₁x₂=−3. x₁²+x₂² = (−2)²−2(−3) = 4+6 = 10." },
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cho HPT: x + y = 7, 2x − y = 2:", statements:[
+        {stmt:"Cộng vế được 3x = 9", correct:true},
+        {stmt:"x = 3", correct:true},
+        {stmt:"y = 3", correct:false},
+        {stmt:"Nghiệm HPT là (3; 4)", correct:true}
+      ], explains:[
+        "Đúng. (x+y) + (2x−y) = 7+2 = 9 → 3x = 9.",
+        "Đúng. 3x = 9 → x = 3.",
+        "Sai. 3 + y = 7 → y = 4, không phải 3.",
+        "Đúng. x = 3, y = 4."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Bài toán: Tổng hai số bằng 20, hai lần số lớn trừ số bé bằng 22:", statements:[
+        {stmt:"Gọi hai số là x, y (x > y > 0), ta có x + y = 20", correct:true},
+        {stmt:"PT thứ hai là 2x − y = 22", correct:true},
+        {stmt:"Cộng vế: 3x = 42 → x = 14", correct:true},
+        {stmt:"Số bé bằng 8", correct:false}
+      ], explains:[
+        "Đúng. Tổng hai số = 20.",
+        "Đúng. 2 lần số lớn trừ số bé = 22.",
+        "Đúng. (x+y)+(2x−y) = 20+22 → 3x = 42 → x = 14.",
+        "Sai. y = 20 − 14 = 6, không phải 8."
+      ]},
+      {type:"short", text:"Câu 29. Cho PT 2x + y = 10. Nếu x = 3 thì y bằng bao nhiêu?", answer:"4", hint:"Thay x = 3 vào PT", explain:"2·3 + y = 10 → y = 4."},
+      {type:"short", text:"Câu 30. HPT: x + y = 8, x − y = 2. Tìm x.", answer:"5", hint:"Cộng hai vế", explain:"2x = 10 → x = 5."},
+      {type:"short", text:"Câu 31. HPT: 3x + y = 11, x + y = 5. Tìm x.", answer:"3", hint:"Trừ vế theo vế", explain:"(3x+y)−(x+y) = 11−5 → 2x = 6 → x = 3."},
+      {type:"short", text:"Câu 32. Hai số có tổng 12, hiệu 4. Tìm số lớn.", answer:"8", hint:"x + y = 12, x − y = 4", explain:"2x = 16 → x = 8."}
     ]
   },
-
-  // ==================== CHỦ ĐỀ 4: HỆ PHƯƠNG TRÌNH ====================
+  // ==================== CHỦ ĐỀ 4: PHƯƠNG TRÌNH BẬC HAI ====================
   {
-    id: "t4",
-    emoji: "⚡",
-    name: "Hệ phương trình bậc nhất hai ẩn",
-    desc: "Giải hệ PT, bài toán lập hệ PT",
-    questions: [
-      { type:"mc", text:"Hệ phương trình { x+y=5 ; x−y=1 } có nghiệm:", opts:["(3; 2)","(2; 3)","(4; 1)","(1; 4)"], correct:0, explain:"Cộng 2 PT: 2x=6 → x=3, y=2." },
-      { type:"mc", text:"Hệ { 2x+3y=7 ; x−y=1 } có nghiệm (x;y). Tính x+y:", opts:["3","4","5","2"], correct:0, explain:"Từ PT2: x=y+1. Thay vào PT1: 2(y+1)+3y=7 → y=1, x=2. x+y=3." },
-      { type:"mc", text:"Hệ { ax+y=1 ; x+ay=1 } có vô số nghiệm khi:", opts:["a=0","a=1","a=−1","a=2"], correct:1, explain:"a=1: cả hai PT trở thành x+y=1, vô số nghiệm." },
-      { type:"mc", text:"Hệ { 2x−y=5 ; 4x−2y=10 } có:", opts:["1 nghiệm","Vô nghiệm","Vô số nghiệm","2 nghiệm"], correct:2, explain:"PT2 = 2×PT1, hai PT tương đương → vô số nghiệm." },
-      { type:"mc", text:"Hệ { 3x+2y=12 ; 3x+2y=8 } có:", opts:["1 nghiệm","Vô nghiệm","Vô số nghiệm","2 nghiệm"], correct:1, explain:"VT giống nhau mà VP khác → vô nghiệm." },
-      { type:"mc", text:"Hai xe đi ngược chiều từ A, B cách 180km. Xe A: 40km/h, xe B: 50km/h. Gặp nhau sau:", opts:["2 giờ","3 giờ","4 giờ","2.5 giờ"], correct:0, explain:"Thời gian = 180/(40+50) = 180/90 = 2 giờ." },
-
-      { type:"tf", text:"Cho hệ PT { x+2y=5 ; 3x−y=1 }. Xét các mệnh đề:", statements:[
-        { stmt:"Nghiệm của hệ là (1; 2)", correct:true },
-        { stmt:"Nếu nhân PT1 với 3 rồi trừ PT2 thì được 7y=14", correct:true },
-        { stmt:"Hệ này vô nghiệm", correct:false },
-        { stmt:"x−y = −1", correct:true }
+    id:"l9_4", emoji:"📐", name:"Phương trình bậc hai",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phương trình bậc hai một ẩn</b><br>
+– Dạng: ax² + bx + c = 0 (a ≠ 0).<br>
+– Các hệ số: a (hệ số bậc hai), b (hệ số bậc nhất), c (hệ số tự do).<br><br>
+<b>2. Biệt thức (Discriminant)</b><br>
+– Δ = b² − 4ac.<br>
+– Δ > 0: PT có 2 nghiệm phân biệt.<br>
+– Δ = 0: PT có nghiệm kép x = −b/(2a).<br>
+– Δ < 0: PT vô nghiệm.<br><br>
+<b>3. Công thức nghiệm</b><br>
+– x = (−b ± √Δ) / (2a).<br>
+– x₁ = (−b + √Δ)/(2a), x₂ = (−b − √Δ)/(2a).<br><br>
+<b>4. Định lí Viète</b><br>
+– Nếu x₁, x₂ là hai nghiệm: x₁ + x₂ = −b/a; x₁·x₂ = c/a.<br>
+– ĐL Viète đảo: Nếu hai số có tổng S và tích P (S² ≥ 4P) thì chúng là nghiệm của t² − St + P = 0.<br><br>
+<b>5. Giải bài toán bằng lập PT bậc hai</b><br>
+– Chọn ẩn, đặt ĐK → lập PT bậc hai → giải → đối chiếu ĐK → kết luận.`,
+    questions:[
+      {type:"mc", text:"Câu 1. PT bậc hai có dạng tổng quát:", opts:["ax + b = 0","ax² + bx + c = 0 (a ≠ 0)","ax³ + bx = 0","ax² = 0"], correct:1, explain:"Dạng tổng quát PT bậc hai: ax² + bx + c = 0 với a ≠ 0."},
+      {type:"mc", text:"Câu 2. Trong PT 3x² − 5x + 2 = 0, hệ số a là:", opts:["−5","3","2","0"], correct:1, explain:"a = 3 (hệ số của x²)."},
+      {type:"mc", text:"Câu 3. Trong PT 3x² − 5x + 2 = 0, hệ số b là:", opts:["3","2","−5","5"], correct:2, explain:"b = −5 (hệ số của x)."},
+      {type:"mc", text:"Câu 4. Biệt thức Δ được tính bởi công thức:", opts:["b² − 4ac","b² + 4ac","a² − 4bc","4ac − b²"], correct:0, explain:"Δ = b² − 4ac."},
+      {type:"mc", text:"Câu 5. Khi Δ > 0, PT bậc hai có:", opts:["Vô nghiệm","Nghiệm kép","2 nghiệm phân biệt","1 nghiệm"], correct:2, explain:"Δ > 0 → PT có 2 nghiệm phân biệt."},
+      {type:"mc", text:"Câu 6. Khi Δ = 0, PT bậc hai có:", opts:["Vô nghiệm","Nghiệm kép","2 nghiệm phân biệt","3 nghiệm"], correct:1, explain:"Δ = 0 → nghiệm kép x = −b/(2a)."},
+      {type:"mc", text:"Câu 7. Khi Δ < 0, PT bậc hai:", opts:["Có 2 nghiệm","Có nghiệm kép","Vô nghiệm","Có 1 nghiệm"], correct:2, explain:"Δ < 0 → PT vô nghiệm (trong ℝ)."},
+      {type:"mc", text:"Câu 8. Công thức nghiệm PT bậc hai:", opts:["x = −b/(2a)","x = (−b ± √Δ)/(2a)","x = b/(2a)","x = (b ± √Δ)/(2a)"], correct:1, explain:"x = (−b ± √Δ)/(2a)."},
+      {type:"mc", text:"Câu 9. Theo Viète, x₁ + x₂ bằng:", opts:["−b/a","b/a","c/a","−c/a"], correct:0, explain:"Viète: x₁ + x₂ = −b/a."},
+      {type:"mc", text:"Câu 10. Theo Viète, x₁ · x₂ bằng:", opts:["−b/a","b/a","c/a","−c/a"], correct:2, explain:"Viète: x₁·x₂ = c/a."},
+      {type:"mc", text:"Câu 11. PT x² − 4 = 0 có các nghiệm:", opts:["x = 2","x = −2","x = ±2","x = 4"], correct:2, explain:"x² = 4 → x = ±2."},
+      {type:"mc", text:"Câu 12. PT x² = 0 có nghiệm:", opts:["x = 0","x = 1","Vô nghiệm","x = ±1"], correct:0, explain:"x² = 0 → x = 0 (nghiệm kép)."},
+      {type:"mc", text:"Câu 13. Tính Δ của PT x² − 6x + 5 = 0:", opts:["16","−16","36","11"], correct:0, explain:"Δ = (−6)² − 4·1·5 = 36 − 20 = 16."},
+      {type:"mc", text:"Câu 14. Giải PT x² − 6x + 5 = 0:", opts:["x = 1 hoặc x = 5","x = 2 hoặc x = 3","x = −1 hoặc x = −5","x = 6"], correct:0, explain:"Δ = 16, √Δ = 4. x = (6 ± 4)/2 → x = 5 hoặc x = 1."},
+      {type:"mc", text:"Câu 15. Tính Δ của PT x² + 4x + 4 = 0:", opts:["0","16","−16","8"], correct:0, explain:"Δ = 4² − 4·1·4 = 16 − 16 = 0."},
+      {type:"mc", text:"Câu 16. PT x² + 4x + 4 = 0 có nghiệm:", opts:["x = 2","x = −2","x = ±2","Vô nghiệm"], correct:1, explain:"Δ = 0 → x = −4/(2·1) = −2 (nghiệm kép)."},
+      {type:"mc", text:"Câu 17. Tính Δ của PT x² + x + 1 = 0:", opts:["5","−3","0","3"], correct:1, explain:"Δ = 1² − 4·1·1 = 1 − 4 = −3."},
+      {type:"mc", text:"Câu 18. PT x² + x + 1 = 0 có:", opts:["2 nghiệm","Nghiệm kép","Vô nghiệm","1 nghiệm"], correct:2, explain:"Δ = −3 < 0 → vô nghiệm."},
+      {type:"mc", text:"Câu 19. PT x² − 3x + 2 = 0. Tổng hai nghiệm bằng:", opts:["3","2","−3","−2"], correct:0, explain:"Viète: x₁ + x₂ = −(−3)/1 = 3."},
+      {type:"mc", text:"Câu 20. PT x² − 3x + 2 = 0. Tích hai nghiệm bằng:", opts:["3","2","−3","−2"], correct:1, explain:"Viète: x₁·x₂ = 2/1 = 2."},
+      {type:"mc", text:"Câu 21. Hai số có tổng 5, tích 6. Hai số đó là nghiệm PT:", opts:["t² − 5t + 6 = 0","t² + 5t + 6 = 0","t² − 6t + 5 = 0","t² − 5t − 6 = 0"], correct:0, explain:"Viète đảo: S = 5, P = 6 → t² − 5t + 6 = 0."},
+      {type:"mc", text:"Câu 22. Giải PT 2x² − 5x + 3 = 0:", opts:["x = 1 hoặc x = 3/2","x = 1 hoặc x = 3","x = 2 hoặc x = 3","x = −1 hoặc x = 3/2"], correct:0, explain:"Δ = 25 − 24 = 1. x = (5 ± 1)/4 → x = 3/2 hoặc x = 1."},
+      {type:"mc", text:"Câu 23. PT x² − 7x + 10 = 0 có nghiệm:", opts:["x = 2 và x = 5","x = −2 và x = −5","x = 1 và x = 10","x = 3 và x = 4"], correct:0, explain:"Δ = 49 − 40 = 9. x = (7 ± 3)/2 → x = 5 hoặc x = 2."},
+      {type:"mc", text:"Câu 24. PT x² + 2x − 15 = 0 có tổng hai nghiệm bằng:", opts:["2","−2","15","−15"], correct:1, explain:"Viète: S = −b/a = −2/1 = −2."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về PT bậc hai:", statements:[
+        {stmt:"PT bậc hai luôn có 2 nghiệm", correct:false},
+        {stmt:"Δ = b² − 4ac", correct:true},
+        {stmt:"PT x² − 9 = 0 có nghiệm x = ±3", correct:true},
+        {stmt:"Hệ số a trong PT bậc hai có thể bằng 0", correct:false}
       ], explains:[
-        "Đúng. Kiểm tra: 1+4=5 ✓, 3−2=1 ✓.",
-        "Đúng. 3(x+2y)−(3x−y) = 3x+6y−3x+y = 7y = 15−1 = 14.",
-        "Sai. Hệ có nghiệm duy nhất (1;2).",
-        "Đúng. x−y = 1−2 = −1."
+        "Sai. PT bậc hai có thể vô nghiệm khi Δ < 0.",
+        "Đúng. Đây là công thức biệt thức.",
+        "Đúng. x² = 9 → x = ±3.",
+        "Sai. Điều kiện a ≠ 0 để PT là bậc hai."
       ]},
-      { type:"tf", text:"Bài toán: Mua 3 bút và 2 vở hết 29.000đ. Mua 1 bút và 4 vở hết 33.000đ. Gọi x là giá bút, y là giá vở (nghìn đồng):", statements:[
-        { stmt:"Hệ PT: { 3x+2y=29 ; x+4y=33 }", correct:true },
-        { stmt:"Giá 1 cây bút là 5.000đ", correct:true },
-        { stmt:"Giá 1 quyển vở là 7.000đ", correct:true },
-        { stmt:"Mua 2 bút 3 vở hết 31.000đ", correct:true }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về nghiệm PT bậc hai:", statements:[
+        {stmt:"Δ > 0 thì PT có 2 nghiệm phân biệt", correct:true},
+        {stmt:"Δ = 0 thì PT vô nghiệm", correct:false},
+        {stmt:"Nghiệm kép: x = −b/(2a)", correct:true},
+        {stmt:"Nếu a và c trái dấu thì PT luôn có nghiệm", correct:true}
       ], explains:[
-        "Đúng. Đúng theo đề bài.",
-        "Đúng. Giải: x=33−4y, thay: 3(33−4y)+2y=29 → 99−10y=29 → y=7, x=5. Bút = 5.000đ.",
-        "Đúng. y = 7 (7.000đ).",
-        "Đúng. 2(5)+3(7) = 10+21 = 31 (nghìn đồng)."
+        "Đúng. Δ > 0 → 2 nghiệm phân biệt.",
+        "Sai. Δ = 0 → nghiệm kép.",
+        "Đúng. Khi Δ = 0, x = −b/(2a).",
+        "Đúng. a·c < 0 → Δ = b² − 4ac > 0 → luôn có nghiệm."
       ]},
-
-      { type:"short", text:"Giải hệ { x+y=7 ; x−y=3 }. Tìm x.", answer:"5", hint:"Cộng hai phương trình", explain:"Cộng: 2x=10 → x=5." },
-      { type:"short", text:"Giải hệ { 2x+y=8 ; x+3y=9 }. Tìm y.", answer:"2", hint:"Dùng phương pháp thế hoặc cộng đại số", explain:"Từ PT2: x=9−3y. Thay: 2(9−3y)+y=8 → 18−5y=8 → y=2." },
-      { type:"short", text:"An hơn Bình 4 tuổi, tổng tuổi hai người là 32. Tuổi An là bao nhiêu?", answer:"18", hint:"Gọi tuổi An là x, Bình là y, lập hệ", explain:"x−y=4, x+y=32 → 2x=36 → x=18." },
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cho PT x² − 5x + 6 = 0:", statements:[
+        {stmt:"Δ = 25 − 24 = 1", correct:true},
+        {stmt:"PT có 2 nghiệm phân biệt", correct:true},
+        {stmt:"Tổng hai nghiệm bằng −5", correct:false},
+        {stmt:"Tích hai nghiệm bằng 6", correct:true}
+      ], explains:[
+        "Đúng. Δ = (−5)² − 4·1·6 = 25 − 24 = 1.",
+        "Đúng. Δ = 1 > 0.",
+        "Sai. x₁ + x₂ = −(−5)/1 = 5.",
+        "Đúng. x₁·x₂ = 6/1 = 6."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Cho PT 2x² + 3x − 5 = 0:", statements:[
+        {stmt:"a = 2, b = 3, c = −5", correct:true},
+        {stmt:"Δ = 9 + 40 = 49", correct:true},
+        {stmt:"x₁ = 1", correct:true},
+        {stmt:"x₂ = 5/2", correct:false}
+      ], explains:[
+        "Đúng. Đọc hệ số từ PT.",
+        "Đúng. Δ = 3² − 4·2·(−5) = 9 + 40 = 49.",
+        "Đúng. x = (−3 + 7)/4 = 1.",
+        "Sai. x₂ = (−3 − 7)/4 = −10/4 = −5/2."
+      ]},
+      {type:"short", text:"Câu 29. Tính Δ của PT x² − 4x + 3 = 0.", answer:"4", hint:"Δ = b² − 4ac", explain:"Δ = (−4)² − 4·1·3 = 16 − 12 = 4."},
+      {type:"short", text:"Câu 30. PT x² − 4x + 3 = 0 có nghiệm lớn hơn là:", answer:"3", hint:"Dùng công thức nghiệm", explain:"x = (4 ± 2)/2 → x = 3 hoặc x = 1. Nghiệm lớn hơn là 3."},
+      {type:"short", text:"Câu 31. Cho PT x² − 7x + k = 0 có nghiệm x = 3. Tìm k.", answer:"12", hint:"Thay x = 3 vào PT", explain:"9 − 21 + k = 0 → k = 12."},
+      {type:"short", text:"Câu 32. Tích hai nghiệm PT x² + 3x − 10 = 0 bằng:", answer:"-10", hint:"Viète: P = c/a", explain:"x₁·x₂ = c/a = −10/1 = −10."}
     ]
   },
-
-  // ==================== CHỦ ĐỀ 5: HÌNH HỌC - ĐƯỜNG TRÒN ====================
+  // ==================== CHỦ ĐỀ 5: BẤT ĐẲNG THỨC — BPT BẬC NHẤT ====================
   {
-    id: "t5",
-    emoji: "⭕",
-    name: "Đường tròn – Góc nội tiếp – Tiếp tuyến",
-    desc: "Tính chất đường tròn, góc nội tiếp, tiếp tuyến, tứ giác nội tiếp",
-    questions: [
-      { type:"mc", text:"Góc nội tiếp bằng nửa:", opts:["Số đo cung bị chắn","Góc ở tâm cùng chắn cung","Cả A và B đều đúng","Đường kính"], correct:2, explain:"Góc nội tiếp = ½ cung bị chắn = ½ góc ở tâm cùng chắn cung." },
-      { type:"mc", text:"Góc nội tiếp chắn nửa đường tròn bằng:", opts:["45°","60°","90°","180°"], correct:2, explain:"Cung nửa đường tròn = 180° → Góc nội tiếp = 90°." },
-      { type:"mc", text:"Tiếp tuyến của đường tròn tại điểm A thì:", opts:["Song song bán kính OA","Vuông góc bán kính OA","Đi qua tâm O","Cắt đường tròn tại 2 điểm"], correct:1, explain:"Tiếp tuyến vuông góc với bán kính tại tiếp điểm." },
-      { type:"mc", text:"Chu vi đường tròn bán kính R = 7cm (π ≈ 22/7):", opts:["22 cm","44 cm","154 cm","14 cm"], correct:1, explain:"C = 2πR = 2×(22/7)×7 = 44 cm." },
-      { type:"mc", text:"Tứ giác nội tiếp có tính chất:", opts:["Tổng 2 góc đối = 180°","4 cạnh bằng nhau","4 góc bằng nhau","Hai đường chéo bằng nhau"], correct:0, explain:"Tứ giác nội tiếp đường tròn thì tổng hai góc đối diện bằng 180°." },
-      { type:"mc", text:"Từ điểm M ở ngoài đường tròn (O;R), kẻ tiếp tuyến MA (A là tiếp điểm). Biết OM = 10, R = 6. Tính MA:", opts:["6","8","10","12"], correct:1, explain:"MA² = OM² − OA² = 100 − 36 = 64 → MA = 8." },
-
-      { type:"tf", text:"Xét các mệnh đề về đường tròn (O; R):", statements:[
-        { stmt:"Đường kính là dây cung lớn nhất", correct:true },
-        { stmt:"Hai tiếp tuyến từ 1 điểm ngoài đường tròn bằng nhau", correct:true },
-        { stmt:"Góc tạo bởi tiếp tuyến và dây cung = ½ cung bị chắn", correct:true },
-        { stmt:"Đường thẳng cách tâm O một khoảng d > R thì cắt đường tròn", correct:false }
+    id:"l9_5", emoji:"⚖️", name:"Bất đẳng thức — BPT bậc nhất",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Bất đẳng thức (BĐT)</b><br>
+– BĐT là hệ thức dạng a < b, a > b, a ≤ b, a ≥ b.<br>
+– Tính chất bắc cầu: a < b, b < c ⇒ a < c.<br><br>
+<b>2. Tính chất BĐT</b><br>
+– Cộng/trừ cùng một số: a < b ⇔ a + c < b + c.<br>
+– Nhân/chia số dương: a < b, c > 0 ⇒ ac < bc (cùng chiều).<br>
+– Nhân/chia số âm: a < b, c < 0 ⇒ ac > bc (đổi chiều).<br><br>
+<b>3. Bất phương trình bậc nhất một ẩn</b><br>
+– Dạng: ax + b > 0, ax + b < 0, ax + b ≥ 0, ax + b ≤ 0 (a ≠ 0).<br>
+– Giải: chuyển vế, chia cho a (chú ý đổi chiều khi a < 0).<br><br>
+<b>4. Biểu diễn tập nghiệm trên trục số</b><br>
+– x > a: tia từ a sang phải (không tô a).<br>
+– x ≥ a: tia từ a sang phải (tô a).<br>
+– x < a: tia từ a sang trái (không tô a).<br>
+– x ≤ a: tia từ a sang trái (tô a).`,
+    questions:[
+      {type:"mc", text:"Câu 1. Bất đẳng thức nào đúng?", opts:["3 > 5","−2 > 1","4 < 7","0 > 1"], correct:2, explain:"4 < 7 đúng."},
+      {type:"mc", text:"Câu 2. Nếu a < b thì a + 3 so với b + 3:", opts:["a + 3 < b + 3","a + 3 > b + 3","a + 3 = b + 3","Không so sánh được"], correct:0, explain:"Cộng cùng một số giữ nguyên chiều BĐT."},
+      {type:"mc", text:"Câu 3. Nếu a < b và c > 0 thì ac so với bc:", opts:["ac < bc","ac > bc","ac = bc","Không xác định"], correct:0, explain:"Nhân số dương giữ nguyên chiều BĐT."},
+      {type:"mc", text:"Câu 4. Nếu a < b và c < 0 thì ac so với bc:", opts:["ac < bc","ac > bc","ac = bc","Không xác định"], correct:1, explain:"Nhân số âm đổi chiều BĐT."},
+      {type:"mc", text:"Câu 5. BPT bậc nhất một ẩn có dạng:", opts:["ax² + b > 0","ax + b > 0 (a ≠ 0)","a/x > b","ax³ > 0"], correct:1, explain:"Dạng ax + b > 0 (hoặc <, ≤, ≥) với a ≠ 0."},
+      {type:"mc", text:"Câu 6. Khi giải BPT chia cho số âm phải:", opts:["Giữ nguyên chiều","Đổi chiều BPT","Bỏ BPT","Nhân thêm −1"], correct:1, explain:"Chia cho số âm phải đổi chiều BPT."},
+      {type:"mc", text:"Câu 7. Tập nghiệm x > 3 biểu diễn trên trục số là:", opts:["Tia từ 3 sang phải (không tô 3)","Tia từ 3 sang trái","Đoạn thẳng","Điểm 3"], correct:0, explain:"x > 3: tia sang phải, không bao gồm 3 (ngoặc tròn)."},
+      {type:"mc", text:"Câu 8. Tập nghiệm x ≤ 5 biểu diễn trên trục số là:", opts:["Tia từ 5 sang phải","Tia từ 5 sang trái (tô 5)","Chỉ điểm 5","Đoạn [0; 5]"], correct:1, explain:"x ≤ 5: tia sang trái, bao gồm 5 (ngoặc vuông)."},
+      {type:"mc", text:"Câu 9. Tính chất bắc cầu: a < b, b < c thì:", opts:["a > c","a = c","a < c","Không kết luận"], correct:2, explain:"Tính chất bắc cầu: a < b < c → a < c."},
+      {type:"mc", text:"Câu 10. Nếu a > b thì −a so với −b:", opts:["−a > −b","−a < −b","−a = −b","Không so sánh được"], correct:1, explain:"Nhân hai vế với −1 (số âm) đổi chiều: −a < −b."},
+      {type:"mc", text:"Câu 11. x = 2 có là nghiệm của BPT x + 1 > 2 không?", opts:["Có","Không","Chưa rõ","Cần thêm ĐK"], correct:0, explain:"2 + 1 = 3 > 2 ✓ → x = 2 là nghiệm."},
+      {type:"mc", text:"Câu 12. Cho a < b. So sánh a − 5 và b − 5:", opts:["a − 5 > b − 5","a − 5 < b − 5","a − 5 = b − 5","Không kết luận"], correct:1, explain:"Trừ cùng 5 giữ nguyên chiều: a − 5 < b − 5."},
+      {type:"mc", text:"Câu 13. Giải BPT: 2x > 6:", opts:["x > 3","x < 3","x > 6","x < 6"], correct:0, explain:"2x > 6 → x > 3 (chia 2, số dương, giữ chiều)."},
+      {type:"mc", text:"Câu 14. Giải BPT: −3x > 9:", opts:["x > 3","x < 3","x > −3","x < −3"], correct:3, explain:"−3x > 9 → x < −3 (chia −3, đổi chiều)."},
+      {type:"mc", text:"Câu 15. Giải BPT: x + 4 ≤ 7:", opts:["x ≤ 3","x ≥ 3","x ≤ 11","x ≥ 11"], correct:0, explain:"x ≤ 7 − 4 → x ≤ 3."},
+      {type:"mc", text:"Câu 16. Giải BPT: 3x − 1 > 5:", opts:["x > 2","x > 6","x < 2","x > 4/3"], correct:0, explain:"3x > 6 → x > 2."},
+      {type:"mc", text:"Câu 17. Giải BPT: −2x + 4 ≥ 0:", opts:["x ≤ 2","x ≥ 2","x ≤ −2","x ≥ −2"], correct:0, explain:"−2x ≥ −4 → x ≤ 2 (chia −2, đổi chiều)."},
+      {type:"mc", text:"Câu 18. Giải BPT: 5 − x < 3:", opts:["x < 2","x > 2","x < −2","x > −2"], correct:1, explain:"−x < −2 → x > 2."},
+      {type:"mc", text:"Câu 19. Tập nghiệm BPT 2x − 3 ≥ 1:", opts:["x ≥ 2","x ≤ 2","x ≥ 1","x ≤ 1"], correct:0, explain:"2x ≥ 4 → x ≥ 2."},
+      {type:"mc", text:"Câu 20. Giải BPT: 4x + 1 < 2x + 7:", opts:["x < 3","x > 3","x < 4","x > 4"], correct:0, explain:"4x − 2x < 7 − 1 → 2x < 6 → x < 3."},
+      {type:"mc", text:"Câu 21. Giải BPT: 3(x − 1) > 2x + 1:", opts:["x > 4","x < 4","x > 2","x < 2"], correct:0, explain:"3x − 3 > 2x + 1 → x > 4."},
+      {type:"mc", text:"Câu 22. Số nguyên dương nhỏ nhất thoả x > 3,5 là:", opts:["3","4","5","3,5"], correct:1, explain:"x > 3,5 → số nguyên dương nhỏ nhất là 4."},
+      {type:"mc", text:"Câu 23. Giải BPT: −x/2 > 1:", opts:["x > 2","x < 2","x > −2","x < −2"], correct:3, explain:"−x > 2 → x < −2."},
+      {type:"mc", text:"Câu 24. Tìm x nguyên thoả 1 < x ≤ 4:", opts:["x ∈ {2; 3; 4}","x ∈ {1; 2; 3; 4}","x ∈ {2; 3}","x ∈ {1; 2; 3}"], correct:0, explain:"1 < x nên x ≠ 1; x ≤ 4 nên x có thể = 4. Vậy x ∈ {2; 3; 4}."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về BĐT:", statements:[
+        {stmt:"3 < 5 là BĐT đúng", correct:true},
+        {stmt:"Nếu a > b thì a + c > b + c", correct:true},
+        {stmt:"Nếu a > b thì 2a > 2b", correct:true},
+        {stmt:"Nếu a > b thì −a > −b", correct:false}
       ], explains:[
-        "Đúng. Đường kính = 2R là dây cung có độ dài lớn nhất.",
-        "Đúng. Hai tiếp tuyến kẻ từ 1 điểm ngoài có độ dài bằng nhau.",
-        "Đúng. Đây là tính chất góc tạo bởi tiếp tuyến và dây cung.",
-        "Sai. d > R → đường thẳng không cắt đường tròn (nằm ngoài)."
+        "Đúng. 3 < 5.",
+        "Đúng. Cộng cùng c giữ nguyên chiều.",
+        "Đúng. Nhân số dương (2) giữ nguyên chiều.",
+        "Sai. Nhân −1 (số âm) đổi chiều: −a < −b."
       ]},
-      { type:"tf", text:"Cho tam giác ABC nội tiếp (O), BC là đường kính:", statements:[
-        { stmt:"Góc BAC = 90°", correct:true },
-        { stmt:"O là trung điểm của BC", correct:true },
-        { stmt:"AB² + AC² = BC²", correct:true },
-        { stmt:"Tam giác ABC là tam giác đều", correct:false }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về BPT bậc nhất:", statements:[
+        {stmt:"BPT 2x + 1 > 0 là BPT bậc nhất một ẩn", correct:true},
+        {stmt:"x = 0 là nghiệm BPT x + 3 > 2", correct:true},
+        {stmt:"Tập nghiệm x ≥ 2 bao gồm x = 2", correct:true},
+        {stmt:"Giải BPT luôn giữ nguyên chiều khi chia hai vế", correct:false}
       ], explains:[
-        "Đúng. Góc nội tiếp chắn nửa đường tròn = 90°.",
-        "Đúng. O là tâm → O là trung điểm đường kính BC.",
-        "Đúng. Vì góc A = 90° nên theo Pythagore: AB²+AC²=BC².",
-        "Sai. Tam giác có góc 90° không thể đều (tam giác đều có 3 góc 60°)."
+        "Đúng. Dạng ax + b > 0, a = 2 ≠ 0.",
+        "Đúng. 0 + 3 = 3 > 2 ✓.",
+        "Đúng. Dấu ≥ bao gồm dấu =.",
+        "Sai. Chia cho số âm phải đổi chiều."
       ]},
-
-      { type:"short", text:"Diện tích hình tròn bán kính 5cm (lấy π ≈ 3,14). Kết quả (cm²)?", answer:"78.5", hint:"S = πR²", explain:"S = 3,14 × 25 = 78,5 cm²." },
-      { type:"short", text:"Cung 60° trên đường tròn bán kính 6cm có độ dài bằng bao nhiêu π (dạng kπ, tìm k)?", answer:"2", hint:"Độ dài cung = πRn/180", explain:"l = π×6×60/180 = 360π/180 = 2π → k = 2." },
-      { type:"short", text:"Tứ giác ABCD nội tiếp, góc A = 70°. Tính góc C (độ)?", answer:"110", hint:"Tổng hai góc đối = 180°", explain:"Góc C = 180° − 70° = 110°." },
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cho BPT 3x − 6 > 0:", statements:[
+        {stmt:"Chuyển vế: 3x > 6", correct:true},
+        {stmt:"Chia 3: x > 2", correct:true},
+        {stmt:"x = 2 là nghiệm", correct:false},
+        {stmt:"x = 5 là nghiệm", correct:true}
+      ], explains:[
+        "Đúng. 3x − 6 > 0 → 3x > 6.",
+        "Đúng. x > 2.",
+        "Sai. x > 2 (không bao gồm 2, do dấu >).",
+        "Đúng. 5 > 2 ✓."
+      ]},
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Cho BPT −2x + 6 ≤ 0:", statements:[
+        {stmt:"Chuyển vế: −2x ≤ −6", correct:true},
+        {stmt:"Chia −2 được x ≤ 3", correct:false},
+        {stmt:"Tập nghiệm là x ≥ 3", correct:true},
+        {stmt:"x = 3 thoả mãn BPT", correct:true}
+      ], explains:[
+        "Đúng. −2x ≤ −6.",
+        "Sai. Chia −2 phải đổi chiều: x ≥ 3.",
+        "Đúng. −2x ≤ −6 → x ≥ 3.",
+        "Đúng. −2·3 + 6 = 0 ≤ 0 ✓."
+      ]},
+      {type:"short", text:"Câu 29. Giải BPT: x + 5 > 8. Nghiệm là x lớn hơn bao nhiêu?", answer:"3", hint:"Chuyển 5 sang phải", explain:"x > 8 − 5 → x > 3."},
+      {type:"short", text:"Câu 30. Giải BPT: 2x ≤ 10. Nghiệm là x ≤ mấy?", answer:"5", hint:"Chia hai vế cho 2", explain:"x ≤ 5."},
+      {type:"short", text:"Câu 31. Giải BPT: −4x > 12. Nghiệm là x < mấy?", answer:"-3", hint:"Chia −4, đổi chiều", explain:"x < −3 (chia −4, đổi chiều)."},
+      {type:"short", text:"Câu 32. Có bao nhiêu số nguyên thoả −1 ≤ x < 3?", answer:"4", hint:"Liệt kê: −1, 0, 1, 2", explain:"x ∈ {−1; 0; 1; 2} → 4 số."}
     ]
   },
-
-  // ==================== CHỦ ĐỀ 6: TAM GIÁC ĐỒNG DẠNG & LƯỢNG GIÁC ====================
+  // ==================== CHỦ ĐỀ 6: PT QUY VỀ PT BẬC NHẤT ====================
   {
-    id: "t6",
-    emoji: "📏",
-    name: "Tam giác đồng dạng – Tỉ số lượng giác",
-    desc: "Tam giác đồng dạng, sin cos tan, ứng dụng thực tế",
-    questions: [
-      { type:"mc", text:"Trong tam giác vuông tại A, sin B bằng:", opts:["AC/BC","AB/BC","AC/AB","AB/AC"], correct:0, explain:"sin B = đối/huyền = AC/BC." },
-      { type:"mc", text:"cos 60° bằng:", opts:["1/2","√3/2","√2/2","1"], correct:0, explain:"cos 60° = 1/2 (giá trị lượng giác đặc biệt)." },
-      { type:"mc", text:"Cho tam giác vuông có hai cạnh góc vuông 3cm và 4cm. Cạnh huyền bằng:", opts:["5cm","7cm","6cm","√7 cm"], correct:0, explain:"c² = 3²+4² = 25 → c = 5cm (bộ ba Pythagore)." },
-      { type:"mc", text:"Hai tam giác đồng dạng tỉ số k = 2/3. Tỉ số diện tích bằng:", opts:["2/3","4/9","8/27","3/2"], correct:1, explain:"Tỉ số diện tích = k² = (2/3)² = 4/9." },
-      { type:"mc", text:"tan 45° bằng:", opts:["0","1/2","1","√3"], correct:2, explain:"tan 45° = sin45°/cos45° = 1." },
-      { type:"mc", text:"Trong tam giác vuông tại C, AB=10, góc B=30°. Tính AC:", opts:["5","5√3","5√2","10√3"], correct:0, explain:"AC = AB·sin B = 10·sin 30° = 10·(1/2) = 5." },
-
-      { type:"tf", text:"Xét các mệnh đề về lượng giác góc nhọn α:", statements:[
-        { stmt:"sin²α + cos²α = 1", correct:true },
-        { stmt:"tan α = sin α / cos α", correct:true },
-        { stmt:"sin 30° = cos 60°", correct:true },
-        { stmt:"sin α luôn lớn hơn cos α", correct:false }
+    id:"l9_6", emoji:"🧩", name:"PT quy về PT bậc nhất",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. PT chứa ẩn ở mẫu</b><br>
+– Bước 1: Tìm ĐKXĐ (mẫu ≠ 0).<br>
+– Bước 2: Quy đồng mẫu, khử mẫu.<br>
+– Bước 3: Giải PT nhận được.<br>
+– Bước 4: Kiểm tra nghiệm với ĐKXĐ, loại nghiệm ngoại lai.<br><br>
+<b>2. PT tích</b><br>
+– Dạng: A(x) · B(x) = 0 ⇔ A(x) = 0 hoặc B(x) = 0.<br>
+– Đưa PT về dạng tích bằng phân tích đa thức.<br><br>
+<b>3. Lưu ý</b><br>
+– Luôn kiểm tra ĐKXĐ với PT chứa ẩn ở mẫu.<br>
+– Nghiệm ngoại lai là nghiệm không thoả ĐKXĐ → phải loại.`,
+    questions:[
+      {type:"mc", text:"Câu 1. PT chứa ẩn ở mẫu là PT có:", opts:["Ẩn ở tử","Ẩn ở mẫu phân thức","Ẩn ở ngoài phân thức","Không có ẩn"], correct:1, explain:"PT chứa ẩn ở mẫu: biến x xuất hiện ở mẫu phân thức."},
+      {type:"mc", text:"Câu 2. Bước đầu tiên giải PT chứa ẩn ở mẫu:", opts:["Giải PT","Tìm ĐKXĐ","Quy đồng","Kết luận"], correct:1, explain:"Bước 1: Tìm ĐKXĐ (mẫu ≠ 0)."},
+      {type:"mc", text:"Câu 3. ĐKXĐ của 1/(x − 2) là:", opts:["x ≠ 0","x ≠ 2","x ≠ −2","x > 0"], correct:1, explain:"Mẫu x − 2 ≠ 0 → x ≠ 2."},
+      {type:"mc", text:"Câu 4. ĐKXĐ của 1/x + 1/(x − 1) là:", opts:["x ≠ 0","x ≠ 1","x ≠ 0 và x ≠ 1","x > 1"], correct:2, explain:"x ≠ 0 và x − 1 ≠ 0 → x ≠ 0, x ≠ 1."},
+      {type:"mc", text:"Câu 5. PT tích A(x)·B(x) = 0 khi:", opts:["A = 0 và B = 0","A = 0 hoặc B = 0","A + B = 0","A − B = 0"], correct:1, explain:"Tích = 0 ⇔ ít nhất một thừa số = 0."},
+      {type:"mc", text:"Câu 6. PT (x − 1)(x + 3) = 0 có nghiệm:", opts:["x = 1","x = −3","x = 1 hoặc x = −3","x = 1 và x = −3 đồng thời"], correct:2, explain:"x − 1 = 0 → x = 1 hoặc x + 3 = 0 → x = −3."},
+      {type:"mc", text:"Câu 7. Nghiệm ngoại lai là:", opts:["Nghiệm đúng","Nghiệm không thoả ĐKXĐ","Nghiệm âm","Nghiệm lẻ"], correct:1, explain:"Nghiệm ngoại lai: tìm được nhưng không thoả ĐKXĐ → phải loại."},
+      {type:"mc", text:"Câu 8. Sau khi giải PT chứa ẩn ở mẫu, cần:", opts:["Kiểm tra ĐKXĐ","Nhân thêm","Bỏ mẫu","Thêm nghiệm"], correct:0, explain:"Phải đối chiếu nghiệm với ĐKXĐ, loại nghiệm ngoại lai."},
+      {type:"mc", text:"Câu 9. PT x(x − 2) = 0 có nghiệm:", opts:["x = 0","x = 2","x = 0 hoặc x = 2","x = −2"], correct:2, explain:"x = 0 hoặc x − 2 = 0 → x = 2."},
+      {type:"mc", text:"Câu 10. PT (2x − 4)(3x + 6) = 0 có nghiệm:", opts:["x = 2 hoặc x = −2","x = 4 hoặc x = 6","x = 2 hoặc x = 2","x = −4 hoặc x = −6"], correct:0, explain:"2x − 4 = 0 → x = 2; 3x + 6 = 0 → x = −2."},
+      {type:"mc", text:"Câu 11. ĐKXĐ của 3/(2x) là:", opts:["x ≠ 0","x ≠ 2","x ≠ 3","x > 0"], correct:0, explain:"Mẫu 2x ≠ 0 → x ≠ 0."},
+      {type:"mc", text:"Câu 12. PT x² − x = 0 viết dạng tích:", opts:["x(x − 1) = 0","(x − 1)² = 0","x(x + 1) = 0","(x − 1)(x + 1) = 0"], correct:0, explain:"x² − x = x(x − 1) = 0."},
+      {type:"mc", text:"Câu 13. Giải PT: 1/x = 3 (ĐKXĐ: x ≠ 0):", opts:["x = 3","x = 1/3","x = −3","x = −1/3"], correct:1, explain:"1/x = 3 → x = 1/3 (thoả ĐKXĐ)."},
+      {type:"mc", text:"Câu 14. Giải PT: 2/(x − 1) = 4 (ĐKXĐ: x ≠ 1):", opts:["x = 3/2","x = 1","x = 2","x = 1/2"], correct:0, explain:"2 = 4(x − 1) → 2 = 4x − 4 → 4x = 6 → x = 3/2 (thoả ĐKXĐ)."},
+      {type:"mc", text:"Câu 15. Giải PT x/(x − 2) = 2/(x − 2) (ĐKXĐ: x ≠ 2):", opts:["x = 2","Vô nghiệm","x = 0","x = 1"], correct:1, explain:"x = 2 nhưng x ≠ 2 (ĐKXĐ) → vô nghiệm (nghiệm ngoại lai)."},
+      {type:"mc", text:"Câu 16. PT (x − 3)(2x + 1) = 0 có nghiệm:", opts:["x = 3 hoặc x = −1/2","x = 3 hoặc x = 1/2","x = −3 hoặc x = 1/2","x = −3 hoặc x = −1/2"], correct:0, explain:"x − 3 = 0 → x = 3; 2x + 1 = 0 → x = −1/2."},
+      {type:"mc", text:"Câu 17. PT x² − 4x + 3 = 0 viết dạng tích:", opts:["(x − 1)(x − 3) = 0","(x + 1)(x + 3) = 0","(x − 1)(x + 3) = 0","(x + 1)(x − 3) = 0"], correct:0, explain:"x² − 4x + 3 = (x − 1)(x − 3) = 0."},
+      {type:"mc", text:"Câu 18. Giải PT: 3/(x + 1) + 2/(x + 1) = 5 (ĐKXĐ: x ≠ −1):", opts:["x = 0","x = −1","x = 1","x = 4"], correct:0, explain:"5/(x + 1) = 5 → x + 1 = 1 → x = 0 (thoả ĐKXĐ)."},
+      {type:"mc", text:"Câu 19. PT x² − 9 = 0 viết dạng tích:", opts:["(x − 3)(x + 3) = 0","(x − 9)(x + 1) = 0","x(x − 9) = 0","(x − 3)² = 0"], correct:0, explain:"x² − 9 = (x − 3)(x + 3) = 0. (hằng đẳng thức)"},
+      {type:"mc", text:"Câu 20. PT x³ − x = 0 viết dạng tích:", opts:["x(x − 1)(x + 1) = 0","x(x² + 1) = 0","(x − 1)(x² + x) = 0","x²(x − 1) = 0"], correct:0, explain:"x³ − x = x(x² − 1) = x(x − 1)(x + 1) = 0."},
+      {type:"mc", text:"Câu 21. PT x³ − x = 0 có bao nhiêu nghiệm?", opts:["1","2","3","0"], correct:2, explain:"x = 0, x = 1, x = −1 → 3 nghiệm."},
+      {type:"mc", text:"Câu 22. Giải PT: (x − 2)/(x + 1) = 0 (ĐKXĐ: x ≠ −1):", opts:["x = 2","x = −1","x = 0","Vô nghiệm"], correct:0, explain:"Tử = 0: x − 2 = 0 → x = 2 (thoả ĐKXĐ)."},
+      {type:"mc", text:"Câu 23. PT x² + x = 0 có nghiệm:", opts:["x = 0 hoặc x = −1","x = 0 hoặc x = 1","x = −1","x = 1"], correct:0, explain:"x(x + 1) = 0 → x = 0 hoặc x = −1."},
+      {type:"mc", text:"Câu 24. ĐKXĐ của x/(x² − 4) là:", opts:["x ≠ 0","x ≠ ±2","x ≠ 4","x ≠ 2"], correct:1, explain:"x² − 4 = (x − 2)(x + 2) ≠ 0 → x ≠ ±2."},
+      {type:"tf", text:"Câu 25 (Đúng/Sai). Xét các phát biểu về PT chứa ẩn ở mẫu:", statements:[
+        {stmt:"Phải tìm ĐKXĐ trước khi giải", correct:true},
+        {stmt:"ĐKXĐ của 1/(x − 3) là x ≠ 3", correct:true},
+        {stmt:"Mọi nghiệm tìm được đều là nghiệm PT", correct:false},
+        {stmt:"Nghiệm ngoại lai là nghiệm thoả ĐKXĐ", correct:false}
       ], explains:[
-        "Đúng. Đây là hệ thức lượng giác cơ bản.",
-        "Đúng. Định nghĩa tan α.",
-        "Đúng. sin 30° = cos(90°−30°) = cos 60° = 1/2.",
-        "Sai. Phản ví dụ: sin 30° = 0,5 < cos 30° = √3/2 ≈ 0,87."
+        "Đúng. Luôn tìm ĐKXĐ trước.",
+        "Đúng. x − 3 ≠ 0 → x ≠ 3.",
+        "Sai. Nghiệm ngoại lai (không thoả ĐKXĐ) phải loại.",
+        "Sai. Nghiệm ngoại lai là nghiệm KHÔNG thoả ĐKXĐ."
       ]},
-      { type:"tf", text:"Cho ΔABC ~ ΔA'B'C' với tỉ số đồng dạng k=3. Xét:", statements:[
-        { stmt:"AB/A'B' = BC/B'C' = AC/A'C' = 3", correct:true },
-        { stmt:"Các góc tương ứng bằng nhau", correct:true },
-        { stmt:"Tỉ số chu vi bằng 3", correct:true },
-        { stmt:"Tỉ số diện tích bằng 3", correct:false }
+      {type:"tf", text:"Câu 26 (Đúng/Sai). Xét các phát biểu về PT tích:", statements:[
+        {stmt:"A·B = 0 ⇔ A = 0 hoặc B = 0", correct:true},
+        {stmt:"(x − 2)(x + 5) = 0 có nghiệm x = 2, x = −5", correct:true},
+        {stmt:"x² − x = x(x + 1)", correct:false},
+        {stmt:"PT x(x − 1)(x + 2) = 0 có 3 nghiệm", correct:true}
       ], explains:[
-        "Đúng. Tỉ số đồng dạng = tỉ số các cạnh tương ứng.",
-        "Đúng. Tam giác đồng dạng có các góc tương ứng bằng nhau.",
-        "Đúng. Tỉ số chu vi = k = 3.",
-        "Sai. Tỉ số diện tích = k² = 9."
+        "Đúng. Đây là tính chất tích bằng 0.",
+        "Đúng. x − 2 = 0 → x = 2; x + 5 = 0 → x = −5.",
+        "Sai. x² − x = x(x − 1), không phải x(x + 1).",
+        "Đúng. x = 0, x = 1, x = −2 → 3 nghiệm."
       ]},
-
-      { type:"short", text:"sin²30° + cos²30° = ?", answer:"1", hint:"Hệ thức lượng giác cơ bản", explain:"sin²α + cos²α = 1 với mọi α." },
-      { type:"short", text:"Cột đèn cao h mét, bóng dài 6m, góc nâng mặt trời 60°. Tìm h (kết quả dạng a√3, nhập a).", answer:"6", hint:"tan 60° = h/6", explain:"h = 6·tan 60° = 6√3 → a = 6." },
-      { type:"short", text:"ΔABC ~ ΔDEF, AB=6, DE=4. Chu vi ΔABC=24. Tìm chu vi ΔDEF.", answer:"16", hint:"Tỉ số chu vi = tỉ số đồng dạng", explain:"k = 6/4 = 3/2. Chu vi DEF = 24/(3/2) = 16." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 7: GIẢI BÀI TOÁN BẰNG LẬP PT/HPT ====================
-  {
-    id: "t7",
-    emoji: "🧩",
-    name: "Bài toán lập phương trình / hệ PT",
-    desc: "Chuyển động, năng suất, số học, hình học",
-    questions: [
-      { type:"mc", text:"Ô tô đi 120km. Nếu tăng vận tốc 10km/h thì thời gian giảm 30 phút. Gọi v (km/h) là vận tốc ban đầu, phương trình nào đúng?", opts:["120/v − 120/(v+10) = 1/2","120/v − 120/(v+10) = 30","120(v+10) − 120v = 1/2","120/v + 120/(v+10) = 1/2"], correct:0, explain:"Thời gian = quãng đường/vận tốc. Giảm 30 phút = 1/2 giờ." },
-      { type:"mc", text:"Hai vòi nước cùng chảy đầy bể trong 6 giờ. Vòi 1 chảy 1 giờ được 1/10 bể. Vòi 2 chảy 1 giờ được bao nhiêu bể?", opts:["1/15","1/12","1/10","1/20"], correct:0, explain:"1/10 + 1/x = 1/6 → 1/x = 1/6−1/10 = 2/30 = 1/15." },
-      { type:"mc", text:"Một số có hai chữ số, tổng hai chữ số là 9. Đổi chỗ hai chữ số thì số mới lớn hơn số cũ 27. Số cũ là:", opts:["36","45","63","54"], correct:0, explain:"Gọi ab: a+b=9, (10b+a)−(10a+b)=27 → 9(b−a)=27 → b−a=3. Vậy a=3,b=6, số=36." },
-      { type:"mc", text:"Hai người thợ cùng làm xong việc trong 12 ngày. Người A làm một mình hết 20 ngày. Hỏi người B làm một mình hết:", opts:["24 ngày","30 ngày","32 ngày","28 ngày"], correct:1, explain:"1/20 + 1/x = 1/12 → 1/x = 1/12−1/20 = 2/60 = 1/30 → x=30." },
-      { type:"mc", text:"Ca nô xuôi dòng 36km và ngược dòng 24km hết 3 giờ. Biết vận tốc dòng nước 4km/h. PT vận tốc ca nô v khi nước lặng:", opts:["36/(v+4) + 24/(v−4) = 3","36/(v−4) + 24/(v+4) = 3","36v + 24v = 3","(36+24)/v = 3"], correct:0, explain:"Xuôi: v+4, ngược: v−4. Tổng thời gian = 3 giờ." },
-
-      { type:"tf", text:"Bài toán: Quãng đường AB dài 90km. Xe máy đi từ A, ô tô đi từ B cùng lúc ngược chiều. Xe máy 30km/h, ô tô 60km/h:", statements:[
-        { stmt:"Hai xe gặp nhau sau 1 giờ", correct:true },
-        { stmt:"Lúc gặp nhau, xe máy đã đi 30km", correct:true },
-        { stmt:"Điểm gặp nhau cách B 60km", correct:true },
-        { stmt:"Nếu cùng chiều từ A, ô tô đuổi kịp xe máy (xuất phát trước 1h) sau 1 giờ", correct:true }
+      {type:"tf", text:"Câu 27 (Đúng/Sai). Cho PT: 3/(x − 1) = 6 (ĐKXĐ: x ≠ 1):", statements:[
+        {stmt:"Nhân hai vế với (x − 1): 3 = 6(x − 1)", correct:true},
+        {stmt:"6x − 6 = 3 → 6x = 9", correct:true},
+        {stmt:"x = 3/2", correct:true},
+        {stmt:"x = 3/2 không thoả ĐKXĐ", correct:false}
       ], explains:[
-        "Đúng. t = 90/(30+60) = 1 giờ.",
-        "Đúng. Xe máy: 30×1 = 30km.",
-        "Đúng. Ô tô đi 60km, cách A = 90−60 = 30km... Thực tế ô tô đi từ B nên cách B = 90−60 = 30km, cách A = 60km. Điểm gặp cách B 30km, cách A 60km. Đúng.",
-        "Đúng. Xe máy xuất phát trước 1h đi được 30km. Ô tô nhanh hơn 30km/h, đuổi kịp sau t = 30/30 = 1 giờ."
+        "Đúng. Khử mẫu: 3 = 6(x − 1).",
+        "Đúng. 6x − 6 = 3 → 6x = 9.",
+        "Đúng. x = 9/6 = 3/2.",
+        "Sai. x = 3/2 ≠ 1 nên thoả ĐKXĐ."
       ]},
-
-      { type:"short", text:"Mảnh đất hình chữ nhật có chu vi 28m, diện tích 48m². Tìm chiều dài (cạnh lớn hơn).", answer:"8", hint:"Lập hệ: 2(d+r)=28, d×r=48", explain:"d+r=14, d×r=48 → t²−14t+48=0 → (t−6)(t−8)=0 → d=8, r=6." },
-      { type:"short", text:"Tìm hai số biết tổng bằng 10 và tổng bình phương bằng 58. Số lớn hơn là?", answer:"7", hint:"Gọi x,y: x+y=10, x²+y²=58", explain:"(x+y)²=x²+2xy+y² → 100=58+2xy → xy=21. PT: t²−10t+21=0 → t=3,7. Số lớn=7." },
-      { type:"short", text:"Thuyền xuôi dòng 28km trong 2 giờ, vận tốc dòng nước 4km/h. Tính vận tốc thuyền khi nước lặng (km/h).", answer:"10", hint:"Vận tốc xuôi = v + 4 = 28/2", explain:"v+4 = 14 → v = 10 km/h." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 8: ĐỀ TỔNG HỢP ====================
-  {
-    id: "t8",
-    emoji: "🏆",
-    name: "Đề tổng hợp – Mô phỏng đề thi",
-    desc: "Tổng hợp kiến thức, mô phỏng cấu trúc đề thi tuyển sinh",
-    questions: [
-      // MC
-      { type:"mc", text:"√(25/9) bằng:", opts:["5/3","25/9","5/9","3/5"], correct:0, explain:"√(25/9) = √25/√9 = 5/3." },
-      { type:"mc", text:"Phương trình 3x² − 12 = 0 có nghiệm:", opts:["x = ±2","x = ±4","x = 2","x = 4"], correct:0, explain:"3x²=12 → x²=4 → x=±2." },
-      { type:"mc", text:"Hệ { x−y=2 ; 2x+y=7 } có nghiệm:", opts:["(3; 1)","(1; 3)","(2; 3)","(4; 2)"], correct:0, explain:"Cộng: 3x=9 → x=3, y=1." },
-      { type:"mc", text:"Parabol y = x² cắt đường thẳng y = x + 2 tại mấy điểm?", opts:["0","1","2","3"], correct:2, explain:"x²=x+2 → x²−x−2=0 → Δ=9>0 → 2 nghiệm → 2 giao điểm." },
-      { type:"mc", text:"Cho ΔABC vuông tại A, AB=6, AC=8. Bán kính đường tròn ngoại tiếp bằng:", opts:["5","10","7","8"], correct:0, explain:"BC=√(36+64)=10. R = BC/2 = 5 (tâm ở trung điểm cạnh huyền)." },
-      { type:"mc", text:"Giá trị của sin30°·cos60° + cos30°·sin60° bằng:", opts:["0","1/2","1","√3/2"], correct:2, explain:"= sin(30°+60°) = sin90° = 1. Hoặc: 1/2·1/2 + √3/2·√3/2 = 1/4+3/4 = 1." },
-      { type:"mc", text:"PT x²−(m+1)x+m=0 luôn có nghiệm x=1 vì:", opts:["Δ ≥ 0","Thay x=1: 1−m−1+m=0","a+b+c=0","Cả B và C"], correct:3, explain:"Thay x=1: 0=0 đúng mọi m. Cũng vì a+b+c = 1−(m+1)+m = 0." },
-
-      // TF
-      { type:"tf", text:"Xét các mệnh đề tổng hợp:", statements:[
-        { stmt:"√(−3)² = −3", correct:false },
-        { stmt:"PT x²+1=0 vô nghiệm trong ℝ", correct:true },
-        { stmt:"Hai tiếp tuyến từ 1 điểm ngoài đường tròn vuông góc nhau khi d = R√2", correct:true },
-        { stmt:"Nếu ΔABC ~ ΔDEF thì ΔDEF ~ ΔABC", correct:true }
+      {type:"tf", text:"Câu 28 (Đúng/Sai). Cho PT: x/(x − 3) = 3/(x − 3) (ĐKXĐ: x ≠ 3):", statements:[
+        {stmt:"Khử mẫu: x = 3", correct:true},
+        {stmt:"x = 3 thoả ĐKXĐ", correct:false},
+        {stmt:"PT vô nghiệm", correct:true},
+        {stmt:"x = 3 là nghiệm ngoại lai", correct:true}
       ], explains:[
-        "Sai. √(−3)² = |−3| = 3.",
-        "Đúng. x²=−1 không có nghiệm thực.",
-        "Đúng. Hai tiếp tuyến vuông góc khi OM = R√2 (dùng tam giác vuông OMA).",
-        "Đúng. Quan hệ đồng dạng có tính chất đối xứng."
+        "Đúng. Khử mẫu được x = 3.",
+        "Sai. x = 3 nhưng ĐKXĐ x ≠ 3 → không thoả.",
+        "Đúng. Nghiệm duy nhất tìm được là ngoại lai → vô nghiệm.",
+        "Đúng. x = 3 không thoả ĐKXĐ nên là nghiệm ngoại lai."
       ]},
-      { type:"tf", text:"Tổng hợp kiến thức:", statements:[
-        { stmt:"Hệ { 2x+y=5 ; 4x+2y=10 } có vô số nghiệm", correct:true },
-        { stmt:"Đường tròn bán kính 3cm có diện tích 9π cm²", correct:true },
-        { stmt:"tan α · cot α = 1 (α nhọn)", correct:true },
-        { stmt:"Hai tam giác có 3 góc tương ứng bằng nhau thì bằng nhau", correct:false }
-      ], explains:[
-        "Đúng. PT2 = 2×PT1 → vô số nghiệm.",
-        "Đúng. S = π×3² = 9π.",
-        "Đúng. tan α × cot α = (sinα/cosα)(cosα/sinα) = 1.",
-        "Sai. 3 góc bằng nhau chỉ cho đồng dạng, chưa chắc bằng nhau."
-      ]},
-
-      // SHORT
-      { type:"short", text:"Rút gọn: √12 − √27 + √48 = k√3. Tìm k.", answer:"3", hint:"Rút gọn từng căn", explain:"2√3−3√3+4√3 = 3√3 → k=3." },
-      { type:"short", text:"PT x²−8x+m=0 có một nghiệm x=2. Tìm nghiệm còn lại.", answer:"6", hint:"Dùng Vi-ét: x₁+x₂=8", explain:"x₁+x₂=8, x₁=2 → x₂=6." },
-      { type:"short", text:"ΔABC vuông tại A, BC=13, AB=5. Tính AC.", answer:"12", hint:"Định lý Pythagore", explain:"AC = √(13²−5²) = √(169−25) = √144 = 12." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 9: ĐỀ THI TUYỂN SINH – ĐỀ 1 ====================
-  {
-    id: "t9",
-    emoji: "📋",
-    name: "Đề thi tuyển sinh – Đề 1 (BR-VT)",
-    desc: "Đề thi Sở GD&ĐT Bà Rịa – Vũng Tàu, 20 câu trắc nghiệm tổng hợp",
-    questions: [
-      { type:"mc", text:"Hệ phương trình { x + y = 3 ; 2x − y = 3 } có nghiệm (x; y) là:", opts:["(1; 2)","(2; 1)","(−3; 2)","(3; 3)"], correct:1, explain:"Cộng 2 PT: 3x = 6 → x = 2, y = 1. Kiểm tra: 2+1=3 ✓, 2(2)−1=3 ✓." },
-      { type:"mc", text:"Nghiệm của phương trình (x + 3)(x − 1) = 0 là:", opts:["x = 3 và x = −1","x = −3 và x = 1","x = −3 và x = −1","x = 3 và x = 1"], correct:1, explain:"(x+3)(x−1) = 0 → x = −3 hoặc x = 1." },
-      { type:"mc", text:"Nghiệm của bất phương trình 5x − 15 ≥ 0 là:", opts:["x ≥ −3","x ≤ −3","x ≥ 3","x ≤ 3"], correct:2, explain:"5x ≥ 15 → x ≥ 3." },
-      { type:"mc", text:"Đáy của một hình trụ là:", opts:["Hình vuông","Hình chữ nhật","Hình tam giác","Hình tròn"], correct:3, explain:"Hình trụ có hai đáy là hai hình tròn bằng nhau và song song." },
-      { type:"mc", text:"Với a > 0 thì biểu thức √(36a²) có giá trị là:", opts:["6a","−6a","±6a","36a"], correct:0, explain:"√(36a²) = √36 · √(a²) = 6|a| = 6a (vì a > 0)." },
-      { type:"mc", text:"Cột cờ AB vuông góc mặt đất, bóng nắng AC. Biết AC = 8m, góc ACB = 60°. Chiều cao AB bằng:", opts:["8 m","8√3 m","4√3 m","16 m"], correct:1, explain:"tan(60°) = AB/AC → AB = 8·tan(60°) = 8√3 ≈ 13,86 m." },
-      { type:"mc", text:"Điểm nào sau đây thuộc đồ thị hàm số y = 2x²?", opts:["(1; 2)","(1; −2)","(2; 4)","(−2; −8)"], correct:0, explain:"Thay x = 1: y = 2·1² = 2. Vậy (1; 2) thuộc đồ thị." },
-      { type:"mc", text:"Diện tích hình tròn có đường kính 8 cm bằng:", opts:["16π cm²","32π cm²","64π cm²","8π cm²"], correct:0, explain:"d = 8 → r = 4. S = πr² = π·16 = 16π cm²." },
-      { type:"mc", text:"Bảng tần số ghép nhóm lương công nhân (triệu đồng): [8;10): 3, [10;12): 5, [12;14): 8, [14;16): 7, [16;18): 5, [18;20): 2. Số công nhân có mức lương thuộc nhóm [14; 16) là:", opts:["5","8","7","3"], correct:2, explain:"Theo bảng tần số, nhóm [14; 16) có tần số là 7." },
-      { type:"mc", text:"Mảnh đất hình chữ nhật chu vi 80m, chiều dài hơn chiều rộng 20m. Gọi x (m) là chiều rộng. Phương trình đúng là:", opts:["2x + 20 = 80","2(2x + 20) = 80","x(x + 20) = 80","x + 20 = 80"], correct:1, explain:"Rộng x, dài x+20. Chu vi = 2(x + x+20) = 2(2x+20) = 80." },
-      { type:"mc", text:"Hộp có 3 bi đỏ và 7 bi vàng. Lấy ngẫu nhiên 1 bi. Xác suất lấy được bi đỏ là:", opts:["3/7","7/10","7/3","3/10"], correct:3, explain:"P(đỏ) = 3/(3+7) = 3/10." },
-      { type:"mc", text:"Hình nón có bán kính đáy r = 3 cm, đường sinh l = 5 cm. Diện tích xung quanh bằng:", opts:["30π cm²","45π cm²","9π cm²","15π cm²"], correct:3, explain:"Sxq = π·r·l = π·3·5 = 15π cm²." },
-      { type:"mc", text:"Giá trị m để PT x² − (3m+1)x + m − 5 = 0 có nghiệm x = −1 là:", opts:["m = 3/4","m = −3/4","m = 3","m = −3"], correct:0, explain:"Thay x = −1: 1 + (3m+1) + m − 5 = 0 → 4m − 3 = 0 → m = 3/4." },
-      { type:"mc", text:"Đường tròn (O) có dây cung AB = 8 cm, khoảng cách từ tâm O đến AB là 3 cm. Chu vi đường tròn bằng:", opts:["6π cm","8π cm","10π cm","12π cm"], correct:2, explain:"Nửa dây = 4. R² = 3² + 4² = 25 → R = 5. Chu vi = 2πR = 10π cm." },
-      { type:"mc", text:"Bảng tần số thời gian tập thể dục (phút): [0;20): 8, [20;40): 9, [40;60): 11, [60;80): 8. Nhóm có tần số tương đối 25% là:", opts:["[60;80)","[0;20)","[40;60)","[20;40)"], correct:3, explain:"Tổng = 36. Nhóm [20;40): 9/36 = 0,25 = 25%." },
-      { type:"mc", text:"Diện tích mặt cầu có đường kính 10 cm bằng:", opts:["25π cm²","50π cm²","100π cm²","400π cm²"], correct:2, explain:"d = 10 → R = 5. S = 4πR² = 4π·25 = 100π cm²." },
-      { type:"mc", text:"Bảng cân nặng 45 HS: 48kg (5 hs), 49kg (12 hs), 50kg (13 hs), 51kg (8 hs), 52kg (7 hs). Số HS cân nặng 50 kg là:", opts:["5","13","12","8"], correct:1, explain:"Theo bảng tần số, giá trị 50 kg có tần số là 13." },
-      { type:"mc", text:"Miếng tôn nửa hình tròn đường kính AB = 20 cm cuộn thành hình nón. Thể tích hình nón (π ≈ 3,14) xấp xỉ:", opts:["227 cm³","327 cm³","427 cm³","527 cm³"], correct:0, explain:"Đường sinh l = 10. Chu vi nửa đường tròn = 10π = 2πr → r = 5. h = √(100−25) = 5√3. V = πr²h/3 ≈ 3,14·25·8,66/3 ≈ 227 cm³." },
-
-      { type:"tf", text:"Xét các mệnh đề (kiến thức hình học không gian và đại số):", statements:[
-        { stmt:"Hình trụ có hai đáy là hai hình tròn bằng nhau và song song", correct:true },
-        { stmt:"Diện tích xung quanh hình nón = πrl (r: bán kính đáy, l: đường sinh)", correct:true },
-        { stmt:"√(a²) = a với mọi a > 0", correct:true },
-        { stmt:"Nếu Δ < 0 thì phương trình bậc hai có 2 nghiệm phân biệt", correct:false }
-      ], explains:[
-        "Đúng. Đây là đặc điểm cơ bản của hình trụ.",
-        "Đúng. Công thức diện tích xung quanh hình nón.",
-        "Đúng. Khi a > 0: √(a²) = |a| = a.",
-        "Sai. Δ < 0 → PT vô nghiệm trong ℝ."
-      ]},
-
-      { type:"short", text:"Hộp 3 bi đỏ, 7 bi vàng. Xác suất lấy bi vàng = a/b (phân số tối giản). Tìm a.", answer:"7", hint:"P = số bi vàng / tổng", explain:"P(vàng) = 7/10 (tối giản). a = 7." },
-      { type:"short", text:"Hình nón r = 3 cm, l = 5 cm. Tính chiều cao h (cm).", answer:"4", hint:"h² = l² − r²", explain:"h = √(25 − 9) = √16 = 4 cm." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 10: ĐỀ THI TUYỂN SINH – ĐỀ 2 ====================
-  {
-    id: "t10",
-    emoji: "📝",
-    name: "Đề thi tuyển sinh – Đề 2",
-    desc: "Đề thi tuyển sinh thực tế, tổng hợp đại số – hình học – xác suất",
-    questions: [
-      { type:"mc", text:"Phương trình nào sau đây là phương trình bậc nhất hai ẩn?", opts:["√x − 2y = 8","3x − 5y = 1","x + 5y² = 4","x³ + xy = −7"], correct:1, explain:"PT bậc nhất hai ẩn có dạng ax + by = c (bậc 1 theo x, y). Chỉ 3x − 5y = 1 thỏa mãn." },
-      { type:"mc", text:"Đồ thị hàm số y = 3x² là parabol đi qua gốc tọa độ. Điểm nào thuộc đồ thị?", opts:["(1; 1)","(−1; −3)","(2; 6)","(1; 3)"], correct:3, explain:"Thay x = 1: y = 3(1)² = 3. Điểm (1; 3) thuộc đồ thị." },
-      { type:"mc", text:"Lớp 9E có 5 bạn A, B, C, D, E. Chọn ngẫu nhiên 2 bạn trực nhật. Số phần tử không gian mẫu là:", opts:["5","20","25","10"], correct:3, explain:"C(5,2) = 5!/(2!·3!) = 10." },
-      { type:"mc", text:"Điều kiện xác định của P = √(x + 1) + 6/(x − 3) là:", opts:["x > −1 và x ≠ 3","x ≥ −1 và x ≠ 3","x ≥ −1","x > 3"], correct:1, explain:"Cần x + 1 ≥ 0 → x ≥ −1, và x − 3 ≠ 0 → x ≠ 3." },
-      { type:"mc", text:"Gieo xúc xắc được mặt b chấm. Xác suất để PT x² + bx + 2 = 0 có nghiệm là:", opts:["2/3","1/3","1/2","5/6"], correct:0, explain:"Cần Δ = b² − 8 ≥ 0 → b ≥ 3 (b nguyên). b ∈ {3,4,5,6}: P = 4/6 = 2/3." },
-      { type:"mc", text:"Căn bậc hai số học của 16 là:", opts:["−4","±4","4","256"], correct:2, explain:"Căn bậc hai số học = √16 = 4 (giá trị không âm)." },
-      { type:"mc", text:"PT x² − 5x + 3 = 0 có hai nghiệm x₁, x₂. Tích x₁·x₂ bằng:", opts:["5","3","−3","−5"], correct:1, explain:"Theo Vi-ét: x₁·x₂ = c/a = 3/1 = 3." },
-      { type:"mc", text:"Hộp 6 thẻ ghi số 1, 2, 3, 4, 5, 6. Rút ngẫu nhiên 2 thẻ. Xác suất tổng hai số chia hết cho 3:", opts:["2/5","4/15","1/3","7/15"], correct:2, explain:"C(6,2)=15. Các cặp: (1,2),(1,5),(2,4),(3,6),(4,5) → 5 cặp. P = 5/15 = 1/3." },
-      { type:"mc", text:"Số nghiệm nguyên dương của bất phương trình 2(x − 3) ≤ 6 − x là:", opts:["3","4","5","Vô số"], correct:1, explain:"2x − 6 ≤ 6 − x → 3x ≤ 12 → x ≤ 4. Nghiệm nguyên dương: {1, 2, 3, 4} → 4 nghiệm." },
-      { type:"mc", text:"Hệ { 2x − 3y = 5 ; x + 2y = 6 } có nghiệm duy nhất (x₀; y₀). Giá trị x₀ − y₀ bằng:", opts:["1","2","3","4"], correct:2, explain:"x = 6−2y. Thay: 2(6−2y)−3y = 5 → 12−7y = 5 → y = 1, x = 4. x₀−y₀ = 3." },
-
-      { type:"tf", text:"Xét các mệnh đề về đại số và xác suất:", statements:[
-        { stmt:"Căn bậc hai số học của a ≥ 0 là số không âm x sao cho x² = a", correct:true },
-        { stmt:"Phương trình bậc nhất hai ẩn luôn có đúng một nghiệm", correct:false },
-        { stmt:"Nếu y = kx (k ≠ 0) thì đồ thị là đường thẳng qua gốc tọa độ", correct:true },
-        { stmt:"C(5,2) = C(5,3) = 10", correct:true }
-      ], explains:[
-        "Đúng. Đây là định nghĩa căn bậc hai số học.",
-        "Sai. PT bậc nhất hai ẩn có vô số nghiệm (là đường thẳng trên mặt phẳng Oxy).",
-        "Đúng. y = kx là hàm bậc nhất qua gốc O.",
-        "Đúng. C(5,2) = 10 và C(5,3) = 10 (tính chất C(n,k) = C(n,n−k))."
-      ]},
-
-      { type:"short", text:"Hệ { 2x−3y = 5 ; x+2y = 6 } có nghiệm (x₀;y₀). Tính x₀ + y₀.", answer:"5", hint:"Giải hệ bằng phương pháp thế", explain:"x = 4, y = 1 → x₀ + y₀ = 5." },
-      { type:"short", text:"Gieo xúc xắc 1 lần. P(mặt chẵn) = a/b (tối giản). Tìm a + b.", answer:"3", hint:"Mặt chẵn: 2, 4, 6", explain:"P = 3/6 = 1/2 → a=1, b=2, a+b=3." },
-      { type:"short", text:"Hộp 6 thẻ (ghi 1–6), rút 2 thẻ. Tổng số cách rút?", answer:"15", hint:"Tổ hợp C(6,2)", explain:"C(6,2) = 6!/(2!·4!) = 15." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 11: ĐỀ THI TUYỂN SINH – ĐỀ 3 ====================
-  {
-    id: "t11",
-    emoji: "🎯",
-    name: "Đề thi tuyển sinh – Đề 3",
-    desc: "Đề ôn tập tổng hợp 32 câu: lượng giác, hàm số, xác suất, hình học, căn thức",
-    questions: [
-      { type:"mc", text:"Tam giác ABC vuông tại A, sinC = 3/5, BC = 10 cm. Độ dài cạnh AB bằng:", opts:["8 cm","10 cm","6 cm","4 cm"], correct:2, explain:"sinC = AB/BC → AB = BC·sinC = 10·(3/5) = 6 cm." },
-      { type:"mc", text:"Phương trình nào sau đây là phương trình bậc hai một ẩn?", opts:["3x³ + x − 1 = 0","√2·x² + x + 1 = 0","x⁴ + x² − 2 = 0","2x + 3 = 0"], correct:1, explain:"PT bậc hai một ẩn có dạng ax² + bx + c = 0 (a ≠ 0). Chỉ √2·x² + x + 1 = 0 có bậc 2." },
-      { type:"mc", text:"Đo 60 lá dương xỉ, bảng tần số ghép nhóm: [10;20): 8, [20;30): 18, [30;40): 24, [40;50): 10. Bảng có bao nhiêu nhóm?", opts:["3","4","5","6"], correct:1, explain:"Bảng có 4 nhóm: [10;20), [20;30), [30;40), [40;50)." },
-      { type:"mc", text:"Điều kiện xác định của √(1 − x) là:", opts:["x ≤ 1","x ≥ 1","x < 1","x > 1"], correct:0, explain:"Cần 1 − x ≥ 0 → x ≤ 1." },
-      { type:"mc", text:"Gieo xúc xắc 2 lần. Các kết quả thuận lợi cho biến cố \"Tổng hai mặt bằng 5\" là:", opts:["(1;4), (4;1)","(1;4), (2;3), (3;2), (4;1)","(1;4), (2;3)","(5;0), (0;5)"], correct:1, explain:"Các cặp (a;b) có a+b=5 với 1≤a,b≤6: (1;4), (2;3), (3;2), (4;1) → 4 kết quả." },
-      { type:"mc", text:"Hệ phương trình { x − 2y = 1 ; 3x + y = 4 } có nghiệm (x; y) là:", opts:["(9/7; 1/7)","(1; 0)","(2; 1)","(0; −1)"], correct:0, explain:"Từ PT1: x = 1+2y. Thay: 3(1+2y)+y = 4 → 7y = 1 → y = 1/7, x = 9/7." },
-      { type:"mc", text:"Biểu đồ số HS giỏi: Lớp 6: 5, Lớp 7: 15, Lớp 8: 10, Lớp 9: 25. Chọn ngẫu nhiên 1 HS giỏi, xác suất thuộc lớp 9:", opts:["5/9","5/11","25/55","9/55"], correct:1, explain:"Tổng = 5+15+10+25 = 55. P(lớp 9) = 25/55 = 5/11." },
-      { type:"mc", text:"ĐKXĐ của phương trình (x−7)/(2x+3) − 1/2 = x là:", opts:["x ≠ −3/2","x ≠ 3/2","x ≠ 7","x ≠ 0"], correct:0, explain:"Mẫu 2x + 3 ≠ 0 → x ≠ −3/2." },
-      { type:"mc", text:"Căn bậc ba của −8 là:", opts:["−2","2","±2","4"], correct:0, explain:"∛(−8) = −2 vì (−2)³ = −8." },
-      { type:"mc", text:"Đường tròn (O; 3), điểm A cách O = 5 cm. Tiếp tuyến AB (B là tiếp điểm). Độ dài AB:", opts:["3 cm","4 cm","5 cm","6 cm"], correct:1, explain:"AB² = OA² − OB² = 25 − 9 = 16 → AB = 4 cm." },
-      { type:"mc", text:"ΔABC vuông tại A, AB = 3, BC = 6. Khẳng định nào đúng?", opts:["tanB = 1/√3","tanB = √3/3","tanB = √3","tanB = 3"], correct:2, explain:"AC = √(36−9) = 3√3. tanB = AC/AB = 3√3/3 = √3." },
-      { type:"mc", text:"Hình vuông cạnh 10 cm. Bán kính đường tròn nội tiếp bằng:", opts:["5 cm","10 cm","5√2 cm","10√2 cm"], correct:0, explain:"Bán kính đường tròn nội tiếp = cạnh/2 = 10/2 = 5 cm." },
-      { type:"mc", text:"Hệ số góc của đường thẳng 2x − y = 4 bằng:", opts:["−2","2","4","−4"], correct:1, explain:"2x − y = 4 → y = 2x − 4. Hệ số góc a = 2." },
-      { type:"mc", text:"Biểu đồ tròn điểm kiểm tra 60 HS: 5đ: 15%, 6đ: 20%, 7đ: 25%, 8đ: 30%, 9đ: 10%. Số HS dưới 7 điểm:", opts:["21","24","15","9"], correct:0, explain:"Dưới 7đ = 5đ + 6đ = 15% + 20% = 35%. 60 × 35% = 21 HS." },
-      { type:"mc", text:"Với a > 2, rút gọn a + √((a − 2)²) bằng:", opts:["2","2a","2a − 2","2 − 2a"], correct:2, explain:"√((a−2)²) = |a−2| = a−2 (vì a>2). Kết quả: a + a − 2 = 2a − 2." },
-      { type:"mc", text:"Đường thẳng y = x − 2m cắt parabol y = x² tại 2 điểm phân biệt ở hai phía trục tung khi:", opts:["m > 0","m = 0","m < 0","m ≤ 0"], correct:2, explain:"x² = x−2m → x²−x+2m = 0. Hai nghiệm trái dấu: x₁·x₂ < 0 → 2m < 0 → m < 0." },
-      { type:"mc", text:"Hàm số nào có đồ thị là parabol bề lõm quay lên và hẹp hơn y = x²?", opts:["y = −2x²","y = 2x²","y = −x²","y = x²/2"], correct:1, explain:"y = 2x²: a = 2 > 0 (lõm lên), |a| = 2 > 1 (hẹp hơn y = x²)." },
-      { type:"mc", text:"Hộp 20 thẻ ghi số 1 đến 20. Rút ngẫu nhiên 1 thẻ. Xác suất số chia hết cho 3:", opts:["3/10","3/20","1/3","7/20"], correct:0, explain:"Chia hết cho 3: {3,6,9,12,15,18} → 6 số. P = 6/20 = 3/10." },
-      { type:"mc", text:"Biểu đồ tròn sản lượng trái cây: Xoài 17,5%, Vải thiều 20%, Nhãn 27,5%, Loại khác 35%. Tổng phần trăm Nhãn và Vải thiều:", opts:["37,5%","47,5%","45%","55%"], correct:1, explain:"Nhãn + Vải thiều = 27,5% + 20% = 47,5%." },
-      { type:"mc", text:"Bảng cân nặng 40 HS: [35;40): 5, [40;45): 11, [45;50): 16, [50;55): 8. Số HS cân nặng dưới 45 kg:", opts:["16","5","11","24"], correct:0, explain:"Dưới 45 kg = [35;40) + [40;45) = 5 + 11 = 16 HS." },
-      { type:"mc", text:"Gieo xúc xắc 1 lần rồi tung đồng xu 1 lần. Số phần tử không gian mẫu:", opts:["6","8","12","24"], correct:2, explain:"Xúc xắc: 6 kết quả × Đồng xu: 2 kết quả = 12." },
-      { type:"mc", text:"Số nào là nghiệm của bất phương trình x − 8 < 0?", opts:["12","9","6","15"], correct:2, explain:"x − 8 < 0 → x < 8. Chỉ có x = 6 < 8." },
-      { type:"mc", text:"Bốn quạt tròn bán kính 30 cm, cung tròn 120°. Tổng diện tích 4 hình quạt:", opts:["900π cm²","1200π cm²","3600π cm²","300π cm²"], correct:1, explain:"S₁ = (120/360)·π·30² = (1/3)·900π = 300π. Tổng = 4 × 300π = 1200π cm²." },
-      { type:"mc", text:"Diện tích mặt cầu bán kính R = 3 cm:", opts:["9π cm²","36π cm²","12π cm²","108π cm²"], correct:1, explain:"S = 4πR² = 4π·9 = 36π cm²." },
-      { type:"mc", text:"Giao điểm parabol y = x² và đường thẳng y = 3x + 2 có tổng hoành độ S bằng:", opts:["−3","−2","2","3"], correct:3, explain:"x² = 3x+2 → x²−3x−2 = 0. Theo Vi-ét: S = x₁+x₂ = 3." },
-      { type:"mc", text:"Đường tròn (O; 10), dây AB cách tâm 8 cm. Độ dài AB:", opts:["12 cm","8 cm","6 cm","16 cm"], correct:0, explain:"Nửa dây = √(R²−d²) = √(100−64) = 6. AB = 12 cm." },
-      { type:"mc", text:"Hình nón có bán kính đáy r = 3 cm, chiều cao h = 5 cm. Thể tích:", opts:["45π cm³","30π cm³","15π cm³","9π cm³"], correct:2, explain:"V = (1/3)πr²h = (1/3)π·9·5 = 15π cm³." },
-      { type:"mc", text:"Đường tròn (O), góc nội tiếp BAC = 130°. Số đo cung BC nhỏ bằng:", opts:["130°","100°","260°","65°"], correct:1, explain:"Cung BC lớn = 2×130° = 260°. Cung BC nhỏ = 360° − 260° = 100°." },
-      { type:"mc", text:"Tam giác ABC vuông tại A, AB = 3, AC = 4, AH ⊥ BC. Độ dài AH:", opts:["5","7/5","5/12","12/5"], correct:3, explain:"BC = √(9+16) = 5. AH = AB·AC/BC = 3·4/5 = 12/5." },
-      { type:"mc", text:"Taxi: 15 nghìn đ/km đầu, 12 nghìn đ/km tiếp theo. Có 150 nghìn đồng, đi tối đa bao nhiêu km?", opts:["10 km","12 km","15 km","11 km"], correct:1, explain:"15 + 12(x−1) ≤ 150 → 12(x−1) ≤ 135 → x−1 ≤ 11,25 → x ≤ 12,25. Tối đa 12 km." },
-      { type:"mc", text:"Đường tròn (O; R), A thuộc (O). BC ⊥ OA tại trung điểm M của OA. Tiếp tuyến tại B cắt đường thẳng OA tại E. Tính BE:", opts:["R√2","R/2","R√3","2R"], correct:2, explain:"OM = R/2, OB = R → BM = R√3/2. Góc BOM: tan = √3 → 60°. Tam giác OBE vuông tại B: BE = OB·tan60° = R√3." },
-      { type:"mc", text:"Đo chiều cao tháp BP: hai giác kế tại A, C (cao 1,62m). Góc A = 65°, góc C = 30°. MN = 100m (M, N trên mặt đất). Chiều cao BP ≈:", opts:["47,11 m","35,62 m","52,00 m","41,62 m"], correct:0, explain:"Gọi H = BP−1,62. H/tan65° + H/tan30° = 100 → H(0,4663 + 1,7321) = 100 → H ≈ 45,49. BP = 45,49 + 1,62 ≈ 47,11 m." },
-
-      // --- ĐÚNG / SAI ---
-      { type:"tf", text:"Xét các mệnh đề tổng hợp (Đề 3):", statements:[
-        { stmt:"Căn bậc ba của −27 là −3", correct:true },
-        { stmt:"Hình nón có đáy là hình tròn", correct:true },
-        { stmt:"Góc nội tiếp bằng góc ở tâm cùng chắn một cung", correct:false },
-        { stmt:"tanα = đối/kề trong tam giác vuông (α là góc nhọn)", correct:true }
-      ], explains:[
-        "Đúng. (−3)³ = −27 nên ∛(−27) = −3.",
-        "Đúng. Hình nón có một đáy là hình tròn.",
-        "Sai. Góc nội tiếp = ½ góc ở tâm cùng chắn một cung.",
-        "Đúng. Định nghĩa tỉ số lượng giác tanα = cạnh đối / cạnh kề."
-      ]},
-      { type:"tf", text:"Xét các mệnh đề về xác suất và thống kê:", statements:[
-        { stmt:"Gieo 1 xúc xắc, xác suất ra mặt 6 là 1/6", correct:true },
-        { stmt:"Biểu đồ tròn biểu diễn tỉ lệ phần trăm các thành phần", correct:true },
-        { stmt:"Nếu P(A) = 0 thì biến cố A chắc chắn xảy ra", correct:false },
-        { stmt:"Không gian mẫu khi gieo 2 xúc xắc có 36 phần tử", correct:true }
-      ], explains:[
-        "Đúng. P(6) = 1/6.",
-        "Đúng. Biểu đồ tròn dùng để biểu diễn tỉ lệ phần trăm.",
-        "Sai. P(A) = 0 nghĩa là biến cố A không thể xảy ra (biến cố không thể).",
-        "Đúng. 6 × 6 = 36 phần tử."
-      ]},
-
-      // --- TRẢ LỜI NGẮN ---
-      { type:"short", text:"ΔABC vuông tại A, AB = 3, BC = 6. Tính AC (kết quả dạng a√3, nhập a).", answer:"3", hint:"Dùng Pythagore: AC² = BC² − AB²", explain:"AC = √(36−9) = √27 = 3√3 → a = 3." },
-      { type:"short", text:"Đường tròn (O; R=10), dây AB cách tâm 8cm. Nửa dây AB bằng bao nhiêu cm?", answer:"6", hint:"Nửa dây² = R² − d²", explain:"Nửa dây = √(100−64) = √36 = 6 cm." },
-      { type:"short", text:"Hộp 20 thẻ (1-20). Số thẻ chia hết cho 3 là bao nhiêu?", answer:"6", hint:"Liệt kê: 3, 6, 9, ...", explain:"{3, 6, 9, 12, 15, 18} → 6 thẻ." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 12: HÌNH KHỐI ====================
-  {
-    id: "t12",
-    emoji: "🧊",
-    name: "Hình Khối – Trụ, Nón, Cầu",
-    desc: "Thể tích, diện tích hình trụ, hình nón, hình cầu và bài toán thực tế",
-    questions: [
-      // --- TRẮC NGHIỆM CHỌN ĐÁP ÁN ---
-      { type:"mc", text:"Công thức tính thể tích hình trụ có bán kính đáy r và chiều cao h là:", opts:["V = πr²h","V = (1/3)πr²h","V = 4πr³/3","V = 2πrh"], correct:0, explain:"Thể tích hình trụ: V = πr²h." },
-      { type:"mc", text:"Hình trụ có bán kính r = 3 cm, chiều cao h = 5 cm. Thể tích hình trụ là:", opts:["15π cm³","30π cm³","45π cm³","60π cm³"], correct:2, explain:"V = πr²h = π × 9 × 5 = 45π cm³." },
-      { type:"mc", text:"Hình nón có bán kính đáy r = 4 cm, chiều cao h = 3 cm. Thể tích là:", opts:["12π cm³","16π cm³","48π cm³","64π cm³"], correct:1, explain:"V = (1/3)πr²h = (1/3)π × 16 × 3 = 16π cm³." },
-      { type:"mc", text:"Hình cầu có bán kính R = 3 cm. Thể tích hình cầu là:", opts:["36π cm³","12π cm³","108π cm³","9π cm³"], correct:0, explain:"V = (4/3)πR³ = (4/3)π × 27 = 36π cm³." },
-      { type:"mc", text:"Diện tích xung quanh hình trụ có r = 5 cm, h = 8 cm là:", opts:["40π cm²","80π cm²","200π cm²","25π cm²"], correct:1, explain:"S_xq = 2πrh = 2π × 5 × 8 = 80π cm²." },
-      { type:"mc", text:"Hình nón có bán kính r = 3 cm, đường sinh l = 5 cm. Diện tích xung quanh là:", opts:["15π cm²","9π cm²","25π cm²","30π cm²"], correct:0, explain:"S_xq = πrl = π × 3 × 5 = 15π cm²." },
-      { type:"mc", text:"Diện tích mặt cầu có bán kính R = 6 cm là:", opts:["36π cm²","72π cm²","144π cm²","216π cm²"], correct:2, explain:"S = 4πR² = 4π × 36 = 144π cm²." },
-      { type:"mc", text:"Hình trụ có đường kính đáy 10 cm, chiều cao 6 cm. Diện tích toàn phần là:", opts:["60π cm²","110π cm²","160π cm²","200π cm²"], correct:2, explain:"r = 5. S_tp = 2πr(r+h) = 2π × 5 × (5+6) = 110π cm². Nhưng đề hỏi S_toàn_phần = 2πrh + 2πr² = 60π + 50π = 110π cm²." },
-      { type:"mc", text:"Hình nón có r = 6 cm, h = 8 cm. Đường sinh l bằng:", opts:["10 cm","14 cm","6 cm","8 cm"], correct:0, explain:"l = √(r² + h²) = √(36 + 64) = √100 = 10 cm." },
-      { type:"mc", text:"Một bình hình trụ đựng nước đầy, bán kính 5 cm, cao 20 cm. Thể tích nước là:", opts:["100π cm³","200π cm³","500π cm³","1000π cm³"], correct:2, explain:"V = πr²h = π × 25 × 20 = 500π cm³." },
-      { type:"mc", text:"Một quả bóng hình cầu bán kính 7 cm. Diện tích bề mặt quả bóng là:", opts:["49π cm²","98π cm²","196π cm²","294π cm²"], correct:2, explain:"S = 4πR² = 4π × 49 = 196π cm²." },
-      { type:"mc", text:"Hình nón và hình trụ có cùng bán kính đáy và chiều cao. Tỉ số V_nón/V_trụ bằng:", opts:["1/2","1/3","2/3","3/4"], correct:1, explain:"V_nón = (1/3)πr²h, V_trụ = πr²h. Tỉ số = 1/3." },
-
-      // --- ĐÚNG / SAI ---
-      { type:"tf", text:"Xét các mệnh đề về hình trụ và hình nón:", statements:[
-        { stmt:"Diện tích xung quanh hình trụ bằng 2πrh", correct:true },
-        { stmt:"Thể tích hình nón bằng πr²h", correct:false },
-        { stmt:"Đường sinh hình nón: l = √(r² + h²)", correct:true },
-        { stmt:"Diện tích toàn phần hình trụ = 2πrh + 2πr²", correct:true }
-      ], explains:[
-        "Đúng. S_xq = 2πrh (chu vi đáy × chiều cao).",
-        "Sai. Thể tích hình nón = (1/3)πr²h, không phải πr²h.",
-        "Đúng. Theo định lý Pythagore: l² = r² + h².",
-        "Đúng. S_tp = S_xq + 2S_đáy = 2πrh + 2πr²."
-      ]},
-      { type:"tf", text:"Xét các mệnh đề về hình cầu:", statements:[
-        { stmt:"Thể tích hình cầu bán kính R là V = (4/3)πR³", correct:true },
-        { stmt:"Diện tích mặt cầu bán kính R là S = 2πR²", correct:false },
-        { stmt:"Khi R tăng gấp đôi, thể tích cầu tăng gấp 8", correct:true },
-        { stmt:"Đường kính hình cầu bằng 2R", correct:true }
-      ], explains:[
-        "Đúng. Công thức chuẩn: V = (4/3)πR³.",
-        "Sai. Diện tích mặt cầu S = 4πR², không phải 2πR².",
-        "Đúng. V' = (4/3)π(2R)³ = 8 × (4/3)πR³, tăng gấp 8 lần.",
-        "Đúng. Đường kính = 2 × bán kính = 2R."
-      ]},
-      { type:"tf", text:"Bài toán thực tế: Lon nước hình trụ có r = 4 cm, h = 12 cm.", statements:[
-        { stmt:"Thể tích lon nước là 192π cm³", correct:true },
-        { stmt:"Diện tích xung quanh lon là 96π cm²", correct:true },
-        { stmt:"Diện tích đáy lon là 16π cm²", correct:true },
-        { stmt:"Diện tích toàn phần lon là 128π cm²", correct:false }
-      ], explains:[
-        "Đúng. V = π × 16 × 12 = 192π cm³.",
-        "Đúng. S_xq = 2π × 4 × 12 = 96π cm².",
-        "Đúng. S_đáy = πr² = 16π cm².",
-        "Sai. S_tp = 96π + 2 × 16π = 96π + 32π = 128π cm². Thực ra đúng! Đáp án đúng."
-      ]},
-
-      // --- TRẢ LỜI NGẮN ---
-      { type:"short", text:"Hình trụ có r = 2 cm, h = 7 cm. Thể tích bằng bao nhiêu π cm³?", answer:"28", hint:"V = πr²h", explain:"V = π × 4 × 7 = 28π cm³. Nhập 28." },
-      { type:"short", text:"Hình cầu có R = 3 cm. Diện tích mặt cầu bằng bao nhiêu π cm²?", answer:"36", hint:"S = 4πR²", explain:"S = 4π × 9 = 36π cm². Nhập 36." },
-      { type:"short", text:"Hình nón có r = 3 cm, h = 4 cm. Đường sinh l bằng bao nhiêu cm?", answer:"5", hint:"l = √(r² + h²)", explain:"l = √(9 + 16) = √25 = 5 cm." },
-      { type:"short", text:"Hình trụ có r = 5 cm, h = 4 cm. Diện tích xung quanh bằng bao nhiêu π cm²?", answer:"40", hint:"S_xq = 2πrh", explain:"S_xq = 2π × 5 × 4 = 40π cm². Nhập 40." },
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 13: THỐNG KÊ – XÁC SUẤT ====================
-  {
-    id: "t13",
-    emoji: "📊",
-    name: "Thống Kê – Xác Suất",
-    desc: "Bảng tần số, tần suất, biểu đồ, số trung bình, trung vị, tứ phân vị, xác suất cổ điển",
-    questions: [
-
-      // --- TRẮC NGHIỆM ---
-      { type:"mc", text:"Điểm kiểm tra Toán của 30 học sinh được ghi lại. Giá trị nào sau đây KHÔNG phải là số liệu thống kê?", opts:["Điểm trung bình của lớp","Số học sinh đạt điểm 9","Tên của học sinh đứng đầu lớp","Điểm cao nhất trong lớp"], correct:2, explain:"Tên học sinh là dữ liệu định tính, không phải số liệu thống kê dùng để tính toán." },
-      { type:"mc", text:"Cho bảng tần số: Điểm 6 (tần số 3), điểm 7 (tần số 8), điểm 8 (tần số 12), điểm 9 (tần số 5), điểm 10 (tần số 2). Tổng số học sinh là:", opts:["25","28","30","32"], correct:2, explain:"Tổng = 3 + 8 + 12 + 5 + 2 = 30 học sinh." },
-      { type:"mc", text:"Trong bảng tần số ở câu trên, điểm có tần suất lớn nhất là:", opts:["6","7","8","9"], correct:2, explain:"Điểm 8 có tần số 12, cao nhất → tần suất lớn nhất = 12/30 = 40%." },
-      { type:"mc", text:"Số trung bình cộng của mẫu số liệu: 6, 7, 7, 8, 8, 8, 9, 9, 10 là:", opts:["7,5","8","7,9","8,1"], correct:2, explain:"Tổng = 6+7+7+8+8+8+9+9+10 = 72. Trung bình = 72/9 ≈ 8. Chính xác = 72/9 = 8. Tổng = 72 ÷ 9 = 8." },
-      { type:"mc", text:"Mẫu số liệu 9 giá trị (đã sắp xếp): 3, 5, 6, 7, 8, 9, 9, 10, 10. Số trung vị là:", opts:["7","8","9","6"], correct:1, explain:"9 giá trị, trung vị là giá trị thứ 5 (giữa) = 8." },
-      { type:"mc", text:"Mẫu số liệu: 2, 5, 5, 7, 8, 9, 10, 12. Tứ phân vị Q1 bằng:", opts:["4","5","5,5","6"], correct:1, explain:"Nửa dưới (4 số đầu): 2, 5, 5, 7 → Q1 = (5+5)/2 = 5." },
-      { type:"mc", text:"Mẫu số liệu: 2, 5, 5, 7, 8, 9, 10, 12. Tứ phân vị Q3 bằng:", opts:["9","9,5","10","11"], correct:1, explain:"Nửa trên (4 số cuối): 8, 9, 10, 12 → Q3 = (9+10)/2 = 9,5." },
-      { type:"mc", text:"Gieo một xúc xắc cân đối 6 mặt. Xác suất để xuất hiện mặt có số chấm là số nguyên tố là:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Số nguyên tố trên xúc xắc: {2, 3, 5}. P = 3/6 = 1/2." },
-      { type:"mc", text:"Túi có 4 bi đỏ, 3 bi xanh, 3 bi vàng. Rút ngẫu nhiên 1 bi. Xác suất rút được bi KHÔNG phải màu đỏ là:", opts:["2/5","3/5","3/10","7/10"], correct:1, explain:"Số bi không đỏ = 3+3 = 6. P = 6/10 = 3/5." },
-      { type:"mc", text:"Gieo đồng thời 2 xúc xắc. Số phần tử của không gian mẫu là:", opts:["6","12","24","36"], correct:3, explain:"Mỗi xúc xắc có 6 mặt, gieo 2 xúc xắc → 6 × 6 = 36 phần tử." },
-      { type:"mc", text:"Gieo 2 xúc xắc. Xác suất để tổng 2 mặt bằng 7 là:", opts:["1/6","5/36","6/36","7/36"], correct:2, explain:"Các cặp cho tổng 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 cặp. P = 6/36 = 1/6." },
-      { type:"mc", text:"Một lớp 40 học sinh có điểm trung bình là 7,5. Nếu bổ sung 1 học sinh có điểm 10, điểm trung bình mới là:", opts:["7,5","7,56","7,6","8,0"], correct:1, explain:"Tổng điểm cũ = 40 × 7,5 = 300. Tổng mới = 310. TB mới = 310/41 ≈ 7,56." },
-
-      // --- ĐÚNG / SAI ---
-      { type:"tf", text:"Bảng tần số điểm thi của 20 học sinh lớp 9A: điểm 5 (2 hs), điểm 6 (4 hs), điểm 7 (6 hs), điểm 8 (5 hs), điểm 9 (2 hs), điểm 10 (1 hs).", statements:[
-        { stmt:"Điểm trung bình của lớp là 7,2", correct:true },
-        { stmt:"Tần suất của điểm 7 là 30%", correct:true },
-        { stmt:"Số trung vị của mẫu số liệu là 7", correct:true },
-        { stmt:"Mốt (Mode) của mẫu số liệu là 8", correct:false }
-      ], explains:[
-        "Đúng. Tổng = 5×2+6×4+7×6+8×5+9×2+10×1 = 10+24+42+40+18+10 = 144. TB = 144/20 = 7,2.",
-        "Đúng. Tần suất điểm 7 = 6/20 = 0,3 = 30%.",
-        "Đúng. 20 giá trị, trung vị = TB của giá trị thứ 10 và 11. Đếm: 5(2), 6(4→6), 7(6→12). Vị trí 10 và 11 đều là 7 → trung vị = 7.",
-        "Sai. Mốt là điểm có tần số cao nhất = điểm 7 (6 học sinh), không phải điểm 8."
-      ]},
-      { type:"tf", text:"Một hộp đựng 5 thẻ được đánh số 1, 2, 3, 4, 5. Rút ngẫu nhiên 1 thẻ.", statements:[
-        { stmt:"Xác suất rút được thẻ số chẵn là 2/5", correct:true },
-        { stmt:"Xác suất rút được thẻ số lớn hơn 3 là 2/5", correct:true },
-        { stmt:"Xác suất rút được thẻ số nguyên tố là 3/5", correct:true },
-        { stmt:"Xác suất rút được thẻ số chia hết cho 4 là 1/5", correct:true }
-      ], explains:[
-        "Đúng. Số chẵn: {2, 4} → P = 2/5.",
-        "Đúng. Số > 3: {4, 5} → P = 2/5.",
-        "Đúng. Số nguyên tố: {2, 3, 5} → P = 3/5.",
-        "Đúng. Số chia hết cho 4: {4} → P = 1/5."
-      ]},
-      { type:"tf", text:"Điểm thi học kỳ của 12 học sinh (đã sắp xếp tăng dần): 5, 5, 6, 6, 7, 7, 8, 8, 8, 9, 9, 10.", statements:[
-        { stmt:"Tứ phân vị Q1 bằng 6", correct:true },
-        { stmt:"Tứ phân vị Q2 (trung vị) bằng 7,5", correct:true },
-        { stmt:"Tứ phân vị Q3 bằng 8,5", correct:true },
-        { stmt:"Khoảng tứ phân vị IQR = Q3 - Q1 = 2,5", correct:true }
-      ], explains:[
-        "Đúng. Nửa dưới 6 số: 5,5,6,6,7,7 → Q1 = (6+6)/2 = 6.",
-        "Đúng. 12 số, trung vị = (giá trị 6 + giá trị 7)/2 = (7+8)/2 = 7,5.",
-        "Đúng. Nửa trên 6 số: 8,8,8,9,9,10 → Q3 = (8+9)/2 = 8,5.",
-        "Đúng. IQR = Q3 − Q1 = 8,5 − 6 = 2,5."
-      ]},
-      { type:"tf", text:"Gieo 2 đồng xu cân đối cùng một lúc. Không gian mẫu Ω = {(S,S), (S,N), (N,S), (N,N)}.", statements:[
-        { stmt:"Không gian mẫu có 4 phần tử", correct:true },
-        { stmt:"Xác suất để cả 2 đồng xu ra mặt ngửa là 1/4", correct:true },
-        { stmt:"Xác suất để ít nhất 1 đồng xu ra mặt ngửa là 3/4", correct:true },
-        { stmt:"Xác suất để 2 đồng xu ra khác mặt nhau là 1/2", correct:true }
-      ], explains:[
-        "Đúng. Ω = {(S,S),(S,N),(N,S),(N,N)} → 4 phần tử.",
-        "Đúng. Chỉ có (N,N) → P = 1/4.",
-        "Đúng. Ít nhất 1 ngửa: {(S,N),(N,S),(N,N)} → P = 3/4.",
-        "Đúng. Khác mặt: {(S,N),(N,S)} → P = 2/4 = 1/2."
-      ]},
-
-      // --- TRẮC NGHIỆM TỪ SÁCH (NHẬN BIẾT – KHÔNG GIAN MẪU) ---
-      { type:"mc", text:"Lấy ra 1 quả bóng từ hộp chứa 3 quả bóng số 1; 2; 3, xem số, trả lại hộp rồi lại lấy ra 1 quả. Không gian mẫu của phép thử là:", opts:["Ω = {(1;2;3),(1;3;2),(2;1;3),(2;3;1),(3;1;2),(3;2;1)}","Ω = {(1;1),(1;2),(1;3),(2;1),(2;2),(2;3),(3;1),(3;2),(3;3)}","Ω = {1;2;3}","Ω gồm 6 hoán vị của 3 phần tử"], correct:1, explain:"Vì trả lại hộp rồi lấy tiếp, mỗi lần có 3 khả năng → Ω gồm tất cả các cặp (a;b) với a,b ∈ {1,2,3} → 9 phần tử." },
-      { type:"mc", text:"Gieo 3 đồng tiền cùng một lúc. Không gian mẫu có bao nhiêu phần tử?", opts:["4","6","8","12"], correct:2, explain:"3 đồng tiền, mỗi đồng 2 mặt → 2³ = 8 phần tử: NNN, NNS, NSN, NSS, SNN, SNS, SSN, SSS." },
-      { type:"mc", text:"Gieo một đồng tiền và một con súc sắc. Số phần tử của không gian mẫu là:", opts:["8","10","12","16"], correct:2, explain:"Đồng tiền có 2 kết quả (S,N), súc sắc có 6 kết quả → 2 × 6 = 12 phần tử." },
-
-      // --- THÔNG HIỂU – ĐẾM BIẾN CỐ ---
-      { type:"mc", text:"Gieo một con xúc sắc cân đối 2 lần. Biến cố B: 'Số chấm lần 1 là 2'. Số kết quả thuận lợi của B là:", opts:["2","3","4","6"], correct:3, explain:"Lần 1 cố định là 2, lần 2 có 6 khả năng → 6 kết quả: (2,1),(2,2),(2,3),(2,4),(2,5),(2,6)." },
-      { type:"mc", text:"Tung đồng xu 3 lần. Biến cố A: 'Đúng 2 mặt ngửa'. Số kết quả thuận lợi là:", opts:["2","3","4","6"], correct:1, explain:"NNS, NSN, SNN → 3 kết quả thuận lợi." },
-      { type:"mc", text:"Tung đồng xu 3 lần. Biến cố B: 'Ít nhất 2 mặt ngửa'. Số kết quả thuận lợi là:", opts:["2","3","4","8"], correct:2, explain:"Đúng 2N (NNS,NSN,SNN) + 3N (NNN) = 4 kết quả." },
-      { type:"mc", text:"Từ tập A = {1;0;5;6}, dùng 2 chữ số KHÁC NHAU tạo số có 2 chữ số. Số kết quả tạo được số CHẴN là:", opts:["3","4","5","6"], correct:3, explain:"Tận cùng 0: hàng chục ∈ {1,5,6} → 3 số. Tận cùng 6: hàng chục ∈ {0,1,5} → 3 số (06 không hợp lệ, thực ra 06 không phải số 2 chữ số → {1,5} thôi và 0 đứng đầu không được). Tận cùng 6: {16,56} nếu bỏ 06. Tính lại: tận cùng 6, đầu ∈ {0,1,5} nhưng đầu ≠ 0 → {1,5} → 2 số. Tổng = 3+2 = 5 → hoặc nếu tận cùng 6 tính cả 06 thì 3+3=6." },
-      { type:"mc", text:"Từ tập A = {1;0;5;6}, dùng 2 chữ số KHÁC NHAU tạo số có 2 chữ số. Số kết quả tạo được số CHIA HẾT CHO 5 là:", opts:["2","3","4","5"], correct:1, explain:"Tận cùng 0: hàng chục ∈ {1,5,6} → 3 số (10,50,60). Tận cùng 5: hàng chục ∈ {1,6} (không dùng 0 đứng đầu) → 2 số (15,65). Tổng = 5. Đáp án sách B=3 (chỉ tính tận cùng 0). Theo sách: 3." },
-      { type:"mc", text:"Từ tập A = {1;0;5;6}, dùng 2 chữ số KHÁC NHAU tạo số có 2 chữ số. Số kết quả tạo được số LỚN HƠN 10 là:", opts:["6","7","8","9"], correct:2, explain:"Tổng số 2 chữ số từ A (đầu ≠ 0): hàng chục ∈ {1,5,6}, hàng đơn vị ∈ còn lại. Liệt kê: 10,15,16,50,51,56,60,61,65 = 9 số. Số >10: loại 10 → còn 8." },
-
-      // --- VẬN DỤNG – XÁC SUẤT ---
-      { type:"mc", text:"Tung 3 đồng xu cùng lúc. Xác suất có ít nhất một mặt sấp là:", opts:["1/8","3/8","1/4","7/8"], correct:3, explain:"P(ít nhất 1S) = 1 − P(không có S) = 1 − P(NNN) = 1 − 1/8 = 7/8." },
-      { type:"mc", text:"Tung 3 đồng xu cùng lúc. Xác suất để cả 3 mặt giống nhau là:", opts:["1/8","1/4","3/8","7/8"], correct:1, explain:"Cả 3 giống: NNN hoặc SSS → 2/8 = 1/4." },
-      { type:"mc", text:"Từ {4;5;6}, viết ngẫu nhiên một số có 2 chữ số (cho phép trùng). Xác suất số có 2 chữ số KHÁC NHAU là:", opts:["1/3","1/2","2/3","3/4"], correct:2, explain:"Tổng: 3²=9. Khác nhau: 3×2=6. P = 6/9 = 2/3." },
-      { type:"mc", text:"Hộp 30 thẻ đánh số 1–30. Lấy 1 thẻ. Xác suất thẻ ghi số lẻ và chia hết cho 3 là:", opts:["1/6","1/5","3/10","2/15"], correct:0, explain:"Số lẻ chia hết cho 3 trong [1;30]: 3,9,15,21,27 → 5 số. P = 5/30 = 1/6." },
-      { type:"mc", text:"Hộp 20 bi đánh số 1–20. Xác suất để bi lấy ra mang số chia 7 dư 1 là:", opts:["3/20","1/5","1/6","1/4"], correct:0, explain:"Số chia 7 dư 1 trong [1;20]: 1, 8, 15 → 3 số. P = 3/20." },
-      { type:"mc", text:"Viết ngẫu nhiên một số tự nhiên từ 500 đến 999. Xác suất số đó là lập phương của số tự nhiên là:", opts:["1/500","1/250","1/125","3/500"], correct:1, explain:"Từ 500 đến 999 có 500 số. Lập phương trong khoảng: 8³=512, 9³=729 → 2 số. P = 2/500 = 1/250." },
-      { type:"mc", text:"Rút ngẫu nhiên 1 lá từ bộ bài 52 lá. Xác suất được lá bích nhưng KHÔNG là J, Q, K, Át là:", opts:["1/13","3/52","9/52","1/4"], correct:2, explain:"Bích có 13 lá, loại J,Q,K,Á → còn 9 lá. P = 9/52." },
-      { type:"mc", text:"Gieo 3 xúc sắc. Xác suất để 3 mặt như nhau là:", opts:["1/216","3/216","6/216","12/216"], correct:2, explain:"Ω có 6³=216 phần tử. Trường hợp 3 mặt như nhau: (1,1,1),...,(6,6,6) → 6. P = 6/216 = 1/36." },
-      { type:"mc", text:"Gieo 2 xúc sắc. Xác suất để tổng 2 mặt bằng 8 là:", opts:["1/6","5/36","1/9","4/36"], correct:1, explain:"Các cặp tổng = 8: (2,6),(3,5),(4,4),(5,3),(6,2) → 5 cặp. P = 5/36." },
-
-      // --- TRẢ LỜI NGẮN ---
-      { type:"short", text:"Mẫu số liệu: 6, 8, 7, 9, 5, 8, 7, 6, 8, 6. Mốt (Mode) của mẫu là bao nhiêu?", answer:"8", hint:"Mốt là giá trị xuất hiện nhiều lần nhất", explain:"Đếm: 5(1), 6(3), 7(2), 8(3), 9(1). Cả 6 và 8 đều xuất hiện 3 lần. Mốt = 8 (hoặc 6)." },
-      { type:"short", text:"Hộp đựng 3 bi đỏ, 2 bi xanh, 5 bi trắng. Rút 1 bi. Xác suất rút được bi trắng = a/10. Tìm a.", answer:"5", hint:"P(trắng) = số bi trắng / tổng", explain:"Tổng = 10 bi. P(trắng) = 5/10. Vậy a = 5." },
-      { type:"short", text:"Gieo xúc xắc 1 lần. Xác suất để ra mặt số ≥ 5 là a/6. Tìm a.", answer:"2", hint:"Số nào ≥ 5 trên xúc xắc?", explain:"Mặt ≥ 5: {5, 6} → P = 2/6. Nhập a = 2." },
-      { type:"short", text:"Mẫu 10 số liệu (đã sắp xếp): 4, 5, 6, 7, 8, 9, 10, 11, 12, 13. Số trung vị bằng bao nhiêu?", answer:"8.5", hint:"10 số → trung vị = TB 2 số giữa (thứ 5 và thứ 6)", explain:"Giá trị thứ 5 = 8, giá trị thứ 6 = 9. Trung vị = (8+9)/2 = 8,5. Nhập 8.5." },
-      { type:"short", text:"Tung 3 đồng xu. Không gian mẫu có bao nhiêu phần tử?", answer:"8", hint:"2 × 2 × 2 = ?", explain:"Mỗi đồng xu có 2 kết quả, tung 3 cái → 2³ = 8 phần tử." },
-      { type:"short", text:"Gieo 2 xúc sắc. Xác suất tổng bằng 7 là a/36. Tìm a.", answer:"6", hint:"Liệt kê các cặp (x,y) với x+y=7", explain:"(1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 cặp. P = 6/36. Nhập 6." },
-    ]
-  },
-
-  // ==================== ĐỀ THI TUYỂN SINH SỐ 4 ====================
-  {
-    id: "dethi4",
-    emoji: "📝",
-    name: "Đề Thi Tuyển Sinh Số 4",
-    desc: "Đề thi thử tuyển sinh lớp 10 – 17 câu trắc nghiệm + đúng/sai + tự luận ngắn",
-    questions: [
-
-      // ===== PHẦN I: TRẮC NGHIỆM (Câu 1–12 nhận biết & thông hiểu) =====
-      { type:"mc", text:"Câu 1. Căn bậc hai số học của 16 là:", opts:["±4","4","-4","2"], correct:1, explain:"Căn bậc hai số học của 16 là số không âm: √16 = 4." },
-      { type:"mc", text:"Câu 2. Giá trị của biểu thức √(3−√5)² là:", opts:["3−√5","√5−3","|3−√5|","−(3−√5)"], correct:0, explain:"√(a²) = |a|. Vì 3 > √5 nên |3−√5| = 3−√5." },
-      { type:"mc", text:"Câu 3. Hàm số y = (m−1)x + 3 đồng biến trên ℝ khi:", opts:["m > 1","m < 1","m = 1","m ≥ 1"], correct:0, explain:"Hàm bậc nhất y=ax+b đồng biến ⟺ a > 0. Ở đây a = m−1 > 0 ⟺ m > 1." },
-      { type:"mc", text:"Câu 4. Đường thẳng y = 2x − 3 cắt trục tung tại điểm:", opts:["(0; −3)","(0; 2)","(3/2; 0)","(−3; 0)"], correct:0, explain:"Cắt trục tung tại x = 0: y = 2(0) − 3 = −3. Điểm (0; −3)." },
-      { type:"mc", text:"Câu 5. Phương trình x² − 5x + 6 = 0 có hai nghiệm x₁, x₂. Tích x₁·x₂ bằng:", opts:["5","−5","6","−6"], correct:2, explain:"Theo Vi-ét: x₁·x₂ = c/a = 6/1 = 6." },
-      { type:"mc", text:"Câu 6. Phương trình 2x² − 3x + 1 = 0 có delta Δ bằng:", opts:["1","−7","9","17"], correct:0, explain:"Δ = b² − 4ac = (−3)² − 4(2)(1) = 9 − 8 = 1." },
-      { type:"mc", text:"Câu 7. Hệ phương trình { x + y = 5 ; x − y = 1 } có nghiệm là:", opts:["(2; 3)","(3; 2)","(4; 1)","(1; 4)"], correct:1, explain:"Cộng 2 PT: 2x = 6 → x = 3. Thay vào: y = 5 − 3 = 2. Nghiệm (3; 2)." },
-      { type:"mc", text:"Câu 8. Đường tròn (O; 5cm) có dây AB = 6cm. Khoảng cách từ tâm O đến AB là:", opts:["4 cm","3 cm","√11 cm","√34 cm"], correct:0, explain:"d = √(R² − (AB/2)²) = √(25 − 9) = √16 = 4 cm." },
-      { type:"mc", text:"Câu 9. Góc nội tiếp chắn nửa đường tròn có số đo bằng:", opts:["45°","60°","90°","180°"], correct:2, explain:"Góc nội tiếp chắn nửa đường tròn (cung 180°) bằng 90°." },
-      { type:"mc", text:"Câu 10. Trong tam giác vuông có một góc 30°, cạnh huyền là 10 cm. Cạnh đối diện với góc 30° là:", opts:["5 cm","5√3 cm","10√3 cm","√3 cm"], correct:0, explain:"Cạnh đối diện góc 30° = cạnh huyền × sin30° = 10 × 0,5 = 5 cm." },
-      { type:"mc", text:"Câu 11. Hình nón có bán kính đáy r = 3cm, đường sinh l = 5cm. Diện tích xung quanh là:", opts:["15π cm²","9π cm²","25π cm²","30π cm²"], correct:0, explain:"S_xq = πrl = π × 3 × 5 = 15π cm²." },
-      { type:"mc", text:"Câu 12. Gieo một xúc sắc 1 lần. Xác suất để xuất hiện mặt số lẻ là:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Số lẻ: {1, 3, 5} → P = 3/6 = 1/2." },
-
-      // ===== PHẦN I (tiếp): VẬN DỤNG (Câu 13–17) =====
-      { type:"mc", text:"Câu 13. Cho biểu thức A = (√x + 1)/(√x − 1) với x ≥ 0, x ≠ 1. Giá trị của A khi x = 9 là:", opts:["2","1","3","4"], correct:0, explain:"x=9 → √x=3. A = (3+1)/(3−1) = 4/2 = 2." },
-      { type:"mc", text:"Câu 14. Parabol y = x² và đường thẳng y = 2x cắt nhau tại điểm khác gốc tọa độ có hoành độ:", opts:["x = 1","x = 2","x = −2","x = 4"], correct:1, explain:"x² = 2x → x(x−2) = 0 → x = 0 hoặc x = 2. Điểm khác O có x = 2." },
-      { type:"mc", text:"Câu 15. Hai số x₁, x₂ là nghiệm của pt x² − 6x + 7 = 0. Giá trị của x₁² + x₂² là:", opts:["22","36","29","14"], correct:0, explain:"Vi-ét: S=x₁+x₂=6, P=x₁x₂=7. x₁²+x₂² = S²−2P = 36−14 = 22." },
-      { type:"mc", text:"Câu 16. Một hình trụ có bán kính đáy 4cm và chiều cao 9cm. Thể tích hình trụ là:", opts:["36π cm³","72π cm³","144π cm³","288π cm³"], correct:2, explain:"V = πr²h = π × 16 × 9 = 144π cm³." },
-      { type:"mc", text:"Câu 17. Từ điểm A ngoài đường tròn (O; R=6cm), kẻ tiếp tuyến AB (B là tiếp điểm), OA = 10cm. Độ dài AB là:", opts:["4 cm","8 cm","6 cm","√136 cm"], correct:1, explain:"OB ⊥ AB. AB = √(OA²−OB²) = √(100−36) = √64 = 8 cm." },
-      { type:"mc", text:"Câu 18. Điều kiện xác định của √(x − 5) là:", opts:["x > 5","x < 5","x ≥ 5","x ≤ 5"], correct:2, explain:"Biểu thức trong dấu căn phải ≥ 0: x − 5 ≥ 0 ↔ x ≥ 5." },
-      { type:"mc", text:"Câu 19. Tam giác MNP vuông tại M, MN = 6 cm, góc MNP = 60°. Diện tích tam giác MNP bằng:", opts:["18 cm²","18√3 cm²","9√3 cm²","31,18 cm²"], correct:3, explain:"MP = MN·tan60° = 6√3 cm. S = ½·MN·MP = ½·6·6√3 = 18√3 ≈ 31,18 cm²." },
-      { type:"mc", text:"Câu 20. Tam giác MNP vuông tại N. Hệ thức nào sau đây đúng?", opts:["NP = MP·sinP","NP = MP·tanP","MN = MP·sinP","MN = MP·cosN"], correct:1, explain:"Trong ΔMNP vuông tại N: tanP = NP/MN, nhưng theo cạnh huyền MP: sinP = MN/MP → NP = MP·cosM. Ta có tanP = NP/MN và NP = MN·tanP. Theo MP: NP = MP·sinM... Hệ thức chuẩn: NP = MP·sinM = MP·cos P... Đáp án B: NP = MP·tanP là sai chuẩn nhưng theo đề: NP/MP = sinM → NP = MP·sinM. Tuy nhiên đáp án đề cho là B." },
-      { type:"mc", text:"Câu 21. Số các giá trị nguyên dương x thỏa mãn bất phương trình (7x − 2)/2 < x + 10 là:", opts:["4","3","5","6"], correct:2, explain:"(7x−2)/2 < x+10 ↔ 7x−2 < 2x+20 ↔ 5x < 22 ↔ x < 4,4. Giá trị nguyên dương: x ∈ {1, 2, 3, 4} → 4 giá trị. Đáp án C theo đề gốc: 5 (nếu tính cả x=0, hoặc bất phương trình khác). Theo đề: đáp án C = 5." },
-      { type:"mc", text:"Câu 22. Tam giác MNP vuông tại M, có đường cao MH (H thuộc NP). Biết NH = 3 cm, HP = 4 cm. Độ dài MH bằng:", opts:["2√3 cm","√7 cm","√12 cm","5 cm"], correct:0, explain:"Hệ thức lượng: MH² = NH·HP = 3·4 = 12. MH = √12 = 2√3 cm." },
-      { type:"mc", text:"Câu 23. Cổng biệt thự có dạng parabol, rộng 5m, cao 6m. Khung cửa chữ nhật ABCD có diện tích 8,64 m². Chiều cao khung cửa ABCD là:", opts:["2,16 m","4,32 m","3,84 m","1,92 m"], correct:2, explain:"Lập hệ tọa độ, đỉnh parabol (0;6): y = 6 − (24/25)x². Diện tích S = 2x·y = 8,64 → giải ra chiều cao y ≈ 3,84 m." },
-      { type:"mc", text:"Câu 24. Bác An đầu tư 900 triệu đồng vào 2 kênh: lãi suất 6%/năm và 8%/năm. Sau 1 năm thu được 64 triệu tiền lãi. Số tiền đầu tư vào kênh 6% và kênh 8% lần lượt là:", opts:["500tr và 400tr","450tr và 450tr","400tr và 500tr","300tr và 600tr"], correct:2, explain:"Gọi x là tiền gửi 6%, y là tiền gửi 8%. x+y=900, 0,06x+0,08y=64. Từ đó: 0,06(900−y)+0,08y=64 → 54+0,02y=64 → y=500, x=400. Kênh 6%: 400tr, kênh 8%: 500tr." },
-      { type:"mc", text:"Câu 25. Parabol y = x² và đường thẳng y = 2x − m + 3 cắt nhau tại 2 điểm có hoành độ x₁, x₂ thỏa x₁³x₂ + x₁x₂³ = −96. Số giá trị nguyên của m là:", opts:["3","4","5","2"], correct:0, explain:"Giao: x²=2x−m+3 → x²−2x+m−3=0. Vi-ét: x₁+x₂=2, x₁x₂=m−3. Biểu thức: x₁x₂(x₁²+x₂²)=(m−3)[(x₁+x₂)²−2x₁x₂]=(m−3)(4−2(m−3))=(m−3)(10−2m)=−96. Giải: (m−3)(10−2m)=−96 → −2m²+16m−30=−96 → m²−8m−33=0 → (m−11)(m+3)=0 → m=11 hoặc m=−3. Để 2 giao điểm: Δ>0 → 4−4(m−3)>0 → m<4. Vậy m∈(−3; 4) có nghiệm nguyên m∈{−2,−1,0,1,2,3}... kiểm tra lại: đáp án A=3 theo đề gốc." },
-      { type:"mc", text:"Câu 26. Gieo một xúc sắc cân đối 2 lần. Xác suất để tổng số chấm xuất hiện nhỏ hơn 5 là:", opts:["1/6","1/4","5/18","1/3"], correct:0, explain:"Không gian mẫu: 36 cặp. Tổng < 5: (1,1),(1,2),(1,3),(2,1),(2,2),(3,1) → 6 cặp. P = 6/36 = 1/6." },
-
-      // ===== PHẦN II: ĐÚNG / SAI =====
-      { type:"tf", text:"Câu 1 (Đúng/Sai). Cho phương trình x² − (m+1)x + m = 0 (m là tham số).", statements:[
-        { stmt:"Phương trình có nghiệm kép khi m = 1", correct:false },
-        { stmt:"Phương trình luôn có 2 nghiệm phân biệt với mọi m", correct:false },
-        { stmt:"Phương trình có nghiệm kép khi Δ = (m+1)² − 4m = 0", correct:true },
-        { stmt:"Một nghiệm của phương trình luôn là x = 1 với mọi m", correct:true }
-      ], explains:[
-        "Sai. Δ = (m+1)² − 4m = m² − 2m + 1 = (m−1)² ≥ 0. Nghiệm kép khi (m−1)² = 0 tức m = 1. Nhưng câu này cần kiểm tra: khi m=1, Δ=0 → nghiệm kép. Vậy đúng? Xem lại: nghiệm kép khi Δ=0 → m=1. Đây là ĐÚNG.",
-        "Sai. Δ = (m−1)² ≥ 0. Bằng 0 khi m=1 → có nghiệm kép, không phải 2 nghiệm phân biệt.",
-        "Đúng. Điều kiện nghiệm kép: Δ = (m+1)² − 4m = m²−2m+1 = (m−1)² = 0.",
-        "Đúng. Thay x=1: 1−(m+1)+m = 1−m−1+m = 0. Vậy x=1 luôn là nghiệm."
-      ]},
-      { type:"tf", text:"Câu 2 (Đúng/Sai). Cho đường tròn (O; R), điểm M trên đường tròn, tiếp tuyến tại M vuông góc với OM.", statements:[
-        { stmt:"Tiếp tuyến tại M và bán kính OM vuông góc nhau", correct:true },
-        { stmt:"Từ một điểm nằm ngoài đường tròn có thể kẻ được đúng 2 tiếp tuyến", correct:true },
-        { stmt:"Hai tiếp tuyến từ ngoài có độ dài bằng nhau", correct:true },
-        { stmt:"Góc nội tiếp bằng hai lần góc tâm cùng chắn một cung", correct:false }
-      ], explains:[
-        "Đúng. Tính chất cơ bản của tiếp tuyến: tiếp tuyến ⊥ bán kính tại tiếp điểm.",
-        "Đúng. Từ điểm ngoài đường tròn luôn kẻ được đúng 2 tiếp tuyến.",
-        "Đúng. Hai tiếp tuyến từ cùng một điểm ngoài đến đường tròn bằng nhau.",
-        "Sai. Góc tâm bằng hai lần góc nội tiếp (cùng chắn 1 cung), không phải ngược lại."
-      ]},
-
-      // ===== PHẦN III: TRẢ LỜI NGẮN =====
-      { type:"short", text:"Rút gọn: √75 − √48 + √27 = a√3. Tìm a.", answer:"4", hint:"Đưa về dạng k√3 rồi tính", explain:"√75=5√3, √48=4√3, √27=3√3. Kết quả = 5√3−4√3+3√3 = 4√3. Vậy a = 4." },
-      { type:"short", text:"Phương trình x² − 7x + 12 = 0 có hai nghiệm x₁ và x₂. Tính x₁ + x₂ = ?", answer:"7", hint:"Dùng hệ thức Vi-ét: x₁+x₂ = −b/a", explain:"Theo Vi-ét: x₁+x₂ = 7/1 = 7." },
-      { type:"short", text:"Hình cầu có đường kính 6cm. Thể tích hình cầu bằng bao nhiêu π cm³?", answer:"36", hint:"V = (4/3)πR³, R = d/2", explain:"R = 3cm. V = (4/3)π × 27 = 36π cm³. Nhập 36." },
-      { type:"short", text:"Gieo 2 xúc sắc. Xác suất để tổng 2 mặt bằng 7 là a/36. Tìm a.", answer:"6", hint:"Liệt kê cặp (x,y): x+y=7", explain:"(1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 cặp. P = 6/36. Nhập 6." },
+      {type:"short", text:"Câu 29. ĐKXĐ của 5/(x + 4) là x khác mấy?", answer:"-4", hint:"Mẫu ≠ 0", explain:"x + 4 ≠ 0 → x ≠ −4."},
+      {type:"short", text:"Câu 30. PT (x − 5)(x + 2) = 0 có bao nhiêu nghiệm?", answer:"2", hint:"Tích = 0 khi...", explain:"x = 5 hoặc x = −2 → 2 nghiệm."},
+      {type:"short", text:"Câu 31. Giải PT: 4/x = 2 (x ≠ 0). Nghiệm x =?", answer:"2", hint:"4 = 2x", explain:"4 = 2x → x = 2 (thoả x ≠ 0)."},
+      {type:"short", text:"Câu 32. PT x² − 5x + 6 = 0 viết (x − 2)(x − ?) = 0. Số ? là:", answer:"3", hint:"Tìm số nhân với −2 được 6", explain:"x² − 5x + 6 = (x − 2)(x − 3) = 0. Vậy ? = 3."}
     ]
   }
 ];
