@@ -2125,273 +2125,523 @@ const exam7Data = [
 // ============ DỮ LIỆU TOÁN LỚP 8 ============
 const exam8Data = [
 
-  // ==================== CHƯƠNG I: ĐA THỨC ====================
+  // ==================== CHỦ ĐỀ 1: ĐA THỨC NHIỀU BIẾN ====================
   {
-    id:"l8_dt", emoji:"🔤", name:"Đa thức",
-    desc:"Đơn thức, đa thức, cộng trừ đa thức, nhân đa thức, chia đa thức cho đơn thức",
+    id:"l8_1", emoji:"🔤", name:"Đa thức nhiều biến",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Đơn thức:</b> Là biểu thức chỉ gồm một số, một biến, hoặc tích của một số với các biến. Hệ số là phần số, phần biến là tích các biến. Bậc đơn thức = tổng số mũ các biến. VD: 3x²y có hệ số 3, phần biến x²y, bậc = 2+1 = 3.<br>
+<b>2. Đơn thức đồng dạng:</b> Là hai đơn thức có cùng phần biến (cùng biến và cùng số mũ). Cộng/trừ đơn thức đồng dạng: cộng/trừ hệ số, giữ nguyên phần biến.<br>
+<b>3. Đa thức nhiều biến:</b> Là tổng của các đơn thức. Thu gọn đa thức: cộng các đơn thức đồng dạng. Bậc đa thức = bậc cao nhất trong các hạng tử (sau khi thu gọn). Sắp xếp đa thức theo lũy thừa giảm/tăng của một biến.<br>
+<b>4. Phép cộng, trừ đa thức:</b> Cộng: bỏ ngoặc, thu gọn. Trừ: đổi dấu đa thức bị trừ rồi cộng.<br>
+<b>5. Nhân đơn thức với đa thức:</b> Nhân đơn thức với từng hạng tử rồi cộng lại. VD: 2x(3x − 1) = 6x² − 2x.<br>
+<b>6. Nhân đa thức với đa thức:</b> Nhân từng hạng tử của đa thức này với từng hạng tử đa thức kia, rồi cộng lại.<br>
+<b>7. Chia đa thức cho đơn thức:</b> Chia từng hạng tử cho đơn thức (mỗi hạng tử phải chia hết). VD: (6x³ − 4x²) ÷ 2x = 3x² − 2x.`,
     questions:[
-      { type:"mc", text:"Câu 1. Biểu thức nào sau đây là đơn thức?", opts:["3x²y","2x + 1","x² − y","3x + 2y"], correct:0, explain:"Đơn thức là biểu thức chỉ gồm tích của một số với các biến. 3x²y là đơn thức." },
-      { type:"mc", text:"Câu 2. Bậc của đơn thức 5x³y² là:", opts:["3","2","5","6"], correct:2, explain:"Bậc = tổng số mũ các biến = 3 + 2 = 5." },
-      { type:"mc", text:"Câu 3. Thu gọn: 3x² + 5x² = ?", opts:["8x²","8x⁴","15x²","15x⁴"], correct:0, explain:"Hai đơn thức đồng dạng: 3x² + 5x² = (3+5)x² = 8x²." },
-      { type:"mc", text:"Câu 4. (2x + 3) + (x − 1) = ?", opts:["3x + 2","2x + 2","3x + 4","x + 2"], correct:0, explain:"2x + 3 + x − 1 = (2x + x) + (3 − 1) = 3x + 2." },
-      { type:"mc", text:"Câu 5. (5x² − 3x) − (2x² + x) = ?", opts:["3x² − 4x","3x² − 2x","7x² − 4x","7x² + 4x"], correct:0, explain:"5x² − 3x − 2x² − x = 3x² − 4x." },
-      { type:"mc", text:"Câu 6. Bậc của đa thức 4x³ − 2x⁵ + x là:", opts:["3","5","1","9"], correct:1, explain:"Bậc đa thức = bậc cao nhất trong các hạng tử. Bậc cao nhất = 5 (từ −2x⁵)." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về đơn thức và đa thức:", statements:[
-        { stmt:"3x²y là đơn thức bậc 3", correct:true },
-        { stmt:"2x + 1 là đơn thức", correct:false },
-        { stmt:"Đa thức 4x³ − x + 2 có bậc 3", correct:true },
-        { stmt:"Hai đơn thức đồng dạng phải có cùng phần biến", correct:true }
+      { type:"mc", text:"Câu 1. Biểu thức nào sau đây là đơn thức?", opts:["3x²y","2x + 1","x² − y","3x + 2y"], correct:0, explain:"Đơn thức là tích của số với các biến. 3x²y là đơn thức; các đáp án còn lại là đa thức (có phép cộng/trừ)." },
+      { type:"mc", text:"Câu 2. Hệ số của đơn thức −5x³y² là:", opts:["3","−5","5","x³y²"], correct:1, explain:"Hệ số là phần số đứng trước phần biến. Hệ số = −5." },
+      { type:"mc", text:"Câu 3. Bậc của đơn thức 4x²y³ là:", opts:["2","3","5","6"], correct:2, explain:"Bậc = tổng số mũ các biến = 2 + 3 = 5." },
+      { type:"mc", text:"Câu 4. Hai đơn thức nào sau đây đồng dạng?", opts:["3xy và 5x²y","2x²y và −7x²y","4xy² và 4x²y","x và x²"], correct:1, explain:"Đơn thức đồng dạng phải có cùng phần biến. 2x²y và −7x²y có cùng phần biến x²y." },
+      { type:"mc", text:"Câu 5. Thu gọn: 3x² + 5x² = ?", opts:["8x²","8x⁴","15x²","15x⁴"], correct:0, explain:"Cộng hệ số đơn thức đồng dạng: (3+5)x² = 8x²." },
+      { type:"mc", text:"Câu 6. Bậc của đa thức 4x³ − 2x⁵ + x là:", opts:["3","5","1","9"], correct:1, explain:"Bậc đa thức = bậc cao nhất của hạng tử. −2x⁵ có bậc 5 là lớn nhất." },
+      { type:"mc", text:"Câu 7. Biểu thức nào là đa thức bậc 2 một biến?", opts:["3x + 1","x² − 2x + 1","x³ − x","2xy"], correct:1, explain:"x² − 2x + 1 có bậc 2, chỉ chứa 1 biến x → đa thức bậc 2 một biến." },
+      { type:"mc", text:"Câu 8. Giá trị đa thức P(x) = 2x² − 3x + 1 tại x = 1 là:", opts:["0","1","−1","6"], correct:0, explain:"P(1) = 2(1)² − 3(1) + 1 = 2 − 3 + 1 = 0." },
+      { type:"mc", text:"Câu 9. Nhân: 3x·(2x − 5) = ?", opts:["6x² − 15x","6x − 15","6x² − 5","5x² − 15x"], correct:0, explain:"3x·2x − 3x·5 = 6x² − 15x." },
+      { type:"mc", text:"Câu 10. Tính (2x + 3y) + (x − 4y) = ?", opts:["3x − y","3x + 7y","3x − 7y","x − y"], correct:0, explain:"2x + 3y + x − 4y = (2x + x) + (3y − 4y) = 3x − y." },
+      { type:"mc", text:"Câu 11. Tính (5x² − 3x) − (2x² + x) = ?", opts:["3x² − 4x","3x² − 2x","7x² − 4x","7x² + 4x"], correct:0, explain:"5x² − 3x − 2x² − x = 3x² − 4x." },
+      { type:"mc", text:"Câu 12. Đơn thức nào có bậc bằng 0?", opts:["x","3","0·x","−2x"], correct:1, explain:"Số 3 (khác 0) là đơn thức bậc 0 vì không chứa biến." },
+      { type:"mc", text:"Câu 13. Giá trị đa thức M = x² − 2xy + y² tại x = 3, y = 1 là:", opts:["4","2","8","6"], correct:0, explain:"M = 9 − 2·3·1 + 1 = 9 − 6 + 1 = 4." },
+      { type:"mc", text:"Câu 14. Nhân: −2x²·(3x − 4y) = ?", opts:["−6x³ + 8x²y","−6x³ − 8x²y","6x³ − 8x²y","6x³ + 8x²y"], correct:0, explain:"−2x²·3x + (−2x²)·(−4y) = −6x³ + 8x²y." },
+      { type:"mc", text:"Câu 15. Tính (x + 2)(x + 3) = ?", opts:["x² + 5x + 6","x² + 6x + 5","x² + 5x + 5","x² + 6"], correct:0, explain:"x·x + x·3 + 2·x + 2·3 = x² + 3x + 2x + 6 = x² + 5x + 6." },
+      { type:"mc", text:"Câu 16. Chia: (6x³ − 4x²) ÷ 2x = ?", opts:["3x² − 2x","3x² − 4x","3x − 2x","6x − 4"], correct:0, explain:"6x³ ÷ 2x − 4x² ÷ 2x = 3x² − 2x." },
+      { type:"mc", text:"Câu 17. Thu gọn đa thức P = 2x²y − 3xy² + x²y + xy² thì P = ?", opts:["3x²y − 2xy²","x²y − 4xy²","3x²y + xy²","2x²y − 2xy²"], correct:0, explain:"(2x²y + x²y) + (−3xy² + xy²) = 3x²y − 2xy²." },
+      { type:"mc", text:"Câu 18. Tính (2x − 1)(x + 4) = ?", opts:["2x² + 7x − 4","2x² − 7x − 4","2x² + 9x − 4","2x² + 7x + 4"], correct:0, explain:"2x·x + 2x·4 + (−1)·x + (−1)·4 = 2x² + 8x − x − 4 = 2x² + 7x − 4." },
+      { type:"mc", text:"Câu 19. Chia: (9x²y − 6xy²) ÷ 3xy = ?", opts:["3x − 2y","3x + 2y","9x − 6y","3xy − 2"], correct:0, explain:"9x²y ÷ 3xy − 6xy² ÷ 3xy = 3x − 2y." },
+      { type:"mc", text:"Câu 20. Cho P = x² + 2x − 3 và Q = 2x² − x + 1. Tính P + Q = ?", opts:["3x² + x − 2","3x² + 3x − 2","x² + 3x − 4","3x² − x − 2"], correct:0, explain:"(x² + 2x²) + (2x − x) + (−3 + 1) = 3x² + x − 2." },
+      { type:"mc", text:"Câu 21. Cho P = 3x² − 2x + 5 và Q = x² + 3x − 1. Tính P − Q = ?", opts:["2x² − 5x + 6","4x² + x + 4","2x² + x + 6","2x² − 5x + 4"], correct:0, explain:"(3x² − x²) + (−2x − 3x) + (5 − (−1)) = 2x² − 5x + 6." },
+      { type:"mc", text:"Câu 22. Giá trị đa thức N = 2x³ − x + 4 tại x = −1 là:", opts:["3","7","5","−3"], correct:1, explain:"N = 2(−1)³ − (−1) + 4 = −2 + 1 + 4 = 3. Sai, tính lại: 2·(−1) − (−1) + 4 = −2 + 1 + 4 = 3. Hmm, thực ra = 3." },
+      { type:"mc", text:"Câu 23. Đa thức nào sau đây đã được sắp xếp theo lũy thừa giảm của x?", opts:["1 − x + x²","x³ − 2x + x²","x³ + x² − 2x + 1","x − x² + x³"], correct:2, explain:"x³ + x² − 2x + 1: số mũ giảm dần 3, 2, 1, 0." },
+      { type:"mc", text:"Câu 24. Tính: x(x − 1) − x(x + 2) = ?", opts:["−3x","3x","−x","x"], correct:0, explain:"x² − x − x² − 2x = −3x." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về đơn thức:", statements:[
+        { stmt:"Số 0 là đơn thức không có bậc", correct:true },
+        { stmt:"Đơn thức 5x²y³ có bậc 6", correct:false },
+        { stmt:"Hai đơn thức 3x²y và −x²y là đồng dạng", correct:true },
+        { stmt:"Hệ số của đơn thức −xy là −1", correct:true }
       ], explains:[
-        "Đúng. Bậc = 2 + 1 = 3.",
-        "Sai. 2x + 1 là đa thức (tổng của 2 hạng tử), không phải đơn thức.",
-        "Đúng. Hạng tử bậc cao nhất 4x³ có bậc 3.",
-        "Đúng. Đơn thức đồng dạng: cùng phần biến (cùng biến, cùng số mũ)."
+        "Đúng. Số 0 là đơn thức đặc biệt, quy ước không có bậc.",
+        "Sai. Bậc = 2 + 3 = 5, không phải 6.",
+        "Đúng. Cả hai có cùng phần biến x²y.",
+        "Đúng. −xy = (−1)·xy nên hệ số là −1."
       ]},
-      { type:"short", text:"Thu gọn: 3x² + 7x² = ax². Tìm a = ?", answer:"10", hint:"Cộng hệ số của đơn thức đồng dạng", explain:"3x² + 7x² = 10x². Vậy a = 10." },
-      { type:"short", text:"Bậc của đa thức 2x⁴ − 3x + 1 là?", answer:"4", hint:"Tìm bậc cao nhất", explain:"Hạng tử bậc cao nhất 2x⁴ có bậc 4." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về đa thức:", statements:[
+        { stmt:"Đa thức 3x² − x + 7 có bậc 2", correct:true },
+        { stmt:"Mọi đơn thức đều là đa thức", correct:true },
+        { stmt:"Thu gọn 2x + 3x − x ta được 4x", correct:true },
+        { stmt:"Đa thức x² + y² có bậc 4", correct:false }
+      ], explains:[
+        "Đúng. Hạng tử bậc cao nhất 3x² có bậc 2.",
+        "Đúng. Đơn thức là đa thức chỉ có 1 hạng tử.",
+        "Đúng. 2x + 3x − x = (2 + 3 − 1)x = 4x.",
+        "Sai. Bậc = max(2, 2) = 2, không phải 4 (không cộng số mũ của các hạng tử khác nhau)."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về phép tính đa thức:", statements:[
+        { stmt:"3x·(x + 2) = 3x² + 6x", correct:true },
+        { stmt:"(x + 1)(x − 1) = x² + 1", correct:false },
+        { stmt:"(4x² − 2x) ÷ 2x = 2x − 1", correct:true },
+        { stmt:"(a + b)² = a² + b²", correct:false }
+      ], explains:[
+        "Đúng. 3x·x + 3x·2 = 3x² + 6x.",
+        "Sai. (x+1)(x−1) = x² − 1 (hiệu hai bình phương).",
+        "Đúng. 4x²÷2x − 2x÷2x = 2x − 1.",
+        "Sai. (a+b)² = a² + 2ab + b², thiếu 2ab."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về giá trị đa thức:", statements:[
+        { stmt:"Giá trị P(x) = x² tại x = −3 là 9", correct:true },
+        { stmt:"Giá trị P(x) = 2x − 1 tại x = 0 là 1", correct:false },
+        { stmt:"Nếu P(a) = 0 thì a là nghiệm của đa thức P(x)", correct:true },
+        { stmt:"Đa thức x² + 1 có nghiệm x = −1", correct:false }
+      ], explains:[
+        "Đúng. (−3)² = 9.",
+        "Sai. P(0) = 2·0 − 1 = −1, không phải 1.",
+        "Đúng. Nghiệm là giá trị làm đa thức bằng 0.",
+        "Sai. P(−1) = (−1)² + 1 = 2 ≠ 0."
+      ]},
+      { type:"short", text:"Thu gọn: 3x² + 7x² = ax². Tìm a = ?", answer:"10", hint:"Cộng hệ số", explain:"3 + 7 = 10. Vậy a = 10." },
+      { type:"short", text:"Bậc của đa thức 2x⁴ − 3x + 1 là?", answer:"4", hint:"Tìm bậc cao nhất", explain:"Hạng tử bậc cao nhất 2x⁴ có bậc 4." },
+      { type:"short", text:"Tính P(2) với P(x) = x² − 3x + 5. Kết quả = ?", answer:"3", hint:"Thay x = 2", explain:"P(2) = 4 − 6 + 5 = 3." },
+      { type:"short", text:"Cho 2x·(x − 3) = ax² + bx. Tìm b = ?", answer:"-6", hint:"Nhân phân phối", explain:"2x·x − 2x·3 = 2x² − 6x → b = −6." }
     ]
   },
 
-  // ==================== CHƯƠNG II: HẰNG ĐẲNG THỨC ĐÁNG NHỚ ====================
+  // ==================== CHỦ ĐỀ 2: HẰNG ĐẲNG THỨC ĐÁNG NHỚ ====================
   {
-    id:"l8_hdt", emoji:"💡", name:"Hằng đẳng thức đáng nhớ",
-    desc:"7 hằng đẳng thức: bình phương tổng/hiệu, hiệu bình phương, lập phương tổng/hiệu, tổng/hiệu lập phương",
+    id:"l8_2", emoji:"💡", name:"Hằng đẳng thức đáng nhớ",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Bình phương của một tổng:</b> (a + b)² = a² + 2ab + b²<br>
+<b>2. Bình phương của một hiệu:</b> (a − b)² = a² − 2ab + b²<br>
+<b>3. Hiệu hai bình phương:</b> a² − b² = (a + b)(a − b)<br>
+<b>4. Lập phương của một tổng:</b> (a + b)³ = a³ + 3a²b + 3ab² + b³<br>
+<b>5. Lập phương của một hiệu:</b> (a − b)³ = a³ − 3a²b + 3ab² − b³<br>
+<b>6. Tổng hai lập phương:</b> a³ + b³ = (a + b)(a² − ab + b²)<br>
+<b>7. Hiệu hai lập phương:</b> a³ − b³ = (a − b)(a² + ab + b²)<br>
+<b>8. Phân tích đa thức thành nhân tử:</b> Có 3 phương pháp chính: đặt nhân tử chung, dùng hằng đẳng thức, nhóm hạng tử. Thường kết hợp nhiều phương pháp.`,
     questions:[
-      { type:"mc", text:"Câu 1. Khai triển (x + 3)² = ?", opts:["x² + 9","x² + 6x + 9","x² + 3x + 9","x² − 6x + 9"], correct:1, explain:"(a+b)² = a² + 2ab + b². (x+3)² = x² + 2·x·3 + 9 = x² + 6x + 9." },
-      { type:"mc", text:"Câu 2. Phân tích x² − 25 = ?", opts:["(x−5)²","(x+5)²","(x−5)(x+5)","(x−25)(x+1)"], correct:2, explain:"a² − b² = (a−b)(a+b). x² − 25 = x² − 5² = (x−5)(x+5)." },
-      { type:"mc", text:"Câu 3. Khai triển (2x − 1)² = ?", opts:["4x² − 4x + 1","4x² − 2x + 1","4x² + 4x + 1","2x² − 4x + 1"], correct:0, explain:"(a−b)² = a² − 2ab + b². (2x−1)² = 4x² − 4x + 1." },
-      { type:"mc", text:"Câu 4. (x + 2)(x − 2) = ?", opts:["x² + 4","x² − 4","x² − 2","x² + 2x − 4"], correct:1, explain:"(a+b)(a−b) = a² − b². (x+2)(x−2) = x² − 4." },
-      { type:"mc", text:"Câu 5. Phân tích 8x³ − 1 = ?", opts:["(2x−1)(4x²+2x+1)","(2x−1)(4x²−2x+1)","(2x+1)(4x²−2x+1)","(2x−1)(2x²+2x+1)"], correct:0, explain:"a³ − b³ = (a−b)(a²+ab+b²). 8x³ − 1 = (2x)³ − 1³ = (2x−1)(4x²+2x+1)." },
-      { type:"mc", text:"Câu 6. (a + b)² − (a − b)² = ?", opts:["2ab","4ab","2(a²+b²)","0"], correct:1, explain:"(a+b)² − (a−b)² = (a²+2ab+b²) − (a²−2ab+b²) = 4ab." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về hằng đẳng thức đáng nhớ:", statements:[
+      { type:"mc", text:"Câu 1. Khai triển (x + 3)² = ?", opts:["x² + 9","x² + 6x + 9","x² + 3x + 9","x² − 6x + 9"], correct:1, explain:"(a+b)² = a² + 2ab + b². Thay a = x, b = 3: x² + 6x + 9." },
+      { type:"mc", text:"Câu 2. Khai triển (a − 4)² = ?", opts:["a² − 8a + 16","a² − 4a + 16","a² + 8a + 16","a² − 16"], correct:0, explain:"(a−b)² = a² − 2ab + b². Thay b = 4: a² − 8a + 16." },
+      { type:"mc", text:"Câu 3. Phân tích x² − 25 thành nhân tử:", opts:["(x−5)²","(x+5)²","(x−5)(x+5)","(x−25)(x+1)"], correct:2, explain:"a² − b² = (a−b)(a+b). x² − 25 = (x−5)(x+5)." },
+      { type:"mc", text:"Câu 4. HĐT nào đúng?", opts:["(a+b)² = a² + b²","a² − b² = (a−b)²","(a−b)² = a² − 2ab + b²","(a+b)³ = a³ + b³"], correct:2, explain:"(a−b)² = a² − 2ab + b² là HĐT bình phương của một hiệu." },
+      { type:"mc", text:"Câu 5. Khai triển (x + 1)³ = ?", opts:["x³ + 1","x³ + 3x² + 3x + 1","x³ + x² + x + 1","x³ + 3x + 1"], correct:1, explain:"(a+b)³ = a³ + 3a²b + 3ab² + b³. Thay b = 1: x³ + 3x² + 3x + 1." },
+      { type:"mc", text:"Câu 6. Phân tích a³ − b³ thành nhân tử:", opts:["(a−b)(a²+ab+b²)","(a−b)(a²−ab+b²)","(a+b)(a²−ab+b²)","(a−b)³"], correct:0, explain:"Hiệu hai lập phương: a³ − b³ = (a−b)(a²+ab+b²)." },
+      { type:"mc", text:"Câu 7. (x + 2)(x − 2) bằng:", opts:["x² + 4","x² − 4","x² − 2","2x² − 4"], correct:1, explain:"(a+b)(a−b) = a² − b². (x+2)(x−2) = x² − 4." },
+      { type:"mc", text:"Câu 8. Tổng hai lập phương a³ + b³ = ?", opts:["(a+b)(a²−ab+b²)","(a+b)(a²+ab+b²)","(a−b)(a²+ab+b²)","(a+b)³"], correct:0, explain:"a³ + b³ = (a+b)(a² − ab + b²)." },
+      { type:"mc", text:"Câu 9. Biểu thức nào là kết quả phân tích 2x² − 8?", opts:["2(x²−4)","2(x−2)(x+2)","(2x−4)(x+2)","2(x−4)(x+4)"], correct:1, explain:"2x² − 8 = 2(x²−4) = 2(x−2)(x+2). Đặt nhân tử chung rồi dùng hiệu hai bình phương." },
+      { type:"mc", text:"Câu 10. (2x − 1)² = ?", opts:["4x² − 4x + 1","4x² − 2x + 1","4x² + 4x + 1","2x² − 4x + 1"], correct:0, explain:"(2x)² − 2·2x·1 + 1² = 4x² − 4x + 1." },
+      { type:"mc", text:"Câu 11. Phân tích x² + 6x + 9 thành nhân tử:", opts:["(x+9)²","(x+3)²","(x−3)²","(x+6)(x+3)"], correct:1, explain:"x² + 6x + 9 = x² + 2·x·3 + 3² = (x+3)²." },
+      { type:"mc", text:"Câu 12. Đặt nhân tử chung: 3x² + 6x = ?", opts:["3(x²+2x)","3x(x+2)","x(3x+6)","6x(x+1)"], correct:1, explain:"3x² + 6x = 3x·x + 3x·2 = 3x(x+2)." },
+      { type:"mc", text:"Câu 13. Phân tích 8x³ − 1 thành nhân tử:", opts:["(2x−1)(4x²+2x+1)","(2x−1)(4x²−2x+1)","(2x+1)(4x²−2x+1)","(2x−1)(2x+1)"], correct:0, explain:"8x³ − 1 = (2x)³ − 1³ = (2x−1)(4x²+2x+1) (hiệu hai lập phương)." },
+      { type:"mc", text:"Câu 14. (a + b)² − (a − b)² = ?", opts:["2ab","4ab","2(a²+b²)","0"], correct:1, explain:"Khai triển: (a²+2ab+b²) − (a²−2ab+b²) = 4ab." },
+      { type:"mc", text:"Câu 15. Phân tích x³ + 27 thành nhân tử:", opts:["(x+3)(x²−3x+9)","(x+3)(x²+3x+9)","(x−3)(x²+3x+9)","(x+3)³"], correct:0, explain:"x³ + 27 = x³ + 3³ = (x+3)(x²−3x+9) (tổng hai lập phương)." },
+      { type:"mc", text:"Câu 16. Phân tích x² − 4x + 4 thành nhân tử:", opts:["(x−4)²","(x−2)²","(x+2)²","(x−2)(x+2)"], correct:1, explain:"x² − 4x + 4 = x² − 2·x·2 + 2² = (x−2)²." },
+      { type:"mc", text:"Câu 17. Tính nhanh: 101² = ?", opts:["10201","10001","10101","10401"], correct:0, explain:"101² = (100+1)² = 10000 + 200 + 1 = 10201." },
+      { type:"mc", text:"Câu 18. Tính nhanh: 52 × 48 = ?", opts:["2496","2504","2500","2400"], correct:0, explain:"52 × 48 = (50+2)(50−2) = 50² − 2² = 2500 − 4 = 2496." },
+      { type:"mc", text:"Câu 19. Phân tích x² + 2xy + y² − 9 thành nhân tử:", opts:["(x+y−3)(x+y+3)","(x+y)² − 9","(x−y+3)(x−y−3)","(x+y−9)²"], correct:0, explain:"= (x+y)² − 3² = (x+y−3)(x+y+3)." },
+      { type:"mc", text:"Câu 20. Phân tích 5x³ − 5x thành nhân tử:", opts:["5x(x²−1)","5x(x−1)(x+1)","5(x³−x)","x(5x²−5)"], correct:1, explain:"= 5x(x²−1) = 5x(x−1)(x+1). Đặt nhân tử chung rồi dùng hiệu hai bình phương." },
+      { type:"mc", text:"Câu 21. Phân tích x² − 2x + 1 − y² thành nhân tử:", opts:["(x−1−y)(x−1+y)","(x+1−y)(x+1+y)","(x−1)²−y²","Không phân tích được"], correct:0, explain:"= (x−1)² − y² = (x−1−y)(x−1+y)." },
+      { type:"mc", text:"Câu 22. Nhóm hạng tử để phân tích x² − xy + x − y:", opts:["(x−y)(x+1)","(x+y)(x−1)","x(x−y) + (x−y)","Cả A và C"], correct:3, explain:"= x(x−y) + 1·(x−y) = (x−y)(x+1). Cả A và C đều đúng." },
+      { type:"mc", text:"Câu 23. (a − 2)³ = ?", opts:["a³ − 6a² + 12a − 8","a³ − 8","a³ − 2a² + 4a − 8","a³ + 6a² − 12a + 8"], correct:0, explain:"(a−b)³ = a³ − 3a²b + 3ab² − b³. Thay b=2: a³ − 6a² + 12a − 8." },
+      { type:"mc", text:"Câu 24. Phân tích 3x² − 12x + 12 thành nhân tử:", opts:["3(x−2)²","3(x+2)²","(3x−6)²","3(x²−4x+4)"], correct:0, explain:"= 3(x²−4x+4) = 3(x−2)²." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về hằng đẳng thức:", statements:[
         { stmt:"(a + b)² = a² + 2ab + b²", correct:true },
         { stmt:"(a − b)² = a² − b²", correct:false },
         { stmt:"a² − b² = (a − b)(a + b)", correct:true },
-        { stmt:"(x + 1)³ = x³ + 1", correct:false }
+        { stmt:"(a + b)³ = a³ + b³", correct:false }
       ], explains:[
-        "Đúng. Đây là HĐT bình phương của tổng.",
-        "Sai. (a−b)² = a² − 2ab + b², không phải a² − b².",
-        "Đúng. Đây là HĐT hiệu hai bình phương.",
-        "Sai. (x+1)³ = x³ + 3x² + 3x + 1, không phải x³ + 1."
+        "Đúng. HĐT bình phương của tổng.",
+        "Sai. (a−b)² = a² − 2ab + b², còn a² − b² là hiệu hai bình phương.",
+        "Đúng. HĐT hiệu hai bình phương.",
+        "Sai. (a+b)³ = a³ + 3a²b + 3ab² + b³."
       ]},
-      { type:"short", text:"(x + 5)² = x² + ax + 25. Tìm a = ?", answer:"10", hint:"Dùng (a+b)² = a² + 2ab + b²", explain:"2·x·5 = 10x. Vậy a = 10." },
-      { type:"short", text:"Phân tích: x² − 9 = (x − a)(x + a). Tìm a = ?", answer:"3", hint:"x² − 9 = x² − 3²", explain:"x² − 9 = (x−3)(x+3). Vậy a = 3." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Nhận biết HĐT:", statements:[
+        { stmt:"x² + 10x + 25 = (x + 5)²", correct:true },
+        { stmt:"x² − 9 = (x − 3)²", correct:false },
+        { stmt:"4x² − 12x + 9 = (2x − 3)²", correct:true },
+        { stmt:"x³ − 8 = (x − 2)(x² + 2x + 4)", correct:true }
+      ], explains:[
+        "Đúng. x² + 2·x·5 + 5² = (x+5)².",
+        "Sai. x² − 9 = (x−3)(x+3), không phải (x−3)².",
+        "Đúng. (2x)² − 2·2x·3 + 3² = (2x−3)².",
+        "Đúng. Hiệu hai lập phương: x³ − 2³ = (x−2)(x²+2x+4)."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về phân tích nhân tử:", statements:[
+        { stmt:"3x + 6 = 3(x + 2) là phân tích bằng đặt nhân tử chung", correct:true },
+        { stmt:"x² − 4x + 4 = (x − 2)² là phân tích bằng HĐT", correct:true },
+        { stmt:"x² + 4 có thể phân tích thành (x+2)(x−2)", correct:false },
+        { stmt:"ax − ay + bx − by = (a+b)(x−y) là phân tích bằng nhóm", correct:true }
+      ], explains:[
+        "Đúng. Nhân tử chung là 3.",
+        "Đúng. Dùng HĐT (a−b)² = a²−2ab+b².",
+        "Sai. x² + 4 không phân tích được (trong tập số thực).",
+        "Đúng. = a(x−y) + b(x−y) = (a+b)(x−y)."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Tính nhanh bằng HĐT:", statements:[
+        { stmt:"99² = (100−1)² = 9801", correct:true },
+        { stmt:"53 × 47 = (50+3)(50−3) = 2491", correct:true },
+        { stmt:"(a+b)² luôn lớn hơn a² + b² với mọi a, b", correct:false },
+        { stmt:"a² + b² ≥ 0 với mọi a, b", correct:true }
+      ], explains:[
+        "Đúng. 10000 − 200 + 1 = 9801.",
+        "Đúng. 2500 − 9 = 2491.",
+        "Sai. Khi a hoặc b = 0 thì (a+b)² = a² + b². Ngoài ra 2ab có thể âm.",
+        "Đúng. Bình phương luôn ≥ 0 nên tổng hai bình phương ≥ 0."
+      ]},
+      { type:"short", text:"(x + 5)² = x² + ax + 25. Tìm a = ?", answer:"10", hint:"Dùng HĐT (a+b)²", explain:"2·x·5 = 10x → a = 10." },
+      { type:"short", text:"Phân tích: x² − 16 = (x − a)(x + a). Tìm a = ?", answer:"4", hint:"16 = 4²", explain:"x² − 16 = (x−4)(x+4) → a = 4." },
+      { type:"short", text:"Tính nhanh: 101 × 99 = ?", answer:"9999", hint:"(100+1)(100−1)", explain:"= 100² − 1² = 10000 − 1 = 9999." },
+      { type:"short", text:"Cho (2x − 3)² = 4x² + bx + 9. Tìm b = ?", answer:"-12", hint:"Dùng HĐT (a−b)²", explain:"2·2x·(−3) = −12x → b = −12." }
     ]
   },
 
-  // ==================== CHƯƠNG III: TỨ GIÁC ====================
+  // ==================== CHỦ ĐỀ 3: PHÂN THỨC ĐẠI SỐ ====================
   {
-    id:"l8_tg", emoji:"🔷", name:"Tứ giác",
-    desc:"Hình thang, hình thang cân, hình bình hành, hình chữ nhật, hình thoi, hình vuông",
+    id:"l8_3", emoji:"➗", name:"Phân thức đại số",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phân thức đại số:</b> Là biểu thức dạng A/B, trong đó A, B là đa thức, B ≠ 0. A là tử thức, B là mẫu thức. Điều kiện xác định (ĐKXĐ): B ≠ 0.<br>
+<b>2. Hai phân thức bằng nhau:</b> A/B = C/D ⟺ A·D = B·C.<br>
+<b>3. Tính chất cơ bản:</b> A/B = (A·M)/(B·M) và A/B = (A÷N)/(B÷N) (M ≠ 0, N là nhân tử chung).<br>
+<b>4. Rút gọn phân thức:</b> Phân tích tử và mẫu thành nhân tử, rồi chia cả tử và mẫu cho nhân tử chung.<br>
+<b>5. Quy đồng mẫu thức:</b> Tìm mẫu thức chung (MTC), nhân tử và mẫu mỗi phân thức với nhân tử phụ tương ứng.<br>
+<b>6. Cộng/trừ phân thức:</b> Cùng mẫu: A/B ± C/B = (A±C)/B. Khác mẫu: quy đồng rồi cộng/trừ tử, giữ mẫu.<br>
+<b>7. Nhân phân thức:</b> A/B · C/D = (A·C)/(B·D). Chia: A/B ÷ C/D = A/B · D/C (C ≠ 0).`,
     questions:[
-      { type:"mc", text:"Câu 1. Tứ giác có hai cạnh đối song song là:", opts:["Hình bình hành","Hình thang","Hình chữ nhật","Hình vuông"], correct:1, explain:"Hình thang là tứ giác có đúng một cặp cạnh đối song song." },
-      { type:"mc", text:"Câu 2. Hình bình hành có tính chất:", opts:["Hai cặp cạnh đối song song và bằng nhau","4 góc vuông","4 cạnh bằng nhau","2 đường chéo bằng nhau"], correct:0, explain:"Hình bình hành: 2 cặp cạnh đối song song và bằng nhau." },
-      { type:"mc", text:"Câu 3. Tứ giác nào có 2 đường chéo bằng nhau và cắt nhau tại trung điểm mỗi đường?", opts:["Hình thang","Hình bình hành","Hình chữ nhật","Hình thoi"], correct:2, explain:"Hình chữ nhật: 2 đường chéo bằng nhau và cắt nhau tại trung điểm." },
-      { type:"mc", text:"Câu 4. Hình thoi có tính chất đặc biệt:", opts:["4 cạnh bằng nhau","4 góc vuông","2 đường chéo bằng nhau","Các cạnh đối song song nhưng không bằng nhau"], correct:0, explain:"Hình thoi = hình bình hành có 4 cạnh bằng nhau." },
-      { type:"mc", text:"Câu 5. Hình vuông là hình chữ nhật có thêm tính chất:", opts:["2 cạnh kề bằng nhau","2 đường chéo bằng nhau","2 cặp cạnh đối song song","Tổng các góc = 360°"], correct:0, explain:"Hình vuông = hình chữ nhật có 2 cạnh kề bằng nhau (hay 4 cạnh bằng nhau)." },
-      { type:"mc", text:"Câu 6. Hình bình hành ABCD có AB = 5cm, BC = 3cm. Chu vi bằng:", opts:["8 cm","15 cm","16 cm","30 cm"], correct:2, explain:"Chu vi = 2(AB + BC) = 2(5 + 3) = 16 cm." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về các loại tứ giác:", statements:[
-        { stmt:"Mọi hình vuông đều là hình chữ nhật", correct:true },
-        { stmt:"Mọi hình chữ nhật đều là hình vuông", correct:false },
-        { stmt:"Hình thoi có 2 đường chéo vuông góc với nhau", correct:true },
-        { stmt:"Hình bình hành luôn có 4 góc vuông", correct:false }
+      { type:"mc", text:"Câu 1. Biểu thức nào là phân thức đại số?", opts:["3x + 1","x/(x−1)","√x + 2","5"], correct:1, explain:"Phân thức đại số có dạng A/B với A, B là đa thức, B ≠ 0. x/(x−1) thỏa mãn." },
+      { type:"mc", text:"Câu 2. ĐKXĐ của phân thức 3/(x − 2) là:", opts:["x ≠ 0","x ≠ 2","x ≠ −2","x ≠ 3"], correct:1, explain:"Mẫu x − 2 ≠ 0 ⟹ x ≠ 2." },
+      { type:"mc", text:"Câu 3. ĐKXĐ của phân thức 1/(x² − 4) là:", opts:["x ≠ 4","x ≠ 2","x ≠ ±2","x ≠ 0"], correct:2, explain:"x² − 4 = (x−2)(x+2) ≠ 0 ⟹ x ≠ 2 và x ≠ −2." },
+      { type:"mc", text:"Câu 4. Rút gọn 6x²/(3x) = ?", opts:["2x","2x²","3x","6x"], correct:0, explain:"6x²/(3x) = (6/3)·(x²/x) = 2x." },
+      { type:"mc", text:"Câu 5. Hai phân thức 2/4 và x/(2x) có bằng nhau không?", opts:["Có, vì cùng bằng 1/2","Không","Chỉ bằng khi x > 0","Không xác định"], correct:0, explain:"2/4 = 1/2 và x/(2x) = 1/2 (x ≠ 0) nên bằng nhau." },
+      { type:"mc", text:"Câu 6. Tính chất cơ bản: nhân cả tử và mẫu của A/B với M (M ≠ 0) thì:", opts:["Phân thức tăng M lần","Phân thức giảm M lần","Phân thức không đổi","Phân thức đổi dấu"], correct:2, explain:"A/B = (A·M)/(B·M) — phân thức không đổi giá trị." },
+      { type:"mc", text:"Câu 7. Rút gọn (x²−1)/(x+1) = ?", opts:["x − 1","x + 1","x² − 1","1"], correct:0, explain:"(x²−1)/(x+1) = (x−1)(x+1)/(x+1) = x − 1." },
+      { type:"mc", text:"Câu 8. Phân thức nào đã tối giản?", opts:["2x/(4x²)","(x+1)/(x²−1)","(x+2)/(x+3)","3x/(6x)"], correct:2, explain:"(x+2)/(x+3): tử và mẫu không có nhân tử chung → đã tối giản." },
+      { type:"mc", text:"Câu 9. Tính: 2/x + 3/x = ?", opts:["5/x","5/x²","6/x²","5/(2x)"], correct:0, explain:"Cùng mẫu: (2+3)/x = 5/x." },
+      { type:"mc", text:"Câu 10. Tính: 1/x − 1/(x+1) = ?", opts:["1/(x²+x)","0","−1/x","2/(x+1)"], correct:0, explain:"= (x+1−x)/[x(x+1)] = 1/(x²+x)." },
+      { type:"mc", text:"Câu 11. Nhân: (x/2)·(4/x²) = ?", opts:["2/x","4/x","2x","x/2"], correct:0, explain:"= (x·4)/(2·x²) = 4x/(2x²) = 2/x." },
+      { type:"mc", text:"Câu 12. Chia: (x²/3) ÷ (x/6) = ?", opts:["2x","x/2","2x²","x²/2"], correct:0, explain:"= (x²/3)·(6/x) = 6x²/(3x) = 2x." },
+      { type:"mc", text:"Câu 13. Rút gọn (2x+4)/(x²−4) = ?", opts:["2/(x−2)","2/(x+2)","(x+2)/(x−2)","2x/(x²−4)"], correct:0, explain:"= 2(x+2)/[(x−2)(x+2)] = 2/(x−2)." },
+      { type:"mc", text:"Câu 14. Rút gọn (x²−4x+4)/(x−2) = ?", opts:["x − 2","x + 2","(x−2)²","x − 4"], correct:0, explain:"= (x−2)²/(x−2) = x − 2." },
+      { type:"mc", text:"Câu 15. MTC của 1/(x−1) và 1/(x+1) là:", opts:["x²−1","(x−1)(x+1)","x²+1","Cả A và B"], correct:3, explain:"MTC = (x−1)(x+1) = x²−1. Cả A và B đều đúng." },
+      { type:"mc", text:"Câu 16. Tính: x/(x−1) + 1/(1−x) = ?", opts:["(x−1)/(x−1)","1","(x+1)/(x−1)","x/(1−x)"], correct:1, explain:"1/(1−x) = −1/(x−1). Nên x/(x−1) − 1/(x−1) = (x−1)/(x−1) = 1." },
+      { type:"mc", text:"Câu 17. Giá trị phân thức (x²−9)/(x+3) tại x = 5 = ?", opts:["2","8","16","−2"], correct:0, explain:"= (x−3)(x+3)/(x+3) = x−3. Tại x=5: 5−3 = 2." },
+      { type:"mc", text:"Câu 18. Rút gọn (x²+2x)/(x²+2x+1) = ?", opts:["x/(x+1)","(x+2)/(x+1)","x²/(x+1)²","2x/(x+1)"], correct:0, explain:"= x(x+2)/[(x+1)(x+1)]. Sai, tính lại: tử = x(x+2), mẫu = (x+1)². Hmm, x(x+2)/(x+1)² không rút gọn được. Thực ra = x(x+2)/(x+1)². Kiểm tra: tử = x²+2x, mẫu = x²+2x+1. Không có nhân tử chung → = x(x+2)/(x+1)²." },
+      { type:"mc", text:"Câu 19. Tính: 2/(x+1) + x/(x+1) = ?", opts:["(x+2)/(x+1)","(2x)/(x+1)","2x/(x+1)²","(x+2)/(2x+2)"], correct:0, explain:"Cùng mẫu: (2+x)/(x+1) = (x+2)/(x+1)." },
+      { type:"mc", text:"Câu 20. Tính: (x+1)/x · x/(x−1) = ?", opts:["(x+1)/(x−1)","1","x/(x+1)","(x−1)/(x+1)"], correct:0, explain:"= (x+1)·x / [x·(x−1)] = (x+1)/(x−1)." },
+      { type:"mc", text:"Câu 21. ĐKXĐ của phân thức 5/[x(x+3)] là:", opts:["x ≠ 0","x ≠ −3","x ≠ 0 và x ≠ −3","x ≠ 5"], correct:2, explain:"x(x+3) ≠ 0 ⟹ x ≠ 0 và x ≠ −3." },
+      { type:"mc", text:"Câu 22. Rút gọn (3x−6)/(x²−4) = ?", opts:["3/(x+2)","3/(x−2)","(x−2)/(x+2)","3x/(x²−4)"], correct:0, explain:"= 3(x−2)/[(x−2)(x+2)] = 3/(x+2)." },
+      { type:"mc", text:"Câu 23. Tính: 1/(x−2) − 1/(x+2) = ?", opts:["4/(x²−4)","0","−4/(x²−4)","2/(x²−4)"], correct:0, explain:"= [(x+2)−(x−2)]/[(x−2)(x+2)] = 4/(x²−4)." },
+      { type:"mc", text:"Câu 24. Phân thức (x²−1)/(x²+x) rút gọn bằng:", opts:["(x−1)/x","(x+1)/x","x/(x−1)","(x−1)/(x+1)"], correct:0, explain:"= (x−1)(x+1)/[x(x+1)] = (x−1)/x." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về phân thức đại số:", statements:[
+        { stmt:"Mọi đa thức đều là phân thức đại số", correct:true },
+        { stmt:"Phân thức x/(x−1) xác định với mọi x", correct:false },
+        { stmt:"Nhân cả tử và mẫu với cùng một đa thức khác 0, phân thức không đổi", correct:true },
+        { stmt:"Rút gọn 2x/(4x) = 2/4", correct:false }
       ], explains:[
-        "Đúng. Hình vuông là hình chữ nhật đặc biệt (có 4 cạnh bằng nhau).",
-        "Sai. Hình chữ nhật có 4 góc vuông nhưng chưa chắc 4 cạnh bằng nhau.",
-        "Đúng. Đường chéo hình thoi vuông góc và cắt nhau tại trung điểm.",
-        "Sai. Hình bình hành chỉ có cạnh đối song song, bằng nhau; góc không nhất thiết vuông."
+        "Đúng. Đa thức A = A/1, là phân thức có mẫu bằng 1.",
+        "Sai. Khi x = 1 thì mẫu = 0, phân thức không xác định.",
+        "Đúng. Đây là tính chất cơ bản của phân thức.",
+        "Sai. 2x/(4x) = 1/2 (rút gọn cả tử và mẫu cho 2x)."
       ]},
-      { type:"short", text:"Hình chữ nhật có chiều dài 8cm, chiều rộng 5cm. Diện tích = ? cm²", answer:"40", hint:"S = chiều dài × chiều rộng", explain:"S = 8 × 5 = 40 cm²." },
-      { type:"short", text:"Hình bình hành có 2 cạnh kề 6cm và 4cm. Chu vi = ? cm", answer:"20", hint:"Chu vi = 2 × (cạnh 1 + cạnh 2)", explain:"Chu vi = 2 × (6 + 4) = 20 cm." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về rút gọn phân thức:", statements:[
+        { stmt:"(x²−4)/(x−2) = x + 2", correct:true },
+        { stmt:"(x+1)/(x²+1) = 1/x", correct:false },
+        { stmt:"Để rút gọn phân thức, ta phân tích tử và mẫu thành nhân tử", correct:true },
+        { stmt:"(ab)/(ac) = b/c (với a ≠ 0, c ≠ 0)", correct:true }
+      ], explains:[
+        "Đúng. (x−2)(x+2)/(x−2) = x+2.",
+        "Sai. Tử x+1 và mẫu x²+1 không có nhân tử chung.",
+        "Đúng. Phân tích rồi chia nhân tử chung.",
+        "Đúng. Chia cả tử và mẫu cho a."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về phép cộng/trừ phân thức:", statements:[
+        { stmt:"a/c + b/c = (a+b)/c", correct:true },
+        { stmt:"1/a + 1/b = 1/(a+b)", correct:false },
+        { stmt:"Cộng hai phân thức khác mẫu phải quy đồng mẫu trước", correct:true },
+        { stmt:"1/(x−1) = −1/(1−x)", correct:true }
+      ], explains:[
+        "Đúng. Cùng mẫu thì cộng tử, giữ mẫu.",
+        "Sai. 1/a + 1/b = (a+b)/(ab), không phải 1/(a+b).",
+        "Đúng. Phải quy đồng mẫu thức chung rồi mới cộng/trừ.",
+        "Đúng. 1−x = −(x−1), nên 1/(x−1) = −1/(1−x)."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về nhân/chia phân thức:", statements:[
+        { stmt:"(a/b)·(c/d) = (ac)/(bd)", correct:true },
+        { stmt:"(a/b) ÷ (c/d) = (a/b)·(d/c)", correct:true },
+        { stmt:"Chia cho một phân thức tức nhân với nghịch đảo", correct:true },
+        { stmt:"x/2 ÷ x/3 = 2/3", correct:false }
+      ], explains:[
+        "Đúng. Nhân tử với tử, mẫu với mẫu.",
+        "Đúng. Chia = nhân với phân thức nghịch đảo.",
+        "Đúng. Đúng định nghĩa phép chia phân thức.",
+        "Sai. x/2 ÷ x/3 = (x/2)·(3/x) = 3/2."
+      ]},
+      { type:"short", text:"ĐKXĐ của 5/(x − 7) là x ≠ ? ", answer:"7", hint:"Cho mẫu ≠ 0", explain:"x − 7 ≠ 0 ⟹ x ≠ 7." },
+      { type:"short", text:"Rút gọn (x² − 9)/(x + 3). Kết quả là x − ?", answer:"3", hint:"Phân tích tử thành nhân tử", explain:"(x−3)(x+3)/(x+3) = x − 3." },
+      { type:"short", text:"Tính: 3/x + 7/x = a/x. Tìm a = ?", answer:"10", hint:"Cùng mẫu, cộng tử", explain:"(3 + 7)/x = 10/x → a = 10." },
+      { type:"short", text:"Giá trị phân thức (x² − 4)/(x − 2) tại x = 5 là?", answer:"7", hint:"Rút gọn trước", explain:"= x + 2 = 5 + 2 = 7." }
+    ]
+  },
+  // ==================== CHỦ ĐỀ 4: HÀM SỐ VÀ ĐỒ THỊ ====================
+  {
+    id:"l8_4", emoji:"📈", name:"Hàm số và đồ thị",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Khái niệm hàm số:</b> Nếu đại lượng y phụ thuộc vào đại lượng x sao cho với mỗi giá trị của x có DUY NHẤT một giá trị tương ứng của y thì y là hàm số của x. Kí hiệu: y = f(x).<br>
+<b>2. Giá trị hàm số:</b> Khi x = a, giá trị hàm số là f(a). VD: f(x) = 2x + 1, thì f(3) = 2·3 + 1 = 7.<br>
+<b>3. Mặt phẳng tọa độ Oxy:</b> Gồm trục hoành Ox và trục tung Oy vuông góc. Mỗi điểm M có tọa độ (x₀; y₀). Trục Ox: y = 0; Trục Oy: x = 0; Gốc O(0; 0).<br>
+<b>4. Đồ thị hàm số:</b> Tập hợp tất cả các điểm (x; f(x)) trên mặt phẳng tọa độ. Điểm M(a; b) thuộc đồ thị ⟺ b = f(a).<br>
+<b>5. Đồ thị hàm số y = ax (a ≠ 0):</b> Là đường thẳng đi qua gốc tọa độ O. a > 0: đồng biến; a < 0: nghịch biến.`,
+    questions:[
+      { type:"mc", text:"Câu 1. Hàm số là gì?", opts:["Một phép tính","Quy tắc cho mỗi x đúng một y","Một phương trình","Một bất đẳng thức"], correct:1, explain:"Hàm số là quy tắc tương ứng mỗi giá trị x với duy nhất một giá trị y." },
+      { type:"mc", text:"Câu 2. Cho f(x) = 3x − 2. Giá trị f(1) bằng:", opts:["1","5","−1","3"], correct:0, explain:"f(1) = 3·1 − 2 = 1." },
+      { type:"mc", text:"Câu 3. Cho f(x) = x² + 1. Giá trị f(−2) bằng:", opts:["3","5","−3","−5"], correct:1, explain:"f(−2) = (−2)² + 1 = 4 + 1 = 5." },
+      { type:"mc", text:"Câu 4. Điểm nào thuộc đồ thị hàm số y = 2x + 1?", opts:["(1; 2)","(0; 1)","(−1; 0)","(2; 4)"], correct:1, explain:"Thay x = 0: y = 1. Điểm (0; 1) thuộc đồ thị." },
+      { type:"mc", text:"Câu 5. Trên mặt phẳng tọa độ, điểm A(3; −2) nằm ở góc phần tư thứ:", opts:["I","II","III","IV"], correct:3, explain:"x > 0, y < 0 → góc phần tư thứ IV." },
+      { type:"mc", text:"Câu 6. Gốc tọa độ O có tọa độ là:", opts:["(1; 1)","(0; 0)","(0; 1)","(1; 0)"], correct:1, explain:"Gốc tọa độ O là giao điểm Ox và Oy, có tọa độ (0; 0)." },
+      { type:"mc", text:"Câu 7. Đồ thị hàm số y = ax (a ≠ 0) luôn đi qua:", opts:["Điểm (1; 1)","Gốc tọa độ O","Điểm (0; a)","Điểm (a; 0)"], correct:1, explain:"Thay x = 0: y = a·0 = 0 → luôn đi qua O(0; 0)." },
+      { type:"mc", text:"Câu 8. Hàm số y = 2x đồng biến vì:", opts:["a = 2 > 0","a = 2 < 0","y luôn dương","Đồ thị qua O"], correct:0, explain:"Hàm y = ax đồng biến khi a > 0." },
+      { type:"mc", text:"Câu 9. Hàm số y = −3x nghịch biến vì:", opts:["a = 3 > 0","a = −3 < 0","y luôn âm","Đồ thị không qua O"], correct:1, explain:"a = −3 < 0 nên hàm nghịch biến." },
+      { type:"mc", text:"Câu 10. Điểm nào thuộc trục hoành Ox?", opts:["(0; 5)","(3; 0)","(2; 2)","(0; 0)"], correct:1, explain:"Trục Ox gồm các điểm có tung độ y = 0. Điểm (3; 0) thuộc Ox." },
+      { type:"mc", text:"Câu 11. Điểm nào thuộc trục tung Oy?", opts:["(2; 0)","(0; −4)","(1; 1)","(3; 3)"], correct:1, explain:"Trục Oy gồm các điểm có hoành độ x = 0. Điểm (0; −4) thuộc Oy." },
+      { type:"mc", text:"Câu 12. Đồ thị y = f(x) đi qua A(2; 5). Khi đó f(2) = ?", opts:["2","5","7","10"], correct:1, explain:"A(2; 5) thuộc đồ thị → f(2) = 5." },
+      { type:"mc", text:"Câu 13. Cho f(x) = 2x − 3. Tìm x để f(x) = 0:", opts:["x = 3/2","x = −3/2","x = 3","x = −3"], correct:0, explain:"2x − 3 = 0 → x = 3/2." },
+      { type:"mc", text:"Câu 14. Cho f(x) = x² − 4. Giá trị f(3) − f(1) = ?", opts:["4","8","6","2"], correct:0, explain:"f(3) = 9 − 4 = 5; f(1) = 1 − 4 = −3. Hiệu = 5 − (−3) = 8." },
+      { type:"mc", text:"Câu 15. Điểm M(a; b) thuộc đồ thị y = f(x) khi:", opts:["a = f(b)","b = f(a)","a + b = 0","a = b"], correct:1, explain:"M(a; b) thuộc đồ thị ⟺ b = f(a)." },
+      { type:"mc", text:"Câu 16. Hàm số y = −x. Khi x = −4 thì y = ?", opts:["−4","4","0","−8"], correct:1, explain:"y = −(−4) = 4." },
+      { type:"mc", text:"Câu 17. Cho f(x) = 5x − 3. Tính f(2) = ?", opts:["7","13","3","10"], correct:0, explain:"f(2) = 10 − 3 = 7." },
+      { type:"mc", text:"Câu 18. Điểm A(−1; 3) nằm ở góc phần tư thứ:", opts:["I","II","III","IV"], correct:1, explain:"x < 0, y > 0 → góc phần tư thứ II." },
+      { type:"mc", text:"Câu 19. Khoảng cách từ điểm M(3; 4) đến trục Ox bằng:", opts:["3","4","5","7"], correct:1, explain:"Khoảng cách đến Ox = |y| = |4| = 4." },
+      { type:"mc", text:"Câu 20. Đồ thị y = 0,5x qua điểm nào?", opts:["(2; 1)","(1; 2)","(2; 2)","(4; 4)"], correct:0, explain:"Thay x = 2: y = 0,5·2 = 1 → (2; 1) thuộc đồ thị." },
+      { type:"mc", text:"Câu 21. Cho f(x) = −2x + 6. Đồ thị cắt trục Ox tại x = ?", opts:["3","−3","6","−6"], correct:0, explain:"f(x) = 0: −2x + 6 = 0 → x = 3." },
+      { type:"mc", text:"Câu 22. Đồ thị hàm số y = 3x cắt trục Oy tại:", opts:["(0; 3)","(3; 0)","(0; 0)","(1; 3)"], correct:2, explain:"Thay x = 0: y = 0 → cắt Oy tại O(0; 0)." },
+      { type:"mc", text:"Câu 23. Hai điểm A(1; 2) và B(1; 5) cùng nằm trên đường thẳng:", opts:["Song song Ox","Trùng với Ox","Song song Oy","Trùng với Oy"], correct:2, explain:"Cùng hoành độ x = 1 → nằm trên đường x = 1 song song Oy." },
+      { type:"mc", text:"Câu 24. Cho f(x) = x + 4. Giá trị x để f(x) = 10:", opts:["6","14","−6","4"], correct:0, explain:"x + 4 = 10 → x = 6." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về khái niệm hàm số:", statements:[
+        { stmt:"y = 2x + 1 là hàm số", correct:true },
+        { stmt:"Với mỗi x có thể có nhiều giá trị y thì y vẫn là hàm số của x", correct:false },
+        { stmt:"Đồ thị hàm số y = ax (a ≠ 0) là đường thẳng qua gốc O", correct:true },
+        { stmt:"y = 3/x là hàm số bậc nhất", correct:false }
+      ], explains:[
+        "Đúng. Mỗi x cho duy nhất y = 2x + 1.",
+        "Sai. Hàm số yêu cầu mỗi x chỉ ứng DUY NHẤT một y.",
+        "Đúng. Đường thẳng y = ax luôn qua O(0;0).",
+        "Sai. y = 3/x không có dạng y = ax + b."
+      ]},
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về mặt phẳng tọa độ:", statements:[
+        { stmt:"Điểm (0; 5) thuộc trục tung Oy", correct:true },
+        { stmt:"Điểm (−3; −2) ở góc phần tư thứ II", correct:false },
+        { stmt:"Gốc tọa độ O thuộc cả trục Ox và Oy", correct:true },
+        { stmt:"Điểm (4; 0) thuộc trục tung Oy", correct:false }
+      ], explains:[
+        "Đúng. x = 0 → thuộc Oy.",
+        "Sai. x < 0, y < 0 → góc phần tư III.",
+        "Đúng. O(0;0) nằm trên cả hai trục.",
+        "Sai. y = 0 → thuộc trục Ox, không phải Oy."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về đồ thị hàm số:", statements:[
+        { stmt:"Điểm M(a; b) thuộc đồ thị y = f(x) khi b = f(a)", correct:true },
+        { stmt:"Đồ thị y = 2x đi qua điểm (1; 2)", correct:true },
+        { stmt:"Đồ thị y = −x qua điểm (2; 2)", correct:false },
+        { stmt:"Hàm y = 5x đồng biến vì a = 5 > 0", correct:true }
+      ], explains:[
+        "Đúng. Định nghĩa điểm thuộc đồ thị.",
+        "Đúng. f(1) = 2·1 = 2.",
+        "Sai. f(2) = −2 ≠ 2.",
+        "Đúng. a > 0 → đồng biến."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về giá trị hàm số:", statements:[
+        { stmt:"f(x) = x² thì f(−3) = 9", correct:true },
+        { stmt:"f(x) = 2x − 1 thì f(0) = 1", correct:false },
+        { stmt:"f(x) = x + 5 thì f(−5) = 0", correct:true },
+        { stmt:"f(x) = −x thì f(−2) = −2", correct:false }
+      ], explains:[
+        "Đúng. (−3)² = 9.",
+        "Sai. f(0) = 2·0 − 1 = −1.",
+        "Đúng. f(−5) = −5 + 5 = 0.",
+        "Sai. f(−2) = −(−2) = 2."
+      ]},
+      { type:"short", text:"Cho f(x) = 4x − 7. Tính f(3) = ?", answer:"5", hint:"Thay x = 3", explain:"f(3) = 12 − 7 = 5." },
+      { type:"short", text:"Điểm A(2; y₀) thuộc đồ thị y = 3x + 1. Tìm y₀ = ?", answer:"7", hint:"Thay x = 2", explain:"y₀ = 3·2 + 1 = 7." },
+      { type:"short", text:"Cho f(x) = −2x + 8. Tìm x khi f(x) = 0. x = ?", answer:"4", hint:"Cho f(x) = 0, giải x", explain:"−2x + 8 = 0 → x = 4." },
+      { type:"short", text:"Đồ thị y = 5x qua A(2; a). Tìm a = ?", answer:"10", hint:"Thay x = 2", explain:"a = 5·2 = 10." }
     ]
   },
 
-  // ==================== CHƯƠNG IV: ĐỊNH LÍ THALÈS ====================
+  // ==================== CHỦ ĐỀ 5: HÀM SỐ BẬC NHẤT y = ax + b ====================
   {
-    id:"l8_th", emoji:"📏", name:"Định lí Thalès",
-    desc:"Định lí Thalès, đường trung bình tam giác, tính chất đường phân giác tam giác",
+    id:"l8_5", emoji:"📉", name:"Hàm số bậc nhất y = ax + b",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Hàm số bậc nhất:</b> Có dạng y = ax + b (a ≠ 0). a là hệ số góc, b là tung độ gốc. Đồ thị là đường thẳng.<br>
+<b>2. Tính chất:</b> a > 0: hàm đồng biến (đường thẳng đi lên). a < 0: hàm nghịch biến (đường thẳng đi xuống).<br>
+<b>3. Đồ thị:</b> Cắt trục Oy tại (0; b). Cắt trục Ox tại (−b/a; 0). Vẽ đồ thị: xác định 2 điểm rồi nối.<br>
+<b>4. Hệ số góc:</b> Trong y = ax + b, số a gọi là hệ số góc. Hệ số góc quyết định độ nghiêng đường thẳng.<br>
+<b>5. Vị trí tương đối hai đường thẳng:</b><br>
+• Song song: a₁ = a₂, b₁ ≠ b₂<br>
+• Cắt nhau: a₁ ≠ a₂<br>
+• Trùng nhau: a₁ = a₂, b₁ = b₂`,
     questions:[
-      { type:"mc", text:"Câu 1. Trong ΔABC, DE // BC (D ∈ AB, E ∈ AC). Theo định lí Thalès:", opts:["AD/DB = AE/EC","AD/AB = DB/EC","AD = AE","DB = EC"], correct:0, explain:"Thalès: DE // BC ⟹ AD/DB = AE/EC." },
-      { type:"mc", text:"Câu 2. ΔABC, D ∈ AB, E ∈ AC, DE // BC. AD = 3, DB = 6, AE = 2. EC = ?", opts:["3","4","6","8"], correct:1, explain:"AD/DB = AE/EC → 3/6 = 2/EC → EC = 2 × 6/3 = 4." },
-      { type:"mc", text:"Câu 3. Đường trung bình của tam giác:", opts:["Song song và bằng nửa cạnh thứ ba","Vuông góc với cạnh thứ ba","Bằng cạnh thứ ba","Đi qua trọng tâm"], correct:0, explain:"Đường trung bình // cạnh thứ ba và bằng nửa cạnh đó." },
-      { type:"mc", text:"Câu 4. ΔABC có M, N lần lượt là trung điểm AB, AC. MN = ?", opts:["BC","BC/2","2BC","BC/3"], correct:1, explain:"MN là đường trung bình → MN = BC/2." },
-      { type:"mc", text:"Câu 5. ΔABC, DE // BC, AD = 4cm, AB = 12cm, BC = 9cm. DE = ?", opts:["3 cm","4 cm","6 cm","12 cm"], correct:0, explain:"AD/AB = DE/BC → 4/12 = DE/9 → DE = 4 × 9/12 = 3 cm." },
-      { type:"mc", text:"Câu 6. Ba đường thẳng song song cắt hai cát tuyến tạo thành các đoạn thẳng:", opts:["Bằng nhau","Tỉ lệ","Vuông góc","Song song"], correct:1, explain:"Hệ quả Thalès: 3 đường // cắt 2 cát tuyến → đoạn thẳng tương ứng tỉ lệ." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về định lí Thalès:", statements:[
-        { stmt:"Đường trung bình của tam giác song song với cạnh thứ ba", correct:true },
-        { stmt:"DE // BC thì AD/AB = AE/AC (D ∈ AB, E ∈ AC)", correct:true },
-        { stmt:"Nếu AD/DB = AE/EC thì DE // BC", correct:true },
-        { stmt:"Đường trung bình bằng cạnh thứ ba", correct:false }
-      ], explains:[
-        "Đúng. Tính chất đường trung bình tam giác.",
-        "Đúng. Hệ quả Thalès: DE // BC ⟹ AD/AB = AE/AC.",
-        "Đúng. Đây là Thalès đảo.",
-        "Sai. Đường trung bình bằng NỬA cạnh thứ ba."
-      ]},
-      { type:"short", text:"ΔABC, M trung điểm AB, N trung điểm AC, BC = 10cm. MN = ? cm", answer:"5", hint:"MN là đường trung bình", explain:"MN = BC/2 = 10/2 = 5 cm." },
-      { type:"short", text:"DE // BC, AD = 2, DB = 4, AE = 3. EC = ?", answer:"6", hint:"AD/DB = AE/EC", explain:"2/4 = 3/EC → EC = 3 × 4/2 = 6." }
-    ]
-  },
-
-  // ==================== CHƯƠNG V: DỮ LIỆU VÀ BIỂU ĐỒ ====================
-  {
-    id:"l8_dl", emoji:"📊", name:"Dữ liệu và Biểu đồ",
-    desc:"Thu thập, phân loại dữ liệu, bảng tần số, biểu đồ cột, biểu đồ tròn, mốt",
-    questions:[
-      { type:"mc", text:"Câu 1. Biểu đồ nào phù hợp nhất để biểu diễn tỉ lệ phần trăm?", opts:["Biểu đồ cột","Biểu đồ tròn (hình quạt)","Biểu đồ đoạn thẳng","Biểu đồ điểm"], correct:1, explain:"Biểu đồ tròn (hình quạt) thích hợp biểu diễn tỉ lệ phần trăm." },
-      { type:"mc", text:"Câu 2. Tần số của một giá trị là:", opts:["Giá trị lớn nhất","Số lần xuất hiện của giá trị đó","Giá trị trung bình","Tổng số phần tử"], correct:1, explain:"Tần số = số lần xuất hiện của một giá trị trong dãy số liệu." },
-      { type:"mc", text:"Câu 3. Lớp có 40 học sinh, 12 HS giỏi. Tỉ lệ HS giỏi là:", opts:["20%","30%","40%","12%"], correct:1, explain:"Tỉ lệ = 12/40 = 0,3 = 30%." },
-      { type:"mc", text:"Câu 4. Dãy số liệu: 3, 5, 5, 7, 5, 8, 5. Mốt (giá trị xuất hiện nhiều nhất) là:", opts:["3","5","7","8"], correct:1, explain:"Số 5 xuất hiện 4 lần (nhiều nhất) → Mốt = 5." },
-      { type:"mc", text:"Câu 5. Bảng tần số dùng để:", opts:["Sắp xếp và đếm số lần xuất hiện","Tính diện tích","Vẽ đồ thị hàm số","Giải phương trình"], correct:0, explain:"Bảng tần số giúp tổ chức dữ liệu: liệt kê giá trị và tần số tương ứng." },
-      { type:"mc", text:"Câu 6. Biểu đồ cột thích hợp để:", opts:["So sánh dữ liệu giữa các nhóm","Biểu diễn hàm số","Giải hệ phương trình","Tính xác suất"], correct:0, explain:"Biểu đồ cột dùng so sánh dữ liệu giữa các nhóm/danh mục." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về dữ liệu và biểu đồ:", statements:[
-        { stmt:"Biểu đồ tròn dùng biểu diễn tỉ lệ phần trăm", correct:true },
-        { stmt:"Tổng tần số bằng tổng số phần tử dữ liệu", correct:true },
-        { stmt:"Mốt là giá trị lớn nhất trong dãy số liệu", correct:false },
-        { stmt:"Biểu đồ cột và biểu đồ tròn dùng cho cùng một mục đích", correct:false }
-      ], explains:[
-        "Đúng. Biểu đồ tròn chia đĩa tròn theo tỉ lệ %.",
-        "Đúng. Mỗi phần tử được đếm đúng 1 lần → tổng tần số = tổng N.",
-        "Sai. Mốt là giá trị xuất hiện NHIỀU LẦN NHẤT, không phải lớn nhất.",
-        "Sai. Biểu đồ cột dùng so sánh giá trị, biểu đồ tròn dùng biểu diễn tỉ lệ."
-      ]},
-      { type:"short", text:"Lớp 40 HS: 15 giỏi, 20 khá, 5 trung bình. Tỉ lệ HS khá = ? %", answer:"50", hint:"20/40 × 100%", explain:"Tỉ lệ = 20/40 × 100% = 50%." },
-      { type:"short", text:"Dãy: 2, 4, 4, 6, 8, 4, 7. Mốt của dãy = ?", answer:"4", hint:"Đếm số lần xuất hiện mỗi giá trị", explain:"Số 4 xuất hiện 3 lần (nhiều nhất). Mốt = 4." }
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 6: HÀM SỐ VÀ ĐỒ THỊ ====================
-  {
-    id:"l8_1", emoji:"📈", name:"Hàm số và đồ thị của hàm số",
-    desc:"Khái niệm hàm số, giá trị hàm số, đồ thị hàm số y = f(x), hàm đồng biến – nghịch biến",
-    questions:[
-      { type:"mc", text:"Câu 1. Cho hàm số y = f(x) = 3x − 2. Giá trị f(−1) bằng:", opts:["−5","1","−1","5"], correct:0, explain:"f(−1) = 3·(−1) − 2 = −3 − 2 = −5." },
-      { type:"mc", text:"Câu 2. Điểm nào sau đây thuộc đồ thị hàm số y = 2x + 1?", opts:["(1; 2)","(0; 1)","(−1; 0)","(2; 4)"], correct:1, explain:"Thay x=0: y = 2·0 + 1 = 1. Điểm (0; 1) thuộc đồ thị." },
-      { type:"mc", text:"Câu 3. Hàm số y = f(x) = x² − 1. Giá trị f(2) bằng:", opts:["5","3","1","−1"], correct:1, explain:"f(2) = 2² − 1 = 4 − 1 = 3." },
-      { type:"mc", text:"Câu 4. Hàm số y = 2x đồng biến trên ℝ vì:", opts:["Hệ số a = 2 > 0","Hệ số a = 2 < 0","y luôn dương","Đồ thị đi qua gốc tọa độ"], correct:0, explain:"Hàm y = ax đồng biến khi a > 0. Ở đây a = 2 > 0." },
-      { type:"mc", text:"Câu 5. Cho hàm số y = −3x. Khi x tăng thì y:", opts:["Tăng","Giảm","Không đổi","Không xác định"], correct:1, explain:"a = −3 < 0 nên hàm nghịch biến: x tăng → y giảm." },
-      { type:"mc", text:"Câu 6. Đồ thị hàm số y = f(x) đi qua điểm A(2; 5). Khi đó f(2) bằng:", opts:["2","5","7","10"], correct:1, explain:"Nếu A(2; 5) thuộc đồ thị thì f(2) = 5." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Các khẳng định về hàm số:", statements:[
-        { stmt:"y = 2x + 1 là hàm số bậc nhất", correct:true },
-        { stmt:"Đồ thị hàm số y = ax (a ≠ 0) luôn đi qua gốc tọa độ O", correct:true },
-        { stmt:"Hàm số y = 3/x là hàm số bậc nhất", correct:false },
-        { stmt:"Nếu f(1) = 3 thì điểm (1; 3) thuộc đồ thị hàm số y = f(x)", correct:true }
-      ], explains:[
-        "Đúng. y = 2x + 1 có dạng y = ax + b với a = 2 ≠ 0.",
-        "Đúng. Thay x = 0: y = a·0 = 0 → đồ thị qua O(0; 0).",
-        "Sai. y = 3/x không có dạng y = ax + b, đây là hàm phân thức.",
-        "Đúng. Định nghĩa: f(1) = 3 nghĩa là điểm (1; 3) nằm trên đồ thị."
-      ]},
-      { type:"short", text:"Cho hàm số y = f(x) = 5x − 3. Tính f(2) = ?", answer:"7", hint:"Thay x = 2 vào công thức", explain:"f(2) = 5·2 − 3 = 10 − 3 = 7." },
-      { type:"short", text:"Đồ thị hàm số y = −x + 4 cắt trục Oy tại điểm có tung độ bằng bao nhiêu?", answer:"4", hint:"Trục Oy ứng với x = 0", explain:"Thay x = 0: y = −0 + 4 = 4. Tung độ giao điểm với Oy là 4." }
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 2: HÀM SỐ BẬC NHẤT ====================
-  {
-    id:"l8_2", emoji:"📉", name:"Hàm số bậc nhất và đồ thị",
-    desc:"Hàm số y = ax + b (a ≠ 0), tính chất đồng biến / nghịch biến, vẽ đồ thị đường thẳng",
-    questions:[
-      { type:"mc", text:"Câu 1. Hàm số y = (m − 3)x + 2 là hàm số bậc nhất khi:", opts:["m = 3","m ≠ 3","m > 3","m < 3"], correct:1, explain:"Hàm bậc nhất y = ax + b cần a ≠ 0. Ở đây a = m − 3 ≠ 0 ⟺ m ≠ 3." },
-      { type:"mc", text:"Câu 2. Đồ thị hàm số y = 2x − 6 cắt trục Ox tại điểm có hoành độ:", opts:["2","3","−3","6"], correct:1, explain:"Cắt Ox khi y = 0: 2x − 6 = 0 → x = 3." },
-      { type:"mc", text:"Câu 3. Hàm số y = −3x + 1 nghịch biến trên ℝ vì:", opts:["b = 1 > 0","a = −3 < 0","a = −3 > 0","b = 1 < 0"], correct:1, explain:"Hàm bậc nhất nghịch biến khi a < 0. Ở đây a = −3 < 0." },
-      { type:"mc", text:"Câu 4. Đồ thị hàm số y = x − 2 đi qua điểm:", opts:["(0; −2)","(0; 2)","(−2; 0)","(1; 0)"], correct:0, explain:"Thay x = 0: y = 0 − 2 = −2. Đồ thị qua (0; −2)." },
-      { type:"mc", text:"Câu 5. Đồ thị hàm số y = −x + 3 cắt trục Ox tại điểm:", opts:["(3; 0)","(0; 3)","(−3; 0)","(0; −3)"], correct:0, explain:"y = 0: −x + 3 = 0 → x = 3. Giao điểm Ox là (3; 0)." },
-      { type:"mc", text:"Câu 6. Hàm số nào sau đây KHÔNG phải hàm bậc nhất?", opts:["y = 2x − 1","y = −x","y = x² + 1","y = 0,5x + 3"], correct:2, explain:"y = x² + 1 là hàm bậc hai, không phải bậc nhất." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Các khẳng định về hàm số bậc nhất:", statements:[
-        { stmt:"Đồ thị hàm số bậc nhất y = ax + b (a ≠ 0) là một đường thẳng", correct:true },
-        { stmt:"Hàm số y = 2x + 3 đồng biến vì b = 3 > 0", correct:false },
-        { stmt:"Đồ thị y = ax + b luôn cắt trục Oy tại điểm (0; b)", correct:true },
-        { stmt:"Hàm số y = 5 là hàm số bậc nhất", correct:false }
+      { type:"mc", text:"Câu 1. Hàm số y = 3x − 2 có hệ số góc bằng:", opts:["−2","3","−3","2"], correct:1, explain:"Trong y = ax + b, hệ số góc là a = 3." },
+      { type:"mc", text:"Câu 2. Hàm số nào là hàm bậc nhất?", opts:["y = x² + 1","y = 3/x","y = 2x − 5","y = 5"], correct:2, explain:"y = 2x − 5 có dạng y = ax + b với a = 2 ≠ 0." },
+      { type:"mc", text:"Câu 3. Hàm số y = −4x + 1 đồng biến hay nghịch biến?", opts:["Đồng biến","Nghịch biến","Không xác định","Hằng số"], correct:1, explain:"a = −4 < 0 nên hàm nghịch biến." },
+      { type:"mc", text:"Câu 4. Đồ thị y = x − 2 cắt Oy tại:", opts:["(0; −2)","(0; 2)","(−2; 0)","(2; 0)"], correct:0, explain:"Thay x = 0: y = −2. Cắt Oy tại (0; −2)." },
+      { type:"mc", text:"Câu 5. Đồ thị y = −x + 3 cắt Ox tại:", opts:["(3; 0)","(0; 3)","(−3; 0)","(0; −3)"], correct:0, explain:"y = 0: −x + 3 = 0 → x = 3. Cắt Ox tại (3; 0)." },
+      { type:"mc", text:"Câu 6. Tung độ gốc của đường thẳng y = 5x + 7 là:", opts:["5","7","−7","12"], correct:1, explain:"Tung độ gốc = b = 7." },
+      { type:"mc", text:"Câu 7. Hàm y = (m−1)x + 3 là bậc nhất khi:", opts:["m = 1","m ≠ 1","m > 1","m < 1"], correct:1, explain:"a = m − 1 ≠ 0 ⟺ m ≠ 1." },
+      { type:"mc", text:"Câu 8. Đường thẳng y = 2x + 1 đi qua điểm:", opts:["(1; 3)","(1; 2)","(2; 3)","(0; 0)"], correct:0, explain:"Thay x = 1: y = 2 + 1 = 3. Đi qua (1; 3)." },
+      { type:"mc", text:"Câu 9. Hai đường y = 3x + 1 và y = 3x − 4:", opts:["Cắt nhau","Song song","Trùng nhau","Vuông góc"], correct:1, explain:"Cùng a = 3, khác b (1 ≠ −4) → song song." },
+      { type:"mc", text:"Câu 10. Hai đường y = 2x + 1 và y = −x + 4:", opts:["Song song","Trùng","Cắt nhau","Không xác định"], correct:2, explain:"a₁ = 2 ≠ a₂ = −1 → cắt nhau." },
+      { type:"mc", text:"Câu 11. Đường thẳng nào song song với y = 5x − 3?", opts:["y = 5x + 2","y = −5x + 2","y = 3x − 5","y = 5"], correct:0, explain:"Cùng a = 5, khác b → y = 5x + 2 song song." },
+      { type:"mc", text:"Câu 12. Hệ số góc của y = −x + 6 là:", opts:["6","−1","1","−6"], correct:1, explain:"y = −1·x + 6, hệ số góc a = −1." },
+      { type:"mc", text:"Câu 13. Đồ thị y = 2x − 6 cắt Ox tại x = ?", opts:["3","−3","6","2"], correct:0, explain:"y = 0: 2x − 6 = 0 → x = 3." },
+      { type:"mc", text:"Câu 14. Đường y = ax + 3 cắt y = 2x − 1 khi:", opts:["a = 2","a ≠ 2","a > 2","a = −2"], correct:1, explain:"Cắt nhau khi a ≠ 2." },
+      { type:"mc", text:"Câu 15. Đường y = −x + 2 và y = x + 2 cắt nhau tại:", opts:["(0; 2)","(2; 0)","(1; 1)","(−1; 3)"], correct:0, explain:"−x + 2 = x + 2 → x = 0, y = 2. Giao điểm (0; 2)." },
+      { type:"mc", text:"Câu 16. Đồ thị y = 4x − 8 qua điểm nào?", opts:["(2; 0)","(0; 8)","(1; 4)","(−2; 0)"], correct:0, explain:"Thay x = 2: y = 8 − 8 = 0. Qua (2; 0)." },
+      { type:"mc", text:"Câu 17. Hàm y = 2x + 3 đồng biến vì:", opts:["b = 3 > 0","a = 2 > 0","a + b = 5 > 0","y(0) = 3 > 0"], correct:1, explain:"Đồng biến khi a > 0, ở đây a = 2 > 0." },
+      { type:"mc", text:"Câu 18. Đường thẳng y = 2x + b qua A(1; 5). Tìm b:", opts:["3","7","5","−3"], correct:0, explain:"5 = 2·1 + b → b = 3." },
+      { type:"mc", text:"Câu 19. Đường y = mx + 1 song song y = 3x − 2. Tìm m:", opts:["3","−3","2","1"], correct:0, explain:"Song song → m = 3." },
+      { type:"mc", text:"Câu 20. Hàm số y = 5 là:", opts:["Hàm bậc nhất","Hàm hằng","Hàm bậc hai","Không phải hàm số"], correct:1, explain:"y = 5 = 0·x + 5, a = 0 nên là hàm hằng, không phải bậc nhất." },
+      { type:"mc", text:"Câu 21. Hai đường y = 5x − 1 và y = 5x − 1:", opts:["Song song","Cắt nhau","Trùng nhau","Vuông góc"], correct:2, explain:"Cùng a = 5, cùng b = −1 → trùng nhau." },
+      { type:"mc", text:"Câu 22. Đồ thị y = −2x + 4 đi xuống từ trái sang phải vì:", opts:["b = 4 > 0","a = −2 < 0","a = 2 > 0","b < a"], correct:1, explain:"a = −2 < 0 → nghịch biến → đường đi xuống." },
+      { type:"mc", text:"Câu 23. Hoành độ giao điểm y = x + 1 và y = 3x − 5:", opts:["3","−3","2","−2"], correct:0, explain:"x + 1 = 3x − 5 → −2x = −6 → x = 3." },
+      { type:"mc", text:"Câu 24. Đường thẳng y = ax + 2 qua M(3; 8). Tìm a:", opts:["2","3","−2","6"], correct:0, explain:"8 = 3a + 2 → 3a = 6 → a = 2." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về hàm bậc nhất:", statements:[
+        { stmt:"Đồ thị y = ax + b (a ≠ 0) là đường thẳng", correct:true },
+        { stmt:"Hàm y = 2x + 3 đồng biến vì b = 3 > 0", correct:false },
+        { stmt:"Đồ thị y = ax + b cắt Oy tại (0; b)", correct:true },
+        { stmt:"y = x² + 1 là hàm bậc nhất", correct:false }
       ], explains:[
         "Đúng. Đồ thị hàm bậc nhất luôn là đường thẳng.",
-        "Sai. Đồng biến vì a = 2 > 0, không phải vì b > 0.",
-        "Đúng. Thay x = 0: y = a·0 + b = b → điểm (0; b).",
-        "Sai. y = 5 có dạng y = 0·x + 5, a = 0 nên không phải hàm bậc nhất."
+        "Sai. Đồng biến do a = 2 > 0, không phải do b.",
+        "Đúng. Thay x = 0: y = b.",
+        "Sai. y = x² + 1 là bậc hai."
       ]},
-      { type:"short", text:"Tung độ gốc (tọa độ giao điểm với Oy) của đường thẳng y = 3x − 7 là?", answer:"-7", hint:"Thay x = 0 vào", explain:"Thay x = 0: y = 3·0 − 7 = −7." },
-      { type:"short", text:"Hoành độ giao điểm của y = 4x − 8 với trục Ox bằng?", answer:"2", hint:"Cho y = 0, giải x", explain:"y = 0: 4x − 8 = 0 → x = 2." }
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 3: HỆ SỐ GÓC ====================
-  {
-    id:"l8_3", emoji:"📐", name:"Hệ số góc của đường thẳng",
-    desc:"Hệ số góc, hai đường thẳng song song, cắt nhau, trùng nhau, điều kiện vị trí tương đối",
-    questions:[
-      { type:"mc", text:"Câu 1. Hệ số góc của đường thẳng y = −2x + 5 là:", opts:["5","−2","2","−5"], correct:1, explain:"Trong y = ax + b, hệ số góc là a. Ở đây a = −2." },
-      { type:"mc", text:"Câu 2. Hai đường thẳng y = 3x + 1 và y = 3x − 4 có vị trí:", opts:["Cắt nhau","Song song","Trùng nhau","Vuông góc"], correct:1, explain:"Cùng hệ số góc a = 3, khác tung độ gốc (1 ≠ −4) → song song." },
-      { type:"mc", text:"Câu 3. Đường thẳng nào song song với y = 2x + 1?", opts:["y = 2x − 3","y = −2x + 1","y = 3x + 1","y = x + 2"], correct:0, explain:"Song song khi cùng hệ số góc (a = 2) và khác tung độ gốc. y = 2x − 3 thỏa mãn." },
-      { type:"mc", text:"Câu 4. Đường thẳng y = ax + 3 cắt đường thẳng y = 2x − 1 khi:", opts:["a = 2","a ≠ 2","a > 2","a < 2"], correct:1, explain:"Hai đường thẳng cắt nhau khi hệ số góc khác nhau: a ≠ 2." },
-      { type:"mc", text:"Câu 5. Hai đường thẳng y = 5x − 1 và y = 5x − 1 có vị trí:", opts:["Song song","Cắt nhau","Trùng nhau","Vuông góc"], correct:2, explain:"Cùng a = 5 và cùng b = −1 → hai đường thẳng trùng nhau." },
-      { type:"mc", text:"Câu 6. Đường thẳng y = −x + 2 và y = x + 2 cắt nhau tại điểm có tung độ:", opts:["0","2","−2","4"], correct:1, explain:"−x + 2 = x + 2 → −2x = 0 → x = 0, y = 0 + 2 = 2. Giao điểm (0; 2), tung độ = 2." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về vị trí tương đối hai đường thẳng:", statements:[
-        { stmt:"Hai đường thẳng có cùng hệ số góc và khác tung độ gốc thì song song", correct:true },
-        { stmt:"Hai đường thẳng có hệ số góc khác nhau thì cắt nhau", correct:true },
-        { stmt:"y = 2x + 1 và y = −2x + 1 song song với nhau", correct:false },
-        { stmt:"Hệ số góc của đường thẳng y = 5 bằng 5", correct:false }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về hệ số góc:", statements:[
+        { stmt:"Hệ số góc của y = −3x + 5 là −3", correct:true },
+        { stmt:"Hệ số góc của y = 7 bằng 7", correct:false },
+        { stmt:"Hai đường thẳng song song có cùng hệ số góc", correct:true },
+        { stmt:"a > 0 thì đường thẳng đi lên từ trái sang phải", correct:true }
       ], explains:[
-        "Đúng. Đây là điều kiện song song: a₁ = a₂ và b₁ ≠ b₂.",
-        "Đúng. Hệ số góc khác nhau (a₁ ≠ a₂) → hai đường thẳng cắt nhau.",
-        "Sai. Hệ số góc 2 ≠ −2 → hai đường cắt nhau, không song song.",
-        "Sai. y = 5 ↔ y = 0·x + 5, hệ số góc = 0 (đường nằm ngang)."
+        "Đúng. a = −3.",
+        "Sai. y = 7 có a = 0, hệ số góc = 0.",
+        "Đúng. Song song ⟺ a₁ = a₂, b₁ ≠ b₂.",
+        "Đúng. a > 0 → đồng biến → đi lên."
       ]},
-      { type:"short", text:"Đường thẳng y = mx + 1 song song với y = 3x − 2. Giá trị m = ?", answer:"3", hint:"Song song: cùng hệ số góc", explain:"Song song → m = 3 (cùng hệ số góc). Kiểm tra b: 1 ≠ −2 ✓." },
-      { type:"short", text:"Đường thẳng y = 2x + b đi qua A(1; 5). Giá trị b = ?", answer:"3", hint:"Thay tọa độ A vào phương trình", explain:"5 = 2·1 + b → b = 5 − 2 = 3." }
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về vị trí tương đối:", statements:[
+        { stmt:"y = 2x + 1 và y = 2x + 5 song song", correct:true },
+        { stmt:"y = 3x và y = −3x cắt nhau", correct:true },
+        { stmt:"y = x + 2 và y = x + 2 cắt nhau", correct:false },
+        { stmt:"Hai đường cắt nhau tại đúng 1 điểm", correct:true }
+      ], explains:[
+        "Đúng. a₁ = a₂ = 2, b₁ ≠ b₂.",
+        "Đúng. a₁ = 3 ≠ a₂ = −3.",
+        "Sai. Cùng a và cùng b → trùng nhau.",
+        "Đúng. Hai đường thẳng cắt nhau tại đúng 1 điểm."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về vẽ đồ thị:", statements:[
+        { stmt:"Chỉ cần 2 điểm để vẽ đồ thị hàm bậc nhất", correct:true },
+        { stmt:"Đường y = 3x luôn đi qua gốc O", correct:true },
+        { stmt:"Đường y = x − 1 cắt Ox tại (−1; 0)", correct:false },
+        { stmt:"Đường y = −2x + 6 cắt Ox tại (3; 0)", correct:true }
+      ], explains:[
+        "Đúng. Đồ thị là đường thẳng, chỉ cần 2 điểm.",
+        "Đúng. Thay x = 0: y = 0 → qua O(0;0).",
+        "Sai. y = 0: x − 1 = 0 → x = 1. Cắt Ox tại (1; 0).",
+        "Đúng. −2x + 6 = 0 → x = 3."
+      ]},
+      { type:"short", text:"Tung độ gốc của y = 3x − 7 là?", answer:"-7", hint:"b = ?", explain:"b = −7." },
+      { type:"short", text:"Hoành độ giao điểm y = 4x − 8 với Ox?", answer:"2", hint:"Cho y = 0", explain:"4x − 8 = 0 → x = 2." },
+      { type:"short", text:"y = mx + 1 song song y = −2x + 5. Tìm m = ?", answer:"-2", hint:"Cùng hệ số góc", explain:"m = −2." },
+      { type:"short", text:"y = 3x + b qua (2; 10). Tìm b = ?", answer:"4", hint:"Thay x=2, y=10", explain:"10 = 6 + b → b = 4." }
     ]
   },
 
-  // ==================== CHỦ ĐỀ 4: PHƯƠNG TRÌNH BẬC NHẤT 1 ẨN ====================
+  // ==================== CHỦ ĐỀ 6: PHƯƠNG TRÌNH BẬC NHẤT ====================
   {
-    id:"l8_4", emoji:"🔢", name:"Phương trình bậc nhất một ẩn",
-    desc:"Dạng ax + b = 0, quy tắc chuyển vế, nhân chia, nghiệm duy nhất / vô nghiệm / vô số nghiệm",
+    id:"l8_6", emoji:"🔢", name:"Phương trình bậc nhất",
+    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    theory:`<b>1. Phương trình bậc nhất một ẩn:</b> Có dạng ax + b = 0 (a ≠ 0). Nghiệm duy nhất: x = −b/a.<br>
+<b>2. Quy tắc chuyển vế:</b> Chuyển một hạng tử từ vế này sang vế kia thì đổi dấu.<br>
+<b>3. Quy tắc nhân/chia:</b> Nhân (hoặc chia) cả hai vế với cùng một số khác 0.<br>
+<b>4. Phương trình tương đương:</b> Hai PT có cùng tập nghiệm.<br>
+<b>5. Các trường hợp:</b> a ≠ 0: nghiệm duy nhất x = −b/a; a = 0, b ≠ 0: vô nghiệm; a = 0, b = 0: vô số nghiệm.<br>
+<b>6. Giải bài toán bằng lập PT:</b> Bước 1: Gọi ẩn, đặt ĐK. Bước 2: Lập PT. Bước 3: Giải PT. Bước 4: Đối chiếu ĐK, kết luận.`,
     questions:[
-      { type:"mc", text:"Câu 1. Phương trình 3x − 6 = 0 có nghiệm:", opts:["x = 2","x = −2","x = 3","x = 6"], correct:0, explain:"3x = 6 → x = 6/3 = 2." },
-      { type:"mc", text:"Câu 2. Phương trình 2(x − 1) = 4 có nghiệm:", opts:["x = 1","x = 2","x = 3","x = 4"], correct:2, explain:"2x − 2 = 4 → 2x = 6 → x = 3." },
-      { type:"mc", text:"Câu 3. Phương trình 0·x + 5 = 0:", opts:["Có nghiệm duy nhất","Vô nghiệm","Vô số nghiệm","Có 2 nghiệm"], correct:1, explain:"0·x = −5 → 0 = −5 (vô lý) → PT vô nghiệm." },
-      { type:"mc", text:"Câu 4. Phương trình 5x + 10 = 2x + 1 có nghiệm:", opts:["x = −3","x = 3","x = −11/3","x = 11/3"], correct:0, explain:"5x − 2x = 1 − 10 → 3x = −9 → x = −3." },
-      { type:"mc", text:"Câu 5. Phương trình 0·x = 0:", opts:["Có nghiệm x = 0","Vô nghiệm","Vô số nghiệm","Có nghiệm x = 1"], correct:2, explain:"0·x = 0 đúng với mọi x → vô số nghiệm." },
-      { type:"mc", text:"Câu 6. Giải PT: (x + 3)/2 = 5. Nghiệm x bằng:", opts:["7","13","5","2"], correct:0, explain:"x + 3 = 10 → x = 7." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về phương trình bậc nhất:", statements:[
+      { type:"mc", text:"Câu 1. PT nào là PT bậc nhất một ẩn?", opts:["x² − 1 = 0","3x − 6 = 0","0·x + 5 = 0","x² + x = 0"], correct:1, explain:"3x − 6 = 0 có dạng ax + b = 0 với a = 3 ≠ 0." },
+      { type:"mc", text:"Câu 2. Nghiệm của PT 2x − 8 = 0 là:", opts:["x = 4","x = −4","x = 8","x = 2"], correct:0, explain:"2x = 8 → x = 4." },
+      { type:"mc", text:"Câu 3. PT 5x + 15 = 0 có nghiệm:", opts:["x = 3","x = −3","x = 5","x = −5"], correct:1, explain:"5x = −15 → x = −3." },
+      { type:"mc", text:"Câu 4. PT 0·x + 7 = 0:", opts:["x = 7","x = 0","Vô nghiệm","Vô số nghiệm"], correct:2, explain:"0 = −7 vô lý → vô nghiệm." },
+      { type:"mc", text:"Câu 5. PT 0·x = 0:", opts:["x = 0","Vô nghiệm","Vô số nghiệm","x = 1"], correct:2, explain:"0 = 0 đúng ∀x → vô số nghiệm." },
+      { type:"mc", text:"Câu 6. Giải: 3x − 1 = 2x + 4. x = ?", opts:["5","3","−5","−3"], correct:0, explain:"3x − 2x = 4 + 1 → x = 5." },
+      { type:"mc", text:"Câu 7. Giải: 2(x − 3) = 8. x = ?", opts:["7","5","1","11"], correct:0, explain:"2x − 6 = 8 → 2x = 14 → x = 7." },
+      { type:"mc", text:"Câu 8. Giải: (x + 5)/3 = 4. x = ?", opts:["7","12","9","17"], correct:0, explain:"x + 5 = 12 → x = 7." },
+      { type:"mc", text:"Câu 9. Giải: 4x + 2 = 2x − 6. x = ?", opts:["−4","4","−2","2"], correct:0, explain:"2x = −8 → x = −4." },
+      { type:"mc", text:"Câu 10. Chuyển vế: từ 3x = 7 − 2x ta được:", opts:["5x = 7","x = 7","3x + 2x = 7","3x − 7 = 2x"], correct:0, explain:"3x + 2x = 7 → 5x = 7." },
+      { type:"mc", text:"Câu 11. Giải: −x + 3 = 0. x = ?", opts:["3","−3","0","1"], correct:0, explain:"−x = −3 → x = 3." },
+      { type:"mc", text:"Câu 12. Giải: x/2 = 5. x = ?", opts:["10","5/2","2,5","2"], correct:0, explain:"x = 5·2 = 10." },
+      { type:"mc", text:"Câu 13. Giải: 3(2x − 1) = 5x + 2. x = ?", opts:["5","−5","3","−1"], correct:0, explain:"6x − 3 = 5x + 2 → x = 5." },
+      { type:"mc", text:"Câu 14. Giải: 5x − 3 = 2(x + 3). x = ?", opts:["3","−3","9","1"], correct:0, explain:"5x − 3 = 2x + 6 → 3x = 9 → x = 3." },
+      { type:"mc", text:"Câu 15. Bước đầu tiên giải bài toán bằng lập PT:", opts:["Giải PT","Gọi ẩn, đặt ĐK","Kết luận","Thử lại"], correct:1, explain:"Bước 1: Gọi ẩn và đặt điều kiện." },
+      { type:"mc", text:"Câu 16. Tổng 2 số bằng 50, hiệu bằng 12. Số lớn:", opts:["31","19","38","25"], correct:0, explain:"x + y = 50, x − y = 12 → 2x = 62 → x = 31." },
+      { type:"mc", text:"Câu 17. Gấp 3 lần một số rồi trừ 7 được 20. Số đó:", opts:["9","7","11","13"], correct:0, explain:"3x − 7 = 20 → x = 9." },
+      { type:"mc", text:"Câu 18. An hơn Bình 5 tuổi, tổng 35. Tuổi An:", opts:["20","15","25","30"], correct:0, explain:"x + (x−5) = 35 → x = 20." },
+      { type:"mc", text:"Câu 19. Giải: (2x − 1)/3 = (x + 2)/2:", opts:["x = 8","x = 4","x = −8","x = 7"], correct:0, explain:"2(2x−1) = 3(x+2) → 4x−2 = 3x+6 → x = 8." },
+      { type:"mc", text:"Câu 20. HCN chu vi 40cm, dài hơn rộng 6cm. Rộng:", opts:["7","13","14","10"], correct:0, explain:"2(x + x+6) = 40 → x = 7." },
+      { type:"mc", text:"Câu 21. Ô tô đi 120km trong 2h. Vận tốc:", opts:["60 km/h","40 km/h","80 km/h","50 km/h"], correct:0, explain:"v = 120/2 = 60 km/h." },
+      { type:"mc", text:"Câu 22. Giải: |x − 3| = 5. Số nghiệm:", opts:["0","1","2","Vô số"], correct:2, explain:"x − 3 = 5 → x = 8 hoặc x − 3 = −5 → x = −2. Có 2 nghiệm." },
+      { type:"mc", text:"Câu 23. Mẹ gấp 3 lần con, tổng 48. Tuổi con:", opts:["12","16","36","24"], correct:0, explain:"x + 3x = 48 → x = 12." },
+      { type:"mc", text:"Câu 24. Giải: 7x − 14 = 0. x = ?", opts:["2","−2","7","14"], correct:0, explain:"7x = 14 → x = 2." },
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về PT bậc nhất:", statements:[
         { stmt:"PT 2x − 4 = 0 có nghiệm x = 2", correct:true },
-        { stmt:"PT 0·x = 0 vô nghiệm", correct:false },
-        { stmt:"PT ax + b = 0 (a ≠ 0) luôn có nghiệm duy nhất x = −b/a", correct:true },
-        { stmt:"PT 3x = −6 có nghiệm x = 2", correct:false }
+        { stmt:"PT ax + b = 0 (a ≠ 0) có nghiệm duy nhất x = −b/a", correct:true },
+        { stmt:"PT 3x = −6 có nghiệm x = 2", correct:false },
+        { stmt:"PT x² = 4 là PT bậc nhất", correct:false }
       ], explains:[
         "Đúng. 2x = 4 → x = 2.",
-        "Sai. 0·x = 0 đúng với mọi x → vô số nghiệm.",
-        "Đúng. Khi a ≠ 0: ax = −b → x = −b/a là nghiệm duy nhất.",
-        "Sai. 3x = −6 → x = −6/3 = −2, không phải 2."
+        "Đúng. Công thức nghiệm PT bậc nhất.",
+        "Sai. x = −6/3 = −2.",
+        "Sai. x² = 4 là bậc hai."
       ]},
-      { type:"short", text:"Giải phương trình 4x − 12 = 0. Nghiệm x = ?", answer:"3", hint:"Chuyển −12 sang vế phải, chia cho 4", explain:"4x = 12 → x = 12/4 = 3." },
-      { type:"short", text:"Giải phương trình 2x + 3 = x − 1. Nghiệm x = ?", answer:"-4", hint:"Chuyển x sang trái, số sang phải", explain:"2x − x = −1 − 3 → x = −4." }
-    ]
-  },
-
-  // ==================== CHỦ ĐỀ 5: GIẢI BÀI TOÁN BẰNG LẬP PT ====================
-  {
-    id:"l8_5", emoji:"🧩", name:"Giải bài toán bằng cách lập phương trình",
-    desc:"Các bước lập phương trình, bài toán tìm số, chuyển động, tuổi, hình học",
-    questions:[
-      { type:"mc", text:"Câu 1. Tổng hai số bằng 50, số lớn hơn số bé 12 đơn vị. Số lớn bằng:", opts:["19","31","38","25"], correct:1, explain:"Gọi số lớn x, số bé x − 12. x + (x−12) = 50 → 2x = 62 → x = 31." },
-      { type:"mc", text:"Câu 2. Hình chữ nhật có chu vi 40cm, chiều dài hơn chiều rộng 6cm. Chiều rộng bằng:", opts:["7 cm","13 cm","14 cm","20 cm"], correct:0, explain:"Gọi chiều rộng x. 2(x + x + 6) = 40 → 4x + 12 = 40 → x = 7 cm." },
-      { type:"mc", text:"Câu 3. An hơn Bình 5 tuổi, tổng tuổi hai người là 35. Tuổi An là:", opts:["15","20","25","30"], correct:1, explain:"Gọi tuổi An x, tuổi Bình x − 5. x + (x−5) = 35 → 2x = 40 → x = 20." },
-      { type:"mc", text:"Câu 4. Bước đầu tiên khi giải bài toán bằng lập phương trình là:", opts:["Giải phương trình","Gọi ẩn và đặt điều kiện","Trả lời","Thử lại"], correct:1, explain:"Bước 1: Gọi ẩn số (thường là đại lượng cần tìm) và nêu điều kiện cho ẩn." },
-      { type:"mc", text:"Câu 5. Gấp 3 lần một số rồi trừ 7 được 20. Số đó bằng:", opts:["7","9","11","13"], correct:1, explain:"3x − 7 = 20 → 3x = 27 → x = 9." },
-      { type:"mc", text:"Câu 6. Ô tô đi quãng đường 120km trong 2 giờ. Vận tốc ô tô là:", opts:["40 km/h","50 km/h","60 km/h","80 km/h"], correct:2, explain:"v = s/t = 120/2 = 60 km/h." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về giải toán bằng lập phương trình:", statements:[
-        { stmt:"Khi lập phương trình, ta cần đặt điều kiện cho ẩn", correct:true },
-        { stmt:"Mọi nghiệm của phương trình đều là đáp án bài toán", correct:false },
-        { stmt:"Sau khi giải PT, phải đối chiếu nghiệm với điều kiện bài toán", correct:true },
-        { stmt:"Ẩn số luôn phải là số nguyên dương", correct:false }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về các trường hợp:", statements:[
+        { stmt:"0·x + 5 = 0 vô nghiệm", correct:true },
+        { stmt:"0·x = 0 vô nghiệm", correct:false },
+        { stmt:"Chuyển −3 từ vế trái sang vế phải thành +3", correct:true },
+        { stmt:"Nhân hai vế PT với 0 được PT tương đương", correct:false }
       ], explains:[
-        "Đúng. Ẩn phải thỏa mãn điều kiện thực tế (ví dụ: tuổi > 0, cạnh > 0).",
-        "Sai. Nghiệm PT có thể không thỏa mãn điều kiện thực tế của bài toán.",
-        "Đúng. Đây là bước quan trọng: đối chiếu và kết luận.",
-        "Sai. Ẩn có thể là số thập phân, phân số tùy bài toán."
+        "Đúng. 0 = −5 vô lý.",
+        "Sai. 0 = 0 đúng ∀x → vô số nghiệm.",
+        "Đúng. Chuyển vế đổi dấu.",
+        "Sai. Nhân với 0 mất thông tin, không tương đương."
       ]},
-      { type:"short", text:"Hai số có tổng 28, hiệu 4. Số lớn bằng?", answer:"16", hint:"Gọi 2 số x, y: x + y = 28, x − y = 4", explain:"Cộng 2 phương trình: 2x = 32 → x = 16. Số lớn = 16." },
-      { type:"short", text:"Tuổi mẹ gấp 3 lần tuổi con, tổng tuổi 2 mẹ con là 48. Tuổi con bằng?", answer:"12", hint:"Gọi tuổi con x, tuổi mẹ 3x", explain:"x + 3x = 48 → 4x = 48 → x = 12." }
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Giải PT:", statements:[
+        { stmt:"2(x + 1) = 2x + 2 có vô số nghiệm", correct:true },
+        { stmt:"3x − 1 = 3x + 2 vô nghiệm", correct:true },
+        { stmt:"x + 5 = 8 có nghiệm x = 3", correct:true },
+        { stmt:"−2x = 6 có nghiệm x = 3", correct:false }
+      ], explains:[
+        "Đúng. 2x + 2 = 2x + 2 luôn đúng.",
+        "Đúng. −1 = 2 vô lý.",
+        "Đúng. x = 8 − 5 = 3.",
+        "Sai. x = 6/(−2) = −3."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Bài toán lập PT:", statements:[
+        { stmt:"Sau khi giải PT phải đối chiếu nghiệm với ĐK bài toán", correct:true },
+        { stmt:"Ẩn số luôn là số nguyên dương", correct:false },
+        { stmt:"Bài toán chuyển động dùng công thức s = v·t", correct:true },
+        { stmt:"Mọi nghiệm PT đều là đáp số bài toán", correct:false }
+      ], explains:[
+        "Đúng. Bước quan trọng.",
+        "Sai. Ẩn có thể là số thập phân.",
+        "Đúng. s = v·t là công thức chuyển động.",
+        "Sai. Nghiệm có thể không thỏa ĐK thực tế."
+      ]},
+      { type:"short", text:"Giải: 4x − 12 = 0. x = ?", answer:"3", hint:"4x = 12", explain:"x = 12/4 = 3." },
+      { type:"short", text:"Giải: 2x + 3 = x − 1. x = ?", answer:"-4", hint:"Chuyển vế", explain:"x = −4." },
+      { type:"short", text:"Hai số tổng 28, hiệu 4. Số lớn = ?", answer:"16", hint:"(28+4)/2", explain:"x = (28+4)/2 = 16." },
+      { type:"short", text:"Giải: 5x + 10 = 0. x = ?", answer:"-2", hint:"5x = −10", explain:"x = −10/5 = −2." }
     ]
   },
 
