@@ -1017,12 +1017,232 @@ const examData = [
   }
 ];
 
+// ============ DỮ LIỆU TOÁN LỚP 8 ============
+const exam8Data = [
+
+  // ==================== CHỦ ĐỀ 1: HÀM SỐ VÀ ĐỒ THỊ ====================
+  {
+    id:"l8_1", emoji:"📈", name:"Hàm số và đồ thị của hàm số",
+    desc:"Khái niệm hàm số, giá trị hàm số, đồ thị hàm số y = f(x), hàm đồng biến – nghịch biến",
+    questions:[
+      { type:"mc", text:"Câu 1. Cho hàm số y = f(x) = 3x − 2. Giá trị f(−1) bằng:", opts:["−5","1","−1","5"], correct:0, explain:"f(−1) = 3·(−1) − 2 = −3 − 2 = −5." },
+      { type:"mc", text:"Câu 2. Điểm nào sau đây thuộc đồ thị hàm số y = 2x + 1?", opts:["(1; 2)","(0; 1)","(−1; 0)","(2; 4)"], correct:1, explain:"Thay x=0: y = 2·0 + 1 = 1. Điểm (0; 1) thuộc đồ thị." },
+      { type:"mc", text:"Câu 3. Hàm số y = f(x) = x² − 1. Giá trị f(2) bằng:", opts:["5","3","1","−1"], correct:1, explain:"f(2) = 2² − 1 = 4 − 1 = 3." },
+      { type:"mc", text:"Câu 4. Hàm số y = 2x đồng biến trên ℝ vì:", opts:["Hệ số a = 2 > 0","Hệ số a = 2 < 0","y luôn dương","Đồ thị đi qua gốc tọa độ"], correct:0, explain:"Hàm y = ax đồng biến khi a > 0. Ở đây a = 2 > 0." },
+      { type:"mc", text:"Câu 5. Cho hàm số y = −3x. Khi x tăng thì y:", opts:["Tăng","Giảm","Không đổi","Không xác định"], correct:1, explain:"a = −3 < 0 nên hàm nghịch biến: x tăng → y giảm." },
+      { type:"mc", text:"Câu 6. Đồ thị hàm số y = f(x) đi qua điểm A(2; 5). Khi đó f(2) bằng:", opts:["2","5","7","10"], correct:1, explain:"Nếu A(2; 5) thuộc đồ thị thì f(2) = 5." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Các khẳng định về hàm số:", statements:[
+        { stmt:"y = 2x + 1 là hàm số bậc nhất", correct:true },
+        { stmt:"Đồ thị hàm số y = ax (a ≠ 0) luôn đi qua gốc tọa độ O", correct:true },
+        { stmt:"Hàm số y = 3/x là hàm số bậc nhất", correct:false },
+        { stmt:"Nếu f(1) = 3 thì điểm (1; 3) thuộc đồ thị hàm số y = f(x)", correct:true }
+      ], explains:[
+        "Đúng. y = 2x + 1 có dạng y = ax + b với a = 2 ≠ 0.",
+        "Đúng. Thay x = 0: y = a·0 = 0 → đồ thị qua O(0; 0).",
+        "Sai. y = 3/x không có dạng y = ax + b, đây là hàm phân thức.",
+        "Đúng. Định nghĩa: f(1) = 3 nghĩa là điểm (1; 3) nằm trên đồ thị."
+      ]},
+      { type:"short", text:"Cho hàm số y = f(x) = 5x − 3. Tính f(2) = ?", answer:"7", hint:"Thay x = 2 vào công thức", explain:"f(2) = 5·2 − 3 = 10 − 3 = 7." },
+      { type:"short", text:"Đồ thị hàm số y = −x + 4 cắt trục Oy tại điểm có tung độ bằng bao nhiêu?", answer:"4", hint:"Trục Oy ứng với x = 0", explain:"Thay x = 0: y = −0 + 4 = 4. Tung độ giao điểm với Oy là 4." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 2: HÀM SỐ BẬC NHẤT ====================
+  {
+    id:"l8_2", emoji:"📉", name:"Hàm số bậc nhất và đồ thị",
+    desc:"Hàm số y = ax + b (a ≠ 0), tính chất đồng biến / nghịch biến, vẽ đồ thị đường thẳng",
+    questions:[
+      { type:"mc", text:"Câu 1. Hàm số y = (m − 3)x + 2 là hàm số bậc nhất khi:", opts:["m = 3","m ≠ 3","m > 3","m < 3"], correct:1, explain:"Hàm bậc nhất y = ax + b cần a ≠ 0. Ở đây a = m − 3 ≠ 0 ⟺ m ≠ 3." },
+      { type:"mc", text:"Câu 2. Đồ thị hàm số y = 2x − 6 cắt trục Ox tại điểm có hoành độ:", opts:["2","3","−3","6"], correct:1, explain:"Cắt Ox khi y = 0: 2x − 6 = 0 → x = 3." },
+      { type:"mc", text:"Câu 3. Hàm số y = −3x + 1 nghịch biến trên ℝ vì:", opts:["b = 1 > 0","a = −3 < 0","a = −3 > 0","b = 1 < 0"], correct:1, explain:"Hàm bậc nhất nghịch biến khi a < 0. Ở đây a = −3 < 0." },
+      { type:"mc", text:"Câu 4. Đồ thị hàm số y = x − 2 đi qua điểm:", opts:["(0; −2)","(0; 2)","(−2; 0)","(1; 0)"], correct:0, explain:"Thay x = 0: y = 0 − 2 = −2. Đồ thị qua (0; −2)." },
+      { type:"mc", text:"Câu 5. Đồ thị hàm số y = −x + 3 cắt trục Ox tại điểm:", opts:["(3; 0)","(0; 3)","(−3; 0)","(0; −3)"], correct:0, explain:"y = 0: −x + 3 = 0 → x = 3. Giao điểm Ox là (3; 0)." },
+      { type:"mc", text:"Câu 6. Hàm số nào sau đây KHÔNG phải hàm bậc nhất?", opts:["y = 2x − 1","y = −x","y = x² + 1","y = 0,5x + 3"], correct:2, explain:"y = x² + 1 là hàm bậc hai, không phải bậc nhất." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Các khẳng định về hàm số bậc nhất:", statements:[
+        { stmt:"Đồ thị hàm số bậc nhất y = ax + b (a ≠ 0) là một đường thẳng", correct:true },
+        { stmt:"Hàm số y = 2x + 3 đồng biến vì b = 3 > 0", correct:false },
+        { stmt:"Đồ thị y = ax + b luôn cắt trục Oy tại điểm (0; b)", correct:true },
+        { stmt:"Hàm số y = 5 là hàm số bậc nhất", correct:false }
+      ], explains:[
+        "Đúng. Đồ thị hàm bậc nhất luôn là đường thẳng.",
+        "Sai. Đồng biến vì a = 2 > 0, không phải vì b > 0.",
+        "Đúng. Thay x = 0: y = a·0 + b = b → điểm (0; b).",
+        "Sai. y = 5 có dạng y = 0·x + 5, a = 0 nên không phải hàm bậc nhất."
+      ]},
+      { type:"short", text:"Tung độ gốc (tọa độ giao điểm với Oy) của đường thẳng y = 3x − 7 là?", answer:"-7", hint:"Thay x = 0 vào", explain:"Thay x = 0: y = 3·0 − 7 = −7." },
+      { type:"short", text:"Hoành độ giao điểm của y = 4x − 8 với trục Ox bằng?", answer:"2", hint:"Cho y = 0, giải x", explain:"y = 0: 4x − 8 = 0 → x = 2." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 3: HỆ SỐ GÓC ====================
+  {
+    id:"l8_3", emoji:"📐", name:"Hệ số góc của đường thẳng",
+    desc:"Hệ số góc, hai đường thẳng song song, cắt nhau, trùng nhau, điều kiện vị trí tương đối",
+    questions:[
+      { type:"mc", text:"Câu 1. Hệ số góc của đường thẳng y = −2x + 5 là:", opts:["5","−2","2","−5"], correct:1, explain:"Trong y = ax + b, hệ số góc là a. Ở đây a = −2." },
+      { type:"mc", text:"Câu 2. Hai đường thẳng y = 3x + 1 và y = 3x − 4 có vị trí:", opts:["Cắt nhau","Song song","Trùng nhau","Vuông góc"], correct:1, explain:"Cùng hệ số góc a = 3, khác tung độ gốc (1 ≠ −4) → song song." },
+      { type:"mc", text:"Câu 3. Đường thẳng nào song song với y = 2x + 1?", opts:["y = 2x − 3","y = −2x + 1","y = 3x + 1","y = x + 2"], correct:0, explain:"Song song khi cùng hệ số góc (a = 2) và khác tung độ gốc. y = 2x − 3 thỏa mãn." },
+      { type:"mc", text:"Câu 4. Đường thẳng y = ax + 3 cắt đường thẳng y = 2x − 1 khi:", opts:["a = 2","a ≠ 2","a > 2","a < 2"], correct:1, explain:"Hai đường thẳng cắt nhau khi hệ số góc khác nhau: a ≠ 2." },
+      { type:"mc", text:"Câu 5. Hai đường thẳng y = 5x − 1 và y = 5x − 1 có vị trí:", opts:["Song song","Cắt nhau","Trùng nhau","Vuông góc"], correct:2, explain:"Cùng a = 5 và cùng b = −1 → hai đường thẳng trùng nhau." },
+      { type:"mc", text:"Câu 6. Đường thẳng y = −x + 2 và y = x + 2 cắt nhau tại điểm có tung độ:", opts:["0","2","−2","4"], correct:1, explain:"−x + 2 = x + 2 → −2x = 0 → x = 0, y = 0 + 2 = 2. Giao điểm (0; 2), tung độ = 2." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về vị trí tương đối hai đường thẳng:", statements:[
+        { stmt:"Hai đường thẳng có cùng hệ số góc và khác tung độ gốc thì song song", correct:true },
+        { stmt:"Hai đường thẳng có hệ số góc khác nhau thì cắt nhau", correct:true },
+        { stmt:"y = 2x + 1 và y = −2x + 1 song song với nhau", correct:false },
+        { stmt:"Hệ số góc của đường thẳng y = 5 bằng 5", correct:false }
+      ], explains:[
+        "Đúng. Đây là điều kiện song song: a₁ = a₂ và b₁ ≠ b₂.",
+        "Đúng. Hệ số góc khác nhau (a₁ ≠ a₂) → hai đường thẳng cắt nhau.",
+        "Sai. Hệ số góc 2 ≠ −2 → hai đường cắt nhau, không song song.",
+        "Sai. y = 5 ↔ y = 0·x + 5, hệ số góc = 0 (đường nằm ngang)."
+      ]},
+      { type:"short", text:"Đường thẳng y = mx + 1 song song với y = 3x − 2. Giá trị m = ?", answer:"3", hint:"Song song: cùng hệ số góc", explain:"Song song → m = 3 (cùng hệ số góc). Kiểm tra b: 1 ≠ −2 ✓." },
+      { type:"short", text:"Đường thẳng y = 2x + b đi qua A(1; 5). Giá trị b = ?", answer:"3", hint:"Thay tọa độ A vào phương trình", explain:"5 = 2·1 + b → b = 5 − 2 = 3." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 4: PHƯƠNG TRÌNH BẬC NHẤT 1 ẨN ====================
+  {
+    id:"l8_4", emoji:"🔢", name:"Phương trình bậc nhất một ẩn",
+    desc:"Dạng ax + b = 0, quy tắc chuyển vế, nhân chia, nghiệm duy nhất / vô nghiệm / vô số nghiệm",
+    questions:[
+      { type:"mc", text:"Câu 1. Phương trình 3x − 6 = 0 có nghiệm:", opts:["x = 2","x = −2","x = 3","x = 6"], correct:0, explain:"3x = 6 → x = 6/3 = 2." },
+      { type:"mc", text:"Câu 2. Phương trình 2(x − 1) = 4 có nghiệm:", opts:["x = 1","x = 2","x = 3","x = 4"], correct:2, explain:"2x − 2 = 4 → 2x = 6 → x = 3." },
+      { type:"mc", text:"Câu 3. Phương trình 0·x + 5 = 0:", opts:["Có nghiệm duy nhất","Vô nghiệm","Vô số nghiệm","Có 2 nghiệm"], correct:1, explain:"0·x = −5 → 0 = −5 (vô lý) → PT vô nghiệm." },
+      { type:"mc", text:"Câu 4. Phương trình 5x + 10 = 2x + 1 có nghiệm:", opts:["x = −3","x = 3","x = −11/3","x = 11/3"], correct:0, explain:"5x − 2x = 1 − 10 → 3x = −9 → x = −3." },
+      { type:"mc", text:"Câu 5. Phương trình 0·x = 0:", opts:["Có nghiệm x = 0","Vô nghiệm","Vô số nghiệm","Có nghiệm x = 1"], correct:2, explain:"0·x = 0 đúng với mọi x → vô số nghiệm." },
+      { type:"mc", text:"Câu 6. Giải PT: (x + 3)/2 = 5. Nghiệm x bằng:", opts:["7","13","5","2"], correct:0, explain:"x + 3 = 10 → x = 7." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về phương trình bậc nhất:", statements:[
+        { stmt:"PT 2x − 4 = 0 có nghiệm x = 2", correct:true },
+        { stmt:"PT 0·x = 0 vô nghiệm", correct:false },
+        { stmt:"PT ax + b = 0 (a ≠ 0) luôn có nghiệm duy nhất x = −b/a", correct:true },
+        { stmt:"PT 3x = −6 có nghiệm x = 2", correct:false }
+      ], explains:[
+        "Đúng. 2x = 4 → x = 2.",
+        "Sai. 0·x = 0 đúng với mọi x → vô số nghiệm.",
+        "Đúng. Khi a ≠ 0: ax = −b → x = −b/a là nghiệm duy nhất.",
+        "Sai. 3x = −6 → x = −6/3 = −2, không phải 2."
+      ]},
+      { type:"short", text:"Giải phương trình 4x − 12 = 0. Nghiệm x = ?", answer:"3", hint:"Chuyển −12 sang vế phải, chia cho 4", explain:"4x = 12 → x = 12/4 = 3." },
+      { type:"short", text:"Giải phương trình 2x + 3 = x − 1. Nghiệm x = ?", answer:"-4", hint:"Chuyển x sang trái, số sang phải", explain:"2x − x = −1 − 3 → x = −4." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 5: GIẢI BÀI TOÁN BẰNG LẬP PT ====================
+  {
+    id:"l8_5", emoji:"🧩", name:"Giải bài toán bằng cách lập phương trình",
+    desc:"Các bước lập phương trình, bài toán tìm số, chuyển động, tuổi, hình học",
+    questions:[
+      { type:"mc", text:"Câu 1. Tổng hai số bằng 50, số lớn hơn số bé 12 đơn vị. Số lớn bằng:", opts:["19","31","38","25"], correct:1, explain:"Gọi số lớn x, số bé x − 12. x + (x−12) = 50 → 2x = 62 → x = 31." },
+      { type:"mc", text:"Câu 2. Hình chữ nhật có chu vi 40cm, chiều dài hơn chiều rộng 6cm. Chiều rộng bằng:", opts:["7 cm","13 cm","14 cm","20 cm"], correct:0, explain:"Gọi chiều rộng x. 2(x + x + 6) = 40 → 4x + 12 = 40 → x = 7 cm." },
+      { type:"mc", text:"Câu 3. An hơn Bình 5 tuổi, tổng tuổi hai người là 35. Tuổi An là:", opts:["15","20","25","30"], correct:1, explain:"Gọi tuổi An x, tuổi Bình x − 5. x + (x−5) = 35 → 2x = 40 → x = 20." },
+      { type:"mc", text:"Câu 4. Bước đầu tiên khi giải bài toán bằng lập phương trình là:", opts:["Giải phương trình","Gọi ẩn và đặt điều kiện","Trả lời","Thử lại"], correct:1, explain:"Bước 1: Gọi ẩn số (thường là đại lượng cần tìm) và nêu điều kiện cho ẩn." },
+      { type:"mc", text:"Câu 5. Gấp 3 lần một số rồi trừ 7 được 20. Số đó bằng:", opts:["7","9","11","13"], correct:1, explain:"3x − 7 = 20 → 3x = 27 → x = 9." },
+      { type:"mc", text:"Câu 6. Ô tô đi quãng đường 120km trong 2 giờ. Vận tốc ô tô là:", opts:["40 km/h","50 km/h","60 km/h","80 km/h"], correct:2, explain:"v = s/t = 120/2 = 60 km/h." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về giải toán bằng lập phương trình:", statements:[
+        { stmt:"Khi lập phương trình, ta cần đặt điều kiện cho ẩn", correct:true },
+        { stmt:"Mọi nghiệm của phương trình đều là đáp án bài toán", correct:false },
+        { stmt:"Sau khi giải PT, phải đối chiếu nghiệm với điều kiện bài toán", correct:true },
+        { stmt:"Ẩn số luôn phải là số nguyên dương", correct:false }
+      ], explains:[
+        "Đúng. Ẩn phải thỏa mãn điều kiện thực tế (ví dụ: tuổi > 0, cạnh > 0).",
+        "Sai. Nghiệm PT có thể không thỏa mãn điều kiện thực tế của bài toán.",
+        "Đúng. Đây là bước quan trọng: đối chiếu và kết luận.",
+        "Sai. Ẩn có thể là số thập phân, phân số tùy bài toán."
+      ]},
+      { type:"short", text:"Hai số có tổng 28, hiệu 4. Số lớn bằng?", answer:"16", hint:"Gọi 2 số x, y: x + y = 28, x − y = 4", explain:"Cộng 2 phương trình: 2x = 32 → x = 16. Số lớn = 16." },
+      { type:"short", text:"Tuổi mẹ gấp 3 lần tuổi con, tổng tuổi 2 mẹ con là 48. Tuổi con bằng?", answer:"12", hint:"Gọi tuổi con x, tuổi mẹ 3x", explain:"x + 3x = 48 → 4x = 48 → x = 12." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 6: KẾT QUẢ CÓ THỂ – KẾT QUẢ THUẬN LỢI ====================
+  {
+    id:"l8_6", emoji:"🎯", name:"Kết quả có thể – Kết quả thuận lợi",
+    desc:"Không gian mẫu, biến cố, kết quả thuận lợi, đếm số kết quả",
+    questions:[
+      { type:"mc", text:"Câu 1. Gieo một xúc sắc. Số kết quả có thể (không gian mẫu) là:", opts:["3","4","5","6"], correct:3, explain:"Xúc sắc 6 mặt: {1, 2, 3, 4, 5, 6} → 6 kết quả." },
+      { type:"mc", text:"Câu 2. Gieo một xúc sắc. Số kết quả thuận lợi cho biến cố \"mặt chẵn\" là:", opts:["2","3","4","6"], correct:1, explain:"Mặt chẵn: {2, 4, 6} → 3 kết quả thuận lợi." },
+      { type:"mc", text:"Câu 3. Tung một đồng xu 2 lần. Số kết quả có thể là:", opts:["2","3","4","8"], correct:2, explain:"Mỗi lần 2 KQ: {SS, SN, NS, NN} → 2 × 2 = 4 kết quả." },
+      { type:"mc", text:"Câu 4. Hộp có 3 bi đỏ, 2 bi xanh. Lấy ngẫu nhiên 1 bi, số kết quả thuận lợi cho \"lấy được bi đỏ\" là:", opts:["2","3","5","1"], correct:1, explain:"Có 3 bi đỏ → 3 kết quả thuận lợi." },
+      { type:"mc", text:"Câu 5. Gieo 2 xúc sắc. Không gian mẫu có bao nhiêu phần tử?", opts:["6","12","36","24"], correct:2, explain:"Mỗi xúc sắc 6 mặt → 6 × 6 = 36 cặp kết quả." },
+      { type:"mc", text:"Câu 6. Hộp có 5 bút xanh, 3 bút đỏ, 2 bút đen. Lấy 1 bút, số kết quả có thể là:", opts:["3","8","10","5"], correct:2, explain:"Tổng số bút: 5 + 3 + 2 = 10 kết quả có thể." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về kết quả có thể và thuận lợi:", statements:[
+        { stmt:"Gieo 1 xúc sắc, không gian mẫu có 6 phần tử", correct:true },
+        { stmt:"Tung 1 đồng xu, biến cố \"mặt sấp\" có 2 kết quả thuận lợi", correct:false },
+        { stmt:"Kết quả thuận lợi là kết quả thỏa mãn biến cố đang xét", correct:true },
+        { stmt:"Gieo 2 xúc sắc, không gian mẫu có 12 phần tử", correct:false }
+      ], explains:[
+        "Đúng. Xúc sắc có 6 mặt: Ω = {1, 2, 3, 4, 5, 6}.",
+        "Sai. \"Mặt sấp\" chỉ có 1 kết quả thuận lợi.",
+        "Đúng. Định nghĩa kết quả thuận lợi cho một biến cố.",
+        "Sai. Gieo 2 xúc sắc: 6 × 6 = 36 phần tử, không phải 12."
+      ]},
+      { type:"short", text:"Gieo 1 xúc sắc. Số kết quả thuận lợi cho biến cố \"mặt lẻ\" là?", answer:"3", hint:"Liệt kê các mặt lẻ", explain:"Mặt lẻ: {1, 3, 5} → 3 kết quả thuận lợi." },
+      { type:"short", text:"Hộp có 4 bi đỏ, 3 bi xanh, 2 bi vàng. Tổng số kết quả có thể khi lấy 1 bi?", answer:"9", hint:"Đếm tổng số bi", explain:"Tổng: 4 + 3 + 2 = 9 kết quả có thể." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 7: CÁCH TÍNH XÁC SUẤT ====================
+  {
+    id:"l8_7", emoji:"🎲", name:"Cách tính xác suất",
+    desc:"Công thức xác suất cổ điển P(A) = m/n, tính chất xác suất, biến cố chắc chắn và không thể",
+    questions:[
+      { type:"mc", text:"Câu 1. Gieo một xúc sắc. Xác suất xuất hiện mặt 6 là:", opts:["1/2","1/3","1/6","1/4"], correct:2, explain:"P = 1/6 (1 kết quả thuận lợi trên 6 kết quả có thể)." },
+      { type:"mc", text:"Câu 2. Hộp có 3 bi đỏ, 7 bi xanh. P(lấy được bi đỏ) = ?", opts:["3/10","7/10","3/7","7/3"], correct:0, explain:"P = 3/(3+7) = 3/10." },
+      { type:"mc", text:"Câu 3. Tung đồng xu 1 lần. P(mặt ngửa) = ?", opts:["1","1/2","0","1/4"], correct:1, explain:"Đồng xu cân đối: P(ngửa) = 1/2." },
+      { type:"mc", text:"Câu 4. Xác suất của biến cố chắc chắn bằng:", opts:["0","1/2","1","2"], correct:2, explain:"Biến cố chắc chắn luôn xảy ra → P = 1." },
+      { type:"mc", text:"Câu 5. Gieo xúc sắc. P(mặt > 4) = ?", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"Mặt > 4: {5, 6} → P = 2/6 = 1/3." },
+      { type:"mc", text:"Câu 6. Hộp có 2 bi trắng, 3 bi đen. P(lấy bi trắng) = ?", opts:["2/3","3/5","2/5","1/5"], correct:2, explain:"P = 2/(2+3) = 2/5." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tính chất xác suất:", statements:[
+        { stmt:"0 ≤ P(A) ≤ 1 với mọi biến cố A", correct:true },
+        { stmt:"Xác suất của biến cố không thể bằng 0", correct:true },
+        { stmt:"P(A) = số kết quả thuận lợi ÷ tổng số kết quả", correct:true },
+        { stmt:"Nếu P(A) = 0,8 thì biến cố A chắc chắn xảy ra", correct:false }
+      ], explains:[
+        "Đúng. Xác suất luôn nằm trong [0; 1].",
+        "Đúng. Biến cố không thể (không bao giờ xảy ra) có P = 0.",
+        "Đúng. Đây là công thức xác suất cổ điển: P(A) = m/n.",
+        "Sai. P = 0,8 nghĩa là khả năng cao nhưng không chắc chắn. Chắc chắn khi P = 1."
+      ]},
+      { type:"short", text:"Hộp có 5 bi đỏ, 3 bi xanh, 2 bi vàng. P(bi xanh) = a/10. Tìm a = ?", answer:"3", hint:"Tổng 10 bi, 3 bi xanh", explain:"P(xanh) = 3/10. Vậy a = 3." },
+      { type:"short", text:"Gieo 1 xúc sắc. P(mặt ≤ 2) = a/6. Tìm a = ?", answer:"2", hint:"Đếm mặt 1 và 2", explain:"Mặt ≤ 2: {1, 2} → P = 2/6. Vậy a = 2." }
+    ]
+  },
+
+  // ==================== CHỦ ĐỀ 8: TAM GIÁC ĐỒNG DẠNG ====================
+  {
+    id:"l8_8", emoji:"🔺", name:"Tam giác đồng dạng",
+    desc:"Các trường hợp đồng dạng (c.c.c, c.g.c, g.g), tỉ số đồng dạng, tỉ số diện tích",
+    questions:[
+      { type:"mc", text:"Câu 1. Hai tam giác có 2 cặp góc bằng nhau thì đồng dạng theo trường hợp:", opts:["c.c.c","c.g.c","g.g","cạnh-huyền-góc nhọn"], correct:2, explain:"Có 2 cặp góc bằng nhau → đồng dạng theo trường hợp góc – góc (g.g)." },
+      { type:"mc", text:"Câu 2. ΔABC ∼ ΔDEF với tỉ số đồng dạng k = 2. Biết AB = 4cm, khi đó DE bằng:", opts:["2 cm","8 cm","4 cm","6 cm"], correct:0, explain:"AB/DE = k = 2 → DE = AB/k = 4/2 = 2 cm." },
+      { type:"mc", text:"Câu 3. ΔABC ∼ ΔDEF theo tỉ số k. Tỉ số diện tích S_ABC/S_DEF bằng:", opts:["k","k²","k³","2k"], correct:1, explain:"Tỉ số diện tích hai tam giác đồng dạng bằng bình phương tỉ số đồng dạng: k²." },
+      { type:"mc", text:"Câu 4. ΔABC có AB = 3, AC = 6, ΔDEF có DE = 2, DF = 4. Nếu góc A = góc D thì:", opts:["ΔABC ∼ ΔDEF (c.g.c)","ΔABC ∼ ΔDEF (g.g)","Không đồng dạng","ΔABC = ΔDEF"], correct:0, explain:"AB/DE = 3/2, AC/DF = 6/4 = 3/2, góc A = góc D → đồng dạng (c.g.c)." },
+      { type:"mc", text:"Câu 5. Hai tam giác đều luôn:", opts:["Bằng nhau","Đồng dạng","Vuông","Không đồng dạng"], correct:1, explain:"Hai tam giác đều có 3 góc = 60° → luôn đồng dạng (g.g)." },
+      { type:"mc", text:"Câu 6. ΔABC ∼ ΔMNP với k = 3. Chu vi ΔABC = 24cm. Chu vi ΔMNP bằng:", opts:["8 cm","72 cm","12 cm","36 cm"], correct:0, explain:"Tỉ số chu vi = tỉ số đồng dạng k = 3. C_MNP = 24/3 = 8 cm." },
+      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tam giác đồng dạng:", statements:[
+        { stmt:"Hai tam giác bằng nhau thì đồng dạng với tỉ số k = 1", correct:true },
+        { stmt:"Hai tam giác đồng dạng thì bằng nhau", correct:false },
+        { stmt:"Hai tam giác đều luôn đồng dạng", correct:true },
+        { stmt:"Hai tam giác có 2 cặp góc bằng nhau thì đồng dạng", correct:true }
+      ], explains:[
+        "Đúng. Bằng nhau → các cạnh tương ứng bằng nhau → tỉ số k = 1.",
+        "Sai. Đồng dạng chỉ cần tỉ số cạnh bằng nhau, không nhất thiết bằng nhau.",
+        "Đúng. Tam giác đều có 3 góc 60° → luôn đồng dạng theo g.g.",
+        "Đúng. Đây là trường hợp đồng dạng g.g."
+      ]},
+      { type:"short", text:"ΔABC ∼ ΔDEF, AB = 6, DE = 3. Tỉ số đồng dạng k = AB/DE = ?", answer:"2", hint:"k = cạnh tam giác lớn / cạnh tam giác nhỏ", explain:"k = AB/DE = 6/3 = 2." },
+      { type:"short", text:"ΔMNP ∼ ΔXYZ với k = 3, S(MNP) = 27cm². Diện tích ΔXYZ = ? cm²", answer:"3", hint:"Tỉ số diện tích = k²", explain:"S_MNP/S_XYZ = k² = 9 → S_XYZ = 27/9 = 3 cm²." }
+    ]
+  }
+];
+
 // ============ GRADE SYSTEM ============
 let currentGrade = 9;
 const gradeData = {
   6: { name:"Toán Lớp 6", exams:[] },
   7: { name:"Toán Lớp 7", exams:[] },
-  8: { name:"Toán Lớp 8", exams:[] },
+  8: { name:"Toán Lớp 8", exams:exam8Data },
   9: { name:"Toán Lớp 9", exams:examData }
 };
 function getExamData(){ return gradeData[currentGrade].exams; }
