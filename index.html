@@ -216,6 +216,27 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .empty-grade h2{font-size:1.4rem;color:var(--text);margin-bottom:8px}
 .empty-grade p{font-size:1rem;max-width:400px;margin:0 auto}
 
+/* Story Cards */
+.story-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:16px}
+.story-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;cursor:pointer;transition:.2s}
+.story-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08);border-color:var(--primary)}
+.story-card .sc-emoji{font-size:2rem;margin-bottom:8px}
+.story-card .sc-title{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.story-card .sc-preview{font-size:.88rem;color:var(--text-light);line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.story-card .sc-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:600;margin-top:10px}
+.sc-tag.effort{background:#dbeafe;color:#1d4ed8}
+.sc-tag.parent{background:#fce7f3;color:#be185d}
+.story-detail{background:var(--card);border-radius:16px;padding:28px;border:1px solid var(--border);margin-top:16px}
+.story-detail .sd-back{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-weight:600;cursor:pointer;margin-bottom:16px;font-size:.95rem}
+.story-detail .sd-back:hover{text-decoration:underline}
+.story-detail .sd-title{font-size:1.4rem;font-weight:800;margin-bottom:4px}
+.story-detail .sd-content{font-size:1rem;line-height:1.8;color:var(--text);margin:16px 0;white-space:pre-line}
+.story-detail .sd-moral{background:linear-gradient(135deg,#eff6ff,#ede9fe);border-radius:12px;padding:16px 20px;margin-top:16px;font-size:.95rem;line-height:1.6}
+.story-detail .sd-moral b{color:#4f46e5}
+.story-detail .sd-nav{display:flex;justify-content:space-between;margin-top:20px}
+.story-detail .sd-nav button{padding:8px 18px;border-radius:10px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-weight:600;font-size:.9rem;transition:.2s}
+.story-detail .sd-nav button:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+
 /* Responsive */
 @media(max-width:768px){
   .header-inner{padding:10px 14px}
@@ -255,6 +276,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     <button class="grade-tab" data-grade="7" onclick="switchGrade(7)"><span class="tab-emoji">📘</span> Lớp 7</button>
     <button class="grade-tab" data-grade="8" onclick="switchGrade(8)"><span class="tab-emoji">📙</span> Lớp 8</button>
     <button class="grade-tab active" data-grade="9" onclick="switchGrade(9)"><span class="tab-emoji">📕</span> Lớp 9</button>
+    <button class="grade-tab" data-grade="stories" onclick="switchToStories()"><span class="tab-emoji">📖</span> Truyện</button>
   </div>
 </div>
 
@@ -291,6 +313,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
     <div class="stats-grid" id="statsGrid"></div>
     <h3 style="margin:18px 0 10px;font-size:1.1rem">Lịch sử làm bài</h3>
     <div id="historyList"></div>
+  </div>
+
+  <!-- STORIES PAGE -->
+  <div class="page" id="page-stories">
+    <div class="hero fade-in">
+      <h1>📖 Truyện Truyền Cảm Hứng</h1>
+      <p>30 câu chuyện ngắn về nỗ lực học tập và tình yêu thương của cha mẹ</p>
+    </div>
+    <div class="story-grid" id="storyGrid"></div>
+    <div class="story-detail" id="storyDetail" style="display:none"></div>
   </div>
 </div>
 
@@ -4652,6 +4684,220 @@ const exam8Data = [
   }
 ];
 
+
+const storiesData = [
+  {
+    id:1, emoji:"🌟", tag:"effort",
+    title:"Cậu bé bán vé số và giấc mơ đại học",
+    preview:"Một cậu bé miền Tây mỗi ngày đi bán vé số trước giờ học, nhưng chưa bao giờ bỏ một buổi lên lớp.",
+    content:`Minh lớn lên trong căn nhà lá ven sông ở Cà Mau. Ba mất sớm, mẹ bệnh nặng, cậu phải đi bán vé số từ năm lớp 4. Mỗi sáng, cậu dậy lúc 4 giờ, đạp xe ra chợ bán đến 6 giờ rồi vào lớp.\n\nBạn bè thấy cậu hay ngủ gật trong giờ ra chơi nhưng không ai biết lý do. Cô giáo chủ nhiệm phát hiện, thay vì thương hại, cô nói: "Em giỏi lắm, nhưng hãy ngủ đủ giấc để học tốt hơn. Cô sẽ giúp em tìm học bổng."\n\nCô giới thiệu Minh vào chương trình hỗ trợ học sinh nghèo. Cậu không còn phải dậy lúc 4 giờ nữa. Điểm số cải thiện rõ rệt. Năm lớp 9, Minh đạt học sinh giỏi cấp tỉnh môn Toán. Cậu thi đỗ trường chuyên và nhận học bổng toàn phần.\n\nHôm nhận giấy báo trúng tuyển, Minh về nhà khoe mẹ. Bà ôm con khóc: "Mẹ không có gì cho con, nhưng con đã tự tạo tương lai cho mình rồi."`,
+    moral:"Hoàn cảnh khó khăn không quyết định tương lai. Sự kiên trì mỗi ngày, dù nhỏ, sẽ tích lũy thành kết quả lớn."
+  },
+  {
+    id:2, emoji:"📚", tag:"effort",
+    title:"Bài kiểm tra 2 điểm và bước ngoặt",
+    preview:"Một học sinh từng bị 2 điểm Toán đã thay đổi hoàn toàn cách học sau lời nhận xét của thầy giáo.",
+    content:`Hùng là học sinh trung bình, môn Toán luôn lẹt đẹt 4-5 điểm. Đến bài kiểm tra giữa kỳ lớp 8, cậu chỉ được 2 điểm. Cả lớp cười, Hùng xấu hổ muốn xé bài.\n\nThầy giáo giữ Hùng lại sau giờ học, không mắng mà hỏi: "Em có biết mình sai ở đâu không?" Hùng lắc đầu. Thầy kiên nhẫn chỉ từng lỗi, rồi nói: "Em không dốt, em chỉ chưa biết cách học. Mỗi ngày làm đúng 3 bài thôi, nhưng phải hiểu tại sao."\n\nHùng nghe theo. Mỗi tối cậu mở sách, làm đúng 3 bài, ghi lại những chỗ không hiểu để hỏi thầy. Tuần đầu rất chán, tuần thứ hai bắt đầu quen, tháng thứ hai cậu thấy bài trên lớp không còn khó như trước.\n\nCuối năm, Hùng đạt 8 điểm Toán. Không phải phép màu — đó là 3 bài mỗi ngày, suốt 5 tháng, tổng cộng hơn 450 bài tập.`,
+    moral:"Không ai sinh ra đã giỏi. Chỉ cần mỗi ngày tiến bộ một chút, kiên trì đủ lâu, kết quả sẽ đến."
+  },
+  {
+    id:3, emoji:"✏️", tag:"effort",
+    title:"Cô bé viết tay trái",
+    preview:"Bị tai nạn mất khả năng viết tay phải, Lan quyết tâm tập viết bằng tay trái để không bỏ lỡ kỳ thi.",
+    content:`Lan học lớp 9, chuẩn bị thi vào lớp 10. Một tai nạn giao thông khiến tay phải của em bị gãy nặng, phải bó bột 3 tháng — đúng lúc còn 4 tháng nữa là thi.\n\nBác sĩ nói tay phải sẽ hồi phục nhưng không kịp trước kỳ thi. Lan khóc suốt một tuần rồi quyết định: "Mình sẽ tập viết tay trái."\n\nNhững ngày đầu, chữ em như gà bới. Viết một trang mất cả giờ, tay mỏi rã rời. Bạn bè thấy thương nhưng Lan không muốn ai thương hại. Em tập viết mỗi ngày 2 tiếng, từ những nét thẳng cơ bản đến chữ cái, rồi viết cả đoạn văn.\n\nSau 2 tháng, chữ tay trái của Lan đã rõ ràng, đủ nhanh để làm bài. Ngày thi, em viết bằng tay trái suốt 3 buổi. Kết quả: đỗ trường top 3 thành phố.\n\nCô giáo chấm thi sau này kể: "Tôi không biết bài đó viết bằng tay trái. Tôi chỉ thấy một bài làm rất chắc kiến thức."`,
+    moral:"Khi cuộc sống lấy đi một thứ, đừng ngồi than khóc. Hãy tìm cách khác để đi tiếp. Ý chí mạnh hơn mọi trở ngại."
+  },
+  {
+    id:4, emoji:"🔢", tag:"effort",
+    title:"100 ngày giải Toán",
+    preview:"Một thử thách tự đặt ra: mỗi ngày giải ít nhất 5 bài Toán trong 100 ngày liên tiếp đã thay đổi một học sinh.",
+    content:`Thảo ghét Toán. Mỗi lần nhìn đề bài, em thấy như đang đọc tiếng nước ngoài. Điểm Toán của em chưa bao giờ vượt qua 5.\n\nMột hôm, em đọc được câu chuyện về một vận động viên tập luyện mỗi ngày không nghỉ. Em nghĩ: "Nếu người ta tập thể thao được, mình tập Toán cũng được."\n\nThảo lập thử thách: 100 ngày, mỗi ngày ít nhất 5 bài Toán. Em ghi vào lịch, mỗi ngày hoàn thành thì đánh dấu X.\n\nNgày 1-10: Khó chịu, chán nản, phải ép bản thân.\nNgày 11-30: Bắt đầu quen, thỉnh thoảng giải được bài khó.\nNgày 31-60: Thấy vui khi giải được, bắt đầu thích thú.\nNgày 61-100: Tự tìm bài khó hơn để thử sức.\n\nKết thúc 100 ngày, Thảo đã giải hơn 600 bài. Điểm kiểm tra từ 5 lên 8,5. Nhưng điều lớn nhất không phải điểm số — em không còn sợ Toán nữa.`,
+    moral:"Thói quen tốt cần thời gian để hình thành. Đừng bỏ cuộc ở tuần đầu tiên — hãy kiên nhẫn đến khi nó trở thành một phần của bạn."
+  },
+  {
+    id:5, emoji:"🏫", tag:"effort",
+    title:"Từ cuối lớp lên đầu lớp",
+    preview:"Ngồi bàn cuối, bị xem là 'học sinh cá biệt', nhưng Tuấn đã chứng minh mọi người sai.",
+    content:`Tuấn ngồi bàn cuối từ lớp 6 đến lớp 8. Không phải vì cao, mà vì thầy cô xếp những học sinh "cá biệt" ra sau. Tuấn hay nói chuyện, không chép bài, điểm luôn đội sổ.\n\nĐầu lớp 9, có cô giáo mới. Cô không xếp chỗ theo học lực mà bốc thăm ngẫu nhiên. Tuấn ngồi bàn 2. Lần đầu tiên em nhìn rõ bảng, nghe rõ cô giảng.\n\nCô hay đặt câu hỏi và gọi ngẫu nhiên. Tuấn buộc phải chú ý. Dần dần, em phát hiện mình hiểu bài hơn trước rất nhiều. Em bắt đầu giơ tay phát biểu.\n\nCô khen: "Tuấn có tư duy tốt đấy, chỉ cần chịu khó hơn." Câu nói đó như ngọn lửa nhỏ. Tuấn bắt đầu chép bài, làm bài tập, hỏi bài bạn.\n\nCuối năm, Tuấn xếp thứ 8/42. Cả lớp ngỡ ngàng. Tuấn cười: "Tui chỉ mới bắt đầu học nghiêm túc có 9 tháng thôi."`,
+    moral:"Đôi khi bạn không kém, bạn chỉ chưa được đặt vào đúng vị trí. Và khi có người tin tưởng, bạn sẽ ngạc nhiên về chính mình."
+  },
+  {
+    id:6, emoji:"💡", tag:"effort",
+    title:"Sai 47 lần để đúng 1 lần",
+    preview:"Trong cuộc thi Khoa học sáng tạo, nhóm của Phúc thất bại 47 lần trước khi mô hình hoạt động.",
+    content:`Phúc và hai bạn tham gia cuộc thi Khoa học Kỹ thuật với ý tưởng làm máy lọc nước mini từ vật liệu tái chế. Nghe có vẻ đơn giản, nhưng khi bắt tay làm, mọi thứ đều sai.\n\nLần 1-10: Nước lọc ra vẫn đục ngầu.\nLần 11-20: Than hoạt tính bị tắc, nước không chảy qua.\nLần 21-30: Tìm được cách mới nhưng vật liệu quá đắt.\nLần 31-47: Liên tục điều chỉnh tỷ lệ, kích thước, cách sắp xếp lớp lọc.\n\nCó lúc cả nhóm muốn bỏ. Phúc nói: "Mỗi lần sai, mình biết thêm một cách không hiệu quả. Vậy là mình đang tiến gần hơn đến cách đúng."\n\nLần thứ 48: Nước chảy ra trong veo. Cả nhóm nhảy cẫng lên reo hò.\n\nTại cuộc thi, nhóm Phúc đạt giải Nhì. Ban giám khảo ấn tượng nhất không phải sản phẩm, mà là cuốn sổ ghi chép 47 lần thất bại.`,
+    moral:"Thất bại không phải kết thúc, đó là dữ liệu. Mỗi lần sai giúp bạn loại bỏ một cách không đúng và tiến gần hơn đến đáp án."
+  },
+  {
+    id:7, emoji:"🌙", tag:"effort",
+    title:"Cô gái học dưới ánh đèn đường",
+    preview:"Nhà không có điện, Hạnh mang sách ra ngồi dưới cột đèn đường để ôn bài mỗi tối.",
+    content:`Hạnh sống trong xóm nhỏ vùng cao ở Hà Giang. Nhà em chưa có điện lưới. Mỗi tối, khi trời tối mịt, em không thể học bài.\n\nMột hôm, em phát hiện cột đèn đường gần trường sáng đến khuya. Em mang sách vở ra đó ngồi học. Muỗi cắn, gió lạnh, nhưng em quấn thêm áo và tiếp tục.\n\nBạn bè trong xóm rủ đi chơi, em từ chối: "Mình phải tranh thủ lúc có ánh sáng." Mỗi tối từ 7 đến 9 giờ, em ngồi dưới cột đèn, làm hết bài tập và đọc trước bài ngày mai.\n\nThầy hiệu trưởng biết chuyện, xin cho trường một bộ pin năng lượng mặt trời tặng gia đình Hạnh. Nhưng trước khi có điện, em đã học dưới đèn đường suốt cả học kỳ.\n\nNăm đó Hạnh đạt danh hiệu học sinh giỏi nhất trường.`,
+    moral:"Đừng chờ đợi điều kiện hoàn hảo mới bắt đầu. Hãy tận dụng những gì mình có và bắt đầu ngay hôm nay."
+  },
+  {
+    id:8, emoji:"🎯", tag:"effort",
+    title:"Thi trượt 2 lần, đỗ lần 3",
+    preview:"Hai lần thi trượt vào trường chuyên, Đức không bỏ cuộc và thử lần thứ ba.",
+    content:`Đức mơ ước vào trường chuyên Toán từ nhỏ. Năm lớp 6, em thi lần đầu — trượt. Năm lớp 7, thi lại — vẫn trượt, thiếu đúng 0,5 điểm.\n\nBạn bè nói: "Thôi đi, không phải duyên." Thậm chí có người nói: "Thi hoài không đỗ, xấu hổ lắm." Đức buồn nhưng không tức giận. Em tự hỏi: "Mình thiếu gì?"\n\nEm phân tích bài thi: Phần Hình học luôn mất điểm nhiều nhất. Em dành cả mùa hè lớp 8 chỉ để luyện Hình học — vẽ hình, chứng minh, tìm nhiều cách giải cho một bài.\n\nNăm lớp 9, em thi lần 3. Đề ra có một bài Hình học rất khó, nhiều bạn bỏ qua. Đức giải được trọn vẹn.\n\nKết quả: Đức đỗ thủ khoa. Cậu nói với mẹ: "Con cảm ơn hai lần trượt. Nếu đỗ sớm, con không biết mình yếu Hình, và sẽ không bao giờ giỏi như bây giờ."`,
+    moral:"Thất bại cho bạn cơ hội nhìn lại bản thân. Đừng sợ thi trượt — hãy sợ việc không dám thi lại."
+  },
+  {
+    id:9, emoji:"📝", tag:"effort",
+    title:"Cuốn sổ sai lầm",
+    preview:"Thay vì giấu lỗi sai, Vy ghi tất cả vào một cuốn sổ và biến chúng thành 'kho báu'.",
+    content:`Vy là học sinh khá, nhưng cứ kiểm tra là mất điểm vì những lỗi sai lặp đi lặp lại. Quên dấu ngoặc, nhầm dấu âm dương, tính nhầm phép chia.\n\nMẹ mua cho em một cuốn sổ nhỏ và nói: "Con ghi lại mỗi lỗi sai vào đây. Không phải để buồn, mà để nhớ."\n\nVy bắt đầu ghi. Mỗi bài kiểm tra, mỗi bài tập sai, em đều ghi lại: sai ở đâu, sai vì sao, cách sửa. Cuốn sổ dày lên từng ngày.\n\nTrước mỗi bài kiểm tra, em đọc lại cuốn sổ thay vì đọc lý thuyết. Em thuộc lòng những "cái bẫy" mình hay mắc.\n\nSau một học kỳ, lỗi sai giảm hẳn. Điểm Toán từ 7 lên 9. Bạn bè xin chụp cuốn sổ, Vy cười: "Đây là sổ sai lầm của riêng mình. Các bạn phải tự tạo sổ của mình mới hiệu quả."\n\nCô giáo nghe chuyện, khuyến khích cả lớp làm theo.`,
+    moral:"Sai lầm chỉ lãng phí khi bạn không học gì từ nó. Hãy ghi nhớ lỗi sai — đó là bài học rẻ nhất và hiệu quả nhất."
+  },
+  {
+    id:10, emoji:"🤝", tag:"effort",
+    title:"Nhóm học tập dưới gốc bàng",
+    preview:"Bốn học sinh không có tiền đi học thêm đã lập nhóm tự học dưới gốc cây bàng sân trường.",
+    content:`Trường THCS ở một huyện miền núi, không có lớp học thêm, không có gia sư. Bốn bạn Tùng, Mai, Hải, Ngọc đều muốn thi vào trường cấp 3 tốt nhất huyện nhưng không biết ôn tập thế nào.\n\nTùng đề xuất: "Mỗi đứa giỏi một môn, mình dạy nhau." Mai giỏi Văn, Hải giỏi Toán, Ngọc giỏi Anh, Tùng giỏi Lý.\n\nMỗi chiều sau giờ học, bốn bạn ngồi dưới gốc bàng sân trường. Người giỏi môn nào dạy môn đó. Có lúc cãi nhau vì giải khác cách, nhưng lại cùng tra sách, cùng tìm ra đáp án đúng.\n\nCác thầy cô thấy hay, cho mượn phòng học khi trời mưa. Nhóm học từ tháng 10 đến tháng 6 năm sau.\n\nKết quả thi: Cả bốn đều đỗ. Hải đỗ thủ khoa Toán. Mai đỗ thủ khoa Văn. Tùng và Ngọc nằm trong top 20.\n\nBây giờ bốn người vẫn giữ ảnh chụp dưới gốc bàng như kỷ vật đẹp nhất thời học sinh.`,
+    moral:"Không có điều kiện tốt nhất, hãy tạo điều kiện tốt nhất có thể. Học nhóm đúng cách giúp tất cả cùng tiến bộ."
+  },
+  {
+    id:11, emoji:"❤️", tag:"parent",
+    title:"Bữa cơm của ba",
+    preview:"Ba chỉ ăn cơm trắng với nước mắm nhưng luôn mua thịt cá cho con. Đến khi con phát hiện ra...",
+    content:`Phong học cấp 2 ở thị trấn, xa nhà 20km. Ba thuê cho em phòng trọ nhỏ gần trường. Mỗi tuần ba chở gạo và thức ăn lên.\n\nPhong thấy ba luôn mua đầy đủ: thịt, cá, rau, trái cây. Ba nói: "Con ăn đủ chất mới học được." Phong nghĩ nhà mình cũng bình thường, không quá khó khăn.\n\nMột lần về nhà đột xuất vì nghỉ lễ, Phong thấy mâm cơm của ba mẹ chỉ có cơm trắng, rau luộc và nước mắm. Em hỏi: "Ba mẹ ăn gì đây?" Mẹ nói: "Hôm nay đơn giản thôi." Nhưng Phong để ý, tủ lạnh trống trơn.\n\nEm hiểu ra: Ba mẹ nhường hết phần ngon cho mình. Tiền lương ít ỏi, ba dành phần lớn mua đồ ăn cho con, còn mình thì ăn đạm bạc.\n\nPhong không nói gì, chỉ lặng lẽ lau nước mắt. Từ hôm đó, em học chăm hơn bao giờ hết — không phải vì điểm số, mà vì không muốn phụ lòng ba mẹ.`,
+    moral:"Cha mẹ có thể không nói ra, nhưng họ luôn âm thầm hy sinh. Hiểu được điều đó là động lực lớn nhất để cố gắng."
+  },
+  {
+    id:12, emoji:"🌸", tag:"parent",
+    title:"Mẹ dậy sớm hơn con",
+    preview:"Suốt 3 năm cấp 2, mẹ dậy lúc 5 giờ nấu cơm để con mang đi học, dù mẹ mệt đến đâu.",
+    content:`Mẹ Hà làm công nhân may, ca chiều từ 2 giờ đến 10 giờ tối. Về nhà đã khuya, mẹ vẫn dậy lúc 5 giờ sáng để nấu cơm cho Hà mang đi học.\n\nHà nói: "Mẹ ơi, con mua cơm ở căn-tin cũng được." Mẹ cười: "Cơm mẹ nấu vừa ngon hơn, vừa tiết kiệm. Con ăn no rồi học mới vào."\n\nCó những hôm trời đông, Hà xuống bếp lúc 6 giờ đã thấy hộp cơm gói sẵn, còn ấm. Mẹ đã đi nằm lại vì mệt. Hà nhìn đôi mắt thâm quầng của mẹ mà thương.\n\nMột lần, Hà đạt học sinh giỏi, mang giấy khen về. Mẹ ôm con, mắt rưng rưng: "Vậy là mẹ nấu cơm không uổng rồi."\n\nHà viết trong bài văn: "Mỗi hộp cơm của mẹ không chỉ có thức ăn. Nó chứa cả tình yêu và giấc ngủ mà mẹ đã bớt lại cho con."`,
+    moral:"Tình yêu của mẹ thể hiện qua những việc nhỏ nhất hằng ngày. Hãy trân trọng từng bữa cơm, từng giấc ngủ mẹ hy sinh."
+  },
+  {
+    id:13, emoji:"🚲", tag:"parent",
+    title:"Chiếc xe đạp cũ của mẹ",
+    preview:"Mẹ bán chiếc xe đạp duy nhất của mình để mua sách cho con, rồi đi bộ 5km đến chợ mỗi ngày.",
+    content:`Nhà Khoa ở vùng nông thôn, cách trường 3km. Mẹ có một chiếc xe đạp cũ dùng để đi chợ bán rau mỗi sáng. Đó là phương tiện duy nhất của gia đình.\n\nĐầu năm học lớp 7, Khoa cần mua bộ sách giáo khoa và sách tham khảo, tổng cộng gần 500 nghìn đồng. Nhà không có tiền. Mẹ suy nghĩ rồi bán chiếc xe đạp cũ được 600 nghìn.\n\nMẹ mua sách cho Khoa, còn 100 nghìn mua thêm vở. Từ đó, mẹ đi bộ 5km ra chợ mỗi sáng, gánh rau trên vai.\n\nKhoa không biết cho đến khi hàng xóm kể. Em về hỏi mẹ, mẹ chỉ nói: "Xe cũ rồi, đi bộ cho khỏe." Nhưng em thấy chân mẹ sưng mỗi tối.\n\nKhoa ôm bộ sách mới, thầm hứa: "Con sẽ học thật giỏi. Mỗi trang sách này, con sẽ đọc cho xứng đáng."`,
+    moral:"Cha mẹ sẵn sàng đánh đổi sự thoải mái của mình để con có cơ hội học tập. Hãy học xứng đáng với sự hy sinh đó."
+  },
+  {
+    id:14, emoji:"📖", tag:"parent",
+    title:"Ba không biết chữ nhưng dạy con yêu sách",
+    preview:"Người ba không biết đọc nhưng mỗi tối vẫn ngồi cạnh con, lật từng trang sách và hỏi: 'Hôm nay con học gì?'",
+    content:`Ba Linh là thợ hồ, chưa học hết lớp 2. Ba không biết đọc, không biết viết, nhưng mỗi tối ba ngồi cạnh Linh khi em học bài.\n\nBa hỏi: "Hôm nay con học gì?" Linh kể, ba lắng nghe dù không hiểu hết. Thỉnh thoảng ba hỏi: "Cái đó có khó không? Con giải được chưa?"\n\nCó lần Linh phàn nàn: "Bài này khó quá, con không muốn làm." Ba im lặng rồi nói: "Ba không được đi học nên bây giờ phải đi phụ hồ nặng nhọc. Ba ước gì hồi đó có người bắt ba ngồi học. Con có sách, có trường, đừng bỏ phí nghe con."\n\nCâu nói đó Linh nhớ mãi. Mỗi khi muốn bỏ cuộc, em lại nghĩ đến đôi tay chai sạn của ba và ước mơ dang dở của ông.\n\nLinh tốt nghiệp đại học, việc đầu tiên em làm là dạy ba đọc chữ. Ba cầm cuốn sách, đánh vần từng chữ, cười rạng rỡ.`,
+    moral:"Cha mẹ không cần giỏi mới truyền cảm hứng. Đôi khi chính câu chuyện về những gì họ thiếu thốn là bài học mạnh mẽ nhất."
+  },
+  {
+    id:15, emoji:"🌧️", tag:"parent",
+    title:"Mẹ đội mưa đón con",
+    preview:"Ba năm liền, dù mưa hay nắng, mẹ chưa bao giờ để con phải đợi trước cổng trường.",
+    content:`Mẹ Quỳnh bán bún ở chợ. Quỳnh học ca chiều, tan lúc 5 giờ. Mỗi ngày đúng 4 giờ 50, mẹ đã đứng trước cổng trường đợi.\n\nCó những ngày mưa tầm tã, mẹ đội áo mưa đứng giữa trời, ướt sũng từ đầu đến chân. Quỳnh nói: "Mẹ ơi, mưa thì mẹ đợi trong quán đi." Mẹ cười: "Mẹ sợ con ra không thấy mẹ, con lo."\n\nCó hôm mẹ bị sốt, Quỳnh bảo: "Hôm nay mẹ nghỉ, con tự về được." Chiều hôm đó tan học, Quỳnh ra cổng — mẹ vẫn đứng đó, mặt tái xanh vì sốt nhưng miệng vẫn cười.\n\nQuỳnh ôm mẹ khóc giữa sân trường. Từ đó em tự nhủ: người yêu mình nhiều như vậy, mình phải sống xứng đáng.\n\nQuỳnh học hành chăm chỉ, sau này trở thành giáo viên. Mỗi chiều tan trường, cô đứng cổng đợi học trò — giống mẹ ngày xưa.`,
+    moral:"Tình yêu của cha mẹ không cần lời nói lớn lao. Nó nằm trong sự có mặt đều đặn, ngày này qua ngày khác."
+  },
+  {
+    id:16, emoji:"⭐", tag:"parent",
+    title:"Bức thư ba gửi con mỗi tháng",
+    preview:"Ba đi làm xa, mỗi tháng gửi về một bức thư viết tay kèm câu hỏi Toán thú vị cho con giải.",
+    content:`Ba Nam đi làm ở Bình Dương, xa nhà hàng trăm cây số. Mỗi tháng ba gửi về một bức thư viết tay. Không phải thư dài dòng, mà chỉ vài dòng hỏi thăm và một câu đố Toán thú vị.\n\n"Con ơi, nếu ba tiết kiệm mỗi ngày 15.000 đồng, bao nhiêu ngày ba mua được xe đạp mới cho con (giá 2.700.000)?"\n\n"Nếu nhà mình nuôi 3 con gà, mỗi con đẻ 5 trứng/tuần, một tháng mình có bao nhiêu trứng?"\n\nNam mê giải những bài toán đó. Em viết thư trả lời, kèm cách giải. Ba đọc xong gọi điện khen, có lúc nói: "Con giải hay hơn ba nghĩ!"\n\nNhờ những bức thư, Nam thấy Toán không phải những con số vô nghĩa trên giấy — mà gắn liền với cuộc sống thật. Em yêu Toán từ đó.\n\nBa chỉ học hết lớp 9, nhưng những câu đố ba nghĩ ra khiến cả cô giáo Nam cũng thấy sáng tạo.`,
+    moral:"Truyền cảm hứng học tập không cần bằng cấp cao. Chỉ cần sự quan tâm và một chút sáng tạo, cha mẹ có thể khơi dậy niềm đam mê trong con."
+  },
+  {
+    id:17, emoji:"🏠", tag:"parent",
+    title:"Góc học tập ba tự đóng",
+    preview:"Dù nhà chật, ba vẫn dành cả ngày nghỉ để đóng cho con một chiếc bàn học từ gỗ pallet.",
+    content:`Nhà Minh Anh chỉ có một phòng, cả nhà 4 người ngủ chung. Minh Anh học bài trên giường, nằm sấp viết. Sách vở lúc nào cũng nhàu nát.\n\nBa thấy vậy, lặng lẽ xin mấy tấm gỗ pallet từ công trình. Suốt ngày Chủ nhật, ba cưa, bào, ghép, đóng thành chiếc bàn nhỏ vừa đủ để sách và đèn. Ba kê góc nhà, treo tấm rèm cũ làm vách ngăn.\n\n"Đây là góc học tập riêng của con," ba nói, tay vẫn còn dính keo gỗ.\n\nMinh Anh sờ mặt bàn, thấy ba đã chà nhẵn cẩn thận để con không bị dằm đâm. Mặt bàn không phẳng lắm, nhưng đủ vững.\n\nTừ hôm đó, Minh Anh có chỗ ngồi học đàng hoàng. Em dán thời khóa biểu lên vách, xếp sách gọn gàng. Mỗi lần ngồi vào bàn, em nhớ ngày Chủ nhật ba bào gỗ dưới nắng.\n\nChiếc bàn đó theo Minh Anh suốt cả cấp 2.`,
+    moral:"Cha mẹ luôn tìm cách tạo điều kiện tốt nhất cho con trong khả năng của mình. Hãy trân trọng và sử dụng xứng đáng những gì họ cho."
+  },
+  {
+    id:18, emoji:"🌻", tag:"parent",
+    title:"Mẹ cũng đi học cùng con",
+    preview:"Mẹ ghi danh lớp xóa mù chữ để hiểu bài con học, cùng con làm bài tập mỗi tối.",
+    content:`Mẹ Ngọc là người dân tộc Thái, lấy chồng sớm, chưa bao giờ được đi học. Khi Ngọc lên lớp 6, bài vở bắt đầu nhiều, mẹ không giúp được gì.\n\nMột hôm, mẹ đăng ký lớp xóa mù chữ buổi tối ở xã. Ngọc ngạc nhiên: "Mẹ ơi, mẹ đi học chi vậy?" Mẹ cười: "Mẹ muốn biết con học gì để giúp con."\n\nMẹ bắt đầu từ bảng chữ cái. Mỗi tối, sau khi Ngọc học xong, mẹ cũng mở vở ra tập viết. Hai mẹ con ngồi cạnh nhau, mỗi người một cuốn vở.\n\nDần dần mẹ đọc được. Mẹ đọc đề bài Toán cho Ngọc: "Con ơi, đề này hỏi gì vậy? Mẹ đọc được chữ nhưng không hiểu." Ngọc giải thích, và việc giải thích cho mẹ giúp em hiểu bài sâu hơn.\n\nCuối năm, mẹ đạt chứng chỉ biết đọc biết viết. Ngọc đạt học sinh giỏi. Cả hai cùng nhận giấy khen một ngày.`,
+    moral:"Khi cha mẹ cùng nỗ lực, con cái sẽ cảm nhận được sức mạnh của sự đồng hành. Học cùng con là cách truyền cảm hứng mạnh mẽ nhất."
+  },
+  {
+    id:19, emoji:"💪", tag:"effort",
+    title:"Chàng trai nói lắp đạt giải hùng biện",
+    preview:"Từ nhỏ bị nói lắp, Tâm quyết tâm luyện nói mỗi ngày và cuối cùng đạt giải trong cuộc thi hùng biện.",
+    content:`Tâm bị nói lắp từ nhỏ. Mỗi khi phát biểu trong lớp, em ấp úng, mặt đỏ bừng, cả lớp im lặng chờ đợi. Có bạn tỏ ra sốt ruột, có bạn cười. Tâm sợ nói đến mức trốn tránh mọi lần cô gọi tên.\n\nNăm lớp 8, cô giáo Văn nói: "Cô sẽ tổ chức cuộc thi hùng biện trong lớp. Mọi người đều phải tham gia." Tâm hoảng sợ.\n\nNhưng thay vì xin miễn, em quyết định thử. Mỗi tối, Tâm đứng trước gương tập nói. Đầu tiên đọc to một đoạn văn, rồi kể lại câu chuyện bằng lời mình. Em nói chậm, rõ ràng, không vội.\n\nEm tập suốt 2 tháng. Ngày thi, Tâm bước lên bục, tay run. Nhưng khi bắt đầu nói, em nói chậm, rành mạch, đầy cảm xúc. Em kể câu chuyện của chính mình.\n\nCả lớp im phăng phắc. Khi Tâm nói xong, cô giáo và các bạn vỗ tay rất lâu. Tâm đạt giải Nhất.\n\nEm vẫn nói lắp đôi khi, nhưng em không còn sợ nữa.`,
+    moral:"Hạn chế không phải bản án. Bạn có thể không hoàn hảo, nhưng bạn có thể dũng cảm. Và sự dũng cảm đó xứng đáng được tôn trọng."
+  },
+  {
+    id:20, emoji:"📐", tag:"effort",
+    title:"Từ sợ Hình học đến yêu Hình học",
+    preview:"Một mẹo nhỏ từ anh trai đã giúp Trang từ ghét sang yêu môn Hình học.",
+    content:`Trang học giỏi Đại số nhưng rất sợ Hình học. Mỗi lần vẽ hình, em không biết bắt đầu từ đâu. Chứng minh hình thì như mê cung — em không thấy đường ra.\n\nAnh trai Trang đang học đại học, về nhà dịp hè. Thấy em than khó, anh nói: "Em vẽ hình quá nhỏ và cẩu thả. Thử vẽ to ra, rõ ràng, đánh dấu mọi thứ đề bài cho. Rồi tự hỏi: mình CẦN chứng minh gì? Mình ĐÃ CÓ gì?"\n\nTrang làm theo. Em vẽ hình to cả nửa trang giấy, ghi rõ từng góc, từng cạnh. Rồi em viết ra 2 cột: "Cần CM" và "Đã có". Bài toán bỗng trở nên rõ ràng hơn.\n\nMỗi ngày, Trang giải 2 bài Hình theo cách mới. Sau 1 tháng, em bắt đầu thấy "nhìn ra" cách giải ngay khi đọc đề. Sau 3 tháng, Hình học trở thành phần em giải nhanh nhất.\n\nCô giáo ngạc nhiên: "Trang dạo này Hình học tiến bộ vượt bậc." Trang cười: "Em chỉ thay đổi cách nhìn thôi cô."`,
+    moral:"Đôi khi bạn không dở ở môn nào cả — bạn chỉ chưa tìm ra phương pháp phù hợp. Hãy thử cách khác thay vì bỏ cuộc."
+  },
+  {
+    id:21, emoji:"🌍", tag:"parent",
+    title:"Ba kể chuyện thế giới mỗi tối",
+    preview:"Dù chưa bao giờ ra khỏi tỉnh, ba đọc báo và kể cho con nghe về thế giới rộng lớn mỗi tối.",
+    content:`Ba Hoàng là nông dân, cả đời chưa ra khỏi tỉnh Nghệ An. Nhưng mỗi tối, sau bữa cơm, ba ngồi kể cho Hoàng nghe những câu chuyện về thế giới.\n\nBa đọc báo ở quán nước, nhớ tin tức rồi kể lại: "Con biết không, ở Nhật Bản có tàu chạy nhanh 300km/giờ. Ở Mỹ có ông gì đó phóng tên lửa lên vũ trụ." Ba kể say sưa dù phát âm tên nước ngoài không chuẩn.\n\nHoàng hỏi: "Sao ba biết nhiều vậy?" Ba cười: "Ba đọc báo. Chữ nghĩa ít nhưng đọc hoài cũng hiểu."\n\nRồi ba nói nhỏ: "Ba muốn con học giỏi để đi xa, thấy những thứ ba chỉ đọc trên báo. Con đi thay ba nghe."\n\nCâu nói đó theo Hoàng suốt cuộc đời. Em học hành chăm chỉ, thi đỗ đại học, có cơ hội đi du học.\n\nNgày lên máy bay, Hoàng gọi điện về: "Ba ơi, con đi thay ba rồi. Con sẽ kể cho ba nghe mọi thứ con thấy."`,
+    moral:"Cha mẹ gieo hạt giống ước mơ bằng chính những câu chuyện đời thường. Đừng bao giờ ngưng chia sẻ với con về thế giới rộng lớn ngoài kia."
+  },
+  {
+    id:22, emoji:"🎒", tag:"parent",
+    title:"Chiếc cặp sách mẹ may tay",
+    preview:"Không đủ tiền mua cặp, mẹ thức đêm may cho con chiếc cặp từ vải thừa ở xưởng.",
+    content:`Đầu năm học lớp 6, cặp sách cũ của An đã rách. Em xin mẹ mua cặp mới. Mẹ im lặng — An biết nhà đang thiếu tiền.\n\nSáng hôm sau, trên bàn học có chiếc cặp mới. Không phải cặp mua ở tiệm — mà là chiếc cặp mẹ may tay từ vải thừa ở xưởng may. Cặp có hai ngăn, dây đeo chắc chắn, và ở góc trong có dòng chữ mẹ thêu: "Mẹ tin con."\n\nAn xách cặp đi học, có bạn hỏi: "Cặp gì kỳ vậy?" An đáp: "Cặp mẹ may, hàng độc quyền." Rồi cười.\n\nChiếc cặp đó theo An suốt năm lớp 6 và lớp 7. Mỗi lần mở cặp, em thấy dòng chữ "Mẹ tin con" và tự nhủ phải cố gắng.\n\nNăm lớp 8, nhà khá hơn, mẹ mua cặp mới. Nhưng An giữ chiếc cặp may tay, treo ở góc phòng như một kỷ vật.\n\n"Cặp đắt nhất không phải cặp mắc tiền. Cặp đắt nhất là cặp mẹ thức đêm may cho mình."`,
+    moral:"Giá trị không nằm ở vật chất mà ở tình yêu được đặt vào. Hãy biết trân trọng những gì cha mẹ dành cho mình, dù lớn hay nhỏ."
+  },
+  {
+    id:23, emoji:"🔥", tag:"effort",
+    title:"Ngày mất điện và bài toán khó",
+    preview:"Mất điện cả đêm, Duy thắp nến giải bài toán khó và phát hiện mình tập trung tốt hơn bao giờ hết.",
+    content:`Duy đang ôn thi cuối kỳ thì mất điện. Cả xóm tối om. Em thắp cây nến, định đọc sách nhưng ánh nến quá yếu để đọc chữ nhỏ.\n\nEm quyết định lấy bài toán khó nhất — bài mà cả tuần chưa giải được — rồi chỉ đọc đề, gấp sách lại, và suy nghĩ.\n\nKhông điện thoại, không TV, không tiếng ồn. Chỉ có em và bài toán trong ánh nến. Lần đầu tiên, Duy tập trung hoàn toàn vào suy nghĩ.\n\n30 phút sau, em nhìn ra cách giải. Em mở vở viết nhanh dưới ánh nến. Đúng rồi! Bài toán em loay hoay cả tuần, hóa ra chỉ cần suy nghĩ kỹ trong 30 phút yên tĩnh.\n\nSau hôm đó, Duy rút ra bài học: em hay bị phân tán. Điện thoại, YouTube, tin nhắn liên tục cắt ngang suy nghĩ. Em bắt đầu tắt điện thoại mỗi khi học bài.\n\nĐiểm thi cuối kỳ: 9,5 Toán — điểm cao nhất từ trước đến giờ.`,
+    moral:"Sự tập trung là siêu năng lực mà ai cũng có nhưng ít người sử dụng. Tắt đi những thứ gây xao nhãng, bạn sẽ ngạc nhiên với năng lực thật sự của mình."
+  },
+  {
+    id:24, emoji:"👨‍👩‍👧", tag:"parent",
+    title:"Ba mẹ cùng giải Toán",
+    preview:"Mỗi tối, cả nhà ngồi lại giải chung một bài Toán. Ba mẹ không giỏi nhưng sự đồng hành đã làm nên điều khác biệt.",
+    content:`Nhà Hương có một quy tắc đặc biệt: mỗi tối sau cơm, cả nhà cùng giải một bài Toán. Ba là thợ điện, mẹ bán tạp hóa — cả hai đều không giỏi Toán.\n\nHương ra đề (lấy từ bài tập ở trường). Ba ngồi cắn bút suy nghĩ, mẹ đếm ngón tay. Có khi cả ba cùng sai, rồi cười vang nhà.\n\nBa nói: "Ba không giải được, nhưng ba cố thử. Con thấy không, ba lớn thế này mà vẫn chịu khó suy nghĩ." Mẹ thêm: "Đừng ngại sai, sai rồi làm lại."\n\nHương thấy vui vì ba mẹ quan tâm. Em không bao giờ cảm thấy cô đơn khi học bài. Mỗi khi gặp bài khó, em nhớ hình ảnh ba cắn bút cười và tự nhủ: "Ba còn dám thử, mình sợ gì."\n\nTruyền thống "giải Toán cả nhà" kéo dài suốt 4 năm cấp 2. Hương đạt học sinh giỏi Toán cấp huyện năm lớp 9.`,
+    moral:"Cha mẹ không cần giỏi Toán để giúp con học giỏi. Chỉ cần ngồi cạnh, cùng cố gắng, con sẽ hiểu rằng mình không đơn độc."
+  },
+  {
+    id:25, emoji:"🏆", tag:"effort",
+    title:"Từ 0 điểm Tiếng Anh đến huy chương",
+    preview:"Không biết một từ tiếng Anh nào khi vào lớp 6, Thắng tự học mỗi ngày và giành huy chương Olympic 3 năm sau.",
+    content:`Thắng lớn lên ở bản nhỏ, tiểu học không có giáo viên Tiếng Anh. Vào lớp 6, em nghe cô giáo nói tiếng Anh như nghe tiếng ngoài hành tinh. Bài kiểm tra đầu tiên: 0 điểm.\n\nEm xấu hổ nhưng không nản. Em xin cô cho mượn sách lớp 3, 4, 5 để tự học lại từ đầu. Mỗi ngày em học 10 từ mới, viết đi viết lại, đọc to.\n\nEm không có Internet, không có từ điển điện tử. Chỉ có cuốn từ điển Anh-Việt cũ ba mua ở tiệm sách cũ. Em tra từng từ, ghi vào vở, đặt câu.\n\nHết lớp 6, em theo kịp lớp. Lớp 7, em nằm trong top 5. Lớp 8, em bắt đầu nghe hiểu và nói được.\n\nNăm lớp 9, Thắng đạt huy chương Bạc Olympic Tiếng Anh cấp tỉnh. Cô giáo khóc khi nghe tin: "Cô nhớ hôm em được 0 điểm. Cô không ngờ có ngày hôm nay."\n\nThắng cười: "Em cũng không ngờ, cô ạ. Em chỉ biết mỗi ngày học 10 từ thôi."`,
+    moral:"Xuất phát điểm thấp không có nghĩa là đích đến thấp. Quan trọng là bạn bước đi mỗi ngày, dù chỉ 10 bước nhỏ."
+  },
+  {
+    id:26, emoji:"💌", tag:"parent",
+    title:"Bức thư mẹ giấu trong cặp",
+    preview:"Mỗi sáng thứ Hai, mẹ lén bỏ vào cặp một mẩu giấy nhỏ viết lời động viên.",
+    content:`Mỗi sáng thứ Hai, khi mở cặp sách, Khánh lại tìm thấy một mẩu giấy nhỏ xếp gọn. Trên đó, mẹ viết vài dòng ngắn:\n\n"Con giỏi lắm! Tuần mới cố lên nhé! ❤️"\n"Dù điểm bao nhiêu, mẹ vẫn tự hào về con."\n"Hôm nay là ngày đẹp trời. Cười lên con!"\n"Con là niềm vui lớn nhất của mẹ."\n\nĐầu tiên Khánh thấy ngại, sợ bạn bè phát hiện. Em giấu nhanh vào túi. Nhưng những ngày căng thẳng, em lại lấy ra đọc. Vài dòng chữ nguệch ngoạc của mẹ có sức mạnh kỳ lạ — em thấy bình yên và tự tin hơn.\n\nCó lần Khánh thi kém, về nhà buồn. Em mở cặp, thấy mẩu giấy: "Thi chưa tốt cũng không sao. Mẹ tin con sẽ làm tốt hơn lần sau." Em không biết sao mẹ đoán được, nhưng đúng là em cần nghe câu đó.\n\nKhánh giữ tất cả mẩu giấy trong một hộp nhỏ. Suốt 4 năm, hơn 150 mẩu. Em gọi đó là "hộp dũng cảm."`,
+    moral:"Đôi khi chỉ cần vài lời yêu thương cũng đủ giúp con vượt qua một tuần khó khăn. Hãy nói cho con biết bạn tin tưởng và yêu thương chúng."
+  },
+  {
+    id:27, emoji:"🧩", tag:"effort",
+    title:"Bài toán giải bằng 5 cách",
+    preview:"Khi cô giáo thách lớp tìm cách giải khác, Hiếu kiên trì tìm ra 5 cách cho một bài toán.",
+    content:`Trong giờ Toán, cô giáo ra một bài và nói: "Ai tìm được 2 cách giải sẽ được cộng điểm." Cả lớp hào hứng. Hầu hết tìm được 1 cách, vài bạn tìm được 2.\n\nHiếu tìm được 2 cách nhưng em tự hỏi: "Liệu có cách khác không?" Em không dừng lại.\n\nEm thử dùng phương pháp khác: lập phương trình, dùng hình học, thử từng trường hợp, dùng tính chất chia hết. Cả tuần, mỗi tối em dành 30 phút cho bài toán này.\n\nThứ Hai tuần sau, em đưa cô 5 cách giải. Cô ngạc nhiên: "Hiếu, em tìm nhiều hơn cô nghĩ. Có một cách cô cũng chưa nghĩ ra."\n\nHiếu kể lại: "Cách thứ 3 em nghĩ ra lúc đang rửa bát. Cách thứ 5 em tìm được lúc nằm trên giường trước khi ngủ. Hóa ra bài toán theo em suốt ngày."\n\nTừ đó, mỗi bài toán Hiếu không chỉ giải mà còn hỏi: "Có cách nào khác không?" Thói quen đó giúp em hiểu sâu và linh hoạt hơn bất kỳ ai trong lớp.`,
+    moral:"Đừng dừng lại ở đáp án đúng đầu tiên. Tìm thêm cách giải giúp bạn hiểu vấn đề sâu hơn và rèn tư duy linh hoạt."
+  },
+  {
+    id:28, emoji:"🏡", tag:"parent",
+    title:"Khi mẹ bán hàng rong trở thành thầy giáo",
+    preview:"Mẹ bán hàng rong không biết chữ nhiều, nhưng bà dạy con bài học quý giá nhất bằng chính cuộc đời mình.",
+    content:`Mẹ Sơn bán xôi ngoài cổng trường từ 4 giờ sáng. Mùa đông, mẹ ngồi co ro bên bếp than, gói từng nắm xôi. Sơn nhiều lần xin phụ mẹ, mẹ gạt đi: "Con đi học đi, phần này của mẹ."\n\nMẹ không dạy được con bài nào trên lớp, nhưng mẹ dạy Sơn đếm tiền, tính lãi, cân đo nguyên liệu. Mỗi sáng, Sơn thấy mẹ tính: "2kg nếp, giá 35 nghìn/kg, tổng 70 nghìn. Bán 40 gói, mỗi gói 5 nghìn, thu 200 nghìn. Lãi 130 nghìn trừ than, đậu, lá…"\n\nSơn nhận ra: mẹ đang làm Toán mỗi ngày mà không biết. Em bắt đầu thấy Toán ở khắp nơi — ở chợ, ở nhà, ở quán nước.\n\nKhi cô giáo hỏi "Toán có ích gì trong cuộc sống?", Sơn kể câu chuyện bán xôi của mẹ. Cả lớp lắng nghe, cô giáo gật đầu: "Đó là bài học thực tế nhất."\n\nSơn viết: "Mẹ là thầy giáo Toán đầu tiên của con, dù mẹ không biết điều đó."`,
+    moral:"Cuộc sống chính là trường học lớn nhất. Cha mẹ dạy con bằng cách sống, bằng sự chăm chỉ, bằng những bài toán cuộc đời."
+  },
+  {
+    id:29, emoji:"🌈", tag:"effort",
+    title:"Cô bé tự kỷ và những con số",
+    preview:"Bị tự kỷ nhẹ, khó giao tiếp với bạn bè, nhưng Yến tìm thấy niềm vui và sự tự tin qua Toán học.",
+    content:`Yến bị tự kỷ nhẹ. Em ít nói, không nhìn vào mắt người khác, và thường ngồi một mình. Bạn bè không hiểu nên xa lánh em.\n\nNhưng Yến rất giỏi Toán. Em có thể tính nhẩm nhanh hơn bất kỳ ai. Em thích sự logic, thích cách mỗi bài toán luôn có đáp án rõ ràng — không mập mờ như giao tiếp giữa người với người.\n\nCô giáo nhận ra điều này, giao em những bài toán nâng cao. Yến giải như chơi. Cô bắt đầu mời em lên bảng trình bày cách giải. Lần đầu, em run. Lần hai, bớt run. Lần ba, em bắt đầu nói rõ ràng.\n\nCác bạn thấy Yến giải hay, bắt đầu hỏi bài. Yến chỉ cho bạn, từ chậm rãi. Dần dần, em có nhóm bạn nhỏ — những bạn cùng yêu Toán.\n\nCuối năm, Yến đạt giải Nhất Toán cấp trường. Nhưng với em, phần thưởng lớn nhất là có bạn ngồi cạnh lúc ăn trưa.`,
+    moral:"Mỗi người có một thế mạnh riêng. Hãy tìm ra điều bạn giỏi và dùng nó như cánh cửa để kết nối với thế giới."
+  },
+  {
+    id:30, emoji:"🏅", tag:"parent",
+    title:"Lời hứa của ba trước khi đi xa",
+    preview:"Ba phải đi làm xa nhiều năm, nhưng lời hứa ba để lại đã giúp Bảo vượt qua mọi khó khăn.",
+    content:`Ba Bảo phải sang Đài Loan làm công nhân để trả nợ cho gia đình. Trước ngày đi, ba ôm Bảo (lúc đó lớp 6) và nói: "Ba đi 3 năm. Khi ba về, con sẽ là học sinh giỏi nhất nhà mình. Được không?"\n\nBảo gật đầu, nước mắt lăn dài.\n\nBa gọi điện mỗi tuần, luôn hỏi: "Con học thế nào?" Bảo luôn trả lời: "Con cố gắng ba ạ." Có khi buồn, có khi chán, nhưng mỗi lần muốn bỏ, em nhớ khuôn mặt ba ở sân bay và lời hứa hôm đó.\n\nMẹ ở nhà vừa làm ruộng vừa chăm em nhỏ. Bảo tự giác học, không cần ai nhắc. Em tự đặt thời gian biểu, tự kiểm tra bài, tự tìm bài tập thêm.\n\nBa năm sau, ba về. Bảo đưa ba xem 3 giấy khen học sinh giỏi liên tiếp. Ba ôm con, khóc như đứa trẻ: "Con giữ lời hứa rồi. Ba tự hào lắm."\n\nBảo nói: "Không phải con giỏi, ba ạ. Là vì con không muốn ba buồn khi ở xa."`,
+    moral:"Lời hứa với người mình yêu thương là động lực mạnh nhất. Hãy biến tình yêu thành hành động, biến lời hứa thành kết quả."
+  }
+];
+
 // ============ GRADE SYSTEM ============
 let currentGrade = 9;
 const gradeData = {
@@ -5248,6 +5494,55 @@ function updateGlobalProgress(){
   const total=getExamData().length;
   const done=Object.keys(state.completed).length;
   document.getElementById('globalProgress').style.width=(total?Math.round(done/total*100):0)+'%';
+}
+
+// ============ STORIES ============
+function switchToStories(){
+  document.querySelectorAll('.grade-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelector('[data-grade="stories"]').classList.add('active');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-stories').classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  renderStoryGrid();
+  window.scrollTo(0,0);
+}
+function renderStoryGrid(){
+  const grid=document.getElementById('storyGrid');
+  grid.style.display='grid';
+  document.getElementById('storyDetail').style.display='none';
+  grid.innerHTML='';
+  storiesData.forEach(s=>{
+    const card=document.createElement('div');card.className='story-card fade-in';
+    card.onclick=()=>showStoryDetail(s.id);
+    card.innerHTML=`
+      <div class="sc-emoji">${s.emoji}</div>
+      <div class="sc-title">${s.title}</div>
+      <div class="sc-preview">${s.preview}</div>
+      <span class="sc-tag ${s.tag}">${s.tag==='effort'?'💪 Nỗ lực':'❤️ Cha mẹ'}</span>
+    `;grid.appendChild(card);
+  });
+}
+function showStoryDetail(id){
+  const s=storiesData.find(x=>x.id===id);
+  if(!s)return;
+  document.getElementById('storyGrid').style.display='none';
+  const detail=document.getElementById('storyDetail');
+  detail.style.display='block';
+  const prevId=id>1?id-1:null;
+  const nextId=id<storiesData.length?id+1:null;
+  detail.innerHTML=`
+    <div class="sd-back" onclick="renderStoryGrid()">← Quay lại danh sách</div>
+    <div style="font-size:2.5rem;margin-bottom:8px">${s.emoji}</div>
+    <div class="sd-title">${s.title}</div>
+    <span class="sc-tag ${s.tag}">${s.tag==='effort'?'💪 Nỗ lực':'❤️ Cha mẹ'}</span>
+    <div class="sd-content">${s.content}</div>
+    <div class="sd-moral"><b>💡 Bài học:</b> ${s.moral}</div>
+    <div class="sd-nav">
+      ${prevId?`<button onclick="showStoryDetail(${prevId})">← Truyện trước</button>`:'<div></div>'}
+      ${nextId?`<button onclick="showStoryDetail(${nextId})">Truyện sau →</button>`:'<div></div>'}
+    </div>
+  `;
+  window.scrollTo(0,0);
 }
 
 // INIT
