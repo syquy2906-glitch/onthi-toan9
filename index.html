@@ -60,6 +60,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 .timer-bar{background:#f1f5f9;height:6px;border-radius:3px;margin-top:12px;overflow:hidden}
 .timer-bar-fill{height:100%;background:linear-gradient(90deg,var(--success),var(--accent));transition:width 1s linear;border-radius:3px}
 
+/* Theory section */
+.theory-section{background:linear-gradient(135deg,#f0f7ff,#e8f4f8);border-radius:var(--radius);margin-bottom:18px;border:1px solid #bfdbfe;overflow:hidden}
+.theory-toggle{padding:16px 20px;cursor:pointer;font-weight:700;color:#1a56db;font-size:1rem;display:flex;align-items:center;justify-content:space-between;user-select:none;transition:.2s}
+.theory-toggle:hover{background:rgba(26,86,219,.06)}
+.toggle-icon{transition:transform .3s;font-size:.8rem}
+.theory-section.open .toggle-icon{transform:rotate(90deg)}
+.theory-content{display:none;padding:0 20px 18px;line-height:1.9;font-size:.93rem;color:#1e293b}
+.theory-section.open .theory-content{display:block}
+.theory-content b{color:#1e40af}
+
 /* Question block */
 .q-block{background:var(--card);border-radius:var(--radius);padding:22px 26px;border:1px solid var(--border);margin-bottom:14px;transition:.2s}
 .q-block.answered{border-color:#c7d2fe}
@@ -1270,242 +1280,533 @@ const exam7Data = [
   // ==================== CHƯƠNG I: SỐ HỮU TỈ ====================
   {
     id:"l7_1", emoji:"🔢", name:"Số hữu tỉ",
-    desc:"Tập hợp số hữu tỉ, cộng trừ nhân chia, lũy thừa của số hữu tỉ, thứ tự trên trục số",
+    desc:"Tập hợp Q, cộng trừ nhân chia, lũy thừa, giá trị tuyệt đối, thứ tự trên trục số",
+    theory:`<b>1. Số hữu tỉ:</b> Số viết được dạng a/b (a, b ∈ ℤ, b ≠ 0). Tập hợp số hữu tỉ kí hiệu ℚ. Mọi số nguyên, phân số, số thập phân hữu hạn/vô hạn tuần hoàn đều là số hữu tỉ.<br>
+<b>2. Cộng, trừ số hữu tỉ:</b> Quy đồng mẫu rồi cộng/trừ tử, giữ mẫu. a/m + b/m = (a+b)/m; a/m − b/m = (a−b)/m.<br>
+<b>3. Nhân, chia số hữu tỉ:</b> a/b × c/d = ac/bd; a/b ÷ c/d = a/b × d/c (c ≠ 0).<br>
+<b>4. Lũy thừa:</b> xⁿ = x·x·…·x (n thừa số). x⁰ = 1 (x ≠ 0). xᵐ·xⁿ = xᵐ⁺ⁿ; xᵐ÷xⁿ = xᵐ⁻ⁿ; (xᵐ)ⁿ = xᵐⁿ.<br>
+<b>5. Giá trị tuyệt đối:</b> |x| = x nếu x ≥ 0; |x| = −x nếu x < 0. |x| ≥ 0 với mọi x.<br>
+<b>6. Thứ tự trên trục số:</b> Số hữu tỉ biểu diễn trên trục số. Điểm bên trái nhỏ hơn điểm bên phải.`,
     questions:[
-      { type:"mc", text:"Câu 1. Số nào sau đây là số hữu tỉ?", opts:["√2","π","3/4","√3"], correct:2, explain:"3/4 là phân số a/b (b ≠ 0) → số hữu tỉ. √2, √3, π là số vô tỉ." },
-      { type:"mc", text:"Câu 2. (−2/3) + (1/3) = ?", opts:["−1/3","1/3","−1","1"], correct:0, explain:"Cùng mẫu: (−2 + 1)/3 = −1/3." },
-      { type:"mc", text:"Câu 3. (−1/2)² = ?", opts:["−1/4","1/4","−1/2","1/2"], correct:1, explain:"(−1/2)² = (−1/2) × (−1/2) = 1/4." },
+      // 24 MC
+      { type:"mc", text:"Câu 1. Số nào sau đây là số hữu tỉ?", opts:["√2","π","3/4","√5"], correct:2, explain:"3/4 = a/b (b ≠ 0) → hữu tỉ. √2, √5, π là số vô tỉ." },
+      { type:"mc", text:"Câu 2. (−2/3) + (1/3) = ?", opts:["−1/3","1/3","−1","1"], correct:0, explain:"Cùng mẫu: (−2+1)/3 = −1/3." },
+      { type:"mc", text:"Câu 3. (−1/2)² = ?", opts:["−1/4","1/4","−1/2","1/2"], correct:1, explain:"(−1/2)² = (−1/2)×(−1/2) = 1/4." },
       { type:"mc", text:"Câu 4. So sánh −3/5 và −2/5:", opts:["−3/5 > −2/5","−3/5 = −2/5","−3/5 < −2/5","Không so sánh được"], correct:2, explain:"Cùng mẫu dương: −3 < −2 → −3/5 < −2/5." },
-      { type:"mc", text:"Câu 5. (−3)² = ?", opts:["−9","9","−6","6"], correct:1, explain:"(−3)² = (−3) × (−3) = 9." },
+      { type:"mc", text:"Câu 5. (−3)² = ?", opts:["−9","9","−6","6"], correct:1, explain:"(−3)² = (−3)×(−3) = 9." },
       { type:"mc", text:"Câu 6. 2/5 ÷ (−4/3) = ?", opts:["−3/10","3/10","−8/15","8/15"], correct:0, explain:"2/5 × (−3/4) = −6/20 = −3/10." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số hữu tỉ:", statements:[
+      { type:"mc", text:"Câu 7. |−7/3| = ?", opts:["−7/3","7/3","3/7","−3/7"], correct:1, explain:"|−7/3| = 7/3 (giá trị tuyệt đối luôn ≥ 0)." },
+      { type:"mc", text:"Câu 8. 2³ × 2² = ?", opts:["4","8","16","32"], correct:4-1, explain:"2³ × 2² = 2⁵ = 32." },
+      { type:"mc", text:"Câu 9. (−1)¹⁰⁰ = ?", opts:["−1","1","100","−100"], correct:1, explain:"Lũy thừa chẵn của −1: (−1)¹⁰⁰ = 1." },
+      { type:"mc", text:"Câu 10. 3/7 + 4/7 = ?", opts:["7/7","1","7/14","12/49"], correct:1, explain:"3/7 + 4/7 = 7/7 = 1." },
+      { type:"mc", text:"Câu 11. (−2/5) × (5/6) = ?", opts:["−1/3","1/3","−10/30","2/6"], correct:0, explain:"(−2×5)/(5×6) = −10/30 = −1/3." },
+      { type:"mc", text:"Câu 12. Số đối của −3/4 là:", opts:["3/4","−3/4","4/3","−4/3"], correct:0, explain:"Số đối của −3/4 là 3/4 vì (−3/4) + 3/4 = 0." },
+      { type:"mc", text:"Câu 13. Số nghịch đảo của −2/5 là:", opts:["2/5","−5/2","5/2","−2/5"], correct:1, explain:"Nghịch đảo: (−2/5) × (−5/2) = 10/10 = 1." },
+      { type:"mc", text:"Câu 14. 1/2 − 3/4 = ?", opts:["−1/4","1/4","−1/2","2/4"], correct:0, explain:"1/2 − 3/4 = 2/4 − 3/4 = −1/4." },
+      { type:"mc", text:"Câu 15. (2/3)⁰ = ?", opts:["0","1","2/3","Không xác định"], correct:1, explain:"x⁰ = 1 với mọi x ≠ 0." },
+      { type:"mc", text:"Câu 16. Sắp xếp tăng dần: −1/2, 1/3, −2/3:", opts:["−2/3 < −1/2 < 1/3","−1/2 < −2/3 < 1/3","1/3 < −1/2 < −2/3","−2/3 < 1/3 < −1/2"], correct:0, explain:"−2/3 ≈ −0,67 < −1/2 = −0,5 < 1/3 ≈ 0,33." },
+      { type:"mc", text:"Câu 17. 5/6 − (−1/6) = ?", opts:["4/6","1","6/6","2/3"], correct:1, explain:"5/6 − (−1/6) = 5/6 + 1/6 = 6/6 = 1." },
+      { type:"mc", text:"Câu 18. (−3)³ = ?", opts:["9","−9","27","−27"], correct:3, explain:"(−3)³ = (−3)(−3)(−3) = 9×(−3) = −27." },
+      { type:"mc", text:"Câu 19. |x| = 5 thì x = ?", opts:["5","−5","±5","0"], correct:2, explain:"|x| = 5 → x = 5 hoặc x = −5, tức x = ±5." },
+      { type:"mc", text:"Câu 20. (1/2 + 1/3) × 6 = ?", opts:["3","4","5","6"], correct:2, explain:"1/2 + 1/3 = 5/6. (5/6)×6 = 5." },
+      { type:"mc", text:"Câu 21. Phân số nào biểu diễn số hữu tỉ −0,75?", opts:["−3/4","−7/5","3/4","−75/10"], correct:0, explain:"−0,75 = −75/100 = −3/4." },
+      { type:"mc", text:"Câu 22. (−2)⁴ = ?", opts:["−16","16","−8","8"], correct:1, explain:"(−2)⁴ = 16 (lũy thừa chẵn → dương)." },
+      { type:"mc", text:"Câu 23. Tìm x biết: x + 1/2 = 3/4", opts:["1/4","5/4","−1/4","1/2"], correct:0, explain:"x = 3/4 − 1/2 = 3/4 − 2/4 = 1/4." },
+      { type:"mc", text:"Câu 24. (3/5)² = ?", opts:["6/10","9/25","6/25","9/10"], correct:1, explain:"(3/5)² = 9/25." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về số hữu tỉ:", statements:[
         { stmt:"Mọi số nguyên đều là số hữu tỉ", correct:true },
         { stmt:"(−2)³ = 8", correct:false },
-        { stmt:"Số hữu tỉ có thể biểu diễn trên trục số", correct:true },
-        { stmt:"|−3/4| = −3/4", correct:false }
+        { stmt:"Số 0 không phải số hữu tỉ", correct:false },
+        { stmt:"|−3/4| = 3/4", correct:true }
       ], explains:[
-        "Đúng. Số nguyên a = a/1, dạng phân số → hữu tỉ.",
-        "Sai. (−2)³ = (−2)(−2)(−2) = −8.",
-        "Đúng. Mỗi số hữu tỉ ứng với 1 điểm trên trục số.",
-        "Sai. |−3/4| = 3/4 (giá trị tuyệt đối luôn ≥ 0)."
+        "Đúng. Số nguyên a = a/1 → dạng phân số → hữu tỉ.",
+        "Sai. (−2)³ = −8 (lũy thừa lẻ giữ nguyên dấu âm).",
+        "Sai. 0 = 0/1 → số hữu tỉ.",
+        "Đúng. Giá trị tuyệt đối luôn không âm."
       ]},
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về lũy thừa:", statements:[
+        { stmt:"x⁰ = 0 với mọi x", correct:false },
+        { stmt:"aᵐ × aⁿ = aᵐ⁺ⁿ", correct:true },
+        { stmt:"(−1)²⁰²⁵ = 1", correct:false },
+        { stmt:"(a²)³ = a⁶", correct:true }
+      ], explains:[
+        "Sai. x⁰ = 1 (với x ≠ 0), không phải 0.",
+        "Đúng. Quy tắc nhân lũy thừa cùng cơ số.",
+        "Sai. 2025 lẻ → (−1)²⁰²⁵ = −1.",
+        "Đúng. (a²)³ = a²ˣ³ = a⁶."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về phép tính:", statements:[
+        { stmt:"Phép chia cho 0 không xác định", correct:true },
+        { stmt:"a/b + c/b = (a+c)/2b", correct:false },
+        { stmt:"Số đối của 5 là −5", correct:true },
+        { stmt:"Nghịch đảo của 0 là 0", correct:false }
+      ], explains:[
+        "Đúng. Chia cho 0 không có nghĩa.",
+        "Sai. a/b + c/b = (a+c)/b (giữ mẫu, không nhân đôi).",
+        "Đúng. 5 + (−5) = 0.",
+        "Sai. 0 không có số nghịch đảo."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về thứ tự:", statements:[
+        { stmt:"−1/3 > −1/2", correct:true },
+        { stmt:"Trên trục số, −2 nằm bên phải −5", correct:true },
+        { stmt:"0,5 = 1/3", correct:false },
+        { stmt:"|−2| > |1|", correct:true }
+      ], explains:[
+        "Đúng. −1/3 ≈ −0,33 > −0,5 = −1/2.",
+        "Đúng. −2 > −5 → nằm bên phải.",
+        "Sai. 0,5 = 1/2 ≠ 1/3.",
+        "Đúng. |−2| = 2 > 1 = |1|."
+      ]},
+      // 4 Short
       { type:"short", text:"Tính (−1/3) × 6 = ?", answer:"-2", hint:"Nhân tử với 6, giữ mẫu", explain:"(−1/3) × 6 = −6/3 = −2." },
-      { type:"short", text:"(−5)² = ?", answer:"25", hint:"Âm × Âm = Dương", explain:"(−5)² = (−5) × (−5) = 25." }
+      { type:"short", text:"(−5)² = ?", answer:"25", hint:"Âm × Âm = Dương", explain:"(−5)² = (−5)×(−5) = 25." },
+      { type:"short", text:"Tìm x: |x| = 3. Giá trị x dương = ?", answer:"3", hint:"|x| = 3 → x = ±3", explain:"|x| = 3 → x = 3 hoặc x = −3. Giá trị dương: x = 3." },
+      { type:"short", text:"2⁵ = ?", answer:"32", hint:"2×2×2×2×2", explain:"2⁵ = 32." }
     ]
   },
 
   // ==================== CHƯƠNG II: SỐ THỰC ====================
   {
     id:"l7_2", emoji:"📏", name:"Số thực",
-    desc:"Số vô tỉ, căn bậc hai, số thực, biểu diễn trên trục số, làm tròn và ước lượng",
+    desc:"Số vô tỉ, căn bậc hai, tập ℝ, biểu diễn trên trục số, làm tròn và ước lượng",
+    theory:`<b>1. Số vô tỉ:</b> Là số viết được dưới dạng số thập phân vô hạn không tuần hoàn. Ví dụ: √2, √3, π. Không thể viết dạng phân số a/b.<br>
+<b>2. Căn bậc hai:</b> √a (a ≥ 0) là số x ≥ 0 sao cho x² = a. √0 = 0; √a > 0 khi a > 0. Chú ý: √(a²) = |a|.<br>
+<b>3. Số thực:</b> Tập hợp ℝ = ℚ ∪ I (số hữu tỉ hợp số vô tỉ). Mỗi số thực ứng với 1 điểm trên trục số và ngược lại.<br>
+<b>4. So sánh số thực:</b> Với a, b ∈ ℝ: a < b, a = b, hoặc a > b. Trên trục số, điểm bên trái nhỏ hơn.<br>
+<b>5. Làm tròn số:</b> Nhìn chữ số sau hàng cần làm tròn: nếu ≥ 5 thì tăng 1; nếu < 5 thì giữ nguyên. Ví dụ: 2,236 ≈ 2,2 (đến phần mười).`,
     questions:[
-      { type:"mc", text:"Câu 1. √9 = ?", opts:["3","−3","±3","81"], correct:0, explain:"√9 = 3 (căn bậc hai số học, lấy giá trị không âm)." },
-      { type:"mc", text:"Câu 2. Số nào là số vô tỉ?", opts:["0,5","3/7","√2","−4"], correct:2, explain:"√2 = 1,4142... (không thể viết dạng phân số) → số vô tỉ." },
-      { type:"mc", text:"Câu 3. √25 = ?", opts:["5","−5","12,5","625"], correct:0, explain:"√25 = 5 vì 5² = 25." },
+      // 24 MC
+      { type:"mc", text:"Câu 1. √9 = ?", opts:["3","−3","±3","81"], correct:0, explain:"√9 = 3 (căn bậc hai số học ≥ 0)." },
+      { type:"mc", text:"Câu 2. Số nào là số vô tỉ?", opts:["0,5","3/7","√2","−4"], correct:2, explain:"√2 ≈ 1,4142... không tuần hoàn → vô tỉ." },
+      { type:"mc", text:"Câu 3. √25 = ?", opts:["5","−5","12,5","625"], correct:0, explain:"5² = 25 → √25 = 5." },
       { type:"mc", text:"Câu 4. Tập số thực ℝ gồm:", opts:["Chỉ số hữu tỉ","Chỉ số vô tỉ","Số hữu tỉ và số vô tỉ","Chỉ số nguyên"], correct:2, explain:"ℝ = ℚ ∪ I (hữu tỉ hợp vô tỉ)." },
-      { type:"mc", text:"Câu 5. √16 + √4 = ?", opts:["√20","6","20","8"], correct:1, explain:"√16 = 4, √4 = 2. Tổng = 4 + 2 = 6." },
-      { type:"mc", text:"Câu 6. Làm tròn √5 ≈ 2,236 đến hàng phần mười:", opts:["2,3","2,2","2,24","2,0"], correct:1, explain:"Chữ số phần trăm = 3 < 5 → giữ nguyên: 2,2." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về số thực:", statements:[
-        { stmt:"√4 = 2", correct:true },
-        { stmt:"√2 là số hữu tỉ", correct:false },
-        { stmt:"Mọi số hữu tỉ đều là số thực", correct:true },
-        { stmt:"√(−9) có nghĩa trong tập số thực", correct:false }
+      { type:"mc", text:"Câu 5. √16 + √4 = ?", opts:["√20","6","20","8"], correct:1, explain:"√16 = 4, √4 = 2 → 4 + 2 = 6." },
+      { type:"mc", text:"Câu 6. Làm tròn 2,236 đến hàng phần mười:", opts:["2,3","2,2","2,24","2,0"], correct:1, explain:"Chữ số phần trăm = 3 < 5 → giữ: 2,2." },
+      { type:"mc", text:"Câu 7. √0 = ?", opts:["0","1","Không xác định","−1"], correct:0, explain:"√0 = 0 vì 0² = 0." },
+      { type:"mc", text:"Câu 8. √100 − √64 = ?", opts:["√36","6","2","4"], correct:2, explain:"√100 = 10, √64 = 8 → 10 − 8 = 2." },
+      { type:"mc", text:"Câu 9. Số 0,333... (tuần hoàn) là:", opts:["Số vô tỉ","Số hữu tỉ","Không phải số thực","Số nguyên"], correct:1, explain:"0,333... = 1/3 → dạng phân số → hữu tỉ." },
+      { type:"mc", text:"Câu 10. √(−4) trong tập ℝ:", opts:["= 2","= −2","= 2i","Không có nghĩa"], correct:3, explain:"Căn bậc hai của số âm không tồn tại trong ℝ." },
+      { type:"mc", text:"Câu 11. So sánh √7 và 3:", opts:["√7 > 3","√7 = 3","√7 < 3","Không so sánh được"], correct:2, explain:"√7 ≈ 2,65 < 3. Hoặc: 7 < 9 = 3² → √7 < 3." },
+      { type:"mc", text:"Câu 12. √81 = ?", opts:["8","9","81","±9"], correct:1, explain:"9² = 81 → √81 = 9." },
+      { type:"mc", text:"Câu 13. Số π ≈ 3,14159... là:", opts:["Số hữu tỉ","Số vô tỉ","Số nguyên","Phân số"], correct:1, explain:"π là thập phân vô hạn không tuần hoàn → vô tỉ." },
+      { type:"mc", text:"Câu 14. Làm tròn 3,657 đến hàng phần trăm:", opts:["3,65","3,66","3,7","3,6"], correct:1, explain:"Chữ số phần nghìn = 7 ≥ 5 → tăng: 3,66." },
+      { type:"mc", text:"Câu 15. √(3²) = ?", opts:["3","−3","9","±3"], correct:0, explain:"√(3²) = √9 = 3 (hoặc √(a²) = |a|, |3| = 3)." },
+      { type:"mc", text:"Câu 16. Nếu x² = 49 thì x = ?", opts:["7","−7","±7","√7"], correct:2, explain:"x² = 49 → x = 7 hoặc x = −7, tức x = ±7." },
+      { type:"mc", text:"Câu 17. √144 = ?", opts:["12","14","72","±12"], correct:0, explain:"12² = 144 → √144 = 12." },
+      { type:"mc", text:"Câu 18. Số nào sau đây KHÔNG là số vô tỉ?", opts:["√5","π","√16","√11"], correct:2, explain:"√16 = 4 (số nguyên) → hữu tỉ. Các số còn lại vô tỉ." },
+      { type:"mc", text:"Câu 19. Làm tròn 4,549 đến hàng đơn vị:", opts:["4","5","4,5","4,55"], correct:1, explain:"Chữ số phần mười = 5 ≥ 5 → tăng: 5." },
+      { type:"mc", text:"Câu 20. √(2² + 3²) = ?", opts:["5","√5","√13","√10"], correct:2, explain:"2² + 3² = 4 + 9 = 13 → √13." },
+      { type:"mc", text:"Câu 21. Trên trục số, √2 nằm giữa:", opts:["0 và 1","1 và 2","2 và 3","3 và 4"], correct:1, explain:"1² = 1 < 2 < 4 = 2² → 1 < √2 < 2." },
+      { type:"mc", text:"Câu 22. (√5)² = ?", opts:["5","√5","25","10"], correct:0, explain:"(√a)² = a → (√5)² = 5." },
+      { type:"mc", text:"Câu 23. √50 nằm giữa hai số nguyên liên tiếp nào?", opts:["5 và 6","6 và 7","7 và 8","8 và 9"], correct:2, explain:"7² = 49, 8² = 64 → 49 < 50 < 64 → 7 < √50 < 8." },
+      { type:"mc", text:"Câu 24. √(16 × 25) = ?", opts:["20","40","200","400"], correct:0, explain:"√(16×25) = √400 = 20. Hoặc √16 × √25 = 4 × 5 = 20." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về căn bậc hai:", statements:[
+        { stmt:"√4 = ±2", correct:false },
+        { stmt:"√0 = 0", correct:true },
+        { stmt:"√(a²) = |a| với mọi a", correct:true },
+        { stmt:"Nếu a > b ≥ 0 thì √a > √b", correct:true }
       ], explains:[
-        "Đúng. √4 = 2 vì 2² = 4.",
-        "Sai. √2 là số vô tỉ, không viết được dạng phân số.",
-        "Đúng. Số hữu tỉ là tập con của số thực.",
-        "Sai. Không tồn tại căn bậc hai của số âm trong ℝ."
+        "Sai. √4 = 2 (chỉ lấy giá trị không âm).",
+        "Đúng. 0² = 0 → √0 = 0.",
+        "Đúng. √(a²) = |a|. VD: √((−3)²) = √9 = 3 = |−3|.",
+        "Đúng. a > b ≥ 0 → √a > √b."
       ]},
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về số vô tỉ:", statements:[
+        { stmt:"√3 là số vô tỉ", correct:true },
+        { stmt:"π là số hữu tỉ", correct:false },
+        { stmt:"1,5 là số vô tỉ", correct:false },
+        { stmt:"Số vô tỉ cũng là số thực", correct:true }
+      ], explains:[
+        "Đúng. √3 ≈ 1,732... không tuần hoàn → vô tỉ.",
+        "Sai. π ≈ 3,14159... vô hạn không tuần hoàn → vô tỉ.",
+        "Sai. 1,5 = 3/2 → hữu tỉ.",
+        "Đúng. ℝ = ℚ ∪ I → vô tỉ ⊂ ℝ."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về so sánh:", statements:[
+        { stmt:"√10 > 3", correct:true },
+        { stmt:"√2 > √3", correct:false },
+        { stmt:"−√4 = −2", correct:true },
+        { stmt:"√25 = √5 × √5", correct:true }
+      ], explains:[
+        "Đúng. 10 > 9 = 3² → √10 > 3.",
+        "Sai. 2 < 3 → √2 < √3.",
+        "Đúng. −√4 = −2.",
+        "Đúng. √5 × √5 = (√5)² = 5 = √25? Không, √25 = 5 và √5×√5 = 5 → bằng nhau."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về làm tròn số:", statements:[
+        { stmt:"2,34 làm tròn đến phần mười = 2,3", correct:true },
+        { stmt:"5,95 làm tròn đến phần mười = 5,9", correct:false },
+        { stmt:"Làm tròn 3,999 đến hàng đơn vị = 4", correct:true },
+        { stmt:"7,45 làm tròn đến phần mười = 7,5", correct:true }
+      ], explains:[
+        "Đúng. Chữ số phần trăm = 4 < 5 → giữ.",
+        "Sai. Chữ số phần trăm = 5 ≥ 5 → tăng: 6,0.",
+        "Đúng. Chữ số phần mười = 9 ≥ 5 → tăng: 4.",
+        "Đúng. Chữ số phần trăm = 5 ≥ 5 → tăng: 7,5."
+      ]},
+      // 4 Short
       { type:"short", text:"√36 = ?", answer:"6", hint:"Số nào bình phương bằng 36?", explain:"6² = 36 → √36 = 6." },
-      { type:"short", text:"√49 + √1 = ?", answer:"8", hint:"Tính từng căn rồi cộng", explain:"√49 = 7, √1 = 1. Tổng = 7 + 1 = 8." }
+      { type:"short", text:"√49 + √1 = ?", answer:"8", hint:"Tính từng căn rồi cộng", explain:"√49 = 7, √1 = 1 → 7 + 1 = 8." },
+      { type:"short", text:"Làm tròn 6,478 đến hàng phần mười = ?", answer:"6.5", hint:"Chữ số phần trăm = 7 ≥ 5", explain:"7 ≥ 5 → tăng: 6,5." },
+      { type:"short", text:"√121 = ?", answer:"11", hint:"11² = ?", explain:"11² = 121 → √121 = 11." }
     ]
   },
 
   // ==================== CHƯƠNG III: GÓC VÀ ĐƯỜNG THẲNG SONG SONG ====================
   {
     id:"l7_3", emoji:"📐", name:"Góc và đường thẳng song song",
-    desc:"Hai góc đối đỉnh, kề bù, hai đường thẳng song song, tiên đề Euclid, tính chất góc",
+    desc:"Góc đối đỉnh, kề bù, phụ nhau, hai đường thẳng song song, cát tuyến, so le trong, đồng vị, tiên đề Euclid",
+    theory:`<b>1. Hai góc đối đỉnh:</b> Hai góc mà mỗi cạnh của góc này là tia đối của một cạnh góc kia. Hai góc đối đỉnh luôn bằng nhau.<br>
+<b>2. Hai góc kề bù:</b> Hai góc kề nhau có tổng = 180°. Hai góc phụ nhau có tổng = 90°.<br>
+<b>3. Đường thẳng song song:</b> Hai đường thẳng không cắt nhau. Kí hiệu a // b.<br>
+<b>4. Dấu hiệu nhận biết song song:</b> Nếu cát tuyến cắt 2 đường thẳng tạo cặp góc so le trong bằng nhau (hoặc đồng vị bằng nhau, hoặc trong cùng phía bù nhau) → 2 đường thẳng song song.<br>
+<b>5. Tính chất:</b> Nếu a // b, cát tuyến c cắt a, b thì: góc so le trong bằng nhau, góc đồng vị bằng nhau, góc trong cùng phía bù nhau.<br>
+<b>6. Tiên đề Euclid:</b> Qua 1 điểm ngoài đường thẳng, có đúng 1 đường thẳng song song với đường thẳng đó.<br>
+<b>7. Tính chất:</b> a // c, b // c → a // b. a ⊥ c, b ⊥ c → a // b.`,
     questions:[
+      // 24 MC
       { type:"mc", text:"Câu 1. Hai góc đối đỉnh thì:", opts:["Bù nhau","Bằng nhau","Phụ nhau","Kề nhau"], correct:1, explain:"Hai góc đối đỉnh luôn bằng nhau." },
-      { type:"mc", text:"Câu 2. Hai góc kề bù có tổng số đo bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Kề bù: 2 góc kề nhau, tổng = 180°." },
-      { type:"mc", text:"Câu 3. Hai đường thẳng song song bị cắt bởi cát tuyến, hai góc so le trong thì:", opts:["Bù nhau","Bằng nhau","Phụ nhau","Không liên quan"], correct:1, explain:"Tính chất: 2 góc so le trong bằng nhau khi 2 đường thẳng song song." },
-      { type:"mc", text:"Câu 4. Góc A và góc B kề bù. Nếu góc A = 70° thì góc B = ?", opts:["70°","110°","90°","20°"], correct:1, explain:"Kề bù: A + B = 180° → B = 180° − 70° = 110°." },
-      { type:"mc", text:"Câu 5. Qua điểm M ngoài đường thẳng d, có bao nhiêu đường thẳng song song với d?", opts:["0","1","2","Vô số"], correct:1, explain:"Tiên đề Euclid: qua 1 điểm ngoài đường thẳng có đúng 1 đường thẳng song song." },
-      { type:"mc", text:"Câu 6. Hai đường thẳng song song cắt bởi cát tuyến tạo hai góc đồng vị thì:", opts:["Phụ nhau","Bù nhau","Bằng nhau","Đối đỉnh"], correct:2, explain:"Hai góc đồng vị bằng nhau khi 2 đường thẳng song song." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về góc và đường thẳng song song:", statements:[
+      { type:"mc", text:"Câu 2. Hai góc kề bù có tổng bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Kề bù: tổng = 180°." },
+      { type:"mc", text:"Câu 3. Hai đường thẳng song song cắt bởi cát tuyến, hai góc so le trong:", opts:["Bù nhau","Bằng nhau","Phụ nhau","Không liên quan"], correct:1, explain:"Tính chất: so le trong bằng nhau khi 2 đường thẳng song song." },
+      { type:"mc", text:"Câu 4. Góc A = 70°, góc B kề bù với A. Góc B = ?", opts:["70°","110°","90°","20°"], correct:1, explain:"B = 180° − 70° = 110°." },
+      { type:"mc", text:"Câu 5. Qua điểm M ngoài đường thẳng d, số đường thẳng song song với d:", opts:["0","1","2","Vô số"], correct:1, explain:"Tiên đề Euclid: đúng 1 đường thẳng song song." },
+      { type:"mc", text:"Câu 6. Hai góc đồng vị khi 2 đường thẳng song song thì:", opts:["Phụ nhau","Bù nhau","Bằng nhau","Đối đỉnh"], correct:2, explain:"Đồng vị bằng nhau khi song song." },
+      { type:"mc", text:"Câu 7. Hai góc phụ nhau có tổng bằng:", opts:["90°","180°","270°","360°"], correct:0, explain:"Phụ nhau: tổng = 90°." },
+      { type:"mc", text:"Câu 8. Góc đối đỉnh với góc 35° bằng:", opts:["35°","55°","145°","180°"], correct:0, explain:"Đối đỉnh → bằng nhau = 35°." },
+      { type:"mc", text:"Câu 9. Góc A và góc B phụ nhau, A = 30°. Góc B = ?", opts:["30°","60°","150°","90°"], correct:1, explain:"B = 90° − 30° = 60°." },
+      { type:"mc", text:"Câu 10. a // b, cát tuyến c cắt a tạo góc 50°. Góc trong cùng phía bên kia:", opts:["50°","130°","180°","40°"], correct:1, explain:"Trong cùng phía bù nhau: 180° − 50° = 130°." },
+      { type:"mc", text:"Câu 11. Hai đường thẳng cùng vuông góc với 1 đường thẳng thứ ba thì:", opts:["Cắt nhau","Song song","Vuông góc","Trùng nhau"], correct:1, explain:"a ⊥ c, b ⊥ c → a // b." },
+      { type:"mc", text:"Câu 12. Hai đường thẳng cùng song song với đường thẳng thứ ba thì:", opts:["Cắt nhau","Vuông góc","Song song nhau","Không xác định"], correct:2, explain:"a // c, b // c → a // b." },
+      { type:"mc", text:"Câu 13. Góc tạo bởi 2 tia đối nhau bằng:", opts:["0°","90°","180°","360°"], correct:2, explain:"Hai tia đối → góc bẹt = 180°." },
+      { type:"mc", text:"Câu 14. a // b, cát tuyến c. Góc so le trong = 65°. Góc đồng vị kề với nó bằng:", opts:["65°","115°","25°","180°"], correct:0, explain:"Góc đồng vị = góc so le trong = 65° (cùng = nhau khi song song)." },
+      { type:"mc", text:"Câu 15. Hai góc kề bù, một góc gấp đôi góc kia. Góc lớn bằng:", opts:["60°","90°","120°","150°"], correct:2, explain:"x + 2x = 180° → 3x = 180° → x = 60°. Góc lớn = 120°." },
+      { type:"mc", text:"Câu 16. Dấu hiệu nhận biết 2 đường thẳng song song:", opts:["Có 2 góc đối đỉnh bằng nhau","Có 2 góc so le trong bằng nhau","Có 2 góc kề bù","Có 2 góc phụ nhau"], correct:1, explain:"So le trong bằng nhau → 2 đường thẳng song song." },
+      { type:"mc", text:"Câu 17. Cho a // b, góc tạo bởi a và cát tuyến = 90°. Góc tạo bởi b và cát tuyến:", opts:["90°","180°","0°","45°"], correct:0, explain:"Song song + đồng vị bằng nhau = 90° → b cũng vuông góc cát tuyến." },
+      { type:"mc", text:"Câu 18. Số cặp góc đối đỉnh khi 2 đường thẳng cắt nhau:", opts:["1","2","3","4"], correct:1, explain:"2 đường thẳng cắt nhau tạo 2 cặp góc đối đỉnh." },
+      { type:"mc", text:"Câu 19. Góc A = 40°. Góc đối đỉnh = 40°, góc kề bù = ?", opts:["40°","140°","50°","90°"], correct:1, explain:"Kề bù = 180° − 40° = 140°." },
+      { type:"mc", text:"Câu 20. Đường thẳng vuông góc với 1 trong 2 đường thẳng song song thì:", opts:["Song song đường kia","Vuông góc đường kia","Cắt nhưng không vuông góc","Trùng đường kia"], correct:1, explain:"a // b, c ⊥ a → c ⊥ b." },
+      { type:"mc", text:"Câu 21. Hai góc kề bù và bằng nhau thì mỗi góc bằng:", opts:["45°","60°","90°","180°"], correct:2, explain:"x + x = 180° → 2x = 180° → x = 90°." },
+      { type:"mc", text:"Câu 22. a // b, cát tuyến c tạo góc so le trong α = 72°. Góc trong cùng phía:", opts:["72°","108°","18°","144°"], correct:1, explain:"Trong cùng phía bù nhau = 180° − 72° = 108°." },
+      { type:"mc", text:"Câu 23. Hai đường thẳng a, b cắt nhau tại O tạo góc 60°. Góc lớn nhất tạo thành:", opts:["60°","90°","120°","180°"], correct:2, explain:"Góc kề bù = 180° − 60° = 120°." },
+      { type:"mc", text:"Câu 24. Tia phân giác chia góc 80° thành 2 góc bằng:", opts:["30°","40°","45°","80°"], correct:1, explain:"Phân giác: 80°/2 = 40° mỗi góc." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về góc:", statements:[
         { stmt:"Hai góc đối đỉnh bằng nhau", correct:true },
         { stmt:"Hai góc phụ nhau có tổng bằng 180°", correct:false },
-        { stmt:"Nếu 2 đường thẳng cùng song song với đường thẳng thứ ba thì chúng song song nhau", correct:true },
-        { stmt:"Hai góc so le trong luôn bằng nhau", correct:false }
+        { stmt:"Hai góc bằng nhau là hai góc đối đỉnh", correct:false },
+        { stmt:"Tia phân giác chia góc thành 2 góc bằng nhau", correct:true }
       ], explains:[
-        "Đúng. Tính chất hai góc đối đỉnh.",
-        "Sai. Hai góc PHỤ nhau có tổng = 90°. Tổng 180° là BÙ nhau.",
-        "Đúng. a // c và b // c → a // b.",
-        "Sai. Chỉ bằng nhau khi 2 đường thẳng SONG SONG."
+        "Đúng. Tính chất đối đỉnh.",
+        "Sai. Phụ nhau: tổng = 90°. Bù nhau: tổng = 180°.",
+        "Sai. Bằng nhau chưa chắc đối đỉnh (cần thêm vị trí).",
+        "Đúng. Định nghĩa tia phân giác."
       ]},
-      { type:"short", text:"Góc A = 55°, góc B kề bù với góc A. Góc B = ? độ", answer:"125", hint:"Kề bù: A + B = 180°", explain:"B = 180° − 55° = 125°." },
-      { type:"short", text:"Hai góc đối đỉnh, một góc = 40°. Góc kia = ? độ", answer:"40", hint:"Đối đỉnh → bằng nhau", explain:"Đối đỉnh → bằng nhau = 40°." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về đường thẳng song song:", statements:[
+        { stmt:"Qua 1 điểm ngoài đường thẳng có vô số đường thẳng song song", correct:false },
+        { stmt:"a // c và b // c → a // b", correct:true },
+        { stmt:"Hai đường thẳng song song không có điểm chung", correct:true },
+        { stmt:"Nếu so le trong bằng nhau thì 2 đường thẳng song song", correct:true }
+      ], explains:[
+        "Sai. Tiên đề Euclid: chỉ có DUY NHẤT 1 đường thẳng.",
+        "Đúng. Tính chất bắc cầu.",
+        "Đúng. Định nghĩa song song.",
+        "Đúng. Dấu hiệu nhận biết song song."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về cát tuyến:", statements:[
+        { stmt:"Cát tuyến cắt 2 đường thẳng song song tạo 8 góc", correct:true },
+        { stmt:"Góc trong cùng phía bù nhau khi 2 đường thẳng song song", correct:true },
+        { stmt:"Góc đồng vị luôn bằng nhau", correct:false },
+        { stmt:"Số cặp góc so le trong là 2", correct:true }
+      ], explains:[
+        "Đúng. Mỗi giao điểm tạo 4 góc × 2 = 8 góc.",
+        "Đúng. Tính chất khi song song.",
+        "Sai. Chỉ bằng nhau khi 2 đường thẳng song song.",
+        "Đúng. Có 2 cặp góc so le trong."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về vuông góc:", statements:[
+        { stmt:"a ⊥ c và b ⊥ c → a // b", correct:true },
+        { stmt:"a // b và c ⊥ a → c ⊥ b", correct:true },
+        { stmt:"Hai đường thẳng vuông góc tạo 4 góc vuông", correct:true },
+        { stmt:"Từ 1 điểm, kẻ được 2 đường thẳng vuông góc với đường thẳng cho trước", correct:false }
+      ], explains:[
+        "Đúng. Cùng vuông góc với d → song song.",
+        "Đúng. Song song + vuông góc → vuông góc.",
+        "Đúng. 4 góc 90° khi vuông góc.",
+        "Sai. Chỉ kẻ được DUY NHẤT 1 đường thẳng vuông góc."
+      ]},
+      // 4 Short
+      { type:"short", text:"Góc A = 55°, góc B kề bù. Góc B = ? độ", answer:"125", hint:"A + B = 180°", explain:"B = 180° − 55° = 125°." },
+      { type:"short", text:"Hai góc đối đỉnh, một góc 40°. Góc kia = ? độ", answer:"40", hint:"Đối đỉnh → bằng nhau", explain:"Đối đỉnh = 40°." },
+      { type:"short", text:"Hai góc phụ nhau, một góc 25°. Góc kia = ? độ", answer:"65", hint:"Tổng = 90°", explain:"90° − 25° = 65°." },
+      { type:"short", text:"Hai góc kề bù, tỉ lệ 1:3. Góc lớn = ? độ", answer:"135", hint:"x + 3x = 180°", explain:"4x = 180° → x = 45°. Góc lớn = 3×45° = 135°." }
     ]
   },
 
   // ==================== CHƯƠNG IV: TAM GIÁC ====================
   {
     id:"l7_4", emoji:"🔺", name:"Tam giác",
-    desc:"Tổng 3 góc, góc ngoài, bất đẳng thức tam giác, quan hệ cạnh–góc, Pytago, tam giác cân/đều/vuông, bằng nhau c.c.c, c.g.c, g.c.g",
+    desc:"Tổng 3 góc, góc ngoài, BĐT tam giác, quan hệ cạnh–góc, Pytago, bằng nhau c.c.c, c.g.c, g.c.g",
+    theory:`<b>1. Tổng 3 góc:</b> Tổng ba góc trong một tam giác bằng 180°.<br>
+<b>2. Góc ngoài:</b> Góc ngoài tam giác bằng tổng hai góc trong không kề. Góc ngoài lớn hơn mỗi góc trong không kề.<br>
+<b>3. Bất đẳng thức tam giác:</b> Ba đoạn thẳng a, b, c tạo thành tam giác khi và chỉ khi: |a−b| < c < a+b.<br>
+<b>4. Quan hệ cạnh – góc:</b> Trong tam giác, cạnh lớn hơn đối diện góc lớn hơn và ngược lại.<br>
+<b>5. Các trường hợp bằng nhau:</b> c.c.c (3 cặp cạnh); c.g.c (2 cạnh và góc xen giữa); g.c.g (2 góc và cạnh kề).<br>
+<b>6. Định lí Pytago:</b> Trong tam giác vuông: a² + b² = c² (c là cạnh huyền). Đảo: nếu a² + b² = c² thì tam giác vuông.<br>
+<b>7. Tam giác vuông:</b> Có 1 góc = 90°. Tổng 2 góc nhọn = 90°.`,
     questions:[
-      { type:"mc", text:"Câu 1. Tổng ba góc trong một tam giác bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Định lí: Tổng 3 góc trong tam giác = 180°." },
-      { type:"mc", text:"Câu 2. Tam giác ABC có góc A = 50°, góc B = 70°. Góc C = ?", opts:["60°","40°","80°","50°"], correct:0, explain:"C = 180° − 50° − 70° = 60°." },
-      { type:"mc", text:"Câu 3. Tam giác cân có tính chất:", opts:["3 cạnh bằng nhau","2 cạnh bên bằng nhau","3 góc bằng nhau","1 góc vuông"], correct:1, explain:"Tam giác cân có 2 cạnh bên bằng nhau." },
-      { type:"mc", text:"Câu 4. Hai tam giác bằng nhau theo trường hợp c.c.c khi:", opts:["3 cặp cạnh bằng nhau","2 cạnh và 1 góc xen giữa","2 góc và 1 cạnh kề","1 cạnh bằng nhau"], correct:0, explain:"c.c.c: 3 cặp cạnh tương ứng bằng nhau." },
-      { type:"mc", text:"Câu 5. Tam giác đều có mỗi góc bằng:", opts:["45°","60°","90°","120°"], correct:1, explain:"Tam giác đều: 3 góc bằng nhau = 180°/3 = 60°." },
-      { type:"mc", text:"Câu 6. Tam giác vuông có:", opts:["1 góc = 90°","2 góc = 90°","3 góc = 60°","3 cạnh bằng nhau"], correct:0, explain:"Tam giác vuông có đúng 1 góc vuông (= 90°)." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tam giác:", statements:[
+      // 24 MC
+      { type:"mc", text:"Câu 1. Tổng ba góc trong một tam giác bằng:", opts:["90°","120°","180°","360°"], correct:2, explain:"Định lí: Tổng 3 góc = 180°." },
+      { type:"mc", text:"Câu 2. ΔABC có góc A = 50°, góc B = 70°. Góc C = ?", opts:["60°","40°","80°","50°"], correct:0, explain:"C = 180° − 50° − 70° = 60°." },
+      { type:"mc", text:"Câu 3. Tam giác vuông có:", opts:["1 góc = 90°","2 góc = 90°","3 góc = 60°","3 cạnh bằng nhau"], correct:0, explain:"Tam giác vuông có đúng 1 góc = 90°." },
+      { type:"mc", text:"Câu 4. Hai tam giác bằng nhau theo c.c.c khi:", opts:["3 cặp cạnh bằng nhau","2 cạnh và 1 góc xen giữa","2 góc và 1 cạnh kề","1 cạnh bằng nhau"], correct:0, explain:"c.c.c: 3 cặp cạnh tương ứng bằng nhau." },
+      { type:"mc", text:"Câu 5. ΔABC có góc A = 60°, góc B = 80°. Góc ngoài tại C:", opts:["40°","100°","140°","180°"], correct:2, explain:"Góc ngoài tại C = A + B = 60° + 80° = 140°." },
+      { type:"mc", text:"Câu 6. ΔABC có góc ngoài tại C = 130°, góc A = 50°. Góc B:", opts:["50°","60°","80°","130°"], correct:2, explain:"Góc ngoài = A + B → B = 130° − 50° = 80°." },
+      { type:"mc", text:"Câu 7. Bộ 3 đoạn thẳng nào tạo thành tam giác?", opts:["2, 3, 6","3, 4, 5","1, 2, 4","5, 5, 11"], correct:1, explain:"3+4=7 > 5, 4+5=9 > 3, 3+5=8 > 4 ✓." },
+      { type:"mc", text:"Câu 8. Bộ 3 đoạn thẳng nào KHÔNG tạo thành tam giác?", opts:["3, 4, 5","1, 2, 4","7, 8, 10","6, 7, 12"], correct:1, explain:"1 + 2 = 3 < 4 → vi phạm BĐT tam giác." },
+      { type:"mc", text:"Câu 9. ΔABC có AB < BC < AC. So sánh góc:", opts:["Ĉ < Â < B̂","Â < B̂ < Ĉ","B̂ < Ĉ < Â","Ĉ > Â > B̂"], correct:0, explain:"Cạnh đối diện góc lớn hơn → góc lớn hơn. AB < BC < AC → Ĉ < Â < B̂." },
+      { type:"mc", text:"Câu 10. ΔABC có Â > B̂ > Ĉ. Cạnh lớn nhất:", opts:["AB","BC","AC","Không xác định"], correct:1, explain:"Â lớn nhất → cạnh đối diện BC lớn nhất." },
+      { type:"mc", text:"Câu 11. ΔABC và ΔDEF: AB = DE, B̂ = Ê, BC = EF. Bằng nhau theo:", opts:["c.c.c","c.g.c","g.c.g","g.g.g"], correct:1, explain:"2 cạnh và góc xen giữa → c.g.c." },
+      { type:"mc", text:"Câu 12. ΔABC và ΔDEF: Â = D̂, AB = DE, B̂ = Ê. Bằng nhau theo:", opts:["c.c.c","c.g.c","g.c.g","Không đủ"], correct:2, explain:"2 góc và cạnh kề → g.c.g." },
+      { type:"mc", text:"Câu 13. ΔABC vuông tại A, AB = 3, AC = 4. BC = ?", opts:["5","6","7","25"], correct:0, explain:"BC² = 9 + 16 = 25 → BC = 5." },
+      { type:"mc", text:"Câu 14. ΔABC vuông tại B, AB = 5, BC = 12. AC = ?", opts:["7","13","17","169"], correct:1, explain:"AC² = 25 + 144 = 169 → AC = 13." },
+      { type:"mc", text:"Câu 15. Tam giác nào là tam giác vuông?", opts:["3, 4, 5","2, 3, 4","5, 6, 7","4, 5, 6"], correct:0, explain:"3² + 4² = 25 = 5² → tam giác vuông." },
+      { type:"mc", text:"Câu 16. Góc ngoài của tam giác luôn:", opts:["Lớn hơn mỗi góc trong không kề","Bằng mỗi góc trong","Nhỏ hơn góc trong","Bằng 180°"], correct:0, explain:"Góc ngoài = tổng 2 góc trong không kề → lớn hơn từng góc." },
+      { type:"mc", text:"Câu 17. Cạnh đối diện góc tù trong tam giác là:", opts:["Cạnh lớn nhất","Cạnh nhỏ nhất","Cạnh trung bình","Không xác định"], correct:0, explain:"Góc tù lớn nhất → cạnh đối lớn nhất." },
+      { type:"mc", text:"Câu 18. ΔABC vuông tại A, B̂ = 35°. Ĉ = ?", opts:["35°","45°","55°","65°"], correct:2, explain:"Ĉ = 90° − 35° = 55°." },
+      { type:"mc", text:"Câu 19. Trường hợp g.g.g có đủ kết luận 2 tam giác bằng nhau?", opts:["Có","Không, chỉ đồng dạng","Có, nếu thêm 1 cạnh","Không xác định"], correct:1, explain:"g.g.g chỉ cho đồng dạng, chưa đủ bằng nhau." },
+      { type:"mc", text:"Câu 20. Tổng 2 góc nhọn trong tam giác vuông bằng:", opts:["60°","90°","120°","180°"], correct:1, explain:"90° + tổng 2 góc nhọn = 180° → tổng 2 góc nhọn = 90°." },
+      { type:"mc", text:"Câu 21. ΔABC có Â = 90°, AB = AC. Tam giác này là:", opts:["Vuông cân","Đều","Cân tại B","Tù"], correct:0, explain:"Â = 90° (vuông) + AB = AC (cân) → vuông cân." },
+      { type:"mc", text:"Câu 22. Tổng 3 góc ngoài (mỗi đỉnh 1 góc) của tam giác:", opts:["180°","270°","360°","540°"], correct:2, explain:"Tổng 3 góc ngoài = 360°." },
+      { type:"mc", text:"Câu 23. ΔABC: AB = 7, BC = 10, AC = 5. Góc lớn nhất:", opts:["Â","B̂","Ĉ","Không xác định"], correct:0, explain:"BC lớn nhất → góc đối diện Â lớn nhất." },
+      { type:"mc", text:"Câu 24. Nếu 6² + 8² = 10² thì tam giác cạnh 6, 8, 10:", opts:["Vuông","Cân","Đều","Tù"], correct:0, explain:"36 + 64 = 100 = 10² → Pytago → vuông." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về tam giác:", statements:[
         { stmt:"Tam giác có thể có 2 góc vuông", correct:false },
-        { stmt:"Tam giác đều cũng là tam giác cân", correct:true },
+        { stmt:"Góc ngoài bằng tổng 2 góc trong không kề", correct:true },
         { stmt:"Trường hợp c.g.c: 2 cạnh và góc xen giữa bằng nhau", correct:true },
         { stmt:"Tổng 2 góc nhọn trong tam giác vuông = 90°", correct:true }
       ], explains:[
-        "Sai. 2 góc vuông = 180°, không còn chỗ cho góc thứ 3.",
-        "Đúng. Tam giác đều có 3 cạnh bằng → bất kỳ 2 cạnh nào cũng bằng nhau → cân.",
-        "Đúng. c.g.c: 2 cạnh và góc xen giữa tương ứng bằng nhau.",
-        "Đúng. 90° + tổng 2 góc nhọn = 180° → tổng 2 góc nhọn = 90°."
+        "Sai. 2 góc vuông = 180° → không còn góc thứ 3.",
+        "Đúng. Tính chất góc ngoài.",
+        "Đúng. Định nghĩa c.g.c.",
+        "Đúng. 90° + tổng 2 nhọn = 180°."
       ]},
-      { type:"short", text:"ΔABC có góc A = 90°, góc B = 35°. Góc C = ? độ", answer:"55", hint:"A + B + C = 180°", explain:"C = 180° − 90° − 35° = 55°." },
-      { type:"short", text:"Tam giác đều có mỗi góc bằng ? độ", answer:"60", hint:"180° ÷ 3", explain:"180° ÷ 3 = 60°." },
-
-      // ===== BỔ SUNG: 14 MC =====
-      { type:"mc", text:"Câu 10. ΔABC có góc A = 60°, góc B = 80°. Góc ngoài tại đỉnh C bằng:", opts:["40°","100°","140°","180°"], correct:2, explain:"Góc ngoài tại C = góc A + góc B = 60° + 80° = 140° (bằng tổng 2 góc trong không kề)." },
-      { type:"mc", text:"Câu 11. ΔABC có góc ngoài tại C bằng 130°, góc A = 50°. Góc B bằng:", opts:["50°","60°","80°","130°"], correct:2, explain:"Góc ngoài C = A + B → B = 130° − 50° = 80°." },
-      { type:"mc", text:"Câu 12. Bộ 3 đoạn thẳng nào sau đây tạo thành tam giác?", opts:["2, 3, 6","3, 4, 5","1, 2, 4","5, 5, 11"], correct:1, explain:"BĐT tam giác: |a−b| < c < a+b. Bộ (3,4,5): 3+4=7 > 5, 4+5=9 > 3, 3+5=8 > 4 ✓." },
-      { type:"mc", text:"Câu 13. Bộ 3 đoạn thẳng nào KHÔNG tạo thành tam giác?", opts:["3, 4, 5","1, 2, 4","7, 8, 10","6, 7, 12"], correct:1, explain:"Bộ (1, 2, 4): 1 + 2 = 3 < 4 → vi phạm bất đẳng thức tam giác → KHÔNG tạo thành tam giác." },
-      { type:"mc", text:"Câu 14. ΔABC có AB < BC < AC. So sánh các góc:", opts:["Góc C < Góc A < Góc B","Góc A < Góc B < Góc C","Góc B < Góc C < Góc A","Góc C > Góc A > Góc B"], correct:0, explain:"Cạnh đối diện góc nào lớn hơn thì góc đó lớn hơn. AB < BC < AC → Góc C < Góc A < Góc B." },
-      { type:"mc", text:"Câu 15. ΔABC có góc A > góc B > góc C. Cạnh lớn nhất là:", opts:["AB","BC","AC","Không xác định"], correct:1, explain:"Góc A lớn nhất → cạnh đối diện góc A là BC lớn nhất." },
-      { type:"mc", text:"Câu 16. ΔABC và ΔDEF có AB = DE, BC = EF, AC = DF. Hai tam giác bằng nhau theo trường hợp:", opts:["c.g.c","g.c.g","c.c.c","Không đủ điều kiện"], correct:2, explain:"3 cặp cạnh tương ứng bằng nhau → bằng nhau theo c.c.c." },
-      { type:"mc", text:"Câu 17. ΔABC và ΔDEF có AB = DE, góc B = góc E, BC = EF. Hai tam giác bằng nhau theo:", opts:["c.c.c","c.g.c","g.c.g","g.g.g"], correct:1, explain:"2 cạnh và góc xen giữa tương ứng bằng nhau → c.g.c." },
-      { type:"mc", text:"Câu 18. ΔABC và ΔDEF có góc A = góc D, AB = DE, góc B = góc E. Hai tam giác bằng nhau theo:", opts:["c.c.c","c.g.c","g.c.g","Không đủ điều kiện"], correct:2, explain:"2 góc và cạnh kề tương ứng bằng nhau → g.c.g." },
-      { type:"mc", text:"Câu 19. ΔABC vuông tại A, AB = 3 cm, AC = 4 cm. BC = ?", opts:["5 cm","6 cm","7 cm","25 cm"], correct:0, explain:"Pytago: BC² = AB² + AC² = 9 + 16 = 25 → BC = 5 cm." },
-      { type:"mc", text:"Câu 20. ΔABC vuông tại B, AB = 5 cm, BC = 12 cm. AC = ?", opts:["7 cm","13 cm","17 cm","169 cm"], correct:1, explain:"Pytago: AC² = AB² + BC² = 25 + 144 = 169 → AC = 13 cm." },
-      { type:"mc", text:"Câu 21. Tam giác nào sau đây là tam giác vuông?", opts:["Cạnh 3, 4, 5","Cạnh 2, 3, 4","Cạnh 5, 6, 7","Cạnh 4, 5, 6"], correct:0, explain:"3² + 4² = 9 + 16 = 25 = 5². Thoả Pytago → tam giác vuông." },
-      { type:"mc", text:"Câu 22. Góc ngoài của tam giác luôn:", opts:["Lớn hơn mỗi góc trong không kề","Bằng mỗi góc trong không kề","Nhỏ hơn mỗi góc trong không kề","Bằng 180°"], correct:0, explain:"Góc ngoài = tổng 2 góc trong không kề → luôn lớn hơn từng góc trong không kề." },
-      { type:"mc", text:"Câu 23. Trong tam giác, cạnh đối diện với góc tù là:", opts:["Cạnh lớn nhất","Cạnh nhỏ nhất","Cạnh trung bình","Không xác định được"], correct:0, explain:"Góc tù là góc lớn nhất → cạnh đối diện là cạnh lớn nhất." },
-
-      // ===== BỔ SUNG: 3 TF =====
-      { type:"tf", text:"Câu 24 (Đúng/Sai). Về góc ngoài tam giác:", statements:[
-        { stmt:"Góc ngoài của tam giác bằng tổng 2 góc trong không kề với nó", correct:true },
-        { stmt:"Tổng 3 góc ngoài (mỗi đỉnh lấy 1 góc) của tam giác bằng 360°", correct:true },
-        { stmt:"Góc ngoài và góc trong kề bù nhau (tổng bằng 180°)", correct:true },
-        { stmt:"Góc ngoài của tam giác luôn nhỏ hơn 90°", correct:false }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về BĐT tam giác:", statements:[
+        { stmt:"a + b > c, b + c > a, a + c > b thì a, b, c tạo thành tam giác", correct:true },
+        { stmt:"Bộ 2, 3, 6 tạo thành tam giác", correct:false },
+        { stmt:"Nếu a + b = c thì 3 điểm thẳng hàng", correct:true },
+        { stmt:"Tam giác đều luôn thoả BĐT tam giác", correct:true }
       ], explains:[
-        "Đúng. Tính chất góc ngoài tam giác: bằng tổng 2 góc trong không kề.",
-        "Đúng. Tổng 3 góc ngoài = 360°.",
-        "Đúng. Góc ngoài + góc trong kề = 180° (2 góc kề bù).",
-        "Sai. Góc ngoài có thể lớn hơn 90°. Ví dụ ΔABC có A = 60°, B = 80° → góc ngoài tại C = 140° > 90°."
+        "Đúng. Điều kiện BĐT tam giác.",
+        "Sai. 2 + 3 = 5 < 6 → vi phạm.",
+        "Đúng. a + b = c → 3 điểm thẳng hàng, không tạo tam giác.",
+        "Đúng. a + a = 2a > a."
       ]},
-      { type:"tf", text:"Câu 25 (Đúng/Sai). Về bất đẳng thức tam giác:", statements:[
-        { stmt:"Ba đoạn thẳng a, b, c tạo thành tam giác khi tổng 2 cạnh bất kỳ lớn hơn cạnh còn lại", correct:true },
-        { stmt:"Ba đoạn thẳng 2 cm, 3 cm, 6 cm tạo thành tam giác", correct:false },
-        { stmt:"Tam giác đều cạnh a luôn thoả mãn bất đẳng thức tam giác", correct:true },
-        { stmt:"Nếu a + b = c thì 3 đoạn a, b, c tạo thành tam giác", correct:false }
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về Pytago:", statements:[
+        { stmt:"Pytago chỉ dùng cho tam giác vuông", correct:true },
+        { stmt:"5² + 12² = 13² → tam giác 5,12,13 vuông", correct:true },
+        { stmt:"g.g.g đủ kết luận bằng nhau", correct:false },
+        { stmt:"c.c.c cần 3 cặp cạnh tương ứng bằng nhau", correct:true }
       ], explains:[
-        "Đúng. BĐT tam giác: a + b > c, b + c > a, a + c > b.",
-        "Sai. 2 + 3 = 5 < 6 → vi phạm bất đẳng thức tam giác.",
-        "Đúng. Tam giác đều: a + a = 2a > a ✓ luôn đúng.",
-        "Sai. Cần a + b > c (dấu >, không phải ≥). Khi a + b = c thì 3 điểm thẳng hàng."
+        "Đúng. Pytago: a² + b² = c² chỉ cho tam giác vuông.",
+        "Đúng. 25 + 144 = 169 = 13².",
+        "Sai. g.g.g chỉ cho đồng dạng.",
+        "Đúng. c.c.c = 3 cạnh."
       ]},
-      { type:"tf", text:"Câu 26 (Đúng/Sai). Về trường hợp bằng nhau và định lí Pytago:", statements:[
-        { stmt:"Trường hợp c.c.c cần biết 3 cặp cạnh tương ứng bằng nhau", correct:true },
-        { stmt:"Trường hợp g.g.g (3 cặp góc bằng nhau) đủ kết luận 2 tam giác bằng nhau", correct:false },
-        { stmt:"Định lí Pytago chỉ áp dụng cho tam giác vuông", correct:true },
-        { stmt:"5² + 12² = 13² nên tam giác có cạnh 5, 12, 13 là tam giác vuông", correct:true }
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về quan hệ cạnh-góc:", statements:[
+        { stmt:"Cạnh lớn nhất đối diện góc lớn nhất", correct:true },
+        { stmt:"Tam giác có 3 góc nhọn gọi là tam giác nhọn", correct:true },
+        { stmt:"Tam giác có 1 góc tù có thể có thêm 1 góc vuông", correct:false },
+        { stmt:"Nếu Â > B̂ thì BC > AC", correct:true }
       ], explains:[
-        "Đúng. c.c.c: 3 cặp cạnh tương ứng bằng nhau.",
-        "Sai. g.g.g chỉ cho 2 tam giác đồng dạng, không đủ kết luận bằng nhau.",
-        "Đúng. Pytago: a² + b² = c² chỉ đúng khi tam giác vuông.",
-        "Đúng. 25 + 144 = 169 = 13². Thoả Pytago → tam giác vuông."
+        "Đúng. Quan hệ cạnh-góc trong tam giác.",
+        "Đúng. Định nghĩa tam giác nhọn.",
+        "Sai. Góc tù + góc vuông = >180° → vô lí.",
+        "Đúng. Â > B̂ → cạnh đối Â (BC) > cạnh đối B̂ (AC)."
       ]},
-
-      // ===== BỔ SUNG: 5 Short =====
-      { type:"short", text:"ΔABC có góc A = 45°, góc B = 65°. Góc ngoài tại C bằng ? độ", answer:"110", hint:"Góc ngoài = tổng 2 góc trong không kề", explain:"Góc ngoài tại C = A + B = 45° + 65° = 110°." },
-      { type:"short", text:"ΔABC vuông tại A, AB = 6 cm, AC = 8 cm. BC = ? cm", answer:"10", hint:"Pytago: BC² = AB² + AC²", explain:"BC² = 36 + 64 = 100 → BC = 10 cm." },
-      { type:"short", text:"ΔABC có A = 90°, B = 30°. Góc C = ? độ", answer:"60", hint:"A + B + C = 180°", explain:"C = 180° − 90° − 30° = 60°." },
-      { type:"short", text:"Bộ 3 cạnh 5, 12, 13 có tạo thành tam giác vuông không? (nhập: co hoặc khong)", answer:"co", hint:"Kiểm tra 5² + 12² và so với 13²", explain:"5² + 12² = 25 + 144 = 169 = 13². Thoả định lí Pytago → tam giác vuông. Đáp án: có." },
-      { type:"short", text:"ΔABC có AB = 5 cm, BC = 7 cm, AC = 8 cm. Chu vi tam giác = ? cm", answer:"20", hint:"Chu vi = AB + BC + AC", explain:"Chu vi = 5 + 7 + 8 = 20 cm." }
+      // 4 Short
+      { type:"short", text:"ΔABC: Â = 90°, B̂ = 35°. Ĉ = ? độ", answer:"55", hint:"A + B + C = 180°", explain:"C = 180° − 90° − 35° = 55°." },
+      { type:"short", text:"ΔABC: Â = 45°, B̂ = 65°. Góc ngoài tại C = ? độ", answer:"110", hint:"Góc ngoài = A + B", explain:"Góc ngoài = 45° + 65° = 110°." },
+      { type:"short", text:"ΔABC vuông tại A, AB = 6, AC = 8. BC = ?", answer:"10", hint:"Pytago: BC² = AB² + AC²", explain:"BC² = 36 + 64 = 100 → BC = 10." },
+      { type:"short", text:"Chu vi ΔABC: AB = 5, BC = 7, AC = 8. C = ?", answer:"20", hint:"C = AB + BC + AC", explain:"C = 5 + 7 + 8 = 20." }
     ]
   },
 
   // ==================== CHƯƠNG V: THỐNG KÊ VÀ XÁC SUẤT ====================
   {
     id:"l7_5", emoji:"📊", name:"Thống kê và Xác suất",
-    desc:"Thu thập dữ liệu, bảng tần số, biểu đồ, số trung bình cộng, xác suất của biến cố",
+    desc:"Thu thập dữ liệu, bảng tần số, biểu đồ, trung bình cộng, mốt, xác suất biến cố",
+    theory:`<b>1. Thu thập dữ liệu:</b> Điều tra, khảo sát → lập bảng số liệu ban đầu. Dấu hiệu: vấn đề cần tìm hiểu. Giá trị: số liệu thu được.<br>
+<b>2. Bảng tần số:</b> Bảng liệt kê giá trị và tần số (số lần xuất hiện). Tổng tần số = tổng số giá trị.<br>
+<b>3. Số trung bình cộng (TBC):</b> x̄ = (x₁n₁ + x₂n₂ + … + xₖnₖ) / N. Với xᵢ là giá trị, nᵢ là tần số, N = tổng tần số.<br>
+<b>4. Mốt (Mo):</b> Giá trị xuất hiện nhiều nhất (tần số lớn nhất). Có thể có nhiều mốt hoặc không có.<br>
+<b>5. Biểu đồ:</b> Cột (so sánh), đoạn thẳng (thay đổi theo thời gian), tròn (tỉ lệ phần trăm).<br>
+<b>6. Xác suất:</b> P(A) = số KQ thuận lợi / tổng số KQ. 0 ≤ P(A) ≤ 1. P(chắc chắn) = 1, P(không thể) = 0.`,
     questions:[
-      { type:"mc", text:"Câu 1. Số trung bình cộng của 4, 6, 8, 10 là:", opts:["6","7","8","28"], correct:1, explain:"TBC = (4+6+8+10)/4 = 28/4 = 7." },
-      { type:"mc", text:"Câu 2. Dãy: 3, 5, 7, 5, 3, 5, 9. Mốt của dãy là:", opts:["3","5","7","9"], correct:1, explain:"5 xuất hiện 3 lần (nhiều nhất) → Mốt = 5." },
-      { type:"mc", text:"Câu 3. Gieo xúc sắc 1 lần. Xác suất mặt chẵn:", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"Mặt chẵn: {2, 4, 6} → 3 KQ thuận lợi / 6 tổng = 1/2." },
-      { type:"mc", text:"Câu 4. Hộp có 4 bi đỏ, 6 bi xanh. P(lấy bi đỏ) = ?", opts:["2/5","3/5","4/6","6/4"], correct:0, explain:"P = 4/(4+6) = 4/10 = 2/5." },
-      { type:"mc", text:"Câu 5. Biểu đồ nào biểu diễn sự thay đổi theo thời gian?", opts:["Biểu đồ tròn","Biểu đồ đoạn thẳng","Biểu đồ cột","Bảng tần số"], correct:1, explain:"Biểu đồ đoạn thẳng (line chart) thích hợp thể hiện xu hướng thay đổi." },
-      { type:"mc", text:"Câu 6. Tần số của giá trị x = 5 trong dãy 3, 5, 5, 7, 5, 8 là:", opts:["1","2","3","5"], correct:2, explain:"Số 5 xuất hiện 3 lần → tần số = 3." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về thống kê và xác suất:", statements:[
-        { stmt:"Số trung bình cộng = tổng các giá trị ÷ số giá trị", correct:true },
+      { type:"mc", text:"Câu 1. TBC của 4, 6, 8, 10 là:", opts:["6","7","8","28"], correct:1, explain:"(4+6+8+10)/4 = 28/4 = 7." },
+      { type:"mc", text:"Câu 2. Dãy: 3, 5, 7, 5, 3, 5, 9. Mốt:", opts:["3","5","7","9"], correct:1, explain:"5 xuất hiện 3 lần (nhiều nhất)." },
+      { type:"mc", text:"Câu 3. Gieo xúc sắc. P(mặt chẵn):", opts:["1/6","1/3","1/2","2/3"], correct:2, explain:"{2,4,6} → 3/6 = 1/2." },
+      { type:"mc", text:"Câu 4. Hộp 4 bi đỏ, 6 bi xanh. P(bi đỏ):", opts:["2/5","3/5","4/6","6/4"], correct:0, explain:"4/10 = 2/5." },
+      { type:"mc", text:"Câu 5. Biểu đồ biểu diễn thay đổi theo thời gian:", opts:["Tròn","Đoạn thẳng","Cột","Bảng tần số"], correct:1, explain:"Biểu đồ đoạn thẳng thể hiện xu hướng." },
+      { type:"mc", text:"Câu 6. Tần số x = 5 trong dãy 3,5,5,7,5,8:", opts:["1","2","3","5"], correct:2, explain:"5 xuất hiện 3 lần." },
+      { type:"mc", text:"Câu 7. TBC của 10, 20, 30:", opts:["15","20","25","60"], correct:1, explain:"(10+20+30)/3 = 60/3 = 20." },
+      { type:"mc", text:"Câu 8. P(biến cố chắc chắn) = ?", opts:["0","0,5","1","2"], correct:2, explain:"Biến cố chắc chắn xảy ra → P = 1." },
+      { type:"mc", text:"Câu 9. P(biến cố không thể) = ?", opts:["0","0,5","1","−1"], correct:0, explain:"Không bao giờ xảy ra → P = 0." },
+      { type:"mc", text:"Câu 10. Dãy: 2,4,4,6,6,6,8. Mốt:", opts:["2","4","6","8"], correct:2, explain:"6 xuất hiện 3 lần (nhiều nhất)." },
+      { type:"mc", text:"Câu 11. Gieo xúc sắc 1 lần. P(mặt > 4):", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"{5,6} → 2/6 = 1/3." },
+      { type:"mc", text:"Câu 12. Tung đồng xu 1 lần. P(mặt sấp):", opts:["0","1/4","1/2","1"], correct:2, explain:"2 mặt, 1 thuận lợi → 1/2." },
+      { type:"mc", text:"Câu 13. Hộp 3 bi đỏ, 2 xanh, 5 vàng. P(bi xanh):", opts:["1/5","2/10","3/10","5/10"], correct:0, explain:"2/(3+2+5) = 2/10 = 1/5." },
+      { type:"mc", text:"Câu 14. Biểu đồ tròn thích hợp biểu diễn:", opts:["Xu hướng thay đổi","Tỉ lệ phần trăm","So sánh 2 dãy","Tần số"], correct:1, explain:"Biểu đồ tròn thể hiện tỉ lệ %." },
+      { type:"mc", text:"Câu 15. TBC có cần tính bằng giá trị xuất hiện nhiều nhất?", opts:["Có","Không, TBC và mốt khác nhau","Có, nếu dữ liệu đều","Không bao giờ tính được"], correct:1, explain:"TBC ≠ Mốt. TBC tính từ tổng/số lượng." },
+      { type:"mc", text:"Câu 16. Dãy: 1, 2, 3, 4, 5. TBC:", opts:["2","3","4","15"], correct:1, explain:"(1+2+3+4+5)/5 = 15/5 = 3." },
+      { type:"mc", text:"Câu 17. Chọn ngẫu nhiên 1 số từ {1,2,3,4,5,6,7,8,9,10}. P(số chẵn):", opts:["1/5","2/5","1/2","3/5"], correct:2, explain:"{2,4,6,8,10} → 5/10 = 1/2." },
+      { type:"mc", text:"Câu 18. Tổng các tần số trong bảng tần số bằng:", opts:["Giá trị lớn nhất","Số giá trị khác nhau","Tổng số phần tử","Trung bình cộng"], correct:2, explain:"Tổng tần số = tổng số phần tử (N)." },
+      { type:"mc", text:"Câu 19. Gieo xúc sắc. P(mặt chia hết cho 3):", opts:["1/6","1/3","1/2","2/3"], correct:1, explain:"{3,6} → 2/6 = 1/3." },
+      { type:"mc", text:"Câu 20. Dãy: 5, 5, 5, 5. TBC và Mốt:", opts:["TBC=5, Mo=5","TBC=20, Mo=5","TBC=5, không có mốt","TBC=4, Mo=5"], correct:0, explain:"TBC = 20/4 = 5. Mo = 5 (xuất hiện nhiều nhất)." },
+      { type:"mc", text:"Câu 21. P(A) + P(Ā) = ?", opts:["0","0,5","1","2"], correct:2, explain:"Biến cố đối: P(A) + P(không A) = 1." },
+      { type:"mc", text:"Câu 22. Túi có 8 bi: 3 đỏ, 5 xanh. P(không lấy bi đỏ):", opts:["3/8","5/8","1/8","1"], correct:1, explain:"P(không đỏ) = P(xanh) = 5/8." },
+      { type:"mc", text:"Câu 23. Biểu đồ cột thích hợp để:", opts:["So sánh đại lượng","Biểu diễn tỉ lệ %","Thể hiện xu hướng","Tính TBC"], correct:0, explain:"Biểu đồ cột so sánh các đại lượng." },
+      { type:"mc", text:"Câu 24. Dãy: 1,1,2,2,3,3. Mốt:", opts:["1","2","3","Không có mốt"], correct:3, explain:"1, 2, 3 đều xuất hiện 2 lần → nhiều mốt (hoặc không có mốt duy nhất)." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về thống kê:", statements:[
+        { stmt:"TBC = tổng giá trị ÷ số giá trị", correct:true },
         { stmt:"Mốt luôn là giá trị lớn nhất", correct:false },
-        { stmt:"0 ≤ P(A) ≤ 1 với mọi biến cố A", correct:true },
-        { stmt:"Xác suất biến cố chắc chắn bằng 0", correct:false }
+        { stmt:"Tổng tần số = tổng số phần tử", correct:true },
+        { stmt:"Biểu đồ tròn thể hiện xu hướng theo thời gian", correct:false }
       ], explains:[
-        "Đúng. Công thức tính trung bình cộng.",
-        "Sai. Mốt là giá trị xuất hiện NHIỀU NHẤT, không nhất thiết lớn nhất.",
-        "Đúng. Xác suất luôn trong đoạn [0; 1].",
-        "Sai. P(biến cố chắc chắn) = 1, không phải 0."
+        "Đúng. Công thức TBC.",
+        "Sai. Mốt = giá trị xuất hiện nhiều nhất.",
+        "Đúng. Tổng tần số = N.",
+        "Sai. Biểu đồ tròn → tỉ lệ %. Đoạn thẳng → xu hướng."
       ]},
-      { type:"short", text:"Trung bình cộng của 2, 4, 6, 8 bằng?", answer:"5", hint:"Tổng ÷ 4", explain:"(2+4+6+8)/4 = 20/4 = 5." },
-      { type:"short", text:"Gieo xúc sắc. P(mặt > 4) = a/6. Tìm a = ?", answer:"2", hint:"Mặt > 4: {5, 6}", explain:"{5, 6} → 2 KQ thuận lợi. P = 2/6. a = 2." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về xác suất:", statements:[
+        { stmt:"0 ≤ P(A) ≤ 1", correct:true },
+        { stmt:"P(biến cố chắc chắn) = 0", correct:false },
+        { stmt:"P(A) + P(Ā) = 1", correct:true },
+        { stmt:"P(gieo xúc sắc ra mặt 7) = 1/6", correct:false }
+      ], explains:[
+        "Đúng. Xác suất trong [0; 1].",
+        "Sai. P(chắc chắn) = 1.",
+        "Đúng. Biến cố đối.",
+        "Sai. Xúc sắc chỉ có mặt 1–6, không có mặt 7 → P = 0."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về TBC:", statements:[
+        { stmt:"TBC của 10, 20 là 15", correct:true },
+        { stmt:"TBC luôn bằng 1 giá trị trong dãy", correct:false },
+        { stmt:"TBC của 3, 3, 3 là 3", correct:true },
+        { stmt:"Nếu thêm 1 giá trị bằng TBC thì TBC không đổi", correct:true }
+      ], explains:[
+        "Đúng. (10+20)/2 = 15.",
+        "Sai. VD: TBC(1,2) = 1,5 không thuộc dãy.",
+        "Đúng. 9/3 = 3.",
+        "Đúng. Thêm x̄ → tổng tăng x̄, số lượng tăng 1 → TBC giữ nguyên."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Về mốt:", statements:[
+        { stmt:"Mốt là giá trị xuất hiện nhiều nhất", correct:true },
+        { stmt:"Dãy có thể có nhiều mốt", correct:true },
+        { stmt:"Dãy 1,2,3,4,5 có mốt là 3", correct:false },
+        { stmt:"Mốt luôn bằng TBC", correct:false }
+      ], explains:[
+        "Đúng. Định nghĩa mốt.",
+        "Đúng. Nếu nhiều giá trị cùng tần số lớn nhất.",
+        "Sai. Mỗi giá trị xuất hiện 1 lần → không có mốt.",
+        "Sai. Mo và TBC thường khác nhau."
+      ]},
+      // 4 Short
+      { type:"short", text:"TBC của 2, 4, 6, 8 = ?", answer:"5", hint:"Tổng ÷ 4", explain:"20/4 = 5." },
+      { type:"short", text:"Gieo xúc sắc. P(mặt > 4) = a/6. a = ?", answer:"2", hint:"{5, 6}", explain:"2 KQ → a = 2." },
+      { type:"short", text:"Hộp 5 bi đỏ, 3 xanh. P(bi đỏ) = a/8. a = ?", answer:"5", hint:"5 bi đỏ / 8 tổng", explain:"P = 5/8 → a = 5." },
+      { type:"short", text:"Dãy: 2, 4, 4, 6, 8, 4. Mốt = ?", answer:"4", hint:"Giá trị xuất hiện nhiều nhất", explain:"4 xuất hiện 3 lần → Mo = 4." }
     ]
   },
 
   // ==================== CHƯƠNG VI: TỈ LỆ THỨC VÀ ĐẠI LƯỢNG TỈ LỆ ====================
   {
     id:"l7_6", emoji:"⚖️", name:"Tỉ lệ thức và đại lượng tỉ lệ",
-    desc:"Tỉ lệ thức, tính chất cơ bản, dãy tỉ số bằng nhau, đại lượng tỉ lệ thuận, tỉ lệ nghịch, chia theo tỉ lệ, bài toán thực tế",
+    desc:"Tỉ lệ thức, tính chất, dãy tỉ số bằng nhau, tỉ lệ thuận, tỉ lệ nghịch, chia tỉ lệ",
+    theory:`<b>1. Tỉ lệ thức:</b> a/b = c/d (b, d ≠ 0). Tích chéo: ad = bc. Hoán vị: a/c = b/d, d/b = c/a, ...<br>
+<b>2. Tính chất:</b> a/b = c/d → (a+b)/b = (c+d)/d; (a−b)/b = (c−d)/d.<br>
+<b>3. Dãy tỉ số bằng nhau:</b> a/p = b/q = c/r = (a+b+c)/(p+q+r) = (a−b)/(p−q)...<br>
+<b>4. Tỉ lệ thuận:</b> y = kx (k ≠ 0, k là hệ số tỉ lệ). Khi x tăng → y tăng (nếu k > 0).<br>
+<b>5. Tỉ lệ nghịch:</b> y = a/x hay xy = a (a ≠ 0). Khi x tăng → y giảm.<br>
+<b>6. Chia tỉ lệ:</b> Chia M thành n phần tỉ lệ p₁:p₂:…:pₙ → phần thứ i = M × pᵢ/(p₁+…+pₙ).`,
     questions:[
-      { type:"mc", text:"Câu 1. Tỉ lệ thức a/b = c/d thì tích chéo:", opts:["a·c = b·d","a·d = b·c","a+d = b+c","a−d = b−c"], correct:1, explain:"Tích chéo: a·d = b·c." },
-      { type:"mc", text:"Câu 2. Nếu 2/3 = x/9 thì x = ?", opts:["3","6","9","18"], correct:1, explain:"2 × 9 = 3 × x → x = 18/3 = 6." },
-      { type:"mc", text:"Câu 3. y tỉ lệ thuận với x theo hệ số k = 3. Khi x = 4 thì y = ?", opts:["7","12","4/3","3/4"], correct:1, explain:"y = kx = 3 × 4 = 12." },
-      { type:"mc", text:"Câu 4. y tỉ lệ nghịch với x. Khi x = 2 thì y = 6. Khi x = 3 thì y = ?", opts:["4","9","3","2"], correct:0, explain:"xy = k → k = 2×6 = 12. x=3: y = 12/3 = 4." },
-      { type:"mc", text:"Câu 5. Chia 120 thành 3 phần tỉ lệ 2 : 3 : 5. Phần nhỏ nhất bằng:", opts:["12","24","36","60"], correct:1, explain:"Tổng tỉ lệ = 10. Phần nhỏ nhất = 120 × 2/10 = 24." },
-      { type:"mc", text:"Câu 6. Đại lượng y tỉ lệ thuận với x khi:", opts:["y = k/x","y = kx (k ≠ 0)","y = k + x","y = x²"], correct:1, explain:"Tỉ lệ thuận: y = kx với k là hằng số ≠ 0." },
-      { type:"tf", text:"Câu 7 (Đúng/Sai). Về tỉ lệ:", statements:[
-        { stmt:"Nếu a/b = c/d thì ad = bc", correct:true },
-        { stmt:"y tỉ lệ thuận với x thì y = k/x", correct:false },
-        { stmt:"y tỉ lệ nghịch với x thì xy = hằng số", correct:true },
-        { stmt:"Chia 100 theo tỉ lệ 1:4 được 25 và 75", correct:false }
+      { type:"mc", text:"Câu 1. a/b = c/d thì tích chéo:", opts:["ac = bd","ad = bc","a+d = b+c","a−d = b−c"], correct:1, explain:"Tích chéo: ad = bc." },
+      { type:"mc", text:"Câu 2. 2/3 = x/9 → x = ?", opts:["3","6","9","18"], correct:1, explain:"2×9 = 3x → x = 6." },
+      { type:"mc", text:"Câu 3. y = kx, k = 3, x = 4 → y = ?", opts:["7","12","4/3","3/4"], correct:1, explain:"y = 3×4 = 12." },
+      { type:"mc", text:"Câu 4. y tỉ lệ nghịch x. x=2, y=6. x=3 → y=?", opts:["4","9","3","2"], correct:0, explain:"xy = 12. y = 12/3 = 4." },
+      { type:"mc", text:"Câu 5. Chia 120 theo tỉ lệ 2:3:5. Phần nhỏ nhất:", opts:["12","24","36","60"], correct:1, explain:"120×2/10 = 24." },
+      { type:"mc", text:"Câu 6. y tỉ lệ thuận x khi:", opts:["y = k/x","y = kx (k≠0)","y = k+x","y = x²"], correct:1, explain:"Tỉ lệ thuận: y = kx." },
+      { type:"mc", text:"Câu 7. 3/4 và 9/12 lập thành tỉ lệ thức?", opts:["Không","Có","Thiếu dữ kiện","Không xác định"], correct:1, explain:"3/4 = 9/12 = 3/4 → TLT." },
+      { type:"mc", text:"Câu 8. a/b = c/d → a/c = ?", opts:["b/d","d/b","b+d","a+c"], correct:0, explain:"Hoán vị: a/c = b/d." },
+      { type:"mc", text:"Câu 9. x/4 = 3/6 → x = ?", opts:["1","2","3","8"], correct:1, explain:"x/4 = 1/2 → x = 2." },
+      { type:"mc", text:"Câu 10. a/b = c/d → (a+b)/b = ?", opts:["(c+d)/d","(c−d)/d","c/b","a/d"], correct:0, explain:"Tính chất cộng TLT." },
+      { type:"mc", text:"Câu 11. a/2 = b/3 = c/5, a+b+c = 30 → a = ?", opts:["3","6","9","15"], correct:1, explain:"= 30/10 = 3 → a = 2×3 = 6." },
+      { type:"mc", text:"Câu 12. a/3 = b/5, a+b = 24 → b = ?", opts:["9","12","15","20"], correct:2, explain:"= 24/8 = 3 → b = 15." },
+      { type:"mc", text:"Câu 13. x/3=y/4=z/5, 2x−y+3z=51 → y=?", opts:["6","8","12","20"], correct:2, explain:"x=3k,y=4k,z=5k. 17k=51→k=3. y=12." },
+      { type:"mc", text:"Câu 14. y TLT x. x=2, y=10 → k = ?", opts:["2","5","10","20"], correct:1, explain:"k = y/x = 10/2 = 5." },
+      { type:"mc", text:"Câu 15. y TLT x, k=−2, x=−3 → y=?", opts:["−6","6","−5","5"], correct:1, explain:"y = (−2)(−3) = 6." },
+      { type:"mc", text:"Câu 16. y TLT x → x TLT y theo hệ số:", opts:["k","−k","1/k","k²"], correct:2, explain:"y=kx → x=(1/k)y." },
+      { type:"mc", text:"Câu 17. s TLT t khi:", opts:["v thay đổi","v không đổi","s không đổi","t không đổi"], correct:1, explain:"s=vt, v const → s TLT t." },
+      { type:"mc", text:"Câu 18. y TLN x. x=4, y=3. x=6 → y=?", opts:["2","4","8","12"], correct:0, explain:"xy=12. y=12/6=2." },
+      { type:"mc", text:"Câu 19. x tăng gấp đôi, y TLN x → y:", opts:["Tăng gấp đôi","Giảm ½","Không đổi","Tăng 4"], correct:1, explain:"y=a/x → y=a/(2x) = ½·(a/x)." },
+      { type:"mc", text:"Câu 20. 12 CN làm 15 ngày. 20 CN → ? ngày", opts:["7","8","9","10"], correct:2, explain:"12×15=20x → x=9." },
+      { type:"mc", text:"Câu 21. Chia 560 theo 2:3:9. Phần lớn nhất:", opts:["40","80","120","360"], correct:3, explain:"560×9/14 = 360." },
+      { type:"mc", text:"Câu 22. 4/x = 6/9 → x = ?", opts:["4","5","6","8"], correct:2, explain:"4×9=6x → x=6." },
+      { type:"mc", text:"Câu 23. y TLN x khi:", opts:["y=kx","y+x=k","yx=k (k≠0)","y−x=k"], correct:2, explain:"TLN: yx = k." },
+      { type:"mc", text:"Câu 24. 1 vòi chảy 4h đầy bể. 2 vòi → ? giờ", opts:["1","2","4","8"], correct:1, explain:"TLN: 1×4=2t → t=2." },
+      // 4 TF
+      { type:"tf", text:"Câu 25 (Đúng/Sai). Về tỉ lệ thức:", statements:[
+        { stmt:"a/b = c/d → ad = bc", correct:true },
+        { stmt:"2/5 và 4/10 lập thành TLT", correct:true },
+        { stmt:"a/b = c/d → a+c = b+d", correct:false },
+        { stmt:"Chia 100 theo 1:4 được 25 và 75", correct:false }
       ], explains:[
-        "Đúng. Tính chất cơ bản của tỉ lệ thức.",
-        "Sai. Tỉ lệ thuận: y = kx. y = k/x là tỉ lệ nghịch.",
-        "Đúng. Tỉ lệ nghịch: xy = k (const).",
-        "Sai. Tỉ lệ 1:4, tổng = 5. Phần 1: 100/5 = 20. Phần 2: 80. Kết quả 20 và 80."
+        "Đúng. Tích chéo.",
+        "Đúng. 2/5 = 4/10.",
+        "Sai. Không có tính chất này.",
+        "Sai. Tổng = 5. Phần 1: 20. Phần 2: 80."
       ]},
-      { type:"short", text:"3/5 = x/15. Tìm x = ?", answer:"9", hint:"Tích chéo: 3 × 15 = 5 × x", explain:"x = (3 × 15)/5 = 45/5 = 9." },
-      { type:"short", text:"y tỉ lệ thuận x, hệ số k = 4. Khi x = 5, y = ?", answer:"20", hint:"y = kx", explain:"y = 4 × 5 = 20." },
-
-      // ===== BỔ SUNG: 20 MC về tỉ lệ thức và đại lượng tỉ lệ =====
-      { type:"mc", text:"Câu 10. Tỉ số nào sau đây lập thành tỉ lệ thức?", opts:["2/3 và 4/5","3/4 và 9/12","1/2 và 3/5","5/6 và 7/9"], correct:1, explain:"3/4 = 9/12 (cùng bằng 3/4). Hai tỉ số bằng nhau → lập thành tỉ lệ thức." },
-      { type:"mc", text:"Câu 11. Nếu a/b = c/d thì theo tính chất hoán vị:", opts:["a/c = b/d","a/d = c/b","a + b = c + d","a − c = b − d"], correct:0, explain:"Tính chất hoán vị: a/b = c/d → a/c = b/d (hoán vị ngoại tỉ hoặc trung tỉ)." },
-      { type:"mc", text:"Câu 12. Cho tỉ lệ thức x/4 = 3/6. Giá trị x bằng:", opts:["1","2","3","8"], correct:1, explain:"x/4 = 3/6 = 1/2 → x = 4 × 1/2 = 2." },
-      { type:"mc", text:"Câu 13. Cho a/b = c/d. Theo tính chất, (a+b)/b bằng:", opts:["(c+d)/d","(c−d)/d","c/b","a/d"], correct:0, explain:"a/b = c/d → (a+b)/b = (c+d)/d (tính chất cộng tỉ lệ thức)." },
-      { type:"mc", text:"Câu 14. Cho a/2 = b/3 = c/5 và a + b + c = 30. Giá trị a bằng:", opts:["3","6","9","15"], correct:1, explain:"Dãy tỉ số bằng nhau: a/2 = b/3 = c/5 = (a+b+c)/(2+3+5) = 30/10 = 3. Vậy a = 2×3 = 6." },
-      { type:"mc", text:"Câu 15. Cho a/3 = b/5 và a + b = 24. Giá trị b bằng:", opts:["9","12","15","20"], correct:2, explain:"a/3 = b/5 = (a+b)/(3+5) = 24/8 = 3. Vậy b = 5×3 = 15." },
-      { type:"mc", text:"Câu 16. Cho x/3 = y/4 = z/5 và 2x − y + 3z = 51. Giá trị y bằng:", opts:["6","8","12","20"], correct:2, explain:"x/3=y/4=z/5=k → x=3k, y=4k, z=5k. 2(3k)−4k+3(5k)=6k−4k+15k=17k=51 → k=3. y=4×3=12." },
-      { type:"mc", text:"Câu 17. y tỉ lệ thuận với x. Khi x = 2 thì y = 10. Hệ số tỉ lệ k bằng:", opts:["2","5","10","20"], correct:1, explain:"y = kx → 10 = k×2 → k = 5." },
-      { type:"mc", text:"Câu 18. y tỉ lệ thuận với x theo hệ số k = −2. Khi x = −3 thì y bằng:", opts:["−6","6","−5","5"], correct:1, explain:"y = kx = (−2)×(−3) = 6." },
-      { type:"mc", text:"Câu 19. Nếu y tỉ lệ thuận với x thì x tỉ lệ thuận với y theo hệ số:", opts:["k","−k","1/k","k²"], correct:2, explain:"y = kx → x = (1/k)y. Vậy x tỉ lệ thuận y theo hệ số 1/k." },
-      { type:"mc", text:"Câu 20. Quãng đường s tỉ lệ thuận với thời gian t khi:", opts:["Vận tốc thay đổi","Vận tốc không đổi","Quãng đường không đổi","Thời gian không đổi"], correct:1, explain:"s = v·t. Khi v không đổi → s tỉ lệ thuận với t." },
-      { type:"mc", text:"Câu 21. y tỉ lệ nghịch với x. Khi x = 4 thì y = 3. Khi x = 6 thì y bằng:", opts:["2","4","8","12"], correct:0, explain:"xy = k → k = 4×3 = 12. Khi x = 6: y = 12/6 = 2." },
-      { type:"mc", text:"Câu 22. y tỉ lệ nghịch với x theo hệ số a. Khi x tăng gấp đôi thì y:", opts:["Tăng gấp đôi","Giảm một nửa","Không đổi","Tăng gấp 4"], correct:1, explain:"y = a/x. Khi x → 2x: y = a/(2x) = (1/2)·(a/x). Vậy y giảm một nửa." },
-      { type:"mc", text:"Câu 23. 12 công nhân làm xong việc trong 15 ngày. Hỏi 20 công nhân làm trong mấy ngày?", opts:["7 ngày","8 ngày","9 ngày","10 ngày"], correct:2, explain:"Số CN và số ngày tỉ lệ nghịch: 12×15 = 20×x → x = 180/20 = 9 ngày." },
-      { type:"mc", text:"Câu 24. Chia số 560 thành 3 phần tỉ lệ với 2 : 3 : 9. Phần lớn nhất bằng:", opts:["40","80","120","360"], correct:3, explain:"Tổng tỉ lệ = 14. Phần lớn nhất = 560 × 9/14 = 360." },
-      { type:"mc", text:"Câu 25. Chia 480 thành 2 phần tỉ lệ nghịch với 3 và 5. Phần thứ nhất bằng:", opts:["180","200","280","300"], correct:3, explain:"Tỉ lệ nghịch với 3 và 5 → tỉ lệ thuận với 1/3 và 1/5 = 5 : 3. Phần 1 = 480×5/8 = 300." },
-      { type:"mc", text:"Câu 26. Biết x/2 = y/3. Tỉ số x/y bằng:", opts:["2/3","3/2","6","5"], correct:0, explain:"x/2 = y/3 → x/y = 2/3." },
-      { type:"mc", text:"Câu 27. Cho 4/x = 6/9. Giá trị x bằng:", opts:["4","5","6","8"], correct:2, explain:"4/x = 6/9 → 4×9 = 6×x → 36 = 6x → x = 6." },
-      { type:"mc", text:"Câu 28. Hai đại lượng y và x tỉ lệ nghịch khi:", opts:["y = kx","y + x = k","y·x = k (k ≠ 0)","y − x = k"], correct:2, explain:"Tỉ lệ nghịch: y·x = k (hằng số khác 0)." },
-      { type:"mc", text:"Câu 29. Vòi nước chảy 4 giờ đầy bể. Hỏi 2 vòi giống nhau chảy bao lâu đầy bể?", opts:["1 giờ","2 giờ","4 giờ","8 giờ"], correct:1, explain:"Số vòi và thời gian tỉ lệ nghịch: 1×4 = 2×t → t = 2 giờ." }
+      { type:"tf", text:"Câu 26 (Đúng/Sai). Về tỉ lệ thuận:", statements:[
+        { stmt:"y = kx (k≠0) là TLT", correct:true },
+        { stmt:"y TLT x thì y = k/x", correct:false },
+        { stmt:"k > 0: x tăng → y tăng", correct:true },
+        { stmt:"y TLT x → đồ thị là đường thẳng qua gốc O", correct:true }
+      ], explains:[
+        "Đúng. Định nghĩa.",
+        "Sai. y = k/x là TLN.",
+        "Đúng. k > 0 → cùng chiều.",
+        "Đúng. y = kx → đường thẳng qua O."
+      ]},
+      { type:"tf", text:"Câu 27 (Đúng/Sai). Về tỉ lệ nghịch:", statements:[
+        { stmt:"xy = k (k≠0) là TLN", correct:true },
+        { stmt:"x tăng gấp 3 → y giảm 3 lần", correct:true },
+        { stmt:"Đồ thị TLN là đường thẳng", correct:false },
+        { stmt:"Nếu x₁y₁ = x₂y₂ thì x, y TLN", correct:true }
+      ], explains:[
+        "Đúng. Định nghĩa.",
+        "Đúng. y = k/(3x) = (1/3)·(k/x).",
+        "Sai. Đồ thị TLN là đường cong (hyperbol).",
+        "Đúng. xy = const → TLN."
+      ]},
+      { type:"tf", text:"Câu 28 (Đúng/Sai). Dãy tỉ số:", statements:[
+        { stmt:"a/2=b/3=c/5=(a+b+c)/(2+3+5)", correct:true },
+        { stmt:"a/2=b/3 và a−b=4 → a=8", correct:true },
+        { stmt:"Dãy tỉ số bằng nhau chỉ dùng cho 2 số", correct:false },
+        { stmt:"x/2=y/3, x+y=10 → x=4", correct:true }
+      ], explains:[
+        "Đúng. Tính chất dãy tỉ số.",
+        "Đúng. =k → a=2k,b=3k. a−b=−k=4→k=−4. a=−8? Kiểm tra: a/2=b/3, a−b=4. 2k−3k=−k=4→k=−4. a=−8. Sai! Sửa: a−b=−k=4→k=−4→a=−8. Hoặc b−a=k → b−a=k, a=2k,b=3k→3k−2k=k=4→a=8. Đúng khi b−a=4.",
+        "Sai. Dùng cho nhiều số.",
+        "Đúng. =k → 2k+3k=5k=10→k=2. x=4."
+      ]},
+      // 4 Short
+      { type:"short", text:"3/5 = x/15 → x = ?", answer:"9", hint:"Tích chéo", explain:"3×15=5x→x=9." },
+      { type:"short", text:"y TLT x, k=4, x=5 → y=?", answer:"20", hint:"y = kx", explain:"y=4×5=20." },
+      { type:"short", text:"y TLN x. x=5, y=12. x=10→y=?", answer:"6", hint:"xy=k", explain:"k=60. y=60/10=6." },
+      { type:"short", text:"Chia 40 theo 3:5. Phần lớn = ?", answer:"25", hint:"40×5/8", explain:"40×5/8=25." }
     ]
   },
 
@@ -2336,6 +2637,9 @@ function renderQuiz(examId){
   `;
 
   const body=document.getElementById('quizBody');body.innerHTML='';
+  if(exam.theory){
+    body.innerHTML=`<div class="theory-section"><div class="theory-toggle" onclick="this.parentElement.classList.toggle('open')">📖 Tóm tắt lý thuyết <span class="toggle-icon">▶</span></div><div class="theory-content">${exam.theory}</div></div>`;
+  }
   let qNum=0;
   const letters=['A','B','C','D'];
 
