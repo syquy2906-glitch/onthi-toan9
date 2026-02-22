@@ -1673,44 +1673,44 @@ const examData = [
     // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
 
     {type:"tf",
-     text:"Câu 13. Cho phương trình bậc hai ax² + bx + c = 0 (a ≠ 0), biệt thức Δ = b² − 4ac. Xét các phát biểu sau:",
+     text:"Câu 13. Cho phương trình x² − 5x + 4 = 0. Xét các phát biểu sau:",
      statements:[
-       {s:"a) Nếu Δ > 0 thì phương trình có hai nghiệm phân biệt.", a:true},
-       {s:"b) Nếu Δ = 0 thì phương trình vô nghiệm.", a:false},
-       {s:"c) Theo Vi-ét, tổng hai nghiệm bằng −b/a.", a:true},
-       {s:"d) Theo Vi-ét, tích hai nghiệm bằng −c/a.", a:false}
+       {s:"a) Biệt thức Δ = 9.", a:true},
+       {s:"b) Phương trình có hai nghiệm x₁ = 1 và x₂ = 4.", a:true},
+       {s:"c) Tổng hai nghiệm x₁ + x₂ = −5.", a:false},
+       {s:"d) Tích hai nghiệm x₁ · x₂ = −4.", a:false}
      ],
-     explain:"b) Sai — Δ = 0 thì PT có nghiệm kép x = −b/(2a). d) Sai — Tích hai nghiệm bằng c/a (không có dấu trừ)."},
+     explain:"Δ = 25 − 16 = 9 → a) Đúng. x = (5±3)/2 → x₁=1, x₂=4 → b) Đúng. c) Sai — x₁+x₂ = 5 (Vi-ét: −b/a = 5). d) Sai — x₁·x₂ = 4 (Vi-ét: c/a = 4)."},
 
     {type:"tf",
-     text:"Câu 14. Cho hình trụ có bán kính đáy r và chiều cao h. Xét các phát biểu sau:",
+     text:"Câu 14. Cho hình trụ có bán kính đáy r = 5 cm, chiều cao h = 10 cm. Xét các phát biểu sau:",
      statements:[
-       {s:"a) Thể tích hình trụ bằng πr²h.", a:true},
-       {s:"b) Diện tích xung quanh hình trụ bằng πrh.", a:false},
-       {s:"c) Hình trụ có hai đáy là hai hình tròn bằng nhau.", a:true},
-       {s:"d) Diện tích toàn phần hình trụ bằng 2πrh + πr².", a:false}
+       {s:"a) Diện tích xung quanh hình trụ bằng 100π cm².", a:true},
+       {s:"b) Diện tích một đáy bằng 10π cm².", a:false},
+       {s:"c) Thể tích hình trụ bằng 250π cm³.", a:true},
+       {s:"d) Diện tích toàn phần hình trụ bằng 140π cm².", a:false}
      ],
-     explain:"b) Sai — S_xq = 2πrh (thiếu hệ số 2). d) Sai — S_tp = 2πrh + 2πr² (hai đáy, không phải một)."},
+     explain:"a) Đúng — S_xq = 2πrh = 2π·5·10 = 100π. b) Sai — S_đáy = πr² = 25π (không phải 10π). c) Đúng — V = πr²h = π·25·10 = 250π. d) Sai — S_tp = 100π + 2·25π = 150π (không phải 140π)."},
 
     {type:"tf",
-     text:"Câu 15. Xét các phát biểu về căn thức:",
+     text:"Câu 15. Cho biểu thức A = √48 − 2√27 + √75. Xét các phát biểu sau:",
      statements:[
-       {s:"a) √25 = 5.", a:true},
-       {s:"b) √((-5)²) = −5.", a:false},
-       {s:"c) √(9 · 16) = √9 · √16 = 12.", a:true},
-       {s:"d) √(9 + 16) = √9 + √16 = 7.", a:false}
+       {s:"a) √48 = 4√3.", a:true},
+       {s:"b) 2√27 = 6√3.", a:true},
+       {s:"c) √75 = 25√3.", a:false},
+       {s:"d) Giá trị của A bằng √3.", a:false}
      ],
-     explain:"b) Sai — √((-5)²) = √25 = |−5| = 5. d) Sai — √(9+16) = √25 = 5 ≠ 3 + 4 = 7. Không có công thức √(a+b) = √a + √b."},
+     explain:"a) Đúng — √48 = √(16·3) = 4√3. b) Đúng — 2√27 = 2·3√3 = 6√3. c) Sai — √75 = √(25·3) = 5√3 (không phải 25√3). d) Sai — A = 4√3 − 6√3 + 5√3 = 3√3 (không phải √3)."},
 
     {type:"tf",
-     text:"Câu 16. Một hộp có 3 bi đỏ, 5 bi xanh, 2 bi vàng (cùng kích thước). Lấy ngẫu nhiên một bi. Xét các phát biểu:",
+     text:"Câu 16. Một hộp có 4 bi đỏ, 3 bi xanh, 3 bi vàng (cùng kích thước). Lấy ngẫu nhiên một bi. Xét các phát biểu sau:",
      statements:[
-       {s:"a) Xác suất lấy được bi đỏ là 3/10.", a:true},
-       {s:"b) Xác suất lấy được bi xanh là 1/2.", a:true},
-       {s:"c) Xác suất lấy được bi vàng là 1/3.", a:false},
-       {s:"d) Biến cố \"lấy được bi đỏ hoặc bi xanh\" là biến cố chắc chắn.", a:false}
+       {s:"a) Xác suất lấy được bi đỏ là 2/5.", a:true},
+       {s:"b) Xác suất lấy được bi xanh là 1/3.", a:false},
+       {s:"c) Xác suất lấy được bi không phải vàng là 7/10.", a:true},
+       {s:"d) Lấy được bi xanh là biến cố không thể.", a:false}
      ],
-     explain:"c) Sai — P(vàng) = 2/10 = 1/5 (không phải 1/3). d) Sai — P(đỏ hoặc xanh) = 8/10 = 4/5 ≠ 1, không phải biến cố chắc chắn."},
+     explain:"a) Đúng — P(đỏ) = 4/10 = 2/5. b) Sai — P(xanh) = 3/10 (không phải 1/3). c) Đúng — P(không vàng) = 7/10. d) Sai — Có 3 bi xanh trong hộp nên hoàn toàn có thể lấy được."},
 
     // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
 
