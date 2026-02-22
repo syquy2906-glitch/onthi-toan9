@@ -2763,6 +2763,174 @@ const examData = [
      explain:"Giá trị đại diện = (8 + 12)/2 = 10."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 8 ====================
+  {
+  id:"l9_21", emoji:"📋", name:"Ôn tập đề số 8",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 8</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Điều kiện xác định biểu thức chứa căn<br>– Căn bậc ba<br>– Hệ phương trình bậc nhất hai ẩn<br>– Phương trình bậc hai, định lý Vi-ét<br>– Bất phương trình bậc nhất một ẩn<br>– Đường tròn: nội tiếp, ngoại tiếp, góc nội tiếp<br>– Hình trụ: diện tích xung quanh, thể tích<br>– Mặt cầu: diện tích<br>– Thống kê: tần số, tần số tương đối<br>– Xác suất`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Điều kiện xác định của biểu thức √(x − 5) là",
+     opts:["x > 5","x ≥ 5","x ≥ −5","x ≤ 5"],
+     correct:1,
+     explain:"√(x − 5) xác định khi x − 5 ≥ 0 ⇔ x ≥ 5."},
+
+    {type:"mc",
+     text:"Câu 2. Căn bậc 3 của 27 bằng",
+     opts:["3","±3","−3","9"],
+     correct:0,
+     explain:"∛27 = 3 vì 3³ = 27. Căn bậc ba chỉ cho một giá trị duy nhất."},
+
+    {type:"mc",
+     text:"Câu 3. Giá trị của biểu thức 3√36 bằng",
+     opts:["18","−18","±18","108"],
+     correct:0,
+     explain:"3√36 = 3 · 6 = 18."},
+
+    {type:"mc",
+     text:"Câu 4. Hệ phương trình nào dưới đây là hệ hai phương trình bậc nhất hai ẩn?",
+     opts:["x + z² = 6 và y − z = 2","x + 3y = 2 và x − y = 15","2x + y² = −3 và 3x + z = 15","2x − 3y = 5 và x² + 2y = 11"],
+     correct:1,
+     explain:"HPT bậc nhất hai ẩn: mỗi PT đều bậc nhất với 2 ẩn. Chỉ B: x + 3y = 2 và x − y = 15 thỏa mãn (A, C, D đều chứa lũy thừa bậc 2 hoặc 3 ẩn)."},
+
+    {type:"mc",
+     text:"Câu 5. Gọi x₁, x₂ là hai nghiệm của phương trình 2x² − 5x + 3 = 0. Khi đó x₁ + x₂ bằng",
+     opts:["5/2","3/2","−5/2","−3/2"],
+     correct:0,
+     explain:"Theo Vi-ét: x₁ + x₂ = −b/a = −(−5)/2 = 5/2."},
+
+    {type:"mc",
+     text:"Câu 6. Bất phương trình nào sau đây là bất phương trình bậc nhất một ẩn?",
+     opts:["1/x − x > 0","3x − 7 ≥ 0","5x² + 3x − 2 < 0","2x − y ≤ 0"],
+     correct:1,
+     explain:"BPT bậc nhất một ẩn: dạng ax + b ≥ 0 (a ≠ 0). A chứa 1/x (không phải bậc nhất), C bậc 2, D hai ẩn. Chỉ B: 3x − 7 ≥ 0 thỏa mãn."},
+
+    {type:"mc",
+     text:"Câu 7. Giá trị nào sau đây của x là một nghiệm của bất phương trình 3x − 7 > 0?",
+     opts:["x = 0","x = −1","x = 5","x = −2"],
+     correct:2,
+     explain:"3x − 7 > 0 ⇔ x > 7/3 ≈ 2,33. Chỉ x = 5 > 7/3 thỏa mãn. Các giá trị 0, −1, −2 đều < 7/3."},
+
+    {type:"mc",
+     text:"Câu 8. Cho tứ giác ABCD nội tiếp đường tròn (O) và B̂ = 60°. Số đo góc D là",
+     opts:["70°","120°","300°","30°"],
+     correct:1,
+     explain:"Tứ giác nội tiếp: hai góc đối bù nhau. B + D = 180° ⇒ D = 180° − 60° = 120°."},
+
+    {type:"mc",
+     text:"Câu 9. Số đo của góc nội tiếp chắn nửa đường tròn bằng",
+     opts:["180°","45°","360°","90°"],
+     correct:3,
+     explain:"Nửa đường tròn có số đo 180°. Góc nội tiếp = ½ · cung bị chắn = ½ · 180° = 90°."},
+
+    {type:"mc",
+     text:"Câu 10. Đường tròn nội tiếp tam giác là đường tròn",
+     opts:["tiếp xúc với 1 cạnh của tam giác","đi qua 3 đỉnh của tam giác","tiếp xúc với 3 cạnh của tam giác","đi qua 2 đỉnh của tam giác"],
+     correct:2,
+     explain:"Đường tròn nội tiếp tam giác tiếp xúc với cả 3 cạnh. Tâm là giao điểm 3 đường phân giác trong. (Đi qua 3 đỉnh là đường tròn ngoại tiếp.)"},
+
+    {type:"mc",
+     text:"Câu 11. Diện tích xung quanh của hình trụ có bán kính đáy r và chiều cao h là",
+     opts:["2πrh","πrh","(1/2)πrh","πr²h"],
+     correct:0,
+     explain:"Công thức S_xq hình trụ = 2πrh (chu vi đáy × chiều cao). πr²h là thể tích, không phải diện tích."},
+
+    {type:"mc",
+     text:"Câu 12. Diện tích mặt cầu có bán kính R là",
+     opts:["4πR²","4πR³","πR²","2πR²"],
+     correct:0,
+     explain:"Công thức diện tích mặt cầu: S = 4πR². (πR² là diện tích hình tròn, 4πR³/3 là thể tích.)"},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Cho phương trình 2x² − 5x + 3 = 0 có hai nghiệm x₁, x₂:",
+     statements:[
+       {stmt:"Biệt thức Δ = 1", correct:true},
+       {stmt:"Tích hai nghiệm x₁ · x₂ = 3/2", correct:true},
+       {stmt:"Tổng hai nghiệm x₁ + x₂ = −5/2", correct:false},
+       {stmt:"Phương trình có nghiệm kép", correct:false}
+     ], explains:[
+       "Đúng. Δ = (−5)² − 4·2·3 = 25 − 24 = 1 > 0.",
+       "Đúng. Theo Vi-ét: x₁ · x₂ = c/a = 3/2.",
+       "Sai. x₁ + x₂ = −b/a = −(−5)/2 = 5/2 (dương, không phải −5/2).",
+       "Sai. Δ = 1 > 0 nên PT có hai nghiệm phân biệt, không phải nghiệm kép (nghiệm kép khi Δ = 0)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Xét các biểu thức chứa căn bậc hai và căn bậc ba:",
+     statements:[
+       {stmt:"√(x − 5) xác định khi x ≥ 5", correct:true},
+       {stmt:"∛(−8) = −2", correct:true},
+       {stmt:"√16 = ±4", correct:false},
+       {stmt:"∛64 = −4", correct:false}
+     ], explains:[
+       "Đúng. Điều kiện: x − 5 ≥ 0 ⇔ x ≥ 5.",
+       "Đúng. (−2)³ = −8 nên ∛(−8) = −2.",
+       "Sai. √16 = 4 (căn bậc hai số học luôn không âm). ±4 là hai căn bậc hai của 16, nhưng √16 chỉ lấy giá trị dương.",
+       "Sai. ∛64 = 4 (vì 4³ = 64). Không phải −4 vì (−4)³ = −64."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Cho hình trụ có bán kính đáy r = 5 cm, chiều cao h = 10 cm:",
+     statements:[
+       {stmt:"Diện tích xung quanh bằng 100π cm²", correct:true},
+       {stmt:"Thể tích hình trụ bằng 250π cm³", correct:true},
+       {stmt:"Diện tích toàn phần bằng 100π cm²", correct:false},
+       {stmt:"Diện tích một đáy bằng 10π cm²", correct:false}
+     ], explains:[
+       "Đúng. S_xq = 2πrh = 2π · 5 · 10 = 100π cm².",
+       "Đúng. V = πr²h = π · 25 · 10 = 250π cm³.",
+       "Sai. S_tp = S_xq + 2S_đáy = 100π + 2 · 25π = 150π cm² (không phải 100π).",
+       "Sai. S_đáy = πr² = π · 25 = 25π cm² (không phải 10π)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Cho đường tròn (O; R) và các tính chất liên quan:",
+     statements:[
+       {stmt:"Góc nội tiếp bằng nửa góc ở tâm cùng chắn một cung", correct:true},
+       {stmt:"Góc nội tiếp chắn nửa đường tròn bằng 90°", correct:true},
+       {stmt:"Đường tròn ngoại tiếp tam giác tiếp xúc với 3 cạnh", correct:false},
+       {stmt:"Góc ở tâm luôn bằng nửa cung bị chắn", correct:false}
+     ], explains:[
+       "Đúng. Hệ thức: góc nội tiếp = ½ · góc ở tâm cùng chắn một cung.",
+       "Đúng. Nửa đường tròn = 180°. Góc nội tiếp = ½ · 180° = 90°.",
+       "Sai. Đường tròn ngoại tiếp đi qua 3 đỉnh của tam giác. Tiếp xúc 3 cạnh là đường tròn nội tiếp.",
+       "Sai. Góc ở tâm bằng cung bị chắn (không phải nửa). Góc nội tiếp mới bằng nửa cung bị chắn."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Tính giá trị biểu thức √49 + ∛(−27).",
+     answer:"4",
+     hint:"√49 = 7, ∛(−27) = −3",
+     explain:"√49 + ∛(−27) = 7 + (−3) = 4."},
+
+    {type:"short",
+     text:"Câu 18. Cho hình trụ có bán kính đáy r = 3 cm, chiều cao h = 7 cm. Diện tích xung quanh hình trụ bằng aπ cm². Tính a.",
+     answer:"42",
+     hint:"S_xq = 2πrh",
+     explain:"S_xq = 2πrh = 2π · 3 · 7 = 42π cm². Vậy a = 42."},
+
+    {type:"short",
+     text:"Câu 19. Tứ giác ABCD nội tiếp đường tròn. Biết góc A = 70°. Tính số đo góc C (đơn vị: độ).",
+     answer:"110",
+     hint:"Tứ giác nội tiếp: hai góc đối bù nhau",
+     explain:"Tứ giác nội tiếp: A + C = 180° ⇒ C = 180° − 70° = 110°."},
+
+    {type:"short",
+     text:"Câu 20. Bất phương trình 3x − 7 > 0 có nghiệm nguyên dương nhỏ nhất bằng bao nhiêu?",
+     answer:"3",
+     hint:"Giải BPT: x > 7/3",
+     explain:"3x − 7 > 0 ⇔ x > 7/3 ≈ 2,33. Nghiệm nguyên dương nhỏ nhất là 3."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
