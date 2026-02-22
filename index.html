@@ -1923,6 +1923,174 @@ const examData = [
      explain:"Đường sinh l = R = 6. Chu vi đáy = πR = 6π ⇒ 2πr = 6π ⇒ r = 3. S_xq = πrl = π·3·6 = 18π cm²."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 3 ====================
+  {
+  id:"l9_16", emoji:"📋", name:"Ôn tập đề số 3",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 3</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi, bao gồm:<br>– Căn bậc hai, căn bậc ba, biến đổi căn thức<br>– Tỉ số lượng giác trong tam giác vuông<br>– Hệ số góc đường thẳng, giao điểm đồ thị<br>– Đường tròn: tiếp tuyến, dây cung, nội tiếp<br>– Hình nón, mặt cầu, hình quạt<br>– Thống kê: biểu đồ cột, biểu đồ tròn, tần số ghép nhóm<br>– Xác suất (xúc xắc, đồng xu, rút thẻ)<br>– Bất phương trình bậc nhất<br>– Bài toán thực tế (taxi)`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Biểu đồ thống kê số HS tham gia CLB cờ vua: Lớp 6 có 5 HS, Lớp 7 có 15 HS, Lớp 8 có 10 HS, Lớp 9 có 25 HS. Chọn ngẫu nhiên 1 HS trong CLB. Xác suất chọn được HS lớp 9 là",
+     opts:["1/11","5/11","5/8","25/60"],
+     correct:1,
+     explain:"Tổng = 5+15+10+25 = 55. P(lớp 9) = 25/55 = 5/11."},
+
+    {type:"mc",
+     text:"Câu 2. Điều kiện xác định của phương trình (x−7)/(2x+3) − 1/2 = x là",
+     opts:["x ≠ −3/2","x ≠ 1/2","x ≠ 7","x ≠ 0"],
+     correct:0,
+     explain:"Mẫu 2x+3 ≠ 0 ⇒ x ≠ −3/2."},
+
+    {type:"mc",
+     text:"Câu 3. Giá trị của ∛(−8) bằng",
+     opts:["−2","2","−4","4"],
+     correct:0,
+     explain:"∛(−8) = ∛(−2)³ = −2."},
+
+    {type:"mc",
+     text:"Câu 4. Cho đường tròn (O) bán kính 3 cm. Điểm A nằm ngoài đường tròn với OA = 5 cm. Kẻ tiếp tuyến AB (B là tiếp điểm). Độ dài AB bằng",
+     opts:["3 cm","4 cm","√34 cm","8 cm"],
+     correct:1,
+     explain:"OB ⊥ AB (tiếp tuyến). AB² = OA² − OB² = 25 − 9 = 16 ⇒ AB = 4 cm."},
+
+    {type:"mc",
+     text:"Câu 5. Cho tam giác ABC vuông tại A có AB = 3, BC = 6. Giá trị tanB bằng",
+     opts:["1/2","2","√3","√3/3"],
+     correct:2,
+     explain:"AC = √(BC²−AB²) = √(36−9) = √27 = 3√3. tanB = AC/AB = 3√3/3 = √3."},
+
+    {type:"mc",
+     text:"Câu 6. Cho hình vuông cạnh 10 cm. Bán kính đường tròn nội tiếp hình vuông bằng",
+     opts:["5 cm","10 cm","5√2 cm","10√2 cm"],
+     correct:0,
+     explain:"Đường tròn nội tiếp hình vuông có bán kính r = a/2 = 10/2 = 5 cm."},
+
+    {type:"mc",
+     text:"Câu 7. Hệ số góc của đường thẳng 2x − y = 4 bằng",
+     opts:["−2","2","4","−4"],
+     correct:1,
+     explain:"2x − y = 4 ⇔ y = 2x − 4. Hệ số góc = 2."},
+
+    {type:"mc",
+     text:"Câu 8. Với a > 2, biểu thức a + √((a−2)²) bằng",
+     opts:["2","2a","2a − 2","2 − 2a"],
+     correct:2,
+     explain:"√((a−2)²) = |a−2| = a−2 (vì a > 2). Vậy a + (a−2) = 2a − 2."},
+
+    {type:"mc",
+     text:"Câu 9. Gieo đồng thời một con xúc xắc và một đồng xu. Không gian mẫu có bao nhiêu phần tử?",
+     opts:["8","2","12","6"],
+     correct:2,
+     explain:"Xúc xắc: 6 kết quả. Đồng xu: 2 kết quả. |Ω| = 6 × 2 = 12."},
+
+    {type:"mc",
+     text:"Câu 10. Bạn Lan dùng 4 miếng bia hình quạt tròn bán kính 30 cm, ứng với cung 120° để gấp trang trí. Tổng diện tích các miếng bia là",
+     opts:["2400π cm²","1200π cm²","300π cm²","1500π cm²"],
+     correct:1,
+     explain:"S một quạt = πR²·n/360 = π·900·120/360 = 300π. Tổng 4 miếng = 4 × 300π = 1200π cm²."},
+
+    {type:"mc",
+     text:"Câu 11. Cho mặt cầu có bán kính R = 3 cm. Diện tích mặt cầu bằng",
+     opts:["48π cm²","36π cm²","12π cm²","9π cm²"],
+     correct:1,
+     explain:"S = 4πR² = 4π·9 = 36π cm²."},
+
+    {type:"mc",
+     text:"Câu 12. Cho đường tròn (O) bán kính R = 10 cm. Khoảng cách từ tâm O đến dây AB là 8 cm. Độ dài dây AB bằng",
+     opts:["12 cm","8 cm","2√41 cm","6 cm"],
+     correct:0,
+     explain:"Gọi M là trung điểm AB: AM = √(R²−d²) = √(100−64) = √36 = 6. AB = 2·AM = 12 cm."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Biểu đồ tròn thống kê điểm kiểm tra Toán 60 HS: Điểm 5 chiếm 15%, Điểm 6 chiếm 20%, Điểm 7 chiếm 25%, Điểm 8 chiếm 30%, Điểm 9 chiếm 10%:",
+     statements:[
+       {stmt:"Số HS đạt điểm 8 là 18", correct:true},
+       {stmt:"Số HS đạt điểm 9 là 6", correct:true},
+       {stmt:"Số HS đạt điểm dưới 7 là 15", correct:false},
+       {stmt:"Mốt là điểm 9", correct:false}
+     ], explains:[
+       "Đúng. 30% × 60 = 18 HS.",
+       "Đúng. 10% × 60 = 6 HS.",
+       "Sai. Dưới 7 = Điểm 5 + Điểm 6 = 15% + 20% = 35%. 35% × 60 = 21 (không phải 15).",
+       "Sai. Mốt là giá trị có tỉ lệ lớn nhất: Điểm 8 (30%), không phải Điểm 9."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Kiểm tra cân nặng 40 HS, bảng tần số ghép nhóm: [35;40) có 5, [40;45) có 11, [45;50) có 16, [50;55) có 8:",
+     statements:[
+       {stmt:"Tổng số HS được khảo sát là 40", correct:true},
+       {stmt:"Nhóm có tần số lớn nhất là [45;50)", correct:true},
+       {stmt:"Số HS cân nặng dưới 45 kg là 5", correct:false},
+       {stmt:"Tần số tương đối của nhóm [50;55) là 25%", correct:false}
+     ], explains:[
+       "Đúng. 5 + 11 + 16 + 8 = 40.",
+       "Đúng. Nhóm [45;50) có tần số 16 — lớn nhất.",
+       "Sai. Dưới 45 kg gồm [35;40) + [40;45) = 5 + 11 = 16 (không phải 5).",
+       "Sai. Tần số tương đối = 8/40 = 20% (không phải 25%)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Gọi x₁, x₂ là hoành độ giao điểm hai đồ thị y = x² và y = 3x + 2. Phương trình hoành độ giao điểm: x² − 3x − 2 = 0:",
+     statements:[
+       {stmt:"Biệt thức Δ = 9", correct:false},
+       {stmt:"x₁ + x₂ = 3", correct:true},
+       {stmt:"x₁ · x₂ = −2", correct:true},
+       {stmt:"x₁² + x₂² = 17", correct:false}
+     ], explains:[
+       "Sai. Δ = 9 − 4·(−2) = 9 + 8 = 17 (không phải 9).",
+       "Đúng. Theo Vi-ét: x₁ + x₂ = −b/a = 3.",
+       "Đúng. Theo Vi-ét: x₁ · x₂ = c/a = −2.",
+       "Sai. x₁² + x₂² = (x₁+x₂)² − 2x₁x₂ = 9 − 2(−2) = 13 (không phải 17)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Cho hình nón có bán kính đáy r = 3 cm, chiều cao h = 5 cm:",
+     statements:[
+       {stmt:"Đường sinh l = √34 cm", correct:true},
+       {stmt:"Thể tích hình nón bằng 15π cm³", correct:true},
+       {stmt:"Diện tích đáy bằng 6π cm²", correct:false},
+       {stmt:"Diện tích xung quanh bằng 15π cm²", correct:false}
+     ], explains:[
+       "Đúng. l = √(r²+h²) = √(9+25) = √34 cm.",
+       "Đúng. V = (1/3)πr²h = (1/3)·π·9·5 = 15π cm³.",
+       "Sai. S_đáy = πr² = 9π cm² (không phải 6π).",
+       "Sai. S_xq = πrl = 3π√34 ≈ 17,49π cm² (không phải 15π)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Một hãng taxi có giá 15 nghìn đồng cho km đầu tiên và 12 nghìn đồng cho mỗi km tiếp theo. Với 150 nghìn đồng, đi được tối đa bao nhiêu km? (làm tròn đến hàng đơn vị)",
+     answer:"12",
+     hint:"Lập BPT: 15 + 12(x−1) ≤ 150",
+     explain:"15 + 12(x−1) ≤ 150 ⇒ 12(x−1) ≤ 135 ⇒ x−1 ≤ 11,25 ⇒ x ≤ 12,25. Tối đa 12 km."},
+
+    {type:"short",
+     text:"Câu 18. Biểu đồ tần số tương đối diện tích trồng cây ăn quả: Xoài 17,5%, Vải thiều 20%, Nhãn 27,5%, Loại khác 35%. Tỉ lệ phần trăm diện tích trồng nhãn và vải thiều là bao nhiêu?",
+     answer:"47,5",
+     hint:"Cộng hai tỉ lệ",
+     explain:"Nhãn + Vải thiều = 27,5% + 20% = 47,5%."},
+
+    {type:"short",
+     text:"Câu 19. Biểu đồ thống kê CLB cờ vua: Lớp 6 có 5 HS, Lớp 7 có 15 HS, Lớp 8 có 10 HS, Lớp 9 có 25 HS. Tổng số HS tham gia CLB là bao nhiêu?",
+     answer:"55",
+     hint:"Cộng tất cả các lớp",
+     explain:"5 + 15 + 10 + 25 = 55 HS."},
+
+    {type:"short",
+     text:"Câu 20. Cho bất phương trình x − 8 < 0. Tìm nghiệm nguyên dương lớn nhất.",
+     answer:"7",
+     hint:"Giải BPT: x < ?",
+     explain:"x − 8 < 0 ⇒ x < 8. Nghiệm nguyên dương lớn nhất là 7."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
