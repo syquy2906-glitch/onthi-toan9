@@ -2427,6 +2427,174 @@ const examData = [
      explain:"Cung lớn AmB = 360° − 120° = 240°."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 6 ====================
+  {
+  id:"l9_19", emoji:"📋", name:"Ôn tập đề số 6",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 6</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Biểu thức √(x²) = |x|, căn bậc hai<br>– Hệ phương trình bậc nhất hai ẩn<br>– Hàm số y = ax² (tính nghịch biến)<br>– Căn bậc ba<br>– Phương trình bậc hai (biệt thức Δ)<br>– Hình trụ, hình nón<br>– Xác suất, thống kê (biểu đồ cột, tần số)<br>– Tỉ số lượng giác trong tam giác vuông<br>– Đường tròn: tiếp tuyến, nội tiếp<br>– Bất phương trình bậc nhất<br>– Góc tạo bởi kim đồng hồ`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Với mọi số thực x, √(x²) bằng",
+     opts:["x","−x","|x|","±x"],
+     correct:2,
+     explain:"√(x²) = |x| với mọi x ∈ ℝ. VD: √((−3)²) = √9 = 3 = |−3|."},
+
+    {type:"mc",
+     text:"Câu 2. Nghiệm của hệ phương trình x + y = 3 và x − y = 1 là",
+     opts:["(2; 1)","(1; 2)","(3; 0)","(0; 3)"],
+     correct:0,
+     explain:"Cộng hai PT: 2x = 4 ⇒ x = 2, y = 3 − 2 = 1."},
+
+    {type:"mc",
+     text:"Câu 3. Cho hàm số y = ax² (a ≠ 0). Hàm số nghịch biến khi x > 0 nếu",
+     opts:["a > 0","a < 0","a = 1","a = −1"],
+     correct:1,
+     explain:"Khi a < 0 và x > 0: x tăng ⇒ x² tăng ⇒ ax² giảm (nhân số âm). Hàm nghịch biến."},
+
+    {type:"mc",
+     text:"Câu 4. Giá trị của ∛(−125) bằng",
+     opts:["5","−5","25","−25"],
+     correct:1,
+     explain:"(−5)³ = −125 nên ∛(−125) = −5."},
+
+    {type:"mc",
+     text:"Câu 5. Phương trình nào sau đây có hai nghiệm phân biệt?",
+     opts:["x² + 2x + 3 = 0","x² − 4x + 4 = 0","x² − 4x + 3 = 0","2x² + x + 1 = 0"],
+     correct:2,
+     explain:"Xét Δ: A) 4−12=−8<0. B) 16−16=0 (nghiệm kép). C) 16−12=4>0 ✓. D) 1−8=−7<0."},
+
+    {type:"mc",
+     text:"Câu 6. Diện tích toàn phần của hình trụ có bán kính đáy r = 3 cm, chiều cao h = 5 cm bằng",
+     opts:["30π cm²","48π cm²","36π cm²","54π cm²"],
+     correct:1,
+     explain:"S_tp = 2πrh + 2πr² = 2π·3·5 + 2π·9 = 30π + 18π = 48π cm²."},
+
+    {type:"mc",
+     text:"Câu 7. Cửa hàng bác Ninh bán TV trong 4 tháng đầu năm 2025: Tháng 1: 10, Tháng 2: 14, Tháng 3: 20, Tháng 4: 16 chiếc. Tháng 3 bán được bao nhiêu chiếc?",
+     opts:["16","20","14","10"],
+     correct:1,
+     explain:"Theo biểu đồ cột, tháng 3 bán được 20 chiếc TV."},
+
+    {type:"mc",
+     text:"Câu 8. Một hộp chứa 20 thẻ ghi số từ 1 đến 20 (hai thẻ khác nhau ghi số khác nhau). Rút ngẫu nhiên một thẻ. Xác suất \"Số ghi trên thẻ là số chẵn\" bằng",
+     opts:["9/20","1/2","2/5","1/5"],
+     correct:1,
+     explain:"Số chẵn từ 1 đến 20: {2,4,6,...,20} = 10 số. P = 10/20 = 1/2."},
+
+    {type:"mc",
+     text:"Câu 9. Trong các đồ vật: quả cầu pha lê, chậu gốm, cái nón, ống trụ gỗ — đồ vật nào có dạng hình nón?",
+     opts:["Quả cầu pha lê","Chậu gốm","Cái nón","Ống trụ gỗ"],
+     correct:2,
+     explain:"Cái nón có dạng hình nón (mặt xung quanh là mặt nón, đáy là hình tròn)."},
+
+    {type:"mc",
+     text:"Câu 10. Coi khung đồng hồ là đường tròn, kim giờ và kim phút là các tia. Khi đồng hồ chỉ 6 giờ đúng, góc tạo bởi kim giờ và kim phút có số đo là",
+     opts:["180°","120°","90°","30°"],
+     correct:0,
+     explain:"Lúc 6 giờ đúng, kim giờ chỉ số 6, kim phút chỉ số 12 → hai kim nằm trên đường thẳng → góc = 180°."},
+
+    {type:"mc",
+     text:"Câu 11. Cho đường tròn (O; R). Đường thẳng d là tiếp tuyến của đường tròn (O) tại điểm A. Khẳng định nào sau đây đúng?",
+     opts:["d song song OA","OA vuông góc d","d cắt đường tròn tại hai điểm","d không đi qua A"],
+     correct:1,
+     explain:"Tiếp tuyến tại A luôn vuông góc với bán kính OA tại tiếp điểm."},
+
+    {type:"mc",
+     text:"Câu 12. Cho một hình vuông, một hình chữ nhật, một tam giác không phải tam giác vuông. Số hình nội tiếp được đường tròn là",
+     opts:["0","1","2","3"],
+     correct:3,
+     explain:"Hình vuông ✓, HCN ✓ (tứ giác có 4 góc vuông luôn nội tiếp). Tam giác bất kỳ luôn nội tiếp được đường tròn ✓. Vậy cả 3 hình."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Xét điều kiện xác định của các biểu thức chứa căn:",
+     statements:[
+       {stmt:"√(x − 1) có nghĩa khi x ≥ 1", correct:true},
+       {stmt:"√(x²) có nghĩa với mọi x ∈ ℝ", correct:true},
+       {stmt:"√(−3) có nghĩa", correct:false},
+       {stmt:"√(1 − x) có nghĩa khi x ≥ 1", correct:false}
+     ], explains:[
+       "Đúng. x − 1 ≥ 0 ⇔ x ≥ 1.",
+       "Đúng. x² ≥ 0 với mọi x nên √(x²) luôn có nghĩa.",
+       "Sai. −3 < 0 nên √(−3) không có nghĩa.",
+       "Sai. 1 − x ≥ 0 ⇔ x ≤ 1 (không phải x ≥ 1)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Lớp 9B có 40 HS, bảng tần số ghép nhóm: [0;3) có 4, [3;5) có 8, [5;7) có 14, [7;9) có 10, [9;10] có 4:",
+     statements:[
+       {stmt:"Tổng số học sinh là 40", correct:true},
+       {stmt:"Tần số tương đối nhóm [5;7) là 35%", correct:true},
+       {stmt:"Nhóm [7;9) có tần số lớn nhất", correct:false},
+       {stmt:"Bảng có 6 nhóm", correct:false}
+     ], explains:[
+       "Đúng. 4 + 8 + 14 + 10 + 4 = 40.",
+       "Đúng. 14/40 = 0,35 = 35%.",
+       "Sai. Nhóm [5;7) có tần số 14 — lớn nhất (không phải [7;9) = 10).",
+       "Sai. Bảng có 5 nhóm (không phải 6)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Cho tam giác ABC vuông tại A có AB = 6 cm, BC = 10 cm:",
+     statements:[
+       {stmt:"AC = 8 cm", correct:true},
+       {stmt:"sinB = 4/5", correct:true},
+       {stmt:"cosB = 4/5", correct:false},
+       {stmt:"tanB = 3/4", correct:false}
+     ], explains:[
+       "Đúng. AC = √(BC²−AB²) = √(100−36) = √64 = 8 cm.",
+       "Đúng. sinB = AC/BC = 8/10 = 4/5.",
+       "Sai. cosB = AB/BC = 6/10 = 3/5 (không phải 4/5).",
+       "Sai. tanB = AC/AB = 8/6 = 4/3 (không phải 3/4)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Gieo xúc xắc 50 lần, kết quả: mặt 1 → 7 lần, mặt 2 → 6 lần, mặt 3 → 14 lần, mặt 4 → 6 lần, mặt 5 → 8 lần, mặt 6 → ?:",
+     statements:[
+       {stmt:"Tần số xuất hiện mặt 6 chấm là 9", correct:true},
+       {stmt:"Mặt 3 xuất hiện nhiều lần nhất", correct:true},
+       {stmt:"Tần số tương đối của mặt 1 là 20%", correct:false},
+       {stmt:"Tổng tần số các mặt là 48", correct:false}
+     ], explains:[
+       "Đúng. Mặt 6 = 50 − (7+6+14+6+8) = 50 − 41 = 9.",
+       "Đúng. Mặt 3 xuất hiện 14 lần — nhiều nhất.",
+       "Sai. TĐ mặt 1 = 7/50 = 14% (không phải 20%).",
+       "Sai. Tổng tần số = 50 (tổng số lần gieo, không phải 48)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Cho hàm số y = 2x². Tính giá trị y khi x = −2.",
+     answer:"8",
+     hint:"Thay x = −2 vào y = 2x²",
+     explain:"y = 2·(−2)² = 2·4 = 8."},
+
+    {type:"short",
+     text:"Câu 18. Tính giá trị biểu thức √49 + ∛(−8).",
+     answer:"5",
+     hint:"√49 = 7, ∛(−8) = −2",
+     explain:"√49 + ∛(−8) = 7 + (−2) = 5."},
+
+    {type:"short",
+     text:"Câu 19. Bất phương trình 2x − 5 ≤ 0 có nghiệm nguyên dương lớn nhất bằng bao nhiêu?",
+     answer:"2",
+     hint:"Giải BPT: x ≤ 5/2 = 2,5",
+     explain:"2x − 5 ≤ 0 ⇒ x ≤ 2,5. Nghiệm nguyên dương lớn nhất là 2."},
+
+    {type:"short",
+     text:"Câu 20. Bất phương trình x − 7 < 0 có nghiệm nguyên dương lớn nhất bằng bao nhiêu?",
+     answer:"6",
+     hint:"Giải BPT: x < 7",
+     explain:"x − 7 < 0 ⇒ x < 7. Nghiệm nguyên dương lớn nhất là 6."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
