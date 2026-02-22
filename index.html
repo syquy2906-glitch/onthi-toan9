@@ -1176,7 +1176,7 @@ const examData = [
   // ==================== CHỦ ĐỀ 10: GÓC VỚI ĐƯỜNG TRÒN — TỨ GIÁC NỘI TIẾP ====================
   {
     id:"l9_10", emoji:"🔶", name:"Góc với đường tròn — Tứ giác nội tiếp",
-    desc:"📝 32 câu | 🔵 24 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+    desc:"📝 46 câu | 🔵 32 trắc nghiệm | 🟡 6 đúng/sai | 🟢 8 trả lời ngắn",
     theory:`<b>1. Góc ở tâm</b><br>
 – Góc ở tâm là góc có đỉnh trùng tâm đường tròn.<br>
 – Số đo góc ở tâm = số đo cung bị chắn.<br><br>
@@ -1185,16 +1185,17 @@ const examData = [
 – Số đo góc nội tiếp = ½ số đo cung bị chắn.<br>
 – Góc nội tiếp chắn nửa đường tròn = 90°.<br>
 – Các góc nội tiếp cùng chắn một cung thì bằng nhau.<br><br>
-<b>3. Đường tròn ngoại tiếp tam giác</b><br>
-– Tâm: giao điểm ba đường trung trực của tam giác.<br>
-– Mọi tam giác đều có đường tròn ngoại tiếp.<br><br>
-<b>4. Đường tròn nội tiếp tam giác</b><br>
-– Tâm: giao điểm ba đường phân giác trong của tam giác.<br>
-– Mọi tam giác đều có đường tròn nội tiếp.<br><br>
-<b>5. Tứ giác nội tiếp</b><br>
-– Tứ giác nội tiếp đường tròn: 4 đỉnh nằm trên 1 đường tròn.<br>
-– Tính chất: tổng hai góc đối = 180°.<br>
-– Dấu hiệu nhận biết: tứ giác có tổng hai góc đối = 180° thì nội tiếp được đường tròn.`,
+<b>3. Đường tròn ngoại tiếp – nội tiếp tam giác</b><br>
+– Tâm ngoại tiếp: giao 3 đường trung trực. Tâm nội tiếp: giao 3 phân giác trong.<br><br>
+<b>4. Tứ giác nội tiếp</b><br>
+– 4 đỉnh nằm trên 1 đường tròn. Tổng hai góc đối = 180°.<br><br>
+<b>5. Độ dài đường tròn và cung tròn</b><br>
+– Chu vi (độ dài) đường tròn: C = 2πR = πd (R: bán kính, d: đường kính).<br>
+– Độ dài cung n°: l = πRn/180.<br><br>
+<b>6. Diện tích hình tròn, hình quạt, hình vành khuyên</b><br>
+– Diện tích hình tròn: S = πR².<br>
+– Diện tích hình quạt (cung n°): S = πR²n/360.<br>
+– Diện tích hình vành khuyên: S = π(R² − r²) (R: bán kính ngoài, r: bán kính trong).`,
     questions:[
       {type:"mc", text:"Câu 1. Góc ở tâm là góc có đỉnh tại:", opts:["Trên đường tròn","Tâm đường tròn","Ngoài đường tròn","Trung điểm dây cung"], correct:1, explain:"Góc ở tâm có đỉnh trùng tâm O."},
       {type:"mc", text:"Câu 2. Số đo góc ở tâm bằng:", opts:["½ cung bị chắn","Cung bị chắn","2 lần cung bị chắn","¼ cung bị chắn"], correct:1, explain:"Góc ở tâm = số đo cung bị chắn."},
@@ -1267,7 +1268,42 @@ const examData = [
       {type:"short", text:"Câu 29. Cung AB = 100°. Góc nội tiếp chắn cung AB bằng bao nhiêu độ?", answer:"50", hint:"Góc nội tiếp = ½ cung", explain:"½·100° = 50°."},
       {type:"short", text:"Câu 30. Tứ giác ABCD nội tiếp, Â = 65°. Ĉ = ? (độ)", answer:"115", hint:"Â + Ĉ = 180°", explain:"Ĉ = 180° − 65° = 115°."},
       {type:"short", text:"Câu 31. Góc nội tiếp = 40°. Góc ở tâm cùng chắn cung đó bằng? (độ)", answer:"80", hint:"Góc ở tâm = 2 × góc nội tiếp", explain:"Góc ở tâm = cung = 2·40° = 80°."},
-      {type:"short", text:"Câu 32. AB là đường kính, C trên đường tròn. Góc ACB = ? (độ)", answer:"90", hint:"Chắn nửa đường tròn", explain:"Góc nội tiếp chắn nửa đường tròn = 90°."}
+      {type:"short", text:"Câu 32. AB là đường kính, C trên đường tròn. Góc ACB = ? (độ)", answer:"90", hint:"Chắn nửa đường tròn", explain:"Góc nội tiếp chắn nửa đường tròn = 90°."},
+      // === BỔ SUNG: ĐỘ DÀI CUNG, ĐƯỜNG TRÒN, DIỆN TÍCH HÌNH TRÒN, HÌNH QUẠT, VÀNH KHUYÊN ===
+      {type:"mc", text:"Câu 33. Công thức tính chu vi (độ dài) đường tròn bán kính R là:", opts:["C = πR","C = 2πR","C = πR²","C = 2πR²"], correct:1, explain:"Chu vi đường tròn C = 2πR."},
+      {type:"mc", text:"Câu 34. Đường tròn có đường kính d = 10 cm. Chu vi bằng (lấy π ≈ 3,14):", opts:["15,7 cm","31,4 cm","62,8 cm","78,5 cm"], correct:1, explain:"C = πd = 3,14 × 10 = 31,4 cm."},
+      {type:"mc", text:"Câu 35. Công thức tính độ dài cung n° của đường tròn bán kính R:", opts:["l = πRn/90","l = πRn/180","l = πRn/360","l = 2πRn/360"], correct:1, explain:"Độ dài cung n° là l = πRn/180."},
+      {type:"mc", text:"Câu 36. Cung 60° trên đường tròn bán kính R = 6 cm có độ dài (lấy π ≈ 3,14):", opts:["2π cm","6,28 cm","3,14 cm","12,56 cm"], correct:0, explain:"l = πRn/180 = π·6·60/180 = 2π ≈ 6,28 cm."},
+      {type:"mc", text:"Câu 37. Diện tích hình tròn bán kính R = 5 cm bằng (lấy π ≈ 3,14):", opts:["15,7 cm²","31,4 cm²","78,5 cm²","157 cm²"], correct:2, explain:"S = πR² = 3,14 × 25 = 78,5 cm²."},
+      {type:"mc", text:"Câu 38. Công thức diện tích hình quạt tròn có cung n° và bán kính R:", opts:["S = πR²n/90","S = πR²n/180","S = πR²n/360","S = 2πR²n/360"], correct:2, explain:"Diện tích hình quạt = πR²n/360."},
+      {type:"mc", text:"Câu 39. Hình quạt có bán kính 10 cm, cung 90°. Diện tích bằng:", opts:["25π cm²","50π cm²","100π cm²","10π cm²"], correct:0, explain:"S = πR²n/360 = π·100·90/360 = 25π cm²."},
+      {type:"mc", text:"Câu 40. Hình vành khuyên có bán kính ngoài R = 8 cm, bán kính trong r = 5 cm. Diện tích bằng:", opts:["39π cm²","89π cm²","64π cm²","25π cm²"], correct:0, explain:"S = π(R² − r²) = π(64 − 25) = 39π cm²."},
+      {type:"tf", text:"Câu 41 (Đúng/Sai). Về độ dài đường tròn và cung tròn:", statements:[
+        {stmt:"Chu vi đường tròn bán kính 7 cm là 14π cm", correct:true},
+        {stmt:"Độ dài cung 180° bằng nửa chu vi đường tròn", correct:true},
+        {stmt:"Nếu bán kính tăng gấp đôi thì chu vi tăng gấp 4", correct:false},
+        {stmt:"Đường tròn có đường kính 2 cm thì chu vi = 2π cm", correct:true}
+      ], explains:[
+        "Đúng. C = 2π·7 = 14π cm.",
+        "Đúng. l = πR·180/180 = πR = ½·2πR = ½C.",
+        "Sai. Chu vi tỉ lệ bậc 1 với R → R gấp đôi thì C gấp đôi.",
+        "Đúng. C = πd = π·2 = 2π cm."
+      ]},
+      {type:"tf", text:"Câu 42 (Đúng/Sai). Về diện tích hình tròn, hình quạt, hình vành khuyên:", statements:[
+        {stmt:"Diện tích hình tròn bán kính 3 cm là 9π cm²", correct:true},
+        {stmt:"Hình quạt 360° chính là hình tròn", correct:true},
+        {stmt:"Nếu R tăng gấp đôi thì diện tích hình tròn tăng gấp đôi", correct:false},
+        {stmt:"Diện tích hình vành khuyên bán kính 5 và 3 cm là 16π cm²", correct:true}
+      ], explains:[
+        "Đúng. S = π·3² = 9π cm².",
+        "Đúng. Hình quạt cung 360° = toàn bộ hình tròn.",
+        "Sai. S = πR² → R gấp đôi thì S gấp 4 (tỉ lệ bậc 2).",
+        "Đúng. S = π(5² − 3²) = π(25 − 9) = 16π cm²."
+      ]},
+      {type:"short", text:"Câu 43. Đường tròn bán kính 10 cm. Chu vi bằng bao nhiêu π cm?", answer:"20π", hint:"C = 2πR", explain:"C = 2π·10 = 20π cm."},
+      {type:"short", text:"Câu 44. Cung 90° trên đường tròn bán kính 12 cm có độ dài bằng bao nhiêu π cm?", answer:"6π", hint:"l = πRn/180", explain:"l = π·12·90/180 = 6π cm."},
+      {type:"short", text:"Câu 45. Hình quạt bán kính 6 cm, cung 60°. Diện tích = bao nhiêu π cm²?", answer:"6π", hint:"S = πR²n/360", explain:"S = π·36·60/360 = 6π cm²."},
+      {type:"short", text:"Câu 46. Hình tròn có diện tích 49π cm². Bán kính bằng bao nhiêu cm?", answer:"7", hint:"πR² = 49π → R² = ?", explain:"R² = 49 → R = 7 cm."}
     ]
   },
   // ==================== CHỦ ĐỀ 11: ĐA GIÁC ĐỀU ====================
