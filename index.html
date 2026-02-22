@@ -2931,6 +2931,174 @@ const examData = [
      explain:"3x − 7 > 0 ⇔ x > 7/3 ≈ 2,33. Nghiệm nguyên dương nhỏ nhất là 3."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 9 ====================
+  {
+  id:"l9_22", emoji:"📋", name:"Ôn tập đề số 9",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 9</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Phương trình bậc nhất, bậc hai<br>– Rút gọn biểu thức chứa căn bậc hai<br>– Bất đẳng thức, tính chất<br>– Thống kê: biểu đồ tần số ghép nhóm<br>– Không gian mẫu, xác suất<br>– Đường tròn: hai đường tròn cắt nhau<br>– Hình nón, hình cầu: diện tích, thể tích<br>– Hàm số y = ax²: trục đối xứng<br>– Tỉ số lượng giác trong tam giác vuông<br>– Bất phương trình bậc nhất một ẩn`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Phương trình x + 3 = 0 là phương trình bậc nhất một ẩn có nghiệm duy nhất x bằng",
+     opts:["3","1/3","−3","−1/3"],
+     correct:2,
+     explain:"x + 3 = 0 ⇔ x = −3."},
+
+    {type:"mc",
+     text:"Câu 2. Giá trị biểu thức √8 + √(1/2) bằng",
+     opts:["3√2/2","−3√2/2","5√2/2","−5√2/2"],
+     correct:2,
+     explain:"√8 = 2√2. √(1/2) = √2/2. Tổng = 2√2 + √2/2 = 4√2/2 + √2/2 = 5√2/2."},
+
+    {type:"mc",
+     text:"Câu 3. Cho a < b. Bất đẳng thức nào sau đây đúng?",
+     opts:["3a > 3b","a + 5 > b + 5","−2a > −2b","a − 1 < b − 1"],
+     correct:3,
+     explain:"a < b ⇒ a − 1 < b − 1 (cộng cùng số −1 vào hai vế, giữ nguyên chiều BĐT). Các đáp án khác sai: 3a < 3b, a+5 < b+5, −2a > −2b (đổi chiều khi nhân số âm)."},
+
+    {type:"mc",
+     text:"Câu 4. Rút gọn √(4b²) với b < 0 bằng",
+     opts:["2b","−2b","4b","−4b"],
+     correct:1,
+     explain:"√(4b²) = 2|b|. Vì b < 0 nên |b| = −b. Vậy √(4b²) = −2b."},
+
+    {type:"mc",
+     text:"Câu 5. Chiều cao (cm) của 100 HS khối 9 được ghi trong biểu đồ tần số ghép nhóm: [140;150) chiếm 9%, [150;160) chiếm 33%, [160;170) chiếm 31%, [170;180) chiếm 17%, [180;190) chiếm 10%. Số HS có chiều cao từ 150 cm đến dưới 160 cm là",
+     opts:["33 học sinh","9 học sinh","31 học sinh","17 học sinh"],
+     correct:0,
+     explain:"Nhóm [150;160) chiếm 33%. Số HS = 33% × 100 = 33 học sinh."},
+
+    {type:"mc",
+     text:"Câu 6. Xét phép thử \"Viết ngẫu nhiên một số tự nhiên chẵn có một chữ số\". Tập hợp nào dưới đây là không gian mẫu của phép thử trên?",
+     opts:["Ω = {1; 2; 3; 4; 5; 6; 7; 8; 9}","Ω = {0; 2; 4; 6; 8}","Ω = {0; 2; 4; 6}","Ω = {1; 3; 5; 7; 9}"],
+     correct:1,
+     explain:"Số tự nhiên chẵn có một chữ số: 0, 2, 4, 6, 8. Vậy Ω = {0; 2; 4; 6; 8}."},
+
+    {type:"mc",
+     text:"Câu 7. Số điểm chung của hai đường tròn cắt nhau là",
+     opts:["0","2","3","1"],
+     correct:1,
+     explain:"Hai đường tròn cắt nhau có đúng 2 điểm chung (2 giao điểm)."},
+
+    {type:"mc",
+     text:"Câu 8. Thể tích của hình cầu bán kính a là",
+     opts:["V = πa²","V = (4/3)πa³","V = (1/3)πa³","V = 4πa²"],
+     correct:1,
+     explain:"Công thức thể tích hình cầu: V = (4/3)πR³. Với R = a: V = (4/3)πa³."},
+
+    {type:"mc",
+     text:"Câu 9. Căn bậc hai của 16 là",
+     opts:["4","4 và −4","−4","256 và −256"],
+     correct:1,
+     explain:"Số 16 có hai căn bậc hai: 4 (vì 4² = 16) và −4 (vì (−4)² = 16). Chú ý: √16 = 4 (căn bậc hai số học), nhưng căn bậc hai CỦA 16 gồm cả ±4."},
+
+    {type:"mc",
+     text:"Câu 10. Đồ thị hàm số y = ax² (a ≠ 0) có bao nhiêu trục đối xứng?",
+     opts:["3","4","2","1"],
+     correct:3,
+     explain:"Đồ thị y = ax² (parabol) luôn có đúng 1 trục đối xứng là trục tung Oy."},
+
+    {type:"mc",
+     text:"Câu 11. Cho tam giác MNP vuông tại P. Khẳng định nào dưới đây đúng?",
+     opts:["cosM = MP/MN","cosM = NP/MN","cosM = NP/MP","cosM = MP/NP"],
+     correct:0,
+     explain:"Trong tam giác MNP vuông tại P, cạnh huyền MN. cosM = cạnh kề/huyền = MP/MN."},
+
+    {type:"mc",
+     text:"Câu 12. Diện tích xung quanh của hình nón có bán kính đáy r và đường sinh l là",
+     opts:["πrl","2πrl","(1/3)πr²l","πr²l"],
+     correct:0,
+     explain:"Công thức diện tích xung quanh hình nón: S_xq = πrl."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Cho phương trình x(x + 2) = 3, tức x² + 2x − 3 = 0 có hai nghiệm x₁, x₂:",
+     statements:[
+       {stmt:"Đây là phương trình bậc hai một ẩn", correct:true},
+       {stmt:"Tổng hai nghiệm x₁ + x₂ = −2", correct:true},
+       {stmt:"Tích hai nghiệm x₁ · x₂ = 3", correct:false},
+       {stmt:"Phương trình có hai nghiệm cùng dấu", correct:false}
+     ], explains:[
+       "Đúng. Khai triển: x² + 2x − 3 = 0 có dạng ax² + bx + c = 0 (a=1, b=2, c=−3).",
+       "Đúng. Theo Vi-ét: x₁ + x₂ = −b/a = −2/1 = −2.",
+       "Sai. Theo Vi-ét: x₁ · x₂ = c/a = −3/1 = −3 (không phải 3).",
+       "Sai. x₁ · x₂ = −3 < 0 nên hai nghiệm trái dấu (x₁ = 1, x₂ = −3)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Xét các biểu thức chứa căn bậc hai:",
+     statements:[
+       {stmt:"√16 = 4", correct:true},
+       {stmt:"√(4b²) = 2|b| với mọi b ∈ ℝ", correct:true},
+       {stmt:"√((−5)²) = −5", correct:false},
+       {stmt:"√8 + √(1/2) = 3√2/2", correct:false}
+     ], explains:[
+       "Đúng. √16 = 4 (căn bậc hai số học của 16).",
+       "Đúng. √(4b²) = √4 · √(b²) = 2|b| với mọi b.",
+       "Sai. √((−5)²) = √25 = 5 (không phải −5, vì √ luôn cho giá trị không âm).",
+       "Sai. √8 + √(1/2) = 2√2 + √2/2 = 5√2/2 (không phải 3√2/2)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Xét các bất phương trình bậc nhất:",
+     statements:[
+       {stmt:"BPT 4x − 8 ≥ 0 có tập nghiệm {x | x ≥ 2}", correct:true},
+       {stmt:"BPT 3(x + 4) − 4(x + 2) ≤ 0 có nghiệm x ≥ 4", correct:true},
+       {stmt:"x = 1 là một nghiệm của BPT 4x − 8 ≥ 0", correct:false},
+       {stmt:"BPT −2x > 6 tương đương x > −3", correct:false}
+     ], explains:[
+       "Đúng. 4x − 8 ≥ 0 ⇔ 4x ≥ 8 ⇔ x ≥ 2.",
+       "Đúng. 3x + 12 − 4x − 8 ≤ 0 ⇔ −x + 4 ≤ 0 ⇔ x ≥ 4.",
+       "Sai. Thay x = 1: 4·1 − 8 = −4 < 0 (không thỏa mãn ≥ 0).",
+       "Sai. −2x > 6 ⇔ x < −3 (chia cho −2, đổi chiều BĐT)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Xét các công thức hình không gian:",
+     statements:[
+       {stmt:"Diện tích xung quanh hình trụ: S_xq = 2πrh", correct:true},
+       {stmt:"Thể tích hình cầu bán kính R: V = (4/3)πR³", correct:true},
+       {stmt:"Diện tích xung quanh hình nón: S_xq = 2πrl", correct:false},
+       {stmt:"Thể tích hình trụ: V = 2πr²h", correct:false}
+     ], explains:[
+       "Đúng. S_xq trụ = 2πrh (chu vi đáy × chiều cao).",
+       "Đúng. V cầu = (4/3)πR³.",
+       "Sai. S_xq nón = πrl (không có hệ số 2).",
+       "Sai. V trụ = πr²h (không có hệ số 2)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Cho a ≥ 0. Tính giá trị biểu thức √(9a) + √(16a) − √(64a) khi a = 4.",
+     answer:"-2",
+     hint:"Rút gọn biểu thức trước: 3√a + 4√a − 8√a",
+     explain:"3√a + 4√a − 8√a = −√a. Khi a = 4: −√4 = −2."},
+
+    {type:"short",
+     text:"Câu 18. Tổng các nghiệm của phương trình (4x − 8)(x − 1) = 0 bằng bao nhiêu?",
+     answer:"3",
+     hint:"Giải: 4x − 8 = 0 hoặc x − 1 = 0",
+     explain:"4x − 8 = 0 ⇒ x = 2. x − 1 = 0 ⇒ x = 1. Tổng nghiệm = 2 + 1 = 3."},
+
+    {type:"short",
+     text:"Câu 19. Hệ phương trình x + y = 10 và 2x − y = −1 nhận cặp số (x₀; y₀) là nghiệm. Tính y₀.",
+     answer:"7",
+     hint:"Cộng hai vế hai PT để tìm x₀, thay ngược lại tìm y₀",
+     explain:"Cộng: (x+y) + (2x−y) = 10 + (−1) ⇒ 3x = 9 ⇒ x₀ = 3. Thay vào: y₀ = 10 − 3 = 7."},
+
+    {type:"short",
+     text:"Câu 20. Bất phương trình 3(x + 4) − 4(x + 2) ≤ 0 có nghiệm nguyên dương nhỏ nhất bằng bao nhiêu?",
+     answer:"4",
+     hint:"Khai triển và giải BPT",
+     explain:"3x + 12 − 4x − 8 ≤ 0 ⇔ −x + 4 ≤ 0 ⇔ x ≥ 4. Nghiệm nguyên dương nhỏ nhất là 4."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
