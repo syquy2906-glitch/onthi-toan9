@@ -2091,6 +2091,174 @@ const examData = [
      explain:"x − 8 < 0 ⇒ x < 8. Nghiệm nguyên dương lớn nhất là 7."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 4 ====================
+  {
+  id:"l9_17", emoji:"📋", name:"Ôn tập đề số 4",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 4</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Rút gọn biểu thức chứa căn<br>– Phương trình bậc nhất, phương trình bậc hai<br>– Hàm số y = ax²<br>– Bất phương trình bậc nhất một ẩn<br>– Hệ phương trình bậc nhất hai ẩn<br>– Tỉ số lượng giác trong tam giác vuông<br>– Hình trụ, hình nón, hình cầu<br>– Xác suất, không gian mẫu<br>– Thống kê: tần số, tần số ghép nhóm<br>– Đường tròn: dây cung`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Kết quả rút gọn biểu thức √45 + 2√5 là",
+     opts:["5√5","5","√5","2√5"],
+     correct:0,
+     explain:"√45 + 2√5 = √(9·5) + 2√5 = 3√5 + 2√5 = 5√5."},
+
+    {type:"mc",
+     text:"Câu 2. Nghiệm của phương trình 4x − 5 = 11 là",
+     opts:["4","−2","2","−4"],
+     correct:0,
+     explain:"4x − 5 = 11 ⇒ 4x = 16 ⇒ x = 4."},
+
+    {type:"mc",
+     text:"Câu 3. Đồ thị của hàm số y = 3x² đi qua điểm nào sau đây?",
+     opts:["(1; 4)","(2; 8)","(2; 12)","(−1; −3)"],
+     correct:2,
+     explain:"Thử (2; 12): y = 3·2² = 3·4 = 12 ✓. Các điểm khác không thỏa mãn."},
+
+    {type:"mc",
+     text:"Câu 4. Gieo một con xúc xắc cân đối một lần. Số phần tử của không gian mẫu là",
+     opts:["5","6","2","4"],
+     correct:1,
+     explain:"Xúc xắc có 6 mặt: {1, 2, 3, 4, 5, 6}. |Ω| = 6."},
+
+    {type:"mc",
+     text:"Câu 5. Cho tam giác ABC vuông tại A. Biết BC = 5 cm, AC = 4 cm. Giá trị sinB bằng",
+     opts:["3/5","4/3","5/4","4/5"],
+     correct:3,
+     explain:"AB = √(BC²−AC²) = √(25−16) = 3. sinB = AC/BC = 4/5."},
+
+    {type:"mc",
+     text:"Câu 6. Diện tích xung quanh của một hình trụ có bán kính đáy r, chiều cao h là",
+     opts:["S = πrh","S = 2πrh","S = 3πrh","S = 4πrh"],
+     correct:1,
+     explain:"Công thức diện tích xung quanh hình trụ: S_xq = 2πrh."},
+
+    {type:"mc",
+     text:"Câu 7. Nghiệm của bất phương trình x − 3 > 0 là",
+     opts:["x < 3","x > 3","x ≥ 3","x > −3"],
+     correct:1,
+     explain:"x − 3 > 0 ⇔ x > 3."},
+
+    {type:"mc",
+     text:"Câu 8. Bạn An thu thập cỡ giày của 16 bạn nam: 40, 37, 38, 39, 37, 38, 40, 40, 39, 38, 40, 39, 37, 41, 40, 39. Tần số của giá trị cỡ giày 39 là",
+     opts:["4","5","2","6"],
+     correct:0,
+     explain:"Đếm số lần xuất hiện cỡ 39: 39, 39, 39, 39 → tần số = 4."},
+
+    {type:"mc",
+     text:"Câu 9. Cho phương trình x² − 5x + 6 = 0 có hai nghiệm x₁, x₂. Tổng x₁ + x₂ bằng",
+     opts:["−5","6","5","−6"],
+     correct:2,
+     explain:"Theo Vi-ét: x₁ + x₂ = −b/a = −(−5)/1 = 5."},
+
+    {type:"mc",
+     text:"Câu 10. Thể tích hình cầu có bán kính R = 3 cm bằng",
+     opts:["27π cm³","36π cm³","108π cm³","12π cm³"],
+     correct:1,
+     explain:"V = (4/3)πR³ = (4/3)π·27 = 36π cm³."},
+
+    {type:"mc",
+     text:"Câu 11. Nghiệm của hệ phương trình x + y = 5 và x − y = 1 là",
+     opts:["(3; 2)","(2; 3)","(−3; 2)","(3; −2)"],
+     correct:0,
+     explain:"Cộng hai PT: 2x = 6 ⇒ x = 3, y = 5 − 3 = 2."},
+
+    {type:"mc",
+     text:"Câu 12. Diện tích xung quanh của hình nón có bán kính đáy r = 4 cm, đường sinh l = 5 cm bằng",
+     opts:["9π cm²","20π cm²","25π cm²","40π cm²"],
+     correct:1,
+     explain:"S_xq = πrl = π·4·5 = 20π cm²."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Cho phương trình x² − 8x + 15 = 0 có hai nghiệm x₁, x₂:",
+     statements:[
+       {stmt:"Biệt thức Δ = 4", correct:true},
+       {stmt:"x₁ + x₂ = 8", correct:true},
+       {stmt:"x₁ · x₂ = −15", correct:false},
+       {stmt:"x₁² + x₂² = 30", correct:false}
+     ], explains:[
+       "Đúng. Δ = (−8)² − 4·1·15 = 64 − 60 = 4.",
+       "Đúng. Theo Vi-ét: x₁ + x₂ = −b/a = 8.",
+       "Sai. Theo Vi-ét: x₁ · x₂ = c/a = 15 (không phải −15).",
+       "Sai. x₁² + x₂² = (x₁+x₂)² − 2x₁x₂ = 64 − 30 = 34 (không phải 30)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Điểm kiểm tra Toán của 40 HS được ghi theo bảng tần số ghép nhóm: [3;5) có 6, [5;7) có 14, [7;9) có 16, [9;10] có 4:",
+     statements:[
+       {stmt:"Tổng số học sinh là 40", correct:true},
+       {stmt:"Nhóm có tần số lớn nhất là [7;9)", correct:true},
+       {stmt:"Tần số tương đối của nhóm [5;7) là 40%", correct:false},
+       {stmt:"Bảng có 5 nhóm", correct:false}
+     ], explains:[
+       "Đúng. 6 + 14 + 16 + 4 = 40.",
+       "Đúng. Nhóm [7;9) có tần số 16 — lớn nhất.",
+       "Sai. Tần số tương đối = 14/40 = 35% (không phải 40%).",
+       "Sai. Bảng có 4 nhóm (không phải 5)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Cho đường tròn (O) bán kính R = 10 cm. Dây AB cách tâm O một khoảng d = 6 cm:",
+     statements:[
+       {stmt:"Nửa dây AM = 8 cm (M là trung điểm AB)", correct:true},
+       {stmt:"Độ dài dây AB = 16 cm", correct:true},
+       {stmt:"Dây CD = 12 cm thì khoảng cách từ O đến CD bằng 6 cm", correct:false},
+       {stmt:"Chu vi đường tròn bằng 100π cm", correct:false}
+     ], explains:[
+       "Đúng. AM = √(R²−d²) = √(100−36) = √64 = 8 cm.",
+       "Đúng. AB = 2·AM = 2·8 = 16 cm.",
+       "Sai. d' = √(R²−(CD/2)²) = √(100−36) = 8 cm (không phải 6 cm).",
+       "Sai. C = 2πR = 2π·10 = 20π cm (không phải 100π cm)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Cho hình trụ có bán kính đáy r = 4 cm, chiều cao h = 10 cm:",
+     statements:[
+       {stmt:"Thể tích hình trụ bằng 160π cm³", correct:true},
+       {stmt:"Diện tích xung quanh bằng 80π cm²", correct:true},
+       {stmt:"Diện tích một đáy bằng 8π cm²", correct:false},
+       {stmt:"Diện tích toàn phần bằng 120π cm²", correct:false}
+     ], explains:[
+       "Đúng. V = πr²h = π·16·10 = 160π cm³.",
+       "Đúng. S_xq = 2πrh = 2π·4·10 = 80π cm².",
+       "Sai. S_đáy = πr² = π·16 = 16π cm² (không phải 8π).",
+       "Sai. S_tp = S_xq + 2·S_đáy = 80π + 32π = 112π cm² (không phải 120π)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Tìm nghiệm nguyên dương lớn nhất của bất phương trình 3x − 7 < 20.",
+     answer:"8",
+     hint:"Giải BPT: 3x < 27",
+     explain:"3x − 7 < 20 ⇒ 3x < 27 ⇒ x < 9. Nghiệm nguyên dương lớn nhất là 8."},
+
+    {type:"short",
+     text:"Câu 18. Hộp có 4 viên bi đỏ và 6 viên bi xanh cùng kích thước. Lấy ngẫu nhiên 1 viên bi. Tính xác suất lấy được bi xanh (viết dạng số thập phân).",
+     answer:"0,6",
+     hint:"P = số bi xanh / tổng số bi",
+     explain:"P(xanh) = 6/(4+6) = 6/10 = 0,6."},
+
+    {type:"short",
+     text:"Câu 19. Tính giá trị biểu thức √49 − √16 + √9.",
+     answer:"6",
+     hint:"Tính từng căn rồi cộng trừ",
+     explain:"√49 − √16 + √9 = 7 − 4 + 3 = 6."},
+
+    {type:"short",
+     text:"Câu 20. Giải hệ phương trình: 2x + 3y = 12 và x − y = 1. Tính x + y.",
+     answer:"5",
+     hint:"Rút x = y + 1 thế vào PT(1)",
+     explain:"Từ PT(2): x = y + 1. Thế vào PT(1): 2(y+1) + 3y = 12 ⇒ 5y = 10 ⇒ y = 2, x = 3. Vậy x + y = 5."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
