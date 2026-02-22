@@ -5977,6 +5977,198 @@ const exam7Data = [
      explain:"Ĉ = 180° − 90° − 30° = 60°."}
   ]
 }
+,
+
+  // ==================== KIỂM TRA GIỮA KỲ 2 — ĐỀ SỐ 6 ====================
+  {
+  id:"l7_12", emoji:"📝", name:"Kiểm tra giữa kỳ 2 — Đề số 6",
+  desc:"📝 24 câu | 🔵 16 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>KIỂM TRA GIỮA KỲ 2 — ĐỀ SỐ 6</b><br>Đề kiểm tra giữa học kỳ 2 Toán lớp 7, bao gồm:<br>– Tỉ lệ thức: tính chất cơ bản, biến đổi tỉ lệ thức<br>– Đại lượng tỉ lệ thuận, tỉ lệ nghịch<br>– Chia theo tỉ lệ<br>– Biểu thức đại số<br>– Tổng ba góc trong tam giác, bất đẳng thức tam giác<br>– Tam giác cân, tam giác bằng nhau`,
+  questions:[
+
+    // ===== PHẦN I: 16 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Từ đẳng thức a·d = b·c (a, b, c, d ≠ 0), ta suy ra tỉ lệ thức nào sau đây?",
+     opts:["a/c = b/d","a/b = d/c","a/c = d/b","b/a = c/d"],
+     correct:0,
+     explain:"a·d = b·c. Chia hai vế cho c·d: a/c = b/d ✓. Kiểm tra: B sai (a/b = c/d mới đúng, không phải d/c), C sai, D sai."},
+
+    {type:"mc",
+     text:"Câu 2. Cho a/b = c/d. Khẳng định nào sau đây đúng?",
+     opts:["a·d = b·c","a·c = b·d","a·b = c·d","a + b = c + d"],
+     correct:0,
+     explain:"Tính chất cơ bản của tỉ lệ thức: a/b = c/d ⇔ a·d = b·c (tích ngoại = tích trung)."},
+
+    {type:"mc",
+     text:"Câu 3. Cho a/2 = b/3. Khi đó 3a bằng:",
+     opts:["2b","3b","6b","b/2"],
+     correct:0,
+     explain:"a/2 = b/3 ⇒ 3a = 2b (nhân chéo: a·3 = 2·b)."},
+
+    {type:"mc",
+     text:"Câu 4. Đại lượng y tỉ lệ thuận với x theo hệ số tỉ lệ k = 3. Khi x = 5 thì y bằng:",
+     opts:["8","15","5/3","3/5"],
+     correct:1,
+     explain:"y = k·x = 3 × 5 = 15."},
+
+    {type:"mc",
+     text:"Câu 5. Đại lượng y tỉ lệ nghịch với x. Cho bảng giá trị:<br>x: 2 &nbsp;&nbsp; 4 &nbsp;&nbsp; a<br>y: 12 &nbsp; b &nbsp;&nbsp; 3<br>Giá trị a và b lần lượt là:",
+     opts:["a = 8, b = 6","a = 6, b = 8","a = 3, b = 4","a = 12, b = 3"],
+     correct:0,
+     explain:"y TLN x nên x·y = k (hằng số). k = 2 × 12 = 24. ⇒ b = 24/4 = 6, a = 24/3 = 8."},
+
+    {type:"mc",
+     text:"Câu 6. Chia số 50 thành ba phần tỉ lệ với 2; 3; 5. Phần lớn nhất bằng:",
+     opts:["10","15","25","20"],
+     correct:2,
+     explain:"Tổng tỉ lệ: 2 + 3 + 5 = 10. Phần lớn nhất ứng với tỉ lệ 5: 50 × 5/10 = 25."},
+
+    {type:"mc",
+     text:"Câu 7. Đại lượng y tỉ lệ nghịch với x. Biết khi x = 4 thì y = 6. Khi x = 8 thì y bằng:",
+     opts:["12","3","2","48"],
+     correct:1,
+     explain:"y TLN x nên x·y = k = 4 × 6 = 24. Khi x = 8: y = 24/8 = 3."},
+
+    {type:"mc",
+     text:"Câu 8. Khẳng định nào sau đây SAI?",
+     opts:["Nếu y TLT với x theo hệ số k ≠ 0 thì x TLT với y theo hệ số 1/k","Nếu y TLN với x thì x TLN với y","Nếu y = 3x thì y tỉ lệ thuận với x","Nếu x + y = −5 thì y tỉ lệ nghịch với x"],
+     correct:3,
+     explain:"x + y = −5 ⇒ y = −5 − x. Đây là quan hệ bậc nhất nhưng KHÔNG phải TLN (TLN yêu cầu x·y = hằng số). A đúng (x = y/k = y · 1/k). B đúng. C đúng (y = 3x, k = 3)."},
+
+    {type:"mc",
+     text:"Câu 9. Công thức v · t = 20 cho biết v và t là hai đại lượng:",
+     opts:["Tỉ lệ thuận","Tỉ lệ nghịch","Không TLT cũng không TLN","Bằng nhau"],
+     correct:1,
+     explain:"v · t = 20 (hằng số) ⇒ v và t tỉ lệ nghịch với nhau. Khi t tăng thì v giảm và ngược lại."},
+
+    {type:"mc",
+     text:"Câu 10. Tổng ba góc trong một tam giác bằng:",
+     opts:["90°","180°","270°","360°"],
+     correct:1,
+     explain:"Tổng ba góc trong một tam giác luôn bằng 180° (định lý tổng ba góc trong tam giác)."},
+
+    {type:"mc",
+     text:"Câu 11. Bộ ba độ dài nào sau đây có thể là ba cạnh của một tam giác?",
+     opts:["1; 2; 3","3; 4; 8","3; 4; 5","1; 2; 5"],
+     correct:2,
+     explain:"BĐT tam giác: tổng 2 cạnh bất kỳ > cạnh còn lại. Kiểm tra (3; 4; 5): 3+4=7>5 ✓, 3+5=8>4 ✓, 4+5=9>3 ✓. A: 1+2=3 (không lớn hơn). B: 3+4=7<8. D: 1+2=3<5."},
+
+    {type:"mc",
+     text:"Câu 12. Tam giác ABC cân tại A có góc B = 76°. Số đo góc A bằng:",
+     opts:["76°","52°","28°","104°"],
+     correct:2,
+     explain:"Cân tại A ⇒ AB = AC ⇒ góc B = góc C = 76°. Góc A = 180° − 76° − 76° = 28°."},
+
+    {type:"mc",
+     text:"Câu 13. Cho △ABC = △MNP (A ↔ M, B ↔ N, C ↔ P). Khẳng định nào sau đây đúng?",
+     opts:["AB = MN","AB = MP","AC = MN","BC = MP"],
+     correct:0,
+     explain:"Hai tam giác bằng nhau, các đỉnh tương ứng: A ↔ M, B ↔ N, C ↔ P. Nên cạnh tương ứng: AB = MN ✓, AC = MP, BC = NP."},
+
+    {type:"mc",
+     text:"Câu 14. Tam giác ABC cân tại A có AB = AC = 6 cm, BC = 8 cm. Chu vi tam giác ABC bằng:",
+     opts:["14 cm","18 cm","20 cm","22 cm"],
+     correct:2,
+     explain:"Chu vi = AB + AC + BC = 6 + 6 + 8 = 20 cm."},
+
+    {type:"mc",
+     text:"Câu 15. Biểu thức đại số nào biểu diễn 'nửa tổng của x và y'?",
+     opts:["(x + y)/2","x/2 + y","(x − y)/2","2(x + y)"],
+     correct:0,
+     explain:"Nửa tổng của x và y = (x + y)/2. B sai (chỉ chia x cho 2). C là nửa hiệu. D là gấp đôi tổng."},
+
+    {type:"mc",
+     text:"Câu 16. Từ tỉ lệ thức a/b = c/d, ta suy ra:",
+     opts:["(a + b)/b = (c + d)/d","(a + b)/b = (c + d)/c","a/c = d/b","a · c = b · d"],
+     correct:0,
+     explain:"Tính chất: a/b = c/d ⇒ a/b + 1 = c/d + 1 ⇒ (a + b)/b = (c + d)/d ✓."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 17 (Đúng/Sai). Xét các khẳng định về tỉ lệ thuận và tỉ lệ nghịch:",
+     statements:[
+       {stmt:"Nếu y = 3x thì y tỉ lệ thuận với x", correct:true},
+       {stmt:"Nếu v · t = 20 thì v tỉ lệ nghịch với t", correct:true},
+       {stmt:"Nếu x + y = −5 thì y tỉ lệ nghịch với x", correct:false},
+       {stmt:"Nếu y TLT với x theo hệ số k ≠ 0 thì x TLT với y theo hệ số k", correct:false}
+     ], explains:[
+       "Đúng. y = 3x là dạng y = kx với k = 3, đây là tỉ lệ thuận.",
+       "Đúng. v · t = 20 (tích không đổi), đây là tỉ lệ nghịch.",
+       "Sai. x + y = −5 ⇒ y = −5 − x. Đây không phải TLN vì TLN yêu cầu x · y = hằng số.",
+       "Sai. Nếu y = kx thì x = y/k = (1/k)·y, tức x TLT với y theo hệ số 1/k (không phải k)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 18 (Đúng/Sai). Xét các khẳng định về tam giác:",
+     statements:[
+       {stmt:"Tổng ba góc trong tam giác bằng 180°", correct:true},
+       {stmt:"Trong tam giác, mỗi cạnh nhỏ hơn tổng hai cạnh còn lại", correct:true},
+       {stmt:"Ba đoạn thẳng có độ dài 1; 2; 3 tạo thành một tam giác", correct:false},
+       {stmt:"Tam giác cân tại A có góc B = 76° thì góc A = 76°", correct:false}
+     ], explains:[
+       "Đúng. Đây là định lý tổng ba góc trong tam giác.",
+       "Đúng. Bất đẳng thức tam giác: a < b + c, b < a + c, c < a + b.",
+       "Sai. Kiểm tra BĐT tam giác: 1 + 2 = 3 (không lớn hơn 3), nên không tạo thành tam giác.",
+       "Sai. Cân tại A ⇒ góc B = góc C = 76°. Góc A = 180° − 76° − 76° = 28° (không phải 76°)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 19 (Đúng/Sai). Xét các khẳng định về tam giác bằng nhau:",
+     statements:[
+       {stmt:"Cho △ABC = △MNP (A ↔ M) thì AB = MN", correct:true},
+       {stmt:"Cho △ABC = △MNP thì góc A = góc M", correct:true},
+       {stmt:"Cho △ABC = △MNP thì BC = MN", correct:false},
+       {stmt:"Tam giác cân AB = AC = 6, BC = 8 có chu vi bằng 22", correct:false}
+     ], explains:[
+       "Đúng. A ↔ M, B ↔ N nên cạnh AB tương ứng cạnh MN, suy ra AB = MN.",
+       "Đúng. Đỉnh tương ứng A ↔ M nên góc A = góc M.",
+       "Sai. B ↔ N, C ↔ P nên BC = NP (không phải MN). MN tương ứng AB.",
+       "Sai. Chu vi = AB + AC + BC = 6 + 6 + 8 = 20 (không phải 22)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 20 (Đúng/Sai). Xét các khẳng định về tỉ lệ thức và biểu thức đại số:",
+     statements:[
+       {stmt:"Từ a/2 = b/3 suy ra 3a = 2b", correct:true},
+       {stmt:"Từ a/b = c/d suy ra (a + b)/b = (c + d)/d", correct:true},
+       {stmt:"Nửa tổng của x và y được biểu diễn bởi x/2 + y", correct:false},
+       {stmt:"Chia 50 theo tỉ lệ 2 : 3 : 5 thì phần nhỏ nhất bằng 15", correct:false}
+     ], explains:[
+       "Đúng. a/2 = b/3 ⇒ nhân chéo: 3a = 2b.",
+       "Đúng. a/b = c/d ⇒ a/b + 1 = c/d + 1 ⇒ (a + b)/b = (c + d)/d.",
+       "Sai. Nửa tổng của x và y là (x + y)/2, không phải x/2 + y.",
+       "Sai. Tổng tỉ lệ = 2 + 3 + 5 = 10. Phần nhỏ nhất ứng tỉ lệ 2: 50 × 2/10 = 10 (không phải 15)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 21. Tìm x biết x/4 = 30/24.",
+     answer:"5",
+     hint:"Nhân chéo: x · 24 = 4 · 30",
+     explain:"x/4 = 30/24 ⇒ x = 4 × 30/24 = 120/24 = 5."},
+
+    {type:"short",
+     text:"Câu 22. Tìm x biết x/2 = y/5 và y − x = 9.",
+     answer:"6",
+     hint:"Từ x/2 = y/5, hãy biểu diễn y theo x",
+     explain:"x/2 = y/5 ⇒ y = 5x/2. Thay vào y − x = 9: 5x/2 − x = 9 ⇒ 3x/2 = 9 ⇒ x = 6."},
+
+    {type:"short",
+     text:"Câu 23. Chia 120 thành ba phần tỉ lệ với 1; 3; 6. Phần lớn nhất bằng bao nhiêu?",
+     answer:"72",
+     hint:"Tổng tỉ lệ = 1 + 3 + 6",
+     explain:"Tổng tỉ lệ: 1 + 3 + 6 = 10. Phần lớn nhất ứng tỉ lệ 6: 120 × 6/10 = 72."},
+
+    {type:"short",
+     text:"Câu 24. Tam giác ABC có góc A = 40°, góc B = 70°. Tính số đo góc C (nhập số, đơn vị: độ).",
+     answer:"70",
+     hint:"Tổng ba góc tam giác bằng 180°",
+     explain:"Góc C = 180° − 40° − 70° = 70°. Vì góc B = góc C = 70° nên tam giác ABC cân tại A."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 8 ============
