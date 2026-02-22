@@ -1587,6 +1587,158 @@ const examData = [
       {type:"short", text:"Câu 32. Có 5 áo và 3 quần. Số cách chọn 1 bộ (áo + quần)?", answer:"15", hint:"Quy tắc nhân", explain:"5 × 3 = 15 cách."}
     ]
   }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 1 ====================
+  {
+  id:"l9_14", emoji:"📋", name:"Ôn tập đề số 1",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 1</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi, bao gồm:<br>– Hệ phương trình bậc nhất hai ẩn<br>– Phương trình tích, phương trình bậc hai, định lý Vi-ét<br>– Bất phương trình bậc nhất một ẩn<br>– Căn bậc hai, căn bậc ba<br>– Tỉ số lượng giác trong tam giác vuông<br>– Hình trụ, hình nón, hình hộp chữ nhật<br>– Đường thẳng song song (định lý Thales)<br>– Thống kê và xác suất<br>– Hỗn số, phân số, tỉ lệ thức`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Hệ phương trình x + y = 3 và 2x − y = 3 có nghiệm (x; y) là",
+     opts:["(1; 2)","(2; 1)","(−3; 2)","(3; 3)"],
+     correct:1,
+     explain:"Cộng hai vế: 3x = 6 ⇒ x = 2, thay vào: y = 3 − 2 = 1. Nghiệm (2; 1)."},
+
+    {type:"mc",
+     text:"Câu 2. Phương trình (x + 3)(x − 1) = 0 có nghiệm là",
+     opts:["x = 3 và x = −1","x = −3 và x = 1","x = −3 và x = −1","x = 3 và x = 1"],
+     correct:1,
+     explain:"x + 3 = 0 ⇒ x = −3; x − 1 = 0 ⇒ x = 1."},
+
+    {type:"mc",
+     text:"Câu 3. Tập nghiệm của bất phương trình 5x − 15 ≥ 0 là",
+     opts:["x ≥ −3","x ≤ −3","x ≥ 3","x ≤ 3"],
+     correct:2,
+     explain:"5x ≥ 15 ⇒ x ≥ 3."},
+
+    {type:"mc",
+     text:"Câu 4. Đáy của một hình trụ là",
+     opts:["Hình vuông","Hình chữ nhật","Hình tam giác","Hình tròn"],
+     correct:3,
+     explain:"Hình trụ có hai đáy là hai hình tròn bằng nhau."},
+
+    {type:"mc",
+     text:"Câu 5. Với a > 0, biểu thức √(36a²) có giá trị bằng",
+     opts:["6a","−6a","6a²","36a"],
+     correct:0,
+     explain:"√(36a²) = √36 · √(a²) = 6|a| = 6a (vì a > 0)."},
+
+    {type:"mc",
+     text:"Câu 6. Cho tam giác ABC vuông tại A có AC = 8 cm, góc ACB = 60°. Độ dài cạnh AB (làm tròn đến hàng phần trăm) bằng",
+     opts:["4,00 cm","13,86 cm","16,00 cm","6,93 cm"],
+     correct:1,
+     explain:"AB = AC · tan(60°) = 8 · √3 ≈ 8 × 1,732 = 13,86 cm."},
+
+    {type:"mc",
+     text:"Câu 7. Giá trị của ∛64 bằng",
+     opts:["64","8","4","−4"],
+     correct:2,
+     explain:"∛64 = ∛(4³) = 4."},
+
+    {type:"mc",
+     text:"Câu 8. Hỗn số 6⅔ bằng phân số nào sau đây?",
+     opts:["20/3","8/3","62/3","12/3"],
+     correct:0,
+     explain:"6⅔ = (6 × 3 + 2)/3 = 20/3."},
+
+    {type:"mc",
+     text:"Câu 9. Cho x và y là hai số thực khác 0 thỏa mãn 5x = 7y. Tỉ lệ thức nào sau đây đúng?",
+     opts:["x/y = 5/7","x/5 = y/7","x/5 = 7/y","x/7 = y/5"],
+     correct:3,
+     explain:"5x = 7y ⇒ x/7 = y/5 (chia hai vế cho 35)."},
+
+    {type:"mc",
+     text:"Câu 10. Số đỉnh của một hình hộp chữ nhật là",
+     opts:["6","8","4","12"],
+     correct:1,
+     explain:"Hình hộp chữ nhật có 8 đỉnh, 12 cạnh và 6 mặt."},
+
+    {type:"mc",
+     text:"Câu 11. Trong hình vẽ, cho DE // BC, AD = 9 cm, DB = 15 cm, CE = 20 cm. Độ dài AC bằng",
+     opts:["12 cm","160/3 cm","32 cm","100/3 cm"],
+     correct:2,
+     explain:"Theo định lý Thales: AD/DB = AE/EC ⇒ 9/15 = AE/20 ⇒ AE = 12. Vậy AC = AE + EC = 12 + 20 = 32 cm."},
+
+    {type:"mc",
+     text:"Câu 12. Cho tam giác ABC vuông tại A. Khẳng định nào sau đây đúng?",
+     opts:["tanC = AC/AB","sinC = AB/BC","cosC = BC/AB","cotC = AB/BC"],
+     correct:1,
+     explain:"Trong tam giác vuông tại A: sinC = cạnh đối/cạnh huyền = AB/BC."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13. Cho phương trình bậc hai ax² + bx + c = 0 (a ≠ 0), biệt thức Δ = b² − 4ac. Xét các phát biểu sau:",
+     statements:[
+       {s:"a) Nếu Δ > 0 thì phương trình có hai nghiệm phân biệt.", a:true},
+       {s:"b) Nếu Δ = 0 thì phương trình vô nghiệm.", a:false},
+       {s:"c) Theo Vi-ét, tổng hai nghiệm bằng −b/a.", a:true},
+       {s:"d) Theo Vi-ét, tích hai nghiệm bằng −c/a.", a:false}
+     ],
+     explain:"b) Sai — Δ = 0 thì PT có nghiệm kép x = −b/(2a). d) Sai — Tích hai nghiệm bằng c/a (không có dấu trừ)."},
+
+    {type:"tf",
+     text:"Câu 14. Cho hình trụ có bán kính đáy r và chiều cao h. Xét các phát biểu sau:",
+     statements:[
+       {s:"a) Thể tích hình trụ bằng πr²h.", a:true},
+       {s:"b) Diện tích xung quanh hình trụ bằng πrh.", a:false},
+       {s:"c) Hình trụ có hai đáy là hai hình tròn bằng nhau.", a:true},
+       {s:"d) Diện tích toàn phần hình trụ bằng 2πrh + πr².", a:false}
+     ],
+     explain:"b) Sai — S_xq = 2πrh (thiếu hệ số 2). d) Sai — S_tp = 2πrh + 2πr² (hai đáy, không phải một)."},
+
+    {type:"tf",
+     text:"Câu 15. Xét các phát biểu về căn thức:",
+     statements:[
+       {s:"a) √25 = 5.", a:true},
+       {s:"b) √((-5)²) = −5.", a:false},
+       {s:"c) √(9 · 16) = √9 · √16 = 12.", a:true},
+       {s:"d) √(9 + 16) = √9 + √16 = 7.", a:false}
+     ],
+     explain:"b) Sai — √((-5)²) = √25 = |−5| = 5. d) Sai — √(9+16) = √25 = 5 ≠ 3 + 4 = 7. Không có công thức √(a+b) = √a + √b."},
+
+    {type:"tf",
+     text:"Câu 16. Một hộp có 3 bi đỏ, 5 bi xanh, 2 bi vàng (cùng kích thước). Lấy ngẫu nhiên một bi. Xét các phát biểu:",
+     statements:[
+       {s:"a) Xác suất lấy được bi đỏ là 3/10.", a:true},
+       {s:"b) Xác suất lấy được bi xanh là 1/2.", a:true},
+       {s:"c) Xác suất lấy được bi vàng là 1/3.", a:false},
+       {s:"d) Biến cố \"lấy được bi đỏ hoặc bi xanh\" là biến cố chắc chắn.", a:false}
+     ],
+     explain:"c) Sai — P(vàng) = 2/10 = 1/5 (không phải 1/3). d) Sai — P(đỏ hoặc xanh) = 8/10 = 4/5 ≠ 1, không phải biến cố chắc chắn."},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Giải hệ phương trình: 2x + y = 7 và x − y = 2. Viết nghiệm dạng x=...; y=...",
+     answer:"x=3; y=1",
+     hint:"Cộng hai phương trình",
+     explain:"Cộng vế: 3x = 9 ⇒ x = 3. Thay vào: y = 7 − 2(3) = 1. Nghiệm: x = 3; y = 1."},
+
+    {type:"short",
+     text:"Câu 18. Rút gọn: √12 + √27 − √48. Viết kết quả dạng a√b.",
+     answer:"√3",
+     hint:"Đưa thừa số ra ngoài căn",
+     explain:"√12 = 2√3, √27 = 3√3, √48 = 4√3. Tổng = 2√3 + 3√3 − 4√3 = √3."},
+
+    {type:"short",
+     text:"Câu 19. Hình nón có bán kính đáy r = 3 cm, chiều cao h = 4 cm. Tính thể tích (viết kết quả dạng aπ, ví dụ 15π).",
+     answer:"12π",
+     hint:"V = (1/3)πr²h",
+     explain:"V = (1/3)πr²h = (1/3) · π · 9 · 4 = 12π (cm³)."},
+
+    {type:"short",
+     text:"Câu 20. Phương trình x² − 8x + 12 = 0 có hai nghiệm x₁, x₂. Tính tích x₁ · x₂.",
+     answer:"12",
+     hint:"Định lý Vi-ét",
+     explain:"Theo Vi-ét: x₁ · x₂ = c/a = 12/1 = 12."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
