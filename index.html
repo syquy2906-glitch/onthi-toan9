@@ -2667,6 +2667,137 @@ const exam6Data = [
       {type:"short", text:"Câu 32. Biểu đồ tranh: mỗi hình = 10 HS. Có 6 hình → bao nhiêu HS?", answer:"60", hint:"6 × 10", explain:"6 × 10 = 60 HS."}
     ]
   }
+,
+  // ==================== CHỦ ĐỀ 13: TÍNH ĐỐI XỨNG ====================
+  {
+    id:"l6_13", emoji:"🔄", name:"Tính đối xứng",
+    desc:"📝 30 câu | 🔵 30 trắc nghiệm ABCD",
+    theory:`<b>1. Hình có trục đối xứng</b><br>– Trục đối xứng của một hình là đường thẳng d sao cho khi gấp hình theo d thì hai phần của hình trùng khít nhau.<br>– Tam giác cân: 1 trục (đường trung trực đáy). Tam giác đều: 3 trục. Hình vuông: 4 trục. HCN: 2 trục. Hình tròn: vô số trục (mọi đường kính). Lục giác đều: 6 trục. Hình thoi: 2 trục (hai đường chéo).<br>– Tam giác thường (không cân) KHÔNG có trục đối xứng.<br><br><b>2. Hình có tâm đối xứng</b><br>– Tâm đối xứng của một hình là điểm O sao cho khi quay hình 180° quanh O thì hình trùng với chính nó.<br>– HBH, HCN, hình vuông, hình tròn đều có tâm đối xứng (giao điểm hai đường chéo hoặc tâm).<br>– Hình thoi có tâm đối xứng (giao hai đường chéo).<br>– Tam giác đều KHÔNG có tâm đối xứng. Hình thang cân KHÔNG có tâm đối xứng.`,
+    questions:[
+      // === CÂU 1–10: TRỤC ĐỐI XỨNG ===
+      {type:"mc", text:"Câu 1. Trục đối xứng của một hình phẳng là gì?",
+        opts:["Là đoạn thẳng nằm giữa hình","Là đường thẳng chia hình thành hai phần gấp lại trùng nhau","Là đường chéo của hình","Là cạnh dài nhất của hình"],
+        correct:1, explain:"Trục đối xứng là đường thẳng d sao cho gấp hình theo d, hai phần trùng khít nhau."},
+
+      {type:"mc", text:"Câu 2. Tam giác đều có bao nhiêu trục đối xứng?",
+        opts:["1","2","3","6"],
+        correct:2, explain:"Tam giác đều có 3 trục đối xứng, mỗi trục đi qua một đỉnh và trung điểm cạnh đối diện."},
+
+      {type:"mc", text:"Câu 3. Hình nào sau đây có đúng 2 trục đối xứng?",
+        opts:["Tam giác đều","Hình chữ nhật (không vuông)","Hình vuông","Hình tròn"],
+        correct:1, explain:"HCN (không vuông) có đúng 2 trục đối xứng: 2 đường nối trung điểm 2 cặp cạnh đối."},
+
+      {type:"mc", text:"Câu 4. Hình vuông có bao nhiêu trục đối xứng?",
+        opts:["2","3","4","8"],
+        correct:2, explain:"Hình vuông có 4 trục đối xứng: 2 đường nối trung điểm cạnh đối + 2 đường chéo."},
+
+      {type:"mc", text:"Câu 5. Hình nào sau đây KHÔNG có trục đối xứng?",
+        opts:["Tam giác cân","Hình bình hành (không phải HCN, không phải hình thoi)","Hình vuông","Hình tròn"],
+        correct:1, explain:"HBH tổng quát (không phải HCN, không phải hình thoi) không có trục đối xứng."},
+
+      {type:"mc", text:"Câu 6. Tam giác cân có bao nhiêu trục đối xứng?",
+        opts:["0","1","2","3"],
+        correct:1, explain:"Tam giác cân có đúng 1 trục đối xứng: đường trung trực của cạnh đáy (đi qua đỉnh và trung điểm đáy)."},
+
+      {type:"mc", text:"Câu 7. Hình tròn có bao nhiêu trục đối xứng?",
+        opts:["1","2","4","Vô số"],
+        correct:3, explain:"Hình tròn có vô số trục đối xứng — bất kỳ đường kính nào cũng là trục đối xứng."},
+
+      {type:"mc", text:"Câu 8. Lục giác đều có bao nhiêu trục đối xứng?",
+        opts:["3","4","6","12"],
+        correct:2, explain:"Lục giác đều có 6 trục đối xứng: 3 đường nối đỉnh đối diện + 3 đường nối trung điểm cạnh đối diện."},
+
+      {type:"mc", text:"Câu 9. Chữ cái nào sau đây có trục đối xứng?",
+        opts:["F","G","A","J"],
+        correct:2, explain:"Chữ A có trục đối xứng dọc (trục thẳng đứng qua đỉnh). Các chữ F, G, J không có trục đối xứng."},
+
+      {type:"mc", text:"Câu 10. Hình thoi có bao nhiêu trục đối xứng?",
+        opts:["0","1","2","4"],
+        correct:2, explain:"Hình thoi có 2 trục đối xứng là hai đường chéo của nó."},
+
+      // === CÂU 11–20: TÂM ĐỐI XỨNG ===
+      {type:"mc", text:"Câu 11. Tâm đối xứng của một hình phẳng là gì?",
+        opts:["Là trọng tâm của hình","Là điểm O sao cho quay hình 180° quanh O thì hình trùng với chính nó","Là giao điểm các trục đối xứng","Là điểm chính giữa cạnh dài nhất"],
+        correct:1, explain:"Tâm đối xứng là điểm O mà khi quay hình 180° quanh O, hình trùng với chính nó."},
+
+      {type:"mc", text:"Câu 12. Hình nào sau đây có tâm đối xứng?",
+        opts:["Tam giác đều","Tam giác cân","Hình bình hành","Hình thang cân"],
+        correct:2, explain:"Hình bình hành có tâm đối xứng là giao điểm hai đường chéo."},
+
+      {type:"mc", text:"Câu 13. Tâm đối xứng của hình chữ nhật là điểm nào?",
+        opts:["Trung điểm cạnh dài","Trung điểm cạnh ngắn","Giao điểm hai đường chéo","Một đỉnh của HCN"],
+        correct:2, explain:"Tâm đối xứng của HCN là giao điểm hai đường chéo (cũng là trung điểm mỗi đường chéo)."},
+
+      {type:"mc", text:"Câu 14. Hình nào sau đây KHÔNG có tâm đối xứng?",
+        opts:["Hình vuông","Hình tròn","Tam giác đều","Hình bình hành"],
+        correct:2, explain:"Tam giác đều KHÔNG có tâm đối xứng. Khi quay 180° quanh bất kỳ điểm nào, tam giác đều không trùng với chính nó."},
+
+      {type:"mc", text:"Câu 15. Tâm đối xứng của hình tròn là điểm nào?",
+        opts:["Điểm bất kỳ trên đường tròn","Tâm của hình tròn","Trung điểm một dây cung","Không có tâm đối xứng"],
+        correct:1, explain:"Tâm đối xứng của hình tròn chính là tâm O của nó. Quay 180° quanh O, hình tròn trùng chính nó."},
+
+      {type:"mc", text:"Câu 16. Hình thang cân có tâm đối xứng không?",
+        opts:["Có, tại giao hai đường chéo","Có, tại trung điểm đáy lớn","Có, tại trung điểm đáy nhỏ","Không có tâm đối xứng"],
+        correct:3, explain:"Hình thang cân KHÔNG có tâm đối xứng vì khi quay 180° quanh bất kỳ điểm nào, hình thang cân không trùng chính nó."},
+
+      {type:"mc", text:"Câu 17. Hình thoi có tâm đối xứng không? Nếu có thì ở đâu?",
+        opts:["Không có","Có, tại trung điểm một cạnh","Có, tại giao điểm hai đường chéo","Có, tại một đỉnh"],
+        correct:2, explain:"Hình thoi có tâm đối xứng tại giao điểm hai đường chéo."},
+
+      {type:"mc", text:"Câu 18. Trong các hình sau, hình nào vừa có trục đối xứng vừa có tâm đối xứng?",
+        opts:["Tam giác cân","Tam giác đều","Hình vuông","Hình thang cân"],
+        correct:2, explain:"Hình vuông vừa có 4 trục đối xứng, vừa có tâm đối xứng (giao hai đường chéo). Tam giác đều có 3 trục nhưng KHÔNG có tâm đối xứng."},
+
+      {type:"mc", text:"Câu 19. Hình bình hành (không phải HCN, thoi, vuông) có mấy trục đối xứng và có tâm đối xứng không?",
+        opts:["0 trục, không có tâm","0 trục, có tâm","1 trục, có tâm","2 trục, có tâm"],
+        correct:1, explain:"HBH tổng quát không có trục đối xứng nào, nhưng CÓ tâm đối xứng tại giao điểm hai đường chéo."},
+
+      {type:"mc", text:"Câu 20. Đoạn thẳng AB có tâm đối xứng không?",
+        opts:["Không có","Có, tại điểm A","Có, tại điểm B","Có, tại trung điểm M của AB"],
+        correct:3, explain:"Đoạn thẳng AB có tâm đối xứng là trung điểm M. Quay 180° quanh M: A ↔ B, đoạn trùng chính nó."},
+
+      // === CÂU 21–30: TỔNG HỢP ===
+      {type:"mc", text:"Câu 21. Hình nào sau đây có trục đối xứng nhưng KHÔNG có tâm đối xứng?",
+        opts:["Hình vuông","Hình chữ nhật","Tam giác đều","Hình bình hành"],
+        correct:2, explain:"Tam giác đều có 3 trục đối xứng nhưng KHÔNG có tâm đối xứng."},
+
+      {type:"mc", text:"Câu 22. Hình nào sau đây có tâm đối xứng nhưng KHÔNG có trục đối xứng?",
+        opts:["Hình vuông","Hình bình hành tổng quát","Hình tròn","Hình thoi"],
+        correct:1, explain:"HBH tổng quát (không phải HCN, thoi, vuông) có tâm đối xứng nhưng không có trục đối xứng nào."},
+
+      {type:"mc", text:"Câu 23. Ngôi sao năm cánh đều có bao nhiêu trục đối xứng?",
+        opts:["2","3","5","10"],
+        correct:2, explain:"Ngôi sao năm cánh đều có 5 trục đối xứng, mỗi trục đi qua một đỉnh nhọn và trung điểm cạnh đối diện."},
+
+      {type:"mc", text:"Câu 24. Gấp một tờ giấy hình chữ nhật theo đường nối trung điểm hai cạnh dài. Hai nửa trùng khít nhau chứng tỏ điều gì?",
+        opts:["HCN có tâm đối xứng","HCN có trục đối xứng là đường gấp đó","HCN không có tính đối xứng","HCN là hình vuông"],
+        correct:1, explain:"Khi gấp theo đường nối trung điểm hai cạnh dài mà hai nửa trùng khít → đường đó là trục đối xứng của HCN."},
+
+      {type:"mc", text:"Câu 25. Trong thực tế, hình nào sau đây có tính đối xứng trục?",
+        opts:["Con bướm khi xòe cánh","Chiếc lá hình bầu dục mọc lệch","Đám mây","Hòn đá cuội"],
+        correct:0, explain:"Con bướm khi xòe cánh có trục đối xứng dọc theo thân, hai cánh đối xứng nhau."},
+
+      {type:"mc", text:"Câu 26. Biển báo giao thông hình tam giác đều có mấy trục đối xứng?",
+        opts:["0","1","3","6"],
+        correct:2, explain:"Tam giác đều có 3 trục đối xứng."},
+
+      {type:"mc", text:"Câu 27. Cho hình vuông ABCD. Có bao nhiêu cách gấp hình vuông để hai phần trùng khít nhau?",
+        opts:["2","3","4","8"],
+        correct:2, explain:"Hình vuông có 4 trục đối xứng nên có 4 cách gấp để hai phần trùng khít: 2 trục nối trung điểm cạnh đối + 2 đường chéo."},
+
+      {type:"mc", text:"Câu 28. Hình nào sau đây vừa KHÔNG có trục đối xứng vừa KHÔNG có tâm đối xứng?",
+        opts:["Hình bình hành","Hình vuông","Tam giác thường (ba cạnh khác nhau)","Hình tròn"],
+        correct:2, explain:"Tam giác thường (ba cạnh đều khác nhau) không có trục đối xứng và cũng không có tâm đối xứng."},
+
+      {type:"mc", text:"Câu 29. Hai điểm A và B đối xứng nhau qua đường thẳng d. Khẳng định nào đúng?",
+        opts:["d đi qua A","d đi qua B","d là đường trung trực của đoạn AB","d song song với AB"],
+        correct:2, explain:"Hai điểm đối xứng nhau qua đường thẳng d thì d là đường trung trực của đoạn thẳng nối hai điểm đó."},
+
+      {type:"mc", text:"Câu 30. Điểm A' đối xứng với điểm A qua tâm O. Khẳng định nào đúng?",
+        opts:["O là trung điểm AA'","A nằm giữa O và A'","OA = 2·OA'","AA' đi qua O nhưng OA ≠ OA'"],
+        correct:0, explain:"A' đối xứng với A qua tâm O nghĩa là O là trung điểm của AA', tức OA = OA' và A, O, A' thẳng hàng."}
+    ]
+  }
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 7 ============
