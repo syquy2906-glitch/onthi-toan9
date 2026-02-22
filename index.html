@@ -3099,6 +3099,174 @@ const examData = [
      explain:"3x + 12 − 4x − 8 ≤ 0 ⇔ −x + 4 ≤ 0 ⇔ x ≥ 4. Nghiệm nguyên dương nhỏ nhất là 4."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 10 ====================
+  {
+  id:"l9_23", emoji:"📋", name:"Ôn tập đề số 10",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 10</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Biểu thức √(A²) = |A|<br>– Phương trình bậc hai, định lý Vi-ét<br>– Bất đẳng thức, bất phương trình bậc nhất<br>– Tỉ số lượng giác trong tam giác vuông<br>– Tứ giác nội tiếp đường tròn<br>– Trục căn thức ở mẫu<br>– Cung và góc ở tâm<br>– Hình trụ: diện tích toàn phần<br>– Xác suất<br>– Thống kê: tần số tương đối ghép nhóm<br>– Hàm số y = ax²`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Giá trị của √((−3)²) bằng",
+     opts:["3","−3","9","±3"],
+     correct:0,
+     explain:"√((−3)²) = √9 = 3. Tổng quát: √(A²) = |A|, nên √((−3)²) = |−3| = 3."},
+
+    {type:"mc",
+     text:"Câu 2. Phương trình nào sau đây là phương trình bậc hai một ẩn?",
+     opts:["x² + 2x − 3 = 0","2x + 1 = 0","x³ − x = 0","1/x + 1 = 0"],
+     correct:0,
+     explain:"PT bậc hai một ẩn có dạng ax² + bx + c = 0 (a ≠ 0). A: x² + 2x − 3 = 0 thỏa mãn (a=1). B bậc nhất, C bậc ba, D phân thức."},
+
+    {type:"mc",
+     text:"Câu 3. Cho phương trình x² + bx + c = 0 có hai nghiệm x₁ = 2, x₂ = 3. Khi đó b + c bằng",
+     opts:["1","−1","11","−11"],
+     correct:0,
+     explain:"Theo Vi-ét: x₁ + x₂ = −b ⇒ b = −5. x₁ · x₂ = c ⇒ c = 6. Vậy b + c = −5 + 6 = 1."},
+
+    {type:"mc",
+     text:"Câu 4. Cho a, b là hai số thực và a > b. Khẳng định nào sau đây đúng?",
+     opts:["a + 2 < b + 2","a − 3 > b − 3","−5a > −5b","2a < 2b"],
+     correct:1,
+     explain:"a > b ⇒ a − 3 > b − 3 (cộng −3 vào hai vế, giữ nguyên chiều). A sai, C sai (nhân −5 đổi chiều), D sai."},
+
+    {type:"mc",
+     text:"Câu 5. Tập nghiệm của bất phương trình 2x − 1 > 0 là",
+     opts:["{x | x > 1/2}","{x | x > 2}","{x | x < 1/2}","{x | x < 2}"],
+     correct:0,
+     explain:"2x − 1 > 0 ⇔ 2x > 1 ⇔ x > 1/2."},
+
+    {type:"mc",
+     text:"Câu 6. Cho tam giác ABC vuông tại A. Khẳng định nào sau đây đúng?",
+     opts:["sinB = AB/BC","sinB = AC/AB","sinB = AC/BC","sinB = BC/AC"],
+     correct:2,
+     explain:"Trong ΔABC vuông tại A: sinB = cạnh đối/huyền = AC/BC."},
+
+    {type:"mc",
+     text:"Câu 7. Trong các hình: tam giác đều, hình vuông, hình thoi, hình chữ nhật — hình nào KHÔNG luôn nội tiếp được đường tròn?",
+     opts:["Tam giác đều","Hình vuông","Hình thoi","Hình chữ nhật"],
+     correct:2,
+     explain:"Tam giác đều ✓, hình vuông ✓, HCN ✓ (hai góc đối = 180°). Hình thoi không nhất thiết nội tiếp được (trừ khi là hình vuông), vì hai góc đối không luôn bù nhau."},
+
+    {type:"mc",
+     text:"Câu 8. Biểu thức 3/√5 sau khi trục căn thức ở mẫu có kết quả là",
+     opts:["3√5","3√5/5","5√3","√5/3"],
+     correct:1,
+     explain:"3/√5 = 3·√5/(√5·√5) = 3√5/5."},
+
+    {type:"mc",
+     text:"Câu 9. Trên đường tròn (O), góc ở tâm AOB = 50°. Số đo cung nhỏ AB bằng",
+     opts:["100°","25°","50°","310°"],
+     correct:2,
+     explain:"Số đo cung nhỏ bằng số đo góc ở tâm chắn cung đó = 50°."},
+
+    {type:"mc",
+     text:"Câu 10. Diện tích toàn phần của hình trụ có bán kính đáy r = 3 cm, chiều cao h = 4 cm bằng",
+     opts:["42π cm²","12π cm²","24π cm²","30π cm²"],
+     correct:0,
+     explain:"S_tp = 2πrh + 2πr² = 2π·3·4 + 2π·9 = 24π + 18π = 42π cm²."},
+
+    {type:"mc",
+     text:"Câu 11. Gieo ngẫu nhiên một con xúc xắc cân đối. Xác suất để xuất hiện mặt 6 chấm bằng",
+     opts:["1/2","1/3","1/6","1/4"],
+     correct:2,
+     explain:"Xúc xắc có 6 mặt, mặt 6 chấm có 1 khả năng. P = 1/6."},
+
+    {type:"mc",
+     text:"Câu 12. Bảng tần số tương đối ghép nhóm: [10;20) có 10%, [20;30) có ? %, [30;40) có 35%, [40;50] có 25%. Tần số tương đối của nhóm [20;30) bằng",
+     opts:["25%","30%","20%","35%"],
+     correct:1,
+     explain:"Tổng = 100%. Nhóm [20;30) = 100% − 10% − 35% − 25% = 30%."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Cho phương trình x² − 5x + 6 = 0 có hai nghiệm x₁, x₂:",
+     statements:[
+       {stmt:"Biệt thức Δ = 1", correct:true},
+       {stmt:"x₁ + x₂ = 5", correct:true},
+       {stmt:"x₁ · x₂ = −6", correct:false},
+       {stmt:"Phương trình có nghiệm kép", correct:false}
+     ], explains:[
+       "Đúng. Δ = (−5)² − 4·1·6 = 25 − 24 = 1.",
+       "Đúng. Theo Vi-ét: x₁ + x₂ = −b/a = −(−5)/1 = 5.",
+       "Sai. x₁ · x₂ = c/a = 6/1 = 6 (không phải −6).",
+       "Sai. Δ = 1 > 0 nên PT có hai nghiệm phân biệt (x₁ = 2, x₂ = 3), không phải nghiệm kép."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Cho hàm số y = −2x²:",
+     statements:[
+       {stmt:"Đồ thị hàm số là parabol có đỉnh O(0; 0)", correct:true},
+       {stmt:"Hàm số nghịch biến khi x > 0", correct:true},
+       {stmt:"Đồ thị hàm số nằm phía trên trục hoành", correct:false},
+       {stmt:"Hàm số đồng biến trên ℝ", correct:false}
+     ], explains:[
+       "Đúng. y = ax² luôn có đỉnh tại gốc O(0; 0).",
+       "Đúng. a = −2 < 0: khi x > 0, x tăng ⇒ x² tăng ⇒ −2x² giảm. Nghịch biến.",
+       "Sai. a = −2 < 0 nên y = −2x² ≤ 0 với mọi x. Đồ thị nằm phía dưới trục hoành (trừ gốc O).",
+       "Sai. Hàm số y = ax² không đồng biến trên toàn ℝ (đồng biến khi x < 0, nghịch biến khi x > 0 với a < 0)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Cho hình trụ có bán kính đáy r = 5 cm, chiều cao h = 8 cm:",
+     statements:[
+       {stmt:"Diện tích xung quanh bằng 80π cm²", correct:true},
+       {stmt:"Thể tích hình trụ bằng 200π cm³", correct:true},
+       {stmt:"Diện tích toàn phần bằng 80π cm²", correct:false},
+       {stmt:"Diện tích một đáy bằng 10π cm²", correct:false}
+     ], explains:[
+       "Đúng. S_xq = 2πrh = 2π · 5 · 8 = 80π cm².",
+       "Đúng. V = πr²h = π · 25 · 8 = 200π cm³.",
+       "Sai. S_tp = S_xq + 2S_đáy = 80π + 2 · 25π = 130π cm² (không phải 80π).",
+       "Sai. S_đáy = πr² = π · 25 = 25π cm² (không phải 10π)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Xét các tính chất của đường tròn:",
+     statements:[
+       {stmt:"Số đo cung nhỏ bằng số đo góc ở tâm chắn cung đó", correct:true},
+       {stmt:"Góc nội tiếp chắn nửa đường tròn bằng 90°", correct:true},
+       {stmt:"Hai đường tròn cắt nhau có 1 điểm chung", correct:false},
+       {stmt:"Đường kính ngoại tiếp tam giác vuông bằng cạnh góc vuông", correct:false}
+     ], explains:[
+       "Đúng. Định nghĩa: số đo cung = số đo góc ở tâm chắn cung.",
+       "Đúng. Nửa đường tròn = 180°, góc nội tiếp = ½ · 180° = 90°.",
+       "Sai. Hai đường tròn cắt nhau có 2 điểm chung (không phải 1).",
+       "Sai. Đường kính ngoại tiếp tam giác vuông bằng cạnh huyền (không phải cạnh góc vuông)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Tính giá trị biểu thức √((−3)²) + √((−5)²).",
+     answer:"8",
+     hint:"√(A²) = |A|",
+     explain:"√((−3)²) + √((−5)²) = |−3| + |−5| = 3 + 5 = 8."},
+
+    {type:"short",
+     text:"Câu 18. Cho phương trình x² − 5x + 6 = 0. Tính tích hai nghiệm x₁ · x₂.",
+     answer:"6",
+     hint:"Theo Vi-ét: x₁ · x₂ = c/a",
+     explain:"Theo Vi-ét: x₁ · x₂ = c/a = 6/1 = 6."},
+
+    {type:"short",
+     text:"Câu 19. Diện tích toàn phần hình trụ có r = 2 cm, h = 5 cm bằng aπ cm². Tính a.",
+     answer:"28",
+     hint:"S_tp = 2πrh + 2πr²",
+     explain:"S_tp = 2πrh + 2πr² = 2π·2·5 + 2π·4 = 20π + 8π = 28π. Vậy a = 28."},
+
+    {type:"short",
+     text:"Câu 20. Bất phương trình 2x − 1 > 0 có nghiệm nguyên dương nhỏ nhất bằng bao nhiêu?",
+     answer:"1",
+     hint:"Giải BPT: x > 1/2",
+     explain:"2x − 1 > 0 ⇔ x > 1/2 = 0,5. Nghiệm nguyên dương nhỏ nhất là 1."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
