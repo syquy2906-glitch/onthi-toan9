@@ -7336,6 +7336,198 @@ const exam8Data = [
       {type:"short", text:"Câu 32. Tung đồng xu 200 lần, mặt ngửa 92 lần. XS thực nghiệm bằng bao nhiêu?", answer:"0,46", hint:"92/200", explain:"XS thực nghiệm = 92/200 = 0,46."}
     ]
   }
+,
+
+  // ==================== KIỂM TRA GIỮA KỲ 2 — ĐỀ SỐ 5 ====================
+  {
+  id:"l8_14", emoji:"📝", name:"Kiểm tra giữa kỳ 2 — Đề số 5",
+  desc:"📝 24 câu | 🔵 16 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>KIỂM TRA GIỮA KỲ 2 — ĐỀ SỐ 5</b><br>Đề kiểm tra giữa học kỳ 2 Toán lớp 8, bao gồm:<br>– Hàm số bậc nhất y = ax + b: khái niệm, hệ số góc, tung độ gốc<br>– Mặt phẳng tọa độ Oxy: đọc tọa độ, điểm thuộc đồ thị<br>– Đường thẳng song song, cắt nhau, trùng nhau<br>– Tỉ số hai đoạn thẳng<br>– Định lí Thalès, đường trung bình tam giác<br>– Tính chất đường phân giác trong tam giác`,
+  questions:[
+
+    // ===== PHẦN I: 16 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Trên mặt phẳng tọa độ Oxy, điểm A được biểu diễn trên hình vẽ có tọa độ là:<br><i>(Biết A nằm ở vị trí hoành độ 1, tung độ 2)</i>",
+     opts:["A(1; 2)","A(2; 1)","A(−1; 2)","A(1; −2)"],
+     correct:0,
+     explain:"Điểm A có hoành độ x = 1, tung độ y = 2 nên A(1; 2)."},
+
+    {type:"mc",
+     text:"Câu 2. Hàm số nào sau đây là hàm số bậc nhất?",
+     opts:["y = x² + 1","y = 2x + 1","y = 1/x","y = 3"],
+     correct:1,
+     explain:"Hàm số bậc nhất có dạng y = ax + b (a ≠ 0). y = 2x + 1 có a = 2 ≠ 0 ✓. A: bậc 2, C: phân thức, D: hàm hằng (a = 0)."},
+
+    {type:"mc",
+     text:"Câu 3. Hàm số y = (1 − m)x − 2025 là hàm số bậc nhất khi:",
+     opts:["m = 1","m = 0","m ≠ 1","m ≠ 0"],
+     correct:2,
+     explain:"Hàm số bậc nhất y = ax + b yêu cầu a ≠ 0. Ở đây a = 1 − m ≠ 0 ⇔ m ≠ 1."},
+
+    {type:"mc",
+     text:"Câu 4. Đường thẳng y = −2x − 3 có hệ số góc bằng:",
+     opts:["−2x","−3","2","−2"],
+     correct:3,
+     explain:"y = ax + b thì hệ số góc = a. Ở đây a = −2."},
+
+    {type:"mc",
+     text:"Câu 5. Đường thẳng nào sau đây tạo với trục Ox một góc nhọn?",
+     opts:["y = 3x − 2","y = 2 − 3x","y = −2x + 1","y = −x + 3"],
+     correct:0,
+     explain:"Đường thẳng tạo góc nhọn với Ox khi hệ số góc a > 0. Chỉ y = 3x − 2 có a = 3 > 0. Các đáp án còn lại có a < 0 (tạo góc tù)."},
+
+    {type:"mc",
+     text:"Câu 6. Đường thẳng nào song song với đường thẳng y = 2 − 3x?",
+     opts:["y = 2x − 3","y = −3x + 2","y = −3x + 1","y = −2x − 3"],
+     correct:2,
+     explain:"y = 2 − 3x = −3x + 2 có a = −3, b = 2. Song song: cùng hệ số góc, khác tung độ gốc. y = −3x + 1 có a = −3, b = 1 ≠ 2 ✓. B: y = −3x + 2 trùng (cùng b)."},
+
+    {type:"mc",
+     text:"Câu 7. Đồ thị hàm số y = 3x + 6 cắt đồ thị hàm số y = ax + 5 khi:",
+     opts:["a = 3","a = 5","a ≠ 3","a ≠ 5"],
+     correct:2,
+     explain:"Hai đường thẳng cắt nhau khi hệ số góc khác nhau: a ≠ 3."},
+
+    {type:"mc",
+     text:"Câu 8. Cho hàm số y = f(x) = 2x + 1. Giá trị của hàm số tại x = 1 là:",
+     opts:["3","1","2","4"],
+     correct:0,
+     explain:"f(1) = 2(1) + 1 = 3."},
+
+    {type:"mc",
+     text:"Câu 9. Điểm nào sau đây thuộc đồ thị hàm số y = 3x − 2?",
+     opts:["A(0; 2)","B(1; 5)","C(0; −2)","D(1; 6)"],
+     correct:2,
+     explain:"Thay tọa độ vào y = 3x − 2. C(0; −2): y = 3(0) − 2 = −2 ✓. A: y = −2 ≠ 2. B: y = 1 ≠ 5. D: y = 1 ≠ 6."},
+
+    {type:"mc",
+     text:"Câu 10. Cho hàm số y = g(x) = 3x − 2. Biết g(2) = m. Giá trị m bằng:",
+     opts:["3","4","2","1"],
+     correct:1,
+     explain:"g(2) = 3(2) − 2 = 6 − 2 = 4."},
+
+    {type:"mc",
+     text:"Câu 11. Hai đường thẳng (d₁): y = 6x − 2 và (d₂): y = 6x + 4 có vị trí tương đối là:",
+     opts:["Cắt nhau","Trùng nhau","Song song","Vuông góc"],
+     correct:2,
+     explain:"Cùng hệ số góc a = 6, khác tung độ gốc (−2 ≠ 4) ⇒ song song."},
+
+    {type:"mc",
+     text:"Câu 12. Hệ số góc của hàm số y = 4x + 3 bằng:",
+     opts:["3","−4","7","4"],
+     correct:3,
+     explain:"y = ax + b thì hệ số góc = a = 4."},
+
+    {type:"mc",
+     text:"Câu 13. Hàm số nào sau đây KHÔNG phải là hàm số bậc nhất?",
+     opts:["y = 3x − 1","y = 3x² + 5","y = 2 − 4x","y = 2x"],
+     correct:1,
+     explain:"y = 3x² + 5 là hàm bậc hai (có x²), không phải hàm bậc nhất. Các hàm còn lại đều có dạng y = ax + b với a ≠ 0."},
+
+    {type:"mc",
+     text:"Câu 14. Cho AB = 3 cm, CD = 5 cm. Tỉ số AB/CD bằng:",
+     opts:["3/5","5/3","8/15","15/8"],
+     correct:0,
+     explain:"AB/CD = 3/5."},
+
+    {type:"mc",
+     text:"Câu 15. MN là đường trung bình của tam giác ABC ứng với cạnh BC. Biết MN = 10 cm. Độ dài BC bằng:",
+     opts:["5 cm","20 cm","15 cm","10 cm"],
+     correct:1,
+     explain:"Đường trung bình song song với cạnh đáy và bằng nửa cạnh đáy: MN = BC/2 ⇒ BC = 2 × MN = 2 × 10 = 20 cm."},
+
+    {type:"mc",
+     text:"Câu 16. Trong tam giác ABC, AM là đường phân giác của góc BAC (M ∈ BC). Theo tính chất đường phân giác:",
+     opts:["AB/AC = MB/MC","AB/AC = MC/MB","AB · MB = AC · MC","AB + AC = MB + MC"],
+     correct:0,
+     explain:"Tính chất đường phân giác trong tam giác: đường phân giác chia cạnh đối thành hai đoạn tỉ lệ với hai cạnh kề: AB/AC = MB/MC."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 17 (Đúng/Sai). Cho hàm số y = f(x) = 2x² − 5. Xét các khẳng định:",
+     statements:[
+       {stmt:"f(1) = −3", correct:true},
+       {stmt:"f(−2) = 3", correct:true},
+       {stmt:"f(0) = −3", correct:false},
+       {stmt:"f(−1) = −7", correct:false}
+     ], explains:[
+       "Đúng. f(1) = 2(1)² − 5 = 2 − 5 = −3.",
+       "Đúng. f(−2) = 2(−2)² − 5 = 2 × 4 − 5 = 8 − 5 = 3.",
+       "Sai. f(0) = 2(0)² − 5 = −5 (không phải −3).",
+       "Sai. f(−1) = 2(−1)² − 5 = 2 − 5 = −3 (không phải −7)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 18 (Đúng/Sai). Xét các khẳng định về mặt phẳng tọa độ Oxy:",
+     statements:[
+       {stmt:"Điểm thuộc trục hoành có tung độ bằng 0", correct:true},
+       {stmt:"Gốc tọa độ O có hoành độ bằng 0", correct:true},
+       {stmt:"Điểm thuộc trục hoành có hoành độ bằng 0", correct:false},
+       {stmt:"Điểm thuộc trục tung có hoành độ bằng tung độ", correct:false}
+     ], explains:[
+       "Đúng. Trục hoành (Ox) gồm các điểm có tung độ y = 0.",
+       "Đúng. Gốc tọa độ O(0; 0) có cả hoành độ và tung độ đều bằng 0.",
+       "Sai. Điểm thuộc trục hoành có hoành độ bất kỳ, tung độ = 0. Điểm có hoành độ = 0 thuộc trục tung.",
+       "Sai. Điểm thuộc trục tung có hoành độ = 0, tung độ bất kỳ. Chỉ gốc O(0;0) mới có hoành độ = tung độ."
+     ]},
+
+    {type:"tf",
+     text:"Câu 19 (Đúng/Sai). Xác định hệ số a, b của hàm số bậc nhất y = ax + b:",
+     statements:[
+       {stmt:"y = 2(x − 3) có a = 2, b = −6", correct:true},
+       {stmt:"y = 5 − 2x có a = −2, b = 5", correct:true},
+       {stmt:"y = 2x − 3 có a = 2, b = 3", correct:false},
+       {stmt:"y = 3(x + 1) có a = 3, b = 1", correct:false}
+     ], explains:[
+       "Đúng. y = 2(x − 3) = 2x − 6, nên a = 2, b = −6.",
+       "Đúng. y = 5 − 2x = −2x + 5, nên a = −2, b = 5.",
+       "Sai. y = 2x − 3 có a = 2, b = −3 (không phải b = 3).",
+       "Sai. y = 3(x + 1) = 3x + 3, nên a = 3, b = 3 (không phải b = 1)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 20 (Đúng/Sai). Xét vị trí tương đối của hai đường thẳng:",
+     statements:[
+       {stmt:"y = 2x + 3 và y = 2x − 1 song song với nhau", correct:true},
+       {stmt:"y = 3x + 1 và y = −3x + 1 cắt nhau", correct:true},
+       {stmt:"y = 5x − 2 và y = 5x − 2 song song với nhau", correct:false},
+       {stmt:"y = 2x + 1 và y = −2x + 1 song song với nhau", correct:false}
+     ], explains:[
+       "Đúng. Cùng hệ số góc a = 2, khác tung độ gốc (3 ≠ −1) ⇒ song song.",
+       "Đúng. Hệ số góc khác nhau (3 ≠ −3) ⇒ cắt nhau.",
+       "Sai. Hai đường thẳng hoàn toàn giống nhau (cùng a = 5, cùng b = −2) ⇒ trùng nhau, không phải song song.",
+       "Sai. Hệ số góc khác nhau (2 ≠ −2) ⇒ hai đường thẳng cắt nhau, không song song."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 21. Cho MN = 15 cm, PQ = 25 cm. Tính tỉ số MN/PQ (nhập phân số tối giản, ví dụ: 3/5).",
+     answer:"3/5",
+     hint:"Rút gọn 15/25",
+     explain:"MN/PQ = 15/25. ƯCLN(15, 25) = 5. Rút gọn: 15/25 = 3/5."},
+
+    {type:"short",
+     text:"Câu 22. Cho hàm số y = f(x) = 2x² − 5. Tính f(3).",
+     answer:"13",
+     hint:"Thay x = 3 vào công thức",
+     explain:"f(3) = 2(3)² − 5 = 2 × 9 − 5 = 18 − 5 = 13."},
+
+    {type:"short",
+     text:"Câu 23. Đường thẳng y = 2x + b đi qua điểm A(1; 5). Tìm b.",
+     answer:"3",
+     hint:"Thay x = 1, y = 5 vào phương trình",
+     explain:"A(1; 5) thuộc đồ thị: 5 = 2(1) + b ⇒ b = 5 − 2 = 3."},
+
+    {type:"short",
+     text:"Câu 24. Trong △ABC, AM là đường phân giác góc BAC (M ∈ BC). Biết AB = 6, AC = 4, BM = 3. Tính MC.",
+     answer:"2",
+     hint:"Áp dụng tính chất đường phân giác: AB/AC = BM/MC",
+     explain:"Theo tính chất đường phân giác: AB/AC = BM/MC ⇒ 6/4 = 3/MC ⇒ MC = 3 × 4/6 = 2."}
+  ]
+}
 ];
 
 
