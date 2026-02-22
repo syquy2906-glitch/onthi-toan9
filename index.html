@@ -4682,6 +4682,174 @@ const exam6Data = [
      explain:"Khối 9: 3/8 × 600 = 225. Khối 8: 1/4 × 600 = 150. Khối 7: 4/25 × 600 = 96. Khối 6: 600 − 225 − 150 − 96 = 129."}
   ]
 }
+,
+
+  // ==================== KIỂM TRA GIỮA KỲ 2 — ĐỀ SỐ 6 ====================
+  {
+  id:"l6_15", emoji:"📝", name:"Kiểm tra giữa kỳ 2 — Đề số 6",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>KIỂM TRA GIỮA KỲ 2 — ĐỀ SỐ 6</b><br>Đề kiểm tra giữa học kỳ 2 Toán lớp 6, bao gồm:<br>– Phân số: khái niệm, phân số tối giản, số đối<br>– So sánh phân số, sắp xếp<br>– Tính phần trăm, tỉ số<br>– Phép tính với phân số<br>– Tính đối xứng: trục đối xứng, tâm đối xứng<br>– Bài toán thực tế: tìm giá trị phân số của một số`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Cách viết nào dưới đây cho ta một phân số?",
+     opts:["4/7","0,25/(−3)","5/0","6,23/7,4"],
+     correct:0,
+     explain:"Phân số a/b yêu cầu a, b ∈ ℤ và b ≠ 0. Chỉ 4/7 thỏa mãn (tử và mẫu đều nguyên, mẫu ≠ 0). B, D có tử hoặc mẫu không nguyên; C có mẫu = 0."},
+
+    {type:"mc",
+     text:"Câu 2. Chọn cách so sánh đúng:",
+     opts:["−2/4 < −3/4","−4/5 < −3/5","1/4 < −3/4","−1/6 < −5/6"],
+     correct:1,
+     explain:"Hai PS cùng mẫu dương: so sánh tử. −4 < −3 nên −4/5 < −3/5 ✓. Kiểm tra: A sai (−2 > −3 nên −2/4 > −3/4), C sai (1/4 > 0 > −3/4), D sai (−1 > −5)."},
+
+    {type:"mc",
+     text:"Câu 3. Phân số nào sau đây là phân số tối giản?",
+     opts:["−5/7","10/15","−9/21","−15/21"],
+     correct:0,
+     explain:"ƯCLN(5, 7) = 1 nên −5/7 là tối giản ✓. B: ƯCLN(10,15)=5. C: ƯCLN(9,21)=3. D: ƯCLN(15,21)=3. Đều chưa tối giản."},
+
+    {type:"mc",
+     text:"Câu 4. So sánh hai phân số −3/4 và 2/(−3):",
+     opts:["−3/4 < 2/(−3)","−3/4 = 2/(−3)","−3/4 > 2/(−3)","Không so sánh được"],
+     correct:0,
+     explain:"2/(−3) = −2/3. Quy đồng: −3/4 = −9/12, −2/3 = −8/12. Vì −9 < −8 nên −9/12 < −8/12, tức −3/4 < −2/3."},
+
+    {type:"mc",
+     text:"Câu 5. Phân số nào sau đây KHÔNG phải là phân số tối giản?",
+     opts:["−7/9","6/5","−5/125","13/60"],
+     correct:2,
+     explain:"ƯCLN(5, 125) = 5 ≠ 1 nên −5/125 chưa tối giản (rút gọn: −1/25). Các PS còn lại đều tối giản."},
+
+    {type:"mc",
+     text:"Câu 6. 2/5 của 100 m bằng",
+     opts:["20 m","50 m","40 m","25 m"],
+     correct:2,
+     explain:"2/5 × 100 = 200/5 = 40 m."},
+
+    {type:"mc",
+     text:"Câu 7. Phân số 2/3 là phân số tối giản của phân số nào dưới đây?",
+     opts:["140/200","130/210","180/270","150/300"],
+     correct:2,
+     explain:"180/270: ƯCLN(180, 270) = 90. 180/270 = 2/3 ✓. Kiểm tra: 140/200 = 7/10, 130/210 = 13/21, 150/300 = 1/2."},
+
+    {type:"mc",
+     text:"Câu 8. Số đối của −1/3 là",
+     opts:["3","1/3","−3","−1/3"],
+     correct:1,
+     explain:"Số đối của −1/3 là số cộng với −1/3 bằng 0, tức 1/3. (Đổi dấu: −(−1/3) = 1/3.)"},
+
+    {type:"mc",
+     text:"Câu 9. Phân số nhỏ nhất trong các phân số −3/8; −5/8; 1/8; 7/8 là",
+     opts:["−5/8","7/8","−3/8","1/8"],
+     correct:0,
+     explain:"Cùng mẫu dương (8): so sánh tử. −5 < −3 < 1 < 7. Vậy −5/8 là nhỏ nhất."},
+
+    {type:"mc",
+     text:"Câu 10. Biết 4/5 của một số bằng −60. Vậy số đó là",
+     opts:["−48","48","−75","75"],
+     correct:2,
+     explain:"Gọi số cần tìm là x. 4/5 · x = −60 ⇒ x = −60 ÷ 4/5 = −60 × 5/4 = −75."},
+
+    {type:"mc",
+     text:"Câu 11. Trong các chữ cái A, B, H, M — chữ cái nào có đúng hai trục đối xứng?",
+     opts:["Chữ A","Chữ B","Chữ H","Chữ M"],
+     correct:2,
+     explain:"Chữ H có 2 trục đối xứng (ngang và dọc). Chữ A, M có 1 trục (dọc). Chữ B có 1 trục (ngang)."},
+
+    {type:"mc",
+     text:"Câu 12. Trong các hình: hình thoi, hình bình hành, hình vuông — hình nào có tâm đối xứng?",
+     opts:["Chỉ hình thoi","Chỉ hình vuông","Hình thoi và hình vuông","Cả ba hình đều có"],
+     correct:3,
+     explain:"Hình thoi, HBH, hình vuông đều có tâm đối xứng là giao điểm hai đường chéo."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Xét các khẳng định về phân số:",
+     statements:[
+       {stmt:"−5/7 là phân số tối giản", correct:true},
+       {stmt:"2/(−3) = −2/3", correct:true},
+       {stmt:"−5/125 là phân số tối giản", correct:false},
+       {stmt:"Số đối của −1/3 là −3", correct:false}
+     ], explains:[
+       "Đúng. ƯCLN(5, 7) = 1 nên −5/7 là phân số tối giản.",
+       "Đúng. 2/(−3) = −(2/3) = −2/3.",
+       "Sai. ƯCLN(5, 125) = 5 ≠ 1 nên chưa tối giản. Rút gọn: −5/125 = −1/25.",
+       "Sai. Số đối của −1/3 là 1/3 (không phải −3). Số đối là số cộng lại bằng 0."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Xét các phép so sánh phân số:",
+     statements:[
+       {stmt:"−4/5 < −3/5", correct:true},
+       {stmt:"−3/4 < 2/(−3)", correct:true},
+       {stmt:"−5/8 > 1/8", correct:false},
+       {stmt:"21/20 < 1", correct:false}
+     ], explains:[
+       "Đúng. Cùng mẫu dương: −4 < −3 nên −4/5 < −3/5.",
+       "Đúng. −3/4 = −0,75 và 2/(−3) = −2/3 ≈ −0,667. Vì −0,75 < −0,667.",
+       "Sai. −5/8 < 0 < 1/8 nên −5/8 < 1/8 (không phải lớn hơn).",
+       "Sai. 21/20 > 1 vì tử (21) lớn hơn mẫu (20)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Xét các khẳng định về tính đối xứng:",
+     statements:[
+       {stmt:"Hình vuông có đúng 4 trục đối xứng", correct:true},
+       {stmt:"Hình thoi có tâm đối xứng", correct:true},
+       {stmt:"Tam giác đều có tâm đối xứng", correct:false},
+       {stmt:"Hình bình hành có trục đối xứng", correct:false}
+     ], explains:[
+       "Đúng. Hình vuông có 4 trục: 2 đường chéo + 2 đường nối trung điểm cạnh đối.",
+       "Đúng. Tâm đối xứng của hình thoi là giao điểm hai đường chéo.",
+       "Sai. Tam giác đều có 3 trục đối xứng nhưng KHÔNG có tâm đối xứng.",
+       "Sai. HBH (không phải HCN, thoi, vuông) có tâm đối xứng nhưng KHÔNG có trục đối xứng."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Xét các bài toán về phân số và tỉ số phần trăm:",
+     statements:[
+       {stmt:"2/5 của 100 bằng 40", correct:true},
+       {stmt:"45 phút bằng 3/4 giờ", correct:true},
+       {stmt:"Vườn có 15 cây cam và 35 cây chanh, tỉ lệ cây cam so với tổng là 43%", correct:false},
+       {stmt:"Cho a = 15, b = 20 thì tỉ số a/b = 4/3", correct:false}
+     ], explains:[
+       "Đúng. 2/5 × 100 = 40.",
+       "Đúng. 45/60 = 3/4 giờ.",
+       "Sai. Tổng = 15 + 35 = 50. Tỉ lệ cam = 15/50 = 30% (không phải 43%).",
+       "Sai. a/b = 15/20 = 3/4 (không phải 4/3)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Tính: 45% của 300 bằng bao nhiêu?",
+     answer:"135",
+     hint:"45% = 45/100",
+     explain:"45% × 300 = 45/100 × 300 = 13500/100 = 135."},
+
+    {type:"short",
+     text:"Câu 18. Biết 1/4 bình nước chứa được 4 lít. Hỏi cả bình chứa được bao nhiêu lít?",
+     answer:"16",
+     hint:"Nếu 1/4 bình = 4 lít thì cả bình = ?",
+     explain:"1/4 bình = 4 lít ⇒ cả bình = 4 × 4 = 16 lít."},
+
+    {type:"short",
+     text:"Câu 19. Biết 2/5 của số a bằng 10. Số a bằng bao nhiêu?",
+     answer:"25",
+     hint:"2/5 × a = 10, suy ra a",
+     explain:"2/5 × a = 10 ⇒ a = 10 ÷ 2/5 = 10 × 5/2 = 25."},
+
+    {type:"short",
+     text:"Câu 20. Anh Quang dùng 2/5 lương cho chi tiêu tháng, 1/4 lương mua quà biếu bố mẹ. Phần lương còn lại chiếm bao nhiêu phần tổng lương? (nhập phân số, ví dụ: 7/20)",
+     answer:"7/20",
+     hint:"Còn lại = 1 − 2/5 − 1/4",
+     explain:"Còn lại = 1 − 2/5 − 1/4 = 20/20 − 8/20 − 5/20 = 7/20 tổng lương."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 7 ============
