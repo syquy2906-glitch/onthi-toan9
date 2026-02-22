@@ -2259,6 +2259,174 @@ const examData = [
      explain:"Từ PT(2): x = y + 1. Thế vào PT(1): 2(y+1) + 3y = 12 ⇒ 5y = 10 ⇒ y = 2, x = 3. Vậy x + y = 5."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 5 ====================
+  {
+  id:"l9_18", emoji:"📋", name:"Ôn tập đề số 5",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 5</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Hàm số y = ax² và đồ thị parabol<br>– Hình trụ: diện tích xung quanh<br>– Thống kê: tần số tương đối, biểu đồ<br>– Phương trình bậc hai, định lý Vi-ét<br>– Xác suất: không gian mẫu, biến cố<br>– Tỉ số lượng giác trong tam giác vuông<br>– Điều kiện xác định căn thức<br>– Diện tích tam giác (lượng giác)<br>– Bài toán thực tế (đầu tư, lãi suất)<br>– Căn bậc ba<br>– Vị trí tương đối hai đường tròn<br>– Giao điểm parabol và đường thẳng`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Cho đồ thị hàm số y = ax² là parabol đi qua điểm (1; −2) và (−1; −2). Khi đó giá trị của biểu thức P = 2025 − 2026a² bằng",
+     opts:["10129","6077","−2027","−6079"],
+     correct:3,
+     explain:"Từ đồ thị: a·1² = −2 ⇒ a = −2. P = 2025 − 2026·(−2)² = 2025 − 2026·4 = 2025 − 8104 = −6079."},
+
+    {type:"mc",
+     text:"Câu 2. Cho hình chữ nhật ABCD có AB = 3 cm, BC = 4 cm. Quay hình chữ nhật ABCD một vòng quanh cạnh BC cố định ta được một hình trụ có diện tích xung quanh bằng",
+     opts:["12π cm²","36π cm²","16π cm²","24π cm²"],
+     correct:3,
+     explain:"Quay quanh BC: bán kính đáy r = AB = 3 cm, chiều cao h = BC = 4 cm. S_xq = 2πrh = 2π·3·4 = 24π cm²."},
+
+    {type:"mc",
+     text:"Câu 3. Giáo viên chủ nhiệm lớp 9A khảo sát phương tiện đi học của HS: Xe đạp (n=20; 50%), Xe đạp điện (n=10; 25%), Xe buýt (n=8; 20%), Phương tiện khác (n=2; 5%). Tần số tương đối của phương tiện xe buýt là bao nhiêu?",
+     opts:["50%","20%","8%","25%"],
+     correct:1,
+     explain:"Tần số tương đối xe buýt = 20% (đọc từ bảng)."},
+
+    {type:"mc",
+     text:"Câu 4. Cho x₁, x₂ là hai nghiệm của phương trình x² − 10x − 11 = 0. Khi đó x₁ + x₂ bằng",
+     opts:["11","−10","−11","10"],
+     correct:3,
+     explain:"Theo Vi-ét: x₁ + x₂ = −b/a = −(−10)/1 = 10."},
+
+    {type:"mc",
+     text:"Câu 5. Bạn An gieo một con xúc xắc cân đối và đồng chất ba lần liên tiếp. Số phần tử của không gian mẫu là",
+     opts:["108","36","18","216"],
+     correct:3,
+     explain:"Mỗi lần gieo có 6 kết quả. |Ω| = 6 × 6 × 6 = 216."},
+
+    {type:"mc",
+     text:"Câu 6. Biểu đồ tần số tương đối kết quả học tập cuối HK II của 40 HS: Tốt 20%, Khá 52%, Đạt 24%, Chưa đạt 4%. Có bao nhiêu phần trăm HS xếp loại từ mức đạt trở lên?",
+     opts:["52%","96%","4%","20%"],
+     correct:1,
+     explain:"HS ≥ Đạt = 20% + 52% + 24% = 96%."},
+
+    {type:"mc",
+     text:"Câu 7. Cho tam giác ABC vuông tại A có AB = 4 cm, BC = 5 cm. Khẳng định nào sau đây đúng?",
+     opts:["cosB = 3/5","cosB = 4/5","sinB = 4/5","sinB = 3/4"],
+     correct:1,
+     explain:"AC = √(BC²−AB²) = √(25−16) = 3. cosB = kề/huyền = AB/BC = 4/5."},
+
+    {type:"mc",
+     text:"Câu 8. Điều kiện xác định của biểu thức √(x − 5) là",
+     opts:["x < 5","x ≠ 5","x ≥ 5","x ≤ 5"],
+     correct:2,
+     explain:"√(x−5) có nghĩa khi x − 5 ≥ 0 ⇔ x ≥ 5."},
+
+    {type:"mc",
+     text:"Câu 9. Cho tam giác MNP vuông tại M có MN = 6 cm, góc MNP = 60°. Diện tích tam giác MNP bằng bao nhiêu (làm tròn kết quả đến hàng phần trăm)?",
+     opts:["18 cm²","36 cm²","62,35 cm²","31,18 cm²"],
+     correct:3,
+     explain:"MP = MN·tan60° = 6√3. S = ½·MN·MP = ½·6·6√3 = 18√3 ≈ 31,18 cm²."},
+
+    {type:"mc",
+     text:"Câu 10. Cho tam giác MNP vuông tại N. Hệ thức nào sau đây là đúng?",
+     opts:["NP = MP·cotP","NP = MP·tanP","NP = MP·sinP","NP = MP·cosP"],
+     correct:3,
+     explain:"Trong △MNP vuông tại N: cosP = NP/MP ⇒ NP = MP·cosP."},
+
+    {type:"mc",
+     text:"Câu 11. Bác An chia số tiền 900 triệu đồng cho hai khoản đầu tư. Sau một năm, tổng số tiền lãi thu được là 64 triệu đồng. Lãi suất khoản thứ nhất là 6%/năm và khoản thứ hai là 8%/năm. Khẳng định nào sau đây đúng?",
+     opts:["Khoản 1: 500 triệu, khoản 2: 400 triệu","Khoản 1: 600 triệu, khoản 2: 300 triệu","Khoản 1: 400 triệu, khoản 2: 500 triệu","Khoản 1: 350 triệu, khoản 2: 550 triệu"],
+     correct:2,
+     explain:"Gọi x, y (triệu) là 2 khoản: x+y=900, 0,06x+0,08y=64. Giải: y=500, x=400. Kiểm tra: 400·0,06+500·0,08=24+40=64 ✓."},
+
+    {type:"mc",
+     text:"Câu 12. Gieo một con xúc xắc cân đối, đồng chất hai lần liên tiếp. Xác suất của biến cố A: \"Tổng số chấm xuất hiện trên con xúc xắc trong hai lần gieo nhỏ hơn 5\" bằng",
+     opts:["1/6","5/6","7/12","5/36"],
+     correct:0,
+     explain:"|Ω| = 36. Tổng < 5: (1,1),(1,2),(2,1),(1,3),(2,2),(3,1) → 6 cặp. P = 6/36 = 1/6."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Xét các tính chất của căn bậc ba:",
+     statements:[
+       {stmt:"∛(−27) = −3", correct:true},
+       {stmt:"∛8 = 2", correct:true},
+       {stmt:"∛(−64) = 4", correct:false},
+       {stmt:"∛0 = 1", correct:false}
+     ], explains:[
+       "Đúng. (−3)³ = −27 nên ∛(−27) = −3.",
+       "Đúng. 2³ = 8 nên ∛8 = 2.",
+       "Sai. (−4)³ = −64 nên ∛(−64) = −4 (không phải 4).",
+       "Sai. 0³ = 0 nên ∛0 = 0 (không phải 1)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Cho hai đường tròn (O; 12) và (O'; 7) với OO' = 5. Từ điểm P ở ngoài đường tròn (O), vẽ hai tiếp tuyến PA, PB với góc APB = 60°:",
+     statements:[
+       {stmt:"OO' = R − R' nên hai đường tròn tiếp xúc trong", correct:true},
+       {stmt:"Hai đường tròn tiếp xúc trong có đúng 1 điểm chung", correct:true},
+       {stmt:"PA ⊥ PB", correct:false},
+       {stmt:"Góc AOB = 60°", correct:false}
+     ], explains:[
+       "Đúng. OO' = 5 = 12 − 7 = R − R' ⇒ tiếp xúc trong.",
+       "Đúng. Hai đường tròn tiếp xúc (trong hoặc ngoài) luôn có đúng 1 điểm chung.",
+       "Sai. Góc APB = 60° nên PA không vuông góc PB (cần APB = 90° mới vuông góc).",
+       "Sai. Tứ giác OAPB: OAP = OBP = 90°. AOB = 360° − 90° − 90° − 60° = 120° (không phải 60°)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Cho hàm số y = 3x². Điểm A có hoành độ bằng 2 thuộc đồ thị. Điểm B đối xứng với A qua trục Oy:",
+     statements:[
+       {stmt:"Tung độ của điểm A bằng 12", correct:true},
+       {stmt:"Điểm B có tọa độ (−2; 12)", correct:true},
+       {stmt:"Khoảng cách AB = 12", correct:false},
+       {stmt:"Trung điểm của AB là gốc tọa độ O", correct:false}
+     ], explains:[
+       "Đúng. y = 3·2² = 12. Vậy A(2; 12).",
+       "Đúng. B đối xứng A(2; 12) qua Oy ⇒ B(−2; 12).",
+       "Sai. A(2; 12), B(−2; 12) ⇒ AB = |2−(−2)| = 4 (không phải 12).",
+       "Sai. Trung điểm AB = ((2+(−2))/2; (12+12)/2) = (0; 12) ≠ O(0; 0)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Cho parabol (P): y = x² và đường thẳng (d): y = 2x − m + 3 cắt nhau tại hai điểm có hoành độ x₁, x₂:",
+     statements:[
+       {stmt:"Phương trình hoành độ giao điểm là x² − 2x + m − 3 = 0", correct:true},
+       {stmt:"Tổng x₁ + x₂ = 2 (không phụ thuộc m)", correct:true},
+       {stmt:"Khi m = 7, parabol và đường thẳng cắt nhau tại hai điểm phân biệt", correct:false},
+       {stmt:"Tích x₁ · x₂ luôn bằng −3", correct:false}
+     ], explains:[
+       "Đúng. x² = 2x−m+3 ⇔ x²−2x+m−3 = 0.",
+       "Đúng. Theo Vi-ét: x₁+x₂ = −(−2)/1 = 2, không phụ thuộc m.",
+       "Sai. Khi m=7: Δ = 4−4(7−3) = 4−16 = −12 < 0 ⇒ không cắt nhau.",
+       "Sai. x₁·x₂ = m−3 (phụ thuộc vào m, không luôn bằng −3)."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Bất phương trình x + 2 < 0 có nghiệm nguyên lớn nhất bằng bao nhiêu?",
+     answer:"-3",
+     hint:"Giải BPT: x < −2",
+     explain:"x + 2 < 0 ⇒ x < −2. Nghiệm nguyên lớn nhất là −3."},
+
+    {type:"short",
+     text:"Câu 18. Tính giá trị biểu thức √25 + √4.",
+     answer:"7",
+     hint:"Tính từng căn rồi cộng",
+     explain:"√25 + √4 = 5 + 2 = 7."},
+
+    {type:"short",
+     text:"Câu 19. Cho hàm số y = 2x². Tính giá trị y khi x = 3.",
+     answer:"18",
+     hint:"Thay x = 3 vào công thức",
+     explain:"y = 2·3² = 2·9 = 18."},
+
+    {type:"short",
+     text:"Câu 20. Cho đường tròn (O) có góc ở tâm AOB = 120°. Tính số đo cung lớn AmB (đơn vị: độ).",
+     answer:"240",
+     hint:"Cung lớn = 360° − cung nhỏ",
+     explain:"Cung lớn AmB = 360° − 120° = 240°."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
