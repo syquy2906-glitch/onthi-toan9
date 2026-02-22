@@ -2595,6 +2595,174 @@ const examData = [
      explain:"x − 7 < 0 ⇒ x < 7. Nghiệm nguyên dương lớn nhất là 6."}
   ]
 }
+,
+
+  // ==================== ÔN TẬP ĐỀ SỐ 7 ====================
+  {
+  id:"l9_20", emoji:"📋", name:"Ôn tập đề số 7",
+  desc:"📝 20 câu | 🔵 12 trắc nghiệm | 🟡 4 đúng/sai | 🟢 4 trả lời ngắn",
+  theory:`<b>ÔN TẬP ĐỀ SỐ 7</b><br>Đề ôn tập tổng hợp kiến thức theo cấu trúc đề thi vào 10, bao gồm:<br>– Căn bậc hai số học, căn bậc ba<br>– Biểu thức √(x²) = |x|, √(A²) = |A|<br>– Phương trình bậc hai, định lý Vi-ét<br>– Hệ phương trình bậc nhất hai ẩn<br>– Hàm số y = ax²: đồ thị, trục đối xứng<br>– Bất đẳng thức, tính chất<br>– Hình trụ: thể tích<br>– Tỉ số lượng giác trong tam giác vuông<br>– Đường tròn: cung, góc ở tâm, góc nội tiếp<br>– Thống kê: tần số tương đối, giá trị đại diện<br>– Xác suất`,
+  questions:[
+
+    // ===== PHẦN I: 12 CÂU TRẮC NGHIỆM ABCD =====
+
+    {type:"mc",
+     text:"Câu 1. Giá trị của √81 bằng",
+     opts:["9","−9","±9","81"],
+     correct:0,
+     explain:"√81 = 9 (căn bậc hai số học là số không âm)."},
+
+    {type:"mc",
+     text:"Câu 2. Nghiệm của hệ phương trình x + y = 5 và x − y = 3 là",
+     opts:["(1; 4)","(4; 1)","(5; 0)","(3; 2)"],
+     correct:1,
+     explain:"Cộng hai PT: 2x = 8 ⇒ x = 4, y = 1."},
+
+    {type:"mc",
+     text:"Câu 3. Cho hàm số y = ax² (a ≠ 0). Khi a < 0, mệnh đề nào đúng?",
+     opts:["Hàm số đồng biến khi x > 0","Hàm số nghịch biến khi x < 0","Đồ thị nằm phía trên Ox","Đồ thị nằm phía dưới Ox (trừ gốc O)"],
+     correct:3,
+     explain:"Khi a < 0: y = ax² ≤ 0 với mọi x, y = 0 chỉ tại x = 0. Đồ thị nằm dưới Ox."},
+
+    {type:"mc",
+     text:"Câu 4. Giá trị của ∛(−64) bằng",
+     opts:["4","−4","8","−8"],
+     correct:1,
+     explain:"(−4)³ = −64 nên ∛(−64) = −4."},
+
+    {type:"mc",
+     text:"Câu 5. Thể tích hình trụ có bán kính đáy r = 3 cm, chiều cao h = 4 cm bằng",
+     opts:["12π cm³","24π cm³","36π cm³","48π cm³"],
+     correct:2,
+     explain:"V = πr²h = π·9·4 = 36π cm³."},
+
+    {type:"mc",
+     text:"Câu 6. Cho tam giác ABC vuông tại A có AB = 3 cm, BC = 5 cm. Giá trị sinC bằng",
+     opts:["4/5","3/5","3/4","4/3"],
+     correct:1,
+     explain:"AC = √(25−9) = 4. sinC = đối/huyền = AB/BC = 3/5."},
+
+    {type:"mc",
+     text:"Câu 7. Giá trị của biểu thức √((1 − √3)²) bằng",
+     opts:["2√3 − 4","1 − √3","4 − 2√3","√3 − 1"],
+     correct:3,
+     explain:"√((1−√3)²) = |1−√3| = √3 − 1 (vì 1 − √3 < 0 nên |1−√3| = −(1−√3) = √3−1)."},
+
+    {type:"mc",
+     text:"Câu 8. Căn bậc ba của biểu thức (5x − 2)³ là",
+     opts:["5x − 2","2 − 5x","|5x − 2|","∛(5x − 2)"],
+     correct:0,
+     explain:"∛((5x−2)³) = 5x − 2 (căn bậc ba của lũy thừa bậc 3 bằng chính biểu thức)."},
+
+    {type:"mc",
+     text:"Câu 9. Đồ thị hàm số y = −(1/3)x² có trục đối xứng là",
+     opts:["Đường thẳng y = −x","Đường thẳng y = x","Trục tung","Trục hoành"],
+     correct:2,
+     explain:"Đồ thị y = ax² luôn nhận trục tung (Oy) làm trục đối xứng."},
+
+    {type:"mc",
+     text:"Câu 10. Cặp số nào sau đây là một nghiệm của phương trình x + y = 2?",
+     opts:["(1; −1)","(−1; −1)","(1; 1)","(−1; 1)"],
+     correct:2,
+     explain:"Thử (1; 1): 1 + 1 = 2 ✓."},
+
+    {type:"mc",
+     text:"Câu 11. Điều kiện xác định của phương trình 1/x = 1 là",
+     opts:["x ≥ 0","x ≠ 0","x < 0","x = 1"],
+     correct:1,
+     explain:"PT có mẫu x ≠ 0 để biểu thức 1/x xác định."},
+
+    {type:"mc",
+     text:"Câu 12. Bảng thống kê 500 HS khối 9: Tốt 160, Khá 180, Đạt 150, Chưa đạt 10. Kết quả nào có số HS lớn nhất?",
+     opts:["Tốt","Khá","Đạt","Chưa đạt"],
+     correct:1,
+     explain:"So sánh: Tốt=160, Khá=180, Đạt=150, Chưa đạt=10. Khá = 180 lớn nhất."},
+
+    // ===== PHẦN II: 4 CÂU ĐÚNG SAI =====
+
+    {type:"tf",
+     text:"Câu 13 (Đúng/Sai). Xét tính chất bất đẳng thức và điều kiện biểu thức căn:",
+     statements:[
+       {stmt:"Cho a ≤ b thì a + 3 ≤ b + 3", correct:true},
+       {stmt:"√A có nghĩa khi A ≥ 0", correct:true},
+       {stmt:"Cho a ≤ b và c < 0 thì ac ≤ bc", correct:false},
+       {stmt:"√(−4) có nghĩa", correct:false}
+     ], explains:[
+       "Đúng. Cộng cùng một số vào hai vế giữ nguyên chiều BĐT.",
+       "Đúng. Căn bậc hai có nghĩa khi biểu thức dưới căn ≥ 0.",
+       "Sai. Nhân hai vế với c < 0 phải đổi chiều: ac ≥ bc.",
+       "Sai. −4 < 0 nên √(−4) không có nghĩa trong ℝ."
+     ]},
+
+    {type:"tf",
+     text:"Câu 14 (Đúng/Sai). Cho phương trình x² + 2x − 3 = 0 có hai nghiệm x₁, x₂:",
+     statements:[
+       {stmt:"Biệt thức Δ = 16", correct:true},
+       {stmt:"x₁ + x₂ = −2", correct:true},
+       {stmt:"x₁ · x₂ = 3", correct:false},
+       {stmt:"Phương trình có hai nghiệm cùng dấu", correct:false}
+     ], explains:[
+       "Đúng. Δ = 4 − 4·(−3) = 4 + 12 = 16.",
+       "Đúng. Theo Vi-ét: x₁ + x₂ = −b/a = −2.",
+       "Sai. x₁ · x₂ = c/a = −3 (không phải 3).",
+       "Sai. x₁ · x₂ = −3 < 0 nên hai nghiệm trái dấu (x₁ = 1, x₂ = −3)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 15 (Đúng/Sai). Bảng thống kê 500 HS khối 9: Tốt 160, Khá 180, Đạt 150, Chưa đạt 10:",
+     statements:[
+       {stmt:"Tổng số HS là 500", correct:true},
+       {stmt:"Tần số tương đối loại Khá là 36%", correct:true},
+       {stmt:"Số HS Chưa đạt là 20", correct:false},
+       {stmt:"Loại Đạt chiếm nhiều HS nhất", correct:false}
+     ], explains:[
+       "Đúng. 160 + 180 + 150 + 10 = 500.",
+       "Đúng. 180/500 = 0,36 = 36%.",
+       "Sai. Chưa đạt = 10 (không phải 20).",
+       "Sai. Khá = 180 chiếm nhiều nhất (không phải Đạt = 150)."
+     ]},
+
+    {type:"tf",
+     text:"Câu 16 (Đúng/Sai). Cho đường tròn (O). Hai điểm A, B thuộc (O) với góc ở tâm AOB = 60°:",
+     statements:[
+       {stmt:"Số đo cung nhỏ AB bằng 60°", correct:true},
+       {stmt:"Số đo cung lớn AB bằng 300°", correct:true},
+       {stmt:"Góc nội tiếp chắn cung nhỏ AB bằng 60°", correct:false},
+       {stmt:"Cung nhỏ AB bằng cung lớn AB", correct:false}
+     ], explains:[
+       "Đúng. Cung nhỏ = góc ở tâm = 60°.",
+       "Đúng. Cung lớn = 360° − 60° = 300°.",
+       "Sai. Góc nội tiếp = ½ cung bị chắn = ½ · 60° = 30° (không phải 60°).",
+       "Sai. 60° ≠ 300°."
+     ]},
+
+    // ===== PHẦN III: 4 CÂU TRẢ LỜI NGẮN =====
+
+    {type:"short",
+     text:"Câu 17. Giải hệ phương trình x + y = 5 và x − y = 3. Tính tích x · y.",
+     answer:"4",
+     hint:"Giải HPT rồi nhân x · y",
+     explain:"Cộng: 2x = 8 ⇒ x = 4, y = 1. Tích x · y = 4 · 1 = 4."},
+
+    {type:"short",
+     text:"Câu 18. Cho tứ giác ABCD nội tiếp đường tròn. Biết góc A = 75°. Tính số đo góc C (đơn vị: độ).",
+     answer:"105",
+     hint:"Tứ giác nội tiếp: A + C = 180°",
+     explain:"Tứ giác nội tiếp: A + C = 180° ⇒ C = 180° − 75° = 105°."},
+
+    {type:"short",
+     text:"Câu 19. Bất phương trình 2x − 3 > 0 có nghiệm nguyên dương nhỏ nhất bằng bao nhiêu?",
+     answer:"2",
+     hint:"Giải BPT: x > 3/2 = 1,5",
+     explain:"2x − 3 > 0 ⇒ x > 1,5. Nghiệm nguyên dương nhỏ nhất là 2."},
+
+    {type:"short",
+     text:"Câu 20. Cho bảng tần số tương đối ghép nhóm: [4;8), [8;12), [12;16), [16;20). Giá trị đại diện của nhóm [8;12) bằng bao nhiêu?",
+     answer:"10",
+     hint:"Giá trị đại diện = trung bình hai đầu mút",
+     explain:"Giá trị đại diện = (8 + 12)/2 = 10."}
+  ]
+}
 ];
 
 // ============ DỮ LIỆU TOÁN LỚP 6 ============
